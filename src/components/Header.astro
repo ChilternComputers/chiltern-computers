@@ -1,0 +1,411 @@
+---
+// src/components/Header.astro
+const { url } = Astro;
+---
+
+<header id="main-header" class="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-40 transition-all duration-300" role="banner">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4 transition-all duration-300" id="header-content">
+      <!-- Logo and Brand -->
+      <a href="/" class="flex items-center gap-3 group relative" aria-label="Chiltern Computers Homepage">
+        <!-- Reduced glow effect inset -->
+        <div class="absolute -inset-1 bg-gradient-to-r from-brand-400/20 to-brand-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+        <img 
+          src="/images/logo_homepage.webp" 
+          alt="Chiltern Computers Logo" 
+          class="h-10 w-auto transition-all duration-300 group-hover:scale-110 relative z-10"
+          width="40"
+          height="40"
+          loading="eager"
+        />
+        <div class="relative z-10">
+          <h1 class="text-xl font-bold text-brand-600 group-hover:text-brand-700 transition-all duration-300">
+            Chiltern Computers
+          </h1>
+          <p class="text-sm text-gray-600 hidden sm:block group-hover:text-gray-700 transition-colors duration-300">
+            Professional IT Support & Repairs
+          </p>
+        </div>
+      </a>
+
+      <!-- Mobile menu button with improved spacing -->
+      <button
+        id="mobileMenuToggle"
+        class="md:hidden flex flex-col gap-1.5 p-3 relative overflow-hidden group rounded-md"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <div class="absolute inset-0 bg-brand-100 rounded-md scale-0 group-hover:scale-100 transition-transform duration-200"></div>
+        <span class="w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+        <span class="w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+        <span class="w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+      </button>
+
+      <!-- Desktop Navigation with simple, working hover effects -->
+      <nav class="hidden md:flex space-x-1" role="navigation" aria-label="Main navigation">
+        <a 
+          href="/" 
+          class="nav-home px-4 py-2 rounded-md transition-all duration-300 font-medium"
+          aria-current={url.pathname === '/' ? 'page' : undefined}
+        >
+          Home
+        </a>
+
+        <!-- Services Dropdown -->
+        <div class="relative">
+          <button
+            id="servicesToggle"
+            class="nav-services px-4 py-2 rounded-md transition-all duration-300 font-medium flex items-center gap-1"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Services
+            <svg class="w-4 h-4 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div
+            id="servicesDropdown"
+            class="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden opacity-0 transform scale-95 transition-all duration-300"
+            role="menu"
+          >
+            <a
+              href="/services/custom-pcs"
+              class="dropdown-item block px-4 py-2.5 text-gray-700 transition-all duration-300 first:rounded-t-lg"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <strong>Custom PCs</strong>
+              <span class="block text-sm text-gray-500">High-performance builds</span>
+            </a>
+            <a
+              href="/services/repairs"
+              class="dropdown-item block px-4 py-2.5 text-gray-700 transition-all duration-300"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <strong>Computer Repairs</strong>
+              <span class="block text-sm text-gray-500">Fast diagnosis & fixes</span>
+            </a>
+            <a
+              href="/services/refurbished"
+              class="dropdown-item block px-4 py-2.5 text-gray-700 transition-all duration-300 last:rounded-b-lg"
+              role="menuitem"
+              tabindex="-1"
+            >
+              <strong>Refurbished PCs</strong>
+              <span class="block text-sm text-gray-500">Quality pre-owned systems</span>
+            </a>
+          </div>
+        </div>
+
+        <a 
+          href="/about" 
+          class="nav-about px-4 py-2 rounded-md transition-all duration-300 font-medium"
+          aria-current={url.pathname === '/about' ? 'page' : undefined}
+        >
+          About
+        </a>
+
+        <a 
+          href="/contact" 
+          class="nav-contact px-4 py-2 rounded-md transition-all duration-300 font-medium"
+          aria-current={url.pathname === '/contact' ? 'page' : undefined}
+        >
+          Contact
+        </a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Enhanced scroll progress bar with accessibility -->
+  <div 
+    id="scroll-progress" 
+    class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-500 to-brand-600 transition-all duration-100 ease-out" 
+    style="width: 0%"
+    role="progressbar"
+    aria-label="Page scroll progress"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-valuenow="0"
+  ></div>
+</header>
+
+<script>
+  // Utility function for better performance
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('main-header');
+    const headerContent = document.getElementById('header-content');
+    const scrollProgress = document.getElementById('scroll-progress');
+    const servicesToggle = document.getElementById('servicesToggle');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const chevronIcon = servicesToggle?.querySelector('svg');
+    const dropdownItems = servicesDropdown?.querySelectorAll('a[role="menuitem"]');
+    
+    let isOpen = false;
+    let lastScrollY = 0;
+
+    // Enhanced scroll progress with debouncing
+    const updateScrollProgress = debounce(() => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.min((scrollY / docHeight) * 100, 100);
+
+      if (scrollProgress) {
+        scrollProgress.style.width = `${scrollPercent}%`;
+        scrollProgress.setAttribute('aria-valuenow', Math.round(scrollPercent).toString());
+      }
+    }, 16); // ~60fps
+
+    // Main scroll effects
+    function updateHeaderOnScroll() {
+      const scrollY = window.scrollY;
+
+      // Update scroll progress
+      updateScrollProgress();
+
+      if (scrollY > 20) {
+        // Scrolled down - enhance header
+        header?.classList.add('bg-white/98', 'shadow-lg');
+        header?.classList.remove('bg-white/95', 'shadow-md');
+        headerContent?.classList.add('py-3');
+        headerContent?.classList.remove('py-4');
+        
+        // Subtle brand color enhancement
+        const brandElements = document.querySelectorAll('.text-brand-600');
+        brandElements.forEach(el => {
+          el.classList.add('text-brand-700');
+          el.classList.remove('text-brand-600');
+        });
+      } else {
+        // At top - reset to default state
+        header?.classList.add('bg-white/95', 'shadow-md');
+        header?.classList.remove('bg-white/98', 'shadow-lg');
+        headerContent?.classList.add('py-4');
+        headerContent?.classList.remove('py-3');
+        
+        // Reset brand colors
+        const brandElements = document.querySelectorAll('.text-brand-700');
+        brandElements.forEach(el => {
+          el.classList.add('text-brand-600');
+          el.classList.remove('text-brand-700');
+        });
+      }
+
+      // Optional: Hide/show header on scroll direction
+      if (scrollY > 100) {
+        if (scrollY > lastScrollY && scrollY > 200) {
+          // Scrolling down - hide header
+          header?.classList.add('-translate-y-full');
+        } else {
+          // Scrolling up - show header
+          header?.classList.remove('-translate-y-full');
+        }
+      }
+      
+      lastScrollY = scrollY;
+    }
+
+    // Optimized scroll listener
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateHeaderOnScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Enhanced dropdown with keyboard navigation
+    function toggleDropdown() {
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        // Show dropdown with smooth animation
+        servicesDropdown?.classList.remove('hidden');
+        setTimeout(() => {
+          servicesDropdown?.classList.remove('opacity-0', 'scale-95');
+          servicesDropdown?.classList.add('opacity-100', 'scale-100');
+        }, 10);
+        
+        // Animate chevron with subtle bounce
+        chevronIcon?.classList.add('rotate-180', 'scale-110');
+        setTimeout(() => {
+          chevronIcon?.classList.remove('scale-110');
+        }, 200);
+        
+        servicesToggle?.setAttribute('aria-expanded', 'true');
+        
+        // Set proper tabindex for keyboard navigation
+        dropdownItems?.forEach(item => item.setAttribute('tabindex', '0'));
+      } else {
+        // Hide dropdown with smooth transition
+        servicesDropdown?.classList.remove('opacity-100', 'scale-100');
+        servicesDropdown?.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          servicesDropdown?.classList.add('hidden');
+        }, 300);
+        
+        // Reset chevron rotation
+        chevronIcon?.classList.remove('rotate-180');
+        servicesToggle?.setAttribute('aria-expanded', 'false');
+        
+        // Remove tabindex when hidden
+        dropdownItems?.forEach(item => item.setAttribute('tabindex', '-1'));
+      }
+    }
+
+    // Dropdown event listeners
+    servicesToggle?.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    // Enhanced outside click detection
+    document.addEventListener('click', function(e) {
+      if (isOpen && !servicesToggle?.contains(e.target) && !servicesDropdown?.contains(e.target)) {
+        toggleDropdown();
+      }
+    });
+
+    // Improved keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isOpen) {
+        toggleDropdown();
+        servicesToggle?.focus();
+      }
+      
+      // Arrow key navigation in dropdown
+      if (isOpen && dropdownItems) {
+        const currentIndex = Array.from(dropdownItems).findIndex(item => item === document.activeElement);
+        
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          const nextIndex = currentIndex < dropdownItems.length - 1 ? currentIndex + 1 : 0;
+          dropdownItems[nextIndex].focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          const prevIndex = currentIndex > 0 ? currentIndex - 1 : dropdownItems.length - 1;
+          dropdownItems[prevIndex].focus();
+        }
+      }
+    });
+
+    // Close dropdown when navigating
+    servicesDropdown?.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        setTimeout(() => toggleDropdown(), 150);
+      }
+    });
+
+    // Enhanced loading animation for nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (this.href && this.href !== window.location.href) {
+          // Add subtle loading state
+          this.style.opacity = '0.7';
+          this.style.transform = 'scale(0.98)';
+          
+          // Reset after navigation or timeout
+          setTimeout(() => {
+            this.style.opacity = '';
+            this.style.transform = '';
+          }, 1000);
+        }
+      });
+    });
+
+    // Initialize header state
+    updateHeaderOnScroll();
+  });
+</script>
+
+<style>
+  /* Enhanced header transitions with hardware acceleration */
+  #main-header {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+    will-change: transform, background-color, box-shadow;
+  }
+
+  /* Consistent gradient animation for hover effects */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .nav-link:hover {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  /* Enhanced mobile menu button */
+  #mobileMenuToggle:active {
+    transform: scale(0.95);
+  }
+
+  /* Beautiful blue gradient hover effects */
+  .nav-home:hover,
+  .nav-services:hover,
+  .nav-about:hover,
+  .nav-contact:hover {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+    color: white !important;
+  }
+
+  .dropdown-item:hover {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+    color: #1e40af !important;
+  }
+
+  /* Base styles */
+  .nav-home,
+  .nav-services,
+  .nav-about,
+  .nav-contact {
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Focus styles for accessibility */
+  .nav-home:focus,
+  .nav-services:focus,
+  .nav-about:focus,
+  .nav-contact:focus,
+  #mobileMenuToggle:focus {
+    outline: 2px solid #3b82f6 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Enhanced scroll progress bar with gradient */
+  #scroll-progress {
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+    background-size: 200% 100%;
+    animation: gradientShift 4s ease infinite;
+    will-change: width;
+  }
+</style>
