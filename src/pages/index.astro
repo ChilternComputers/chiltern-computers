@@ -1,16 +1,54 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home Page">
+  <div class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="heading-1">
+          Welcome to My Site
+        </h1>
+        
+        <p class="text-xl text-body mb-12">
+          Built with Astro, Tailwind CSS, and custom styling
+        </p>
+
+        <div class="mb-12">
+          <a href="/about" class="btn-primary mr-4">
+            Learn More
+          </a>
+          <a href="#features" class="btn-secondary">
+            View Features
+          </a>
+        </div>
+        
+        <div id="features" class="grid md:grid-cols-3 gap-8 mt-16">
+          <div class="card-hover text-center">
+            <div class="text-blue-600 text-3xl mb-4">⚡</div>
+            <h3 class="heading-2">Fast Performance</h3>
+            <p class="text-body">
+              Lightning-fast loading with Astro's optimized build process
+            </p>
+          </div>
+          
+          <div class="card-hover text-center">
+            <div class="text-green-600 text-3xl mb-4">🎨</div>
+            <h3 class="heading-2">Beautiful Design</h3>
+            <p class="text-body">
+              Crafted with Tailwind CSS for modern, responsive layouts
+            </p>
+          </div>
+          
+          <div class="card-hover text-center">
+            <div class="text-purple-600 text-3xl mb-4">🚀</div>
+            <h3 class="heading-2">Easy Deployment</h3>
+            <p class="text-body">
+              Deploy instantly to Cloudflare Pages with automatic builds
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

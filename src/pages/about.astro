@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - My Site">
+  <div class="section-padding">
+    <div class="container-custom">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h1 class="heading-1">About Our Project</h1>
+          <p class="text-xl text-body">
+            Discover the technology and passion behind our work
+          </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12 mb-16">
+          <div class="card">
+            <h2 class="heading-2">Our Mission</h2>
+            <p class="text-body mb-4">
+              We're dedicated to creating fast, beautiful, and accessible web experiences 
+              using the latest technologies and best practices.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-3 mt-1">✓</span>
+                <span class="text-body">Performance-first development</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-3 mt-1">✓</span>
+                <span class="text-body">Modern design principles</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-3 mt-1">✓</span>
+                <span class="text-body">Scalable architecture</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h2 class="heading-2">Technology Stack</h2>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-4">
+                <h3 class="font-semibold text-gray-800">Frontend Framework</h3>
+                <p class="text-body">Astro with TypeScript</p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-4">
+                <h3 class="font-semibold text-gray-800">Styling</h3>
+                <p class="text-body">Tailwind CSS with custom components</p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-4">
+                <h3 class="font-semibold text-gray-800">Hosting</h3>
+                <p class="text-body">Cloudflare Pages with GitHub integration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a href="/" class="btn-primary">
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

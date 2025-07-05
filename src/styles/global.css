@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Custom Tailwind styles and global overrides */
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors;
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
+}
+
+.card-hover {
+  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+}
+
+/* Custom container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Custom typography */
+.heading-1 {
+  @apply text-4xl font-bold text-gray-900 mb-6;
+}
+
+.heading-2 {
+  @apply text-2xl font-semibold text-gray-800 mb-4;
+}
+
+.text-body {
+  @apply text-gray-600 leading-relaxed;
+}
+
+/* Custom utilities */
+.section-padding {
+  @apply py-16 px-4;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+.focus-custom {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
