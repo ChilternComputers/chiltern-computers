@@ -3,7 +3,7 @@
 const title = "Computer Repairs and Supply";
 const subtitle = "Expert IT Support in Romford & Havering";
 const description =
-  "With over 20 years of experience, Chiltern Computers provides expert computer repairs, custom-built gaming PCs, and reliable IT support throughout Harold Hill, Romford, and Havering . Fast, affordable, and professional service you can trust.";
+  "With over 20 years of experience, Chiltern Computers provides expert computer repairs, custom-built gaming PCs, and reliable IT support throughout Harold Hill, Romford, and Havering. Fast, affordable, and professional service you can trust.";
 
 const ctaButtons = [
   {
@@ -34,83 +34,75 @@ const services = [
 ---
 
 <section    
-  class="relative bg-no-repeat py-16 px-4 text-white min-h-[500px] bg-gray-900 overflow-hidden"   
-  style="background-color: #1f2937; background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 50%, rgba(0, 0, 0, 0.6) 100%), url('/mainpcpic.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;"
+  class="relative bg-gray-900 py-16 px-4 text-white min-h-[500px] overflow-hidden"   
+  style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(0, 0, 0, 0.7) 100%), url('/mainpcpic.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"
 >
-  <!-- Animated Background Elements -->
-  <div class="absolute inset-0 opacity-20">
-    <div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-20 right-10 w-40 h-40 bg-indigo-500 rounded-full blur-3xl animate-float" style="animation-delay: 1.5s;"></div>
-    <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-purple-500 rounded-full blur-2xl animate-pulse"></div>
+  <!-- Simplified Background Effects -->
+  <div class="absolute inset-0 opacity-20" aria-hidden="true">
+    <div class="floating-orb floating-orb--blue"></div>
+    <div class="floating-orb floating-orb--indigo"></div>
+    <div class="floating-orb floating-orb--purple"></div>
   </div>
 
-  <!-- Particle Effect Overlay -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-1/4 left-1/3 w-2 h-2 bg-blue-300 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
-    <div class="absolute top-1/3 right-1/4 w-1 h-1 bg-indigo-300 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
-    <div class="absolute bottom-1/3 left-1/5 w-1.5 h-1.5 bg-purple-300 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
-    <div class="absolute bottom-1/4 right-1/3 w-2 h-2 bg-blue-400 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
-  </div>
-
-  <div class="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-center text-center gap-8 h-full min-h-[500px]">
+  <div class="relative z-10 max-w-6xl mx-auto flex flex-col items-center justify-center text-center gap-8 min-h-[500px]">
+    
     <!-- Trust Badge -->
-    <div class="glass-effect px-4 py-2 rounded-full animate-slide-down">
+    <div class="trust-badge animate-fade-in">
       <span class="text-sm font-medium text-blue-200">⭐ Trusted by 1000+ customers • 20+ Years Experience</span>
     </div>
 
-    <div class="w-full space-y-8">
-      <!-- Enhanced Main Title -->
-      <div class="relative">
-        <h1 class="text-5xl md:text-3xl font-black mb-4 leading-tight animate-slide-in">
+    <!-- Main Content -->
+    <div class="space-y-8 w-full">
+      
+      <!-- Title Section -->
+      <div class="space-y-4">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight animate-slide-in">
           <span class="gradient-text block mb-2">{title}</span>
-          <span class="text-3xl md:text-4xl text-blue-200 font-bold animate-slide-in" style="animation-delay: 0.3s;">
+          <span class="text-2xl sm:text-3xl md:text-4xl text-blue-200 font-bold animate-slide-in-delayed">
             {subtitle}
           </span>
         </h1>
         
-        <!-- Decorative Elements -->
-        <div class="flex justify-center mt-4 animate-slide-in" style="animation-delay: 0.6s;">
-          <div class="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500 rounded-full animate-glow"></div>
+        <div class="animate-fade-in-delayed">
+          <div class="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500 rounded-full mx-auto animate-glow"></div>
         </div>
       </div>
 
-      <!-- Enhanced Description -->
-      <div class="relative animate-slide-in" style="animation-delay: 0.8s;">
-        <p class="text-xl md:text-2xl max-w-4xl mb-2 mx-auto leading-relaxed text-gray-100 font-light">
+      <!-- Description -->
+      <div class="animate-fade-in-delayed">
+        <p class="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed text-gray-100 font-light mb-6">
           {description}
         </p>
         
         <!-- Key Features -->
-        <div class="flex flex-wrap justify-center gap-6 mt-6 text-sm text-blue-200 animate-slide-in" style="animation-delay: 1s;">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm text-blue-200">
+          <div class="feature-badge">
+            <div class="pulse-dot"></div>
             <span>Same-day Service</span>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+          <div class="feature-badge">
+            <div class="pulse-dot pulse-dot--delayed"></div>
             <span>Free Diagnosis</span>
           </div>
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+          <div class="feature-badge">
+            <div class="pulse-dot pulse-dot--delayed-2"></div>
             <span>No Fix, No Fee</span>
           </div>
         </div>
       </div>
 
-      <!-- Enhanced CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay: 1.2s;">
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
         {ctaButtons.map((btn, index) => (
           <a
             href={btn.href}
-            class={`group relative px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl text-white border border-white/20 hover-scale hover-glow ${btn.bgColor} overflow-hidden`}
+            class={`cta-button ${btn.bgColor}`}
             target={btn.href.startsWith("http") ? "_blank" : "_self"}
             rel={btn.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            style={`animation-delay: ${1.2 + (index * 0.2)}s;`}
+            style={`animation-delay: ${0.3 + (index * 0.1)}s;`}
           >
-            <!-- Button Background Effect -->
-            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <div class="cta-button__shine"></div>
             
-            <!-- Button Content -->
             <div class="relative flex items-center justify-center gap-2">
               {btn.icon === "phone" && (
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,10 +125,10 @@ const services = [
         ))}
       </div>
 
-      <!-- Enhanced Service Highlights -->
-      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-slide-up" style="animation-delay: 1.5s;">
+      <!-- Service Highlights -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-slide-up">
         {services.map((service, index) => (
-          <div class="glass-effect p-6 rounded-2xl text-center hover-scale group" style={`animation-delay: ${1.5 + (index * 0.2)}s;`}>
+          <div class="service-card" style={`animation-delay: ${0.5 + (index * 0.1)}s;`}>
             <div class="text-3xl mb-3 group-hover:animate-bounce">{service.icon}</div>
             <h3 class="font-bold text-lg mb-2 text-blue-100">{service.title}</h3>
             <p class="text-sm text-blue-200">{service.desc}</p>
@@ -148,73 +140,217 @@ const services = [
 </section>
 
 <style>
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-  
-  @keyframes slide-down {
-    0% { transform: translateY(-100%); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  
+  /* Core Animations */
   @keyframes slide-in {
-    0% { transform: translateX(-50px); opacity: 0; }
-    100% { transform: translateX(0); opacity: 1; }
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
   }
   
   @keyframes slide-up {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
   
   @keyframes glow {
     0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
-    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6); }
+    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
   }
   
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
   
-  .animate-slide-down {
-    animation: slide-down 0.8s ease-out;
+  @keyframes shine {
+    0% { transform: translateX(-100%) skewX(-12deg); }
+    100% { transform: translateX(300%) skewX(-12deg); }
   }
-  
+
+  /* Animation Classes */
   .animate-slide-in {
     animation: slide-in 0.8s ease-out;
   }
   
+  .animate-slide-in-delayed {
+    animation: slide-in 0.8s ease-out 0.2s both;
+  }
+  
   .animate-slide-up {
-    animation: slide-up 0.8s ease-out;
+    animation: slide-up 0.8s ease-out 0.4s both;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+  
+  .animate-fade-in-delayed {
+    animation: fade-in 0.8s ease-out 0.3s both;
   }
   
   .animate-glow {
     animation: glow 2s ease-in-out infinite;
   }
-  
+
+  /* Component Styles */
+  .trust-badge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+  }
+
   .gradient-text {
     background: linear-gradient(135deg, #60a5fa, #3b82f6, #1e40af);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
-  .glass-effect {
+
+  .feature-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .pulse-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #34d399;
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .pulse-dot--delayed {
+    animation-delay: 0.5s;
+  }
+
+  .pulse-dot--delayed-2 {
+    animation-delay: 1s;
+  }
+
+  .cta-button {
+    position: relative;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slide-up 0.8s ease-out forwards;
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+  }
+
+  .cta-button__shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: none;
+  }
+
+  .cta-button:hover .cta-button__shine {
+    animation: shine 0.7s ease-in-out;
+  }
+
+  .service-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .hover-scale {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
     transition: transform 0.3s ease;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slide-up 0.8s ease-out forwards;
   }
-  
-  .hover-scale:hover {
-    transform: scale(1.05);
+
+  .service-card:hover {
+    transform: translateY(-5px);
   }
-  
-  .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+
+  /* Floating Orbs */
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .floating-orb--blue {
+    top: 10%;
+    left: 10%;
+    width: 8rem;
+    height: 8rem;
+    background-color: #3b82f6;
+  }
+
+  .floating-orb--indigo {
+    bottom: 10%;
+    right: 10%;
+    width: 10rem;
+    height: 10rem;
+    background-color: #6366f1;
+    animation-delay: 1.5s;
+  }
+
+  .floating-orb--purple {
+    top: 50%;
+    left: 20%;
+    width: 6rem;
+    height: 6rem;
+    background-color: #8b5cf6;
+    animation-delay: 3s;
+  }
+
+  /* Responsive Improvements */
+  @media (max-width: 640px) {
+    .cta-button {
+      padding: 0.875rem 1.5rem;
+      font-size: 0.875rem;
+    }
+    
+    .service-card {
+      padding: 1rem;
+    }
+    
+    .feature-badge {
+      font-size: 0.75rem;
+    }
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    .floating-orb {
+      animation: none;
+    }
   }
 </style>
