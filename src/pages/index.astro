@@ -1,16 +1,434 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Hero />
+  
+  <style>
+    /* Custom animations and effects */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(1.5rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .float-animation { animation: float 5s ease-in-out infinite; }
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease forwards;
+    }
+  </style>
+
+  <!-- Contact Info -->
+  <section class="py-5 bg-gray-50 text-center">
+    <div class="flex flex-col items-center justify-center mb-0 animate-fade-in-up">
+      <div class="flex items-center gap-4">
+        <div class="float-animation">
+          <img src="/logo_homepage.webp" alt="Chiltern Computers Logo" class="w-16 h-30 md:w-40 md:h-30 object-contain" />
+        </div>
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Background decorative elements -->
+          <div class="absolute -top-4 -left-4 w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-10 animate-float"></div>
+          <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-full opacity-10 animate-float" style="animation-delay: 1s;"></div>
+          
+          <!-- Main container with glass effect -->
+          <div class="relative glass-effect rounded-2xl p-8 shadow-xl">
+            <div class="text-center">
+              <!-- Main heading with gradient text and animations -->
+              <h2 class="text-4xl md:text-3xl font-black gradient-text animate-slide-in mb-2">
+                Chiltern Computers
+              </h2>
+              
+              <!-- Subtitle with elegant styling -->
+              <div class="text-lg md:text-xl text-gray-600 font-medium mb-6 animate-slide-in" style="animation-delay: 0.3s;">
+                Get In Touch
+              </div>
+              
+              <!-- Enhanced underline with glow effect -->
+              <div class="flex justify-center mb-4">
+                <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 rounded-full animate-expand animate-glow"></div>
+              </div>
+              
+              <!-- Decorative dots -->
+              <div class="flex justify-center space-x-2 animate-slide-in" style="animation-delay: 0.8s;">
+                <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                <div class="w-2 h-2 bg-blue-600 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+              </div>
+            </div>
+            
+            <!-- Additional contact prompt with hover effect -->
+            <div class="mt-8 text-center animate-slide-in opacity-80 hover:opacity-100 transition-opacity duration-300" style="animation-delay: 1s;">
+              <p class="text-gray-700 font-medium">Ready to connect? We're here to help!</p>
+            </div>
+          </div>
+          
+          <!-- Subtle shadow elements -->
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 rounded-2xl transform rotate-1 -z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-l from-purple-500/5 to-blue-500/5 rounded-2xl transform -rotate-1 -z-20"></div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes slideInFromLeft {
+        0% { transform: translateX(-100%); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+      }
+      
+      @keyframes expandWidth {
+        0% { width: 0; }
+        100% { width: 6rem; }
+      }
+      
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+        50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+      
+      .animate-slide-in {
+        animation: slideInFromLeft 0.8s ease-out;
+      }
+      
+      .animate-expand {
+        animation: expandWidth 1s ease-out 0.5s both;
+      }
+      
+      .animate-glow {
+        animation: glow 2s ease-in-out infinite;
+      }
+      
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      .gradient-text {
+        background: linear-gradient(135deg, #1e40af, #3b82f6, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    </style>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-700">
+      <div 
+        class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300
+               opacity-0 translate-y-6 animate-fade-in-up"
+        style="animation-delay: 0.1s"
+      >
+        <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center justify-center gap-2">
+          <!-- Mobile phone icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 4h10l1 16H6L7 4z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h.01" />
+          </svg>
+          Mobile & WhatsApp
+        </h3>
+        <p class="mb-3 flex items-center justify-center gap-2">
+          <strong>Mobile:</strong> 
+          <a href="tel:+447971331814" class="text-blue-600 hover:underline">07971 331814</a>
+        </p>
+        <p class="flex items-center justify-center gap-2">
+          <strong>WhatsApp:</strong> 
+          <a href="https://wa.me/447971331814" target="_blank" rel="noopener" class="text-green-600 hover:underline flex items-center gap-1">
+            <!-- WhatsApp icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.52 3.48a11.8 11.8 0 00-16.7 16.72L2 22l2.3-1.2a11.8 11.8 0 0016.22-17.32zM12 20a8 8 0 01-4.15-1.17l-.3-.18-2.48.96.94-2.42-.19-.3A8 8 0 1112 20zm3.34-5.17c-.18-.09-1.06-.52-1.23-.58-.17-.06-.3-.09-.43.09s-.49.58-.6.7-.22.13-.4.04a6.47 6.47 0 01-1.9-1.17 7.4 7.4 0 01-1.37-1.7c-.14-.24-.02-.37.12-.49.12-.11.26-.29.39-.44.13-.15.17-.25.25-.41.08-.15.04-.27-.02-.38-.07-.12-.43-1.03-.59-1.4-.15-.36-.3-.31-.43-.31h-.37a1.3 1.3 0 00-.92.44 3.96 3.96 0 00-1.24 3.06c0 1.8 1.48 3.55 1.68 3.8s2.91 4.36 7.1 3.07a7.4 7.4 0 004.26-3.13 7.8 7.8 0 00-2.87-4.02z" />
+            </svg>
+            07971 331814
+          </a>
+        </p>
+      </div>
+      
+      <div 
+        class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300
+               opacity-0 translate-y-6 animate-fade-in-up"
+        style="animation-delay: 0.3s"
+      >
+        <h3 class="text-xl font-semibold mb-6 text-gray-800 flex items-center justify-center gap-2">
+          <!-- Landline icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2M5 5v14h14v-4M9 9h2v2H9z" />
+          </svg>
+          Landline & Email
+        </h3>
+        <p class="mb-3 flex items-center justify-center gap-2">
+          <strong>Landline:</strong> 
+          <a href="tel:+441708347341" class="text-blue-600 hover:underline">01708 347341</a>
+        </p>
+        <p class="flex items-center justify-center gap-2">
+          <strong>Email:</strong> 
+          <a href="mailto:david@chilterncomputers.net" class="text-blue-600 hover:underline flex items-center gap-1">
+            <!-- Email icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m8 0a4 4 0 10-8 0 4 4 0 008 0zM21 16v-1a2 2 0 00-2-2H5a2 2 0 00-2 2v1m16 0v2a2 2 0 01-2 2H7a2 2 0 01-2-2v-2" />
+            </svg>
+            david@chilterncomputers.net
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes fade-in-up {
+      0% {
+        opacity: 0;
+        transform: translateY(1.5rem);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.6s ease forwards;
+    }
+  </style>
+
+  <!-- Services -->
+  <section class="py-24 bg-gray-50">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-3xl font-extrabold text-gray-800 animate-slide-up">Computer Repair Services in Harold Hill & Romford</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-8 rounded animate-slide-up" style="animation-delay: 0.1s;"></div>
+      <p class="text-gray-600 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+        From laptop repairs to custom gaming PC builds, we offer comprehensive IT support services across Havering. All work comes with our satisfaction guarantee.
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 px-6 max-w-7xl mx-auto">
+      {[
+        {
+          icon: "💻",
+          title: "Laptop & Desktop Repairs",
+          desc: "Professional repair services for all makes and models. Same-day repairs available for most issues.",
+        },
+        {
+          icon: "🛒",
+          title: "New & Refurbished Windows 11 PCs",
+          desc: "Quality pre-owned and new computers with Windows 11, perfect for home and business use.",
+        },
+        {
+          icon: "🕹️",
+          title: "Custom Built Gaming PCs",
+          desc: "Bespoke gaming rigs built to your specifications and budget. Latest graphics cards and processors.",
+        },
+        {
+          icon: "⚡",
+          title: "Fast SSD & RAM Upgrades",
+          desc: "Speed up your computer with SSD installations and memory upgrades. Instant performance boost.",
+        },
+        {
+          icon: "💾",
+          title: "Data Recovery Services",
+          desc: "Recover lost files from crashed hard drives, corrupted USB drives, and damaged storage devices.",
+        },
+        {
+          icon: "🦠",
+          title: "Virus & Malware Removal",
+          desc: "Complete system cleanup and protection setup. Remove stubborn viruses and prevent future infections.",
+        },
+        {
+          icon: "🖨️",
+          title: "Printer Setup & Support",
+          desc: "Printer installation, troubleshooting, and network setup. All major brands supported.",
+        },
+        {
+          icon: "🧹",
+          title: "System Cleanup & Optimization",
+          desc: "Remove junk files, optimize startup programs, and tune your system for peak performance.",
+        },
+        {
+          icon: "🔌",
+          title: "Home Network Setup",
+          desc: "Wi-Fi setup, router configuration, and network troubleshooting for reliable internet access.",
+        }
+      ].map((service, index) => (
+        <article
+          key={index}
+          class="glass-effect p-6 rounded-xl shadow-md enhanced-hover animate-slide-rotate-up"
+          style={`animation-delay: ${0.3 + index * 0.07}s;`}
+        >
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">{service.icon}</span>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-800 mb-2">{service.title}</h3>
+              <p class="text-gray-600 text-sm">{service.desc}</p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-gradient-to-br from-white via-sky-50 to-blue-100">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-extrabold gradient-text animate-slide-up">Why Choose Chiltern Computers?</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6 rounded animate-slide-up" style="animation-delay: 0.1s;"></div>
+      <p class="text-gray-600 text-base animate-slide-up" style="animation-delay: 0.2s;">
+        Fast, honest, and experienced local computer repair & support.
+      </p>
+    </div>
+
+    <div class="grid gap-10 md:grid-cols-3 px-6 max-w-6xl mx-auto">
+      <!-- Card 1 -->
+      <div class="glass-effect p-8 rounded-2xl text-center shadow-xl hover:shadow-2xl hover-scale hover-glow animate-slide-up" style="animation-delay: 0.3s;">
+        <div class="text-6xl mb-4">🏆</div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2 animate-pulse-glow">20+ Years Experience</h3>
+        <p class="text-gray-600">Decades of trusted computer repair and IT support across Essex.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass-effect p-8 rounded-2xl text-center shadow-xl hover:shadow-2xl hover-scale hover-glow animate-slide-up" style="animation-delay: 0.4s;">
+        <div class="text-6xl mb-4">⚡</div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2 animate-pulse-glow">Fast Turnaround</h3>
+        <p class="text-gray-600">Same-day or 24-hour service on most repairs—lightning quick support.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass-effect p-8 rounded-2xl text-center shadow-xl hover:shadow-2xl hover-scale hover-glow animate-slide-up" style="animation-delay: 0.5s;">
+        <div class="text-6xl mb-4">💷</div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-2 animate-pulse-glow">Fair Pricing</h3>
+        <p class="text-gray-600">Straightforward pricing with no hidden surprises. You only pay what's fair.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-gray-50 py-24">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-3xl font-extrabold text-gray-800 animate-slide-up">Customer Reviews - Harold Hill IT Support</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-6 rounded animate-slide-up" style="animation-delay: 0.1s;"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.2s;">
+        See what our satisfied customers in Romford and Essex say about our service.
+      </p>
+    </div>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 px-6 max-w-7xl mx-auto">
+      {[
+        {
+          quote: "Fast, friendly and reliable service. Fixed my laptop screen in Harold Hill same day. Highly recommend!",
+          name: "Sarah J., Romford",
+        },
+        {
+          quote: "Solved my laptop virus issues in no time. Great value for money and excellent customer service!",
+          name: "Tom H., Harold Wood",
+        },
+        {
+          quote: "Professional and very helpful. Built me an amazing gaming PC within budget. Thank you!",
+          name: "Rachel A., Hornchurch",
+        },
+        {
+          quote: "Wouldn't go anywhere else for IT support. Always helpful and reasonably priced.",
+          name: "Mike D., Dagenham",
+        }
+      ].map((review, index) => (
+        <article 
+          class="glass-effect p-6 rounded-xl shadow-md hover-lift animate-slide-up transition-all duration-300"
+          style={`animation-delay: ${0.3 + index * 0.1}s;`}
+        >
+          <div class="text-yellow-400 mb-3 text-lg">⭐⭐⭐⭐⭐</div>
+          <p class="italic text-gray-700 mb-3">"{review.quote}"</p>
+          <p class="mt-2 font-semibold text-sm text-gray-900">{review.name}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Areas Covered -->
+  <section class="bg-gradient-to-br from-white via-gray-50 to-white pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold gradient-text animate-slide-up">Computer Repair Coverage Areas</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 mb-4 rounded animate-slide-up" style="animation-delay: 0.1s;"></div>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+          Based in Harold Hill, Chiltern Computers proudly provides computer repair and IT support services throughout Romford and surrounding areas.
+        </p>
+      </div>
+
+      <!-- Areas Grid -->
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 max-w-7xl mx-auto">
+        {[
+          { name: "Harold Hill", desc: "Main Service Area", map: "https://maps.google.com/?q=Harold+Hill+Romford", featured: true },
+          { name: "Romford", desc: "RM1, RM2, RM3", map: "https://maps.google.com/?q=Romford" },
+          { name: "Harold Wood", desc: "RM3", map: "https://maps.google.com/?q=Harold+Wood" },
+          { name: "Hornchurch", desc: "RM11, RM12", map: "https://maps.google.com/?q=Hornchurch" },
+          { name: "Collier Row", desc: "RM5", map: "https://maps.google.com/?q=Collier+Row" },
+          { name: "Dagenham", desc: "RM8, RM9, RM10", map: "https://maps.google.com/?q=Dagenham" },
+          { name: "Rainham", desc: "RM13", map: "https://maps.google.com/?q=Rainham+Essex" },
+          { name: "Brentwood", desc: "CM13, CM14, CM15", map: "https://maps.google.com/?q=Brentwood+Essex" },
+          { name: "Chadwell Heath", desc: "RM6", map: "https://maps.google.com/?q=Chadwell+Heath" },
+          { name: "Hainault & Gidea Park", desc: "IG6, IG7, RM2", map: "https://maps.google.com/?q=Gidea+Park" }
+        ].map((area, index) => (
+          <a 
+            href={area.map}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`group relative p-6 rounded-2xl glass-effect shadow-md hover-lift hover-glow animate-slide-up transition duration-300 ease-in-out`}
+            style={`animation-delay: ${0.3 + index * 0.05}s; ${area.featured ? 'box-shadow: 0 0 0 2px #3B82F6;' : ''}`}
+          >
+            {area.featured && (
+              <div class="absolute -top-2 -right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow-md animate-pulse-glow">
+                Main Area
+              </div>
+            )}
+
+            <div class="text-center">
+              <div class="mb-3">
+                <svg class="w-8 h-8 mx-auto text-blue-600 group-hover:text-blue-700 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+
+              <h3 class="font-bold text-gray-800 group-hover:text-blue-700 transition-colors mb-1 text-sm leading-tight">
+                {area.name}
+              </h3>
+
+              <p class="text-gray-600 text-xs font-medium">
+                {area.desc}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center mt-16 animate-slide-up" style="animation-delay: 0.8s;">
+        <p class="text-gray-600 mb-5">
+          Don't see your area listed? We may still be able to help.
+        </p>
+        <a href="tel:07971331814" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h6m-2 8a9 9 0 100-18 9 9 0 000 18z" />
+          </svg>
+          Contact Us Today
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,42 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	keywords?: string;
+}
+
+const { 
+	title, 
+	description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford", 
+	image = "/og-image.jpg",
+	keywords = "computer repair romford, pc repair harold hill, laptop repair essex"
+} = Astro.props;
+
+const fullTitle = title ? `${title} | Chiltern Computers` : 'Chiltern Computers';
+---
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="generator" content={Astro.generator} />
+	
+	<!-- Primary Meta Tags -->
+	<title>{fullTitle}</title>
+	<meta name="title" content={fullTitle} />
+	<meta name="description" content={description} />
+	<meta name="keywords" content={keywords} />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content={fullTitle} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={image} />
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:title" content={fullTitle} />
+	<meta property="twitter:description" content={description} />
+	<meta property="twitter:image" content={image} />
+</head>
