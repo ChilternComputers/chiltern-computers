@@ -1,431 +1,776 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translucent Header - Chiltern Computers</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        }
-                    },
-                    fontFamily: {
-                        'display': ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="min-h-screen bg-gray-50">
-    <!-- Trust indicators micro-banner -->
-    <div id="trust-banner" class="bg-gradient-to-r from-emerald-50 to-blue-50 border-b border-emerald-100/50 py-2 text-center text-xs transition-all duration-300 fixed top-0 left-0 right-0 z-40">
-        <div class="max-w-7xl mx-auto px-2 md:px-4">
-            <div class="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-gray-700">
-                <div class="flex items-center gap-1">
-                    <svg class="w-3 h-3 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="whitespace-nowrap">Same-day service</span>
-                </div>
-                <div class="flex items-center gap-1">
-                    <svg class="w-3 h-3 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    <span class="whitespace-nowrap">Free diagnosis</span>
-                </div>
-                <div class="hidden sm:flex items-center gap-1">
-                    <svg class="w-3 h-3 text-amber-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="whitespace-nowrap">5★ Google Reviews</span>
-                </div>
-            </div>
+---
+// src/components/Header.astro
+const { url } = Astro;
+---
+
+<!-- Schema markup for local business SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ComputerRepair",
+  "name": "Chiltern Computers",
+  "description": "Professional IT Support & Computer Repairs",
+  "url": "https://www.chilterncomputers.net",
+  "telephone": "01708347341",
+  "address": {
+    "@type": "38 Hilldene Avenue",
+    "addressLocality": "Romford",
+    "addressRegion": "Essex",
+    "postalCode": "RM3 8YP",
+    "addressCountry": "GB"
+  },
+  "openingHours": "Mo-Su 09:00-21:00",
+  "priceRange": "££"
+}
+</script>
+
+<header id="main-header" class="bg-white/95 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all duration-300" role="banner">
+  <!-- Trust indicators micro-banner -->
+  <div id="trust-banner" class="bg-gradient-to-r from-emerald-50 to-blue-50 border-b border-emerald-100/50 py-1 text-center text-xs transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-gray-700">
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span class="whitespace-nowrap">Same-day service</span>
         </div>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span class="whitespace-nowrap">Free diagnosis</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-1">
+          <svg class="w-3 h-3 text-amber-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span class="whitespace-nowrap">5★ Google Reviews</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Enhanced Header with Translucent Effect -->
-    <header id="main-header" class="backdrop-blur-md shadow-md fixed left-0 right-0 z-50 transition-all duration-300" role="banner" style="background-color: rgba(255, 255, 255, 0.95); top: 2rem;">
-        <div class="max-w-6xl mx-auto px-2 md:px-4">
-            <div class="flex justify-between items-center transition-all duration-300" id="header-content" style="height: 4rem;">
-                
-                <!-- Enhanced Logo and Brand -->
-                <a href="/" class="flex items-center gap-3 group relative" aria-label="Chiltern Computers Homepage">
-                    <!-- Glow effect -->
-                    <div class="absolute -inset-2 bg-gradient-to-r from-brand-400/20 to-blue-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                    
-                    <!-- Logo -->
-                    <img 
-                        src="logo_homepage.webp" 
-                        alt="Chiltern Computers Logo" 
-                        class="h-10 w-10 rounded-lg transition-all duration-300 group-hover:scale-110 relative z-10 object-contain"
-                    />
-                    
-                    <div class="relative z-10">
-                        <h1 class="text-xl font-display font-semibold text-brand-600 group-hover:text-brand-700 transition-all duration-300">
-                            Chiltern Computers
-                        </h1>
-                        <p class="text-sm text-gray-600 hidden sm:block group-hover:text-gray-700 transition-colors duration-300">
-                            Professional IT Support & Repairs
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Mobile menu button -->
-                <button
-                    id="mobileMenuToggle"
-                    class="md:hidden flex flex-col gap-1 p-2 relative overflow-hidden group rounded-md transition-all duration-300"
-                    aria-label="Toggle mobile menu"
-                    aria-expanded="false"
-                >
-                    <div class="absolute inset-0 bg-brand-100 rounded-md scale-0 group-hover:scale-100 transition-transform duration-200"></div>
-                    <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-                    <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-                    <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-                </button>
-
-                <!-- Enhanced Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
-                    <a 
-                        href="/" 
-                        class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
-                    >
-                        <span class="relative z-10">Home</span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                    </a>
-
-                    <!-- Services Dropdown -->
-                    <div class="relative group">
-                        <button 
-                            class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden"
-                            aria-label="Services menu"
-                        >
-                            <span class="relative z-10">Services</span>
-                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 relative z-10" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                            </svg>
-                            <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                        </button>
-                        
-                        <!-- Dropdown Menu -->
-                        <div class="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="p-2">
-                                <a href="/computers" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group">
-                                    <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium">New & Refurb Computers</div>
-                                        <div class="text-sm text-gray-500">Quality desktops and laptops</div>
-                                    </div>
-                                </a>
-                                
-                                <a href="/repairs" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group">
-                                    <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
-                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium">Repairs & Upgrades</div>
-                                        <div class="text-sm text-gray-500">Expert diagnostic and repair</div>
-                                    </div>
-                                </a>
-                                
-                                <a href="/gaming" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group">
-                                    <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-200 transition-colors">
-                                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                            <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 000 1.788l4 2.001zM19.5 7.134V4.896a1 1 0 00-.553-.894L13 1.002a1 1 0 00-.894 0L6.158 3.893A1 1 0 006 4.896v3.237a1 1 0 00.553.894L12.5 11.634a1 1 0 00.894 0l5.947-2.607A1 1 0 0019.5 8.134zM3.447 8.894A1 1 0 004 9.236V15a1 1 0 001.447.894l4-2A1 1 0 0010 13V9.236a1 1 0 00-.553-.894L3.5 6.345A1 1 0 003 7.134v1.002c0 .351.182.676.447.758z"/>
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div class="font-medium">Custom Gaming Builds</div>
-                                        <div class="text-sm text-gray-500">High-performance gaming PCs</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a 
-                        href="/about" 
-                        class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
-                    >
-                        <span class="relative z-10">About</span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                    </a>
-                    
-                    <a 
-                        href="/contact" 
-                        class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group border-2 border-transparent hover:border-brand-200"
-                    >
-                        <span class="relative z-10">Contact</span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                    </a>
-                </nav>
-            </div>
-        </div>
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4 transition-all duration-300" id="header-content">
+      <!-- Enhanced Logo and Brand -->
+      <a href="/" class="flex items-center gap-3 group relative" aria-label="Chiltern Computers Homepage">
+        <!-- Glow effect -->
+        <div class="absolute -inset-2 bg-gradient-to-r from-brand-400/20 to-blue-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
         
-        <!-- Scroll progress bar -->
-        <div id="scroll-progress" class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-500 to-blue-500 transition-all duration-100 ease-out shadow-sm" style="width: 0%"></div>
-    </header>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
-    
-    <!-- Mobile Menu - Fixed width and positioning -->
-    <nav 
-        id="mobileMenu" 
-        class="fixed top-0 right-0 h-full w-72 max-w-[80vw] bg-white/98 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden"
-        role="navigation" 
-        aria-label="Mobile navigation"
-    >
-        <div class="p-6">
-            <!-- Mobile menu header -->
-            <div class="flex items-center justify-between mb-8">
-                <div class="flex items-center gap-2">
-                    <div class="h-8 w-8 bg-gradient-to-br from-brand-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                        CC
-                    </div>
-                    <span class="font-bold text-brand-600">Menu</span>
-                </div>
-                <button id="closeMobileMenu" class="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200" aria-label="Close menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Mobile menu items -->
-            <div class="space-y-2">
-                <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                    Home
-                </a>
-                <a href="/about" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                    About
-                </a>
-                
-                <!-- Mobile Services Section -->
-                <div class="px-4 py-2">
-                    <div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Services</div>
-                    <div class="space-y-1">
-                        <a href="/computers" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                            </svg>
-                            <span>New & Refurb Computers</span>
-                        </a>
-                        <a href="/repairs" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                            </svg>
-                            <span>Repairs & Upgrades</span>
-                        </a>
-                        <a href="/gaming" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                            <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 000 1.788l4 2.001zM19.5 7.134V4.896a1 1 0 00-.553-.894L13 1.002a1 1 0 00-.894 0L6.158 3.893A1 1 0 006 4.896v3.237a1 1 0 00.553.894L12.5 11.634a1 1 0 00.894 0l5.947-2.607A1 1 0 0019.5 8.134zM3.447 8.894A1 1 0 004 9.236V15a1 1 0 001.447.894l4-2A1 1 0 0010 13V9.236a1 1 0 00-.553-.894L3.5 6.345A1 1 0 003 7.134v1.002c0 .351.182.676.447.758z"/>
-                            </svg>
-                            <span>Custom Gaming Builds</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <a href="/contact" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                    Contact
-                </a>
-                
-                <!-- Mobile call button -->
-                <a 
-                    href="tel:01708347341" 
-                    class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-3 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-md font-medium mt-4"
-                >
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    <span>Call: 01708 347341</span>
-                </a>
-            </div>
+        <!-- Logo with loading optimization -->
+        <img 
+          src="/logo_homepage.webp" 
+          alt="Chiltern Computers Logo" 
+          class="h-10 w-auto transition-all duration-300 group-hover:scale-110 relative z-10"
+          width="40"
+          height="40"
+          loading="eager"
+          decoding="async"
+        />
+        
+        <div class="relative z-10">
+          <h1 class="text-xl font-bold text-brand-600 group-hover:text-brand-700 transition-all duration-300">
+            Chiltern Computers
+          </h1>
+          <p class="text-sm text-gray-600 hidden sm:block group-hover:text-gray-700 transition-colors duration-300">
+            Professional IT Support & Repairs
+          </p>
         </div>
-    </nav>
+      </a>
+
+     
+
+      <!-- Enhanced Mobile menu button -->
+      <button
+        id="mobileMenuToggle"
+        class="md:hidden flex flex-col gap-1 p-2 relative overflow-hidden group rounded-md transition-all duration-300"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+      >
+        <div class="absolute inset-0 bg-brand-100 rounded-md scale-0 group-hover:scale-100 transition-transform duration-200"></div>
+        <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+        <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+        <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
+      </button>
+
+      <!-- Enhanced Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+        <a 
+          href="/" 
+          class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
+          aria-current={url.pathname === '/' ? 'page' : undefined}
+        >
+          <span class="relative z-10">Home</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+        </a>
+
+       <!-- Enhanced Services Dropdown with better UX -->
+        <div class="relative group">
+          <button
+            id="servicesToggle"
+            class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium flex items-center gap-1 relative overflow-hidden group"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span class="relative z-10">Services</span>
+            <svg id="services-chevron" class="w-4 h-4 transition-all duration-300 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+          </button>
+
+          <div
+            id="servicesDropdown"
+            class="absolute left-0 mt-2 w-64 bg-white/98 backdrop-blur-md border border-gray-200/60 rounded-xl shadow-2xl z-50 hidden opacity-0 transform scale-95 transition-all duration-300"
+            role="menu"
+          >
+            <div class="p-2">
+              <a
+                href="/services/custom-pcs"
+                class="block px-4 py-3 hover:bg-gradient-to-r hover:from-brand-50 hover:to-blue-50 text-gray-700 hover:text-brand-600 transition-all duration-300 rounded-lg relative group"
+                role="menuitem"
+              >
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-1 bg-gradient-to-b from-brand-500 to-blue-500 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center rounded-full"></div>
+                <div class="flex items-start gap-3 pl-4">
+                  <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <div>
+                    <strong class="relative z-10">Custom PCs</strong>
+                    <span class="block text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300 relative z-10">Gaming & workstations built to spec</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a
+                href="/services/repairs"
+                class="block px-4 py-3 hover:bg-gradient-to-r hover:from-brand-50 hover:to-blue-50 text-gray-700 hover:text-brand-600 transition-all duration-300 rounded-lg relative group"
+                role="menuitem"
+              >
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-1 bg-gradient-to-b from-brand-500 to-blue-500 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center rounded-full"></div>
+                <div class="flex items-start gap-3 pl-4">
+                  <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <div>
+                    <strong class="relative z-10">Repairs & Upgrades</strong>
+                    <span class="block text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300 relative z-10">Fast diagnosis & professional fixes</span>
+                  </div>
+                </div>
+              </a>
+              
+              <a
+                href="/services/refurbished"
+                class="block px-4 py-3 hover:bg-gradient-to-r hover:from-brand-50 hover:to-blue-50 text-gray-700 hover:text-brand-600 transition-all duration-300 rounded-lg relative group"
+                role="menuitem"
+              >
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-1 bg-gradient-to-b from-brand-500 to-blue-500 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center rounded-full"></div>
+                <div class="flex items-start gap-3 pl-4">
+                  <svg class="w-5 h-5 text-brand-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                  </svg>
+                  <div>
+                    <strong class="relative z-10">Refurbished PCs</strong>
+                    <span class="block text-sm text-gray-500 group-hover:text-gray-600 transition-colors duration-300 relative z-10">Quality pre-owned systems with warranty</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <a 
+          href="/about" 
+          class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
+          aria-current={url.pathname === '/about' ? 'page' : undefined}
+        >
+          <span class="relative z-10">About</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+        </a>
+        
+        <a 
+          href="/contact" 
+          class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group border-2 border-transparent hover:border-brand-200"
+          aria-current={url.pathname === '/contact' ? 'page' : undefined}
+        >
+          <span class="relative z-10">Contact</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+        </a>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Enhanced scroll progress bar -->
+  <div id="scroll-progress" class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-500 to-blue-500 transition-all duration-100 ease-out shadow-sm" style="width: 0%"></div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
+  
+  <!-- Enhanced Mobile Menu -->
+  <nav 
+    id="mobileMenu" 
+    class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white/98 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden"
+    role="navigation" 
+    aria-label="Mobile navigation"
+  >
+    <div class="p-6">
+      <!-- Mobile menu header -->
+      <div class="flex items-center justify-between mb-8">
+        <div class="flex items-center gap-2">
+          <img src="/logo_homepage.webp" alt="Chiltern Computers" class="h-8 w-auto" width="32" height="32" loading="lazy">
+          <span class="font-bold text-brand-600">Menu</span>
+        </div>
+        <button id="closeMobileMenu" class="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu items -->
+      <div class="space-y-2">
+        <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
+          Home
+        </a>
+        
+       <!-- Mobile services submenu -->
+<div class="space-y-2">
+  <button id="mobileServicesToggle" class="w-full flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
+    <span>Services</span>
+    <svg id="mobile-services-chevron" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+  <div id="mobileServicesSubmenu" class="hidden ml-4 space-y-2">
+    <a href="/services/custom-pcs" class="block px-4 py-2 text-sm text-gray-600 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
+      Custom PCs
+    </a>
+    <a href="/services/repairs" class="block px-4 py-2 text-sm text-gray-600 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
+      Repairs & Upgrades
+    </a>
+    <a href="/services/refurbished" class="block px-4 py-2 text-sm text-gray-600 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
+      Refurbished PCs
+    </a>
+  </div>
+</div>
+
+<!-- Mobile games submenu -->
+<div class="space-y-2">
+  <button id="mobileGamesToggle" class="w-full flex items-center justify-between px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-gray-700 dark:hover:text-brand-400 rounded-lg transition-all duration-200 font-medium">
+    <span>Games</span>
+    <svg id="mobile-games-chevron" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+  <div id="mobileGamesSubmenu" class="hidden ml-4 space-y-2 bg-white dark:bg-gray-800 rounded-lg">
+    <a href="/games/space-invaders" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-gray-700 dark:hover:text-brand-400 rounded-lg transition-all duration-200">
+      Space Invaders
+    </a>
+    <a href="/games/asteroids" class="block px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-gray-700 dark:hover:text-brand-400 rounded-lg transition-all duration-200">
+      Asteroids
+    </a>
+  </div>
+</div>
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const header = document.getElementById('main-header');
-            const headerContent = document.getElementById('header-content');
-            const scrollProgress = document.getElementById('scroll-progress');
-            const trustBanner = document.getElementById('trust-banner');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-            const closeMobileMenu = document.getElementById('closeMobileMenu');
-            const menuLines = document.querySelectorAll('.menu-line');
-            
-            let isMobileMenuOpen = false;
-            let lastScrollY = 0;
-            let ticking = false;
+<script>
+  // Services toggle
+  const servicesToggle = document.getElementById('mobileServicesToggle');
+  const servicesSubmenu = document.getElementById('mobileServicesSubmenu');
+  const servicesChevron = document.getElementById('mobile-services-chevron');
 
-            // Enhanced scroll effects with translucent header
-            function updateHeaderOnScroll() {
-                const scrollY = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = Math.min((scrollY / docHeight) * 100, 100);
+  servicesToggle.addEventListener('click', () => {
+    servicesSubmenu.classList.toggle('hidden');
+    servicesChevron.classList.toggle('rotate-180');
+  });
 
-                // Update scroll progress bar
-                if (scrollProgress) {
-                    scrollProgress.style.width = `${scrollPercent}%`;
-                }
+  
+</script>
 
-                // Calculate translucency based on scroll position
-                const maxScroll = 300;
-                const scrollRatio = Math.min(scrollY / maxScroll, 1);
-                
-                // Header styling changes with translucent effect
-                if (scrollY > 10) {
-                    const opacity = 0.98 - (scrollRatio * 0.73);
-                    const blurAmount = 12 + (scrollRatio * 8);
-                    
-                    header.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
-                    header.style.backdropFilter = `blur(${blurAmount}px)`;
-                    header.style.WebkitBackdropFilter = `blur(${blurAmount}px)`;
-                    header?.classList.add('shadow-lg');
-                    header?.classList.remove('shadow-md');
-                    
-                    if (headerContent) {
-                        headerContent.style.height = '3rem';
-                    }
-                    
-                    // Hide trust banner on scroll
-                    if (trustBanner) {
-                        trustBanner.style.transform = 'translateY(-100%)';
-                        trustBanner.style.opacity = '0';
-                        trustBanner.style.visibility = 'hidden';
-                    }
-                    
-                    // Move header to top when banner is hidden
-                    header.style.top = '0';
-                } else {
-                    // Reset to normal state
-                    header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                    header.style.backdropFilter = 'blur(12px)';
-                    header.style.WebkitBackdropFilter = 'blur(12px)';
-                    header?.classList.add('shadow-md');
-                    header?.classList.remove('shadow-lg');
-                    
-                    if (headerContent) {
-                        headerContent.style.height = '4rem';
-                    }
-                    
-                    // Show trust banner
-                    if (trustBanner) {
-                        trustBanner.style.transform = 'translateY(0)';
-                        trustBanner.style.opacity = '1';
-                        trustBanner.style.visibility = 'visible';
-                    }
-                    
-                    // Position header below banner when banner is visible
-                    header.style.top = '2rem';
-                }
+        
+        <a href="/about" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
+          About
+        </a>
+        <a href="/contact" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
+          Contact
+        </a>
+      </div>
 
-                // Smart header hide/show (optional - you can remove this if you want header always visible)
-                if (scrollY > 100) {
-                    if (scrollY > lastScrollY && scrollY > 200 && !isMobileMenuOpen) {
-                        // Scrolling down - hide header
-                        header.style.transform = 'translateY(-100%)';
-                    } else {
-                        // Scrolling up - show header
-                        header.style.transform = 'translateY(0)';
-                    }
-                }
-                
-                lastScrollY = scrollY;
-                ticking = false;
-            }
+      <script>
+       // Enhanced dropdown functionality for both Services and Games
+document.addEventListener('DOMContentLoaded', function() {
+  // Services dropdown elements
+  const servicesToggle = document.getElementById('servicesToggle');
+  const servicesDropdown = document.getElementById('servicesDropdown');
+  const servicesChevron = document.getElementById('services-chevron');
+  
+  
+  
+  // Mobile menu elements
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMobileMenu = document.getElementById('closeMobileMenu');
+  
+  // Mobile services submenu
+  const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+  const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+  const mobileServicesChevron = document.getElementById('mobile-services-chevron');
+  
+  
 
-            function requestScrollUpdate() {
-                if (!ticking) {
-                    requestAnimationFrame(updateHeaderOnScroll);
-                    ticking = true;
-                }
-            }
+  // Enhanced dropdown functionality that works for both dropdowns
+  function createDropdownHandler(toggle, dropdown, chevron) {
+    if (!toggle || !dropdown || !chevron) return;
+    
+    let isOpen = false;
+    let hoverTimer;
 
-            window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+    // Show dropdown on hover
+    toggle.addEventListener('mouseenter', () => {
+      clearTimeout(hoverTimer);
+      isOpen = true;
+      dropdown.classList.remove('hidden');
+      dropdown.classList.remove('opacity-0', 'scale-95');
+      dropdown.classList.add('opacity-100', 'scale-100');
+      toggle.setAttribute('aria-expanded', 'true');
+      chevron.style.transform = 'rotate(180deg)';
+    });
 
-            // Mobile menu functionality
-            function openMobileMenu() {
-                isMobileMenuOpen = true;
-                document.body.style.overflow = 'hidden';
-                mobileMenuOverlay?.classList.remove('hidden');
-                mobileMenu?.classList.remove('translate-x-full');
-                
-                // Animate hamburger to X
-                menuLines.forEach((line, index) => {
-                    if (index === 0) line.style.transform = 'rotate(45deg) translateY(4px)';
-                    if (index === 1) line.style.opacity = '0';
-                    if (index === 2) line.style.transform = 'rotate(-45deg) translateY(-4px)';
-                });
-                
-                setTimeout(() => {
-                    mobileMenuOverlay?.classList.remove('opacity-0');
-                }, 10);
-            }
+    toggle.addEventListener('mouseleave', () => {
+      hoverTimer = setTimeout(() => {
+        isOpen = false;
+        dropdown.classList.add('opacity-0', 'scale-95');
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        toggle.setAttribute('aria-expanded', 'false');
+        chevron.style.transform = 'rotate(0deg)';
+        setTimeout(() => {
+          dropdown.classList.add('hidden');
+        }, 300);
+      }, 150);
+    });
 
-            function closeMobileMenuFunc() {
-                isMobileMenuOpen = false;
-                document.body.style.overflow = '';
-                mobileMenuOverlay?.classList.add('opacity-0');
-                mobileMenu?.classList.add('translate-x-full');
-                
-                // Reset hamburger
-                menuLines.forEach(line => {
-                    line.style.transform = '';
-                    line.style.opacity = '';
-                });
-                
-                setTimeout(() => {
-                    mobileMenuOverlay?.classList.add('hidden');
-                }, 300);
-            }
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(hoverTimer);
+    });
 
-            // Event listeners
-            mobileMenuToggle?.addEventListener('click', openMobileMenu);
-            closeMobileMenu?.addEventListener('click', closeMobileMenuFunc);
-            mobileMenuOverlay?.addEventListener('click', closeMobileMenuFunc);
+    dropdown.addEventListener('mouseleave', () => {
+      hoverTimer = setTimeout(() => {
+        isOpen = false;
+        dropdown.classList.add('opacity-0', 'scale-95');
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        toggle.setAttribute('aria-expanded', 'false');
+        chevron.style.transform = 'rotate(0deg)';
+        setTimeout(() => {
+          dropdown.classList.add('hidden');
+        }, 300);
+      }, 150);
+    });
 
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && isMobileMenuOpen) {
-                    closeMobileMenuFunc();
-                }
-            });
+    // Click functionality for mobile/touch devices
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Close other dropdowns first
+      closeAllDropdowns();
+      
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        dropdown.classList.remove('hidden');
+        dropdown.classList.remove('opacity-0', 'scale-95');
+        dropdown.classList.add('opacity-100', 'scale-100');
+        toggle.setAttribute('aria-expanded', 'true');
+        chevron.style.transform = 'rotate(180deg)';
+      } else {
+        dropdown.classList.add('opacity-0', 'scale-95');
+        dropdown.classList.remove('opacity-100', 'scale-100');
+        toggle.setAttribute('aria-expanded', 'false');
+        chevron.style.transform = 'rotate(0deg)';
+        setTimeout(() => {
+          dropdown.classList.add('hidden');
+        }, 300);
+      }
+    });
 
-            // Add staggered animation to nav items
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach((link, index) => {
-                link.style.animationDelay = `${index * 100}ms`;
-            });
+    return { isOpen: () => isOpen, close: () => {
+      isOpen = false;
+      dropdown.classList.add('opacity-0', 'scale-95');
+      dropdown.classList.remove('opacity-100', 'scale-100');
+      toggle.setAttribute('aria-expanded', 'false');
+      chevron.style.transform = 'rotate(0deg)';
+      setTimeout(() => {
+        dropdown.classList.add('hidden');
+      }, 300);
+    }};
+  }
+
+  // Create dropdown handlers
+  const servicesHandler = createDropdownHandler(servicesToggle, servicesDropdown, servicesChevron);
+  const gamesHandler = createDropdownHandler(gamesToggle, gamesDropdown, gamesChevron);
+
+  // Function to close all dropdowns
+  function closeAllDropdowns() {
+    if (servicesHandler) servicesHandler.close();
+   
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.relative.group')) {
+      closeAllDropdowns();
+    }
+  });
+
+  // Mobile menu functionality
+  function toggleMobileSubmenu(toggle, submenu, chevron) {
+    const isOpen = !submenu.classList.contains('hidden');
+    
+    if (isOpen) {
+      submenu.classList.add('hidden');
+      chevron.style.transform = 'rotate(0deg)';
+    } else {
+      submenu.classList.remove('hidden');
+      chevron.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  // Mobile services submenu
+  if (mobileServicesToggle) {
+    mobileServicesToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleMobileSubmenu(mobileServicesToggle, mobileServicesSubmenu, mobileServicesChevron);
+    });
+  }
+
+  
+
+  // Close mobile menu
+  if (closeMobileMenu) {
+    closeMobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuOverlay.classList.add('opacity-0');
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+    });
+  }
+
+  // Close mobile menu when clicking overlay
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', () => {
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenuOverlay.classList.add('opacity-0');
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+    });
+  }
+
+  // Keyboard navigation support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+    }
+  });
+
+  // Scroll progress bar
+  const scrollProgress = document.getElementById('scroll-progress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    });
+  }
+});
+      </script>
+    </div>
+  </nav>
+
+      
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('main-header');
+    const headerContent = document.getElementById('header-content');
+    const scrollProgress = document.getElementById('scroll-progress');
+    const trustBanner = document.getElementById('trust-banner');
+    const servicesToggle = document.getElementById('servicesToggle');
+    const servicesDropdown = document.getElementById('servicesDropdown');
+    const chevronIcon = document.getElementById('services-chevron');
+    
+    // Mobile menu elements
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const mobileServicesSubmenu = document.getElementById('mobileServicesSubmenu');
+    const mobileServicesChevron = document.getElementById('mobile-services-chevron');
+    
+    let isServicesOpen = false;
+    let isMobileMenuOpen = false;
+    let isMobileServicesOpen = false;
+    let lastScrollY = 0;
+
+    // Enhanced scroll effects with performance optimization
+    let ticking = false;
+    function updateHeaderOnScroll() {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = Math.min((scrollY / docHeight) * 100, 100);
+
+      // Update scroll progress bar
+      if (scrollProgress) {
+        scrollProgress.style.width = `${scrollPercent}%`;
+      }
+
+      // Header styling changes
+      if (scrollY > 20) {
+        header?.classList.add('bg-white/98', 'shadow-lg');
+        header?.classList.remove('bg-white/95', 'shadow-md');
+        headerContent?.classList.add('py-3');
+        headerContent?.classList.remove('py-4');
+        
+        // Hide trust banner on scroll for cleaner look
+        if (trustBanner) {
+          trustBanner.style.transform = 'translateY(-100%)';
+          trustBanner.style.opacity = '0';
+        }
+      } else {
+        header?.classList.add('bg-white/95', 'shadow-md');
+        header?.classList.remove('bg-white/98', 'shadow-lg');
+        headerContent?.classList.add('py-4');
+        headerContent?.classList.remove('py-3');
+        
+        // Show trust banner
+        if (trustBanner) {
+          trustBanner.style.transform = 'translateY(0)';
+          trustBanner.style.opacity = '1';
+        }
+      }
+
+      // Smart header hide/show
+      if (scrollY > 100) {
+        if (scrollY > lastScrollY && scrollY > 200 && !isServicesOpen && !isMobileMenuOpen) {
+          // Scrolling down - hide header
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up - show header
+          header.style.transform = 'translateY(0)';
+        }
+      }
+      
+      lastScrollY = scrollY;
+      ticking = false;
+    }
+
+    function requestScrollUpdate() {
+      if (!ticking) {
+        requestAnimationFrame(updateHeaderOnScroll);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+
+    // Enhanced mobile menu functionality
+    function openMobileMenu() {
+      isMobileMenuOpen = true;
+      document.body.style.overflow = 'hidden';
+      mobileMenuOverlay?.classList.remove('hidden');
+      mobileMenu?.classList.remove('translate-x-full');
+      
+      // Add staggered animation to menu items
+      setTimeout(() => {
+        mobileMenuOverlay?.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeMobileMenuFunc() {
+      isMobileMenuOpen = false;
+      document.body.style.overflow = '';
+      mobileMenuOverlay?.classList.add('opacity-0');
+      mobileMenu?.classList.add('translate-x-full');
+      
+      setTimeout(() => {
+        mobileMenuOverlay?.classList.add('hidden');
+      }, 300);
+    }
+
+    // Mobile menu event listeners
+    mobileMenuToggle?.addEventListener('click', openMobileMenu);
+    closeMobileMenu?.addEventListener('click', closeMobileMenuFunc);
+    mobileMenuOverlay?.addEventListener('click', closeMobileMenuFunc);
+
+    // Mobile services submenu
+    mobileServicesToggle?.addEventListener('click', () => {
+      isMobileServicesOpen = !isMobileServicesOpen;
+      if (isMobileServicesOpen) {
+        mobileServicesSubmenu?.classList.remove('hidden');
+        mobileServicesChevron.style.transform = 'rotate(180deg)';
+      } else {
+        mobileServicesSubmenu?.classList.add('hidden');
+        mobileServicesChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // Enhanced desktop services dropdown
+    if (servicesToggle && servicesDropdown && chevronIcon) {
+      let hoverTimer;
+
+      // Show dropdown on hover
+      servicesToggle.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+        isServicesOpen = true;
+        servicesDropdown.classList.remove('hidden');
+        servicesDropdown.classList.remove('opacity-0', 'scale-95');
+        servicesDropdown.classList.add('opacity-100', 'scale-100');
+        servicesToggle.setAttribute('aria-expanded', 'true');
+        chevronIcon.style.transform = 'rotate(180deg)';
+      });
+
+      servicesToggle.addEventListener('mouseleave', () => {
+        hoverTimer = setTimeout(() => {
+          isServicesOpen = false;
+          servicesDropdown.classList.add('opacity-0', 'scale-95');
+          servicesDropdown.classList.remove('opacity-100', 'scale-100');
+          servicesToggle.setAttribute('aria-expanded', 'false');
+          chevronIcon.style.transform = 'rotate(0deg)';
+          setTimeout(() => {
+            servicesDropdown.classList.add('hidden');
+          }, 300);
+        }, 150);
+      });
+
+      servicesDropdown.addEventListener('mouseenter', () => {
+        clearTimeout(hoverTimer);
+      });
+
+      servicesDropdown.addEventListener('mouseleave', () => {
+        hoverTimer = setTimeout(() => {
+          isServicesOpen = false;
+          servicesDropdown.classList.add('opacity-0', 'scale-95');
+          servicesDropdown.classList.remove('opacity-100', 'scale-100');
+          servicesToggle.setAttribute('aria-expanded', 'false');
+          chevronIcon.style.transform = 'rotate(0deg)';
+          setTimeout(() => {
+            servicesDropdown.classList.add('hidden');
+          }, 300);
+        }, 150);
+      });
+
+      // Click functionality for mobile/touch devices
+      servicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        isServicesOpen = !isServicesOpen;
+        
+        if (isServicesOpen) {
+          servicesDropdown.classList.remove('hidden');
+          servicesDropdown.classList.remove('opacity-0', 'scale-95');
+          servicesDropdown.classList.add('opacity-100', 'scale-100');
+          servicesToggle.setAttribute('aria-expanded', 'true');
+          chevronIcon.style.transform = 'rotate(180deg)';
+        } else {
+          servicesDropdown.classList.add('opacity-0', 'scale-95');
+          servicesDropdown.classList.remove('opacity-100', 'scale-100');
+          servicesToggle.setAttribute('aria-expanded', 'false');
+          chevronIcon.style.transform = 'rotate(0deg)';
+          setTimeout(() => {
+            servicesDropdown.classList.add('hidden');
+          }, 300);
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!servicesToggle.contains(e.target) && !servicesDropdown.contains(e.target)) {
+          if (isServicesOpen) {
+            isServicesOpen = false;
+            servicesDropdown.classList.add('opacity-0', 'scale-95');
+            servicesDropdown.classList.remove('opacity-100', 'scale-100');
+            servicesToggle.setAttribute('aria-expanded', 'false');
+            chevronIcon.style.transform = 'rotate(0deg)';
+            setTimeout(() => {
+              servicesDropdown.classList.add('hidden');
+            }, 300);
+          }
+        }
+      });
+    }
+
+    // Enhanced mobile menu button animation
+    const menuLines = document.querySelectorAll('.menu-line');
+    mobileMenuToggle?.addEventListener('click', () => {
+      menuLines.forEach((line, index) => {
+        if (isMobileMenuOpen) {
+          // Transform to X
+          if (index === 0) line.style.transform = 'rotate(45deg) translateY(6px)';
+          if (index === 1) line.style.opacity = '0';
+          if (index === 2) line.style.transform = 'rotate(-45deg) translateY(-6px)';
+        } else {
+          // Reset to hamburger
+          line.style.transform = '';
+          line.style.opacity = '';
+        }
+      });
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (isMobileMenuOpen) {
+          closeMobileMenuFunc();
+        }
+        if (isServicesOpen) {
+          isServicesOpen = false;
+          servicesDropdown.classList.add('opacity-0', 'scale-95');
+          servicesDropdown.classList.remove('opacity-100', 'scale-100');
+          servicesToggle.setAttribute('aria-expanded', 'false');
+          chevronIcon.style.transform = 'rotate(0deg)';
+          setTimeout(() => {
+            servicesDropdown.classList.add('hidden');
+          }, 300);
+        }
+      }
+    });
+
+    // Intersection Observer for animations (optional enhancement)
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
         });
-    </script>
-</body>
-</html>
+      }, observerOptions);
+
+      // Observe elements that should animate in
+      document.querySelectorAll('.nav-link').forEach(link => {
+        observer.observe(link);
+      });
+    }
+
+    // Preload critical images for better performance
+    const criticalImages = ['/logo_homepage.webp'];
+    criticalImages.forEach(src => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = src;
+      document.head.appendChild(link);
+    });
+  });
+</script>
