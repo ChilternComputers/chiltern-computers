@@ -7,64 +7,50 @@ import Hero from '../components/Hero.astro';
   <Hero />
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;400;500;600;700;800;900&family=Exo+2:wght@200;300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
     
     :root {
       --cosmic-blue: #1e3a8a;
       --nebula-purple: #7c3aed;
+      --dark-purple: #4c1d95;
+      --deep-purple: #312e81;
       --starlight-white: #f8fafc;
       --plasma-cyan: #06b6d4;
       --aurora-green: #10b981;
       --solar-orange: #f59e0b;
       --mars-red: #dc2626;
       --deep-space: #0f172a;
+      --darker-space: #0c0f1a;
+      --void-black: #020617;
       --asteroid-gray: #374151;
       --comet-silver: #e5e7eb;
     }
     
     /* FONTS */
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 700; }
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
     .alien-font { font-family: 'Exo 2', sans-serif; }
     .tech-font { font-family: 'Space Mono', monospace; }
     
-    /* ANIMATIONS */
+    /* ANIMATIONS - Reduced for performance */
     @keyframes orbit {
-      0% { transform: translateX(0) rotate(0deg); }
-      100% { transform: translateX(0) rotate(360deg); }
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
     
     @keyframes float-cosmic {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-15px) scale(1.05); }
-    }
-    
-    @keyframes starfield-twinkle {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.2); }
-    }
-    
-    @keyframes ufo-hover {
-      0%, 100% { transform: translateY(0px) rotate(-2deg); }
-      25% { transform: translateY(-8px) rotate(1deg); }
-      50% { transform: translateY(-12px) rotate(2deg); }
-      75% { transform: translateY(-6px) rotate(-1deg); }
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
     }
     
     @keyframes plasma-flow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
     }
     
     @keyframes cosmic-pulse {
-      0%, 100% { 
-        text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
-        filter: brightness(1);
-      }
-      50% { 
-        text-shadow: 0 0 20px currentColor, 0 0 30px currentColor, 0 0 40px currentColor;
-        filter: brightness(1.3);
-      }
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
     }
     
     @keyframes auto-scroll {
@@ -72,16 +58,8 @@ import Hero from '../components/Hero.astro';
       100% { transform: translateX(-50%); }
     }
     
-    @keyframes meteor-streak {
-      0% { transform: translateX(-100px) translateY(100px) rotate(45deg); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(45deg); opacity: 0; }
-    }
-    
     /* SHARED STYLES */
     .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .starfield-blink { animation: starfield-twinkle 2s ease-in-out infinite; }
     .galaxy-text {
       background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
       background-size: 200% 200%;
@@ -91,340 +69,223 @@ import Hero from '../components/Hero.astro';
       -webkit-text-fill-color: transparent;
     }
     
-    /* CARD STYLES */
+    /* CARD STYLES - Smaller and more efficient */
     .cosmic-card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.1));
-      border: 2px solid var(--plasma-cyan);
-      border-radius: 20px;
-      backdrop-filter: blur(20px);
-      box-shadow: 
-        0 10px 30px rgba(6, 182, 212, 0.3),
-        inset 0 1px 0 rgba(248, 250, 252, 0.1);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
       position: relative;
-      overflow: hidden;
-    }
-    
-    .cosmic-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan), var(--nebula-purple));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .cosmic-card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
-      transition: left 0.8s ease;
     }
     
     .cosmic-card:hover {
-      transform: translateY(-10px) scale(1.03);
+      transform: translateY(-4px);
       border-color: var(--aurora-green);
-      box-shadow: 
-        0 25px 50px rgba(16, 185, 129, 0.4),
-        0 0 40px rgba(6, 182, 212, 0.3),
-        inset 0 1px 0 rgba(248, 250, 252, 0.2);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
     }
     
-    .cosmic-card:hover::before { opacity: 1; }
-    .cosmic-card:hover::after { left: 100%; }
-    
-    /* BUTTON STYLES */
+    /* BUTTON STYLES - Smaller */
     .space-button {
       background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
-      border: 2px solid var(--aurora-green);
+      border: 1px solid var(--aurora-green);
       color: var(--starlight-white);
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      transition: all 0.5s ease;
-      font-size: 16px;
-      position: relative;
-      overflow: hidden;
-      text-shadow: 0 0 10px var(--starlight-white);
-      box-shadow: 0 0 20px var(--cosmic-blue);
-    }
-    
-    .space-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(248, 250, 252, 0.3), transparent);
-      transition: left 0.8s ease;
+      gap: 8px;
+      transition: all 0.3s ease;
+      font-size: 14px;
     }
     
     .space-button:hover {
-      transform: translateY(-4px) scale(1.05);
-      border-color: var(--plasma-cyan);
-      box-shadow: 
-        0 20px 40px rgba(30, 58, 138, 0.5),
-        0 0 40px var(--aurora-green);
-      animation: ufo-hover 2s ease-in-out infinite;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
     }
     
-    .space-button:hover::before { left: 100%; }
-    
-    /* PLANET ICONS */
+    /* PLANET ICONS - Smaller */
     .planet-icon {
-      width: 100px;
-      height: 100px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
-      margin: 0 auto 24px;
-      border: 3px solid var(--aurora-green);
-      transition: all 0.5s ease;
-      animation: orbit 20s linear infinite;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .planet-icon::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(248, 250, 252, 0.3), transparent 50%);
+      font-size: 24px;
+      margin: 0 auto 16px;
+      border: 2px solid var(--aurora-green);
+      transition: all 0.3s ease;
+      animation: orbit 15s linear infinite;
     }
     
     .planet-icon:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
       animation-play-state: paused;
-      box-shadow: 0 0 30px currentColor;
     }
     
-    /* GRIDS */
+    /* GRIDS - More responsive */
     .stats-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-      gap: 32px; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 16px; 
     }
     .services-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-      gap: 32px; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 20px; 
     }
     .features-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-      gap: 40px; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: 24px; 
     }
     
-    /* EFFECTS */
-    .meteor {
-      position: absolute;
-      width: 2px;
-      height: 20px;
-      background: linear-gradient(0deg, transparent, var(--starlight-white));
-      animation: meteor-streak 8s linear infinite;
-    }
-    
-    .starfield {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: var(--starlight-white);
-      border-radius: 50%;
-      animation: starfield-twinkle 3s ease-in-out infinite;
-    }
-    
-    .scroll-container { overflow: hidden; position: relative; }
-    .scroll-container:hover .auto-scroll-content { animation-play-state: paused; }
-    
-    /* SHARED BACKGROUNDS */
-    .section-bg-1 {
-      background: radial-gradient(circle at 20% 30%, var(--cosmic-blue) 0%, var(--deep-space) 40%), 
-                  radial-gradient(circle at 80% 70%, var(--nebula-purple) 0%, var(--deep-space) 40%), 
-                  var(--deep-space);
-      background-size: 400% 400%;
-      animation: plasma-flow 12s ease-in-out infinite;
-    }
-    .section-bg-2 {
-      background: linear-gradient(45deg, var(--deep-space), rgba(30, 58, 138, 0.2), var(--deep-space));
-      background-size: 400% 400%;
-      animation: plasma-flow 15s ease-in-out infinite;
-    }
-    .section-bg-3 {
-      background: linear-gradient(90deg, var(--deep-space), rgba(124, 58, 237, 0.2), var(--deep-space));
-      background-size: 300% 300%;
-      animation: plasma-flow 18s ease-in-out infinite;
-    }
-    .section-bg-4 {
-      background: linear-gradient(135deg, var(--deep-space), rgba(6, 182, 212, 0.2), var(--deep-space));
-      background-size: 400% 400%;
-      animation: plasma-flow 20s ease-in-out infinite;
-    }
+    /* CONSISTENT BACKGROUND THROUGHOUT - MATCHES FOOTER */
+    .section-bg-1,
+    .section-bg-2,
+    .section-bg-3,
+    .section-bg-4,
     .section-bg-5 {
-      background: linear-gradient(45deg, var(--deep-space), rgba(16, 185, 129, 0.2), var(--deep-space));
-      background-size: 300% 300%;
-      animation: plasma-flow 22s ease-in-out infinite;
+      background: 
+        radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
+        var(--void-black);
+      background-size: 800px 600px, 900px 700px;
+      animation: plasma-flow 30s ease-in-out infinite;
+    }
+    
+    /* MOBILE OPTIMIZATIONS */
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .services-grid { grid-template-columns: 1fr; gap: 16px; }
+      .features-grid { grid-template-columns: 1fr; gap: 20px; }
+      .space-button { padding: 10px 20px; font-size: 13px; }
+      .planet-icon { width: 50px; height: 50px; font-size: 20px; }
     }
   </style>
 
   <!-- Hero Section -->
-  <section class="section-bg-1" style="padding: 140px 0; position: relative; overflow: hidden;">
+  <section class="section-bg-1" style="padding: 80px 0; position: relative; overflow: hidden;">
     
-    <!-- Starfield Component -->
-    <div class="starfield" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-    <div class="starfield" style="top: 30%; left: 80%; animation-delay: 1s;"></div>
-    <div class="starfield" style="top: 60%; left: 15%; animation-delay: 2s;"></div>
-    <div class="starfield" style="top: 80%; left: 70%; animation-delay: 0.5s;"></div>
-    <div class="starfield" style="top: 20%; left: 60%; animation-delay: 1.5s;"></div>
-    <div class="starfield" style="top: 70%; left: 40%; animation-delay: 2.5s;"></div>
-    <div class="starfield" style="top: 5%; left: 45%; animation-delay: 3s;"></div>
-    <div class="starfield" style="top: 25%; left: 30%; animation-delay: 0.8s;"></div>
-    <div class="starfield" style="top: 45%; left: 90%; animation-delay: 1.8s;"></div>
-    <div class="starfield" style="top: 65%; left: 25%; animation-delay: 2.8s;"></div>
-    <div class="starfield" style="top: 85%; left: 55%; animation-delay: 0.3s;"></div>
-    <div class="starfield" style="top: 15%; left: 85%; animation-delay: 1.3s;"></div>
-    <div class="starfield" style="top: 35%; left: 10%; animation-delay: 2.3s;"></div>
-    <div class="starfield" style="top: 55%; left: 75%; animation-delay: 0.6s;"></div>
-    <div class="starfield" style="top: 75%; left: 5%; animation-delay: 1.6s;"></div>
-    <div class="starfield" style="top: 95%; left: 35%; animation-delay: 2.6s;"></div>
-    <div class="starfield" style="top: 12%; left: 95%; animation-delay: 3.2s;"></div>
-    <div class="starfield" style="top: 52%; left: 50%; animation-delay: 0.9s;"></div>
-    <div class="starfield" style="top: 72%; left: 80%; animation-delay: 1.9s;"></div>
-    <div class="starfield" style="top: 92%; left: 20%; animation-delay: 2.9s;"></div>
-    
-    <!-- Meteors -->
-    <div class="meteor" style="top: 20%; animation-delay: 3s;"></div>
-    <div class="meteor" style="top: 60%; animation-delay: 6s;"></div>
-    
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 10;">
       
-      <div style="text-align: center; margin-bottom: 64px;">
-        <div style="display: inline-flex; align-items: center; gap: 12px; background: rgba(6, 182, 212, 0.1); padding: 8px 20px; border-radius: 30px; border: 1px solid var(--plasma-cyan); margin-bottom: 32px; backdrop-filter: blur(10px);">
-          <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: starfield-twinkle 1s ease-in-out infinite;"></div>
-          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: 500;">🛸 COMPUTER SERVICES</span>
+      <div style="text-align: center; margin-bottom: 48px;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
+          <div style="width: 8px; height: 8px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
+          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">🛸 COMPUTER SERVICES</span>
         </div>
         
-        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(48px, 8vw, 84px); margin-bottom: 32px; line-height: 1.1;">
+        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 56px); margin-bottom: 20px; line-height: 1.2;">
           CHILTERN COMPUTERS
         </h1>
         
-        <p class="alien-font" style="font-size: 26px; color: var(--comet-silver); margin-bottom: 48px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-          Professional computer repairs, custom builds, and tech support with stellar service across Essex.
+        <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+          Professional computer repairs, custom builds, new and refurbished computers and tech support across Havering.
         </p>
         
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-          <a href="tel:07971331814" class="space-button space-font">
-            <span>🚀</span>
-            CONTACT MISSION CONTROL
-          </a>
-          <a href="#services" class="space-button space-font" style="background: rgba(6, 182, 212, 0.1); border: 2px solid var(--plasma-cyan);">
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+         <a href="/contact" class="space-button space-font">
+    <span>🚀</span>
+    CONTACT US
+</a>
+          <a href="#services" class="space-button space-font" style="background: rgba(6, 182, 212, 0.1);">
             <span>🛸</span>
-            EXPLORE SERVICES
+            SERVICES
           </a>
         </div>
       </div>
       
-      <!-- Stats -->
+      <!-- Stats - Smaller cards -->
       <div class="stats-grid">
-        <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px; animation: float-cosmic 3s ease-in-out infinite;">🌌</div>
-          <div class="space-font cosmic-glow" style="font-size: 32px; color: var(--plasma-cyan); margin-bottom: 12px;">20+</div>
-          <div class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-weight: 500;">Years Experience</div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🌌</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--plasma-cyan); margin-bottom: 8px;">20+</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Years Experience</div>
         </div>
-        <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px; animation: float-cosmic 3s ease-in-out infinite; animation-delay: 0.3s;">🚀</div>
-          <div class="space-font cosmic-glow" style="font-size: 32px; color: var(--aurora-green); margin-bottom: 12px;">5,000+</div>
-          <div class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-weight: 500;">Computers Repaired</div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🚀</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--aurora-green); margin-bottom: 8px;">10,000+</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Repairs Done</div>
         </div>
-        <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px; animation: float-cosmic 3s ease-in-out infinite; animation-delay: 0.6s;">⭐</div>
-          <div class="space-font cosmic-glow" style="font-size: 32px; color: var(--solar-orange); margin-bottom: 12px;">98%</div>
-          <div class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-weight: 500;">Customer Satisfaction</div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--solar-orange); margin-bottom: 8px;">98%</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Satisfaction</div>
         </div>
-        <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 16px; animation: float-cosmic 3s ease-in-out infinite; animation-delay: 0.9s;">🛰️</div>
-          <div class="space-font cosmic-glow" style="font-size: 32px; color: var(--nebula-purple); margin-bottom: 12px;">Same Day</div>
-          <div class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-weight: 500;">Repair Service</div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🛰️</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--nebula-purple); margin-bottom: 8px;">Same Day</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Service</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="section-bg-2" style="padding: 120px 0; position: relative; overflow: hidden;">
+  <section id="services" class="section-bg-2" style="padding: 80px 0;">
     
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
       
-      <div style="text-align: center; margin-bottom: 80px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: 48px; margin-bottom: 24px;">
-          TECH SERVICES
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+          OUR SERVICES
         </h2>
-        <div style="height: 4px; width: 200px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan), var(--nebula-purple)); margin: 0 auto 32px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 20px; max-width: 700px; margin: 0 auto;">
-          Expert computer solutions and IT support with next-level service and stellar results.
+        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
+          Expert computer solutions and IT support with professional service.
         </p>
       </div>
       
       <div class="services-grid">
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue); border-color: var(--cosmic-blue);">🛠️</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--cosmic-blue); font-size: 20px; margin-bottom: 20px;">COMPUTER REPAIRS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
-            Professional laptop and desktop repair services for all brands. Expert diagnostics and component replacement.
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue);">🛠️</div>
+          <h3 class="space-font" style="color: var(--cosmic-blue); font-size: 16px; margin-bottom: 12px;">COMPUTER REPAIRS</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+            Professional laptop and desktop repair services. Expert diagnostics and component replacement.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green); border-color: var(--aurora-green); animation-delay: 2s;">🖥️</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px; margin-bottom: 20px;">CUSTOM PC BUILDS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
-            Bespoke computer systems built to your specifications. From budget builds to high-end gaming machines.
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);">🖥️</div>
+          <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">NEW & REFURB COMPUTERS</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+            Quality new and professionally refurbished computers for home and business.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange); border-color: var(--solar-orange); animation-delay: 4s;">⚡</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px; margin-bottom: 20px;">UPGRADES & OPTIMIZATION</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange);">⚡</div>
+          <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 12px;">UPGRADES & OPTIMIZATION</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Speed up your computer with SSD installations, RAM upgrades, and performance optimization.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan); border-color: var(--plasma-cyan); animation-delay: 6s;">🛸</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 20px;">DATA RECOVERY</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
-            Recover important files from failed hard drives and corrupted storage devices. Advanced recovery techniques.
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan);">🛸</div>
+          <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 12px;">DATA RECOVERY</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+            Recover important files from failed hard drives and corrupted storage devices.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(220, 38, 38, 0.2); color: var(--mars-red); border-color: var(--mars-red); animation-delay: 8s;">🛡️</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--mars-red); font-size: 20px; margin-bottom: 20px;">SECURITY & CLEANUP</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
-            Virus removal, malware protection, and system cleanup. Keep your computer running smoothly and securely.
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(220, 38, 38, 0.2); color: var(--mars-red);">🛡️</div>
+          <h3 class="space-font" style="color: var(--mars-red); font-size: 16px; margin-bottom: 12px;">SECURITY & CLEANUP</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+            Virus removal, malware protection, and system cleanup for smooth operation.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(124, 58, 237, 0.2); color: var(--nebula-purple); border-color: var(--nebula-purple); animation-delay: 10s;">🎮</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 20px; margin-bottom: 20px;">GAMING SYSTEMS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.7; font-size: 16px;">
-            High-performance gaming PCs with latest graphics cards and cooling systems. Built for serious gamers.
+        <div class="cosmic-card" style="padding: 24px;">
+          <div class="planet-icon" style="background: rgba(124, 58, 237, 0.2); color: var(--nebula-purple);">🎮</div>
+          <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 12px;">GAMING SYSTEMS</h3>
+          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+            High-performance gaming PCs with latest graphics cards and cooling systems.
           </p>
         </div>
       </div>
@@ -432,45 +293,45 @@ import Hero from '../components/Hero.astro';
   </section>
 
   <!-- Why Choose Us -->
-  <section class="section-bg-3" style="padding: 120px 0; position: relative; overflow: hidden;">
+  <section class="section-bg-3" style="padding: 80px 0;">
     
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
       
-      <div style="text-align: center; margin-bottom: 80px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: 48px; margin-bottom: 24px;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           WHY CHOOSE US
         </h2>
-        <div style="height: 4px; width: 200px; background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green)); margin: 0 auto 32px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 20px;">
-          Why customers across Essex trust Chiltern Computers for their technology needs.
+        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+          Why customers across Essex trust us for their technology needs.
         </p>
       </div>
       
       <div class="features-grid">
-        <div class="cosmic-card" style="padding: 48px; text-align: center;">
-          <div style="font-size: 80px; margin-bottom: 32px; animation: float-cosmic 4s ease-in-out infinite;">🌟</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 12px;">EXPERT TECHNICIANS</h3>
-          <h4 class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 24px;">20+ Years Experience</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.8; font-size: 16px;">
-            Two decades of professional computer repair and IT support experience across Essex and London.
+        <div class="cosmic-card" style="padding: 32px; text-align: center;">
+          <div style="font-size: 48px; margin-bottom: 20px;">🌟</div>
+          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 8px;">COMPUTER ENGINEER</h3>
+          <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">20+ Years Experience</h4>
+          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+            Two decades of professional computer repair and supply experience.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 48px; text-align: center;">
-          <div style="font-size: 80px; margin-bottom: 32px; animation: float-cosmic 4s ease-in-out infinite;">🚀</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 24px; margin-bottom: 12px;">FAST SERVICE</h3>
-          <h4 class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 24px;">Quick Turnaround</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.8; font-size: 16px;">
-            Most repairs completed within 24-48 hours. Same-day service available for urgent repairs.
+        <div class="cosmic-card" style="padding: 32px; text-align: center;">
+          <div style="font-size: 48px; margin-bottom: 20px;">🚀</div>
+          <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 8px;">FAST SERVICE</h3>
+          <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">Quick Turnaround</h4>
+          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+            Most repairs completed within 24-48 hours. Same-day service available.
           </p>
         </div>
         
-        <div class="cosmic-card" style="padding: 48px; text-align: center;">
-          <div style="font-size: 80px; margin-bottom: 32px; animation: float-cosmic 4s ease-in-out infinite;">💎</div>
-          <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 24px; margin-bottom: 12px;">FAIR PRICING</h3>
-          <h4 class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 24px;">Transparent Costs</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.8; font-size: 16px;">
-            No hidden fees or surprise charges. Free diagnostics and upfront pricing on all services.
+        <div class="cosmic-card" style="padding: 32px; text-align: center;">
+          <div style="font-size: 48px; margin-bottom: 20px;">💎</div>
+          <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 8px;">FAIR PRICING</h3>
+          <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">Transparent Costs</h4>
+          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+            No hidden fees. Free diagnostics and upfront pricing on all services.
           </p>
         </div>
       </div>
@@ -478,81 +339,81 @@ import Hero from '../components/Hero.astro';
   </section>
 
   <!-- Reviews -->
-  <section class="section-bg-4" style="padding: 120px 0; position: relative; overflow: hidden;">
+  <section class="section-bg-4" style="padding: 80px 0;">
     
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
       
-      <div style="text-align: center; margin-bottom: 80px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: 48px; margin-bottom: 24px;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           CUSTOMER REVIEWS
         </h2>
-        <div style="height: 4px; width: 200px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 32px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--solar-orange); font-size: 20px;">
-          What our satisfied customers say about our computer services.
+        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+          What our satisfied customers say about our services.
         </p>
       </div>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-        <div class="cosmic-card" style="padding: 32px;">
-          <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px; margin-bottom: 20px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 24px; line-height: 1.7; font-size: 16px;">
-            "Excellent service! They fixed my laptop quickly and the price was very reasonable. Highly recommend!"
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+        <div class="cosmic-card" style="padding: 16px;">
+          <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+            "Excellent service! Fixed my laptop quickly and reasonably priced. Highly recommend!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <p class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 6px;">Sarah J.</p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">Romford</p>
+              <p class="space-font" style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;">Sarah J.</p>
+              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Romford</p>
             </div>
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 14px;">✓</span>
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
             </div>
           </div>
         </div>
         
-        <div class="cosmic-card" style="padding: 32px;">
-          <div class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 20px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 24px; line-height: 1.7; font-size: 16px;">
-            "Great computer repair service. Professional work and my PC is running like new again!"
+        <div class="cosmic-card" style="padding: 16px;">
+          <div class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+            "Great repair service. Professional work and my PC runs like new!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <p class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 6px;">Tom H.</p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">Harold Wood</p>
+              <p class="space-font" style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;">Tom H.</p>
+              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Harold Wood</p>
             </div>
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 14px;">✓</span>
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
             </div>
           </div>
         </div>
         
-        <div class="cosmic-card" style="padding: 32px;">
-          <div class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 20px; margin-bottom: 20px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 24px; line-height: 1.7; font-size: 16px;">
-            "Built me an amazing gaming computer within my budget. Excellent quality and customer service!"
+        <div class="cosmic-card" style="padding: 16px;">
+          <div class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+            "Built me an amazing gaming computer within budget. Excellent quality!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <p class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 6px;">Rachel A.</p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">Hornchurch</p>
+              <p class="space-font" style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;">Rachel A.</p>
+              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Hornchurch</p>
             </div>
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 14px;">✓</span>
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
             </div>
           </div>
         </div>
         
-        <div class="cosmic-card" style="padding: 32px;">
-          <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px; margin-bottom: 20px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 24px; line-height: 1.7; font-size: 16px;">
-            "Best computer support around! Always helpful, reliable, and incredibly knowledgeable."
+        <div class="cosmic-card" style="padding: 16px;">
+          <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
+          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+            "Best computer support! Always helpful, reliable, and knowledgeable."
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <p class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 6px;">Mike D.</p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">Dagenham</p>
+              <p class="space-font" style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;">Mike D.</p>
+              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Dagenham</p>
             </div>
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 14px;">✓</span>
+            <div style="width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); display: flex; align-items: center; justify-content: center;">
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
             </div>
           </div>
         </div>
@@ -560,148 +421,74 @@ import Hero from '../components/Hero.astro';
     </div>
   </section>
 
-  <!-- Service Areas -->
-  <section class="section-bg-5" style="padding: 120px 0; position: relative; overflow: hidden;">
+  
+  <!-- Service Areas -->   
+<section class="section-bg-5" style="padding: 80px 0;">          
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">              
+    <div style="text-align: center; margin-bottom: 48px;">         
+      <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">           
+        SERVICE AREAS         
+      </h2>         
+      <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>         
+      <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">           
+        Professional computer services across Havering and surrounding areas.         
+      </p>       
+    </div>               
     
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+    <div style="padding: 16px; border: 1px solid var(--plasma-cyan); border-radius: 12px; background: rgba(15, 23, 42, 0.3); backdrop-filter: blur(10px); overflow: hidden;">         
+      <div style="display: flex; gap: 24px; animation: auto-scroll 25s linear infinite; align-items: center;">           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">⭐ Chadwell Heath</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌊 Upminster</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌑 Cranham</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌈 Elm Park</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌸 Pilgrims Hatch</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌿 Hainault</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">⚡ Rush Green</span>
+                      
+        <!-- Seamless loop duplicates -->           
+        <span style="color: var(--plasma-cyan); font-size: 12px; font-weight: 600; white-space: nowrap;">🌍 Harold Hill</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🪐 Romford</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌙 Harold Wood</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌟 Hornchurch</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">☄️ Collier Row</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌌 Dagenham</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🛸 Rainham</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🚀 Brentwood</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌠 Gidea Park</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🛰️ Emmerson Park</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">⭐ Chadwell Heath</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌊 Upminster</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌑 Cranham</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌈 Elm Park</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌸 Pilgrims Hatch</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌿 Hainault</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">⚡ Rush Green</span>
+      </div>                  
       
-      <div style="text-align: center; margin-bottom: 80px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: 48px; margin-bottom: 24px;">
-          SERVICE AREAS
-        </h2>
-        <div style="height: 4px; width: 200px; background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green)); margin: 0 auto 32px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--cosmic-blue); font-size: 20px;">
-          Professional computer services across Essex and surrounding areas.
-        </p>
-      </div>
-      
-      <div class="scroll-container" style="padding: 0 0 24px 0; margin-bottom: 80px; mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);">
-        <div class="auto-scroll-content" style="display: flex; gap: 24px; animation: auto-scroll 35s linear infinite;">
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0; border-color: var(--solar-orange);">
-            <div style="background: var(--solar-orange); color: var(--deep-space); font-size: 10px; padding: 6px 12px; border-radius: 15px; margin-bottom: 16px; display: inline-block; font-weight: 700;">🌍 HQ</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Harold Hill</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌍 Main Office</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Romford</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🪐 RM1•RM2•RM3</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Harold Wood</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌙 RM3</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Hornchurch</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌟 RM11•RM12</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Collier Row</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">☄️ RM5</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Dagenham</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌌 RM8•RM9•RM10</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Rainham</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🛸 RM13</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Brentwood</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🚀 CM13•CM14•CM15</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Chadwell Heath</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">⭐ RM6</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Gidea Park</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌠 IG6•IG7•RM2</p>
-          </div>
-          <!-- Seamless loop duplicates -->
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0; border-color: var(--solar-orange);">
-            <div style="background: var(--solar-orange); color: var(--deep-space); font-size: 10px; padding: 6px 12px; border-radius: 15px; margin-bottom: 16px; display: inline-block; font-weight: 700;">🌍 HQ</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Harold Hill</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌍 Main Office</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Romford</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🪐 RM1•RM2•RM3</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Harold Wood</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌙 RM3</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Hornchurch</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌟 RM11•RM12</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Collier Row</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">☄️ RM5</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Dagenham</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌌 RM8•RM9•RM10</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Rainham</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🛸 RM13</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Brentwood</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🚀 CM13•CM14•CM15</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Chadwell Heath</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">⭐ RM6</p>
-          </div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center; min-width: 180px; flex-shrink: 0;">
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 12px;">Gidea Park</h3>
-            <p class="tech-font" style="color: var(--comet-silver); font-size: 11px;">🌠 IG6•IG7•RM2</p>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 20px;">
-          <p class="tech-font starfield-blink" style="color: var(--plasma-cyan); font-size: 12px; opacity: 0.8;">
-            🛸 AUTO-SCROLLING GALACTIC NETWORK 🛸
-          </p>
-        </div>
-      </div>
-      
-      <!-- Final CTA -->
-      <div class="cosmic-card" style="padding: 60px; text-align: center;">
-        <h3 class="space-font cosmic-glow starfield-blink" style="color: var(--aurora-green); font-size: 32px; margin-bottom: 20px;">
-          READY TO GET STARTED?
-        </h3>
-        <p class="alien-font" style="color: var(--starlight-white); font-size: 20px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-          Contact Chiltern Computers today for professional computer services and tech support.
-        </p>
-        
-        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
-          <a href="tel:07971331814" class="space-button space-font" style="font-size: 18px;">
-            <span>🛸</span>
-            CONTACT: 07971 331814
-          </a>
-          <a href="mailto:info@chilterncomputers.co.uk" class="space-button space-font" style="background: rgba(6, 182, 212, 0.1); border: 2px solid var(--plasma-cyan);">
-            <span>📡</span>
-            TRANSMIT MESSAGE
-          </a>
-        </div>
-        
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-          <span style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--aurora-green); color: var(--aurora-green); padding: 10px 20px; border-radius: 25px; font-size: 12px; font-weight: 600;">
-            ✓ FREE DIAGNOSTICS
-          </span>
-          <span style="background: rgba(6, 182, 212, 0.2); border: 1px solid var(--plasma-cyan); color: var(--plasma-cyan); padding: 10px 20px; border-radius: 25px; font-size: 12px; font-weight: 600;">
-            ✓ WARRANTY INCLUDED
-          </span>
-          <span style="background: rgba(245, 158, 11, 0.2); border: 1px solid var(--solar-orange); color: var(--solar-orange); padding: 10px 20px; border-radius: 25px; font-size: 12px; font-weight: 600;">
-            ✓ SAME DAY SERVICE
-          </span>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div style="text-align: center; margin-top: 12px;">           
+        <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px; opacity: 0.6;">             
+          🛸 SERVICE COVERAGE ACROSS HAVERING & ESSEX 🛸           
+        </p>         
+      </div>       
+    </div>     
+  </div>   
+</section>
 
-</Layout>
+<style>
+@keyframes auto-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+</Layout>12px; font-weight: 600; white-space: nowrap;">🌍 Harold Hill</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🪐 Romford</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌙 Harold Wood</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌟 Hornchurch</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">☄️ Collier Row</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌌 Dagenham</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🛸 Rainham</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🚀 Brentwood</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌠 Gidea Park</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🛰️ Emmerson Park</span>
+        <span style="color: var(--plasma-cyan); font-size:

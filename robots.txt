@@ -1,0 +1,17 @@
+// src/pages/robots.txt.ts
+export async function GET() {
+  const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: https://chilterncomputers.net/sitemap.xml
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_astro/`;
+
+  return new Response(robotsTxt, {
+    headers: {
+      'Content-Type': 'text/plain',
+    }
+  });
+}
