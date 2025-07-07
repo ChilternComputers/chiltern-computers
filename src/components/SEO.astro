@@ -1,42 +1,200 @@
 ---
 export interface Props {
-	title: string;
-	description?: string;
-	image?: string;
-	keywords?: string;
+  title: string;
+  description?: string;
+  image?: string;
+  keywords?: string;
+  type?: 'website' | 'article' | 'service';
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
 }
 
 const { 
-	title, 
-	description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford", 
-	image = "/og-image.jpg",
-	keywords = "computer repair romford, pc repair harold hill, laptop repair essex"
+  title, 
+  description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford. Expert PC repair, laptop repair, virus removal & data recovery services.", 
+  image = "/og-image.jpg",
+  keywords = "computer repair romford, pc repair harold hill, laptop repair essex, virus removal romford, data recovery harold hill, business IT support essex",
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false
 } = Astro.props;
 
-const fullTitle = title ? `${title} | Chiltern Computers` : 'Chiltern Computers';
+const fullTitle = title ? `${title} | Chiltern Computers` : 'Chiltern Computers - Computer Repair Harold Hill, Romford';
+
+const baseUrl = 'https://chilterncomputers.net';
+const canonicalUrl = `${baseUrl}${Astro.url.pathname}`;
+const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
+
+// Enhanced structured data with more schema types
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Chiltern Computers",
+  "image": [`${baseUrl}/logo.png`, `${baseUrl}/storefront.jpg`],
+  "description": "Professional computer repair and IT support services in Harold Hill, Romford. Specializing in PC repair, laptop repair, virus removal, and data recovery.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "38 Hilldene Avenue",
+    "addressLocality": "Harold Hill",
+    "addressRegion": "Essex",
+    "postalCode": "RM3 8YP",
+    "addressCountry": "GB"
+  },
+  "telephone": "01708347341",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.60589,
+    "longitude": 0.23353
+  },
+  "url": baseUrl,
+  "sameAs": [
+    "https://www.facebook.com/chilterncomputers",
+    "https://twitter.com/chilterncomputers"
+  ],
+  "openingHours": [
+    "Mo-Fr 09:00-18:00",
+    "Sa 09:00-15:00"
+  ],
+  "priceRange": "££",
+  "seriesArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.60589,
+      "longitude": 0.23353
+    },
+    "geoRadius": "10000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Computer Repair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Computer Repair",
+          "description": "Professional desktop and laptop computer repair services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Virus Removal",
+          "description": "Complete virus and malware removal services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Data Recovery",
+          "description": "Professional data recovery from failed hard drives and storage devices"
+        }
+      }
+    ]
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Chiltern Computers",
+  "url": baseUrl,
+  "logo": `${baseUrl}/logo.png`,
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "01708347341",
+    "contactType": "customer service",
+    "areaServed": "GB",
+    "availableLanguage": "English"
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Chiltern Computers",
+  "url": baseUrl,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${baseUrl}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
 ---
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	
-	<!-- Primary Meta Tags -->
-	<title>{fullTitle}</title>
-	<meta name="title" content={fullTitle} />
-	<meta name="description" content={description} />
-	<meta name="keywords" content={keywords} />
-	
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content={fullTitle} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={image} />
-	
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:title" content={fullTitle} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content={image} />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Enhanced robots meta -->
+  <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalUrl} />
+  
+  <!-- Language and content -->
+  <meta http-equiv="Content-Language" content="en-GB" />
+  <meta name="language" content="en-GB" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Chiltern Computers" />
+
+  <!-- Enhanced Open Graph -->
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content="Chiltern Computers" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={fullImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:locale" content="en_GB" />
+  {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+  <!-- Enhanced Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@chilterncomputers" />
+  <meta name="twitter:creator" content="@chilterncomputers" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={fullImageUrl} />
+
+  <!-- Theme and app info -->
+  <meta name="theme-color" content="#1a202c" />
+  <meta name="msapplication-TileColor" content="#1a202c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- Enhanced Location Meta Tags -->
+  <meta name="geo.region" content="GB-ESS" />
+  <meta name="geo.placename" content="Harold Hill, Romford" />
+  <meta name="geo.position" content="51.60589;0.23353" />
+  <meta name="ICBM" content="51.60589, 0.23353" />
+  <meta name="DC.title" content={fullTitle} />
+
+  <!-- Performance optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//maps.googleapis.com" />
+  <link rel="preload" href={fullImageUrl} as="image" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 </head>
