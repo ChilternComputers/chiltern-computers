@@ -65,7 +65,7 @@
     <!-- Enhanced Header with Translucent Effect -->
     <header id="main-header" class="backdrop-blur-md shadow-md fixed left-0 right-0 z-50 transition-all duration-300" role="banner" style="background-color: rgba(255, 255, 255, 0.95); top: 2rem;">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center transition-all duration-300" id="header-content" style="height: 4rem;">
+            <div class="flex items-center gap-4 transition-all duration-300" id="header-content" style="height: 4rem;">
                 
                 <!-- Enhanced Logo and Brand - Made more compact on mobile -->
                 <a href="/" class="flex items-center gap-2 sm:gap-3 group relative flex-shrink-0" aria-label="Chiltern Computers Homepage">
@@ -89,7 +89,7 @@
                     </div>
                 </a>
 
-                <!-- Mobile menu button - Fixed positioning and visibility -->
+                <!-- Mobile menu button - Positioned closer to logo -->
                 <button
                     id="mobileMenuToggle"
                     class="md:hidden flex flex-col gap-1 p-3 relative overflow-hidden group rounded-md transition-all duration-300 bg-white/80 hover:bg-brand-50 border border-gray-200/50 shadow-sm z-50"
@@ -100,6 +100,9 @@
                     <span class="menu-line w-5 h-0.5 bg-gray-700 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
                     <span class="menu-line w-5 h-0.5 bg-gray-700 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
                 </button>
+
+                <!-- Spacer to push desktop nav to the right -->
+                <div class="flex-1 hidden md:block"></div>
 
                 <!-- Enhanced Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
