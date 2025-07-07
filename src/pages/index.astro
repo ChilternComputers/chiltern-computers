@@ -9,6 +9,16 @@ import Hero from '../components/Hero.astro';
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
     
+    /* MOBILE OVERFLOW FIXES */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
     :root {
       --cosmic-blue: #1e3a8a;
       --nebula-purple: #7c3aed;
@@ -53,9 +63,22 @@ import Hero from '../components/Hero.astro';
       50% { text-shadow: 0 0 15px currentColor; }
     }
     
+    @keyframes marquee {
+      0% { 
+        transform: translate3d(100%, 0, 0); 
+      }
+      100% { 
+        transform: translate3d(-100%, 0, 0); 
+      }
+    }
+    
     @keyframes auto-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { 
+        transform: translateX(100%); 
+      }
+      100% { 
+        transform: translateX(-100%); 
+      }
     }
     
     /* SHARED STYLES */
@@ -156,42 +179,143 @@ import Hero from '../components/Hero.astro';
         var(--void-black);
       background-size: 800px 600px, 900px 700px;
       animation: plasma-flow 30s ease-in-out infinite;
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* CONTAINER FIXES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
     
     /* MOBILE OPTIMIZATIONS */
     @media (max-width: 768px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .services-grid { grid-template-columns: 1fr; gap: 16px; }
-      .features-grid { grid-template-columns: 1fr; gap: 20px; }
-      .space-button { padding: 10px 20px; font-size: 13px; }
-      .planet-icon { width: 50px; height: 50px; font-size: 20px; }
+      /* Prevent horizontal overflow */
+      .section-bg-1,
+      .section-bg-2,
+      .section-bg-3,
+      .section-bg-4,
+      .section-bg-5 {
+        background-size: 400px 300px, 450px 350px;
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .stats-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px; 
+      }
+      .services-grid { 
+        grid-template-columns: 1fr; 
+        gap: 16px; 
+      }
+      .features-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+      }
+      .space-button { 
+        padding: 10px 20px; 
+        font-size: 13px; 
+      }
+      .planet-icon { 
+        width: 50px; 
+        height: 50px; 
+        font-size: 20px; 
+      }
+      
+      /* Fix button container wrapping */
+      .button-container {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      
+      /* Fix auto-scroll container */
+      .scroll-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .scroll-content {
+        display: flex;
+        gap: 16px;
+        animation: auto-scroll 25s linear infinite;
+        align-items: center;
+        white-space: nowrap;
+        width: max-content;
+      }
+      
+      /* Ensure no element exceeds viewport */
+      * {
+        max-width: 100vw;
+      }
+      
+      /* Fix text wrapping */
+      .mobile-text {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+    
+    /* EXTRA SMALL MOBILE */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      
+      .space-button {
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: 0;
+      }
+      
+      .scroll-content {
+        gap: 12px;
+      }
+      
+      .scroll-content span {
+        font-size: 10px !important;
+      }
     }
   </style>
 
   <!-- Hero Section -->
-  <section class="section-bg-1" style="padding: 80px 0; position: relative; overflow: hidden;">
-    
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 10;">
-      
+  <section class="section-bg-1" style="padding: 80px 0;">
+    <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
         <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.1); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
           <div style="width: 8px; height: 8px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
           <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">🛸 COMPUTER SERVICES</span>
         </div>
         
-        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 56px); margin-bottom: 20px; line-height: 1.2;">
+        <h1 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(32px, 6vw, 56px); margin-bottom: 20px; line-height: 1.2;">
           CHILTERN COMPUTERS
         </h1>
         
-        <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+        <p class="alien-font mobile-text" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
           Professional computer repairs, custom builds, new and refurbished computers and tech support across Havering.
         </p>
         
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-         <a href="/contact" class="space-button space-font">
-    <span>🚀</span>
-    CONTACT US
-</a>
+        <div class="button-container">
+          <a href="/contact" class="space-button space-font">
+            <span>🚀</span>
+            CONTACT US
+          </a>
           <a href="#services" class="space-button space-font" style="background: rgba(6, 182, 212, 0.1);">
             <span>🛸</span>
             SERVICES
@@ -227,15 +351,13 @@ import Hero from '../components/Hero.astro';
 
   <!-- Services Section -->
   <section id="services" class="section-bg-2" style="padding: 80px 0;">
-    
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      
+    <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           OUR SERVICES
         </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 20px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
+        <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
           Expert computer solutions and IT support with professional service.
         </p>
       </div>
@@ -244,7 +366,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue);">🛠️</div>
           <h3 class="space-font" style="color: var(--cosmic-blue); font-size: 16px; margin-bottom: 12px;">COMPUTER REPAIRS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Professional laptop and desktop repair services. Expert diagnostics and component replacement.
           </p>
         </div>
@@ -252,7 +374,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);">🖥️</div>
           <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">NEW & REFURB COMPUTERS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Quality new and professionally refurbished computers for home and business.
           </p>
         </div>
@@ -260,7 +382,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange);">⚡</div>
           <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 12px;">UPGRADES & OPTIMIZATION</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Speed up your computer with SSD installations, RAM upgrades, and performance optimization.
           </p>
         </div>
@@ -268,7 +390,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan);">🛸</div>
           <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 12px;">DATA RECOVERY</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Recover important files from failed hard drives and corrupted storage devices.
           </p>
         </div>
@@ -276,7 +398,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(220, 38, 38, 0.2); color: var(--mars-red);">🛡️</div>
           <h3 class="space-font" style="color: var(--mars-red); font-size: 16px; margin-bottom: 12px;">SECURITY & CLEANUP</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             Virus removal, malware protection, and system cleanup for smooth operation.
           </p>
         </div>
@@ -284,7 +406,7 @@ import Hero from '../components/Hero.astro';
         <div class="cosmic-card" style="padding: 24px;">
           <div class="planet-icon" style="background: rgba(124, 58, 237, 0.2); color: var(--nebula-purple);">🎮</div>
           <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 12px;">GAMING SYSTEMS</h3>
-          <p class="alien-font" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;">
             High-performance gaming PCs with latest graphics cards and cooling systems.
           </p>
         </div>
@@ -294,15 +416,13 @@ import Hero from '../components/Hero.astro';
 
   <!-- Why Choose Us -->
   <section class="section-bg-3" style="padding: 80px 0;">
-    
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      
+    <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           WHY CHOOSE US
         </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+        <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px;">
           Why customers across Essex trust us for their technology needs.
         </p>
       </div>
@@ -312,7 +432,7 @@ import Hero from '../components/Hero.astro';
           <div style="font-size: 48px; margin-bottom: 20px;">🌟</div>
           <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 8px;">COMPUTER ENGINEER</h3>
           <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">20+ Years Experience</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
             Two decades of professional computer repair and supply experience.
           </p>
         </div>
@@ -321,7 +441,7 @@ import Hero from '../components/Hero.astro';
           <div style="font-size: 48px; margin-bottom: 20px;">🚀</div>
           <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 8px;">FAST SERVICE</h3>
           <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">Quick Turnaround</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
             Most repairs completed within 24-48 hours. Same-day service available.
           </p>
         </div>
@@ -330,7 +450,7 @@ import Hero from '../components/Hero.astro';
           <div style="font-size: 48px; margin-bottom: 20px;">💎</div>
           <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 8px;">FAIR PRICING</h3>
           <h4 class="space-font" style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;">Transparent Costs</h4>
-          <p class="alien-font" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
+          <p class="alien-font mobile-text" style="color: var(--comet-silver); line-height: 1.6; font-size: 14px;">
             No hidden fees. Free diagnostics and upfront pricing on all services.
           </p>
         </div>
@@ -340,15 +460,13 @@ import Hero from '../components/Hero.astro';
 
   <!-- Reviews -->
   <section class="section-bg-4" style="padding: 80px 0;">
-    
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      
+    <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           CUSTOMER REVIEWS
         </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 20px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+        <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px;">
           What our satisfied customers say about our services.
         </p>
       </div>
@@ -356,7 +474,7 @@ import Hero from '../components/Hero.astro';
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
         <div class="cosmic-card" style="padding: 16px;">
           <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+          <p class="mobile-text" style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
             "Excellent service! Fixed my laptop quickly and reasonably priced. Highly recommend!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -372,7 +490,7 @@ import Hero from '../components/Hero.astro';
         
         <div class="cosmic-card" style="padding: 16px;">
           <div class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+          <p class="mobile-text" style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
             "Great repair service. Professional work and my PC runs like new!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -388,7 +506,7 @@ import Hero from '../components/Hero.astro';
         
         <div class="cosmic-card" style="padding: 16px;">
           <div class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+          <p class="mobile-text" style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
             "Built me an amazing gaming computer within budget. Excellent quality!"
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -404,7 +522,7 @@ import Hero from '../components/Hero.astro';
         
         <div class="cosmic-card" style="padding: 16px;">
           <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 14px; margin-bottom: 8px;">⭐⭐⭐⭐⭐</div>
-          <p style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
+          <p class="mobile-text" style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;">
             "Best computer support! Always helpful, reliable, and knowledgeable."
           </p>
           <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -421,7 +539,6 @@ import Hero from '../components/Hero.astro';
     </div>
   </section>
 
-  
   <!-- Service Areas -->   
 <section class="section-bg-5" style="padding: 80px 0;">          
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">              
@@ -431,12 +548,22 @@ import Hero from '../components/Hero.astro';
       </h2>         
       <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>         
       <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">           
-        Professional computer services across Havering and surrounding areas.         
+        Professional computer services across Essex and surrounding areas.         
       </p>       
     </div>               
     
     <div style="padding: 16px; border: 1px solid var(--plasma-cyan); border-radius: 12px; background: rgba(15, 23, 42, 0.3); backdrop-filter: blur(10px); overflow: hidden;">         
       <div style="display: flex; gap: 24px; animation: auto-scroll 25s linear infinite; align-items: center;">           
+        <span style="color: var(--plasma-cyan); font-size: 12px; font-weight: 600; white-space: nowrap;">🌍 Harold Hill</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🪐 Romford</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌙 Harold Wood</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌟 Hornchurch</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">☄️ Collier Row</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌌 Dagenham</span>           
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🛸 Rainham</span>           
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🚀 Brentwood</span>
+        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌠 Gidea Park</span>
+        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🛰️ Emmerson Park</span>
         <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">⭐ Chadwell Heath</span>
         <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌊 Upminster</span>
         <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌑 Cranham</span>
@@ -466,7 +593,7 @@ import Hero from '../components/Hero.astro';
       </div>                  
       
       <div style="text-align: center; margin-top: 12px;">           
-        <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px; opacity: 0.6;">             
+        <p class="tech-font starfield-blink" style="color: var(--plasma-cyan); font-size: 9px; opacity: 0.6;">             
           🛸 SERVICE COVERAGE ACROSS HAVERING & ESSEX 🛸           
         </p>         
       </div>       
@@ -480,15 +607,3 @@ import Hero from '../components/Hero.astro';
   100% { transform: translateX(-50%); }
 }
 </style>
-
-</Layout>12px; font-weight: 600; white-space: nowrap;">🌍 Harold Hill</span>           
-        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🪐 Romford</span>           
-        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌙 Harold Wood</span>           
-        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌟 Hornchurch</span>           
-        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">☄️ Collier Row</span>           
-        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🌌 Dagenham</span>           
-        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🛸 Rainham</span>           
-        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🚀 Brentwood</span>
-        <span style="color: var(--plasma-cyan); font-size: 12px; white-space: nowrap;">🌠 Gidea Park</span>
-        <span style="color: var(--comet-silver); font-size: 12px; white-space: nowrap;">🛰️ Emmerson Park</span>
-        <span style="color: var(--plasma-cyan); font-size:
