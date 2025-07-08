@@ -145,6 +145,8 @@ import Layout from '../../layouts/Layout.astro';
       position: relative;
       overflow: hidden;
       padding: 20px;
+      /* Fixed padding for header space */
+      padding-top: 120px; /* Account for header + trust banner */
     }
     
     .hero::before {
@@ -682,7 +684,7 @@ import Layout from '../../layouts/Layout.astro';
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     }
     
-    /* RESPONSIVE DESIGN */
+    /* RESPONSIVE DESIGN - FIXED MOBILE PADDING */
     @media (max-width: 768px) {
       .container {
         padding: 0 16px;
@@ -690,10 +692,17 @@ import Layout from '../../layouts/Layout.astro';
       
       .hero {
         padding: 16px;
+        /* FIXED: Ensure consistent padding with desktop for mobile */
+        padding-top: 140px; /* Account for header + trust banner on mobile */
+        min-height: calc(100vh - 20px); /* Adjust min-height for better mobile experience */
       }
       
       .section {
         padding: 60px 16px;
+      }
+      
+      .services-showcase {
+        padding: 60px 16px; /* Match section padding */
       }
       
       .showcase-grid {
@@ -741,10 +750,17 @@ import Layout from '../../layouts/Layout.astro';
       
       .hero {
         padding: 12px;
+        /* FIXED: Consistent padding for smallest mobile screens */
+        padding-top: 160px; /* Account for header + trust banner on small mobile */
+        min-height: calc(100vh - 40px);
       }
       
       .section {
         padding: 50px 12px;
+      }
+      
+      .services-showcase {
+        padding: 50px 12px; /* Match section padding */
       }
       
       .service-card,
@@ -773,6 +789,16 @@ import Layout from '../../layouts/Layout.astro';
       .hero-content,
       .cta-content {
         padding: 24px 20px;
+      }
+      
+      .tarnished-button {
+        padding: 14px 24px;
+        font-size: 14px;
+      }
+      
+      .button-small {
+        padding: 12px 20px;
+        font-size: 13px;
       }
     }
   </style>
