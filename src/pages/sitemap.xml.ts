@@ -1,6 +1,7 @@
 // src/pages/sitemap.xml.ts
 export async function GET() {
   const baseUrl = 'https://chilterncomputers.net';
+  const currentDate = new Date().toISOString().split('T')[0];
   
   // Define your site structure with priorities and change frequencies
   const routes = [
@@ -9,57 +10,57 @@ export async function GET() {
       url: '/', 
       priority: 1.0, 
       changefreq: 'weekly',
-      lastmod: new Date().toISOString().split('T')[0]
+      lastmod: currentDate
     },
     
     // Main service pages - highest priority after homepage
-    { url: '/services', priority: 0.9, changefreq: 'monthly' },
-    { url: '/computer-repair', priority: 0.9, changefreq: 'monthly' },
-    { url: '/laptop-repair', priority: 0.9, changefreq: 'monthly' },
-    { url: '/virus-removal', priority: 0.8, changefreq: 'monthly' },
-    { url: '/data-recovery', priority: 0.8, changefreq: 'monthly' },
-    { url: '/screen-repair', priority: 0.8, changefreq: 'monthly' },
-    { url: '/business-it-support', priority: 0.8, changefreq: 'monthly' },
+    { url: '/services', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/computer-repair', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/laptop-repair', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/virus-removal', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/data-recovery', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/screen-repair', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/business-it-support', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
     
     // Location pages - important for local SEO
-    { url: '/harold-hill', priority: 0.8, changefreq: 'monthly' },
-    { url: '/romford', priority: 0.8, changefreq: 'monthly' },
-    { url: '/essex', priority: 0.7, changefreq: 'monthly' },
+    { url: '/harold-hill', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/romford', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/essex', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
     
     // Brand-specific repair pages
-    { url: '/apple-repair', priority: 0.7, changefreq: 'monthly' },
-    { url: '/dell-repair', priority: 0.7, changefreq: 'monthly' },
-    { url: '/hp-repair', priority: 0.7, changefreq: 'monthly' },
-    { url: '/lenovo-repair', priority: 0.7, changefreq: 'monthly' },
+    { url: '/apple-repair', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/dell-repair', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/hp-repair', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/lenovo-repair', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
     
     // Secondary services
-    { url: '/hardware-upgrade', priority: 0.7, changefreq: 'monthly' },
-    { url: '/emergency-repair', priority: 0.7, changefreq: 'monthly' },
+    { url: '/hardware-upgrade', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/emergency-repair', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
     
     // Contact and conversion pages
-    { url: '/contact', priority: 0.7, changefreq: 'monthly' },
-    { url: '/quote', priority: 0.7, changefreq: 'monthly' },
+    { url: '/contact', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/quote', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
     
     // Content pages
-    { url: '/about', priority: 0.6, changefreq: 'monthly' },
-    { url: '/faq', priority: 0.6, changefreq: 'monthly' },
-    { url: '/testimonials', priority: 0.6, changefreq: 'monthly' },
-    { url: '/areas-covered', priority: 0.6, changefreq: 'monthly' },
-    { url: '/blog', priority: 0.6, changefreq: 'weekly' },
+    { url: '/about', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/faq', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/testimonials', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas-covered', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/blog', priority: 0.6, changefreq: 'weekly', lastmod: currentDate },
     
-    // Blog posts - can be dynamically generated
-    { url: '/blog/computer-running-slow', priority: 0.5, changefreq: 'yearly' },
-    { url: '/blog/blue-screen-fixes', priority: 0.5, changefreq: 'yearly' },
-    { url: '/blog/prevent-virus-infections', priority: 0.5, changefreq: 'yearly' },
-    { url: '/blog/backup-your-data', priority: 0.5, changefreq: 'yearly' },
-    { url: '/blog/laptop-battery-tips', priority: 0.5, changefreq: 'yearly' },
+    // Blog posts - with realistic lastmod dates
+    { url: '/blog/computer-running-slow', priority: 0.5, changefreq: 'yearly', lastmod: '2024-12-15' },
+    { url: '/blog/blue-screen-fixes', priority: 0.5, changefreq: 'yearly', lastmod: '2024-11-20' },
+    { url: '/blog/prevent-virus-infections', priority: 0.5, changefreq: 'yearly', lastmod: '2024-10-10' },
+    { url: '/blog/backup-your-data', priority: 0.5, changefreq: 'yearly', lastmod: '2024-09-05' },
+    { url: '/blog/laptop-battery-tips', priority: 0.5, changefreq: 'yearly', lastmod: '2024-08-25' },
     
     // Legal pages - lowest priority
-    { url: '/privacy-policy', priority: 0.3, changefreq: 'yearly' },
-    { url: '/terms-of-service', priority: 0.3, changefreq: 'yearly' },
+    { url: '/privacy-policy', priority: 0.3, changefreq: 'yearly', lastmod: '2024-06-01' },
+    { url: '/terms-of-service', priority: 0.3, changefreq: 'yearly', lastmod: '2024-06-01' },
   ];
 
-  // Generate XML
+  // Generate XML with proper formatting
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -67,7 +68,7 @@ export async function GET() {
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${routes.map(route => `  <url>
     <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${route.lastmod || new Date().toISOString().split('T')[0]}</lastmod>
+    <lastmod>${route.lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`).join('\n')}
@@ -76,40 +77,37 @@ ${routes.map(route => `  <url>
   return new Response(sitemap, {
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=86400' // Cache for 24 hours
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400' // Cache for 24 hours
     }
   });
 }
 
-// Alternative: If you want to automatically discover pages from your file system
-export async function getStaticPaths() {
-  // This would scan your pages directory and auto-generate routes
-  // Useful for larger sites with many pages
-  return [];
-}
-
-// robots.txt generator (bonus)
-// Create src/pages/robots.txt.ts
-export function generateRobotsTxt() {
-  const robotsTxt = `User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://chilterncomputers.net/sitemap.xml
-
-# Block access to admin areas (if any)
-Disallow: /admin/
-Disallow: /api/
-Disallow: /_astro/
-
-# Allow important files
-Allow: /favicon.ico
-Allow: /robots.txt
-Allow: /sitemap.xml`;
-
-  return new Response(robotsTxt, {
-    headers: {
-      'Content-Type': 'text/plain',
-    }
-  });
+// Dynamic blog post discovery (if you have a blog directory)
+async function getBlogPosts() {
+  // This would scan your blog directory for posts
+  // Example implementation:
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    
+    const blogDir = path.join(process.cwd(), 'src/content/blog');
+    const files = fs.readdirSync(blogDir);
+    
+    return files
+      .filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
+      .map(file => {
+        const slug = file.replace(/\.(md|mdx)$/, '');
+        const stats = fs.statSync(path.join(blogDir, file));
+        
+        return {
+          url: `/blog/${slug}`,
+          priority: 0.5,
+          changefreq: 'yearly',
+          lastmod: stats.mtime.toISOString().split('T')[0]
+        };
+      });
+  } catch (error) {
+    console.warn('Could not read blog directory:', error);
+    return [];
+  }
 }
