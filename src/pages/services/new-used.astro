@@ -1,0 +1,983 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="New & Refurbished PCs & Laptops Harold Hill | Windows 11 Ready | Chiltern Computers"
+  description="New and quality refurbished laptops and desktops in Harold Hill & Romford. Professionally built/refurbished, Windows 11 ready, with warranty. Perfect for students, home & business use."
+>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+    
+    /* MOBILE OVERFLOW FIXES */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --dark-purple: #4c1d95;
+      --deep-purple: #312e81;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --mars-red: #dc2626;
+      --deep-space: #0f172a;
+      --darker-space: #0c0f1a;
+      --void-black: #020617;
+      --asteroid-gray: #374151;
+      --comet-silver: #e5e7eb;
+      
+      /* CONSISTENT SPACING SYSTEM */
+      --section-padding: 100px 0;
+      --section-gap: 80px;
+      --content-gap: 60px;
+      --card-gap: 32px;
+      --small-gap: 24px;
+    }
+    
+    /* FONTS */
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+    
+    /* ANIMATIONS */
+    @keyframes orbit {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes float-cosmic {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes cosmic-pulse {
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
+    }
+    
+    @keyframes galaxy-flow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+    
+    @keyframes price-glow {
+      0%, 100% { 
+        text-shadow: 0 0 10px var(--aurora-green); 
+        transform: scale(1);
+      }
+      50% { 
+        text-shadow: 0 0 20px var(--aurora-green), 0 0 30px var(--plasma-cyan); 
+        transform: scale(1.05);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    @keyframes glow-pulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+    }
+    
+    /* SHARED STYLES */
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text {
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .price-glow {
+      animation: price-glow 2s ease-in-out infinite;
+      color: var(--aurora-green);
+    }
+    
+    /* CONSISTENT SECTION BACKGROUNDS */
+    .section-bg {
+      background: 
+        linear-gradient(135deg, rgba(2, 6, 23, 0.85), rgba(15, 23, 42, 0.75)),
+        url('/new-used.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    
+    .section-bg-alt {
+      background: 
+        linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.8)),
+        url('/new-used.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    
+    /* CONSISTENT SECTION STYLING */
+    .main-section {
+      padding: var(--section-padding);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--content-gap);
+    }
+    
+    .section-title {
+      font-size: clamp(32px, 6vw, 48px);
+      margin-bottom: var(--small-gap);
+    }
+    
+    .section-divider {
+      height: 4px;
+      width: 150px;
+      background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan));
+      margin: 0 auto var(--small-gap);
+      border-radius: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    .section-subtitle {
+      color: var(--comet-silver);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    
+    /* CARD STYLES */
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cosmic-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--aurora-green), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .cosmic-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--aurora-green);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.3);
+    }
+    
+    .cosmic-card:hover::before {
+      opacity: 1;
+    }
+    
+    /* PRODUCT CARDS */
+    .product-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.15));
+      border: 2px solid var(--plasma-cyan);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 12px 40px rgba(6, 182, 212, 0.25);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-card::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple), var(--solar-orange));
+      background-size: 300% 300%;
+      animation: galaxy-flow 6s ease-in-out infinite;
+      border-radius: 24px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(16, 185, 129, 0.4);
+    }
+    
+    .product-card:hover::after {
+      opacity: 1;
+    }
+    
+    /* BUTTON STYLES */
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+      margin: 0 8px;
+    }
+    
+    .space-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .space-button:hover::before {
+      left: 100%;
+    }
+    
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    
+    /* RESERVE BUTTON */
+    .reserve-button {
+      background: linear-gradient(135deg, var(--aurora-green), var(--plasma-cyan));
+      border: 1px solid var(--starlight-white);
+      color: var(--deep-space);
+      padding: 12px 24px;
+      border-radius: 20px;
+      font-weight: 700;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .reserve-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green));
+    }
+    
+    /* FAQ STYLES */
+    .faq-item {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.1));
+      border: 2px solid transparent;
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: var(--small-gap);
+    }
+    
+    .faq-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+      border-radius: 20px;
+    }
+    
+    .faq-item:hover::before {
+      opacity: 0.1;
+    }
+    
+    .faq-item:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+      animation: glow-pulse 2s infinite;
+    }
+    
+    .faq-question {
+      padding: 28px 32px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .faq-question:hover {
+      background: rgba(16, 185, 129, 0.05);
+    }
+    
+    .faq-question h3 {
+      margin: 0;
+      font-size: 20px;
+      color: var(--plasma-cyan);
+      transition: color 0.3s ease;
+      flex: 1;
+      padding-right: 20px;
+    }
+    
+    .faq-item:hover .faq-question h3 {
+      color: var(--aurora-green);
+    }
+    
+    .faq-icon {
+      font-size: 24px;
+      color: var(--aurora-green);
+      transition: all 0.3s ease;
+      min-width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--nebula-purple);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      opacity: 1;
+    }
+    
+    .faq-answer-content {
+      padding: 0 32px 32px;
+      color: var(--starlight-white);
+      font-size: 16px;
+      line-height: 1.7;
+      border-top: 1px solid rgba(16, 185, 129, 0.2);
+      margin-top: 0;
+      padding-top: 24px;
+    }
+    
+    .faq-highlight {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+      border: 2px solid var(--aurora-green);
+      animation: glow-pulse 3s infinite;
+    }
+    
+    .faq-highlight .faq-question h3 {
+      color: var(--aurora-green);
+    }
+    
+    /* GRIDS */
+    .benefits-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      gap: var(--small-gap); 
+    }
+    .products-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: var(--card-gap); 
+    }
+    .process-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: var(--small-gap); 
+    }
+    .testimonials-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: var(--small-gap); 
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    /* CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    
+    /* SPEC LIST STYLES */
+    .spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .spec-list li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      color: var(--starlight-white);
+      font-size: 14px;
+    }
+    
+    .spec-list li::before {
+      content: '✓';
+      color: var(--aurora-green);
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 16px;
+    }
+    
+    /* MOBILE OPTIMIZATIONS */
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 80px 0;
+        --section-gap: 60px;
+        --content-gap: 40px;
+        --card-gap: 24px;
+        --small-gap: 16px;
+      }
+      
+      .section-bg,
+      .section-bg-alt {
+        background-attachment: scroll;
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .benefits-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: var(--small-gap); 
+      }
+      .products-grid { 
+        grid-template-columns: 1fr; 
+        gap: var(--small-gap); 
+      }
+      .process-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: var(--small-gap); 
+      }
+      .testimonials-grid { 
+        grid-template-columns: 1fr; 
+        gap: var(--small-gap); 
+      }
+      .space-button { 
+        padding: 12px 24px; 
+        font-size: 13px; 
+        margin: 4px;
+      }
+      
+      .faq-question {
+        padding: 24px 20px;
+      }
+      
+      .faq-question h3 {
+        font-size: 18px;
+      }
+      
+      .faq-answer-content {
+        padding: 0 20px 24px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --section-padding: 60px 0;
+        --section-gap: 40px;
+        --content-gap: 30px;
+        --card-gap: 16px;
+        --small-gap: 12px;
+      }
+      
+      .container {
+        padding: 0 12px;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .space-button {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section-bg main-section">
+      <div class="container">
+        <div class="section-header">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;">
+            <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">💻 NEW & REFURBISHED COMPUTERS</span>
+          </div>
+          
+          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(36px, 7vw, 64px); margin-bottom: 24px; line-height: 1.1;">
+            NEW & REFURBISHED COMPUTERS
+          </h1>
+          
+          <p class="alien-font section-subtitle" style="font-size: clamp(18px, 3.5vw, 22px); margin-bottom: 40px; line-height: 1.5;">
+            Brand new builds and professional refurbished laptops & desktops. All systems thoroughly tested, Windows 11 ready. Perfect for students, home, and business use.
+          </p>
+          
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="#products" class="space-button space-font">
+              <span>🛸</span>
+              VIEW OFFERS
+            </a>
+            <a href="#contact" class="space-button space-font" style="background: rgba(6, 182, 212, 0.15);">
+              <span>📞</span>
+              CONTACT US
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Chiltern Computers -->
+    <section class="section-bg-alt main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="space-font galaxy-text cosmic-glow section-title">
+            WHY CHOOSE CHILTERN COMPUTERS?
+          </h2>
+          <div class="section-divider"></div>
+          <p class="alien-font section-subtitle">
+            Whether you need a brand new custom build or a professionally refurbished system, we ensure quality and reliability in every computer we sell.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🆕</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">NEW PC BUILDS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Custom-built new systems with latest components, tailored to your exact needs and budget.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🔧</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">PROFESSIONALLY REFURBISHED</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Thoroughly tested, cleaned, and restored to optimal performance standards with great value.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">💻</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;">WINDOWS 11 READY</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Pre-installed and activated Windows 11, ready to use straight out of the box.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🎯</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;">ALL BUDGETS COVERED</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              From budget-friendly refurbished units to high-performance new builds for every need.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="section-bg main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="space-font galaxy-text cosmic-glow section-title">
+            OUR SERVICES
+          </h2>
+          <div class="section-divider" style="background: linear-gradient(90deg, var(--solar-orange), var(--mars-red));"></div>
+          <p class="alien-font section-subtitle">
+            From custom new builds to comprehensive refurbishment, we provide complete computer solutions.
+          </p>
+        </div>
+        
+        <div class="process-grid">
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🔧</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">CUSTOM NEW BUILDS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Built to your specifications with latest components and full manufacturer warranties.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">🧹</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">REFURBISHMENT PROCESS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Professional cleaning, testing, component replacement, and software installation.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">⚙️</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;">SOFTWARE & SETUP</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Fresh Windows 11 installation with all updates, Office 2021, and data transfer.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 28px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 20px;">✅</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;">QUALITY ASSURANCE</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Complete system testing, performance verification, and warranty coverage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Offers -->
+    <section id="products" class="section-bg-alt main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="space-font galaxy-text cosmic-glow section-title">
+            CURRENT OFFERS
+          </h2>
+          <div class="section-divider" style="background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green));"></div>
+          <p class="alien-font section-subtitle">
+            New stock updated weekly. All computers come with Windows 11 and Office 2021.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <!-- New Gaming PC -->
+          <article class="product-card" style="padding: 32px;">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 60px; margin-bottom: 16px;">🎮</div>
+              <h3 class="space-font cosmic-glow" style="color: var(--mars-red); font-size: 24px; margin-bottom: 16px;">NEW GAMING PC</h3>
+              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £899</p>
+            </div>
+            <ul class="spec-list" style="margin-bottom: 32px;">
+              <li>AMD Ryzen 5 / Intel i5</li>
+              <li>16GB DDR4 RAM</li>
+              <li>1TB NVMe SSD</li>
+              <li>RTX 4060 Graphics</li>
+              <li>Windows 11 Pro</li>
+              <li>Quality Check</li>
+            </ul>
+            <a href="#contact" class="reserve-button space-font">CUSTOM QUOTE</a>
+          </article>
+
+          <!-- New Business Desktop -->
+          <article class="product-card" style="padding: 32px;">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 60px; margin-bottom: 16px;">🏢</div>
+              <h3 class="space-font cosmic-glow" style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px;">NEW DESKTOP PC</h3>
+              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £450</p>
+            </div>
+            <ul class="spec-list" style="margin-bottom: 32px;">
+              <li>Intel i3 / AMD </li>
+              <li>8GB DDR4 RAM</li>
+              <li>500GB NVMe SSD</li>
+              <li>Integrated Graphics</li>
+              <li>Windows 11 Pro</li>
+              <li>Quality Check</li>
+            </ul>
+            <a href="#contact" class="reserve-button space-font">CUSTOM QUOTE</a>
+          </article>
+
+          <!-- Business Laptop -->
+          <article class="product-card" style="padding: 32px;">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 60px; margin-bottom: 16px;">💼</div>
+              <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;">REFURB LAPTOP</h3>
+              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £250</p>
+            </div>
+            <ul class="spec-list" style="margin-bottom: 32px;">
+              <li>Quad-Core CPU</li>
+              <li>8GB RAM Memory</li>
+              <li>256GB SSD Storage</li>
+              <li>Windows 11 Pro</li>
+              <li>Office 2021 (Lifetime)</li>
+              <li>Quality Check</li>
+            </ul>
+            <a href="#contact" class="reserve-button space-font">RESERVE NOW</a>
+          </article>
+
+          
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="section-bg main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="space-font galaxy-text cosmic-glow section-title">
+            WHAT OUR CUSTOMERS SAY
+          </h2>
+          <div class="section-divider" style="background: linear-gradient(90deg, var(--aurora-green), var(--nebula-purple));"></div>
+        </div>
+        
+        <div class="testimonials-grid">
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--mars-red); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "Fantastic new gaming PC build! David helped me choose the perfect specs for my budget and it runs everything perfectly."
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Mike T.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Upminster</div>
+            </footer>
+          </blockquote>
+          
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "Bought a refurbished laptop for my daughter's university. Works perfectly and saved us hundreds!"
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Lisa M.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Harold Hill</div>
+            </footer>
+          </blockquote>
+          
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "Great quality refurbished desktop. Runs like new and came with everything set up. Excellent service!"
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">John K.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Romford</div>
+            </footer>
+          </blockquote>
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-bg-alt main-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="space-font galaxy-text cosmic-glow section-title">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
+          <div class="section-divider" style="background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green), var(--nebula-purple)); width: 200px;"></div>
+          <p class="alien-font section-subtitle">
+            Everything you need to know about our new builds and refurbished computers
+          </p>
+        </div>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">🖥️ What's the difference between new builds and refurbished?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                New builds use brand new components with full manufacturer warranties (typically 3 years) and can be customized to your exact specifications. Refurbished computers are professionally restored ex-business machines that offer excellent value. New builds are ideal for gaming, high-performance work, or specific requirements, while refurbished units are perfect for general use, students, and budget-conscious customers.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item faq-highlight">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">🚀 Are the refurbished units fast?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Absolutely! All our refurbished computers come equipped with solid state drives (SSDs) and a minimum of 8GB RAM, ensuring lightning-fast boot times and smooth performance. The SSDs are significantly faster than traditional hard drives, making your computer feel brand new.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">🎮 Can you build custom gaming PCs?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Yes! We specialize in custom gaming PC builds tailored to your budget and performance needs. Whether you want to play the latest AAA games at 1080p, 1440p, or 4K, we'll recommend the perfect combination of CPU, GPU, RAM, and storage. All gaming builds come with cable management, latest drivers and Windows updates installed.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">⏱️ How long do custom builds take?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Custom new builds typically take 3-5 business days once all components are confirmed and ordered. If we have the parts in stock, we can often complete builds within 2-3 days. We'll provide a detailed timeline when you place your order and keep you updated throughout the build process.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">💾 Can you transfer my data from my old computer?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Yes, we provide comprehensive data transfer services for both new and refurbished systems! We can migrate all your personal files, photos, documents, browser bookmarks, saved passwords, and even your desktop setup.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">🚚 Do you offer collection and delivery services?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Yes! We offer free local collection and delivery within Harold Hill, Romford, and surrounding areas. We can also arrange secure courier delivery across the UK for a small fee. All deliveries include setup assistance if needed.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">🛡️ What warranty do you provide?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                New builds come with full manufacturer warranties (typically 3 years on components). Refurbished computers include a 30 day guarantee, covering hardware issues and defects. We also provide free technical support for the first month on all systems, including help with software setup and troubleshooting.
+              </div>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3 class="space-font cosmic-glow">💰 Do you offer payment plans?</h3>
+              <div class="faq-icon">▼</div>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-content alien-font">
+                Not at this time. All payments are made by bank transfer, cash or Paypal.
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--content-gap); padding: 40px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border-radius: 20px; border: 1px solid var(--plasma-cyan); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent); animation: shimmer 3s infinite;"></div>
+          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;">Need help choosing the right system?</h3>
+          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 16px;">Our friendly team can help you decide between a new build or refurbished system based on your needs and budget.</p>
+          <div>
+            <a href="https://wa.me/447971331814" class="space-button space-font" style="background: linear-gradient(135deg, #25d366, #128c7e);">
+              <span>📱</span>
+              WHATSAPP US
+            </a>
+            <a href="tel:07971331814" class="space-button space-font">
+              <span>📞</span>
+              CALL NOW
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', function() {
+          const isActive = item.classList.contains('active');
+          
+          // Close all other FAQ items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+          } else {
+            item.classList.add('active');
+          }
+        });
+      });
+      
+      // Auto-open the first (highlighted) FAQ item
+      const highlightedItem = document.querySelector('.faq-highlight');
+      if (highlightedItem) {
+        highlightedItem.classList.add('active');
+      }
+    });
+  </script>
+</Layout>

@@ -1,0 +1,506 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Computer Repairs"
+  description="Need laptop or desktop repairs in Harold Hill or Romford? Chiltern Computers offers fast, reliable, and affordable computer services for home and business users."
+>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+    
+    /* MOBILE OVERFLOW FIXES */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --dark-purple: #4c1d95;
+      --deep-purple: #312e81;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --mars-red: #dc2626;
+      --deep-space: #0f172a;
+      --darker-space: #0c0f1a;
+      --void-black: #020617;
+      --asteroid-gray: #374151;
+      --comet-silver: #e5e7eb;
+    }
+    
+    /* FONTS */
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+    
+    /* ANIMATIONS */
+    @keyframes orbit {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes float-cosmic {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes cosmic-pulse {
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
+    }
+    
+    @keyframes galaxy-flow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+    
+    /* SHARED STYLES */
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text {
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* BACKGROUND WITH IMAGE */
+    .repair-hero-bg {
+      background: 
+        linear-gradient(135deg, rgba(2, 6, 23, 0.85), rgba(15, 23, 42, 0.75)),
+        url('/repair-pic.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    
+    .repair-section-bg {
+      background: 
+        linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.8)),
+        url('/repair-pic.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    
+    /* CARD STYLES */
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cosmic-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--aurora-green), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .cosmic-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--aurora-green);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.3);
+    }
+    
+    .cosmic-card:hover::before {
+      opacity: 1;
+    }
+    
+    /* BUTTON STYLES */
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .space-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .space-button:hover::before {
+      left: 100%;
+    }
+    
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    
+    /* PLANET ICONS */
+    .planet-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 20px;
+      border: 2px solid var(--aurora-green);
+      transition: all 0.3s ease;
+      animation: orbit 20s linear infinite;
+      position: relative;
+    }
+    
+    .planet-icon::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--plasma-cyan), var(--aurora-green));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .planet-icon:hover {
+      transform: scale(1.1);
+      animation-play-state: paused;
+    }
+    
+    .planet-icon:hover::after {
+      opacity: 1;
+    }
+    
+    /* GRIDS */
+    .services-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+      gap: 30px; 
+    }
+    .process-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 24px; 
+    }
+    .testimonials-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 24px; 
+    }
+    
+    /* CONTAINER */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    
+    /* MOBILE OPTIMIZATIONS */
+    @media (max-width: 768px) {
+      .repair-hero-bg,
+      .repair-section-bg {
+        background-attachment: scroll;
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .services-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+      }
+      .process-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 16px; 
+      }
+      .testimonials-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+      }
+      .space-button { 
+        padding: 12px 24px; 
+        font-size: 13px; 
+      }
+      .planet-icon { 
+        width: 60px; 
+        height: 60px; 
+        font-size: 24px; 
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 12px;
+      }
+      
+      .process-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      .space-button {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="repair-hero-bg" style="padding: 100px 0 80px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;">
+            <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">🔧 COMPUTER REPAIR SERVICES</span>
+          </div>
+          
+          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(36px, 7vw, 64px); margin-bottom: 24px; line-height: 1.1;">
+            EXPERT COMPUTER REPAIRS
+          </h1>
+          
+          <p class="alien-font" style="font-size: clamp(18px, 3.5vw, 22px); color: var(--comet-silver); margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.5;">
+            Whether your computer is slow, won't start, or has a broken screen — we've got you covered with professional diagnosis and repair services.
+          </p>
+          
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact" class="space-button space-font">
+              <span>🚀</span>
+              BOOK REPAIR
+            </a>
+            <a href="#services" class="space-button space-font" style="background: rgba(6, 182, 212, 0.15);">
+              <span>🔍</span>
+              VIEW SERVICES
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Breakdown -->
+    <section id="services" class="repair-section-bg" style="padding: 80px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px;">
+            WHAT WE DIAGNOSE AND REPAIR
+          </h2>
+          <div style="height: 4px; width: 150px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 24px; border-radius: 2px;"></div>
+          <p class="alien-font" style="color: var(--comet-silver); max-width: 700px; margin: 0 auto; font-size: 18px; line-height: 1.6;">
+            From hardware failures to software issues, we'll provide comprehensive repair solutions for all your computing needs.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Laptop Repair -->
+          <article class="cosmic-card" style="padding: 32px;">
+            <div class="planet-icon" style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue);">💻</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px; text-align: center;">LAPTOP REPAIRS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">
+              Screen replacements, booting issues, hinge repairs, power/charging faults, motherboard replacement, and keyboard repairs.
+            </p>
+            <div style="text-align: center;">
+              <a href="/contact" class="space-button space-font">
+                Book Repair 
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Desktop Repair -->
+          <article class="cosmic-card" style="padding: 32px;">
+            <div class="planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);">🖥️</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px; text-align: center;">DESKTOP PC REPAIRS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">
+              Power failures, hardware testing, overheating solutions, Blue Screen of Death fixes, software repairs, and upgrade services.
+            </p>
+            <div style="text-align: center;">
+              <a href="/contact" class="space-button space-font">
+                Book Repair 
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Custom Build Help -->
+          <article class="cosmic-card" style="padding: 32px;">
+            <div class="planet-icon" style="background: rgba(124, 58, 237, 0.2); color: var(--nebula-purple);">🛠️</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 24px; margin-bottom: 16px; text-align: center;">CUSTOM BUILT PCS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; font-size: 16px; line-height: 1.6;">
+              Having trouble with a self-build? We'll diagnose hardware issues, optimize performance, or complete your custom setup.
+            </p>
+            <div style="text-align: center;">
+              <a href="/contact" class="space-button space-font">
+                Book Repair 
+                <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repair Process -->
+    <section class="repair-section-bg" style="padding: 80px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
+            HOW OUR REPAIR SERVICE WORKS
+          </h2>
+          <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 20px; border-radius: 2px;"></div>
+        </div>
+        
+        <div class="process-grid">
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">📞</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">1. GET IN TOUCH</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Call, email, or visit us to describe the problem with your device.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">🔍</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">2. FREE DIAGNOSIS</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              We'll thoroughly diagnose your device and provide a detailed quote.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">🛠️</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;">3. EXPERT REPAIR</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Professional repairs typically completed same day or next working day.
+            </p>
+          </div>
+          
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">✅</div>
+            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;">4. PICKUP OR DELIVERY</h3>
+            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+              Collect your fully repaired device or ask about our delivery service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="repair-section-bg" style="padding: 80px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px;">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
+            CUSTOMER REPAIR TESTIMONIALS
+          </h2>
+          <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--nebula-purple)); margin: 0 auto 20px; border-radius: 2px;"></div>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+            What our satisfied customers say about our repair services.
+          </p>
+        </div>
+        
+        <div class="testimonials-grid">
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "They replaced my cracked laptop screen within hours. Great price and super friendly service!"
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Emma R.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Harold Hill</div>
+            </footer>
+          </blockquote>
+          
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "Sorted out my overheating desktop fast. Even cleaned out the dust for free!"
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Dave M.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Romford</div>
+            </footer>
+          </blockquote>
+          
+          <blockquote class="cosmic-card" style="padding: 28px;">
+            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+              <div class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            </div>
+            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
+              "MacBook wouldn't boot – they fixed it same day. Life saver!"
+            </p>
+            <footer style="text-align: center;">
+              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Claire S.</div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Brentwood</div>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="repair-section-bg" style="padding: 80px 0;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 60px 40px; text-align: center; border: 2px solid var(--aurora-green);">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
+            NEED YOUR COMPUTER FIXED TODAY?
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 32px; font-size: 18px; line-height: 1.6;">
+            Call us now or book a repair online. We're open 7 days a week with fast, professional service!
+          </p>
+          <a href="/contact" class="space-button space-font" style="font-size: 16px; padding: 16px 32px;">
+            <span>🚀</span>
+            BOOK A REPAIR NOW
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

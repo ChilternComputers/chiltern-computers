@@ -2,35 +2,8 @@
 // Footer.astro
 ---
 
-<style>
-  /* Ensure no white gaps */
-  .cosmic-footer {
-    background: var(--void-black);
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-  }
-  
-  .footer-bg {
-    background: 
-      radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
-      var(--void-black);
-    background-size: 800px 600px, 900px 700px;
-    animation: plasma-flow 30s ease-in-out infinite;
-  }
-</style>
-
-<footer class="cosmic-footer footer-bg" style="padding: 80px 0 0 0; position: relative; overflow: hidden;" role="contentinfo">
-  
-  <!-- Background effects -->
-  <div class="starfield" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
-  <div class="starfield" style="top: 30%; left: 85%; animation-delay: 1.5s;"></div>
-  <div class="starfield" style="top: 60%; left: 25%; animation-delay: 2.5s;"></div>
-  <div class="starfield" style="top: 80%; left: 75%; animation-delay: 1s;"></div>
-  
-  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10;">
+<footer class="cosmic-footer" style="background: var(--void-black); padding: 80px 0 0 0;" role="contentinfo">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 48px; margin-bottom: 60px;">
 
@@ -56,33 +29,33 @@
       <!-- Services -->
       <div class="cosmic-card" style="padding: 32px;">
         <h4 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 20px;">🚀 SERVICES</h4>
-        <ul style="list-style: none; padding: 0; margin: 0; space-y: 12px;">
+        <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="margin-bottom: 12px;">
-            <a href="/services/custom-pcs" class="alien-font" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;">
+            <a href="/services/custom-pcs" class="alien-font footer-link" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
               <span style="color: var(--plasma-cyan);">🖥️</span>
               Custom Gaming PCs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
-            <a href="/services/repairs" class="alien-font" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;">
+            <a href="/services/repairs" class="alien-font footer-link" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
               <span style="color: var(--plasma-cyan);">🛠️</span>
               Computer Repairs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
-            <a href="/services/refurbished" class="alien-font" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;">
+            <a href="/services/refurbished" class="alien-font footer-link" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
               <span style="color: var(--plasma-cyan);">♻️</span>
               Refurbished PCs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
-            <a href="/about" class="alien-font" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;">
+            <a href="/about" class="alien-font footer-link" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
               <span style="color: var(--plasma-cyan);">ℹ️</span>
               About Us
             </a>
           </li>
           <li>
-            <a href="/contact" class="alien-font" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease;">
+            <a href="/contact" class="alien-font footer-link" style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px;">
               <span style="color: var(--plasma-cyan);">📞</span>
               Contact
             </a>
@@ -96,19 +69,19 @@
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <span style="font-size: 16px;">📱</span>
-            <a href="tel:+447971331814" class="alien-font" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; transition: color 0.3s ease;">
+            <a href="tel:+447971331814" class="alien-font footer-link" style="color: var(--starlight-white); font-size: 14px; text-decoration: none;">
               07971 331814
             </a>
           </li>
           <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <span style="font-size: 16px;">📞</span>
-            <a href="tel:+441708347341" class="alien-font" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; transition: color 0.3s ease;">
+            <a href="tel:+441708347341" class="alien-font footer-link" style="color: var(--starlight-white); font-size: 14px; text-decoration: none;">
               01708 347341
             </a>
           </li>
           <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <span style="font-size: 16px;">✉️</span>
-            <a href="mailto:david@chilterncomputers.net" class="alien-font" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; transition: color 0.3s ease;">
+            <a href="mailto:david@chilterncomputers.net" class="alien-font footer-link" style="color: var(--starlight-white); font-size: 14px; text-decoration: none;">
               david@chilterncomputers.net
             </a>
           </li>
@@ -126,7 +99,7 @@
 
     <!-- Map Section -->
     <div style="border-top: 2px solid var(--plasma-cyan); padding-top: 60px; margin-bottom: 60px;">
-      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;" class="map-section">
+      <div class="map-section" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start;">
         
         <div>
           <h4 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px; margin-bottom: 16px;">🗺️ FIND THE WORKSHOP</h4>
@@ -138,15 +111,15 @@
             href="https://www.google.com/maps/search/?api=1&query=38+Hilldene+Avenue,+RM3+8YP" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="space-button alien-font"
-            style="display: inline-flex; background: rgba(6, 182, 212, 0.1); border: 2px solid var(--plasma-cyan); font-size: 14px; padding: 12px 20px; color: var(--starlight-white); text-decoration: none; border-radius: 8px; transition: all 0.3s ease;"
+            class="maps-button"
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.1); border: 2px solid var(--plasma-cyan); font-size: 14px; padding: 12px 20px; color: var(--starlight-white); text-decoration: none; border-radius: 8px;"
           >
             <span>🗺️</span>
             VIEW ON GOOGLE MAPS
           </a>
         </div>
         
-        <div class="cosmic-card" style="padding: 8px; overflow: hidden;">
+        <div class="cosmic-card" style="padding: 8px;">
           <iframe 
             src="https://maps.google.com/maps?width=100%25&amp;height=300&amp;hl=en&amp;q=38%20Hilldene%20Avenue,%20RM3%208YP+(Chiltern%20Computers)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             width="100%" 
@@ -163,7 +136,7 @@
     </div>
 
     <!-- Copyright Section -->
-    <div style="border-top: 2px solid var(--nebula-purple); padding: 32px 0; text-align: center; background: var(--void-black); margin: 0;">
+    <div style="border-top: 2px solid var(--nebula-purple); padding: 32px 0; text-align: center;">
       <p class="tech-font" style="color: var(--comet-silver); font-size: 12px; margin: 0;">
         &copy; <span id="current-year">2025</span> Chiltern Computers. All rights reserved. 
         <span style="color: var(--plasma-cyan);">🛸</span> 
@@ -183,42 +156,33 @@
 </footer>
 
 <style>
-  /* Responsive adjustments */
+  .cosmic-footer {
+    margin: 0;
+    background: var(--void-black);
+  }
+  
+  .footer-link {
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: var(--plasma-cyan) !important;
+  }
+  
+  .maps-button {
+    transition: all 0.3s ease;
+  }
+  
+  .maps-button:hover {
+    background: rgba(6, 182, 212, 0.2);
+    border-color: var(--aurora-green);
+    transform: translateY(-2px);
+  }
+  
   @media (max-width: 1024px) {
     .map-section {
       grid-template-columns: 1fr !important;
       gap: 24px !important;
     }
-  }
-  
-  /* Hover effects for links */
-  footer a:hover {
-    color: var(--plasma-cyan) !important;
-    transform: translateX(4px);
-  }
-  
-  /* Specific hover effect for the Google Maps button */
-  .space-button:hover {
-    background: rgba(6, 182, 212, 0.2) !important;
-    border-color: var(--aurora-green) !important;
-    color: var(--plasma-cyan) !important;
-    transform: translateY(-2px) !important;
-  }
-  
-  /* Remove any potential white space */
-  footer {
-    margin: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  
-  /* Ensure footer connects seamlessly */
-  footer::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--void-black);
   }
 </style>
