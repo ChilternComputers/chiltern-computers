@@ -16,17 +16,19 @@ const { title, description, image, keywords } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
 	<SEO 
 		title={title}
 		description={description}
 		image={image}
 		keywords={keywords}
 	/>
-	<body>
-		<Header />
-		<main>
-			<slot />
-		</main>
-		<Footer />
-	</body>
+</head>
+<body>
+	<Header />
+	<main>
+		<slot />
+	</main>
+	<Footer />
+</body>
 </html>
