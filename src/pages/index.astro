@@ -8,9 +8,10 @@ import Hero from '../components/Hero.astro';
   description="Professional computer repair and IT support services in Harold Hill, Romford. Expert PC repair, laptop repair, virus removal & data recovery services."
   keywords="computer repair romford, pc repair harold hill, laptop repair essex, virus removal romford, data recovery harold hill"
 >
+  <!-- Use the imported Hero component only -->
   <Hero />
 
-  <!-- Hero Section -->
+  <!-- Company Title & Stats Section -->
   <section class="section-bg-1" style="padding: 80px 0;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
@@ -255,7 +256,7 @@ import Hero from '../components/Hero.astro';
     </div>
   </section>
 
-  <!-- Service Areas -->   
+  <!-- Service Areas - FIXED: Single content with CSS animation -->   
   <section class="section-bg-5" style="padding: 80px 0;">          
     <div class="container">              
       <div style="text-align: center; margin-bottom: 48px;">         
@@ -287,25 +288,6 @@ import Hero from '../components/Hero.astro';
           <span class="service-area-primary">🌸 Pilgrims Hatch</span>
           <span class="service-area">🌿 Hainault</span>
           <span class="service-area-primary">⚡ Rush Green</span>
-                        
-          <!-- Seamless loop duplicates -->           
-          <span class="service-area-primary">🌍 Harold Hill</span>           
-          <span class="service-area">🪐 Romford</span>           
-          <span class="service-area-primary">🌙 Harold Wood</span>           
-          <span class="service-area">🌟 Hornchurch</span>           
-          <span class="service-area-primary">☄️ Collier Row</span>           
-          <span class="service-area">🌌 Dagenham</span>           
-          <span class="service-area-primary">🛸 Rainham</span>           
-          <span class="service-area">🚀 Brentwood</span>
-          <span class="service-area-primary">🌠 Gidea Park</span>
-          <span class="service-area">🛰️ Emmerson Park</span>
-          <span class="service-area-primary">⭐ Chadwell Heath</span>
-          <span class="service-area">🌊 Upminster</span>
-          <span class="service-area-primary">🌑 Cranham</span>
-          <span class="service-area">🌈 Elm Park</span>
-          <span class="service-area-primary">🌸 Pilgrims Hatch</span>
-          <span class="service-area">🌿 Hainault</span>
-          <span class="service-area-primary">⚡ Rush Green</span>
         </div>                  
         
         <div style="text-align: center; margin-top: 12px;">           
@@ -319,18 +301,170 @@ import Hero from '../components/Hero.astro';
 </Layout>
 
 <style>
-  /* Ticker animation - needed for seamless loop */
-  @keyframes auto-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  /* Missing CSS classes for homepage functionality */
   
+  /* CSS Variable Definitions */
+  :root {
+    --cosmic-blue: #1e3a8a;
+    --nebula-purple: #7c3aed;
+    --dark-purple: #4c1d95;
+    --deep-purple: #312e81;
+    --starlight-white: #f8fafc;
+    --plasma-cyan: #06b6d4;
+    --aurora-green: #10b981;
+    --solar-orange: #f59e0b;
+    --mars-red: #dc2626;
+    --deep-space: #0f172a;
+    --darker-space: #0c0f1a;
+    --void-black: #020617;
+    --asteroid-gray: #374151;
+    --comet-silver: #e5e7eb;
+  }
+
+  /* Font Classes */
+  .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+  .alien-font { font-family: 'Exo 2', sans-serif; }
+  .tech-font { font-family: 'Space Mono', monospace; }
+
+  /* Animation Classes */
+  @keyframes cosmic-pulse {
+    0%, 100% { text-shadow: 0 0 5px currentColor; }
+    50% { text-shadow: 0 0 15px currentColor; }
+  }
+
+  @keyframes galaxy-flow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+  }
+
+  .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+  .galaxy-text {
+    background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+    background-size: 200% 200%;
+    animation: galaxy-flow 4s ease-in-out infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  /* Background Sections */
+  .section-bg-1, .section-bg-2, .section-bg-3, .section-bg-4, .section-bg-5 {
+    background: 
+      radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
+      var(--void-black);
+    background-size: 800px 600px, 900px 700px;
+    position: relative;
+  }
+
+  /* Card Styles */
+  .cosmic-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+    border: 1px solid var(--plasma-cyan);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cosmic-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--aurora-green);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  }
+
+  /* Button Styles */
+  .space-button {
+    background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+    border: 1px solid var(--aurora-green);
+    color: var(--starlight-white);
+    padding: 14px 28px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 8px;
+  }
+
+  .space-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+  }
+
+  /* Grid Layouts */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+  }
+
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
   }
-  
+
+  /* Planet Icons */
+  .planet-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 16px;
+    border: 2px solid var(--aurora-green);
+    transition: all 0.3s ease;
+  }
+
+  .planet-icon:hover {
+    transform: scale(1.1);
+  }
+
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Mobile Text Responsive */
+  .mobile-text {
+    /* Responsive text that scales well on mobile */
+  }
+
+  /* Review Badge */
   .review-badge {
     width: 20px;
     height: 20px;
@@ -340,21 +474,22 @@ import Hero from '../components/Hero.astro';
     align-items: center;
     justify-content: center;
   }
-  
+
+  /* Service Areas */
   .service-area-primary {
     color: var(--plasma-cyan);
     font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
   }
-  
+
   .service-area {
     color: var(--comet-silver);
     font-size: 12px;
     white-space: nowrap;
   }
-  
-  /* Ticker container and content styling */
+
+  /* Ticker container and content styling - FIXED: Single content, CSS animation */
   .scroll-container {
     padding: 16px;
     border: 1px solid var(--plasma-cyan);
@@ -365,13 +500,77 @@ import Hero from '../components/Hero.astro';
     width: 100%;
     position: relative;
   }
-  
+
   .scroll-content {
     display: flex;
     gap: 24px;
-    animation: auto-scroll 25s linear infinite;
+    animation: auto-scroll 50s linear infinite;
     align-items: center;
     white-space: nowrap;
     width: max-content;
+  }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .space-button {
+      margin: 4px 0;
+      padding: 12px 24px;
+      font-size: 13px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 12px;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .space-button {
+      padding: 10px 20px;
+      font-size: 12px;
+    }
+  }
+
+  /* Fixed ticker animation - CSS only, no HTML duplication */
+  @keyframes auto-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Ensure seamless loop by duplicating content via CSS */
+  .scroll-content::after {
+    content: '🌍 Harold Hill 🪐 Romford 🌙 Harold Wood 🌟 Hornchurch ☄️ Collier Row 🌌 Dagenham 🛸 Rainham 🚀 Brentwood 🌠 Gidea Park 🛰️ Emmerson Park ⭐ Chadwell Heath 🌊 Upminster 🌑 Cranham 🌈 Elm Park 🌸 Pilgrims Hatch 🌿 Hainault ⚡ Rush Green';
+    margin-left: 24px;
+    color: var(--comet-silver);
+    font-size: 12px;
+    white-space: nowrap;
   }
 </style>

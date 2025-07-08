@@ -1,16 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SEO from '../components/SEO.astro';
 ---
 
-<Layout title="About - Chiltern Computers">
-  <SEO 
-    title="About - Chiltern Computers" 
-    description="Meet David, the expert behind Chiltern Computers. Providing honest, affordable computer repairs and support in Harold Hill and Romford for over 20 years."
-  />
+<Layout 
+  title="About - Chiltern Computers"
+  description="Meet David, the expert behind Chiltern Computers. Providing honest, affordable computer repairs and support in Harold Hill and Romford for over 20 years."
+>
+  <!-- REMOVED DUPLICATE SEO COMPONENT - Layout handles SEO automatically -->
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+    /* REMOVED DUPLICATE FONT IMPORT - Now using fonts from Layout.astro */
     
     /* MOBILE OVERFLOW FIXES */
     * {
