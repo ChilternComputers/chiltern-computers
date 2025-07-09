@@ -1,443 +1,382 @@
 ---
-// src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact Us">
-  <style>
-    
-    /* MOBILE OVERFLOW FIXES */
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    
-    :root {
-      --cosmic-blue: #1e3a8a;
-      --nebula-purple: #7c3aed;
-      --dark-purple: #4c1d95;
-      --deep-purple: #312e81;
-      --starlight-white: #f8fafc;
-      --plasma-cyan: #06b6d4;
-      --aurora-green: #10b981;
-      --solar-orange: #f59e0b;
-      --mars-red: #dc2626;
-      --deep-space: #0f172a;
-      --darker-space: #0c0f1a;
-      --void-black: #020617;
-      --asteroid-gray: #374151;
-      --comet-silver: #e5e7eb;
-    }
-    
-    /* FONTS */
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
-    
-    /* ANIMATIONS */
-    @keyframes orbit {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes float-cosmic {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    
-    @keyframes plasma-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-    
-    @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
-    }
-    
-    @keyframes stellar-blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    
-    /* SHARED STYLES */
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
-      background-size: 200% 200%;
-      animation: plasma-flow 4s ease-in-out infinite;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    /* CARD STYLES */
-    .cosmic-card {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
-      border: 1px solid var(--plasma-cyan);
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .cosmic-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--aurora-green);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-    }
-    
-    /* BUTTON STYLES */
-    .space-button {
-      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
-      border: 1px solid var(--aurora-green);
-      color: var(--starlight-white);
-      padding: 16px 32px;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .space-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
-    }
-    
-    .space-button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    /* FORM STYLES */
-    .cosmic-input, .cosmic-textarea {
-      width: 100%;
-      padding: 16px 20px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 2px solid rgba(6, 182, 212, 0.3);
-      border-radius: 12px;
-      color: var(--starlight-white);
-      font-family: 'Exo 2', sans-serif;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(10px);
-    }
-    
-    .cosmic-input:focus, .cosmic-textarea:focus {
-      outline: none;
-      border-color: var(--aurora-green);
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
-      background: rgba(15, 23, 42, 0.9);
-    }
-    
-    .cosmic-input::placeholder, .cosmic-textarea::placeholder {
-      color: var(--comet-silver);
-      opacity: 0.7;
-    }
-    
-    .cosmic-label {
-      display: block;
-      color: var(--plasma-cyan);
-      font-family: 'Space Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    /* PLANET ICONS */
-    .planet-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      margin: 0 auto 20px;
-      border: 2px solid var(--aurora-green);
-      transition: all 0.3s ease;
-      animation: orbit 20s linear infinite;
-    }
-    
-    .planet-icon:hover {
-      transform: scale(1.1);
-      animation-play-state: paused;
-    }
-    
-    /* BACKGROUND */
-    .section-bg {
-      background: 
-        radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
-        var(--void-black);
-      background-size: 800px 600px, 900px 700px;
-      animation: plasma-flow 30s ease-in-out infinite;
-      min-height: 100vh;
-      width: 100%;
-      overflow-x: hidden;
-    }
-    
-    /* CONTAINER */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-    
-    /* GRID LAYOUTS */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-    
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-    
-    /* SUCCESS MESSAGE */
-    .success-message {
-      text-align: center;
-      padding: 40px;
-      background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
-      border: 2px solid var(--aurora-green);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-    }
-    
-    .success-icon {
-      font-size: 64px;
-      margin-bottom: 20px;
-      animation: float-cosmic 2s ease-in-out infinite;
-    }
-    
-    /* MOBILE OPTIMIZATIONS */
-    @media (max-width: 768px) {
-      .section-bg {
-        background-size: 400px 300px, 450px 350px;
-      }
-      
-      .container {
-        padding: 0 16px;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      
-      .space-button {
-        padding: 14px 24px;
-        font-size: 14px;
-      }
-      
-      .planet-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
-      }
-      
-      .cosmic-input, .cosmic-textarea {
-        padding: 14px 16px;
-        font-size: 14px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 12px;
-      }
-      
-      .space-button {
-        padding: 12px 20px;
-        font-size: 13px;
-      }
-    }
-  </style>
-
-  <!-- Contact Section -->
-  <section class="section-bg" style="padding: 80px 0;">
+<Layout 
+  title="Contact Us"
+  description="Get in touch with Chiltern Computers for computer repair, IT support, and custom PC builds in Harold Hill, Romford, Essex."
+>
+  <div class="section-bg-2" style="padding: 120px 20px 80px; min-height: 100vh;">
     <div class="container">
-     <!-- Header -->
+      
+      <!-- Page Header -->
       <div style="text-align: center; margin-bottom: 60px;">
-        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 56px); margin-bottom: 20px; margin-top: 20px; line-height: 1.2;">
-          CONTACT US
+        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px;">
+          Contact Us
         </h1>
-        
-        <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-          Get professional computer repairs, IT support, and technical solutions for your home or business needs.
+        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--plasma-cyan), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
+          Get expert computer repair and IT support in Harold Hill, Romford, and throughout Essex.
         </p>
       </div>
-      
-      <!-- Contact Grid -->
-      <div class="contact-grid">
-        <!-- Contact Info -->
-        <div>
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 24px;">
-            GET IN TOUCH
-          </h2>
-          
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; margin-bottom: 32px; line-height: 1.6;">
-            Whether you need emergency computer repairs, system upgrades, or submitting your details, we are ready to help with professional IT solutions.
-          </p>
-          
-          <div class="info-grid">
-            <div class="cosmic-card" style="padding: 24px;">
-              <div class="planet-icon" style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan);">📧</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px; text-align: center;">EMAIL ADDRESS</h3>
-              <p class="alien-font" style="color: var(--starlight-white); text-align: center; font-size: 14px;">david@chilterncomputers.net</p>
-            </div>
-            
-            <div class="cosmic-card" style="padding: 24px;">
-              <div class="planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);">🌍</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px; text-align: center;">SERVICE AREAS</h3>
-              <p class="alien-font" style="color: var(--starlight-white); text-align: center; font-size: 14px;">Harold Hill & Surrounding Areas</p>
-            </div>
-            
-            <div class="cosmic-card" style="padding: 24px;">
-              <div class="planet-icon" style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange);">🔧</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px; text-align: center;">OUR SERVICES</h3>
-              <p class="alien-font" style="color: var(--starlight-white); text-align: center; font-size: 14px;">Computer Repairs • Custom Builds • PC Supply</p>
-            </div>
-          </div>
-        </div>
+
+      <!-- Contact Content Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 60px;">
         
         <!-- Contact Form -->
-        <div class="cosmic-card" style="padding: 32px;">
-          <form id="contactForm" style="display: block;">
-            <div style="margin-bottom: 24px;">
-              <label class="cosmic-label" for="name">Name *</label>
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+            <span>📧</span>Send Us a Message
+          </h2>
+          
+          <!-- Success Message (Hidden by default) -->
+          <div id="success-message" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--aurora-green); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+            <p class="alien-font" style="color: var(--aurora-green); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px;">
+              <span>✅</span>
+              Message sent successfully! We'll get back to you within 24 hours.
+            </p>
+          </div>
+
+          <!-- Error Message (Hidden by default) -->
+          <div id="error-message" style="display: none; background: rgba(220, 38, 38, 0.1); border: 1px solid var(--mars-red); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
+            <p class="alien-font" style="color: var(--mars-red); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px;">
+              <span>❌</span>
+              Sorry, there was an error sending your message. Please try calling us instead.
+            </p>
+          </div>
+
+          <form id="contact-form" style="space-y: 20px;">
+            <!-- Name Field -->
+            <div style="margin-bottom: 20px;">
+              <label for="user_name" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Your Name *
+              </label>
               <input 
                 type="text" 
-                id="name" 
-                name="name" 
-                required 
-                placeholder="Enter your name"
-                class="cosmic-input"
-              >
+                id="user_name" 
+                name="user_name" 
+                required
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
+                placeholder="Enter your full name"
+              />
             </div>
 
-            <div style="margin-bottom: 24px;">
-              <label class="cosmic-label" for="email">Email Address *</label>
+            <!-- Email Field -->
+            <div style="margin-bottom: 20px;">
+              <label for="user_email" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Email Address *
+              </label>
               <input 
                 type="email" 
-                id="email" 
-                name="email" 
-                required 
+                id="user_email" 
+                name="user_email" 
+                required
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
                 placeholder="your.email@example.com"
-                class="cosmic-input"
-              >
+              />
             </div>
 
-            <div style="margin-bottom: 24px;">
-              <label class="cosmic-label" for="location">Location *</label>
+            <!-- Phone Field -->
+            <div style="margin-bottom: 20px;">
+              <label for="user_phone" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Phone Number
+              </label>
               <input 
-                type="text" 
-                id="location" 
-                name="location" 
-                required 
-                placeholder="e.g., Romford, Harold Hill, Hornchurch"
-                class="cosmic-input"
-              >
+                type="tel" 
+                id="user_phone" 
+                name="user_phone"
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
+                placeholder="07123 456789"
+              />
             </div>
 
-            <div style="margin-bottom: 32px;">
-              <label class="cosmic-label" for="description">Service Description *</label>
+            <!-- Service Type -->
+            <div style="margin-bottom: 20px;">
+              <label for="service_type" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Service Required
+              </label>
+              <select 
+                id="service_type" 
+                name="service_type"
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
+              >
+                <option value="">Select a service...</option>
+                <option value="Computer Repair">Computer Repair</option>
+                <option value="Laptop Repair">Laptop Repair</option>
+                <option value="Custom PC Build">Custom PC Build</option>
+                <option value="Virus Removal">Virus Removal</option>
+                <option value="Data Recovery">Data Recovery</option>
+                <option value="IT Support">IT Support</option>
+                <option value="Hardware Upgrade">Hardware Upgrade</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Message Field -->
+            <div style="margin-bottom: 20px;">
+              <label for="message" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Message *
+              </label>
               <textarea 
-                id="description" 
-                name="description" 
-                required 
+                id="message" 
+                name="message" 
                 rows="5" 
-                placeholder="Briefly describe your computer issue or IT service requirements. Include device type, symptoms, and any error messages..."
-                class="cosmic-textarea"
-                style="resize: vertical; min-height: 140px;"
+                required
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; resize: vertical; transition: all 0.3s ease;"
+                placeholder="Please describe your computer issue or service requirements..."
               ></textarea>
             </div>
 
-            <button type="submit" class="space-button space-font">
-              <span>📧</span>
-              <span class="btn-text">SEND MESSAGE</span>
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              id="submit-btn"
+              class="space-button" 
+              style="width: 100%; padding: 16px; font-size: 16px; position: relative; overflow: hidden;"
+            >
+              <span id="btn-text">
+                <span>📤</span>
+                Send Message
+              </span>
+              <span id="btn-loading" style="display: none;">
+                <span>⏳</span>
+                Sending...
+              </span>
             </button>
           </form>
+        </div>
 
-          <div class="success-message" id="successMessage" style="display: none;">
-            <div class="success-icon">✅</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;">
-              MESSAGE SENT SUCCESSFULLY!
-            </h3>
-            <p class="alien-font" style="color: var(--starlight-white); margin-bottom: 16px; line-height: 1.6;">
-              Thank you for contacting Chiltern Computers. Your message has been received and we will respond within 24 hours.
-            </p>
-            <p class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">
-              💻 PROFESSIONAL IT SUPPORT TEAM 💻
-            </p>
+        <!-- Contact Information -->
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
+            <span>📞</span>Get in Touch
+          </h2>
+
+          <!-- Contact Methods -->
+          <div style="space-y: 24px;">
+            <!-- Phone Numbers -->
+            <div style="margin-bottom: 24px;">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📱 Call Us</h3>
+              <div style="space-y: 8px;">
+                <div>
+                  <a href="tel:+447971331814" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.3s ease;">
+                    📱 <strong>Mobile:</strong> 07971 331814
+                  </a>
+                </div>
+                <div>
+                  <a href="tel:+441708347341" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; display: block; transition: color 0.3s ease;">
+                    ☎️ <strong>Landline:</strong> 01708 347341
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div style="margin-bottom: 24px;">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📧 Email Us</h3>
+              <a href="mailto:david@chilterncomputers.net" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; transition: color 0.3s ease;">
+                david@chilterncomputers.net
+              </a>
+            </div>
+
+            <!-- Address -->
+            <div style="margin-bottom: 24px;">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📍 Visit Us</h3>
+              <address class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-style: normal; line-height: 1.5;">
+                38 Hilldene Avenue<br>
+                Harold Hill, Romford<br>
+                Essex, RM3 8YP
+              </address>
+              <button 
+                onclick="openMaps()" 
+                class="space-button"
+                style="margin-top: 12px; padding: 8px 16px; font-size: 14px;"
+              >
+                <span>🗺️</span>
+                View on Map
+              </button>
+            </div>
+
+            <!-- Operating Hours -->
+            <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid var(--nebula-purple); border-radius: 8px; padding: 20px;">
+              <h3 class="space-font" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>🕒</span>Operating Hours
+              </h3>
+              <div class="alien-font" style="color: var(--starlight-white); line-height: 1.6;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                  <span>Monday - Sunday:</span>
+                  <span style="color: var(--aurora-green); font-weight: 600;">9:00 AM - 9:00 PM</span>
+                </div>
+                <p style="font-size: 14px; color: var(--comet-silver); margin-top: 8px; margin-bottom: 0;">
+                  Emergency repairs available by appointment
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
+      <!-- Internal Links Section (Fixes "Pages Without Internal Outlinks") -->
+      <div class="cosmic-card" style="padding: 32px; text-align: center;">
+        <h2 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 24px; margin-bottom: 20px;">
+          🚀 Our Services
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px;">
+          Explore our full range of computer repair and IT support services:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <a href="/services/repairs" class="space-button" style="text-decoration: none;">
+            <span>🔧</span>
+            Computer Repairs
+          </a>
+          <a href="/services/custom-pcs" class="space-button" style="text-decoration: none;">
+            <span>🎮</span>
+            Custom PC Builds
+          </a>
+          <a href="/services/new-used" class="space-button" style="text-decoration: none;">
+            <span>💻</span>
+            New & Refurb PCs
+          </a>
+          <a href="/about" class="space-button" style="text-decoration: none;">
+            <span>ℹ️</span>
+            About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EmailJS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const location = formData.get('location');
-        const description = formData.get('description');
-        
-        // Basic validation
-        if (!name || !email || !location || !description) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
-            return;
-        }
-        
-        // Simulate form submission
-        const submitBtn = document.querySelector('.space-button');
-        const btnText = document.querySelector('.btn-text');
-        
-        btnText.textContent = 'SENDING...';
-        submitBtn.disabled = true;
-        
-        // Simulate API call delay
-        setTimeout(() => {
-            // Hide form and show success message
-            document.getElementById('contactForm').style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // In a real implementation, you would send the data to your server here
-            console.log('Form submitted:', { name, email, location, description });
-        }, 2000);
+    // Initialize EmailJS with your Public Key
+    emailjs.init('5c3bc4aaf8bb01a7c73e605e511e7de9'); // Replace with your actual public key
+
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      const btnLoading = document.getElementById('btn-loading');
+      const successMessage = document.getElementById('success-message');
+      const errorMessage = document.getElementById('error-message');
+      
+      // Show loading state
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'block';
+      submitBtn.disabled = true;
+      
+      // Hide previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      
+      // Send email using EmailJS
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          
+          // Show success message
+          successMessage.style.display = 'block';
+          
+          // Reset form
+          document.getElementById('contact-form').reset();
+          
+          // Scroll to success message
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+        }, function(error) {
+          console.log('FAILED...', error);
+          
+          // Show error message
+          errorMessage.style.display = 'block';
+          
+          // Scroll to error message
+          errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        .finally(function() {
+          // Reset button state
+          btnText.style.display = 'block';
+          btnLoading.style.display = 'none';
+          submitBtn.disabled = false;
+        });
+    });
+
+    // Open Google Maps
+    function openMaps() {
+      const address = "38 Hilldene Avenue, Harold Hill, Romford, Essex, RM3 8YP";
+      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+      window.open(googleMapsUrl, '_blank');
+    }
+
+    // Enhanced form styling
+    document.querySelectorAll('input, select, textarea').forEach(function(element) {
+      element.addEventListener('focus', function() {
+        this.style.borderColor = 'var(--aurora-green)';
+        this.style.boxShadow = '0 0 10px rgba(16, 185, 129, 0.3)';
+      });
+      
+      element.addEventListener('blur', function() {
+        this.style.borderColor = 'var(--plasma-cyan)';
+        this.style.boxShadow = 'none';
+      });
     });
   </script>
+
+  <style>
+    /* Contact Form Enhancements */
+    input::placeholder,
+    textarea::placeholder,
+    select {
+      color: var(--comet-silver) !important;
+      opacity: 0.7;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--aurora-green) !important;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3) !important;
+    }
+
+    /* Button hover effects */
+    .space-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+    }
+
+    /* Link hover effects */
+    a:hover {
+      color: var(--plasma-cyan) !important;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .container > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+      }
+      
+      .cosmic-card {
+        padding: 24px !important;
+      }
+      
+      .space-button {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cosmic-card {
+        padding: 20px !important;
+      }
+      
+      input, textarea, select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+      }
+    }
+  </style>
 </Layout>
