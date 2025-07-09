@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Contact Us"
+  title="Contact Computer Repair Harold Hill | Get IT Support Quote | Chiltern Computers"
   description="Get in touch with Chiltern Computers for computer repair, IT support, and custom PC builds in Harold Hill, Romford, Essex."
 >
   <div class="section-bg-2" style="padding: 120px 20px 80px; min-height: 100vh;">
@@ -57,7 +57,7 @@ import Layout from '../layouts/Layout.astro';
                 name="user_name" 
                 required
                 style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="Enter your full name"
+                placeholder="Enter your name"
               />
             </div>
 
@@ -86,7 +86,21 @@ import Layout from '../layouts/Layout.astro';
                 id="user_phone" 
                 name="user_phone"
                 style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="07123 456789"
+                placeholder="0*** *******"
+              />
+            </div>
+
+            <!-- Location/Area Field -->
+            <div style="margin-bottom: 20px;">
+              <label for="user_location" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
+                Your Location/Area
+              </label>
+              <input 
+                type="text" 
+                id="user_location" 
+                name="user_location"
+                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
+                placeholder="e.g. Harold Hill, Romford, Hornchurch..."
               />
             </div>
 
@@ -123,7 +137,7 @@ import Layout from '../layouts/Layout.astro';
                 rows="5" 
                 required
                 style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; resize: vertical; transition: all 0.3s ease;"
-                placeholder="Please describe your computer issue or service requirements..."
+                placeholder="Briefly describe your computer issue or service requirements..."
               ></textarea>
             </div>
 
@@ -132,7 +146,7 @@ import Layout from '../layouts/Layout.astro';
               type="submit" 
               id="submit-btn"
               class="space-button" 
-              style="width: 100%; padding: 16px; font-size: 16px; position: relative; overflow: hidden;"
+              style="width: auto; padding: 16px 32px; font-size: 16px; position: relative; overflow: hidden; margin: 0 auto; display: block;"
             >
               <span id="btn-text">
                 <span>📤</span>
@@ -216,33 +230,80 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Internal Links Section (Fixes "Pages Without Internal Outlinks") -->
-      <div class="cosmic-card" style="padding: 32px; text-align: center;">
-        <h2 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 24px; margin-bottom: 20px;">
-          🚀 Our Services
+      <!-- Local Service Area Section -->
+      <div class="cosmic-card" style="padding: 32px; margin-bottom: 40px;">
+        <h2 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 20px; text-align: center;">
+          🗺️ Local Computer Repair Services
         </h2>
-        <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px;">
-          Explore our full range of computer repair and IT support services:
+        <p class="alien-font" style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; line-height: 1.6;">
+          Based in Harold Hill, Romford, we provide expert computer repair and IT support services throughout Essex and surrounding areas.
         </p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-          <a href="/services/repairs" class="space-button" style="text-decoration: none;">
-            <span>🔧</span>
-            Computer Repairs
-          </a>
-          <a href="/services/custom-pcs" class="space-button" style="text-decoration: none;">
-            <span>🎮</span>
-            Custom PC Builds
-          </a>
-          <a href="/services/new-used" class="space-button" style="text-decoration: none;">
-            <span>💻</span>
-            New & Refurb PCs
-          </a>
-          <a href="/about" class="space-button" style="text-decoration: none;">
-            <span>ℹ️</span>
-            About Us
-          </a>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid var(--plasma-cyan); border-radius: 8px; padding: 20px;">
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">📍 Primary Service Area</h3>
+            <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6; margin-bottom: 12px;">
+              We offer on-site and workshop-based <a href="/services/repairs" style="color: var(--aurora-green); text-decoration: none;">computer repair services</a> in Harold Hill, Romford, Hornchurch, Upminster, and throughout the RM3, RM4, RM14 postcodes.
+            </p>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">
+              Same-day service available for urgent repairs
+            </p>
+          </div>
+          
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--aurora-green); border-radius: 8px; padding: 20px;">
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">🚗 Extended Coverage</h3>
+            <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6; margin-bottom: 12px;">
+              We also serve Brentwood, Basildon, Chelmsford, and other Essex locations for <a href="/services/custom-pcs" style="color: var(--plasma-cyan); text-decoration: none;">custom PC builds</a> and major IT support projects.
+            </p>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">
+              Travel charges may apply for distant locations
+            </p>
+          </div>
         </div>
       </div>
+
+      <!-- Why Choose Us Section -->
+      <div class="cosmic-card" style="padding: 32px; margin-bottom: 40px;">
+        <h2 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 24px; margin-bottom: 20px; text-align: center;">
+          ⭐ Why Choose Chiltern Computers?
+        </h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">🛠️</div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">Expert Technicians</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
+              Qualified professionals with years of experience in computer repair and <a href="/about" style="color: var(--aurora-green); text-decoration: none;">IT support</a>
+            </p>
+          </div>
+          
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">⚡</div>
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">Fast Turnaround</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
+              Most repairs completed within 24-48 hours, with express service available for urgent issues
+            </p>
+          </div>
+          
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
+            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">Fair Pricing</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
+              Competitive rates with no hidden fees. Free diagnostics and transparent quotes before work begins
+            </p>
+          </div>
+          
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
+            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">30-Day Warranty</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
+              All repair work covered by our comprehensive warranty for your peace of mind
+            </p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
