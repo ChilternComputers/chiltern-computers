@@ -1,442 +1,308 @@
 ---
+// src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
+
+const url = new URL(Astro.request.url);
+const success = url.searchParams.get("success");
+const error = url.searchParams.get("error");
+
+// Enhanced error messages
+const errorMessages = {
+  rate_limit: "Too many requests. Please wait a moment before trying again.",
+  validation_failed: "Please check your input and ensure all fields are valid.",
+  send_failed: "Failed to send message. Please check your connection and try again.",
+  server_error: "Server error. Please try again later.",
+  network_error: "Network error. Please check your connection.",
+  default: "Something went wrong. Please try again."
+};
+
+const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] || errorMessages.default : null;
 ---
 
-<Layout 
-  title="Contact Us Today"
-description="Contact Chiltern Computers for fast, professional IT support and computer repair services in Havering. Same-day service.">
-  <div class="section-bg-2" style="padding: 120px 20px 80px; min-height: 100vh;">
-    <div class="container">
-      
-      <!-- Page Header -->
-      <div style="text-align: center; margin-bottom: 60px;">
-        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px;">
-          Contact Us
-        </h1>
-        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--plasma-cyan), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
-          Get expert computer repair and IT support in Harold Hill, Romford, and throughout Essex.
-        </p>
-      </div>
-
-      <!-- Contact Content Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-bottom: 60px;">
-        
-        <!-- Contact Form -->
-        <div class="cosmic-card" style="padding: 40px;">
-          <h2 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
-            <span>📧</span>Send Us a Message
-          </h2>
-          
-          <!-- Success Message (Hidden by default) -->
-          <div id="success-message" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--aurora-green); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
-            <p class="alien-font" style="color: var(--aurora-green); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px;">
-              <span>✅</span>
-              Message sent successfully! We'll get back to you within 24 hours.
-            </p>
-          </div>
-
-          <!-- Error Message (Hidden by default) -->
-          <div id="error-message" style="display: none; background: rgba(220, 38, 38, 0.1); border: 1px solid var(--mars-red); border-radius: 8px; padding: 16px; margin-bottom: 20px;">
-            <p class="alien-font" style="color: var(--mars-red); font-size: 14px; margin: 0; display: flex; align-items: center; gap: 8px;">
-              <span>❌</span>
-              Sorry, there was an error sending your message. Please try calling us instead.
-            </p>
-          </div>
-
-          <form id="contact-form" style="space-y: 20px;">
-            <!-- Name Field -->
-            <div style="margin-bottom: 20px;">
-              <label for="user_name" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Your Name *
-              </label>
-              <input 
-                type="text" 
-                id="user_name" 
-                name="user_name" 
-                required
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="Enter your name"
-              />
-            </div>
-
-            <!-- Email Field -->
-            <div style="margin-bottom: 20px;">
-              <label for="user_email" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Email Address *
-              </label>
-              <input 
-                type="email" 
-                id="user_email" 
-                name="user_email" 
-                required
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="your.email@example.com"
-              />
-            </div>
-
-            <!-- Phone Field -->
-            <div style="margin-bottom: 20px;">
-              <label for="user_phone" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Phone Number
-              </label>
-              <input 
-                type="tel" 
-                id="user_phone" 
-                name="user_phone"
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="0*** *******"
-              />
-            </div>
-
-            <!-- Location/Area Field -->
-            <div style="margin-bottom: 20px;">
-              <label for="user_location" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Your Location/Area
-              </label>
-              <input 
-                type="text" 
-                id="user_location" 
-                name="user_location"
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-                placeholder="e.g. Harold Hill, Romford, Hornchurch..."
-              />
-            </div>
-
-            <!-- Service Type -->
-            <div style="margin-bottom: 20px;">
-              <label for="service_type" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Service Required
-              </label>
-              <select 
-                id="service_type" 
-                name="service_type"
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; transition: all 0.3s ease;"
-              >
-                <option value="">Select a service...</option>
-                <option value="Computer Repair">Computer Repair</option>
-                <option value="Laptop Repair">Laptop Repair</option>
-                <option value="Custom PC Build">Custom PC Build</option>
-                <option value="Virus Removal">Virus Removal</option>
-                <option value="Data Recovery">Data Recovery</option>
-                <option value="IT Support">IT Support</option>
-                <option value="Hardware Upgrade">Hardware Upgrade</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <!-- Message Field -->
-            <div style="margin-bottom: 20px;">
-              <label for="message" class="space-font" style="color: var(--starlight-white); font-size: 14px; display: block; margin-bottom: 8px;">
-                Message *
-              </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
-                required
-                style="width: 100%; padding: 12px 16px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--plasma-cyan); border-radius: 8px; color: var(--starlight-white); font-size: 14px; resize: vertical; transition: all 0.3s ease;"
-                placeholder="Briefly describe your computer issue or service requirements..."
-              ></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <button 
-              type="submit" 
-              id="submit-btn"
-              class="space-button" 
-              style="width: auto; padding: 16px 32px; font-size: 16px; position: relative; overflow: hidden; margin: 0 auto; display: block;"
-            >
-              <span id="btn-text">
-                <span>📤</span>
-                Send Message
-              </span>
-              <span id="btn-loading" style="display: none;">
-                <span>⏳</span>
-                Sending...
-              </span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="cosmic-card" style="padding: 40px;">
-          <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 24px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
-            <span>📞</span>Get in Touch
-          </h3>
-
-          <!-- Contact Methods -->
-          <div style="space-y: 24px;">
-            <!-- Phone Numbers -->
-            <div style="margin-bottom: 24px;">
-              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📱 Call Us</h3>
-              <div style="space-y: 8px;">
-                <div>
-                  <a href="tel:+447971331814" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; display: block; margin-bottom: 4px; transition: color 0.3s ease;">
-                    📱 <strong>Mobile:</strong> 07971 331814
-                  </a>
-                </div>
-                <div>
-                  <a href="tel:+441708347341" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; display: block; transition: color 0.3s ease;">
-                    ☎️ <strong>Landline:</strong> 01708 347341
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div style="margin-bottom: 24px;">
-              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📧 Email Us</h3>
-              <a href="mailto:david@chilterncomputers.net" class="alien-font" style="color: var(--starlight-white); font-size: 16px; text-decoration: none; transition: color 0.3s ease;">
-                david@chilterncomputers.net
-              </a>
-            </div>
-
-            <!-- Address -->
-            <div style="margin-bottom: 24px;">
-              <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">📍 Visit Us</h3>
-              <address class="alien-font" style="color: var(--starlight-white); font-size: 16px; font-style: normal; line-height: 1.5;">
-                38 Hilldene Avenue<br>
-                Harold Hill, Romford<br>
-                Essex, RM3 8YP
-              </address>
-              <button 
-                onclick="openMaps()" 
-                class="space-button"
-                style="margin-top: 12px; padding: 8px 16px; font-size: 14px;"
-              >
-                <span>🗺️</span>
-                View on Map
-              </button>
-            </div>
-
-            <!-- Operating Hours -->
-            <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid var(--nebula-purple); border-radius: 8px; padding: 20px;">
-              <h3 class="space-font" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                <span>🕒</span>Operating Hours
-              </h3>
-              <div class="alien-font" style="color: var(--starlight-white); line-height: 1.6;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                  <span>Monday - Sunday:</span>
-                  <span style="color: var(--aurora-green); font-weight: 600;">9:00 AM - 9:00 PM</span>
-                </div>
-                <p style="font-size: 14px; color: var(--comet-silver); margin-top: 8px; margin-bottom: 0;">
-                  Emergency repairs available by appointment
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Local Service Area Section -->
-      <div class="cosmic-card" style="padding: 32px; margin-bottom: 40px;">
-        <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 20px; text-align: center;">
-          🗺️ Local Computer Repair Services
-        </h3>
-        <p class="alien-font" style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; line-height: 1.6;">
-          Based in Harold Hill, Romford, we provide expert computer repair and IT support services throughout Essex and surrounding areas.
-        </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-          <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid var(--plasma-cyan); border-radius: 8px; padding: 20px;">
-            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">📍 Primary Service Area</h3>
-            <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6; margin-bottom: 12px;">
-              We offer on-site and workshop-based <a href="/services/repairs" style="color: var(--aurora-green); text-decoration: none;">computer repair services</a> in Harold Hill, Romford, Hornchurch, Upminster, and throughout the RM3, RM4, RM14 postcodes.
-            </p>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">
-              Same-day service available for urgent repairs
-            </p>
-          </div>
-          
-          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid var(--aurora-green); border-radius: 8px; padding: 20px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">🚗 Extended Coverage</h3>
-            <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6; margin-bottom: 12px;">
-              We also serve Brentwood, Basildon, Chelmsford, and other Essex locations for <a href="/services/custom-pcs" style="color: var(--plasma-cyan); text-decoration: none;">custom PC builds</a> and major IT support projects.
-            </p>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">
-              Travel charges may apply for distant locations
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Why Choose Us Section -->
-      <div class="cosmic-card" style="padding: 32px; margin-bottom: 40px;">
-        <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 24px; margin-bottom: 20px; text-align: center;">
-          ⭐ Why Choose Chiltern Computers?
-        </h3>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-          <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 48px; margin-bottom: 12px;">🛠️</div>
-            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">Expert Technicians</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
-              Qualified professionals with years of experience in computer repair and <a href="/about" style="color: var(--aurora-green); text-decoration: none;">IT support</a>
-            </p>
-          </div>
-          
-          <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 48px; margin-bottom: 12px;">⚡</div>
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">Fast Turnaround</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
-              Most repairs completed within 24-48 hours, with express service available for urgent issues
-            </p>
-          </div>
-          
-          <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
-            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">Fair Pricing</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
-              Competitive rates with no hidden fees. Free diagnostics and transparent quotes before work begins
-            </p>
-          </div>
-          
-          <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 48px; margin-bottom: 12px;">🛡️</div>
-            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">30-Day Warranty</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.5;">
-              All repair work covered by our comprehensive warranty for your peace of mind
-            </p>
-          </div>
-        </div>
-      </div>
-
-
+<Layout title="Contact Us">
+  <section class="section-bg-5" style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0;" role="main">
+    
+    <!-- Header -->
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h1 class="space-font cosmic-glow" style="color: #00d4ff; font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: 2px;">Contact Us</h1>
+      <div style="height: 3px; width: 120px; background: #00d4ff; margin: 0 auto 24px;"></div>
+      <p class="alien-font" style="color: #b0c4de; font-size: 18px; max-width: 600px; margin: 0 auto;">Get expert computer repair and IT support in Harold Hill, Romford, and throughout Essex.</p>
     </div>
-  </div>
 
-  <!-- EmailJS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  
+    <!-- Two Column Layout -->
+    <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+      
+      <!-- Left Column - Contact Form -->
+      <div style="background: rgba(26, 31, 46, 0.8); border: 1px solid #00d4ff; border-radius: 16px; padding: 40px;">
+        <h2 class="space-font cosmic-glow" style="color: #00d4ff; font-size: 24px; font-weight: 600; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;">
+          💬 Send Us a Message
+        </h2>
+
+        {success && (
+          <div style="background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 20px;">✅</span>
+              <p style="color: #22c55e; font-weight: 600;">Message sent successfully! We'll get back to you soon.</p>
+            </div>
+          </div>
+        )}
+        
+        {errorMessage && (
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-size: 20px;">⚠️</span>
+              <p style="color: #ef4444; font-weight: 600;">{errorMessage}</p>
+            </div>
+          </div>
+        )}
+
+        <form id="contact-form">
+          <!-- Name Field -->
+          <div style="margin-bottom: 24px;">
+            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your name"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #00d4ff; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div style="margin-bottom: 24px;">
+            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Email Address *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your.email@example.com"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #00d4ff; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+            />
+          </div>
+
+          <!-- Phone Field -->
+          <div style="margin-bottom: 24px;">
+            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your number"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #00d4ff; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+            />
+          </div>
+
+          <!-- Location Field -->
+          <div style="margin-bottom: 24px;">
+            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Location/Area</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="e.g. Harold Hill, Romford, Hornchurch..."
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #00d4ff; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+            />
+          </div>
+
+
+
+          <!-- Message Field -->
+          <div style="margin-bottom: 32px;">
+            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              placeholder="Briefly describe your computer issue or service requirements..."
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #00d4ff; border-radius: 8px; color: #e2e8f0; font-size: 16px; resize: vertical; font-family: inherit;"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            id="submit-btn"
+            style="width: 100%; background: linear-gradient(135deg, #6366f1, #8b5cf6); border: none; color: white; padding: 16px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;"
+          >
+            📧 Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Right Column - Contact Information -->
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <!-- Get in Touch Card -->
+        <div style="background: rgba(26, 31, 46, 0.8); border: 1px solid #8b5cf6; border-radius: 16px; padding: 32px;">
+          <h3 class="space-font cosmic-glow" style="color: #8b5cf6; font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+            📞 Get in Touch
+          </h3>
+          
+          <!-- Call Us -->
+          <div style="margin-bottom: 20px;">
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              📱 Call Us
+            </h4>
+            <p class="alien-font" style="color: #b0c4de; margin-bottom: 8px;">📱 Mobile: 07971 331814</p>
+            <p class="alien-font" style="color: #b0c4de;">☎️ Landline: 01708 347341</p>
+          </div>
+
+          <!-- Email Us -->
+          <div style="margin-bottom: 20px;">
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              ✉️ Email Us
+            </h4>
+            <p class="alien-font" style="color: #b0c4de;">david@chilterncomputers.net</p>
+          </div>
+
+          <!-- Visit Us -->
+          <div>
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+              📍 Visit Us
+            </h4>
+            <p class="alien-font" style="color: #b0c4de; line-height: 1.6;">38 Hilldene Avenue<br>Harold Hill, Romford<br>Essex, RM3 8YP</p>
+            <button style="background: #8b5cf6; border: none; color: white; padding: 8px 16px; border-radius: 6px; font-size: 14px; margin-top: 12px; cursor: pointer;">
+              🗺️ View on Map
+            </button>
+          </div>
+        </div>
+
+        <!-- Operating Hours Card -->
+        <div style="background: rgba(26, 31, 46, 0.8); border: 1px solid #8b5cf6; border-radius: 16px; padding: 32px;">
+          <h3 class="space-font cosmic-glow" style="color: #8b5cf6; font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
+            🕒 Operating Hours
+          </h3>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="space-font" style="color: #e2e8f0; font-weight: 600;">Monday - Sunday:</span>
+            <span class="space-font" style="color: #00d4ff; font-weight: 600;">9:00 AM - 9:00 PM</span>
+          </div>
+          
+          <p class="alien-font" style="color: #b0c4de; font-size: 14px;">Emergency repairs available by appointment</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Responsive -->
+    <style>
+      @media (max-width: 1024px) {
+        section > div:last-child {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        section {
+          padding: 100px 16px 32px !important;
+        }
+        
+        section > div:first-child h1 {
+          font-size: 36px !important;
+        }
+        
+        section > div:last-child > div {
+          padding: 24px !important;
+        }
+        
+        /* Ensure form appears first on mobile */
+        section > div:last-child {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+        
+        section > div:last-child > div:first-child {
+          order: 1;
+        }
+        
+        section > div:last-child > div:last-child {
+          order: 2;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        section {
+          padding: 80px 12px 24px !important;
+        }
+        
+        section > div:first-child h1 {
+          font-size: 28px !important;
+        }
+        
+        section > div:last-child > div {
+          padding: 20px !important;
+        }
+      }
+    </style>
+  </section>
+
   <script>
-    // Initialize EmailJS with your Public Key
-    emailjs.init('5c3bc4aaf8bb01a7c73e605e511e7de9'); // Replace with your actual public key
-
-    // Handle form submission
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contact-form');
       const submitBtn = document.getElementById('submit-btn');
-      const btnText = document.getElementById('btn-text');
-      const btnLoading = document.getElementById('btn-loading');
-      const successMessage = document.getElementById('success-message');
-      const errorMessage = document.getElementById('error-message');
       
-      // Show loading state
-      btnText.style.display = 'none';
-      btnLoading.style.display = 'block';
-      submitBtn.disabled = true;
-      
-      // Hide previous messages
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-      
-      // Send email using EmailJS
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
+      if (form && submitBtn) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
           
-          // Show success message
-          successMessage.style.display = 'block';
+          const formData = new FormData(form);
+          const name = formData.get('name')?.toString().trim();
+          const email = formData.get('email')?.toString().trim();
+          const message = formData.get('message')?.toString().trim();
+          const honeypot = formData.get('website')?.toString().trim();
           
-          // Reset form
-          document.getElementById('contact-form').reset();
+          // Check honeypot
+          if (honeypot) {
+            console.log('Spam detected');
+            return;
+          }
           
-          // Scroll to success message
-          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Validation
+          if (!name || name.length < 2) {
+            alert('Please enter a valid name');
+            return;
+          }
           
-        }, function(error) {
-          console.log('FAILED...', error);
+          if (!email || !isValidEmail(email)) {
+            alert('Please enter a valid email address');
+            return;
+          }
           
-          // Show error message
-          errorMessage.style.display = 'block';
+          if (!message) {
+            alert('Please enter a message');
+            return;
+          }
           
-          // Scroll to error message
-          errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        })
-        .finally(function() {
-          // Reset button state
-          btnText.style.display = 'block';
-          btnLoading.style.display = 'none';
+          // Loading state
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '📧 Sending...';
+          
+          console.log('Form data:', {
+            name,
+            email,
+            phone: formData.get('phone'),
+            location: formData.get('location'),
+            message
+          });
+          
+          alert('Form validated successfully! Email sending not yet implemented.');
+          
+          // Reset
           submitBtn.disabled = false;
+          submitBtn.innerHTML = '📧 Send Message';
         });
-    });
-
-    // Open Google Maps
-    function openMaps() {
-      const address = "38 Hilldene Avenue, Harold Hill, Romford, Essex, RM3 8YP";
-      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-      window.open(googleMapsUrl, '_blank');
-    }
-
-    // Enhanced form styling
-    document.querySelectorAll('input, select, textarea').forEach(function(element) {
-      element.addEventListener('focus', function() {
-        this.style.borderColor = 'var(--aurora-green)';
-        this.style.boxShadow = '0 0 10px rgba(16, 185, 129, 0.3)';
-      });
+      }
       
-      element.addEventListener('blur', function() {
-        this.style.borderColor = 'var(--plasma-cyan)';
-        this.style.boxShadow = 'none';
-      });
+      function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
     });
   </script>
-
-  <style>
-    /* Contact Form Enhancements */
-    input::placeholder,
-    textarea::placeholder,
-    select {
-      color: var(--comet-silver) !important;
-      opacity: 0.7;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      outline: none;
-      border-color: var(--aurora-green) !important;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3) !important;
-    }
-
-    /* Button hover effects */
-    .space-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
-    }
-
-    /* Link hover effects */
-    a:hover {
-      color: var(--plasma-cyan) !important;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .container > div:first-child {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
-      
-      .cosmic-card {
-        padding: 24px !important;
-      }
-      
-      .space-button {
-        padding: 12px 20px !important;
-        font-size: 14px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .cosmic-card {
-        padding: 20px !important;
-      }
-      
-      input, textarea, select {
-        font-size: 16px !important; /* Prevents zoom on iOS */
-      }
-    }
-  </style>
 </Layout>
