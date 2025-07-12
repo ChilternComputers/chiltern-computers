@@ -112,11 +112,12 @@
               Essex, RM3 8YP
             </address>
           </div>
-          <button class="space-button" onclick="openMaps()" style="font-size: 12px; padding: 8px 16px;">
-            <span>🗺️</span>
-            View Map
-          </button>
-        </div>
+<a href="https://www.google.com/maps/search/Chiltern+Computers+38+Hilldene+Avenue+Harold+Hill+Romford+RM3+8YP" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+  <button class="space-button" style="font-size: 12px; padding: 8px 16px; cursor: pointer;">
+    <span>🗺️</span>
+    View Map
+  </button>
+</a>
 
         <!-- Site Navigation -->
         <div>
@@ -151,22 +152,22 @@
         </div>
       </div>
     </div>
+</div> 
 
-    <!-- Copyright Section -->
-    <div style="padding: 32px 0; text-align: center; margin: 0;">
-      <div class="cosmic-card" style="padding: 24px; display: inline-block; min-width: 400px;">
-        <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 16px; animation: float-cosmic 3s ease-in-out infinite;">🛸</span>
-            <span class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
-              © <span id="current-year">2025</span> Chiltern Computers - All rights reserved
-            </span>
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-            <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">⚡ Fast</span>
-            <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">🔒 Secure</span>
-            <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">📱 Responsive</span>
-          </div>
+  <!-- Copyright Section - Outside container for perfect centering -->
+  <div style="padding: 32px 20px; margin: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div class="cosmic-card" style="padding: 24px; max-width: 500px; margin: 0; width: 100%; text-align: center;">
+      <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+          <span style="font-size: 16px; animation: float-cosmic 3s ease-in-out infinite;">🛸</span>
+          <span class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
+            © <span id="current-year">2025</span> Chiltern Computers - All rights reserved
+          </span>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+          <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">⚡ Fast</span>
+          <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">🔒 Secure</span>
+          <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">📱 Responsive</span>
         </div>
       </div>
     </div>
@@ -202,7 +203,7 @@
     color: var(--plasma-cyan) !important;
   }
   
-  /* Mobile adjustments for footer */
+ /* Mobile adjustments for footer */
   @media (max-width: 768px) {
     footer .cosmic-card {
       padding: 20px !important;
@@ -218,9 +219,10 @@
       font-size: 11px !important;
     }
     
-    /* Copyright card mobile */
-    footer .cosmic-card[style*="min-width"] {
-      min-width: 300px !important;
+    /* Copyright section mobile */
+    footer .cosmic-card[style*="max-width"] {
+      max-width: 350px !important;
+      margin: 0 auto;
     }
   }
   
@@ -233,9 +235,10 @@
       gap: 20px !important;
     }
     
-    /* Copyright card small mobile */
-    footer .cosmic-card[style*="min-width"] {
-      min-width: 280px !important;
+    /* Copyright section small mobile */
+    footer .cosmic-card[style*="max-width"] {
+      max-width: 300px !important;
+      margin: 0 auto;
     }
   }
 </style>
