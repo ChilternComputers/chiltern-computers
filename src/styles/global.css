@@ -284,3 +284,25 @@
         font-size: 10px !important;
       }
     }
+    /* Add this to your existing global.css */
+.bg-gradient-blue {
+  background: linear-gradient(90deg, var(--cosmic-blue), var(--plasma-cyan), var(--deep-purple), var(--cosmic-blue));
+}
+/* Add this to your global.css */
+@keyframes glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.6); 
+  }
+  50% { 
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.8); 
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Make sure the blue gradient is visible */
+.bg-gradient-blue {
+  background: linear-gradient(90deg, var(--cosmic-blue), var(--plasma-cyan), var(--deep-purple), var(--cosmic-blue)) !important;
+}
