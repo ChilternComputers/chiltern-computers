@@ -56,97 +56,98 @@ const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] 
           </div>
         )}
 
-        <form id="contact-form">
-          <!-- Name Field -->
-          <div style="margin-bottom: 24px;">
-            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Name *</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Enter your name"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
-            />
-          </div>
+        <form id="contact-form" action="https://formspree.io/f/xeozjjgj" method="POST">
+  <!-- Name Field -->
+  <div style="margin-bottom: 24px;">
+    <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Name *</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      placeholder="Enter your name"
+      style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+    />
+  </div>
 
-          <!-- Email Field -->
-          <div style="margin-bottom: 24px;">
-            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Email Address *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="your.email@example.com"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
-            />
-          </div>
+  <!-- Email Field -->
+  <div style="margin-bottom: 24px;">
+    <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Email Address *</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      placeholder="your.email@example.com"
+      style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+    />
+  </div>
 
-          <!-- Phone Field -->
-          <div style="margin-bottom: 24px;">
-            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Phone Number</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Your number"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
-            />
-          </div>
+  <!-- Phone Field -->
+  <div style="margin-bottom: 24px;">
+    <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Phone Number</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="Your number"
+      style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+    />
+  </div>
 
-          <!-- Location Field -->
-          <div style="margin-bottom: 24px;">
-            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Location/Area</label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              placeholder="e.g. Harold Hill, Romford, Hornchurch..."
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
-            />
-          </div>
+  <!-- Location Field -->
+  <div style="margin-bottom: 24px;">
+    <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Your Location/Area</label>
+    <input
+      type="text"
+      id="location"
+      name="location"
+      placeholder="e.g. Harold Hill, Romford, Hornchurch..."
+      style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+    />
+  </div>
 
-          <!-- Message Field -->
-          <div style="margin-bottom: 32px;">
-            <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Message *</label>
-            <textarea
-              id="message"
-              name="message"
-              required
-              rows="5"
-              placeholder="Briefly describe your computer issue or service requirements..."
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px; resize: vertical; font-family: inherit;"
-            ></textarea>
-          </div>
+  <!-- Message Field -->
+  <div style="margin-bottom: 32px;">
+    <label class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">Message *</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      placeholder="Briefly describe your computer issue or service requirements..."
+      style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px; resize: vertical; font-family: inherit;"
+    ></textarea>
+  </div>
 
-          <!-- Honeypot -->
-          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
+  <!-- Formspree Honeypot (spam protection) -->
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+  
+  <!-- Hidden field to set the subject line -->
+  <input type="hidden" name="_subject" value="New Contact Form Message from Chiltern Computers Website" />
 
-          <!-- Human Verification and Submit Button -->
-          <div class="human-submit-row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px;">
-            <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
-              <input
-                type="checkbox"
-                id="human-check"
-                name="human"
-                required
-                style="width: 18px; height: 18px; accent-color: #1e40af; cursor: pointer;"
-              />
-              <span class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600;">I am human *</span>
-            </label>
-            
-            <button
-              type="submit"
-              id="submit-btn"
-              style="background: linear-gradient(135deg, #1e40af, #2563eb); border: none; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 200px;"
-            >
-              📧 Send Message
-            </button>
-          </div>
-          <!-- Honeypot -->
-          <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" />
-        </form>
+  <!-- Human Verification and Submit Button -->
+  <div class="human-submit-row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px;">
+    <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+      <input
+        type="checkbox"
+        id="human-check"
+        name="human"
+        required
+        style="width: 18px; height: 18px; accent-color: #1e40af; cursor: pointer;"
+      />
+      <span class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600;">I am human *</span>
+    </label>
+    
+    <button
+      type="submit"
+      id="submit-btn"
+      style="background: linear-gradient(135deg, #1e40af, #2563eb); border: none; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 200px;"
+    >
+      📧 Send Message
+    </button>
+  </div>
+</form>
       </div>
 
       <!-- Right Column - Contact Information -->
@@ -453,73 +454,31 @@ const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] 
     }
   </style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('contact-form');
-      const submitBtn = document.getElementById('submit-btn');
-      
-      if (form && submitBtn) {
-        form.addEventListener('submit', function(e) {
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        const submitBtn = document.getElementById('submit-btn');
+        const humanCheck = document.getElementById('human-check');
+        
+        // Check human verification
+        if (!humanCheck.checked) {
           e.preventDefault();
-          
-          const formData = new FormData(form);
-          const name = formData.get('name')?.toString().trim();
-          const email = formData.get('email')?.toString().trim();
-          const message = formData.get('message')?.toString().trim();
-          const humanCheck = formData.get('human');
-          const honeypot = formData.get('website')?.toString().trim();
-          
-          // Check honeypot
-          if (honeypot) {
-            console.log('Spam detected');
-            return;
-          }
-          
-          // Check human verification
-          if (!humanCheck) {
-            alert('Please confirm that you are human');
-            return;
-          }
-          
-          // Validation
-          if (!name || name.length < 2) {
-            alert('Please enter a valid name');
-            return;
-          }
-          
-          if (!email || !isValidEmail(email)) {
-            alert('Please enter a valid email address');
-            return;
-          }
-          
-          if (!message) {
-            alert('Please enter a message');
-            return;
-          }
-          
-          // Loading state
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = '📧 Sending...';
-          
-          console.log('Form data:', {
-            name,
-            email,
-            phone: formData.get('phone'),
-            location: formData.get('location'),
-            message
-          });
-          
-          alert('Form validated successfully! Email sending not yet implemented.');
-          
-          // Reset
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '📧 Send Message';
-        });
-      }
-      
-      function isValidEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-    });
-  </script>
+          alert('Please confirm that you are human');
+          return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '📧 Sending...';
+        
+        // Form will submit normally to Formspree
+        // After submission, Formspree will redirect to a thank you page
+      });
+    }
+  });
+</script>
 </Layout>
