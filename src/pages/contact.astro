@@ -120,10 +120,8 @@ const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] 
     ></textarea>
   </div>
 
-  <!-- Formspree Honeypot (spam protection) -->
+  <!-- Basic Formspree Configuration (Free Plan) -->
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-  
-  <!-- Hidden field to set the subject line -->
   <input type="hidden" name="_subject" value="New Contact Form Message from Chiltern Computers Website" />
 
   <!-- Human Verification and Submit Button -->
@@ -476,7 +474,7 @@ const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] 
         submitBtn.innerHTML = '📧 Sending...';
         
         // Form will submit normally to Formspree
-        // After submission, Formspree will redirect to a thank you page
+        // User will see Formspree's default thank you page
       });
     }
   });
