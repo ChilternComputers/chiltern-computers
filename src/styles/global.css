@@ -712,3 +712,445 @@
         animation: none;
     }
 }
+/* ULTIMATE 110% FOOTER STYLES - Add to global.css */
+
+/* Enhanced Emergency Banner Animation */
+@keyframes emergencyPulse {
+  0%, 100% { 
+    background: linear-gradient(45deg, rgba(220, 38, 38, 0.15), rgba(245, 158, 11, 0.15));
+    border-bottom-color: rgba(220, 38, 38, 0.3);
+  }
+  50% { 
+    background: linear-gradient(45deg, rgba(220, 38, 38, 0.25), rgba(245, 158, 11, 0.25));
+    border-bottom-color: rgba(220, 38, 38, 0.5);
+  }
+}
+
+/* Service Areas Enhanced Styling */
+.service-areas-enhanced {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(6, 182, 212, 0.08)) !important;
+}
+
+.cosmic-bg-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+  animation: cosmicShift 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes cosmicShift {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(20px) scale(1.05); }
+}
+
+/* Enhanced Ticker Performance */
+.enhanced-ticker .scroll-content {
+  animation: seamlessScroll 60s linear infinite !important;
+}
+
+/* Premium Contact Card */
+.contact-card-premium {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(124, 58, 237, 0.08)) !important;
+}
+
+.premium-glow-effect {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--nebula-purple), var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+  border-radius: 12px;
+  z-index: 1;
+  animation: premiumGlow 4s ease-in-out infinite;
+}
+
+@keyframes premiumGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.contact-link-premium:hover {
+  background: rgba(124, 58, 237, 0.2) !important;
+  transform: translateX(6px) !important;
+}
+
+/* Enhanced CTA Buttons */
+.cta-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-primary:hover::before {
+  left: 100%;
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+}
+
+.cta-secondary:hover {
+  background: rgba(245, 158, 11, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.cta-tertiary:hover {
+  background: rgba(124, 58, 237, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Enhanced Copyright Section */
+.copyright-enhanced {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(6, 182, 212, 0.05)) !important;
+}
+
+.copyright-bg-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
+  animation: copyrightPulse 6s ease-in-out infinite;
+}
+
+@keyframes copyrightPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
+
+/* Enhanced Footer Links */
+.footer-link:hover {
+  color: var(--plasma-cyan) !important;
+  transform: translateX(6px) !important;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.6) !important;
+}
+
+/* Map Button Enhancement */
+.map-button-enhanced:hover {
+  background: linear-gradient(45deg, var(--solar-orange), var(--plasma-cyan)) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Back to Top Enhanced */
+.back-to-top-enhanced {
+  background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)) !important;
+  border: 2px solid var(--aurora-green) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-top-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s;
+}
+
+.back-to-top-enhanced:hover::before {
+  left: 100%;
+}
+
+.back-to-top-enhanced:hover {
+  transform: translateY(-4px) scale(1.1) !important;
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.5) !important;
+  border-color: var(--plasma-cyan) !important;
+}
+
+/* Enhanced Service Area Items */
+.enhanced-ticker .service-area,
+.enhanced-ticker .service-area-primary {
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  border-radius: 10px !important;
+  padding: 6px 12px !important;
+}
+
+.enhanced-ticker .service-area:hover,
+.enhanced-ticker .service-area-primary:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.4) !important;
+}
+
+/* Enhanced Footer-specific hover effects */
+footer a:hover {
+  color: var(--plasma-cyan) !important;
+  transform: translateX(4px);
+}
+
+footer .space-button:hover {
+  background: rgba(6, 182, 212, 0.2) !important;
+  border-color: var(--aurora-green) !important;
+  color: var(--plasma-cyan) !important;
+  transform: translateY(-2px);
+}
+
+/* Back to top button specific styling */
+#back-to-top:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  footer .cosmic-card {
+    padding: 20px !important;
+  }
+  
+  footer .container > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  
+  /* Emergency banner mobile */
+  footer div[style*="emergencyPulse"] {
+    padding: 10px !important;
+    font-size: 11px !important;
+  }
+  
+  /* Enhanced ticker mobile */
+  .enhanced-ticker .scroll-content {
+    animation: seamlessScrollMobile 45s linear infinite !important;
+    gap: 1.2rem !important;
+  }
+  
+  .enhanced-ticker .service-area,
+  .enhanced-ticker .service-area-primary {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+  }
+  
+  /* CTA buttons mobile */
+  .cta-primary, .cta-secondary, .cta-tertiary {
+    font-size: 11px !important;
+    padding: 10px 20px !important;
+    margin: 4px 0 !important;
+  }
+  
+  footer .space-button {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+  }
+  
+  /* Operating hours mobile optimization */
+  footer div[style*="max-width: 200px"] {
+    max-width: 180px !important;
+  }
+  
+  /* Copyright section mobile - Better spacing */
+  footer .cosmic-card[style*="max-width"] {
+    max-width: 350px !important;
+    margin: 0 auto;
+    padding: 20px !important;
+  }
+  
+  /* Trust signals mobile */
+  footer .cosmic-card[style*="max-width"] span[style*="border-radius: 15px"] {
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+  
+  /* Feature badges mobile */
+  footer .cosmic-card[style*="max-width"] span[style*="border-radius: 12px"] {
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+  
+  /* Back to top button mobile */
+  #back-to-top {
+    font-size: 11px !important;
+    padding: 8px 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .cosmic-card {
+    padding: 16px !important;
+  }
+  
+  footer .container > div:first-child {
+    gap: 20px !important;
+  }
+  
+  /* Emergency banner extra small */
+  footer div[style*="emergencyPulse"] {
+    padding: 8px !important;
+    font-size: 10px !important;
+  }
+  
+  /* Enhanced ticker extra small */
+  .enhanced-ticker .service-area,
+  .enhanced-ticker .service-area-primary {
+    font-size: 10px !important;
+    padding: 4px 8px !important;
+  }
+  
+  /* Operating hours extra small mobile */
+  footer div[style*="max-width: 200px"] {
+    max-width: 160px !important;
+  }
+  
+  /* Copyright section small mobile */
+  footer .cosmic-card[style*="max-width"] {
+    max-width: 300px !important;
+    margin: 0 auto;
+    padding: 16px !important;
+  }
+  
+  /* CTA buttons extra small */
+  .cta-primary, .cta-secondary, .cta-tertiary {
+    font-size: 10px !important;
+    padding: 8px 16px !important;
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+  
+  /* Stack trust signals and badges */
+  footer .cosmic-card[style*="max-width"] div[style*="flex-wrap"] {
+    gap: 4px !important;
+    justify-content: center !important;
+  }
+  
+  footer .cosmic-card[style*="max-width"] span[style*="border-radius: 15px"] {
+    font-size: 8px !important;
+    padding: 2px 6px !important;
+  }
+  
+  footer .cosmic-card[style*="max-width"] span[style*="border-radius: 12px"] {
+    font-size: 8px !important;
+    padding: 2px 5px !important;
+  }
+  
+  /* Back to top button small mobile */
+  #back-to-top {
+    font-size: 10px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px !important;
+  }
+  
+  /* Larger ticker for big screens */
+  .enhanced-ticker .service-area,
+  .enhanced-ticker .service-area-primary {
+    font-size: 16px !important;
+    padding: 10px 16px !important;
+  }
+  
+  /* Better spacing for large screens */
+  footer .cosmic-card {
+    padding: 32px !important;
+  }
+}
+
+/* Dark mode enhancements (if needed) */
+@media (prefers-color-scheme: dark) {
+  .service-areas-enhanced {
+    background: linear-gradient(145deg, rgba(5, 10, 20, 0.98), rgba(6, 182, 212, 0.12)) !important;
+  }
+  
+  .contact-card-premium {
+    background: linear-gradient(145deg, rgba(5, 10, 20, 0.99), rgba(124, 58, 237, 0.12)) !important;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable all animations for accessibility */
+  footer *,
+  footer *::before,
+  footer *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  footer a:hover,
+  footer .space-button:hover,
+  footer .cta-primary:hover,
+  footer .cta-secondary:hover,
+  footer .cta-tertiary:hover {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  footer .cosmic-card {
+    border-width: 3px !important;
+  }
+  
+  footer .cta-primary {
+    border-width: 3px !important;
+    font-weight: 800 !important;
+  }
+  
+  footer .contact-card-premium {
+    border-width: 4px !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  footer {
+    background: white !important;
+    color: black !important;
+  }
+  
+  footer .cosmic-card {
+    border: 2px solid black !important;
+    background: white !important;
+  }
+  
+  footer .enhanced-ticker {
+    display: none !important;
+  }
+  
+  footer .cta-primary,
+  footer .cta-secondary,
+  footer .cta-tertiary {
+    display: none !important;
+  }
+}
+
+/* Performance optimizations */
+footer .cosmic-card {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+footer .scroll-content {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Ensure smooth scrolling performance */
+footer .enhanced-ticker {
+  contain: layout style paint;
+}
