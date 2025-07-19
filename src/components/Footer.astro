@@ -1,5 +1,5 @@
 ---
-// Footer.astro - Streamlined with Global Styles
+// Footer.astro - Fully Optimized with Enhanced Mobile Experience
 ---
 
 <footer class="section-bg-5" style="padding: 60px 0 0 0; position: relative; margin: 0;" role="contentinfo">
@@ -84,14 +84,16 @@
         </ul>
         
         <!-- Operating Hours -->
-        <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid var(--nebula-purple); border-radius: 8px; padding: 16px; margin-top: 20px;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-            <span style="font-size: 14px;">🕒</span>
-            <span class="tech-font" style="color: var(--nebula-purple); font-size: 12px; font-weight: 600;">HOURS</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span class="alien-font" style="color: var(--starlight-white); font-size: 13px;">Mon - Sun</span>
-            <span class="alien-font" style="color: var(--aurora-green); font-size: 13px; font-weight: 600;">9AM - 9PM</span>
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+          <div style="background: rgba(139, 92, 246, 0.1); border: 1px solid var(--nebula-purple); border-radius: 8px; padding: 16px; max-width: 200px; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="font-size: 14px;">🕒</span>
+              <span class="tech-font" style="color: var(--nebula-purple); font-size: 12px; font-weight: 600;">HOURS</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="alien-font" style="color: var(--starlight-white); font-size: 13px;">Mon - Sun</span>
+              <span class="alien-font" style="color: var(--aurora-green); font-size: 13px; font-weight: 600;">9AM - 9PM</span>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +116,7 @@
           </div>
           
           <!-- Map Button Wrapper -->
-          <div style="margin-top: 16px;">
+          <div style="text-align: left; margin-top: 16px;">
             <a href="https://www.google.com/maps/search/Chiltern+Computers+38+Hilldene+Avenue+Harold+Hill+Romford+RM3+8YP" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
               <button class="space-button" style="font-size: 12px; padding: 8px 16px; cursor: pointer;">
                 <span>🗺️</span>
@@ -159,17 +161,33 @@
     </div>
   </div>
 
-  <!-- Copyright Section - Outside container for perfect centering -->
+  <!-- Back to Top Button -->
+  <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+    <button id="back-to-top" class="space-button" style="font-size: 12px; padding: 10px 20px; cursor: pointer; transition: all 0.3s ease;">
+      <span>🚀</span>
+      Back to Top
+    </button>
+  </div>
+
+  <!-- Copyright Section - Enhanced Mobile Layout -->
   <div style="padding: 32px 20px; margin: 0; width: 100%; display: flex; justify-content: center; align-items: center;">
     <div class="cosmic-card" style="padding: 24px; max-width: 500px; margin: 0; width: 100%; text-align: center;">
       <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
-          <span style="font-size: 16px; animation: float-cosmic 3s ease-in-out infinite;">🛸</span>
-          <span class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
-            © <span id="current-year">2025</span> Chiltern Computers - All rights reserved
+        <!-- Copyright Text - Improved Mobile Layout -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+          <div style="display: flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap;">
+            <span style="font-size: 16px; animation: float-cosmic 3s ease-in-out infinite;">🛸</span>
+            <span class="tech-font" style="color: var(--comet-silver); font-size: 12px; text-align: center;">
+              © <span id="current-year">2025</span> Chiltern Computers
+            </span>
+          </div>
+          <span class="tech-font" style="color: var(--comet-silver); font-size: 11px; opacity: 0.8; text-align: center;">
+            All rights reserved
           </span>
         </div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+        
+        <!-- Feature Badges -->
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px;">
           <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">⚡ Fast</span>
           <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">🔒 Secure</span>
           <span style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.3); color: var(--plasma-cyan); padding: 3px 8px; border-radius: 12px; font-size: 10px; font-weight: 600;">📱 Responsive</span>
@@ -179,14 +197,25 @@
   </div>
 
   <script>
-    // Update copyright year
+    // Update copyright year automatically
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
       yearElement.textContent = currentYear;
     }
 
-    // Open maps function
+    // Back to top functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Open maps function (if needed elsewhere)
     function openMaps() {
       const address = "38 Hilldene Avenue, Harold Hill, Romford, Essex, RM3 8YP";
       const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
@@ -196,7 +225,7 @@
 </footer>
 
 <style>
-  /* Footer-specific hover effects */
+  /* Enhanced Footer-specific hover effects */
   footer a:hover {
     color: var(--plasma-cyan) !important;
     transform: translateX(4px);
@@ -206,9 +235,16 @@
     background: rgba(6, 182, 212, 0.2) !important;
     border-color: var(--aurora-green) !important;
     color: var(--plasma-cyan) !important;
+    transform: translateY(-2px);
   }
   
- /* Mobile adjustments for footer */
+  /* Back to top button specific styling */
+  #back-to-top:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+  }
+  
+  /* Enhanced Mobile adjustments for footer */
   @media (max-width: 768px) {
     footer .cosmic-card {
       padding: 20px !important;
@@ -224,13 +260,36 @@
       font-size: 11px !important;
     }
     
-    /* Copyright section mobile */
+    /* Operating hours mobile optimization */
+    footer div[style*="max-width: 200px"] {
+      max-width: 180px !important;
+    }
+    
+    /* Copyright section mobile - Better spacing */
     footer .cosmic-card[style*="max-width"] {
       max-width: 350px !important;
       margin: 0 auto;
+      padding: 20px !important;
+    }
+    
+    /* Ensure proper line breaks on mobile */
+    footer .cosmic-card[style*="max-width"] .tech-font {
+      line-height: 1.4 !important;
+    }
+    
+    /* Smaller badges on mobile */
+    footer .cosmic-card[style*="max-width"] span[style*="border-radius: 12px"] {
+      font-size: 9px !important;
+      padding: 2px 6px !important;
+    }
+    
+    /* Back to top button mobile */
+    #back-to-top {
+      font-size: 11px !important;
+      padding: 8px 16px !important;
     }
   }
-  
+
   @media (max-width: 480px) {
     footer .cosmic-card {
       padding: 16px !important;
@@ -240,10 +299,57 @@
       gap: 20px !important;
     }
     
+    /* Operating hours extra small mobile */
+    footer div[style*="max-width: 200px"] {
+      max-width: 160px !important;
+    }
+    
     /* Copyright section small mobile */
     footer .cosmic-card[style*="max-width"] {
       max-width: 300px !important;
       margin: 0 auto;
+      padding: 16px !important;
+    }
+    
+    /* Even smaller text on very small screens */
+    footer .cosmic-card[style*="max-width"] .tech-font {
+      font-size: 11px !important;
+    }
+    
+    /* Stack badges more efficiently on very small screens */
+    footer .cosmic-card[style*="max-width"] div[style*="flex-wrap"] {
+      gap: 4px !important;
+    }
+    
+    footer .cosmic-card[style*="max-width"] span[style*="border-radius: 12px"] {
+      font-size: 8px !important;
+      padding: 2px 5px !important;
+    }
+    
+    /* Back to top button small mobile */
+    #back-to-top {
+      font-size: 10px !important;
+      padding: 6px 12px !important;
+    }
+    
+    /* Copyright text wrapping for very small screens */
+    footer .cosmic-card[style*="max-width"] div[style*="flex-wrap"] {
+      justify-content: center !important;
+    }
+  }
+
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    footer a:hover {
+      transform: none !important;
+    }
+    
+    footer .space-button:hover {
+      transform: none !important;
+    }
+    
+    #back-to-top:hover {
+      transform: none !important;
     }
   }
 </style>
