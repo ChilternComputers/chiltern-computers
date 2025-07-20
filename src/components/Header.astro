@@ -25,7 +25,7 @@
       <div class="cosmic-card logo-image-card"
   style="padding:10px; background:rgba(6,182,212,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; min-width:58px; position:relative; overflow:hidden;">
   <!-- shimmer overlay, z-index: 1 -->
-  <div style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.2),transparent); animation:shimmer 5s ease-in-out infinite; z-index:1; pointer-events:none;"></div>
+  <div style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.2),transparent); animation:shimmer 10s ease-in-out infinite; z-index:1; pointer-events:none;"></div>
   <!-- logo image, z-index:2 -->
   <img src="/logo_homepage.webp" alt="Chiltern Computers Logo"
     style="height:75px; width:auto; display:block; position:relative; z-index:2;" />
@@ -168,8 +168,9 @@ if (mobileMenuBtn) {
       50% {transform:translateY(-10px) rotate(5deg);}
     }
     @keyframes shimmer {
-      0% {transform:translateX(-100%);}
-      100% {transform:translateX(100%);}
+      0% {transform:translateX(-200%);}
+      50% {transform:translateX(200%);}
+      100% {transform:translateX(-200%);}
     }
     @keyframes nav-scan {
       0%,100% {transform:translateX(-100%);}
