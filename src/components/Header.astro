@@ -34,8 +34,8 @@
 
       <!-- Mobile Menu Toggle (hidden desktop, shown mobile) -->
       <div class="mobile-menu-toggle" style="display:none; position:relative;">
-        <button id="mobile-menu-btn" class="space-button" style="padding:8px; font-size:16px; border:2px solid var(--plasma-cyan); background:none; color:inherit;">
-          <span>☰</span>
+        <button id="mobile-menu-btn" class="space-button" style="padding:10px 16px; font-size:14px; border:2px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); color:var(--starlight-white); border-radius:8px; font-weight:600; transition:all 0.3s ease;">
+          <span id="menu-text">Menu</span>
         </button>
       </div>
 
@@ -97,6 +97,7 @@
    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const headerNav = document.getElementById('main-nav');
 const mobileToggle = document.querySelector('.mobile-menu-toggle');
+const menuText = document.getElementById('menu-text');
 let mobileMenuOpen = false;
 
 function handleResize() {
@@ -108,6 +109,7 @@ function handleResize() {
     if (mobileToggle) mobileToggle.style.display = 'none';
     headerNav.style.display = 'flex';
     mobileMenuOpen = false; // reset mobile menu state when on desktop
+    if (menuText) menuText.textContent = 'Menu'; // reset text when returning to desktop
   }
 }
 window.addEventListener('resize', handleResize);
@@ -117,6 +119,11 @@ if (mobileMenuBtn) {
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenuOpen = !mobileMenuOpen;
     headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
+    
+    // Update button text based on menu state
+    if (menuText) {
+      menuText.textContent = mobileMenuOpen ? 'Close' : 'Menu';
+    }
   });
 }
 
@@ -131,6 +138,19 @@ if (mobileMenuBtn) {
         this.style.boxShadow = 'none';
       });
     });
+    
+    // Mobile menu button hover effect
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(6,182,212,0.4)';
+      });
+      mobileMenuBtn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      });
+    }
+    
     document.querySelectorAll('.contact-link-premium').forEach(link => {
       link.addEventListener('mouseenter', function() {
         const glowEffect = this.querySelector('.premium-glow-effect');
