@@ -107,28 +107,32 @@
     updateHeaderStatus();
     setInterval(updateHeaderStatus, 60000);
 
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const headerNav = document.getElementById('main-nav');
-    function handleResize() {
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      if (window.innerWidth <= 950) {
-        if (mobileToggle) mobileToggle.style.display = 'block';
-        if (headerNav) headerNav.style.display = 'none';
-      } else {
-        if (mobileToggle) mobileToggle.style.display = 'none';
-        if (headerNav) headerNav.style.display = 'flex';
-      }
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        if (headerNav) {
-          const isOpen = headerNav.style.display === 'flex';
-          headerNav.style.display = isOpen ? 'none' : 'flex';
-        }
-      });
-    }
+   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const headerNav = document.getElementById('main-nav');
+const mobileToggle = document.querySelector('.mobile-menu-toggle');
+let mobileMenuOpen = false;
+
+function handleResize() {
+  if (window.innerWidth <= 950) {
+    if (mobileToggle) mobileToggle.style.display = 'block';
+    // Only show the menu if user has opened it
+    headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
+  } else {
+    if (mobileToggle) mobileToggle.style.display = 'none';
+    headerNav.style.display = 'flex';
+    mobileMenuOpen = false; // reset mobile menu state when on desktop
+  }
+}
+window.addEventListener('resize', handleResize);
+handleResize();
+
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuOpen = !mobileMenuOpen;
+    headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
+  });
+}
+
     // Hover effects
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('mouseenter', function() {
