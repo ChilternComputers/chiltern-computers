@@ -202,7 +202,7 @@ if (mobileMenuBtn) {
       50% {box-shadow: 0 0 20px rgba(16,185,129,0.8);}
     }
     @media (max-width:1100px) {
-      .header-toolbar { flex-direction:column !important; align-items:stretch !important; gap:14px !important; }
+      .header-toolbar { flex-direction:column !important; align-items:center !important; gap:14px !important; }
       .header-nav { width:100% !important; margin-top:12px !important; display:none !important;}
       .logo-image-card,
       .brand-name-card {
@@ -211,14 +211,44 @@ if (mobileMenuBtn) {
         width:100% !important;
         justify-content:center !important;
       }
-      .mobile-menu-toggle { display:block !important; z-index:10; align-self:flex-end; margin-top:8px; margin-bottom:4px; }
+      .mobile-menu-toggle { 
+        display:block !important; 
+        z-index:10; 
+        align-self:center !important; 
+        margin:8px auto 4px auto !important;
+        text-align:center !important;
+      }
       .nav-list { flex-direction:column !important; align-items:stretch !important; gap:6px !important;}
       .nav-list li, .nav-list li a {width:100% !important; justify-content:center !important; padding:12px !important;}
       .header-nav[style*="display: flex"] { display:flex !important; flex-direction:column !important; align-items:stretch !important;}
+      
+      /* Center the contact info cards and keep them on same line */
+      .header-toolbar > div:last-child {
+        display:flex !important;
+        justify-content:center !important;
+        align-items:center !important;
+        gap:12px !important;
+        width:100% !important;
+        flex-wrap:nowrap !important;
+      }
     }
     @media (max-width:768px) {
       .logo-image-card,
       .brand-name-card { max-width: 160px !important; }
+      
+      /* Ensure contact cards stay centered and on same line on smaller screens */
+      .header-toolbar > div:last-child {
+        flex-wrap:nowrap !important;
+        justify-content:center !important;
+        gap:8px !important;
+      }
+      
+      /* Make contact cards slightly smaller on very small screens if needed */
+      .contact-link-premium,
+      .cosmic-card {
+        padding:8px 12px !important;
+        font-size:12px !important;
+      }
     }
   </style>
 </header>
