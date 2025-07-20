@@ -1929,5 +1929,36 @@ footer a:hover {
     align-items: stretch !important;
   }
 }
+.logo-brand-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(12,18,34,0.85);
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .logo-brand-box {
+    justify-content: center;
+  }
+}
+@media (max-width:1100px) {
+  .header-toolbar { flex-direction:column !important; align-items:stretch !important; gap:14px !important; }
+  .logo-image-card,
+  .brand-name-card {
+    margin: 0 auto 8px auto !important;
+    max-width: 190px !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+  }
+}
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+
+
 
 

@@ -1,47 +1,59 @@
 ---
-/* Header.astro - Fully Responsive Single-Row Toolbar: Logo | Tabs | Call Now | Open */
+// Header.astro - Logo, Brand, Tabs, Call Now, Open - Each in Their Own Card
 ---
 
-<header class="cosmic-header" style="position: relative; background: linear-gradient(135deg, rgba(15,23,42,0.95), rgba(30,41,59,0.9)); backdrop-filter: blur(20px); border-bottom: 2px solid rgba(6,182,212,0.3); z-index: 1000;" role="banner">
+<header class="cosmic-header" style="position:relative; background:linear-gradient(135deg,rgba(15,23,42,0.95),rgba(30,41,59,0.9)); backdrop-filter:blur(20px); border-bottom:2px solid rgba(6,182,212,0.3); z-index:1000;" role="banner">
   <!-- Cosmic Background Effects -->
-  <div class="header-cosmic-bg" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none;">
-    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%); animation: cosmic-rotate 20s linear infinite;"></div>
-    <div style="position: absolute; top: 20%; right: 10%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); border-radius: 50%; animation: float-cosmic 4s ease-in-out infinite;"></div>
-    <div style="position: absolute; bottom: 30%; left: 15%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%); border-radius: 50%; animation: float-cosmic 3s ease-in-out infinite reverse;"></div>
+  <div class="header-cosmic-bg" style="position:absolute; top:0; left:0; right:0; bottom:0; overflow:hidden; pointer-events:none;">
+    <div style="position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(6,182,212,0.1) 0%, transparent 70%); animation:cosmic-rotate 20s linear infinite;"></div>
+    <div style="position:absolute; top:20%; right:10%; width:100px; height:100px; background:radial-gradient(circle,rgba(139,92,246,0.15) 0%, transparent 70%); border-radius:50%; animation:float-cosmic 4s ease-in-out infinite;"></div>
+    <div style="position:absolute; bottom:30%; left:15%; width:80px; height:80px; background:radial-gradient(circle,rgba(16,185,129,0.12) 0%, transparent 70%); border-radius:50%; animation:float-cosmic 3s ease-in-out infinite reverse;"></div>
   </div>
 
   <!-- Emergency Contact Bar -->
-  <div style="background: linear-gradient(45deg, rgba(220,38,38,0.15), rgba(245,158,11,0.15)); border-bottom: 1px solid rgba(220,38,38,0.3); padding:8px; text-align:center; animation: emergencyPulse 3s ease-in-out infinite;">
-    <p class="tech-font" style="color: var(--solar-orange); font-size:11px; margin:0; font-weight:600; position:relative; z-index:2;">
-      🚨 <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span>
+  <div style="background:linear-gradient(45deg,rgba(220,38,38,0.15),rgba(245,158,11,0.15)); border-bottom:1px solid rgba(220,38,38,0.3); padding:8px; text-align:center; animation:emergencyPulse 3s ease-in-out infinite;">
+    <p class="tech-font" style="color:var(--solar-orange); font-size:11px; margin:0; font-weight:600; position:relative; z-index:2;">
+      🚨 <span style="color:var(--aurora-green);">EMERGENCY REPAIRS?</span>
       Call <a href="tel:+447971331814" style="color:var(--aurora-green); font-weight:bold; text-decoration:none;">07971 331814</a>
       - Available 9AM-9PM Daily 🚨
     </p>
   </div>
 
   <div class="container" style="position:relative; z-index:2; padding:16px 20px;">
-    <div class="header-toolbar" style="display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;">
-      <!-- Logo Card (Left, with Image) -->
-      <div class="cosmic-card logo-container" style="padding:12px; background:rgba(6,182,212,0.1); border:2px solid var(--plasma-cyan); border-radius:12px; position:relative; overflow:hidden; min-width:170px;">
-        <div style="position:absolute; inset:0; background:linear-gradient(45deg, transparent, rgba(6,182,212,0.2), transparent); animation: shimmer 2s ease-in-out infinite;"></div>
-        <div style="position:relative; z-index:2; display:flex; align-items:center; gap:12px;">
-          <img src="/logo_homepage.webp" alt="Chiltern Computers Logo" style="height:75px; width:auto; display:block;" />
-          <div>
-            <h1 class="space-font cosmic-glow" style="color:var(--plasma-cyan); font-size:20px; margin:0; font-weight:700; text-transform:uppercase; letter-spacing:1px;">Chiltern</h1>
-            <div class="tech-font" style="color:var(--aurora-green); font-size:11px; margin:0; font-weight:600; letter-spacing:0.5px;">COMPUTERS</div>
-          </div>
+    <div class="header-toolbar" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+      <!-- Logo Image Card -->
+      <div class="cosmic-card logo-image-card"
+  style="padding:10px; background:rgba(6,182,212,0.1); border-radius:12px; display:flex; align-items:center; justify-content:center; min-width:58px; position:relative; overflow:hidden;">
+  <!-- shimmer overlay, z-index: 1 -->
+  <div style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.2),transparent); animation:shimmer 2s ease-in-out infinite; z-index:1; pointer-events:none;"></div>
+  <!-- logo image, z-index:2 -->
+  <img src="/logo_homepage.webp" alt="Chiltern Computers Logo"
+    style="height:75px; width:auto; display:block; position:relative; z-index:2;" />
+</div>
+
+
+      <!-- Brand Name Card -->
+      <div class="cosmic-card brand-name-card"
+        style="padding:10px 18px; background:rgba(6,182,212,0.08); border:2px solid var(--plasma-cyan); border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:110px;">
+        <h1 class="space-font cosmic-glow"
+          style="color:var(--plasma-cyan); font-size:20px; margin:0; font-weight:700; text-transform:uppercase; letter-spacing:1px;">
+          Chiltern
+        </h1>
+        <div class="tech-font"
+          style="color:var(--aurora-green); font-size:12px; margin:0; font-weight:600; letter-spacing:0.5px;">
+          COMPUTERS
         </div>
       </div>
 
-      <!-- Mobile Menu Toggle (shows on mobile only) -->
+      <!-- Mobile Menu Toggle (hidden desktop, shown mobile) -->
       <div class="mobile-menu-toggle" style="display:none; position:relative;">
         <button id="mobile-menu-btn" class="space-button" style="padding:8px; font-size:16px; border:2px solid var(--plasma-cyan); background:none; color:inherit;">
           <span>☰</span>
         </button>
       </div>
 
-      <!-- Navigation Tabs (Center, flexible, hidden on mobile until toggled) -->
-      <nav class="header-nav" id="main-nav" style="flex:1 1 0; display:flex; justify-content:center; min-width:240px;">
+      <!-- Navigation Tabs (Center, hidden on mobile/tablet until toggled) -->
+      <nav class="header-nav" id="main-nav" style="flex:1 1 0; display:flex; justify-content:center; min-width:210px;">
         <ul class="nav-list" style="list-style:none; padding:0; margin:0; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
           <li><a href="/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>🏠</span>Home</a></li>
           <li><a href="/services/custom-pcs" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>🎮</span>Gaming PCs</a></li>
@@ -54,20 +66,21 @@
 
       <!-- Contact Info (Right) -->
       <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <a href="tel:+447971331814" class="cosmic-card contact-link-premium" style="padding:10px 16px; background:rgba(139,92,246,0.15); border:2px solid var(--nebula-purple); border-radius:10px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; position:relative; overflow:hidden;">
+        <a href="tel:+447971331814" class="cosmic-card contact-link-premium"
+          style="padding:10px 16px; background:rgba(139,92,246,0.15); border:2px solid var(--nebula-purple); border-radius:10px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; position:relative; overflow:hidden;">
           <div class="premium-glow-effect" style="position:absolute; inset:0; background:linear-gradient(45deg, transparent, rgba(139,92,246,0.3), transparent); opacity:0; transition:opacity 0.3s ease;"></div>
           <span style="font-size:16px; position:relative; z-index:2;">📱</span>
           <div style="position:relative; z-index:2;">
-            <div class="tech-font" style="color: var(--comet-silver); font-size:10px;">CALL NOW</div>
-            <div class="alien-font" style="color: var(--starlight-white); font-size:13px; font-weight:600;">07971 331814</div>
+            <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">CALL NOW</div>
+            <div class="alien-font" style="color:var(--starlight-white); font-size:13px; font-weight:600;">07971 331814</div>
           </div>
         </a>
         <div class="cosmic-card" style="padding:10px 16px; background:rgba(16,185,129,0.15); border:2px solid var(--aurora-green); border-radius:10px;">
           <div style="display:flex; align-items:center; gap:8px;">
             <span style="font-size:14px;">🕒</span>
             <div>
-              <div class="tech-font" style="color: var(--comet-silver); font-size:10px;">OPEN</div>
-              <div class="alien-font" style="color: var(--aurora-green); font-size:12px; font-weight:600;" id="header-status">9AM - 9PM</div>
+              <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">OPEN</div>
+              <div class="alien-font" style="color:var(--aurora-green); font-size:12px; font-weight:600;" id="header-status">9AM - 9PM</div>
             </div>
           </div>
         </div>
@@ -94,7 +107,6 @@
     updateHeaderStatus();
     setInterval(updateHeaderStatus, 60000);
 
-    // Mobile hamburger logic
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const headerNav = document.getElementById('main-nav');
     function handleResize() {
@@ -144,24 +156,24 @@
 
   <style>
     @keyframes cosmic-rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
     @keyframes float-cosmic {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-10px) rotate(5deg); }
+      0%,100% { transform:translateY(0px) rotate(0deg);}
+      50% {transform:translateY(-10px) rotate(5deg);}
     }
     @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      0% {transform:translateX(-100%);}
+      100% {transform:translateX(100%);}
     }
     @keyframes nav-scan {
-      0%, 100% { transform: translateX(-100%); }
-      50% { transform: translateX(100%); }
+      0%,100% {transform:translateX(-100%);}
+      50% {transform:translateX(100%);}
     }
     @keyframes emergencyPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
+      0%,100% {opacity:1;}
+      50% {opacity:0.8;}
     }
     .cosmic-glow {
       text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
@@ -174,56 +186,27 @@
       animation: pulse-glow 2s ease-in-out infinite;
     }
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 5px rgba(16,185,129,0.5); }
-      50% { box-shadow: 0 0 20px rgba(16,185,129,0.8); }
+      0%,100% { box-shadow: 0 0 5px rgba(16,185,129,0.5);}
+      50% {box-shadow: 0 0 20px rgba(16,185,129,0.8);}
     }
-
-    /* ───── MOBILE / TABLET ADJUSTMENTS ───── */
-    @media (max-width: 1100px) {
-      .header-toolbar {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 14px !important;
+    @media (max-width:1100px) {
+      .header-toolbar { flex-direction:column !important; align-items:stretch !important; gap:14px !important; }
+      .header-nav { width:100% !important; margin-top:12px !important; display:none !important;}
+      .logo-image-card,
+      .brand-name-card {
+        margin:0 auto 8px auto !important;
+        max-width:215px !important;
+        width:100% !important;
+        justify-content:center !important;
       }
-      .header-nav {
-        width: 100% !important;
-        margin-top: 12px !important;
-        display: none !important;
-      }
-      .logo-container {
-        margin: 0 auto 8px auto !important;
-        max-width: 220px !important;
-        width: 100% !important;
-      }
-      .mobile-menu-toggle {
-        display: block !important;
-        z-index: 10;
-        align-self: flex-end;
-        margin-top: 8px;
-        margin-bottom: 4px;
-      }
-      .nav-list {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 6px !important;
-      }
-      .nav-list li,
-      .nav-list li a {
-        width: 100% !important;
-        justify-content: center !important;
-        padding: 12px !important;
-      }
-      /* When nav is visible (flex, via JS) */
-      .header-nav[style*="display: flex"] {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-      }
+      .mobile-menu-toggle { display:block !important; z-index:10; align-self:flex-end; margin-top:8px; margin-bottom:4px; }
+      .nav-list { flex-direction:column !important; align-items:stretch !important; gap:6px !important;}
+      .nav-list li, .nav-list li a {width:100% !important; justify-content:center !important; padding:12px !important;}
+      .header-nav[style*="display: flex"] { display:flex !important; flex-direction:column !important; align-items:stretch !important;}
     }
-    @media (max-width: 768px) {
-      .logo-container {
-        max-width: 210px !important;
-      }
+    @media (max-width:768px) {
+      .logo-image-card,
+      .brand-name-card { max-width: 160px !important; }
     }
   </style>
 </header>
