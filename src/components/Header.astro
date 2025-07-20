@@ -1,423 +1,256 @@
 ---
-// Header.astro - Component should only contain the header, not full HTML document
+/* Header.astro - Single-Row Toolbar: Logo | Tabs | Call Now | Open */
 ---
 
-<!-- Trust indicators micro-banner -->
-<div id="trust-banner" class="bg-gradient-to-r from-emerald-50 to-blue-50 border-b border-emerald-100/50 py-2 text-center text-xs transition-all duration-300 fixed top-0 left-0 right-0 z-40">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-gray-700">
-            <div class="flex items-center gap-1">
-                <svg class="w-3 h-3 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                <span class="whitespace-nowrap">Same-day service</span>
+<header class="cosmic-header" style="position: relative; background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)); backdrop-filter: blur(20px); border-bottom: 2px solid rgba(6, 182, 212, 0.3); z-index: 1000;" role="banner">
+
+  <!-- Cosmic Background Effects -->
+  <div class="header-cosmic-bg" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none;">
+    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%); animation: cosmic-rotate 20s linear infinite;"></div>
+    <div style="position: absolute; top: 20%; right: 10%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); border-radius: 50%; animation: float-cosmic 4s ease-in-out infinite;"></div>
+    <div style="position: absolute; bottom: 30%; left: 15%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%); border-radius: 50%; animation: float-cosmic 3s ease-in-out infinite reverse;"></div>
+  </div>
+
+  <!-- Emergency Contact Bar -->
+  <div style="background: linear-gradient(45deg, rgba(220,38,38,0.15), rgba(245,158,11,0.15)); border-bottom: 1px solid rgba(220,38,38,0.3); padding: 8px; text-align: center; animation: emergencyPulse 3s ease-in-out infinite;">
+    <p class="tech-font" style="color: var(--solar-orange); font-size: 11px; margin: 0; font-weight: 600; position: relative; z-index: 2;">
+      🚨 <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span>
+      Call <a href="tel:+447971331814" style="color: var(--aurora-green); font-weight: bold; text-decoration: none;">07971 331814</a>
+      - Available 9AM-9PM Daily 🚨
+    </p>
+  </div>
+
+  <div class="container" style="position: relative; z-index: 2; padding: 16px 20px;">
+    <!-- SINGLE INLINE ROW: Logo | Tabs | Contact Cards -->
+    <div class="header-toolbar" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+
+      <!-- Logo Card (Left, WITH LOGO IMAGE) -->
+      <div class="cosmic-card logo-container" style="padding: 12px; background: rgba(6,182,212,0.1); border: 2px solid var(--plasma-cyan); border-radius: 12px; position: relative; overflow: hidden; min-width: 210px;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(6,182,212,0.2), transparent); animation: shimmer 2s ease-in-out infinite;"></div>
+        <div style="position: relative; z-index: 2; display: flex; align-items: center; gap: 12px;">
+          <img src="/logo_homepage.webp" alt="Chiltern Computers Logo" style="height: 75px; width: auto; display: block;" />
+          
+          <div>
+            <h1 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 20px; margin: 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              Chiltern
+            </h1>
+            <div class="tech-font" style="color: var(--aurora-green); font-size: 11px; margin: 0; font-weight: 600; letter-spacing: 0.5px;">
+              COMPUTERS
             </div>
-            <div class="flex items-center gap-1">
-                <svg class="w-3 h-3 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                </svg>
-                <span class="whitespace-nowrap">Free diagnosis</span>
-            </div>
-            <div class="hidden sm:flex items-center gap-1">
-                <svg class="w-3 h-3 text-amber-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                </svg>
-                <span class="whitespace-nowrap">5★ Google Reviews</span>
-            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Navigation Tabs (Center) -->
+      <nav class="header-nav" style="flex: 1 1 0; display: flex; justify-content: center; min-width: 290px;">
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+          <li>
+            <a href="/" class="nav-link space-button" style="padding: 8px 16px; font-size: 12px; text-decoration: none; border: 1px solid var(--plasma-cyan); background: rgba(6,182,212,0.1); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;">
+              <span>🏠</span>Home
+            </a>
+          </li>
+          <li>
+            <a href="/services/custom-pcs" class="nav-link space-button" style="padding: 8px 16px; font-size: 12px; text-decoration: none; border: 1px solid var(--aurora-green); background: rgba(16,185,129,0.1); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;">
+              <span>🎮</span>Gaming PCs
+            </a>
+          </li>
+          <li>
+            <a href="/services/repairs/" class="nav-link space-button" style="padding: 8px 16px; font-size: 12px; text-decoration: none; border: 1px solid var(--solar-orange); background: rgba(245,158,11,0.1); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;">
+              <span>🛠️</span>Repairs
+            </a>
+          </li>
+          <li>
+            <a href="/services/new-used/" class="nav-link space-button" style="padding: 8px 16px; font-size: 12px; text-decoration: none; border: 1px solid var(--nebula-purple); background: rgba(139,92,246,0.1); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;">
+              <span>💻</span>PCs & Laptops
+            </a>
+          </li>
+          <li>
+            <a href="/about/" class="nav-link space-button" style="padding: 8px 16px; font-size: 12px; text-decoration: none; border: 1px solid var(--plasma-cyan); background: rgba(6,182,212,0.1); transition: all 0.3s ease; display: flex; align-items: center; gap: 6px;">
+              <span>ℹ️</span>About
+            </a>
+          </li>
+          <li>
+            <a href="/contact/" class="nav-link space-button cta-primary" style="padding: 8px 16px; font-size: 12px; text-decoration: none; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border: 2px solid var(--aurora-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+              <span>📞</span>Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Contact Info (Right) -->
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <a href="tel:+447971331814" class="cosmic-card contact-link-premium" style="padding: 10px 16px; background: rgba(139,92,246,0.15); border: 2px solid var(--nebula-purple); border-radius: 10px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; position: relative; overflow: hidden;">
+          <div class="premium-glow-effect" style="position: absolute; inset: 0; background: linear-gradient(45deg, transparent, rgba(139,92,246,0.3), transparent); opacity: 0; transition: opacity 0.3s ease;"></div>
+          <span style="font-size: 16px; position: relative; z-index: 2;">📱</span>
+          <div style="position: relative; z-index: 2;">
+            <div class="tech-font" style="color: var(--comet-silver); font-size: 10px;">CALL NOW</div>
+            <div class="alien-font" style="color: var(--starlight-white); font-size: 13px; font-weight: 600;">07971 331814</div>
+          </div>
+        </a>
+        <div class="cosmic-card" style="padding: 10px 16px; background: rgba(16,185,129,0.15); border: 2px solid var(--aurora-green); border-radius: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 14px;">🕒</span>
+            <div>
+              <div class="tech-font" style="color: var(--comet-silver); font-size: 10px;">OPEN</div>
+              <div class="alien-font" style="color: var(--aurora-green); font-size: 12px; font-weight: 600;" id="header-status">9AM - 9PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-</div>
 
-<!-- Enhanced Header with Translucent Effect -->
-<header id="main-header" class="backdrop-blur-md shadow-md fixed left-0 right-0 z-50 transition-all duration-300" role="banner" style="background-color: rgba(255, 255, 255, 0.95); top: 2rem;">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center transition-all duration-300" id="header-content" style="height: 4rem;">
-            
-            <!-- Enhanced Logo and Brand -->
-            <a href="/" class="flex items-center gap-3 group relative" aria-label="Chiltern Computers Homepage">
-                <!-- Glow effect -->
-                <div class="absolute -inset-2 bg-gradient-to-r from-brand-400/20 to-blue-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                
-                <!-- Logo -->
-               <img 
-  src="/logo_homepage.webp" 
-  alt="Chiltern Computers logo" 
-  width="300" 
-  height="170" 
-  loading="lazy" 
-  decoding="async"
-  class="w-[120px] h-auto"
-/>
-
-                
-                <div class="relative z-10">
-                    <div class="text-xl font-display font-semibold text-brand-600">
-                     Chiltern Computers
-                        </div>
-                    <p class="text-sm text-gray-600 hidden sm:block group-hover:text-gray-700 transition-colors duration-300">
-                        Professional IT Support & Repairs
-                    </p>
-                </div>
-            </a>
-
-            <!-- Mobile menu button -->
-            <button
-                id="mobileMenuToggle"
-                class="md:hidden flex flex-col gap-1 p-2 relative overflow-hidden group rounded-md transition-all duration-300"
-                aria-label="Toggle mobile menu"
-                aria-expanded="false"
-            >
-                <div class="absolute inset-0 bg-brand-100 rounded-md scale-0 group-hover:scale-100 transition-transform duration-200"></div>
-                <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-                <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-                <span class="menu-line w-6 h-0.5 bg-gray-600 transition-all duration-300 relative z-10 group-hover:bg-brand-600"></span>
-            </button>
-
-            <!-- Enhanced Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
-                <a 
-                    href="/" 
-                    class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
-                >
-                    <span class="relative z-10">Home</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                </a>
-
-               <!-- Services Dropdown -->
-                <div class="relative group">
-                    <button 
-                        class="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden"
-                        aria-label="Services menu"
-                    >
-                        <span class="relative z-10">Services</span>
-                        <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180 relative z-10" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                        </svg>
-                        <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                    </button>
-                    
-                    <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-200/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        <div class="p-2">
-                            <a href="/services/new-used/" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group/item">
-                                <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover/item:bg-blue-200 transition-colors">
-                                    <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="font-medium">New & Refurb Computers</div>
-                                    <div class="text-sm text-gray-500">Quality desktops and laptops</div>
-                                </div>
-                            </a>
-                            
-                            <a href="/services/repairs/" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group/item">
-                                <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center group-hover/item:bg-green-200 transition-colors">
-                                    <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="font-medium">Repairs & Upgrades</div>
-                                    <div class="text-sm text-gray-500">Expert diagnostic and repair</div>
-                                </div>
-                            </a>
-                            
-                            <a href="/services/custom-pcs/" class="flex items-center gap-3 px-3 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 group/item">
-                                <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center group-hover/item:bg-purple-200 transition-colors">
-                                    <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                                        <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 000 1.788l4 2.001zM19.5 7.134V4.896a1 1 0 00-.553-.894L13 1.002a1 1 0 00-.894 0L6.158 3.893A1 1 0 006 4.896v3.237a1 1 0 00.553.894L12.5 11.634a1 1 0 00.894 0l5.947-2.607A1 1 0 0019.5 8.134zM3.447 8.894A1 1 0 004 9.236V15a1 1 0 001.447.894l4-2A1 1 0 0010 13V9.236a1 1 0 00-.553-.894L3.5 6.345A1 1 0 003 7.134v1.002c0 .351.182.676.447.758z"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="font-medium">Custom Gaming Builds</div>
-                                    <div class="text-sm text-gray-500">High-performance gaming PCs</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <a 
-                    href="/about/" 
-                    class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group"
-                >
-                    <span class="relative z-10">About</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                </a>
-                
-                <a 
-                    href="/contact/" 
-                    class="nav-link px-4 py-2 rounded-md hover:bg-brand-50 hover:text-brand-600 transition-all duration-300 font-medium relative overflow-hidden group border-2 border-transparent hover:border-brand-200"
-                >
-                    <span class="relative z-10">Contact</span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-brand-500/10 to-blue-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                </a>
-
-                <!-- Free Play Tab - Moved to the far right -->
-                <a 
-                    href="/free-play/" 
-                    class="nav-link px-4 py-2 rounded-md hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 transition-all duration-300 font-medium relative overflow-hidden group border border-transparent hover:border-purple-200"
-                >
-                    <span class="relative z-10 flex items-center gap-2">
-                        Free Play
-                        <svg class="w-4 h-4 text-purple-500 group-hover:text-purple-600 transition-colors" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                        </svg>
-                    </span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                </a>
-            </nav>
-        </div>
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle" style="display: none; position: absolute; top: 20px; right: 20px;">
+      <button id="mobile-menu-btn" class="space-button" style="padding: 8px; font-size: 16px; border: 2px solid var(--plasma-cyan);">
+        <span>☰</span>
+      </button>
     </div>
-    
-    <!-- Scroll progress bar -->
-    <div id="scroll-progress" class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-brand-500 to-blue-500 transition-all duration-100 ease-out shadow-sm" style="width: 0%"></div>
-</header>
+  </div>
 
-<!-- Mobile Menu Overlay -->
-<div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300 md:hidden"></div>
-
-<!-- Mobile Menu -->
-<nav 
-    id="mobileMenu" 
-    class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white/98 backdrop-blur-md shadow-2xl z-50 transform translate-x-full transition-transform duration-300 md:hidden"
-    role="navigation" 
-    aria-label="Mobile navigation"
->
-    <div class="p-6">
-        <!-- Mobile menu header -->
-        <div class="flex items-center justify-between mb-8">
-            <div class="flex items-center gap-2">
-                <div class="h-8 w-8 bg-gradient-to-br from-brand-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                    CC
-                </div>
-                <span class="font-bold text-brand-600">Menu</span>
-            </div>
-            <button id="closeMobileMenu" class="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200" aria-label="Close menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile menu items -->
-        <div class="space-y-2">
-            <a href="/" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                Home
-            </a>
-            <a href="/about/" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                About
-            </a>
-            
-            <!-- Mobile Services Section - FIXED URLS TO MATCH DESKTOP -->
-            <div class="px-4 py-2">
-                <div class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Services</div>
-                <div class="space-y-1">
-                    <a href="/services/new-used/" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-                        </svg>
-                        <span>New & Refurb Computers</span>
-                    </a>
-                    <a href="/services/repairs/" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-                        </svg>
-                        <span>Repairs & Upgrades</span>
-                    </a>
-                    <a href="/services/custom-pcs/" class="flex items-center gap-3 px-3 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200">
-                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                            <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 000 1.788l4 2.001zM19.5 7.134V4.896a1 1 0 00-.553-.894L13 1.002a1 1 0 00-.894 0L6.158 3.893A1 1 0 006 4.896v3.237a1 1 0 00.553.894L12.5 11.634a1 1 0 00.894 0l5.947-2.607A1 1 0 0019.5 8.134zM3.447 8.894A1 1 0 004 9.236V15a1 1 0 001.447.894l4-2A1 1 0 0010 13V9.236a1 1 0 00-.553-.894L3.5 6.345A1 1 0 003 7.134v1.002c0 .351.182.676.447.758z"/>
-                        </svg>
-                        <span>Custom Gaming Builds</span>
-                    </a>
-                </div>
-            </div>
-            
-            <a href="/contact/" class="block px-4 py-3 text-gray-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition-all duration-200 font-medium">
-                Contact
-            </a>
-            
-            <!-- Mobile Free Play Section - Moved after Contact -->
-            <a href="/free-play/" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-600 rounded-lg transition-all duration-200 font-medium border border-transparent hover:border-purple-200">
-                <span>Free Play</span>
-                <svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                </svg>
-            </a>
-            
-            <!-- Mobile call button -->
-            <a 
-                href="tel:01708347341" 
-                class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-3 rounded-lg hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-md font-medium mt-4"
-            >
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                </svg>
-                <span>Call: 01708 347341</span>
-            </a>
-        </div>
-    </div>
-</nav>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const header = document.getElementById('main-header');
-        const headerContent = document.getElementById('header-content');
-        const scrollProgress = document.getElementById('scroll-progress');
-        const trustBanner = document.getElementById('trust-banner');
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-        const closeMobileMenu = document.getElementById('closeMobileMenu');
-        const menuLines = document.querySelectorAll('.menu-line');
-        
-        let isMobileMenuOpen = false;
-        let lastScrollY = 0;
-        let ticking = false;
-
-        // Enhanced scroll effects with translucent header
-        function updateHeaderOnScroll() {
-            const scrollY = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = Math.min((scrollY / docHeight) * 100, 100);
-
-            // Update scroll progress bar
-            if (scrollProgress) {
-                scrollProgress.style.width = `${scrollPercent}%`;
-            }
-
-            // Calculate translucency based on scroll position
-            const maxScroll = 300; // Adjust this value to control when full translucency is reached
-            const scrollRatio = Math.min(scrollY / maxScroll, 1);
-            
-            // Header styling changes with translucent effect
-            if (scrollY > 10) {
-                // Progressive translucency: starts at 98% opacity, goes down to 25% when fully scrolled
-                const opacity = 0.98 - (scrollRatio * 0.73); // 0.98 to 0.25
-                const blurAmount = 12 + (scrollRatio * 8); // 12px to 20px blur
-                
-                header.style.backgroundColor = `rgba(255, 255, 255, ${opacity})`;
-                header.style.backdropFilter = `blur(${blurAmount}px)`;
-                header.style.WebkitBackdropFilter = `blur(${blurAmount}px)`;
-                header?.classList.add('shadow-lg');
-                header?.classList.remove('shadow-md');
-                
-                if (headerContent) {
-                    headerContent.style.height = '3rem';
-                }
-                
-                // Hide trust banner on scroll with smooth transition
-                if (trustBanner) {
-                    trustBanner.style.transform = 'translateY(-100%)';
-                    trustBanner.style.opacity = '0';
-                    trustBanner.style.visibility = 'hidden';
-                }
-                
-                // Move header to top when banner is hidden
-                header.style.top = '0';
-            } else {
-                // Reset to normal state
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(12px)';
-                header.style.WebkitBackdropFilter = 'blur(12px)';
-                header?.classList.add('shadow-md');
-                header?.classList.remove('shadow-lg');
-                
-                if (headerContent) {
-                    headerContent.style.height = '4rem';
-                }
-                
-                // Show trust banner
-                if (trustBanner) {
-                    trustBanner.style.transform = 'translateY(0)';
-                    trustBanner.style.opacity = '1';
-                    trustBanner.style.visibility = 'visible';
-                }
-                
-                // Position header below banner when banner is visible
-                header.style.top = '2rem';
-            }
-
-            // Smart header hide/show (optional - you can remove this if you want header always visible)
-            if (scrollY > 100) {
-                if (scrollY > lastScrollY && scrollY > 200 && !isMobileMenuOpen) {
-                    // Scrolling down - hide header
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up - show header
-                    header.style.transform = 'translateY(0)';
-                }
-            }
-            
-            lastScrollY = scrollY;
-            ticking = false;
+  <script>
+    // Real-time status update
+    function updateHeaderStatus() {
+      const now = new Date();
+      const hour = now.getHours();
+      const statusElement = document.getElementById('header-status');
+      if (statusElement) {
+        if (hour >= 9 && hour < 21) {
+          statusElement.textContent = 'OPEN NOW';
+          statusElement.style.color = 'var(--aurora-green)';
+        } else {
+          statusElement.textContent = '9AM - 9PM';
+          statusElement.style.color = 'var(--solar-orange)';
         }
+      }
+    }
+    updateHeaderStatus();
+    setInterval(updateHeaderStatus, 60000);
 
-        function requestScrollUpdate() {
-            if (!ticking) {
-                requestAnimationFrame(updateHeaderOnScroll);
-                ticking = true;
-            }
-        }
-
-        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-
-        // Mobile menu functionality
-        function openMobileMenu() {
-            isMobileMenuOpen = true;
-            document.body.style.overflow = 'hidden';
-            mobileMenuOverlay?.classList.remove('hidden');
-            mobileMenu?.classList.remove('translate-x-full');
-            
-            // Animate hamburger to X
-            menuLines.forEach((line, index) => {
-                if (index === 0) line.style.transform = 'rotate(45deg) translateY(6px)';
-                if (index === 1) line.style.opacity = '0';
-                if (index === 2) line.style.transform = 'rotate(-45deg) translateY(-6px)';
-            });
-            
-            setTimeout(() => {
-                mobileMenuOverlay?.classList.remove('opacity-0');
-            }, 10);
-        }
-
-        function closeMobileMenuFunc() {
-            isMobileMenuOpen = false;
-            document.body.style.overflow = '';
-            mobileMenuOverlay?.classList.add('opacity-0');
-            mobileMenu?.classList.add('translate-x-full');
-            
-            // Reset hamburger
-            menuLines.forEach(line => {
-                line.style.transform = '';
-                line.style.opacity = '';
-            });
-            
-            setTimeout(() => {
-                mobileMenuOverlay?.classList.add('hidden');
-            }, 300);
-        }
-
-        // Event listeners
-        mobileMenuToggle?.addEventListener('click', openMobileMenu);
-        closeMobileMenu?.addEventListener('click', closeMobileMenuFunc);
-        mobileMenuOverlay?.addEventListener('click', closeMobileMenuFunc);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && isMobileMenuOpen) {
-                closeMobileMenuFunc();
-            }
-        });
-
-        // Add staggered animation to nav items
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach((link, index) => {
-            link.style.animationDelay = `${index * 100}ms`;
-        });
+    // Enhanced hover effects
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.boxShadow = '0 6px 20px rgba(6,182,212,0.4)';
+      });
+      link.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.boxShadow = 'none';
+      });
     });
-</script>
+    document.querySelectorAll('.contact-link-premium').forEach(link => {
+      link.addEventListener('mouseenter', function() {
+        const glowEffect = this.querySelector('.premium-glow-effect');
+        if (glowEffect) glowEffect.style.opacity = '1';
+        this.style.transform = 'scale(1.05)';
+      });
+      link.addEventListener('mouseleave', function() {
+        const glowEffect = this.querySelector('.premium-glow-effect');
+        if (glowEffect) glowEffect.style.opacity = '0';
+        this.style.transform = 'scale(1)';
+      });
+    });
+    function handleResize() {
+      const mobileToggle = document.querySelector('.mobile-menu-toggle');
+      const toolbar = document.querySelector('.header-toolbar');
+      const nav = document.querySelector('.header-nav');
+      if (window.innerWidth <= 950) {
+        if (mobileToggle) mobileToggle.style.display = 'block';
+        if (toolbar) toolbar.style.flexDirection = 'column';
+        if (nav) nav.style.width = '100%';
+      } else {
+        if (mobileToggle) mobileToggle.style.display = 'none';
+        if (toolbar) toolbar.style.flexDirection = 'row';
+        if (nav) nav.style.width = '';
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        const nav = document.querySelector('.header-nav');
+        if (nav) {
+          nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+        }
+      });
+    }
+  </script>
+
+  <style>
+    @keyframes cosmic-rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes float-cosmic {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    @keyframes nav-scan {
+      0%, 100% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+    }
+    @keyframes emergencyPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    .cosmic-glow {
+      text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+    .space-button:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 25px rgba(6,182,212,0.5) !important;
+    }
+    .cta-primary {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(16,185,129,0.5); }
+      50% { box-shadow: 0 0 20px rgba(16,185,129,0.8); }
+    }
+    /* Responsive tweaks for stacked mobile layout */
+    @media (max-width: 1100px) {
+      .header-toolbar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+      }
+      .header-nav {
+        width: 100% !important;
+      }
+      .logo-container {
+        margin: 0 auto 8px auto !important;
+        max-width: 260px !important;
+        width: 100% !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-toolbar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+      }
+      .header-nav ul {
+        flex-direction: column !important;
+        gap: 6px !important;
+      }
+      .header-nav ul li {
+        width: 100% !important;
+      }
+      .header-nav ul li a {
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 12px !important;
+      }
+      .logo-container {
+        margin: 0 auto 8px auto !important;
+        width: 100% !important;
+        max-width: 260px !important;
+      }
+    }
+  </style>
+</header>
