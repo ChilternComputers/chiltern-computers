@@ -1886,4 +1886,48 @@ footer a:hover {
     width: 100% !important;
   }
 }
+/* Hide the nav and show the mobile button on mobile/tablet */
+@media (max-width: 950px) {
+  .header-toolbar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .logo-container {
+    margin: 0 auto !important;
+    max-width: 220px !important;
+    width: 100% !important;
+  }
+  .header-nav {
+    width: 100% !important;
+    margin-top: 12px !important;
+    /* Hide nav by default; shown only when toggled (inline by script) */
+    display: none !important;
+  }
+  .nav-list {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+  .nav-list li,
+  .nav-list li a {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px !important;
+  }
+  .mobile-menu-toggle {
+    display: block !important;
+    z-index: 10;
+  }
+}
+
+/* When nav is visible (menu opened), override to show nav */
+@media (max-width: 950px) {
+  .header-nav[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
+
 
