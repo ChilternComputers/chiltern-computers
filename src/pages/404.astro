@@ -251,11 +251,11 @@ const description = "The page you're looking for doesn't exist. Find our compute
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin: 3rem 0;
             text-align: left;
-            max-width: 1200px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -498,19 +498,26 @@ const description = "The page you're looking for doesn't exist. Find our compute
         @media (min-width: 769px) and (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
             }
         }
         
         @media (min-width: 1025px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                max-width: 900px;
             }
             
             .service-card {
-                min-height: 200px;
+                min-height: 180px;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: flex-start;
+            }
+            
+            .service-card h3 {
+                margin-bottom: 1rem;
             }
         }
     </style>
