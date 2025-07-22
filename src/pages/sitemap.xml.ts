@@ -1,5 +1,5 @@
 // src/pages/sitemap.xml.ts
-export async function GET() {
+export async function get() {
   const baseUrl = 'https://chilterncomputers.net';
   const currentDate = new Date().toISOString().split('T')[0];
   
@@ -60,7 +60,7 @@ export async function GET() {
     { url: '/terms-of-service', priority: 0.3, changefreq: 'yearly', lastmod: '2024-06-01' },
   ];
 
-  // Generate XML with proper formatting
+  // Generate XML with proper formatting and indentation
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -75,39 +75,10 @@ ${routes.map(route => `  <url>
 </urlset>`;
 
   return new Response(sitemap, {
+    status: 200,
     headers: {
       'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=86400, s-maxage=86400' // Cache for 24 hours
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400'
     }
   });
-}
-
-// Dynamic blog post discovery (if you have a blog directory)
-async function getBlogPosts() {
-  // This would scan your blog directory for posts
-  // Example implementation:
-  try {
-    const fs = await import('fs');
-    const path = await import('path');
-    
-    const blogDir = path.join(process.cwd(), 'src/content/blog');
-    const files = fs.readdirSync(blogDir);
-    
-    return files
-      .filter(file => file.endsWith('.md') || file.endsWith('.mdx'))
-      .map(file => {
-        const slug = file.replace(/\.(md|mdx)$/, '');
-        const stats = fs.statSync(path.join(blogDir, file));
-        
-        return {
-          url: `/blog/${slug}`,
-          priority: 0.5,
-          changefreq: 'yearly',
-          lastmod: stats.mtime.toISOString().split('T')[0]
-        };
-      });
-  } catch (error) {
-    console.warn('Could not read blog directory:', error);
-    return [];
-  }
 }
