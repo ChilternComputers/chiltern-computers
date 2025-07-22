@@ -1766,3 +1766,64 @@ html, body {
     background: white;
   }
 }
+/* ========================================
+   ADDITIONAL GRID LAYOUTS & COMPONENTS
+   Add this to the bottom of your global.css
+   ======================================== */
+
+/* Review Grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* Review Badge */
+.review-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile Text Utility Class */
+.mobile-text {
+  /* Responsive text that scales well on mobile */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ========================================
+   RESPONSIVE GRID OVERRIDES
+   ======================================== */
+
+/* Ensure reviews grid is responsive */
+@media (max-width: 768px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-grid {
+    gap: 10px;
+  }
+}

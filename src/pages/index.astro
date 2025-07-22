@@ -4,13 +4,14 @@ import Hero from '../components/Hero.astro';
 ---
 
 <Layout 
-  title="Computer Repair Harold Hill, Romford "
+  title="Computer Repair Harold Hill, Romford"
   description="Professional computer repair and IT support services in Harold Hill, Romford. Expert PC repair, laptop repair, virus removal & data recovery services."
   keywords="computer repair romford, pc repair harold hill, laptop repair essex, virus removal romford, data recovery harold hill"
 >
   <!-- Use the imported Hero component only -->
   <Hero />
-<!-- Company Title & Stats Section -->
+
+  <!-- Company Title & Stats Section -->
   <section class="section-bg-1" style="padding: 80px 0;">
     <div class="container">
       <!-- Main heading - visible and properly structured -->
@@ -27,58 +28,56 @@ import Hero from '../components/Hero.astro';
         </div>
         
         <!-- Main H1 - visible and descriptive -->
-        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px; color: var(--starlight-white);">
+        <h1 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px; color: var(--starlight-white);">
           Computer Repair - Expert IT Support
-        </h2>
+        </h1>
         
         <p class="alien-font mobile-text" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
           Professional computer repairs, custom builds, new and refurbished computers and tech support across Havering and Essex.
         </p>
-  <!-- buttons -->
-    
+
+        <!-- buttons -->
         <div class="button-container">
           <a href="/contact/" class="space-button space-font">
             <span>🚀</span>
             CONTACT US
           </a>
-         
         </div>
-      </div>
+      </header>
       
       <!-- Stats Cards -->
-<div class="container">
-  <div class="stats-grid">
-    <div class="cosmic-card" style="padding: 20px; text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 12px;">🌌</div>
-      <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--plasma-cyan); margin-bottom: 8px;">20+</div>
-      <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Years Experience</div>
+      <div class="stats-grid">
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🌌</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--plasma-cyan); margin-bottom: 8px;">20+</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Years Experience</div>
+        </div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🚀</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--aurora-green); margin-bottom: 8px;">10,000+</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Customers</div>
+        </div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--solar-orange); margin-bottom: 8px;">98%</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Satisfaction</div>
+        </div>
+        <div class="cosmic-card" style="padding: 20px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">🛰️</div>
+          <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--nebula-purple); margin-bottom: 8px;">Same Day</div>
+          <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Service</div>
+        </div>
+      </div>
     </div>
-    <div class="cosmic-card" style="padding: 20px; text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 12px;">🚀</div>
-      <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--aurora-green); margin-bottom: 8px;">10,000+</div>
-      <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Customers</div>
-    </div>
-    <div class="cosmic-card" style="padding: 20px; text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
-      <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--solar-orange); margin-bottom: 8px;">98%</div>
-      <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Satisfaction</div>
-    </div>
-    <div class="cosmic-card" style="padding: 20px; text-align: center;">
-      <div style="font-size: 32px; margin-bottom: 12px;">🛰️</div>
-      <div class="space-font cosmic-glow" style="font-size: 24px; color: var(--nebula-purple); margin-bottom: 8px;">Same Day</div>
-      <div class="alien-font" style="color: var(--starlight-white); font-size: 14px;">Service</div>
-    </div>
-  </div>
-</div>
   </section>
 
   <!-- Services Section -->
   <section id="services" class="section-bg-2" style="padding: 80px 0;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h3 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           SOLUTIONS
-        </h3>
+        </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 20px; border-radius: 2px;"></div>
         <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;">
           Expert computer solutions and IT support with professional service.
@@ -141,9 +140,9 @@ import Hero from '../components/Hero.astro';
   <section class="section-bg-3" style="padding: 80px 0;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h3 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           WHY CHOOSE US
-        </h3>
+        </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green)); margin: 0 auto 20px; border-radius: 2px;"></div>
         <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px;">
           Why customers across Essex trust us for their technology needs.
@@ -185,9 +184,9 @@ import Hero from '../components/Hero.astro';
   <section class="section-bg-4" style="padding: 80px 0;">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
-        <h3 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
+        <h2 class="space-font galaxy-text cosmic-glow mobile-text" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;">
           CUSTOMER REVIEWS
-        </h3>
+        </h2>
         <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 20px; border-radius: 2px;"></div>
         <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px;">
           What our satisfied customers say about our services.
@@ -261,371 +260,4 @@ import Hero from '../components/Hero.astro';
       </div>
     </div>
   </section>
-
-  
 </Layout>
-
-<style>
-  /* Missing CSS classes for homepage functionality */
-  
-  /* CSS Variable Definitions */
-  :root {
-    --cosmic-blue: #1e3a8a;
-    --nebula-purple: #7c3aed;
-    --dark-purple: #4c1d95;
-    --deep-purple: #312e81;
-    --starlight-white: #f8fafc;
-    --plasma-cyan: #06b6d4;
-    --aurora-green: #10b981;
-    --solar-orange: #f59e0b;
-    --mars-red: #dc2626;
-    --deep-space: #0f172a;
-    --darker-space: #0c0f1a;
-    --void-black: #020617;
-    --asteroid-gray: #374151;
-    --comet-silver: #e5e7eb;
-  }
-
-  /* Font Classes */
-  .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-  .alien-font { font-family: 'Exo 2', sans-serif; }
-  .tech-font { font-family: 'Space Mono', monospace; }
-
-  /* Animation Classes */
-  @keyframes cosmic-pulse {
-    0%, 100% { text-shadow: 0 0 5px currentColor; }
-    50% { text-shadow: 0 0 15px currentColor; }
-  }
-
-  @keyframes galaxy-flow {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-  }
-
-  .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-  .galaxy-text {
-    background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
-    background-size: 200% 200%;
-    animation: galaxy-flow 4s ease-in-out infinite;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Container */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
-  /* Background Sections */
-  .section-bg-1, .section-bg-2, .section-bg-3, .section-bg-4, .section-bg-5 {
-    background: 
-      radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
-      var(--void-black);
-    background-size: 800px 600px, 900px 700px;
-    position: relative;
-  }
-
-  /* Card Styles */
-  .cosmic-card {
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
-    border: 1px solid var(--plasma-cyan);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  .cosmic-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--aurora-green);
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
-  }
-
-  /* Button Styles */
-  .space-button {
-    background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
-    border: 1px solid var(--aurora-green);
-    color: var(--starlight-white);
-    padding: 14px 28px;
-    border-radius: 25px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 8px;
-  }
-
-  .space-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
-  }
-
-  /* Grid Layouts */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-  }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-  }
-
-  /* Planet Icons */
-  .planet-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    margin: 0 auto 16px;
-    border: 2px solid var(--aurora-green);
-    transition: all 0.3s ease;
-  }
-
-  .planet-icon:hover {
-    transform: scale(1.1);
-  }
-
-  /* Button Container */
-  .button-container {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* Mobile Text Responsive */
-  .mobile-text {
-    /* Responsive text that scales well on mobile */
-  }
-
-  /* Review Badge */
-  .review-badge {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Service Areas */
-  .service-area-primary {
-    color: var(--plasma-cyan);
-    font-size: 12px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .service-area {
-    color: var(--comet-silver);
-    font-size: 12px;
-    white-space: nowrap;
-  }
-
-  /* Seamless Ticker Animation Fix */
-
-.scroll-container {
-    width: 100%;
-    height: 60px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border: 2px solid #00d4ff;
-    border-radius: 12px;
-    position: relative;
-    contain: layout style paint;
-    will-change: transform;
-}
-
-.scroll-content {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    /* Seamless loop animation - Extended duration to show all content */
-    animation: seamlessScroll 20s linear infinite;
-    white-space: nowrap;
-    gap: 1.5rem;
-    /* Performance optimizations */
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    will-change: transform;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Key fix: Animation that creates seamless loop */
-@keyframes seamlessScroll {
-    0% {
-        transform: translate3d(0%, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
-}
-
-/* Create proper spacing for seamless loop */
-.scroll-content::after {
-    content: "";
-    width: 100vw; /* Larger gap to ensure full content displays */
-    flex-shrink: 0;
-}
-
-.service-area, .service-area-primary {
-    color: #00d4ff;
-    font-weight: 600;
-    font-size: 14px;
-    text-shadow: 
-        0 0 8px rgba(0, 212, 255, 0.6),
-        0 0 16px rgba(0, 212, 255, 0.3);
-    flex-shrink: 0;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(0, 212, 255, 0.05);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    contain: layout style;
-    transform: translateZ(0);
-}
-
-.service-area-primary {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-shadow: 
-        0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.4);
-    animation: gentlePulse 3s ease-in-out infinite;
-}
-
-@keyframes gentlePulse {
-    0%, 100% {
-        text-shadow: 
-            0 0 10px rgba(255, 255, 255, 0.8),
-            0 0 20px rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        text-shadow: 
-            0 0 15px rgba(255, 255, 255, 1),
-            0 0 30px rgba(255, 255, 255, 0.6);
-    }
-}
-
-/* Enhanced gradient fade edges */
-.scroll-container::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    background: linear-gradient(
-        to right, 
-        rgba(26, 26, 46, 1) 0%,
-        rgba(26, 26, 46, 0.8) 30%,
-        transparent 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-}
-
-.scroll-container::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    background: linear-gradient(
-        to left, 
-        rgba(26, 26, 46, 1) 0%,
-        rgba(26, 26, 46, 0.8) 30%,
-        transparent 100%
-    );
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    .scroll-container {
-        height: 50px;
-        border-radius: 8px;
-    }
-    
-    .scroll-content {
-        animation: seamlessScrollMobile 15s linear infinite;
-        gap: 1rem;
-    }
-    
-    .scroll-content::after {
-        width: 100vw; /* Ensure full content displays on mobile too */
-    }
-    
-    .service-area, .service-area-primary {
-        font-size: 12px;
-        padding: 6px 10px;
-        text-shadow: 0 0 5px currentColor;
-    }
-    
-    .service-area-primary {
-        animation: none; /* Disable pulse on mobile for performance */
-    }
-    
-    .scroll-container::before,
-    .scroll-container::after {
-        width: 80px;
-    }
-}
-
-@keyframes seamlessScrollMobile {
-    0% {
-        transform: translate3d(0%, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
-}
-
-/* Performance optimization for reduced motion users */
-@media (prefers-reduced-motion: reduce) {
-    .scroll-content {
-        animation-duration: 80s;
-    }
-    
-    .service-area-primary {
-        animation: none;
-    }
-}
- 
-</style>
