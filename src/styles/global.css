@@ -46,51 +46,53 @@
 /* ========================================
    FONTS
    ======================================== */
+/* Verify these paths in your global.css match your font files */
+
 @font-face {
   font-family: 'Orbitron';
-  src: url('../fonts/Orbitron-Regular.woff2') format('woff2');
+  src: url('/fonts/Orbitron-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Orbitron';
-  src: url('../fonts/Orbitron-SemiBold.woff2') format('woff2');
+  src: url('/fonts/Orbitron-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Exo 2';
-  src: url('../fonts/Exo2-Regular.woff2') format('woff2');
+  src: url('/fonts/Exo2-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Exo 2';
-  src: url('../fonts/Exo2-Medium.woff2') format('woff2');
+  src: url('/fonts/Exo2-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Exo 2';
-  src: url('../fonts/Exo2-SemiBold.woff2') format('woff2');
+  src: url('/fonts/Exo2-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('../fonts/SpaceMono-Regular.woff2') format('woff2');
+  src: url('/fonts/SpaceMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Space Mono';
-  src: url('../fonts/SpaceMono-Bold.woff2') format('woff2');
+  src: url('/fonts/SpaceMono-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
