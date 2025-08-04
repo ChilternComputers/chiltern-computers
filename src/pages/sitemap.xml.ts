@@ -1,5 +1,7 @@
 // src/pages/sitemap.xml.ts
-export async function get() {
+import type { APIRoute } from 'astro';
+
+export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
   const currentDate = new Date().toISOString().split('T')[0];
   
@@ -77,8 +79,8 @@ ${routes.map(route => `  <url>
   return new Response(sitemap, {
     status: 200,
     headers: {
-      'Content-Type': 'application/xml',
+      'Content-Type': 'application/xml; charset=utf-8',
       'Cache-Control': 'public, max-age=86400, s-maxage=86400'
     }
   });
-}
+};
