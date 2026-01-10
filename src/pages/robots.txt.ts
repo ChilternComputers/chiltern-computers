@@ -1,29 +1,26 @@
 // src/pages/robots.txt.ts
-export async function GET() {
+import type { APIRoute } from 'astro';
+
+export const GET: APIRoute = async () => {
   const robotsTxt = `User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://chilterncomputers.net/sitemap.xml
 
-# Block access to admin areas
+# Block access to non-public areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_astro/
-Disallow: /node_modules/
+Disallow: /thank-you
 
-# Allow important files
-Allow: /favicon.ico
-Allow: /robots.txt
-Allow: /sitemap.xml
-
-# Crawl delay (optional - be nice to servers)
+# Crawl-delay for politeness
 Crawl-delay: 1`;
 
   return new Response(robotsTxt, {
     headers: {
-      'Content-Type': 'text/plain',
+      'Content-Type': 'text/plain; charset=utf-8',
       'Cache-Control': 'public, max-age=86400'
     }
   });
-}
+};
