@@ -16,21 +16,21 @@ export const GET: APIRoute = async () => {
     },
 
     // Service pages
-    { url: '/services/repairs', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
-    { url: '/services/custom-pcs', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
-    { url: '/services/new-used', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/services/repairs/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/services/custom-pcs/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/services/new-used/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
 
     // Core pages
-    { url: '/contact', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
-    { url: '/about', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/about/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
 
     // Other pages
-    { url: '/free-play', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
-    { url: '/accessibility', priority: 0.4, changefreq: 'yearly', lastmod: currentDate },
+    { url: '/free-play/', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/accessibility/', priority: 0.4, changefreq: 'yearly', lastmod: currentDate },
 
     // Legal pages
-    { url: '/privacy-policy', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
-    { url: '/terms-of-service', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
+    { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
+    { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
   ];
 
   // Generate XML with proper formatting
