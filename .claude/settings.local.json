@@ -4,7 +4,9 @@
       "Bash(npm run build:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nLocal SEO critical fixes: H1 tags, Google Maps, phone schema\n\n- Fix homepage H1 \\(was h2 with mismatched closing tag\\) with local keywords\n- Add embedded Google Maps iframe to contact page for local trust signals\n- Add mobile phone number \\(+447971331814\\) to LocalBusiness and ContactPoint schemas\n- Improve About page H1 and title with local keywords\n- Add Review schema to contact page for rich snippets\n- Enhance contact page meta title with phone number for click-to-call\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(dir \"C:\\\\Users\\\\Dave\"\")",
+      "Bash(findstr:*)"
     ]
   }
 }

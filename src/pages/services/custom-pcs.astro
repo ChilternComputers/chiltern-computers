@@ -302,15 +302,24 @@ const reviews = [
     
     .service-card:hover {
       transform: translateY(-15px) scale(1.03);
-      box-shadow: 
+      box-shadow:
         0 25px 50px rgba(212, 175, 55, 0.3),
         0 0 50px rgba(251, 191, 36, 0.2);
       animation-play-state: paused;
+      background: linear-gradient(145deg, rgba(12, 10, 9, 0.98), rgba(30, 30, 30, 0.95));
     }
-    
+
     .service-card:hover::before {
       opacity: 1;
       background: linear-gradient(135deg, var(--rune-glow), var(--grace-yellow), var(--nightreign-gold));
+    }
+
+    .service-card:hover .service-title {
+      color: var(--rune-glow) !important;
+    }
+
+    .service-card:hover .service-description {
+      color: #ffffff;
     }
     
     /* SERVICE ICONS */
