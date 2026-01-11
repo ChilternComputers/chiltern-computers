@@ -19,7 +19,11 @@ const errorMessages = {
 const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] || errorMessages.default : null;
 ---
 
-<Layout title="Contact Us" description="Contact Chiltern Computers for computer repairs in Harold Hill, Romford. Call 07971 331814 for same-day PC and laptop repair services.">
+<Layout
+  title="Contact Us"
+  description="Contact Chiltern Computers for computer repairs in Harold Hill, Romford. Call 07971 331814 for same-day PC and laptop repair services."
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]}
+>
   <section class="section-bg-5" style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0;" role="main">
     
     <!-- Header -->

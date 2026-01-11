@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
+<Layout
   title="About Us - IT Expert"
   description="Meet David, the expert behind Chiltern Computers. Providing honest, affordable computer repairs and support in Harold Hill and Romford for over 20 years."
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "About Us", url: "/about/" }]}
 >
   <!-- REMOVED DUPLICATE SEO COMPONENT - Layout handles SEO automatically -->
   

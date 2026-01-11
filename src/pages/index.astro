@@ -1,12 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+
+const reviews = [
+  { author: "Sarah J.", location: "Romford", text: "Excellent service! Fixed my laptop quickly and reasonably priced. Highly recommend!", rating: 5, date: "2024-12-05" },
+  { author: "Tom H.", location: "Harold Wood", text: "Great repair service. Professional work and my PC runs like new!", rating: 5, date: "2024-11-20" },
+  { author: "Rachel A.", location: "Hornchurch", text: "Built me an amazing gaming computer within budget. Excellent quality!", rating: 5, date: "2024-10-28" },
+  { author: "Mike D.", location: "Dagenham", text: "Best computer support! Always helpful, reliable, and knowledgeable.", rating: 5, date: "2024-09-15" }
+];
 ---
 
-<Layout 
+<Layout
   title="Computer Repair Harold Hill, Romford"
   description="Professional computer repair and IT support services in Harold Hill, Romford. Expert PC repair, laptop repair, virus removal & data recovery services."
   keywords="computer repair romford, pc repair harold hill, laptop repair essex, virus removal romford, data recovery harold hill"
+  reviews={reviews}
 >
   <!-- Use the imported Hero component only -->
   <Hero />
