@@ -34,7 +34,7 @@ const localBusinessSchema = {
   "@type": "LocalBusiness",
   "name": "Chiltern Computers",
   "alternateName": ["Chiltern Computer Repair", "Computer Repair Harold Hill"],
-  "image": [`${baseUrl}/logo.png`, `${baseUrl}/storefront.jpg`],
+  "image": [`${baseUrl}/logo_homepage.webp`, `${baseUrl}/logoopengraph.png`],
   "description": "Professional computer repair and IT support services in Harold Hill, Romford. Specializing in PC repair, laptop repair, virus removal, data recovery, and emergency computer repair services.",
   "address": {
     "@type": "PostalAddress",
@@ -165,18 +165,13 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Chiltern Computers",
   "url": baseUrl,
-  "logo": `${baseUrl}/logo.png`,
+  "logo": `${baseUrl}/logo_homepage.webp`,
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "01708347341",
+    "telephone": "+441708347341",
     "contactType": "customer service",
-    "areaServed": ["GB", "Essex", "Harold Hill", "Romford"],
-    "availableLanguage": ["English"],
-    "serviceType": ["Computer Repair", "IT Support", "Data Recovery"]
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Chiltern Computers"
+    "areaServed": "GB",
+    "availableLanguage": "English"
   },
   "foundingDate": "2007",
   "slogan": "Professional Computer Repair & IT Support Services"
@@ -188,13 +183,8 @@ const websiteSchema = {
   "name": "Chiltern Computers",
   "alternateName": "Computer Repair Harold Hill",
   "url": baseUrl,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${baseUrl}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  },
-  "mainEntity": {
-    "@type": "LocalBusiness",
+  "publisher": {
+    "@type": "Organization",
     "name": "Chiltern Computers"
   }
 };

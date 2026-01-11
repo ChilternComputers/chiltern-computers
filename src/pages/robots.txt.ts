@@ -3,18 +3,12 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
   const robotsTxt = `User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://chilterncomputers.net/sitemap.xml
-
-# Block access to non-public areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /thank-you/
+Allow: /
 
-# Crawl-delay for politeness
-Crawl-delay: 1`;
+Sitemap: https://chilterncomputers.net/sitemap.xml`;
 
   return new Response(robotsTxt, {
     headers: {
