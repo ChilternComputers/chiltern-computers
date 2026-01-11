@@ -28,6 +28,21 @@ export const GET: APIRoute = async () => {
     { url: '/free-play/', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
     { url: '/accessibility/', priority: 0.4, changefreq: 'yearly', lastmod: currentDate },
 
+    // Area pages (Local SEO)
+    { url: '/areas/', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/harold-hill/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/romford/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/hornchurch/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/upminster/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/dagenham/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/harold-wood/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/collier-row/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/gidea-park/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/brentwood/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/rainham/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/elm-park/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+    { url: '/areas/chadwell-heath/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
+
     // Legal pages
     { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
     { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },

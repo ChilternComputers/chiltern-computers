@@ -1,0 +1,227 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const areas = [
+  { name: "Harold Hill", slug: "harold-hill", distance: "0 miles", description: "Our home base - same day service available", primary: true },
+  { name: "Romford", slug: "romford", distance: "2 miles", description: "Town centre and surrounding areas" },
+  { name: "Harold Wood", slug: "harold-wood", distance: "1.5 miles", description: "Quick response times for local residents" },
+  { name: "Hornchurch", slug: "hornchurch", distance: "3 miles", description: "Full service coverage including Emerson Park" },
+  { name: "Collier Row", slug: "collier-row", distance: "2 miles", description: "Fast turnaround for home and business" },
+  { name: "Upminster", slug: "upminster", distance: "4 miles", description: "Serving Upminster and Cranham" },
+  { name: "Dagenham", slug: "dagenham", distance: "5 miles", description: "East London coverage" },
+  { name: "Rainham", slug: "rainham", distance: "5 miles", description: "Including Wennington and South Hornchurch" },
+  { name: "Gidea Park", slug: "gidea-park", distance: "2.5 miles", description: "Residential and business support" },
+  { name: "Brentwood", slug: "brentwood", distance: "5 miles", description: "Essex border coverage" },
+  { name: "Elm Park", slug: "elm-park", distance: "4 miles", description: "Quick service to local area" },
+  { name: "Chadwell Heath", slug: "chadwell-heath", distance: "4 miles", description: "Bordering Barking and Dagenham" },
+];
+---
+
+<Layout
+  title="Areas We Serve - Computer Repair Across Havering & Essex"
+  description="Chiltern Computers provides professional computer repair services across Harold Hill, Romford, Hornchurch, Upminster, Dagenham, and surrounding Essex areas. Same day service available."
+  keywords="computer repair havering, computer repair essex, pc repair romford, laptop repair hornchurch, computer repair upminster, IT support dagenham, computer repair near me"
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Areas We Serve", url: "/areas/" }
+  ]}
+>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+    }
+
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+
+    @keyframes cosmic-pulse {
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
+    }
+
+    @keyframes galaxy-flow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text {
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+      position: relative;
+    }
+
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .cosmic-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--aurora-green);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.3);
+    }
+
+    .cosmic-card.primary {
+      border: 2px solid var(--aurora-green);
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 0.9));
+    }
+
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .areas-grid { grid-template-columns: 1fr; gap: 16px; }
+      .container { padding: 0 16px; }
+    }
+  </style>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section-bg" style="padding: 100px 0 60px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">SERVING HAVERING & ESSEX</span>
+          </div>
+
+          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(32px, 6vw, 56px); margin-bottom: 20px; line-height: 1.1;">
+            AREAS WE SERVE
+          </h1>
+
+          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">
+            Professional computer repair services across Harold Hill, Romford, and the wider Havering and Essex areas. Same day service available for most locations.
+          </p>
+
+          <!-- Service Highlights -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-bottom: 40px;">
+            <span style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--aurora-green); color: var(--aurora-green); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+              Same Day Service
+            </span>
+            <span style="background: rgba(6, 182, 212, 0.2); border: 1px solid var(--plasma-cyan); color: var(--plasma-cyan); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+              Free Diagnosis
+            </span>
+            <span style="background: rgba(124, 58, 237, 0.2); border: 1px solid var(--nebula-purple); color: var(--nebula-purple); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+              No Fix, No Fee
+            </span>
+            <span style="background: rgba(245, 158, 11, 0.2); border: 1px solid var(--solar-orange); color: var(--solar-orange); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+              Collection Available
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Areas Grid -->
+    <section class="section-bg" style="padding: 60px 0 80px;">
+      <div class="container">
+        <div class="areas-grid">
+          {areas.map(area => (
+            <a href={`/areas/${area.slug}/`} class={`cosmic-card ${area.primary ? 'primary' : ''}`} style="padding: 28px;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="font-size: 28px;">{area.primary ? '🏠' : '📍'}</span>
+                <div>
+                  <h2 class="space-font" style={`color: ${area.primary ? 'var(--aurora-green)' : 'var(--plasma-cyan)'}; font-size: 20px; margin: 0;`}>
+                    {area.name}
+                  </h2>
+                  <span class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
+                    {area.distance} from base
+                  </span>
+                </div>
+              </div>
+              <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; margin: 0 0 16px; line-height: 1.5;">
+                {area.description}
+              </p>
+              <div style="display: flex; align-items: center; gap: 8px; color: var(--aurora-green); font-size: 13px; font-weight: 600;">
+                <span>View Services</span>
+                <span>→</span>
+              </div>
+              {area.primary && (
+                <div style="position: absolute; top: 12px; right: 12px; background: var(--aurora-green); color: var(--deep-space); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 700;">
+                  HQ
+                </div>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-bg" style="padding: 60px 0 80px;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px;">
+            NOT LISTED? WE CAN STILL HELP!
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            We cover a wide area across Essex and East London. Contact us to check if we can help with your computer repair needs.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact/" class="space-button space-font">
+              <span>📞</span> Contact Us
+            </a>
+            <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(16, 185, 129, 0.2);">
+              <span>📱</span> 07971 331814
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

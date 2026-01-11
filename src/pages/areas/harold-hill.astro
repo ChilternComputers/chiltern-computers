@@ -1,0 +1,183 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const area = {
+  name: "Harold Hill",
+  region: "Romford, Essex",
+  postcode: "RM3",
+  distance: "0 miles",
+  landmarks: ["Harold Hill Library", "Hilldene Shopping Centre", "Dagnam Park"],
+  nearby: ["Harold Wood", "Collier Row", "Romford", "Noak Hill"]
+};
+---
+
+<Layout
+  title={`Computer Repair ${area.name} - Same Day PC & Laptop Repairs`}
+  description={`Professional computer repair in ${area.name}, ${area.region}. Same day PC repairs, laptop repairs, virus removal & data recovery. Local ${area.postcode} computer repair service. Call 07971 331814.`}
+  keywords={`computer repair ${area.name.toLowerCase()}, pc repair ${area.name.toLowerCase()}, laptop repair ${area.postcode.toLowerCase()}, computer repair ${area.region.toLowerCase()}, virus removal ${area.name.toLowerCase()}, data recovery ${area.name.toLowerCase()}, IT support ${area.name.toLowerCase()}`}
+  breadcrumbs={[
+    { name: "Home", url: "/" },
+    { name: "Areas", url: "/areas/" },
+    { name: area.name, url: `/areas/harold-hill/` }
+  ]}
+>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+    }
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+    @keyframes cosmic-pulse { 0%, 100% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor; } }
+    @keyframes galaxy-flow { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text { background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple)); background-size: 200% 200%; animation: galaxy-flow 4s ease-in-out infinite; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .section-bg { background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9)); }
+    .cosmic-card { background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid var(--plasma-cyan); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2); transition: all 0.3s ease; }
+    .cosmic-card:hover { transform: translateY(-5px); border-color: var(--aurora-green); }
+    .space-button { background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
+    .space-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+  </style>
+
+  <main>
+    <!-- Hero -->
+    <section class="section-bg" style="padding: 100px 0 60px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--aurora-green); margin-bottom: 24px;">
+            <span class="tech-font" style="color: var(--aurora-green); font-size: 13px;">🏠 OUR HOME BASE - {area.postcode}</span>
+          </div>
+
+          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;">
+            COMPUTER REPAIR {area.name.toUpperCase()}
+          </h1>
+
+          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">
+            Welcome to Chiltern Computers - your local {area.name} computer repair specialists. Based right here on Hilldene Avenue, we're your neighbourhood experts for all PC and laptop repairs.
+          </p>
+
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact/" class="space-button space-font"><span>🛠️</span> Book Repair</a>
+            <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(16, 185, 129, 0.2);"><span>📱</span> 07971 331814</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Local -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 40px; border: 2px solid var(--aurora-green);">
+          <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 20px; text-align: center;">
+            WHY CHOOSE YOUR LOCAL {area.name.toUpperCase()} REPAIR SHOP?
+          </h2>
+          <div class="services-grid" style="margin-top: 30px;">
+            <div style="text-align: center; padding: 20px;">
+              <span style="font-size: 40px; display: block; margin-bottom: 12px;">⚡</span>
+              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">SAME DAY SERVICE</h3>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">Being based in {area.name} means we can often complete repairs the same day you drop off.</p>
+            </div>
+            <div style="text-align: center; padding: 20px;">
+              <span style="font-size: 40px; display: block; margin-bottom: 12px;">🏠</span>
+              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">LOCAL COLLECTION</h3>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">Can't get to us? We offer free collection and delivery within {area.name}.</p>
+            </div>
+            <div style="text-align: center; padding: 20px;">
+              <span style="font-size: 40px; display: block; margin-bottom: 12px;">💷</span>
+              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">NO FIX, NO FEE</h3>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">If we can't fix it, you don't pay. Simple, honest, local service.</p>
+            </div>
+            <div style="text-align: center; padding: 20px;">
+              <span style="font-size: 40px; display: block; margin-bottom: 12px;">🏆</span>
+              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">18+ YEARS EXPERIENCE</h3>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">Serving {area.name} and surrounding areas since 2007. Your trusted local expert.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;">
+          SERVICES IN {area.name.toUpperCase()}
+        </h2>
+        <div class="services-grid">
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">💻</span>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">LAPTOP REPAIRS</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Screen replacements, keyboard repairs, charging issues and more.</p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🖥️</span>
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">PC REPAIRS</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Desktop repairs, upgrades, blue screen fixes, won't start issues.</p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🦠</span>
+            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">VIRUS REMOVAL</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Malware, spyware, and virus removal. Get your PC running clean again.</p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">💾</span>
+            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">DATA RECOVERY</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Lost files? Failed hard drive? We can help recover your precious data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local Info -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2 class="space-font" style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">
+            SERVING THE {area.name.toUpperCase()} COMMUNITY
+          </h2>
+          <p class="alien-font" style="color: var(--starlight-white); font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+            Located at 38 Hilldene Avenue, we're proud to serve the {area.name} community. Whether you're near {area.landmarks.join(", ")}, or anywhere else in the {area.postcode} area, we're just around the corner.
+          </p>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+            We also provide computer repair services to nearby areas including {area.nearby.join(", ")}. As your local repair shop, we understand the {area.name} community and pride ourselves on providing friendly, honest, and affordable computer repair services.
+          </p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="/areas/" class="space-button space-font" style="background: rgba(6, 182, 212, 0.2);"><span>📍</span> All Areas</a>
+            <a href="/contact/" class="space-button space-font"><span>📞</span> Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-bg" style="padding: 60px 0 80px;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;">
+            NEED COMPUTER REPAIR IN {area.name.toUpperCase()}?
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;">
+            Call us now or drop in - we're open 7 days a week, 9AM to 9PM.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="tel:+447971331814" class="space-button space-font" style="font-size: 16px; padding: 16px 32px;">
+              <span>📱</span> 07971 331814
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -8,18 +8,20 @@ export interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   noindex?: boolean;
+  breadcrumbs?: Array<{name: string; url: string}>;
 }
 
-const { 
-  title, 
-  description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford. Expert virus removal, data recovery, laptop repair & PC repair services.", 
+const {
+  title,
+  description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford. Expert virus removal, data recovery, laptop repair & PC repair services.",
   image = "/og-image.jpg",
   // Enhanced keywords based on high-traffic research
   keywords = "computer repair harold hill, computer repair romford, pc repair near me, laptop repair essex, computer repair services, virus removal romford, data recovery harold hill, computer troubleshooting, laptop screen repair, computer won't start, blue screen repair, computer running slow, macbook repair romford, business IT support essex, same day computer repair, on-site computer repair, emergency computer repair, malware removal, hard drive repair, computer tune-up services",
   type = 'website',
   publishedTime,
   modifiedTime,
-  noindex = false
+  noindex = false,
+  breadcrumbs = []
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Chiltern Computers` : 'Professional Computer Repair Harold Hill, Romford | Chiltern Computers';
@@ -60,18 +62,22 @@ const localBusinessSchema = {
   ],
   "priceRange": "££",
   "areaServed": [
-    {
-      "@type": "City",
-      "name": "Harold Hill"
-    },
-    {
-      "@type": "City", 
-      "name": "Romford"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Essex"
-    }
+    { "@type": "City", "name": "Harold Hill" },
+    { "@type": "City", "name": "Romford" },
+    { "@type": "City", "name": "Hornchurch" },
+    { "@type": "City", "name": "Upminster" },
+    { "@type": "City", "name": "Dagenham" },
+    { "@type": "City", "name": "Rainham" },
+    { "@type": "City", "name": "Harold Wood" },
+    { "@type": "City", "name": "Collier Row" },
+    { "@type": "City", "name": "Gidea Park" },
+    { "@type": "City", "name": "Brentwood" },
+    { "@type": "City", "name": "Elm Park" },
+    { "@type": "City", "name": "Cranham" },
+    { "@type": "City", "name": "Emerson Park" },
+    { "@type": "City", "name": "Chadwell Heath" },
+    { "@type": "AdministrativeArea", "name": "Havering" },
+    { "@type": "AdministrativeArea", "name": "Essex" }
   ],
   "serviceArea": {
     "@type": "GeoCircle",
@@ -203,7 +209,7 @@ const faqSchema = {
       }
     },
     {
-      "@type": "Question", 
+      "@type": "Question",
       "name": "Do you provide same day computer repair services?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -220,7 +226,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Do you offer on-site computer repair services?", 
+      "name": "Do you offer on-site computer repair services?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, we provide on-site computer repair services for businesses and home users in Harold Hill, Romford, and surrounding Essex areas. This includes network setup, virus removal, and computer maintenance at your location."
@@ -228,6 +234,18 @@ const faqSchema = {
     }
   ]
 };
+
+// BreadcrumbList Schema - only render if breadcrumbs provided
+const breadcrumbSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": crumb.name,
+    "item": `${baseUrl}${crumb.url}`
+  }))
+} : null;
 ---
 
 <meta charset="UTF-8" />
@@ -313,3 +331,4 @@ const faqSchema = {
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
