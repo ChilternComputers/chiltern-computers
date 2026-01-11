@@ -3,7 +3,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Thank You - Message Sent Successfully">
+<Layout
+  title="Thank You - Message Sent Successfully"
+  description="Thanks for contacting Chiltern Computers. We'll respond within 2-4 hours. For urgent PC repairs call 07971 331814."
+>
   <section class="section-bg-5" style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0; display: flex; align-items: center; justify-content: center;" role="main">
     
     <div style="max-width: 800px; text-align: center;">
@@ -75,13 +78,42 @@ import Layout from '../layouts/Layout.astro';
         </a>
       </div>
 
+      <!-- Our Services -->
+      <div style="margin-top: 40px; background: rgba(26, 31, 46, 0.8); border: 1px solid #22c55e; border-radius: 16px; padding: 32px;">
+        <h3 class="space-font" style="color: #22c55e; font-size: 20px; font-weight: 600; margin-bottom: 20px; text-align: center;">
+          While You Wait - Explore Our Services
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">💻</div>
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">PC & Laptop Repairs</h4>
+            <p class="alien-font" style="color: #b0c4de; font-size: 13px; line-height: 1.5;">Hardware fixes, software issues, screen replacements, and more for all brands.</p>
+          </div>
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🦠</div>
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">Virus Removal</h4>
+            <p class="alien-font" style="color: #b0c4de; font-size: 13px; line-height: 1.5;">Complete malware removal and security setup to keep your computer safe.</p>
+          </div>
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">💾</div>
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">Data Recovery</h4>
+            <p class="alien-font" style="color: #b0c4de; font-size: 13px; line-height: 1.5;">Recover precious files from failed hard drives and damaged storage devices.</p>
+          </div>
+          <div style="text-align: center; padding: 16px;">
+            <div style="font-size: 32px; margin-bottom: 8px;">🎮</div>
+            <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">Custom Gaming PCs</h4>
+            <p class="alien-font" style="color: #b0c4de; font-size: 13px; line-height: 1.5;">High-performance gaming builds tailored to your budget and requirements.</p>
+          </div>
+        </div>
+      </div>
+
       <!-- Emergency Contact -->
       <div style="margin-top: 40px; padding: 20px; background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; border-radius: 12px;">
         <p class="alien-font" style="color: #ef4444; font-size: 16px; font-weight: 600; margin-bottom: 8px;">
           🚨 Computer Emergency?
         </p>
         <p class="alien-font" style="color: #b0c4de; font-size: 14px;">
-          If your computer issue is urgent and affecting your work, call us immediately at <strong>07971 331814</strong> for same-day service.
+          If your computer issue is urgent and affecting your work, call us immediately at <strong>07971 331814</strong> for same-day service. Based in Harold Hill, we provide fast repairs across Romford, Hornchurch, Upminster, and surrounding Essex areas.
         </p>
       </div>
     </div>
