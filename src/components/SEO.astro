@@ -9,6 +9,7 @@ export interface Props {
   modifiedTime?: string;
   noindex?: boolean;
   breadcrumbs?: Array<{name: string; url: string}>;
+  reviews?: Array<{author: string; location: string; text: string; rating: number; date?: string}>;
 }
 
 const {
@@ -21,7 +22,8 @@ const {
   publishedTime,
   modifiedTime,
   noindex = false,
-  breadcrumbs = []
+  breadcrumbs = [],
+  reviews = []
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Chiltern Computers` : 'Professional Computer Repair Harold Hill, Romford | Chiltern Computers';
@@ -246,6 +248,40 @@ const breadcrumbSchema = breadcrumbs.length > 0 ? {
     "item": `${baseUrl}${crumb.url}`
   }))
 } : null;
+
+// Review Schema - individual reviews for rich snippets
+const reviewSchemas = reviews.map(review => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "LocalBusiness",
+    "name": "Chiltern Computers",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "38 Hilldene Avenue",
+      "addressLocality": "Harold Hill",
+      "addressRegion": "Essex",
+      "postalCode": "RM3 8YP",
+      "addressCountry": "GB"
+    }
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": review.rating,
+    "bestRating": 5,
+    "worstRating": 1
+  },
+  "author": {
+    "@type": "Person",
+    "name": review.author
+  },
+  "reviewBody": review.text,
+  "datePublished": review.date || "2024-12-01",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chiltern Computers"
+  }
+}));
 ---
 
 <meta charset="UTF-8" />
@@ -332,3 +368,4 @@ const breadcrumbSchema = breadcrumbs.length > 0 ? {
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+{reviewSchemas.map(review => <script type="application/ld+json" set:html={JSON.stringify(review)} />)}

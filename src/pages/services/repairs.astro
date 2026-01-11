@@ -1,11 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const reviews = [
+  { author: "Emma R.", location: "Harold Hill", text: "They replaced my cracked laptop screen within hours. Great price and super friendly service!", rating: 5, date: "2024-11-15" },
+  { author: "Dave M.", location: "Romford", text: "Sorted out my overheating desktop fast. Even cleaned out the dust for free!", rating: 5, date: "2024-10-22" },
+  { author: "Claire S.", location: "Brentwood", text: "MacBook wouldn't boot – they fixed it same day. Life saver!", rating: 5, date: "2024-09-18" }
+];
 ---
 
-<Layout 
+<Layout
   title="PC & Laptop Repairs in Havering"
   description="Laptop or desktop repairs in Harold Hill or Romford. Chiltern Computers delivers fast, reliable, affordable service for home and business users."
-
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Repairs", url: "/services/repairs/" }]}
+  reviews={reviews}
 >
   <style>
     
@@ -485,13 +492,38 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- Areas We Serve -->
+    <section class="repair-section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;">
+            COMPUTER REPAIR ACROSS HAVERING & ESSEX
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 16px;">
+            We provide repair services throughout these areas:
+          </p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
+          <a href="/areas/harold-hill/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green);">Harold Hill</a>
+          <a href="/areas/romford/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Romford</a>
+          <a href="/areas/hornchurch/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Hornchurch</a>
+          <a href="/areas/upminster/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Upminster</a>
+          <a href="/areas/harold-wood/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Harold Wood</a>
+          <a href="/areas/dagenham/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Dagenham</a>
+          <a href="/areas/collier-row/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Collier Row</a>
+          <a href="/areas/brentwood/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Brentwood</a>
+          <a href="/areas/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(124, 58, 237, 0.2); border-color: var(--nebula-purple);">View All Areas →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Call to Action -->
     <section class="repair-section-bg" style="padding: 80px 0;">
       <div class="container">
         <div class="cosmic-card" style="padding: 60px 40px; text-align: center; border: 2px solid var(--aurora-green);">
           <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
             NEED YOUR COMPUTER FIXED TODAY?
-          </h3>
+          </h2>
           <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 32px; font-size: 18px; line-height: 1.6;">
             Call us now or book a repair online. We're open 7 days a week with fast, professional service!
           </p>

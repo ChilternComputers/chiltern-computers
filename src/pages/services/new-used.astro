@@ -2,9 +2,10 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout 
+<Layout
   title="New & Refurbished PCs & Laptops"
   description="Quality refurbished laptops and desktops plus professional computer repair in Havering. Fast IT support, virus removal & hardware upgrades."
+  breadcrumbs={[{ name: "Home", url: "/" }, { name: "New & Used PCs", url: "/services/new-used/" }]}
 >
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
@@ -944,13 +945,34 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- Areas We Serve -->
+    <section class="section-bg main-section" style="padding: 60px 0;">
+      <div class="container" style="text-align: center;">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;">
+          NEW & REFURBISHED PCs ACROSS HAVERING
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; margin-bottom: 32px;">
+          We deliver new builds and refurbished systems throughout these areas:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
+          <a href="/areas/harold-hill/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green);">Harold Hill</a>
+          <a href="/areas/romford/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Romford</a>
+          <a href="/areas/hornchurch/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Hornchurch</a>
+          <a href="/areas/upminster/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Upminster</a>
+          <a href="/areas/dagenham/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Dagenham</a>
+          <a href="/areas/brentwood/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Brentwood</a>
+          <a href="/areas/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(124, 58, 237, 0.2); border-color: var(--nebula-purple);">View All Areas →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Call to Action -->
     <section id="contact" class="section-bg main-section">
       <div class="container">
         <div class="cosmic-card" style="padding: 60px 40px; text-align: center; border: 2px solid var(--aurora-green);">
           <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
             QUICK DELIVERY – RESERVE YOURS TODAY!
-          </h3>
+          </h2>
           <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 32px; font-size: 18px; line-height: 1.6;">
             Call or message us for new build quotes, current refurbished stock, or to place a custom request.
           </p>
