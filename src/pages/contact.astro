@@ -214,26 +214,21 @@ const reviews = [
           <p class="alien-font" style="color: #b0c4de; font-size: 14px;">Emergency repairs available by appointment</p>
         </div>
 
-        <!-- Google Maps Embed -->
+        <!-- Google Maps Link -->
         <div style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 24px; overflow: hidden;">
           <h3 class="space-font cosmic-glow" style="color: #3b82f6; font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
             🗺️ Find Us
           </h3>
-          <div style="border-radius: 12px; overflow: hidden; border: 1px solid #1e40af;">
-            <iframe
-              src="https://maps.google.com/maps?q=38+Hilldene+Avenue,+Harold+Hill,+Romford,+RM3+8YP,+UK&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="250"
-              style="border:0; display: block;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Chiltern Computers location map - Harold Hill, Romford"
-            ></iframe>
-          </div>
-          <p class="alien-font" style="color: #b0c4de; font-size: 13px; margin-top: 12px; text-align: center;">
-            📍 38 Hilldene Avenue, Harold Hill, Romford, RM3 8YP
-          </p>
+          <a href="https://www.google.com/maps/search/38+Hilldene+Avenue,+Harold+Hill,+Romford,+RM3+8YP" target="_blank" rel="noopener noreferrer" style="display: block; text-decoration: none;">
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid #1e40af; background: linear-gradient(135deg, #1e3a5f, #0f172a); padding: 40px 20px; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#3b82f6'" onmouseout="this.style.borderColor='#1e40af'">
+              <span style="font-size: 48px; display: block; margin-bottom: 16px;">📍</span>
+              <p class="space-font" style="color: #3b82f6; font-size: 16px; margin-bottom: 8px;">38 Hilldene Avenue</p>
+              <p class="alien-font" style="color: #b0c4de; font-size: 14px; margin-bottom: 16px;">Harold Hill, Romford, RM3 8YP</p>
+              <span style="background: #3b82f6; color: white; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;">
+                🗺️ Open in Google Maps
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
