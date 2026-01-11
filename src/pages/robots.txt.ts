@@ -11,8 +11,7 @@ Sitemap: https://chilterncomputers.net/sitemap.xml
 # Block access to non-public areas
 Disallow: /admin/
 Disallow: /api/
-Disallow: /_astro/
-Disallow: /thank-you
+Disallow: /thank-you/
 
 # Crawl-delay for politeness
 Crawl-delay: 1`;
