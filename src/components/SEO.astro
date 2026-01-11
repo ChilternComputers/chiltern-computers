@@ -48,7 +48,7 @@ const localBusinessSchema = {
     "postalCode": "RM3 8YP",
     "addressCountry": "GB"
   },
-  "telephone": "+441708347341",
+  "telephone": ["+447971331814", "+441708347341"],
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 51.60589,
@@ -174,13 +174,23 @@ const organizationSchema = {
   "name": "Chiltern Computers",
   "url": baseUrl,
   "logo": `${baseUrl}/logo_homepage.webp`,
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+441708347341",
-    "contactType": "customer service",
-    "areaServed": "GB",
-    "availableLanguage": "English"
-  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+447971331814",
+      "contactType": "customer service",
+      "areaServed": "GB",
+      "availableLanguage": "English",
+      "contactOption": "TollFree"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+441708347341",
+      "contactType": "customer service",
+      "areaServed": "GB",
+      "availableLanguage": "English"
+    }
+  ],
   "foundingDate": "2007",
   "slogan": "Professional Computer Repair & IT Support Services"
 };

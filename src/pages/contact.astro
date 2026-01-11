@@ -17,12 +17,20 @@ const errorMessages = {
 };
 
 const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] || errorMessages.default : null;
+
+// Reviews for Review schema rich snippets
+const reviews = [
+  { author: "Sarah Mitchell", location: "Harold Hill", text: "Absolutely brilliant service! My laptop was running incredibly slow and David had it fixed within 2 hours. He explained everything clearly and the price was very reasonable.", rating: 5, date: "2024-11-28" },
+  { author: "Mike Thompson", location: "Romford", text: "Professional and efficient service. David sorted out our office network issues and set up a proper backup system. Haven't had any problems since.", rating: 5, date: "2024-10-15" },
+  { author: "Linda Johnson", location: "Hornchurch", text: "My computer wouldn't start and I thought I'd lost everything. David recovered all my photos and documents and got my PC running like new.", rating: 5, date: "2024-09-20" }
+];
 ---
 
 <Layout
-  title="Contact Us"
-  description="Contact Chiltern Computers for computer repairs in Harold Hill, Romford. Call 07971 331814 for same-day PC and laptop repair services."
+  title="Contact Computer Repair Harold Hill, Romford - Call 07971 331814"
+  description="Contact Chiltern Computers for expert computer repairs in Harold Hill, Romford. Call 07971 331814 or 01708 347341 for same-day PC and laptop repair services across Essex."
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "Contact", url: "/contact/" }]}
+  reviews={reviews}
 >
   <section class="section-bg-5" style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0;" role="main">
     
@@ -197,13 +205,35 @@ const errorMessage = error ? errorMessages[error as keyof typeof errorMessages] 
           <h3 class="space-font cosmic-glow" style="color: #2563eb; font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">
             🕒 Operating Hours
           </h3>
-          
+
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
             <span class="space-font" style="color: #e2e8f0; font-weight: 600;">Monday - Sunday:</span>
             <span class="space-font" style="color: #3b82f6; font-weight: 600;">9:00 AM - 9:00 PM</span>
           </div>
-          
+
           <p class="alien-font" style="color: #b0c4de; font-size: 14px;">Emergency repairs available by appointment</p>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <div style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 24px; overflow: hidden;">
+          <h3 class="space-font cosmic-glow" style="color: #3b82f6; font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;">
+            🗺️ Find Us
+          </h3>
+          <div style="border-radius: 12px; overflow: hidden; border: 1px solid #1e40af;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2477.5!2d0.2313!3d51.6059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a0f8be11c8f7%3A0x706e5b2fa68182f1!2s38%20Hilldene%20Ave%2C%20Romford%20RM3%208YP!5e0!3m2!1sen!2suk!4v1704115200000!5m2!1sen!2suk"
+              width="100%"
+              height="250"
+              style="border:0; display: block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Chiltern Computers location map - Harold Hill, Romford"
+            ></iframe>
+          </div>
+          <p class="alien-font" style="color: #b0c4de; font-size: 13px; margin-top: 12px; text-align: center;">
+            📍 38 Hilldene Avenue, Harold Hill, Romford, RM3 8YP
+          </p>
         </div>
       </div>
     </div>
