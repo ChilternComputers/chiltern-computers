@@ -46,10 +46,11 @@ const area = {
     .cosmic-card:hover { transform: translateY(-5px); border-color: var(--aurora-green); }
     .space-button { background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
     .space-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4); }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr) !important; gap: 20px; max-width: none !important; }
     .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .features-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr !important; } .features-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
     @media (min-width: 900px) { .features-grid { grid-template-columns: repeat(4, 1fr); } }
   </style>
 
