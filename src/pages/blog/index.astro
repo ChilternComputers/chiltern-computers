@@ -1,0 +1,271 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Blog posts data - will be updated as posts are added
+const blogPosts = [
+  {
+    slug: "best-computer-repair-near-romford",
+    title: "Best Computer Repair Near Romford - Local Expert Guide 2025",
+    excerpt: "Looking for reliable computer repair in Romford? Discover what makes a great local repair service and how to find trusted technicians in Havering.",
+    date: "2025-01-15",
+    readTime: "8 min read",
+    category: "Computer Repair",
+    image: "/repair-pic.webp"
+  },
+  {
+    slug: "why-laptop-running-slow-romford-guide",
+    title: "Why Your Laptop is Running Slow - Romford Tech Guide",
+    excerpt: "Is your laptop frustratingly slow? Learn the most common causes of slow laptop performance and how local Romford experts can help speed it up.",
+    date: "2025-01-12",
+    readTime: "10 min read",
+    category: "Laptop Tips",
+    image: "/repair-pic.webp"
+  },
+  {
+    slug: "gaming-pc-build-tips-essex",
+    title: "Gaming PC Build Tips for Essex Gamers - Complete Guide",
+    excerpt: "Planning to build a gaming PC in Essex? Get expert advice on components, budgets, and where to find local support for your custom build.",
+    date: "2025-01-08",
+    readTime: "12 min read",
+    category: "Gaming PCs",
+    image: "/repair-pic.webp"
+  },
+  {
+    slug: "computer-maintenance-tips-romford-businesses",
+    title: "Computer Maintenance Tips for Romford Businesses",
+    excerpt: "Essential IT maintenance advice for small businesses in Romford and Havering. Keep your business computers running smoothly year-round.",
+    date: "2025-01-05",
+    readTime: "9 min read",
+    category: "Business IT",
+    image: "/repair-pic.webp"
+  }
+];
+
+function formatDate(dateString: string) {
+  return new Date(dateString).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+---
+
+<Layout
+  title="Computer Repair Blog | Tech Tips & Guides for Romford & Essex"
+  description="Expert computer repair tips, guides, and local tech advice for Romford, Harold Hill, and Essex. Learn about laptop repairs, gaming PC builds, virus removal, and more."
+  keywords="computer repair blog romford, tech tips essex, laptop repair guide havering, gaming pc advice romford, IT tips harold hill"
+>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --void-black: #020617;
+      --comet-silver: #e5e7eb;
+    }
+
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+
+    @keyframes cosmic-pulse {
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
+    }
+
+    @keyframes galaxy-flow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text {
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .blog-hero {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+      position: relative;
+    }
+
+    .blog-section {
+      background: linear-gradient(180deg, var(--void-black), var(--deep-space));
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .blog-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--aurora-green);
+      box-shadow: 0 16px 40px rgba(16, 185, 129, 0.3);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .blog-card-content {
+      padding: 24px;
+    }
+
+    .blog-category {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.15);
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--plasma-cyan);
+      font-size: 12px;
+      color: var(--plasma-cyan);
+      margin-bottom: 16px;
+    }
+
+    .blog-card-title {
+      color: var(--starlight-white);
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .blog-card-excerpt {
+      color: var(--comet-silver);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .blog-date {
+      color: var(--comet-silver);
+      font-size: 13px;
+    }
+
+    .blog-read-time {
+      color: var(--aurora-green);
+      font-size: 13px;
+    }
+
+    .read-more {
+      color: var(--plasma-cyan);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+      .blog-card-title { font-size: 18px; }
+    }
+  </style>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="blog-hero" style="padding: 100px 0 60px;">
+      <div class="container">
+        <div style="text-align: center;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;">
+            <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">TECH TIPS & LOCAL GUIDES</span>
+          </div>
+
+          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(36px, 7vw, 56px); margin-bottom: 24px; line-height: 1.1;">
+            COMPUTER REPAIR BLOG
+          </h1>
+
+          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Expert advice, troubleshooting guides, and local tech tips for Romford, Harold Hill, and the wider Essex area.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-section" style="padding: 60px 0 100px;">
+      <div class="container">
+        <div class="blog-grid">
+          {blogPosts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="blog-card">
+              <img src={post.image} alt={post.title} class="blog-card-image" loading="lazy" />
+              <div class="blog-card-content">
+                <span class="blog-category tech-font">{post.category}</span>
+                <h2 class="blog-card-title space-font">{post.title}</h2>
+                <p class="blog-card-excerpt alien-font">{post.excerpt}</p>
+                <div class="blog-card-meta">
+                  <span class="blog-date tech-font">{formatDate(post.date)}</span>
+                  <span class="blog-read-time tech-font">{post.readTime}</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-section" style="padding: 0 0 100px;">
+      <div class="container">
+        <div style="background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border: 2px solid var(--aurora-green); border-radius: 20px; padding: 50px 40px; text-align: center;">
+          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px;">
+            NEED EXPERT HELP NOW?
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 17px;">
+            Our local technicians in Harold Hill are ready to help with any computer problem.
+          </p>
+          <a href="/contact/" class="space-font" style="background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 14px;">
+            <span>Get Free Quote</span>
+            <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

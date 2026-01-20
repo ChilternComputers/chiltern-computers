@@ -43,6 +43,13 @@ export const GET: APIRoute = async () => {
     { url: '/areas/elm-park/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
     { url: '/areas/chadwell-heath/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
 
+    // Blog pages
+    { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: currentDate },
+    { url: '/blog/best-computer-repair-near-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-15' },
+    { url: '/blog/why-laptop-running-slow-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-12' },
+    { url: '/blog/gaming-pc-build-tips-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-08' },
+    { url: '/blog/computer-maintenance-tips-romford-businesses/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-05' },
+
     // Legal pages
     { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
     { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
