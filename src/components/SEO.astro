@@ -35,7 +35,7 @@ const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 // Enhanced structured data with high-traffic service keywords
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "name": "Chiltern Computers",
   "alternateName": ["Chiltern Computer Repair", "Computer Repair Harold Hill"],
   "image": [`${baseUrl}/logo_homepage.webp`, `${baseUrl}/logoopengraph.png`],
@@ -282,6 +282,70 @@ const faqSchema = {
   ]
 };
 
+// Standalone Service Schemas for individual service visibility
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Computer Repair",
+    "name": "Computer Repair Services in Harold Hill & Romford",
+    "description": "Professional desktop and laptop computer repair services. We fix PCs that won't start, blue screen errors, slow computers, and hardware failures. Same day service available.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chiltern Computers",
+      "telephone": "+447971331814",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "38 Hilldene Avenue",
+        "addressLocality": "Harold Hill",
+        "addressRegion": "Essex",
+        "postalCode": "RM3 8YP",
+        "addressCountry": "GB"
+      }
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 51.60589, "longitude": 0.23353 },
+      "geoRadius": "10000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Computer Repair Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PC Repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laptop Repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hardware Replacement" } }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Virus Removal",
+    "name": "Virus & Malware Removal in Romford",
+    "description": "Complete virus and malware removal services. We eliminate ransomware, spyware, adware, and all types of malicious software to restore your computer's security and performance.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chiltern Computers",
+      "telephone": "+447971331814"
+    },
+    "areaServed": ["Harold Hill", "Romford", "Hornchurch", "Dagenham", "Havering"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Data Recovery",
+    "name": "Data Recovery Services in Essex",
+    "description": "Professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. We recover photos, documents, and business files from damaged or corrupted storage devices.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chiltern Computers",
+      "telephone": "+447971331814"
+    },
+    "areaServed": ["Harold Hill", "Romford", "Essex", "Havering"]
+  }
+];
+
 // BreadcrumbList Schema - only render if breadcrumbs provided
 const breadcrumbSchema = breadcrumbs.length > 0 ? {
   "@context": "https://schema.org",
@@ -417,5 +481,6 @@ const reviewSchemas = reviews.map(review => ({
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+{serviceSchemas.map(service => <script type="application/ld+json" set:html={JSON.stringify(service)} />)}
 {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 {reviewSchemas.map(review => <script type="application/ld+json" set:html={JSON.stringify(review)} />)}

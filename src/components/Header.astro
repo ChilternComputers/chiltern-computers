@@ -106,10 +106,10 @@ function handleResize() {
   if (window.innerWidth <= 950) {
     if (mobileToggle) mobileToggle.style.display = 'block';
     // Only show the menu if user has opened it
-    headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
+    if (headerNav) headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
   } else {
     if (mobileToggle) mobileToggle.style.display = 'none';
-    headerNav.style.display = 'flex';
+    if (headerNav) headerNav.style.display = 'flex';
     mobileMenuOpen = false; // reset mobile menu state when on desktop
     if (menuText) menuText.textContent = 'Menu'; // reset text when returning to desktop
   }
@@ -117,11 +117,11 @@ function handleResize() {
 window.addEventListener('resize', handleResize);
 handleResize();
 
-if (mobileMenuBtn) {
+if (mobileMenuBtn && headerNav) {
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenuOpen = !mobileMenuOpen;
     headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
-    
+
     // Update button text based on menu state
     if (menuText) {
       menuText.textContent = mobileMenuOpen ? 'Close' : 'Menu';
