@@ -26,8 +26,8 @@
   --primary-purple: #8b5cf6;
   --accent-green: #34d399;
   --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-secondary: #d1dbe8;
+  --text-muted: #b8c5d3;
   
   /* Layout Variables */
   --content-max-width: 1200px;
@@ -1106,7 +1106,7 @@ html, body {
 
 .dropdown-desc {
   font-size: 0.825rem;
-  color: #6b7280;
+  color: #4b5563;
   font-weight: 400;
   line-height: 1.2;
 }
