@@ -45,6 +45,7 @@ export const GET: APIRoute = async () => {
 
     // Blog pages
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: currentDate },
+    { url: '/blog/upgrade-old-pc-windows-11-unsupported/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-23' },
     { url: '/blog/best-computer-repair-near-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-15' },
     { url: '/blog/why-laptop-running-slow-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-12' },
     { url: '/blog/gaming-pc-build-tips-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-08' },

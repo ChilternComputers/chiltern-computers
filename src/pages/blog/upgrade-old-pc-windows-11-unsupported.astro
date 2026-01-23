@@ -1,0 +1,662 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = "2025-01-23";
+const modifiedDate = "2025-01-23";
+const author = "Chiltern Computers";
+const readTime = "11 min read";
+
+const faqs = [
+  {
+    question: "Will Windows 11 work on my old PC without TPM 2.0?",
+    answer: "Yes, Windows 11 can run on PCs without TPM 2.0 using official and unofficial bypass methods. Microsoft even provides a registry workaround for TPM 1.2 systems. Many older PCs run Windows 11 perfectly well - the requirements are more about security policy than actual capability."
+  },
+  {
+    question: "Is it safe to install Windows 11 on an unsupported PC?",
+    answer: "Generally yes, with some caveats. Your PC will work normally, but Microsoft warns that unsupported systems may not receive all updates. In practice, most users report receiving updates without issues. The main risk is potential future compatibility problems, not immediate safety concerns."
+  },
+  {
+    question: "Will I still get Windows updates on unsupported hardware?",
+    answer: "Currently, yes. Microsoft has continued to deliver updates to unsupported Windows 11 installations. However, they reserve the right to exclude unsupported hardware from future updates. For most home users, this hasn't been a practical problem."
+  },
+  {
+    question: "Can a computer shop upgrade my old PC to Windows 11?",
+    answer: "Yes, local computer repair shops like Chiltern Computers can assess your PC, determine the best upgrade path, and perform the installation properly. We can also advise whether your hardware will genuinely benefit from Windows 11 or if other upgrades (like an SSD) would be more beneficial."
+  },
+  {
+    question: "Should I upgrade to Windows 11 or buy a new PC?",
+    answer: "If your PC has an SSD (or can be upgraded to one), 8GB+ RAM, and a reasonable processor (Intel 4th gen or newer, or equivalent AMD), Windows 11 will likely run well. If your PC is very old or struggling with Windows 10, a new or refurbished machine might be more cost-effective than upgrading."
+  }
+];
+---
+
+<Layout
+  title="How to Upgrade Old PCs to Windows 11 (Even Unsupported Ones) - Romford Guide"
+  description="Got an older PC that Microsoft says can't run Windows 11? Learn how to safely upgrade unsupported computers to Windows 11, what the real requirements are, and when it makes sense to upgrade."
+  keywords="windows 11 unsupported pc, upgrade old pc windows 11, windows 11 without tpm, install windows 11 old computer, windows 11 bypass requirements, windows 11 upgrade romford, pc upgrade harold hill, windows 11 incompatible pc fix"
+>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; width: 100%; }
+
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --void-black: #020617;
+      --comet-silver: #e5e7eb;
+      --mars-red: #dc2626;
+      --windows-blue: #0078d4;
+    }
+
+    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
+    .alien-font { font-family: 'Exo 2', sans-serif; }
+    .tech-font { font-family: 'Space Mono', monospace; }
+
+    @keyframes cosmic-pulse {
+      0%, 100% { text-shadow: 0 0 5px currentColor; }
+      50% { text-shadow: 0 0 15px currentColor; }
+    }
+
+    @keyframes galaxy-flow {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .galaxy-text {
+      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .article-hero {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+
+    .article-section {
+      background: linear-gradient(180deg, var(--void-black), var(--deep-space));
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .article-content {
+      color: var(--comet-silver);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      color: var(--starlight-white);
+      font-size: clamp(24px, 4vw, 32px);
+      margin: 48px 0 20px;
+      line-height: 1.3;
+    }
+
+    .article-content h3 {
+      color: var(--plasma-cyan);
+      font-size: clamp(20px, 3vw, 24px);
+      margin: 36px 0 16px;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 12px;
+    }
+
+    .article-content strong {
+      color: var(--starlight-white);
+    }
+
+    .highlight-box {
+      background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05));
+      border-left: 4px solid var(--aurora-green);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .warning-box {
+      background: linear-gradient(145deg, rgba(245, 158, 11, 0.1), rgba(220, 38, 38, 0.05));
+      border-left: 4px solid var(--solar-orange);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .info-box {
+      background: linear-gradient(145deg, rgba(0, 120, 212, 0.1), rgba(30, 58, 138, 0.05));
+      border-left: 4px solid var(--windows-blue);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .requirements-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 15px;
+    }
+
+    .requirements-table th,
+    .requirements-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .requirements-table th {
+      background: rgba(6, 182, 212, 0.1);
+      color: var(--plasma-cyan);
+      font-weight: 600;
+    }
+
+    .requirements-table td {
+      color: var(--comet-silver);
+    }
+
+    .requirements-table tr:hover {
+      background: rgba(6, 182, 212, 0.05);
+    }
+
+    .faq-section {
+      margin: 48px 0;
+    }
+
+    .faq-item {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      color: var(--starlight-white);
+      font-size: 17px;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--comet-silver);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--plasma-cyan);
+      text-decoration: none;
+    }
+
+    .breadcrumb span {
+      color: var(--comet-silver);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--comet-silver);
+      font-size: 14px;
+    }
+
+    .cta-box {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2));
+      border: 2px solid var(--aurora-green);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+
+    .step-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--plasma-cyan);
+      color: var(--void-black);
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 14px;
+      margin-right: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 16px; }
+      .article-content { font-size: 16px; }
+      .article-meta { gap: 16px; }
+      .requirements-table { font-size: 13px; }
+      .requirements-table th,
+      .requirements-table td { padding: 10px 12px; }
+    }
+  </style>
+
+  <main>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>Windows 11 Upgrade Guide</span>
+        </nav>
+
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 120, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--windows-blue); margin-bottom: 24px;">
+          <span class="tech-font" style="color: var(--windows-blue); font-size: 12px;">WINDOWS 11</span>
+        </div>
+
+        <h1 class="space-font" style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;">
+          How to Upgrade Old PCs to Windows 11 (Even "Unsupported" Ones)
+        </h1>
+
+        <p class="alien-font" style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;">
+          Microsoft says your PC can't run Windows 11? That's not always true. Learn how to safely upgrade older computers and what you need to know before making the switch.
+        </p>
+
+        <div class="article-meta tech-font">
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Romford, Essex</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 50px 0 100px;">
+      <div class="container">
+        <article class="article-content alien-font">
+          <p>
+            With <strong>Windows 10 support ending in October 2025</strong>, millions of PC owners are facing a dilemma. Microsoft's PC Health Check app tells them their computer "doesn't meet Windows 11 system requirements" - but in many cases, these PCs are perfectly capable of running Windows 11. They're just being blocked by Microsoft's strict (and somewhat controversial) hardware requirements.
+          </p>
+
+          <p>
+            If you're in Romford, Harold Hill, or anywhere in Essex with a PC that's been deemed "incompatible," don't rush to buy a new computer just yet. This guide explains what the requirements really mean, whether your PC can actually run Windows 11, and how to upgrade safely.
+          </p>
+
+          <h2 class="space-font">Why Microsoft Says Your PC Can't Run Windows 11</h2>
+
+          <p>
+            Microsoft introduced strict hardware requirements for Windows 11, primarily focused on security features. Here's what they officially require:
+          </p>
+
+          <table class="requirements-table">
+            <thead>
+              <tr>
+                <th>Requirement</th>
+                <th>Official Minimum</th>
+                <th>Reality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TPM</strong></td>
+                <td>Version 2.0</td>
+                <td>Can work with TPM 1.2 or even without</td>
+              </tr>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Intel 8th Gen+ / Ryzen 2000+</td>
+                <td>Older CPUs work fine in practice</td>
+              </tr>
+              <tr>
+                <td><strong>Secure Boot</strong></td>
+                <td>Required</td>
+                <td>Can be bypassed</td>
+              </tr>
+              <tr>
+                <td><strong>RAM</strong></td>
+                <td>4GB minimum</td>
+                <td>8GB recommended for good performance</td>
+              </tr>
+              <tr>
+                <td><strong>Storage</strong></td>
+                <td>64GB minimum</td>
+                <td>SSD strongly recommended</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            The most common blockers are <strong>TPM 2.0</strong> and <strong>CPU generation</strong>. Many perfectly capable PCs from 2015-2017 have TPM 1.2 (or no TPM) and 6th or 7th generation Intel processors. These machines often have plenty of power for Windows 11 - they just don't meet Microsoft's security requirements.
+          </p>
+
+          <div class="info-box">
+            <p style="margin: 0;"><strong>What is TPM?</strong> The Trusted Platform Module is a security chip that stores encryption keys and helps protect against certain types of attacks. While it's a genuine security feature, most home users won't notice any practical difference with or without it. TPM 2.0 is primarily important for enterprise security features like BitLocker.</p>
+          </div>
+
+          <h2 class="space-font">Can Your PC Actually Run Windows 11?</h2>
+
+          <p>
+            Forget the official requirements for a moment. Here's what actually matters for Windows 11 to run well:
+          </p>
+
+          <ul>
+            <li><strong>A reasonable processor:</strong> Intel Core 4th generation (Haswell, 2013) or newer, or AMD equivalent. Even some older processors work.</li>
+            <li><strong>8GB RAM:</strong> The official minimum is 4GB, but 8GB is realistic for comfortable use.</li>
+            <li><strong>An SSD:</strong> This is the single biggest factor for performance. Windows 11 on a traditional hard drive is painfully slow.</li>
+            <li><strong>UEFI firmware:</strong> Most PCs from 2012 onwards have this. Very old BIOS-only systems may struggle.</li>
+          </ul>
+
+          <p>
+            If your PC currently runs Windows 10 reasonably well, there's a good chance it can run Windows 11 - regardless of what the PC Health Check says.
+          </p>
+
+          <h2 class="space-font">Methods to Install Windows 11 on Unsupported PCs</h2>
+
+          <p>
+            There are several approaches, ranging from Microsoft's own workaround to third-party tools:
+          </p>
+
+          <h3 class="space-font">Method 1: Microsoft's Official Registry Bypass (TPM 1.2)</h3>
+
+          <p>
+            Microsoft actually provides an official workaround for systems with TPM 1.2 (instead of 2.0). This involves adding a registry key before installation:
+          </p>
+
+          <div class="step-card">
+            <p><span class="step-number">1</span><strong>Open Registry Editor</strong> (search for "regedit" in the Start menu)</p>
+          </div>
+
+          <div class="step-card">
+            <p><span class="step-number">2</span><strong>Navigate to:</strong> HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup</p>
+          </div>
+
+          <div class="step-card">
+            <p><span class="step-number">3</span><strong>Create a new DWORD value</strong> called "AllowUpgradesWithUnsupportedTPMOrCPU" and set it to 1</p>
+          </div>
+
+          <div class="step-card">
+            <p><span class="step-number">4</span><strong>Run Windows 11 setup</strong> - it should now proceed on TPM 1.2 systems</p>
+          </div>
+
+          <p>
+            This method is semi-official and works for many PCs that have TPM 1.2 but not 2.0.
+          </p>
+
+          <h3 class="space-font">Method 2: Rufus (Clean Install)</h3>
+
+          <p>
+            <strong>Rufus</strong> is a free, reputable tool for creating bootable USB drives. Recent versions include options to bypass Windows 11 requirements entirely:
+          </p>
+
+          <ul>
+            <li>Download Rufus from the official website (rufus.ie)</li>
+            <li>Download the Windows 11 ISO from Microsoft</li>
+            <li>In Rufus, select the ISO and your USB drive</li>
+            <li>Click the options to remove TPM, Secure Boot, and RAM requirements</li>
+            <li>Create the bootable drive and install Windows 11</li>
+          </ul>
+
+          <p>
+            This method is best for clean installations and works on PCs with no TPM at all.
+          </p>
+
+          <h3 class="space-font">Method 3: In-Place Upgrade with Modified ISO</h3>
+
+          <p>
+            For upgrading while keeping your files and programs, you can modify the Windows 11 installation files to bypass the checks. This involves replacing a file in the installation media with one from Windows 10. This method is more technical but preserves your existing setup.
+          </p>
+
+          <div class="warning-box">
+            <p style="margin: 0;"><strong>Important:</strong> Always back up your important files before any major Windows upgrade. While these methods generally work well, any operating system installation carries some risk. If you're not comfortable with the technical steps, a local computer shop can handle this safely.</p>
+          </div>
+
+          <h2 class="space-font">What Are the Risks?</h2>
+
+          <p>
+            Microsoft warns that unsupported PCs may have compatibility issues and might not receive updates. In practice, here's what we've observed:
+          </p>
+
+          <ul>
+            <li><strong>Updates:</strong> So far, Microsoft has continued to deliver updates to unsupported installations. This could change, but hasn't yet.</li>
+            <li><strong>Stability:</strong> Windows 11 runs stably on most unsupported hardware. The requirements are more about policy than technical capability.</li>
+            <li><strong>Driver support:</strong> Older hardware may have limited driver support, but this affects supported and unsupported systems equally.</li>
+            <li><strong>Future compatibility:</strong> There's a small risk that future Windows 11 updates could cause issues on unsupported hardware.</li>
+          </ul>
+
+          <p>
+            For most home users, the practical risks are minimal. Business users may want to stick with supported hardware for compliance and support reasons.
+          </p>
+
+          <h2 class="space-font">When Upgrading Makes Sense (And When It Doesn't)</h2>
+
+          <h3 class="space-font">Good Candidates for Windows 11 Upgrade:</h3>
+
+          <ul>
+            <li>PCs with Intel 4th-7th generation processors that are otherwise capable</li>
+            <li>Systems with SSDs and 8GB+ RAM that run Windows 10 well</li>
+            <li>Users who want to continue receiving security updates after Windows 10 EOL</li>
+            <li>PCs that only fail the TPM or CPU generation requirements</li>
+          </ul>
+
+          <h3 class="space-font">Consider Alternatives Instead:</h3>
+
+          <ul>
+            <li>Very old PCs (pre-2012) with limited RAM and no SSD</li>
+            <li>Systems that already struggle with Windows 10</li>
+            <li>PCs with hardware issues or other problems</li>
+            <li>Business systems where official support is required</li>
+          </ul>
+
+          <div class="highlight-box">
+            <p style="margin: 0;"><strong>Pro Tip:</strong> Before upgrading to Windows 11, consider upgrading your hardware first. Adding an SSD to an older PC often makes a bigger difference than the operating system upgrade. Many PCs that "feel old" are actually held back by slow hard drives, not outdated processors.</p>
+          </div>
+
+          <h2 class="space-font">What About Just Staying on Windows 10?</h2>
+
+          <p>
+            Windows 10 support ends on <strong>14 October 2025</strong>. After this date:
+          </p>
+
+          <ul>
+            <li>No more security updates (unless you pay for Extended Security Updates)</li>
+            <li>Increasing vulnerability to new malware and exploits</li>
+            <li>Some new software may stop supporting Windows 10</li>
+            <li>Online banking and other services may eventually require newer systems</li>
+          </ul>
+
+          <p>
+            For PCs that genuinely can't run Windows 11, alternatives include:
+          </p>
+
+          <ul>
+            <li><strong>Extended Security Updates:</strong> Microsoft offers paid updates for businesses (and may extend to consumers)</li>
+            <li><strong>Linux:</strong> Distributions like Linux Mint or Ubuntu are free and run well on older hardware</li>
+            <li><strong>Replacement:</strong> If your PC is very old, a refurbished business PC with Windows 11 support may be cost-effective</li>
+          </ul>
+
+          <h2 class="space-font">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            {faqs.map((faq, index) => (
+              <div class="faq-item">
+                <div class="faq-question space-font">
+                  <span>{faq.question}</span>
+                </div>
+                <div class="faq-answer alien-font">
+                  {faq.answer}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="space-font">Getting Help With Your Windows 11 Upgrade</h2>
+
+          <p>
+            Upgrading to Windows 11 on unsupported hardware isn't difficult, but it does require some technical knowledge. If you're not comfortable with registry edits and bootable USB drives, or if you simply want peace of mind that it's done correctly, a local computer shop can help.
+          </p>
+
+          <p>
+            At Chiltern Computers in Harold Hill, we can assess your PC, advise whether Windows 11 is the right choice, perform the upgrade safely, and ensure everything works properly afterwards. We can also recommend whether hardware upgrades (like adding an SSD) would benefit your system.
+          </p>
+
+          <p>
+            Don't let Microsoft's requirements force you into buying a new PC before you're ready. Many "unsupported" computers have years of useful life left with Windows 11.
+          </p>
+
+          <div class="cta-box">
+            <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
+              Need Help Upgrading to Windows 11?
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
+              Chiltern Computers can assess your PC and perform a safe Windows 11 upgrade - even on "unsupported" systems. Free advice on whether it's right for your computer.
+            </p>
+            <a href="/contact/" class="space-button space-font">
+              Get Windows 11 Upgrade Help
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Related Articles -->
+          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Related Articles</h3>
+            <div style="display: grid; gap: 16px;">
+              <a href="/blog/why-laptop-running-slow-romford-guide/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Why Your Laptop is Running Slow - Romford Tech Guide</div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">10 min read</div>
+                </div>
+              </a>
+              <a href="/blog/best-computer-repair-near-romford/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Best Computer Repair Near Romford - Local Expert Guide</div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  })} />
+
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Upgrade Old PCs to Windows 11 (Even Unsupported Ones) - Romford Guide",
+    "description": "Got an older PC that Microsoft says can't run Windows 11? Learn how to safely upgrade unsupported computers to Windows 11, what the real requirements are, and when it makes sense to upgrade.",
+    "image": "https://chilterncomputers.co.uk/repair-pic.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "Chiltern Computers"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Chiltern Computers",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://chilterncomputers.co.uk/logo_homepage.webp"
+      }
+    },
+    "datePublished": publishDate,
+    "dateModified": modifiedDate,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://chilterncomputers.co.uk/blog/upgrade-old-pc-windows-11-unsupported/"
+    }
+  })} />
+</Layout>
