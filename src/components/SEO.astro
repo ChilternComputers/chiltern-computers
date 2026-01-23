@@ -474,6 +474,9 @@ const reviewSchemas = reviews.map(review => ({
 <link rel="preload" href="/fonts/Orbitron-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/Exo2-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
+<!-- Preload hero image for faster LCP -->
+<link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
+
 <link rel="preload" href={fullImageUrl} as="image" />
 
 <!-- Structured Data -->
