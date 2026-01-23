@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 const publishDate = "2025-01-23";
 const modifiedDate = "2025-01-23";
 const author = "Chiltern Computers";
-const readTime = "11 min read";
+const readTime = "8 min read";
 
 const faqs = [
   {
@@ -428,64 +428,26 @@ const faqs = [
             If your PC currently runs Windows 10 reasonably well, there's a good chance it can run Windows 11 - regardless of what the PC Health Check says.
           </p>
 
-          <h2 class="space-font">Methods to Install Windows 11 on Unsupported PCs</h2>
+          <h2 class="space-font">Can You Upgrade an Unsupported PC to Windows 11?</h2>
 
           <p>
-            There are several approaches, ranging from Microsoft's own workaround to third-party tools:
+            Yes - there are legitimate methods to install Windows 11 on PCs that don't meet Microsoft's official requirements. These range from Microsoft's own workarounds (for systems with TPM 1.2) to more advanced techniques for older hardware.
           </p>
 
-          <h3 class="space-font">Method 1: Microsoft's Official Registry Bypass (TPM 1.2)</h3>
-
           <p>
-            Microsoft actually provides an official workaround for systems with TPM 1.2 (instead of 2.0). This involves adding a registry key before installation:
-          </p>
-
-          <div class="step-card">
-            <p><span class="step-number">1</span><strong>Open Registry Editor</strong> (search for "regedit" in the Start menu)</p>
-          </div>
-
-          <div class="step-card">
-            <p><span class="step-number">2</span><strong>Navigate to:</strong> HKEY_LOCAL_MACHINE\SYSTEM\Setup\MoSetup</p>
-          </div>
-
-          <div class="step-card">
-            <p><span class="step-number">3</span><strong>Create a new DWORD value</strong> called "AllowUpgradesWithUnsupportedTPMOrCPU" and set it to 1</p>
-          </div>
-
-          <div class="step-card">
-            <p><span class="step-number">4</span><strong>Run Windows 11 setup</strong> - it should now proceed on TPM 1.2 systems</p>
-          </div>
-
-          <p>
-            This method is semi-official and works for many PCs that have TPM 1.2 but not 2.0.
-          </p>
-
-          <h3 class="space-font">Method 2: Rufus (Clean Install)</h3>
-
-          <p>
-            <strong>Rufus</strong> is a free, reputable tool for creating bootable USB drives. Recent versions include options to bypass Windows 11 requirements entirely:
+            However, the upgrade process requires technical knowledge to do correctly. Getting it wrong can result in data loss, failed installations, or systems that won't boot. The process involves:
           </p>
 
           <ul>
-            <li>Download Rufus from the official website (rufus.ie)</li>
-            <li>Download the Windows 11 ISO from Microsoft</li>
-            <li>In Rufus, select the ISO and your USB drive</li>
-            <li>Click the options to remove TPM, Secure Boot, and RAM requirements</li>
-            <li>Create the bootable drive and install Windows 11</li>
+            <li>Assessing your specific hardware to determine the best approach</li>
+            <li>Backing up your data properly before making changes</li>
+            <li>Choosing between a clean install or keeping your existing files</li>
+            <li>Ensuring drivers and software work correctly after the upgrade</li>
+            <li>Configuring the system for optimal performance</li>
           </ul>
 
-          <p>
-            This method is best for clean installations and works on PCs with no TPM at all.
-          </p>
-
-          <h3 class="space-font">Method 3: In-Place Upgrade with Modified ISO</h3>
-
-          <p>
-            For upgrading while keeping your files and programs, you can modify the Windows 11 installation files to bypass the checks. This involves replacing a file in the installation media with one from Windows 10. This method is more technical but preserves your existing setup.
-          </p>
-
-          <div class="warning-box">
-            <p style="margin: 0;"><strong>Important:</strong> Always back up your important files before any major Windows upgrade. While these methods generally work well, any operating system installation carries some risk. If you're not comfortable with the technical steps, a local computer shop can handle this safely.</p>
+          <div class="highlight-box">
+            <p style="margin: 0;"><strong>Professional Windows 11 Upgrade Service:</strong> At Chiltern Computers, we offer a complete Windows 11 upgrade service for unsupported PCs. We'll assess your hardware, back up your data, perform the upgrade safely, and ensure everything works correctly afterwards. No risk of data loss or failed installations.</p>
           </div>
 
           <h2 class="space-font">What Are the Risks?</h2>
