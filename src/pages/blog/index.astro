@@ -1,6 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+// Define categories for topic clusters
+const categories = [
+  { id: "all", name: "All Posts", color: "var(--plasma-cyan)" },
+  { id: "repairs", name: "Repairs & Troubleshooting", color: "var(--aurora-green)" },
+  { id: "guides", name: "Buying Guides", color: "var(--solar-orange)" },
+  { id: "gaming", name: "Gaming PCs", color: "var(--nebula-purple)" },
+  { id: "business", name: "Business IT", color: "var(--plasma-cyan)" },
+];
+
 // Blog posts data - will be updated as posts are added
 const blogPosts = [
   {
@@ -10,6 +19,7 @@ const blogPosts = [
     date: "2025-01-23",
     readTime: "7 min read",
     category: "Buying Guide",
+    categoryId: "guides",
     image: "/repair-pic.webp"
   },
   {
@@ -19,6 +29,7 @@ const blogPosts = [
     date: "2025-01-23",
     readTime: "8 min read",
     category: "Windows 11",
+    categoryId: "repairs",
     image: "/repair-pic.webp"
   },
   {
@@ -28,6 +39,7 @@ const blogPosts = [
     date: "2025-01-15",
     readTime: "8 min read",
     category: "Computer Repair",
+    categoryId: "repairs",
     image: "/repair-pic.webp"
   },
   {
@@ -37,6 +49,7 @@ const blogPosts = [
     date: "2025-01-12",
     readTime: "10 min read",
     category: "Laptop Tips",
+    categoryId: "repairs",
     image: "/repair-pic.webp"
   },
   {
@@ -46,6 +59,7 @@ const blogPosts = [
     date: "2025-01-08",
     readTime: "12 min read",
     category: "Gaming PCs",
+    categoryId: "gaming",
     image: "/repair-pic.webp"
   },
   {
@@ -55,6 +69,7 @@ const blogPosts = [
     date: "2025-01-05",
     readTime: "9 min read",
     category: "Business IT",
+    categoryId: "business",
     image: "/repair-pic.webp"
   }
 ];
@@ -216,10 +231,75 @@ function formatDate(dateString: string) {
       gap: 6px;
     }
 
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .category-btn {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: var(--comet-silver);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .category-btn:hover, .category-btn.active {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: var(--plasma-cyan);
+      color: var(--plasma-cyan);
+    }
+
+    .featured-post {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .featured-post .blog-card-image {
+      height: 100%;
+      min-height: 300px;
+      border-bottom: none;
+      border-radius: 20px 0 0 20px;
+    }
+
+    .featured-post .blog-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .featured-label {
+      display: inline-block;
+      background: var(--aurora-green);
+      color: var(--void-black);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
     @media (max-width: 768px) {
       .container { padding: 0 16px; }
       .blog-grid { grid-template-columns: 1fr; gap: 20px; }
       .blog-card-title { font-size: 18px; }
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-post .blog-card-image {
+        border-radius: 20px 20px 0 0;
+        min-height: 200px;
+      }
+      .category-filters { gap: 8px; }
+      .category-btn { padding: 8px 16px; font-size: 13px; }
     }
   </style>
 
@@ -240,6 +320,15 @@ function formatDate(dateString: string) {
           <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto; line-height: 1.6;">
             Expert advice, troubleshooting guides, and local tech tips for Romford, Harold Hill, and the wider Essex area.
           </p>
+
+          <!-- Category Filters -->
+          <div class="category-filters" style="margin-top: 40px;">
+            {categories.map((cat, index) => (
+              <span class={`category-btn tech-font ${index === 0 ? 'active' : ''}`} data-category={cat.id}>
+                {cat.name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -247,9 +336,27 @@ function formatDate(dateString: string) {
     <!-- Blog Posts Grid -->
     <section class="blog-section" style="padding: 60px 0 100px;">
       <div class="container">
+        <!-- Featured Post (Most Recent) -->
+        <a href={`/blog/${blogPosts[0].slug}/`} class="blog-card featured-post" style="margin-bottom: 30px;">
+          <img src={blogPosts[0].image} alt={blogPosts[0].title} class="blog-card-image" loading="eager" />
+          <div class="blog-card-content">
+            <div>
+              <span class="featured-label tech-font">LATEST POST</span>
+              <span class="blog-category tech-font" style="margin-left: 8px;">{blogPosts[0].category}</span>
+            </div>
+            <h2 class="blog-card-title space-font" style="font-size: 28px; margin: 16px 0;">{blogPosts[0].title}</h2>
+            <p class="blog-card-excerpt alien-font" style="font-size: 16px;">{blogPosts[0].excerpt}</p>
+            <div class="blog-card-meta" style="border-top: none; padding-top: 0; margin-top: 16px;">
+              <span class="blog-date tech-font">{formatDate(blogPosts[0].date)}</span>
+              <span class="blog-read-time tech-font">{blogPosts[0].readTime}</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Rest of Posts -->
         <div class="blog-grid">
-          {blogPosts.map((post) => (
-            <a href={`/blog/${post.slug}/`} class="blog-card">
+          {blogPosts.slice(1).map((post) => (
+            <a href={`/blog/${post.slug}/`} class="blog-card" data-category={post.categoryId}>
               <img src={post.image} alt={post.title} class="blog-card-image" loading="lazy" />
               <div class="blog-card-content">
                 <span class="blog-category tech-font">{post.category}</span>
