@@ -13,6 +13,17 @@ const categories = [
 // Blog posts data - will be updated as posts are added
 const blogPosts = [
   {
+    slug: "virus-malware-removal-romford-guide",
+    title: "Virus & Malware Removal in Romford - Complete Guide",
+    excerpt: "Think your computer has a virus? Learn the warning signs of malware infection, what to do if you're infected, and how local Romford experts can help.",
+    date: "2025-01-23",
+    readTime: "9 min read",
+    category: "Virus Removal",
+    categoryId: "repairs",
+    image: "/repair-pic.webp",
+    imageAlt: "Virus and malware removal service at computer repair shop in Romford"
+  },
+  {
     slug: "is-my-computer-worth-repairing-romford",
     title: "Is My Computer Worth Repairing? Romford Expert Advice",
     excerpt: "Not sure whether to repair or replace your computer? Local experts share honest advice on when repair makes sense and typical costs in Romford.",
@@ -343,7 +354,7 @@ function formatDate(dateString: string) {
     <section class="blog-section" style="padding: 60px 0 100px;">
       <div class="container">
         <!-- Featured Post (Most Recent) -->
-        <a href={`/blog/${blogPosts[0].slug}/`} class="blog-card featured-post" style="margin-bottom: 30px;">
+        <a href={`/blog/${blogPosts[0].slug}/`} class="blog-card featured-post" data-category={blogPosts[0].categoryId} style="margin-bottom: 30px;">
           <img src={blogPosts[0].image} alt={blogPosts[0].imageAlt} class="blog-card-image" loading="eager" />
           <div class="blog-card-content">
             <div>
@@ -399,4 +410,43 @@ function formatDate(dateString: string) {
       </div>
     </section>
   </main>
+
+  <script>
+    // Category filter functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      const featuredPost = document.querySelector('.featured-post') as HTMLElement;
+      const blogCards = document.querySelectorAll('.blog-grid .blog-card') as NodeListOf<HTMLElement>;
+      const featuredCategory = featuredPost?.getAttribute('data-category');
+
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const category = btn.getAttribute('data-category');
+
+          // Update active state
+          categoryBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Filter posts
+          if (category === 'all') {
+            // Show all posts
+            if (featuredPost) featuredPost.style.display = 'grid';
+            blogCards.forEach(card => {
+              card.style.display = 'block';
+            });
+          } else {
+            // Filter by category
+            if (featuredPost) {
+              featuredPost.style.display = featuredCategory === category ? 'grid' : 'none';
+            }
+
+            blogCards.forEach(card => {
+              const cardCategory = card.getAttribute('data-category');
+              card.style.display = cardCategory === category ? 'block' : 'none';
+            });
+          }
+        });
+      });
+    });
+  </script>
 </Layout>
