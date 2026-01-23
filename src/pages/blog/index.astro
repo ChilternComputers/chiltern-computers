@@ -20,7 +20,8 @@ const blogPosts = [
     readTime: "7 min read",
     category: "Buying Guide",
     categoryId: "guides",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Computer repair technician assessing whether a desktop PC is worth repairing in Romford"
   },
   {
     slug: "upgrade-old-pc-windows-11-unsupported",
@@ -30,7 +31,8 @@ const blogPosts = [
     readTime: "8 min read",
     category: "Windows 11",
     categoryId: "repairs",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Windows 11 upgrade being installed on an older PC at computer repair shop in Harold Hill"
   },
   {
     slug: "best-computer-repair-near-romford",
@@ -40,7 +42,8 @@ const blogPosts = [
     readTime: "8 min read",
     category: "Computer Repair",
     categoryId: "repairs",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Professional computer repair service in Romford - technician working on laptop"
   },
   {
     slug: "why-laptop-running-slow-romford-guide",
@@ -50,7 +53,8 @@ const blogPosts = [
     readTime: "10 min read",
     category: "Laptop Tips",
     categoryId: "repairs",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Slow laptop being diagnosed for performance issues at Romford computer repair shop"
   },
   {
     slug: "gaming-pc-build-tips-essex",
@@ -60,7 +64,8 @@ const blogPosts = [
     readTime: "12 min read",
     category: "Gaming PCs",
     categoryId: "gaming",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Custom gaming PC build with RGB lighting - built by Essex computer specialists"
   },
   {
     slug: "computer-maintenance-tips-romford-businesses",
@@ -70,7 +75,8 @@ const blogPosts = [
     readTime: "9 min read",
     category: "Business IT",
     categoryId: "business",
-    image: "/repair-pic.webp"
+    image: "/repair-pic.webp",
+    imageAlt: "Business IT maintenance and computer support for Romford small businesses"
   }
 ];
 
@@ -338,7 +344,7 @@ function formatDate(dateString: string) {
       <div class="container">
         <!-- Featured Post (Most Recent) -->
         <a href={`/blog/${blogPosts[0].slug}/`} class="blog-card featured-post" style="margin-bottom: 30px;">
-          <img src={blogPosts[0].image} alt={blogPosts[0].title} class="blog-card-image" loading="eager" />
+          <img src={blogPosts[0].image} alt={blogPosts[0].imageAlt} class="blog-card-image" loading="eager" />
           <div class="blog-card-content">
             <div>
               <span class="featured-label tech-font">LATEST POST</span>
@@ -357,7 +363,7 @@ function formatDate(dateString: string) {
         <div class="blog-grid">
           {blogPosts.slice(1).map((post) => (
             <a href={`/blog/${post.slug}/`} class="blog-card" data-category={post.categoryId}>
-              <img src={post.image} alt={post.title} class="blog-card-image" loading="lazy" />
+              <img src={post.image} alt={post.imageAlt} class="blog-card-image" loading="lazy" />
               <div class="blog-card-content">
                 <span class="blog-category tech-font">{post.category}</span>
                 <h2 class="blog-card-title space-font">{post.title}</h2>
