@@ -25,8 +25,9 @@ const { title, description, image, keywords } = Astro.props;
   />
 </head>
 <body class="min-h-screen" style="background: var(--void-black);">
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 	<Header />
-	<main>
+	<main id="main-content">
 		<slot />
 	</main>
 	<Footer />

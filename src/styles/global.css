@@ -253,6 +253,35 @@ html, body {
   border: 0;
 }
 
+/* Skip Link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--aurora-green);
+  color: var(--void-black);
+  padding: 8px 16px;
+  z-index: 10000;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Form Input Focus States - Accessibility */
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: 3px solid var(--aurora-green);
+  outline-offset: 2px;
+}
+
 .cosmic-glow { 
   animation: cosmic-pulse 3s ease-in-out infinite alternate; 
 }
