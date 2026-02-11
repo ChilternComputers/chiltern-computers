@@ -1,0 +1,205 @@
+---
+// AreaPage.astro - Reusable template for area service pages
+import type { AreaData } from '../data/areas';
+import { siteConfig } from '../config';
+
+interface Props {
+  area: AreaData;
+}
+
+const { area } = Astro.props;
+---
+
+<main>
+  <!-- Hero Section -->
+  <section class="section-bg" style="padding: 100px 0 60px;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
+          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">📍 {area.distance} FROM BASE - {area.postcode}</span>
+        </div>
+        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;">
+          COMPUTER REPAIR {area.name.toUpperCase()}
+        </h1>
+        <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">
+          Professional computer repair services for {area.name} residents and businesses.
+          {area.distance === "0 miles" ? "Based right here in " + area.name : `Just ${area.distance} from our Harold Hill workshop`},
+          we offer fast turnaround times and competitive prices for all your PC and laptop repair needs.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact/" class="space-button space-font"><span>🛠️</span> Book Repair</a>
+          <a href={`tel:${siteConfig.phone.mobile}`} class="space-button space-font" style="background: rgba(16, 185, 129, 0.2);">
+            <span>📱</span> {siteConfig.phone.mobileDisplay}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="section-bg" style="padding: 60px 0;">
+    <div class="container">
+      <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;">
+        SERVICES IN {area.name.toUpperCase()}
+      </h2>
+      <div class="services-grid">
+        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 36px; display: block; margin-bottom: 12px;">💻</span>
+          <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">LAPTOP REPAIRS</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Screen replacements, keyboard repairs, battery issues, charging problems.</p>
+        </div>
+        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 36px; display: block; margin-bottom: 12px;">🖥️</span>
+          <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">PC REPAIRS</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Desktop repairs, component upgrades, blue screen fixes, startup issues.</p>
+        </div>
+        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 36px; display: block; margin-bottom: 12px;">🦠</span>
+          <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">VIRUS REMOVAL</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Complete malware removal, security cleanup, system optimisation.</p>
+        </div>
+        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+          <span style="font-size: 36px; display: block; margin-bottom: 12px;">💾</span>
+          <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">DATA RECOVERY</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Failed hard drive? We can recover your photos, documents, and files.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Area-Specific Content -->
+  <section class="section-bg" style="padding: 60px 0;">
+    <div class="container">
+      <div class="cosmic-card" style="padding: 40px;">
+        <h2 class="space-font" style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">
+          COMPUTER REPAIR FOR {area.name.toUpperCase()} {area.distance === "0 miles" ? "LOCALS" : "RESIDENTS"}
+        </h2>
+        <p class="alien-font" style="color: var(--starlight-white); font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+          {area.distance === "0 miles"
+            ? `As your local computer repair shop right here in ${area.name}, we're perfectly placed to help with all your PC and laptop problems. Whether you're near ${area.landmarks[0]}, ${area.landmarks[1]}, or ${area.landmarks[2]}, we're just minutes away.`
+            : `Whether you're near ${area.landmarks[0]}, visiting ${area.landmarks[1]}, or around ${area.landmarks[2]}, we're conveniently located just ${area.distance} away in Harold Hill. Drop off your computer on your way to work and pick it up on your way home.`
+          }
+        </p>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 15px; line-height: 1.7; margin-bottom: 24px;">
+          We serve all areas of {area.name} including {area.nearby.join(", ")} and surrounding {area.region} areas.
+          With 20+ years of experience, we're the trusted choice for {area.name} computer repairs.
+        </p>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="/areas/" class="space-button space-font" style="background: rgba(6, 182, 212, 0.2);"><span>📍</span> All Areas</a>
+          <a href="/contact/" class="space-button space-font"><span>📞</span> Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section-bg" style="padding: 60px 0;">
+    <div class="container">
+      <div class="cosmic-card" style="padding: 40px;">
+        <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">
+          WHY CHOOSE US FOR {area.name.toUpperCase()} COMPUTER REPAIRS?
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+          <div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">⚡ Same Day Service</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+              Most repairs completed within 24 hours. Emergency same-day service available for {area.name} residents.
+            </p>
+          </div>
+          <div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">💷 No Fix, No Fee</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+              Free diagnosis on all repairs. If we can't fix your computer, you don't pay. Transparent pricing with no hidden charges.
+            </p>
+          </div>
+          <div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🚗 Free Collection</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+              {area.distance === "0 miles"
+                ? "Local to Harold Hill? Pop in anytime, no appointment needed."
+                : `Can't get to us? We'll collect your computer from ${area.name} and deliver it back when repaired, completely free.`
+              }
+            </p>
+          </div>
+          <div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🏆 20+ Years Experience</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+              Trusted by hundreds of customers across {area.region}. Check our 5-star Google reviews from satisfied customers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-bg" style="padding: 60px 0;">
+    <div class="container">
+      <h2 class="space-font" style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">
+        {area.name.toUpperCase()} COMPUTER REPAIR FAQ
+      </h2>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        {area.faqs.map((faq) => (
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">{faq.question}</h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Services -->
+  <section class="section-bg" style="padding: 60px 0;">
+    <div class="container">
+      <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">
+        EXPLORE OUR SERVICES
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <a href="/services/repairs/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
+          <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🛠️ PC & Laptop Repairs</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Full repair services for {area.name} customers. Hardware fixes, software issues, and more.</p>
+        </a>
+        <a href="/services/custom-pcs/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
+          <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">🎮 Custom Gaming PCs</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">High-performance gaming builds delivered to {area.name}. Built to your specs.</p>
+        </a>
+        <a href="/services/new-used/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
+          <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">💻 New & Refurbished PCs</h3>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Quality computers at great prices for {area.name} homes and businesses.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-bg" style="padding: 60px 0 80px;">
+    <div class="container">
+      <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);">
+        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;">
+          NEED COMPUTER REPAIR IN {area.name.toUpperCase()}?
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;">
+          Open 7 days a week, {siteConfig.hours.display}. Free diagnosis on all repairs.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href={`tel:${siteConfig.phone.mobile}`} class="space-button space-font" style="font-size: 16px; padding: 16px 32px;">
+            <span>📱</span> {siteConfig.phone.mobileDisplay}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .section-bg { background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9)); }
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+  @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 16px; }
+  }
+</style>
