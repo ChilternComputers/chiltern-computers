@@ -224,21 +224,21 @@ import { siteConfig } from '../config';
 
     <!-- Call-to-Action Buttons -->
 <div style="display: flex; gap: 16px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
-  <a href="/contact/" class="space-button cta-primary" style="font-size: 12px; padding: 12px 24px; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border: 2px solid var(--aurora-green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <span>💬</span> Get Quote
+  <a href="/contact/" class="space-button cta-primary" aria-label="Get a free quote" style="font-size: 12px; padding: 12px 24px; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border: 2px solid var(--aurora-green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <span aria-hidden="true">💬</span> Get Quote
   </a>
-  <a href={`tel:${siteConfig.phone.mobile}`} class="space-button cta-secondary" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--solar-orange); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <span>📱</span> Call Now
+  <a href={`tel:${siteConfig.phone.mobile}`} class="space-button cta-secondary" aria-label="Call us now" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--solar-orange); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <span aria-hidden="true">📱</span> Call Now
   </a>
-  <a href="/services/repairs/" class="space-button cta-tertiary" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--nebula-purple); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <span>🛠️</span> Book Repair
+  <a href="/services/repairs/" class="space-button cta-tertiary" aria-label="Book a repair" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--nebula-purple); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <span aria-hidden="true">🛠️</span> Book Repair
   </a>
 </div>
 
     <!-- Back to Top Button -->
     <div style="display: flex; justify-content: center; margin-bottom: 32px;">
-      <button id="back-to-top" class="space-button back-to-top-enhanced" style="font-size: 12px; padding: 10px 20px; cursor: pointer; transition: all 0.3s ease;">
-        <span>🚀</span>Back to Top
+      <button id="back-to-top" class="space-button back-to-top-enhanced" aria-label="Scroll back to top of page" style="font-size: 12px; padding: 10px 20px; cursor: pointer; transition: all 0.3s ease;">
+        <span aria-hidden="true">🚀</span>Back to Top
       </button>
     </div>
   </div>

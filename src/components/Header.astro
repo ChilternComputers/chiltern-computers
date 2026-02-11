@@ -36,7 +36,7 @@ import { siteConfig } from '../config';
 
       <!-- Mobile Menu Toggle (hidden desktop, shown mobile) -->
       <div class="mobile-menu-toggle" style="display:none; position:relative;">
-        <button id="mobile-menu-btn" class="space-button" style="padding:10px 16px; font-size:14px; border:2px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); color:var(--starlight-white); border-radius:8px; font-weight:600; transition:all 0.3s ease;">
+        <button id="mobile-menu-btn" class="space-button" style="padding:10px 16px; font-size:14px; border:2px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); color:var(--starlight-white); border-radius:8px; font-weight:600; transition:all 0.3s ease;" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
           <span id="menu-text">Menu</span>
         </button>
       </div>
@@ -44,19 +44,19 @@ import { siteConfig } from '../config';
       <!-- Navigation Tabs (Center, hidden on mobile/tablet until toggled) -->
       <nav class="header-nav" id="main-nav" style="flex:1 1 0; display:flex; justify-content:center; min-width:210px;">
         <ul class="nav-list" style="list-style:none; padding:0; margin:0; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
-          <li><a href="/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>🏠</span>Home</a></li>
-          <li><a href="/services/custom-pcs/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>🎮</span>Gaming PCs</a></li>
-          <li><a href="/services/repairs/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--solar-orange); background:rgba(245,158,11,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>🛠️</span>Repairs</a></li>
-          <li><a href="/services/new-used/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--nebula-purple); background:rgba(139,92,246,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>💻</span>PCs & Laptops</a></li>
-          <li><a href="/about/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>ℹ️</span>About</a></li>
-          <li><a href="/blog/" class="nav-link space-button" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span>📝</span>Blog</a></li>
-          <li><a href="/contact/" class="nav-link space-button cta-primary" style="padding:8px 16px; font-size:12px; text-decoration:none; background:linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border:2px solid var(--aurora-green); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; gap:6px;"><span>📞</span>Contact</a></li>
+          <li><a href="/" class="nav-link space-button" aria-label="Go to homepage" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">🏠</span>Home</a></li>
+          <li><a href="/services/custom-pcs/" class="nav-link space-button" aria-label="Custom gaming PC builds" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">🎮</span>Gaming PCs</a></li>
+          <li><a href="/services/repairs/" class="nav-link space-button" aria-label="Computer repair services" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--solar-orange); background:rgba(245,158,11,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">🛠️</span>Repairs</a></li>
+          <li><a href="/services/new-used/" class="nav-link space-button" aria-label="New and refurbished computers" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--nebula-purple); background:rgba(139,92,246,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">💻</span>PCs & Laptops</a></li>
+          <li><a href="/about/" class="nav-link space-button" aria-label="About Chiltern Computers" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">ℹ️</span>About</a></li>
+          <li><a href="/blog/" class="nav-link space-button" aria-label="Computer repair tips and blog" style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">📝</span>Blog</a></li>
+          <li><a href="/contact/" class="nav-link space-button cta-primary" aria-label="Contact us for repairs" style="padding:8px 16px; font-size:12px; text-decoration:none; background:linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border:2px solid var(--aurora-green); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; gap:6px;"><span aria-hidden="true">📞</span>Contact</a></li>
         </ul>
       </nav>
 
       <!-- Contact Info (Right) -->
       <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <a href="tel:+447971331814" class="cosmic-card contact-link-premium"
+        <a href="tel:+447971331814" class="cosmic-card contact-link-premium" aria-label="Call us now at 07971 331814"
           style="padding:10px 16px; background:rgba(139,92,246,0.15); border:2px solid var(--nebula-purple); border-radius:10px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; position:relative; overflow:hidden;">
           <div class="premium-glow-effect" style="position:absolute; inset:0; background:linear-gradient(45deg, transparent, rgba(139,92,246,0.3), transparent); opacity:0; transition:opacity 0.3s ease;"></div>
           <span style="font-size:16px; position:relative; z-index:2;">📱</span>
@@ -122,6 +122,7 @@ if (mobileMenuBtn && headerNav) {
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenuOpen = !mobileMenuOpen;
     headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
+    mobileMenuBtn.setAttribute('aria-expanded', mobileMenuOpen.toString());
 
     // Update button text based on menu state
     if (menuText) {
