@@ -403,7 +403,7 @@ select:focus-visible {
 }
 
 .btn--success {
-  background: var(--accent-green);
+  background: #047857; /* Darker green for WCAG AA contrast with white text */
   color: white;
 }
 
