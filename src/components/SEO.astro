@@ -499,6 +499,15 @@ const reviewSchemas = reviews.map((review) => ({
 <link rel="preload" href="/fonts/Orbitron-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/Exo2-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
+<!-- Critical CSS inline for faster FCP -->
+<style>
+  :root{--void-black:#0a0a0f;--text-primary:#f8fafc;--primary-blue:#3b82f6}
+  body{margin:0;background:var(--void-black);color:var(--text-primary);font-family:system-ui,-apple-system,sans-serif}
+  .hero-section{min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .btn{display:inline-flex;padding:0.75rem 1.5rem;border-radius:0.5rem;font-weight:600;text-decoration:none}
+  .cta-text{color:#ffffff!important}
+</style>
+
 <!-- Preload hero image for faster LCP -->
 <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
 
