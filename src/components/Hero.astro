@@ -1,27 +1,29 @@
 ---
 // Hero.astro - Streamlined version using global styles
+import { siteConfig } from '../config';
+
 const title = "PC and Laptop Repairs and Supply";
-const subtitle = "Expert IT Support in Romford & Havering";
+const subtitle = siteConfig.tagline;
 const description = "We offer fast and affordable PC repairs, laptop servicing, virus removal, and data recovery in Harold Hill, Romford, and surrounding areas. From custom gaming rigs to home and business workstations, we supply both new and refurbished computers tailored to your needs and budget.";
 
 const ctaButtons = [
   {
-    text: "Call Now: 07971 331814",
-    href: "tel:+447971331814",
+    text: `Call Now: ${siteConfig.phone.mobileDisplay}`,
+    href: `tel:${siteConfig.phone.mobile}`,
     variant: "btn--primary",
     icon: "phone",
-    ariaLabel: "Call us now at 07971 331814"
+    ariaLabel: `Call us now at ${siteConfig.phone.mobileDisplay}`
   },
   {
     text: "WhatsApp Us",
-    href: "https://wa.me/447971331814",
+    href: siteConfig.whatsapp,
     variant: "btn--success",
     icon: "whatsapp",
     ariaLabel: "Contact us on WhatsApp"
   },
   {
     text: "Follow on Facebook",
-    href: "https://www.facebook.com/profile.php?id=61587354241770",
+    href: siteConfig.social.facebook,
     variant: "btn--secondary",
     icon: "facebook",
     ariaLabel: "Follow us on Facebook"

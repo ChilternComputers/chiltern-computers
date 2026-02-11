@@ -1,5 +1,6 @@
 ---
 // Footer.astro - Clean & Optimized Production Version
+import { siteConfig } from '../config';
 ---
 
 <footer class="section-bg-5" style="padding: 60px 0 0 0; position: relative; margin: 0;" role="contentinfo">
@@ -8,8 +9,8 @@
   <div style="background: linear-gradient(45deg, rgba(220, 38, 38, 0.15), rgba(245, 158, 11, 0.15)); border-bottom: 2px solid rgba(220, 38, 38, 0.3); padding: 12px; text-align: center; animation: emergencyPulse 3s ease-in-out infinite;">
     <p class="tech-font" style="color: var(--solar-orange); font-size: 12px; margin: 0; font-weight: 600;">
       🚨 <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span> 
-      Call <a href="tel:+447971331814" style="color: var(--aurora-green); font-weight: bold; text-decoration: none;">07971 331814</a> 
-      - Available 9AM-9PM Daily 🚨
+      Call <a href={`tel:${siteConfig.phone.mobile}`} style="color: var(--aurora-green); font-weight: bold; text-decoration: none;">{siteConfig.phone.mobileDisplay}</a>
+      - Available {siteConfig.hours.display} 🚨
     </p>
   </div>
 
@@ -112,29 +113,29 @@
         
         <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 2;">
           <li style="margin-bottom: 16px;">
-            <a href="tel:+447971331814" class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
+            <a href={`tel:${siteConfig.phone.mobile}`} class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
               <span style="font-size: 16px;">📱</span>
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Mobile</div>
-                <div style="font-weight: 600;">07971 331814</div>
+                <div style="font-weight: 600;">{siteConfig.phone.mobileDisplay}</div>
               </div>
             </a>
           </li>
           <li style="margin-bottom: 16px;">
-            <a href="tel:+441708347341" class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
+            <a href={`tel:${siteConfig.phone.landline}`} class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
               <span style="font-size: 16px;">☎️</span>
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Landline</div>
-                <div style="font-weight: 600;">01708 347341</div>
+                <div style="font-weight: 600;">{siteConfig.phone.landlineDisplay}</div>
               </div>
             </a>
           </li>
           <li style="margin-bottom: 16px;">
-            <a href="mailto:david@chilterncomputers.net" class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
+            <a href={`mailto:${siteConfig.email}`} class="alien-font contact-link-premium" style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;">
               <span style="font-size: 16px;">✉️</span>
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Email</div>
-                <div style="font-weight: 600;">david@chilterncomputers.net</div>
+                <div style="font-weight: 600;">{siteConfig.email}</div>
               </div>
             </a>
           </li>
@@ -169,9 +170,9 @@
           <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">
             <span style="font-size: 16px; color: var(--solar-orange);">📍</span>
             <address class="alien-font" style="color: var(--starlight-white); font-size: 14px; font-style: normal; line-height: 1.4; font-weight: 500;">
-              38 Hilldene Avenue<br>
-              Harold Hill, Romford<br>
-              Essex, RM3 8YP
+              {siteConfig.address.street}<br>
+              {siteConfig.address.locality}, {siteConfig.address.city}<br>
+              {siteConfig.address.region}, {siteConfig.address.postcode}
             </address>
           </div>
           
@@ -226,7 +227,7 @@
   <a href="/contact/" class="space-button cta-primary" style="font-size: 12px; padding: 12px 24px; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border: 2px solid var(--aurora-green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; text-align: center;">
     <span>💬</span> Get Quote
   </a>
-  <a href="tel:+447971331814" class="space-button cta-secondary" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--solar-orange); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
+  <a href={`tel:${siteConfig.phone.mobile}`} class="space-button cta-secondary" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--solar-orange); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
     <span>📱</span> Call Now
   </a>
   <a href="/services/repairs/" class="space-button cta-tertiary" style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--nebula-purple); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;">
