@@ -8,106 +8,39 @@ import Layout from '../../layouts/Layout.astro';
   breadcrumbs={[{ name: "Home", url: "/" }, { name: "New & Used PCs", url: "/services/new-used/" }]}
 >
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
-    
-    /* MOBILE OVERFLOW FIXES */
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    
+    /* PAGE-SPECIFIC STYLES FOR NEW/USED PAGE */
+
+    /* CONSISTENT SPACING SYSTEM */
     :root {
-      --cosmic-blue: #1e3a8a;
-      --nebula-purple: #7c3aed;
-      --dark-purple: #4c1d95;
-      --deep-purple: #312e81;
-      --starlight-white: #f8fafc;
-      --plasma-cyan: #06b6d4;
-      --aurora-green: #10b981;
-      --solar-orange: #f59e0b;
-      --mars-red: #dc2626;
-      --deep-space: #0f172a;
-      --darker-space: #0c0f1a;
-      --void-black: #020617;
-      --asteroid-gray: #374151;
-      --comet-silver: #e5e7eb;
-      
-      /* CONSISTENT SPACING SYSTEM */
       --section-padding: 100px 0;
       --section-gap: 80px;
       --content-gap: 60px;
       --card-gap: 32px;
       --small-gap: 24px;
     }
-    
-    /* FONTS */
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
-    
-    /* ANIMATIONS */
-    @keyframes orbit {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes float-cosmic {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    
-    @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
-    }
-    
-    @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-    
+
+    /* PAGE-SPECIFIC ANIMATIONS */
     @keyframes price-glow {
-      0%, 100% { 
-        text-shadow: 0 0 10px var(--aurora-green); 
+      0%, 100% {
+        text-shadow: 0 0 10px var(--aurora-green);
         transform: scale(1);
       }
-      50% { 
-        text-shadow: 0 0 20px var(--aurora-green), 0 0 30px var(--plasma-cyan); 
+      50% {
+        text-shadow: 0 0 20px var(--aurora-green), 0 0 30px var(--plasma-cyan);
         transform: scale(1.05);
       }
     }
-    
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-    
+
     @keyframes glow-pulse {
       0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
       50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
     }
-    
-    /* SHARED STYLES */
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
-      background-size: 200% 200%;
-      animation: galaxy-flow 4s ease-in-out infinite;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
+
     .price-glow {
       animation: price-glow 2s ease-in-out infinite;
       color: var(--aurora-green);
     }
-    
+
     /* CONSISTENT SECTION BACKGROUNDS */
     .section-bg {
       background: 
@@ -444,16 +377,7 @@ import Layout from '../../layouts/Layout.astro';
       max-width: 900px;
       margin: 0 auto;
     }
-    
-    /* CONTAINER */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-    
+
     /* SPEC LIST STYLES */
     .spec-list {
       list-style: none;

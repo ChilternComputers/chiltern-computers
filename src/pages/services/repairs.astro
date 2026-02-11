@@ -6,6 +6,49 @@ const reviews = [
   { author: "Dave M.", location: "Romford", text: "Sorted out my overheating desktop fast. Even cleaned out the dust for free!", rating: 5, date: "2024-10-22" },
   { author: "Claire S.", location: "Brentwood", text: "MacBook wouldn't boot – they fixed it same day. Life saver!", rating: 5, date: "2024-09-18" }
 ];
+
+// HowTo Schema for repair process
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Get Your Computer Repaired at Chiltern Computers",
+  "description": "Step-by-step guide to getting professional computer repair service from Chiltern Computers in Harold Hill, Romford.",
+  "totalTime": "PT24H",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "GBP",
+    "value": "30-80"
+  },
+  "supply": [],
+  "tool": [],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Get in Touch",
+      "text": "Contact us by phone, email, or visit our workshop to describe the problem with your device. Call 07971 331814 or email david@chilterncomputers.net.",
+      "url": "https://chilterncomputers.net/contact/"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Free Diagnosis",
+      "text": "We thoroughly diagnose your device to identify the exact issue and provide a detailed, no-obligation quote before any work begins."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Expert Repair",
+      "text": "Our experienced technician performs professional repairs, typically completed same day or next working day depending on parts availability."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Pickup or Delivery",
+      "text": "Collect your fully repaired device from our Harold Hill workshop, or take advantage of our local delivery service within Romford and surrounding areas."
+    }
+  ]
+};
 ---
 
 <Layout
@@ -15,72 +58,8 @@ const reviews = [
   reviews={reviews}
 >
   <style>
-    
-    /* MOBILE OVERFLOW FIXES */
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    
-    :root {
-      --cosmic-blue: #1e3a8a;
-      --nebula-purple: #7c3aed;
-      --dark-purple: #4c1d95;
-      --deep-purple: #312e81;
-      --starlight-white: #f8fafc;
-      --plasma-cyan: #06b6d4;
-      --aurora-green: #10b981;
-      --solar-orange: #f59e0b;
-      --mars-red: #dc2626;
-      --deep-space: #0f172a;
-      --darker-space: #0c0f1a;
-      --void-black: #020617;
-      --asteroid-gray: #374151;
-      --comet-silver: #e5e7eb;
-    }
-    
-    /* FONTS */
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
-    
-    /* ANIMATIONS */
-    @keyframes orbit {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    @keyframes float-cosmic {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-    
-    @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
-    }
-    
-    @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-    
-    /* SHARED STYLES */
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
-      background-size: 200% 200%;
-      animation: galaxy-flow 4s ease-in-out infinite;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
+    /* PAGE-SPECIFIC STYLES FOR REPAIRS PAGE */
+
     /* BACKGROUND WITH IMAGE */
     .repair-hero-bg {
       background: 
@@ -224,21 +203,12 @@ const reviews = [
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
       gap: 24px; 
     }
-    .testimonials-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 24px; 
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
-    
-    /* CONTAINER */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-    
+
     /* MOBILE OPTIMIZATIONS */
     @media (max-width: 768px) {
       .repair-hero-bg,
@@ -535,4 +505,7 @@ const reviews = [
       </div>
     </section>
   </main>
+
+  <!-- HowTo Schema for Repair Process -->
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 </Layout>
