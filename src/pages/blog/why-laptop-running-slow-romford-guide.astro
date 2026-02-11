@@ -1,32 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const publishDate = "2025-01-12";
-const modifiedDate = "2025-01-12";
-const author = "Chiltern Computers";
-const readTime = "10 min read";
+const publishDate = '2025-01-12';
+const modifiedDate = '2025-01-12';
+const author = 'Chiltern Computers';
+const readTime = '10 min read';
 
 const faqs = [
   {
-    question: "Why is my laptop so slow all of a sudden?",
-    answer: "Sudden laptop slowdowns are typically caused by: running out of storage space (less than 10% free), malware or virus infections, too many programs running at startup, Windows updates installing in the background, or a failing hard drive. A professional diagnostic can quickly identify the exact cause."
+    question: 'Why is my laptop so slow all of a sudden?',
+    answer:
+      'Sudden laptop slowdowns are typically caused by: running out of storage space (less than 10% free), malware or virus infections, too many programs running at startup, Windows updates installing in the background, or a failing hard drive. A professional diagnostic can quickly identify the exact cause.',
   },
   {
-    question: "Will adding more RAM make my laptop faster?",
-    answer: "Adding RAM helps if your laptop currently has less than 8GB and you frequently run multiple programs. However, if your laptop has a traditional hard drive (HDD), upgrading to an SSD will provide a much more noticeable speed improvement - often making the laptop feel 5-10x faster for everyday tasks."
+    question: 'Will adding more RAM make my laptop faster?',
+    answer:
+      'Adding RAM helps if your laptop currently has less than 8GB and you frequently run multiple programs. However, if your laptop has a traditional hard drive (HDD), upgrading to an SSD will provide a much more noticeable speed improvement - often making the laptop feel 5-10x faster for everyday tasks.',
   },
   {
-    question: "How much does it cost to speed up a slow laptop in Romford?",
-    answer: "Costs vary based on the solution needed. A software clean-up and optimisation typically costs £30-50. An SSD upgrade (the most effective fix for most slow laptops) costs around £80-120 including the drive and installation. If malware is the cause, virus removal usually costs £40-70."
+    question: 'How much does it cost to speed up a slow laptop in Romford?',
+    answer:
+      'Costs vary based on the solution needed. A software clean-up and optimisation typically costs £30-50. An SSD upgrade (the most effective fix for most slow laptops) costs around £80-120 including the drive and installation. If malware is the cause, virus removal usually costs £40-70.',
   },
   {
-    question: "Should I replace my slow laptop or get it repaired?",
-    answer: "If your laptop is less than 5-6 years old and working otherwise, repair is usually worthwhile. An SSD upgrade and fresh Windows installation can make even a 5-year-old laptop feel new for under £150. If the laptop is older, has physical damage, or would need multiple repairs, replacement may be more sensible."
+    question: 'Should I replace my slow laptop or get it repaired?',
+    answer:
+      'If your laptop is less than 5-6 years old and working otherwise, repair is usually worthwhile. An SSD upgrade and fresh Windows installation can make even a 5-year-old laptop feel new for under £150. If the laptop is older, has physical damage, or would need multiple repairs, replacement may be more sensible.',
   },
   {
-    question: "How long does it take to fix a slow laptop?",
-    answer: "Most slow laptop fixes can be completed same-day or within 24 hours. A software clean-up takes 1-2 hours. An SSD upgrade and data migration typically takes 3-4 hours. If parts need to be ordered, this may extend to 2-3 days."
-  }
+    question: 'How long does it take to fix a slow laptop?',
+    answer:
+      'Most slow laptop fixes can be completed same-day or within 24 hours. A software clean-up takes 1-2 hours. An SSD upgrade and data migration typically takes 3-4 hours. If parts need to be ordered, this may extend to 2-3 days.',
+  },
 ];
 ---
 
@@ -36,8 +41,14 @@ const faqs = [
   keywords="laptop running slow, slow laptop fix romford, why is my laptop slow, speed up laptop romford, laptop slow harold hill, computer running slow havering, laptop repair romford, slow pc fix essex"
 >
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
     :root {
       --cosmic-blue: #1e3a8a;
@@ -52,24 +63,49 @@ const faqs = [
       --mars-red: #dc2626;
     }
 
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
 
     @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
     }
 
     @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
     .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       background-size: 200% 200%;
       animation: galaxy-flow 4s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -115,7 +151,8 @@ const faqs = [
       margin-bottom: 20px;
     }
 
-    .article-content ul, .article-content ol {
+    .article-content ul,
+    .article-content ol {
       margin: 20px 0;
       padding-left: 24px;
     }
@@ -254,10 +291,21 @@ const faqs = [
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 16px; }
-      .article-content { font-size: 16px; }
-      .numbered-card { flex-direction: column; gap: 16px; }
-      .numbered-card-number { width: 40px; height: 40px; font-size: 16px; }
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .numbered-card {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .numbered-card-number {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
     }
   </style>
 
@@ -273,41 +321,119 @@ const faqs = [
           <span>Slow Laptop Guide</span>
         </nav>
 
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
-          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">LAPTOP TIPS</span>
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;"
+            >LAPTOP TIPS</span
+          >
         </div>
 
-        <h1 class="space-font" style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;">
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
           Why Your Laptop is Running Slow - Romford Tech Guide
         </h1>
 
-        <p class="alien-font" style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;">
-          Discover the 10 most common causes of slow laptop performance and learn which fixes actually work - from free DIY solutions to affordable professional repairs.
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Discover the 10 most common causes of slow laptop performance and learn which fixes
+          actually work - from free DIY solutions to affordable professional repairs.
         </p>
 
         <div class="article-meta tech-font">
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
-            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
           </div>
           <div class="meta-item" style="color: var(--aurora-green);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span>Updated: {new Date(modifiedDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+            <span
+              >Updated: {
+                new Date(modifiedDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span>{readTime}</span>
           </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             <span>Romford, Essex</span>
           </div>
@@ -320,150 +446,319 @@ const faqs = [
       <div class="container">
         <article class="article-content alien-font">
           <p>
-            Few things are more frustrating than a <strong>slow laptop</strong>. What used to boot in seconds now takes minutes. Programs freeze. Browsing the web feels like wading through treacle. If this sounds familiar, you're not alone - slow computer performance is the number one complaint we hear from customers across Romford, Harold Hill, and the wider Havering area.
+            Few things are more frustrating than a <strong>slow laptop</strong>. What used to boot
+            in seconds now takes minutes. Programs freeze. Browsing the web feels like wading
+            through treacle. If this sounds familiar, you're not alone - slow computer performance
+            is the number one complaint we hear from customers across Romford, Harold Hill, and the
+            wider Havering area.
           </p>
 
           <p>
-            The good news? In most cases, a slow laptop can be fixed - often more affordably than you'd expect. This guide explains the most common causes of laptop slowdowns and what you can do about them, whether you're comfortable with DIY fixes or prefer professional help.
+            The good news? In most cases, a slow laptop can be fixed - often more affordably than
+            you'd expect. This guide explains the most common causes of laptop slowdowns and what
+            you can do about them, whether you're comfortable with DIY fixes or prefer professional
+            help.
           </p>
 
           <!-- Table of Contents -->
-          <nav style="background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; padding: 24px; margin: 32px 0;">
-            <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 16px;">IN THIS GUIDE</div>
+          <nav
+            style="background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; padding: 24px; margin: 32px 0;"
+          >
+            <div
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 16px;"
+            >
+              IN THIS GUIDE
+            </div>
             <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
-              <li><a href="#causes" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">The 10 Most Common Causes of a Slow Laptop</a></li>
-              <li><a href="#diy-fixes" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">Quick DIY Fixes You Can Try Today</a></li>
-              <li><a href="#ssd-upgrade" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">The Most Effective Fix: SSD Upgrade</a></li>
-              <li><a href="#professional-help" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">When to Get Professional Help</a></li>
-              <li><a href="#prevention" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">Preventing Future Slowdowns</a></li>
-              <li><a href="#faq" style="color: var(--comet-silver); text-decoration: none; font-size: 15px;">Frequently Asked Questions</a></li>
+              <li>
+                <a
+                  href="#causes"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >The 10 Most Common Causes of a Slow Laptop</a>
+              </li>
+              <li>
+                <a
+                  href="#diy-fixes"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Quick DIY Fixes You Can Try Today</a>
+              </li>
+              <li>
+                <a
+                  href="#ssd-upgrade"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >The Most Effective Fix: SSD Upgrade</a>
+              </li>
+              <li>
+                <a
+                  href="#professional-help"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >When to Get Professional Help</a>
+              </li>
+              <li>
+                <a
+                  href="#prevention"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Preventing Future Slowdowns</a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Frequently Asked Questions</a>
+              </li>
             </ul>
           </nav>
 
           <h2 class="space-font" id="causes">The 10 Most Common Causes of a Slow Laptop</h2>
 
           <p>
-            Before throwing money at the problem, it helps to understand what's actually causing your laptop to crawl. Here are the culprits we see most often at our repair shop in Harold Hill:
+            Before throwing money at the problem, it helps to understand what's actually causing
+            your laptop to crawl. Here are the culprits we see most often at our repair shop in
+            Harold Hill:
           </p>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">1</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              1
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Traditional Hard Drive (HDD) Instead of SSD</h3>
-              <p style="margin: 0;">This is the single biggest factor affecting laptop speed. If your laptop has a spinning hard drive rather than a solid-state drive (SSD), everything will feel slow - even on a brand new machine. <strong>Impact: Severe.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Traditional Hard Drive (HDD) Instead of SSD
+              </h3>
+              <p style="margin: 0;">
+                This is the single biggest factor affecting laptop speed. If your laptop has a
+                spinning hard drive rather than a solid-state drive (SSD), everything will feel slow
+                - even on a brand new machine. <strong>Impact: Severe.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">2</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              2
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Storage Drive Almost Full</h3>
-              <p style="margin: 0;">When your hard drive or SSD has less than 10-15% free space, performance drops dramatically. Windows needs room to create temporary files and virtual memory. <strong>Impact: High.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Storage Drive Almost Full
+              </h3>
+              <p style="margin: 0;">
+                When your hard drive or SSD has less than 10-15% free space, performance drops
+                dramatically. Windows needs room to create temporary files and virtual memory. <strong
+                  >Impact: High.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">3</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              3
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Too Many Startup Programs</h3>
-              <p style="margin: 0;">Over time, programs add themselves to your startup list. Each one consumes memory and processor power from the moment Windows loads. <strong>Impact: Medium-High.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Too Many Startup Programs
+              </h3>
+              <p style="margin: 0;">
+                Over time, programs add themselves to your startup list. Each one consumes memory
+                and processor power from the moment Windows loads. <strong
+                  >Impact: Medium-High.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">4</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              4
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Malware or Virus Infection</h3>
-              <p style="margin: 0;">Malicious software often runs constantly in the background, hogging resources. Cryptominers, adware, and spyware are particularly notorious for causing slowdowns. <strong>Impact: High.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Malware or Virus Infection
+              </h3>
+              <p style="margin: 0;">
+                Malicious software often runs constantly in the background, hogging resources.
+                Cryptominers, adware, and spyware are particularly notorious for causing slowdowns. <strong
+                  >Impact: High.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">5</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              5
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Insufficient RAM</h3>
-              <p style="margin: 0;">Modern browsers and applications are memory-hungry. If your laptop has only 4GB of RAM, it may struggle with today's software, especially if you keep multiple browser tabs open. <strong>Impact: Medium-High.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Insufficient RAM
+              </h3>
+              <p style="margin: 0;">
+                Modern browsers and applications are memory-hungry. If your laptop has only 4GB of
+                RAM, it may struggle with today's software, especially if you keep multiple browser
+                tabs open. <strong>Impact: Medium-High.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">6</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              6
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Overheating</h3>
-              <p style="margin: 0;">When laptops overheat, they automatically slow down the processor to prevent damage. Dust-clogged vents, failed fans, or dried-out thermal paste are common causes. <strong>Impact: Medium-High.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Overheating
+              </h3>
+              <p style="margin: 0;">
+                When laptops overheat, they automatically slow down the processor to prevent damage.
+                Dust-clogged vents, failed fans, or dried-out thermal paste are common causes. <strong
+                  >Impact: Medium-High.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">7</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              7
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Outdated or Corrupted Windows</h3>
-              <p style="margin: 0;">A Windows installation that's accumulated years of updates, software installations, and registry changes can become bloated and unstable. <strong>Impact: Medium.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Outdated or Corrupted Windows
+              </h3>
+              <p style="margin: 0;">
+                A Windows installation that's accumulated years of updates, software installations,
+                and registry changes can become bloated and unstable. <strong
+                  >Impact: Medium.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">8</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              8
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Background Windows Updates</h3>
-              <p style="margin: 0;">Windows often downloads and installs updates in the background, which can temporarily slow your laptop significantly - especially on slower internet connections. <strong>Impact: Temporary but noticeable.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Background Windows Updates
+              </h3>
+              <p style="margin: 0;">
+                Windows often downloads and installs updates in the background, which can
+                temporarily slow your laptop significantly - especially on slower internet
+                connections. <strong>Impact: Temporary but noticeable.</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">9</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              9
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Failing Hard Drive</h3>
-              <p style="margin: 0;">Hard drives don't last forever. As they start to fail, read/write speeds plummet. This is often accompanied by clicking sounds or frequent freezes. <strong>Impact: Severe (and data at risk).</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Failing Hard Drive
+              </h3>
+              <p style="margin: 0;">
+                Hard drives don't last forever. As they start to fail, read/write speeds plummet.
+                This is often accompanied by clicking sounds or frequent freezes. <strong
+                  >Impact: Severe (and data at risk).</strong>
+              </p>
             </div>
           </div>
 
           <div class="numbered-card">
-            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">10</div>
+            <div class="numbered-card-number space-font" style="color: var(--starlight-white);">
+              10
+            </div>
             <div>
-              <h3 class="space-font" style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;">Browser Overload</h3>
-              <p style="margin: 0;">Too many browser extensions, hundreds of open tabs, or corrupted browser data can make web browsing painfully slow even if the rest of your laptop is fine. <strong>Impact: Medium.</strong></p>
+              <h3
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 18px; margin: 0 0 12px;"
+              >
+                Browser Overload
+              </h3>
+              <p style="margin: 0;">
+                Too many browser extensions, hundreds of open tabs, or corrupted browser data can
+                make web browsing painfully slow even if the rest of your laptop is fine. <strong
+                  >Impact: Medium.</strong>
+              </p>
             </div>
           </div>
 
           <h2 class="space-font" id="diy-fixes">Quick DIY Fixes You Can Try Today</h2>
 
           <p>
-            Before bringing your laptop to a professional, there are several things you can try yourself. These won't cost you anything and might solve your problem:
+            Before bringing your laptop to a professional, there are several things you can try
+            yourself. These won't cost you anything and might solve your problem:
           </p>
 
           <h3 class="space-font">1. Restart Your Laptop Properly</h3>
 
           <p>
-            It sounds obvious, but many people only close the lid rather than fully shutting down. A proper restart clears temporary files and stops runaway processes. Click Start > Power > Restart (not Shut Down, as Windows 10/11's fast startup doesn't fully reset everything).
+            It sounds obvious, but many people only close the lid rather than fully shutting down. A
+            proper restart clears temporary files and stops runaway processes. Click Start > Power >
+            Restart (not Shut Down, as Windows 10/11's fast startup doesn't fully reset everything).
           </p>
 
           <h3 class="space-font">2. Disable Startup Programs</h3>
 
           <p>
-            Press Ctrl + Shift + Esc to open Task Manager, then click the "Startup" tab. Disable anything you don't need immediately when your laptop boots. Common culprits include Spotify, Discord, Adobe Creative Cloud, and various manufacturer utilities.
+            Press Ctrl + Shift + Esc to open Task Manager, then click the "Startup" tab. Disable
+            anything you don't need immediately when your laptop boots. Common culprits include
+            Spotify, Discord, Adobe Creative Cloud, and various manufacturer utilities.
           </p>
 
           <h3 class="space-font">3. Free Up Disk Space</h3>
 
           <p>
-            Open Settings > System > Storage and use Windows' built-in cleanup tools. Delete temporary files, empty the Recycle Bin, and consider moving large files to an external drive. Aim for at least 20% free space on your main drive.
+            Open Settings > System > Storage and use Windows' built-in cleanup tools. Delete
+            temporary files, empty the Recycle Bin, and consider moving large files to an external
+            drive. Aim for at least 20% free space on your main drive.
           </p>
 
           <h3 class="space-font">4. Run a Malware Scan</h3>
 
           <p>
-            Windows Defender is decent, but for a thorough check, download and run Malwarebytes (free version). It often catches things that Windows Defender misses.
+            Windows Defender is decent, but for a thorough check, download and run Malwarebytes
+            (free version). It often catches things that Windows Defender misses.
           </p>
 
           <div class="warning-box">
-            <p style="margin: 0;"><strong>Warning:</strong> If you suspect your laptop has a virus, be careful about what you type - keyloggers may be recording everything. If you do any banking or enter passwords on an infected machine, change those passwords from a different, clean device immediately.</p>
+            <p style="margin: 0;">
+              <strong>Warning:</strong> If you suspect your laptop has a virus, be careful about what
+              you type - keyloggers may be recording everything. If you do any banking or enter passwords
+              on an infected machine, change those passwords from a different, clean device immediately.
+            </p>
           </div>
 
           <h2 class="space-font" id="ssd-upgrade">The Most Effective Fix: SSD Upgrade</h2>
 
           <p>
-            If there's one upgrade that transforms a slow laptop, it's replacing an old spinning hard drive with a solid-state drive (SSD). The difference is dramatic:
+            If there's one upgrade that transforms a slow laptop, it's replacing an old spinning
+            hard drive with a solid-state drive (SSD). The difference is dramatic:
           </p>
 
           <ul>
@@ -474,17 +769,25 @@ const faqs = [
           </ul>
 
           <p>
-            An SSD upgrade typically costs between £80-120 for the drive plus professional installation, including migrating all your data. For most laptops with traditional hard drives, this single upgrade makes a bigger difference than any other fix.
+            An SSD upgrade typically costs between £80-120 for the drive plus professional
+            installation, including migrating all your data. For most laptops with traditional hard
+            drives, this single upgrade makes a bigger difference than any other fix.
           </p>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Local Tip:</strong> If you're in Romford, Harold Hill, or surrounding areas and considering an SSD upgrade, many local repair shops can complete this in just a few hours. Your files, programs, and Windows installation can all be moved to the new drive - no need to reinstall everything from scratch.</p>
+            <p style="margin: 0;">
+              <strong>Local Tip:</strong> If you're in Romford, Harold Hill, or surrounding areas and
+              considering an SSD upgrade, many local repair shops can complete this in just a few hours.
+              Your files, programs, and Windows installation can all be moved to the new drive - no need
+              to reinstall everything from scratch.
+            </p>
           </div>
 
           <h2 class="space-font" id="professional-help">When to Get Professional Help</h2>
 
           <p>
-            While DIY fixes work for some issues, others require professional diagnosis and repair. Consider visiting a local <strong>computer repair service in Romford</strong> if:
+            While DIY fixes work for some issues, others require professional diagnosis and repair.
+            Consider visiting a local <strong>computer repair service in Romford</strong> if:
           </p>
 
           <ul>
@@ -497,7 +800,9 @@ const faqs = [
           </ul>
 
           <p>
-            A good repair shop will diagnose the problem for free (or a small fee refunded if you proceed with repair) and give you honest advice about whether fixing your current laptop or buying new makes more sense.
+            A good repair shop will diagnose the problem for free (or a small fee refunded if you
+            proceed with repair) and give you honest advice about whether fixing your current laptop
+            or buying new makes more sense.
           </p>
 
           <h2 class="space-font" id="prevention">Preventing Future Slowdowns</h2>
@@ -507,57 +812,117 @@ const faqs = [
           </p>
 
           <ul>
-            <li><strong>Keep at least 20% of your drive free</strong> - Regular cleanup prevents space-related slowdowns</li>
-            <li><strong>Review startup programs quarterly</strong> - New software loves adding itself to startup</li>
-            <li><strong>Keep Windows and software updated</strong> - Updates often include performance improvements</li>
-            <li><strong>Use a good antivirus</strong> - Windows Defender is adequate, but be cautious about downloads</li>
-            <li><strong>Restart weekly</strong> - Don't just close the lid; actually restart occasionally</li>
-            <li><strong>Clean browser data periodically</strong> - Clear cache and cookies every few months</li>
+            <li>
+              <strong>Keep at least 20% of your drive free</strong> - Regular cleanup prevents space-related
+              slowdowns
+            </li>
+            <li>
+              <strong>Review startup programs quarterly</strong> - New software loves adding itself to
+              startup
+            </li>
+            <li>
+              <strong>Keep Windows and software updated</strong> - Updates often include performance improvements
+            </li>
+            <li>
+              <strong>Use a good antivirus</strong> - Windows Defender is adequate, but be cautious about
+              downloads
+            </li>
+            <li>
+              <strong>Restart weekly</strong> - Don't just close the lid; actually restart occasionally
+            </li>
+            <li>
+              <strong>Clean browser data periodically</strong> - Clear cache and cookies every few months
+            </li>
           </ul>
 
           <h2 class="space-font" id="faq">Frequently Asked Questions</h2>
 
           <div class="faq-section">
-            {faqs.map((faq, index) => (
-              <div class="faq-item">
-                <div class="faq-question space-font">
-                  <span>{faq.question}</span>
+            {
+              faqs.map((faq, index) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
                 </div>
-                <div class="faq-answer alien-font">
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <h2 class="space-font">Summary: Getting Your Laptop Running Fast Again</h2>
 
           <p>
-            A slow laptop doesn't necessarily mean it's time for a replacement. In most cases, the cause is identifiable and fixable - whether that's clearing out digital clutter, removing malware, or upgrading to an SSD.
+            A slow laptop doesn't necessarily mean it's time for a replacement. In most cases, the
+            cause is identifiable and fixable - whether that's clearing out digital clutter,
+            removing malware, or upgrading to an SSD.
           </p>
 
           <p>
-            Start with the free DIY fixes: restart properly, disable unnecessary startup programs, free up disk space, and run a malware scan. If those don't help, consider an SSD upgrade - it's the single most effective improvement for most slow laptops.
+            Start with the free DIY fixes: restart properly, disable unnecessary startup programs,
+            free up disk space, and run a malware scan. If those don't help, consider an SSD upgrade
+            - it's the single most effective improvement for most slow laptops.
           </p>
 
           <p>
-            For residents across Romford, Harold Hill, Hornchurch, and Havering, local repair services can diagnose the issue quickly and recommend the most cost-effective solution for your specific situation.
+            For residents across Romford, Harold Hill, Hornchurch, and Havering, local repair
+            services can diagnose the issue quickly and recommend the most cost-effective solution
+            for your specific situation.
           </p>
 
           <!-- Author Bio -->
-          <div style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;">
-            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <div>
-              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">David Hagon</div>
-              <p style="margin: 0; font-size: 15px; line-height: 1.6;">Computer repair specialist and founder of Chiltern Computers in Harold Hill. With years of experience fixing PCs and laptops across Romford and Havering, I pride myself on honest advice and transparent pricing - I'll always tell you if a repair isn't worth it.</p>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. With
+                years of experience fixing PCs and laptops across Romford and Havering, I pride
+                myself on honest advice and transparent pricing - I'll always tell you if a repair
+                isn't worth it.
+              </p>
               <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Us</a>
-                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
-                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews ★★★★★</a>
+                <a
+                  href="/about/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >About Us</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews ★★★★★</a
+                >
               </div>
             </div>
           </div>
@@ -566,53 +931,124 @@ const faqs = [
             <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
               Laptop Still Running Slow?
             </h3>
-            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
-              Book a diagnostic at Chiltern Computers in Harold Hill. We charge a small fee to identify exactly what's slowing your laptop down. If we fix it during the diagnostic, that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed.
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              Book a diagnostic at Chiltern Computers in Harold Hill. We charge a small fee to
+              identify exactly what's slowing your laptop down. If we fix it during the diagnostic,
+              that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed.
             </p>
             <a href="/contact/" class="space-button space-font">
               Book Diagnostic
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
           </div>
 
           <!-- Related Services -->
-          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Our Services</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-              <a href="/services/repairs/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">Laptop Repairs</div>
+          <div
+            style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Our Services
+            </h3>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"
+            >
+              <a
+                href="/services/repairs/"
+                style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">
+                  Laptop Repairs
+                </div>
               </a>
-              <a href="/services/new-used/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">Refurbished Laptops</div>
+              <a
+                href="/services/new-used/"
+                style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">
+                  Refurbished Laptops
+                </div>
               </a>
-              <a href="/contact/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">Get a Quote</div>
+              <a
+                href="/contact/"
+                style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">
+                  Get a Quote
+                </div>
               </a>
             </div>
           </div>
 
           <!-- Related Articles -->
-          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Related Articles</h3>
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
             <div style="display: grid; gap: 16px;">
-              <a href="/blog/best-computer-repair-near-romford/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/best-computer-repair-near-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Best Computer Repair Near Romford - Local Expert Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Best Computer Repair Near Romford - Local Expert Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/upgrade-old-pc-windows-11-unsupported/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/upgrade-old-pc-windows-11-unsupported/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Windows 11 Upgrade for Old PCs in Romford & Essex</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Windows 11 Upgrade for Old PCs in Romford & Essex
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/computer-maintenance-tips-romford-businesses/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/computer-maintenance-tips-romford-businesses/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Computer Maintenance Tips for Romford Businesses</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">9 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Computer Maintenance Tips for Romford Businesses
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    9 min read
+                  </div>
                 </div>
               </a>
             </div>
@@ -623,43 +1059,50 @@ const faqs = [
   </main>
 
   <!-- FAQ Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
 
   <!-- Article Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Why Your Laptop is Running Slow - Romford Tech Guide 2025",
-    "description": "Is your laptop frustratingly slow? Learn the 10 most common causes of slow laptop performance and discover how local Romford technicians can help speed it up affordably.",
-    "image": "https://chilterncomputers.co.uk/repair-pic.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Chiltern Computers"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Chiltern Computers",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://chilterncomputers.co.uk/logo_homepage.webp"
-      }
-    },
-    "datePublished": publishDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://chilterncomputers.co.uk/blog/why-laptop-running-slow-romford-guide/"
-    }
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Why Your Laptop is Running Slow - Romford Tech Guide 2025',
+      description:
+        'Is your laptop frustratingly slow? Learn the 10 most common causes of slow laptop performance and discover how local Romford technicians can help speed it up affordably.',
+      image: 'https://chilterncomputers.co.uk/repair-pic.webp',
+      author: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://chilterncomputers.co.uk/logo_homepage.webp',
+        },
+      },
+      datePublished: publishDate,
+      dateModified: modifiedDate,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://chilterncomputers.co.uk/blog/why-laptop-running-slow-romford-guide/',
+      },
+    })}
+  />
 </Layout>

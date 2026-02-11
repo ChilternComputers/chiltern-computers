@@ -38,7 +38,7 @@ For business inquiries: https://chilterncomputers.net/contact/
   return new Response(llmsTxt, {
     headers: {
       'Content-Type': 'text/plain; charset=utf-8',
-      'Cache-Control': 'public, max-age=86400'
-    }
+      'Cache-Control': 'public, max-age=86400',
+    },
   });
 };

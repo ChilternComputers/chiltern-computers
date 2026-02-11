@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
       url: '/',
       priority: 1.0,
       changefreq: 'weekly',
-      lastmod: currentDate
+      lastmod: currentDate,
     },
 
     // Service pages
@@ -45,13 +45,48 @@ export const GET: APIRoute = async () => {
 
     // Blog pages
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: currentDate },
-    { url: '/blog/virus-malware-removal-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-23' },
-    { url: '/blog/is-my-computer-worth-repairing-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-23' },
-    { url: '/blog/upgrade-old-pc-windows-11-unsupported/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-23' },
-    { url: '/blog/best-computer-repair-near-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-15' },
-    { url: '/blog/why-laptop-running-slow-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-12' },
-    { url: '/blog/gaming-pc-build-tips-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-08' },
-    { url: '/blog/computer-maintenance-tips-romford-businesses/', priority: 0.7, changefreq: 'monthly', lastmod: '2025-01-05' },
+    {
+      url: '/blog/virus-malware-removal-romford-guide/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-23',
+    },
+    {
+      url: '/blog/is-my-computer-worth-repairing-romford/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-23',
+    },
+    {
+      url: '/blog/upgrade-old-pc-windows-11-unsupported/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-23',
+    },
+    {
+      url: '/blog/best-computer-repair-near-romford/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-15',
+    },
+    {
+      url: '/blog/why-laptop-running-slow-romford-guide/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-12',
+    },
+    {
+      url: '/blog/gaming-pc-build-tips-essex/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-08',
+    },
+    {
+      url: '/blog/computer-maintenance-tips-romford-businesses/',
+      priority: 0.7,
+      changefreq: 'monthly',
+      lastmod: '2025-01-05',
+    },
 
     // Legal pages
     { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
@@ -64,19 +99,23 @@ export const GET: APIRoute = async () => {
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-${routes.map(route => `  <url>
+${routes
+  .map(
+    (route) => `  <url>
     <loc>${baseUrl}${route.url}</loc>
     <lastmod>${route.lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
-  </url>`).join('\n')}
+  </url>`
+  )
+  .join('\n')}
 </urlset>`;
 
   return new Response(sitemap, {
     status: 200,
     headers: {
       'Content-Type': 'application/xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=86400, s-maxage=86400'
-    }
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+    },
   });
 };

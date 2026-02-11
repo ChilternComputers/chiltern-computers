@@ -6,39 +6,169 @@ import Layout from '../../layouts/Layout.astro';
   title="Virus Removal Romford - Same Day Malware Removal Service"
   description="Professional virus removal in Romford. Same day malware removal, spyware cleanup & ransomware recovery. Free diagnosis, no fix no fee. Call 07971 331814."
   keywords="virus removal romford, malware removal romford, spyware removal romford, ransomware removal romford, computer virus romford, virus removal near me, same day virus removal, computer virus repair romford, virus cleanup romford, malware scan romford"
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Services", url: "/services/repairs/" }, { name: "Virus Removal Romford", url: "/services/virus-removal-romford/" }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'Virus Removal Romford', url: '/services/virus-removal-romford/' },
+  ]}
 >
   <style>
-    * { box-sizing: border-box; } html, body { overflow-x: hidden; width: 100%; }
-    :root { --cosmic-blue: #1e3a8a; --nebula-purple: #7c3aed; --starlight-white: #f8fafc; --plasma-cyan: #06b6d4; --aurora-green: #10b981; --solar-orange: #f59e0b; --deep-space: #0f172a; --comet-silver: #e5e7eb; --danger-red: #ef4444; }
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; } .alien-font { font-family: 'Exo 2', sans-serif; } .tech-font { font-family: 'Space Mono', monospace; }
-    @keyframes cosmic-pulse { 0%, 100% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor; } }
-    @keyframes galaxy-flow { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text { background: linear-gradient(135deg, var(--danger-red), var(--solar-orange), var(--plasma-cyan)); background-size: 200% 200%; animation: galaxy-flow 4s ease-in-out infinite; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-bg { background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9)); }
-    .cosmic-card { background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid var(--plasma-cyan); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2); transition: all 0.3s ease; }
-    .cosmic-card:hover { transform: translateY(-5px); border-color: var(--aurora-green); }
-    .danger-card { border-color: var(--danger-red); box-shadow: 0 8px 32px rgba(239, 68, 68, 0.2); }
-    .space-button { background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
-    .space-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4); }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+      --danger-red: #ef4444;
+    }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--danger-red),
+        var(--solar-orange),
+        var(--plasma-cyan)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+    }
+    .danger-card {
+      border-color: var(--danger-red);
+      box-shadow: 0 8px 32px rgba(239, 68, 68, 0.2);
+    }
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 0 16px;
+      }
+    }
   </style>
 
   <main>
     <section class="section-bg" style="padding: 100px 0 60px;">
       <div class="container">
         <div style="text-align: center; margin-bottom: 50px;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(239, 68, 68, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--danger-red); margin-bottom: 24px;">
-            <span class="tech-font" style="color: var(--danger-red); font-size: 13px;">🦠 SAME DAY VIRUS REMOVAL</span>
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(239, 68, 68, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--danger-red); margin-bottom: 24px;"
+          >
+            <span class="tech-font" style="color: var(--danger-red); font-size: 13px;"
+              >🦠 SAME DAY VIRUS REMOVAL</span
+            >
           </div>
-          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;">VIRUS REMOVAL ROMFORD</h1>
-          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">Professional virus and malware removal for Romford residents and businesses. We eliminate all types of malware including viruses, spyware, ransomware, and adware. Same day service available.</p>
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+          >
+            VIRUS REMOVAL ROMFORD
+          </h1>
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+          >
+            Professional virus and malware removal for Romford residents and businesses. We
+            eliminate all types of malware including viruses, spyware, ransomware, and adware. Same
+            day service available.
+          </p>
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-            <a href="/contact/" class="space-button space-font"><span>🛡️</span> Book Virus Removal</a>
-            <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(239, 68, 68, 0.3);"><span>📱</span> 07971 331814</a>
+            <a href="/contact/" class="space-button space-font"
+              ><span>🛡️</span> Book Virus Removal</a
+            >
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(239, 68, 68, 0.3);"><span>📱</span> 07971 331814</a
+            >
           </div>
         </div>
       </div>
@@ -46,12 +176,53 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--danger-red); font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;">SIGNS YOUR ROMFORD COMPUTER HAS A VIRUS</h2>
+        <h2
+          class="space-font"
+          style="color: var(--danger-red); font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          SIGNS YOUR ROMFORD COMPUTER HAS A VIRUS
+        </h2>
         <div class="services-grid">
-          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🐢</span><h3 class="space-font" style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;">SLOW PERFORMANCE</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Computer running slowly, taking ages to start up or open programs.</p></div>
-          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">📢</span><h3 class="space-font" style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;">POP-UPS & ADS</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Unexpected pop-ups, browser redirects, or unwanted advertisements.</p></div>
-          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🔒</span><h3 class="space-font" style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;">RANSOMWARE</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Files locked or encrypted, demanding payment to unlock.</p></div>
-          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">💻</span><h3 class="space-font" style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;">STRANGE BEHAVIOUR</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Programs crashing, settings changing, or unknown programs installed.</p></div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🐢</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              SLOW PERFORMANCE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Computer running slowly, taking ages to start up or open programs.
+            </p>
+          </div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">📢</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              POP-UPS & ADS
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Unexpected pop-ups, browser redirects, or unwanted advertisements.
+            </p>
+          </div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🔒</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              RANSOMWARE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Files locked or encrypted, demanding payment to unlock.
+            </p>
+          </div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">💻</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              STRANGE BEHAVIOUR
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Programs crashing, settings changing, or unknown programs installed.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -59,23 +230,74 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
         <div class="cosmic-card" style="padding: 40px;">
-          <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">OUR ROMFORD VIRUS REMOVAL PROCESS</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+          <h2
+            class="space-font"
+            style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;"
+          >
+            OUR ROMFORD VIRUS REMOVAL PROCESS
+          </h2>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;"
+          >
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">1. FREE DIAGNOSIS</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">We scan your computer to identify all viruses, malware, and security threats. This diagnosis is completely free.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                1. FREE DIAGNOSIS
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                We scan your computer to identify all viruses, malware, and security threats. This
+                diagnosis is completely free.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">2. COMPLETE REMOVAL</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">We remove all malware including rootkits, trojans, worms, spyware, and adware using professional tools.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                2. COMPLETE REMOVAL
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                We remove all malware including rootkits, trojans, worms, spyware, and adware using
+                professional tools.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">3. SYSTEM CLEANUP</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">We clean up infected files, repair damaged system settings, and optimise your computer for better performance.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                3. SYSTEM CLEANUP
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                We clean up infected files, repair damaged system settings, and optimise your
+                computer for better performance.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">4. PROTECTION SETUP</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">We install and configure security software to protect against future infections and advise on safe computing practices.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                4. PROTECTION SETUP
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                We install and configure security software to protect against future infections and
+                advise on safe computing practices.
+              </p>
             </div>
           </div>
         </div>
@@ -84,23 +306,76 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">VIRUS REMOVAL ROMFORD FAQ</h2>
+        <h2
+          class="space-font"
+          style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          VIRUS REMOVAL ROMFORD FAQ
+        </h2>
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">How much does virus removal cost in Romford?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Our virus removal service starts from just £40. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. We offer free diagnosis and operate on a no fix, no fee basis.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How much does virus removal cost in Romford?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Our virus removal service starts from just £40. This includes full malware scan,
+              removal of all infections, system cleanup, and basic security setup. We offer free
+              diagnosis and operate on a no fix, no fee basis.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">Can you remove ransomware and recover my files?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Yes, we specialise in ransomware removal. While file recovery depends on the type of ransomware, we have high success rates with many variants. We'll always give you an honest assessment of what's possible.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Can you remove ransomware and recover my files?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Yes, we specialise in ransomware removal. While file recovery depends on the type of
+              ransomware, we have high success rates with many variants. We'll always give you an
+              honest assessment of what's possible.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">How long does virus removal take?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Most virus removals are completed same day or within 24 hours. Severe infections or ransomware cases may take 24-48 hours. We always aim to get your computer back to you as quickly as possible.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How long does virus removal take?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Most virus removals are completed same day or within 24 hours. Severe infections or
+              ransomware cases may take 24-48 hours. We always aim to get your computer back to you
+              as quickly as possible.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">Do you cover all of Romford for virus removal?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Yes! We serve all of Romford including the town centre, Harold Hill, Collier Row, Gidea Park, Harold Wood, and surrounding areas. We offer free collection and delivery throughout RM postcodes.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Do you cover all of Romford for virus removal?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Yes! We serve all of Romford including the town centre, Harold Hill, Collier Row,
+              Gidea Park, Harold Wood, and surrounding areas. We offer free collection and delivery
+              throughout RM postcodes.
+            </p>
           </div>
         </div>
       </div>
@@ -108,19 +383,61 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">RELATED SERVICES</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-          <a href="/services/repairs/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🛠️ PC & Laptop Repairs</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Full repair services including hardware fixes, software issues, and performance optimisation.</p>
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          RELATED SERVICES
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+        >
+          <a
+            href="/services/repairs/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              🛠️ PC & Laptop Repairs
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Full repair services including hardware fixes, software issues, and performance
+              optimisation.
+            </p>
           </a>
-          <a href="/areas/romford/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">📍 Computer Repair Romford</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">All our computer repair services available in Romford town centre and surrounding areas.</p>
+          <a
+            href="/areas/romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              📍 Computer Repair Romford
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              All our computer repair services available in Romford town centre and surrounding
+              areas.
+            </p>
           </a>
-          <a href="/contact/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">📞 Contact Us</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Get in touch for a free quote on virus removal or any computer repair service.</p>
+          <a
+            href="/contact/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              📞 Contact Us
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Get in touch for a free quote on virus removal or any computer repair service.
+            </p>
           </a>
         </div>
       </div>
@@ -128,10 +445,28 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0 80px;">
       <div class="container">
-        <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--danger-red);">
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;">COMPUTER INFECTED IN ROMFORD?</h2>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;">Don't wait - viruses can steal your data and spread. Call now for same day removal.</p>
-          <a href="tel:+447971331814" class="space-button space-font" style="font-size: 16px; padding: 16px 32px; background: linear-gradient(135deg, var(--danger-red), var(--solar-orange));"><span>📱</span> 07971 331814</a>
+        <div
+          class="cosmic-card"
+          style="padding: 50px 40px; text-align: center; border: 2px solid var(--danger-red);"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+          >
+            COMPUTER INFECTED IN ROMFORD?
+          </h2>
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
+          >
+            Don't wait - viruses can steal your data and spread. Call now for same day removal.
+          </p>
+          <a
+            href="tel:+447971331814"
+            class="space-button space-font"
+            style="font-size: 16px; padding: 16px 32px; background: linear-gradient(135deg, var(--danger-red), var(--solar-orange));"
+            ><span>📱</span> 07971 331814</a
+          >
         </div>
       </div>
     </section>

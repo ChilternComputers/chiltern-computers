@@ -5,7 +5,10 @@ import Layout from '../../layouts/Layout.astro';
 <Layout
   title="New & Refurbished PCs & Laptops"
   description="Quality refurbished laptops and desktops plus professional computer repair in Havering. Fast IT support, virus removal & hardware upgrades."
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "New & Used PCs", url: "/services/new-used/" }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'New & Used PCs', url: '/services/new-used/' },
+  ]}
 >
   <style>
     /* PAGE-SPECIFIC STYLES FOR NEW/USED PAGE */
@@ -21,19 +24,27 @@ import Layout from '../../layouts/Layout.astro';
 
     /* PAGE-SPECIFIC ANIMATIONS */
     @keyframes price-glow {
-      0%, 100% {
+      0%,
+      100% {
         text-shadow: 0 0 10px var(--aurora-green);
         transform: scale(1);
       }
       50% {
-        text-shadow: 0 0 20px var(--aurora-green), 0 0 30px var(--plasma-cyan);
+        text-shadow:
+          0 0 20px var(--aurora-green),
+          0 0 30px var(--plasma-cyan);
         transform: scale(1.05);
       }
     }
 
     @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
-      50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+      }
     }
 
     .price-glow {
@@ -43,40 +54,38 @@ import Layout from '../../layouts/Layout.astro';
 
     /* CONSISTENT SECTION BACKGROUNDS */
     .section-bg {
-      background: 
-        linear-gradient(135deg, rgba(2, 6, 23, 0.85), rgba(15, 23, 42, 0.75)),
-        url('/new-used.webp');
+      background:
+        linear-gradient(135deg, rgba(2, 6, 23, 0.85), rgba(15, 23, 42, 0.75)), url('/new-used.webp');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       position: relative;
     }
-    
+
     .section-bg-alt {
-      background: 
-        linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.8)),
-        url('/new-used.webp');
+      background:
+        linear-gradient(135deg, rgba(2, 6, 23, 0.9), rgba(15, 23, 42, 0.8)), url('/new-used.webp');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       position: relative;
     }
-    
+
     /* CONSISTENT SECTION STYLING */
     .main-section {
       padding: var(--section-padding);
     }
-    
+
     .section-header {
       text-align: center;
       margin-bottom: var(--content-gap);
     }
-    
+
     .section-title {
       font-size: clamp(32px, 6vw, 48px);
       margin-bottom: var(--small-gap);
     }
-    
+
     .section-divider {
       height: 4px;
       width: 150px;
@@ -86,7 +95,7 @@ import Layout from '../../layouts/Layout.astro';
       position: relative;
       overflow: hidden;
     }
-    
+
     .section-divider::after {
       content: '';
       position: absolute;
@@ -94,10 +103,10 @@ import Layout from '../../layouts/Layout.astro';
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
       animation: shimmer 2s infinite;
     }
-    
+
     .section-subtitle {
       color: var(--comet-silver);
       max-width: 700px;
@@ -105,7 +114,7 @@ import Layout from '../../layouts/Layout.astro';
       font-size: 18px;
       line-height: 1.6;
     }
-    
+
     /* CARD STYLES */
     .cosmic-card {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
@@ -117,7 +126,7 @@ import Layout from '../../layouts/Layout.astro';
       position: relative;
       overflow: hidden;
     }
-    
+
     .cosmic-card::before {
       content: '';
       position: absolute;
@@ -129,17 +138,17 @@ import Layout from '../../layouts/Layout.astro';
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
+
     .cosmic-card:hover {
       transform: translateY(-8px);
       border-color: var(--aurora-green);
       box-shadow: 0 16px 40px rgba(16, 185, 129, 0.3);
     }
-    
+
     .cosmic-card:hover::before {
       opacity: 1;
     }
-    
+
     /* PRODUCT CARDS */
     .product-card {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 58, 138, 0.15));
@@ -151,7 +160,7 @@ import Layout from '../../layouts/Layout.astro';
       position: relative;
       overflow: hidden;
     }
-    
+
     .product-card::after {
       content: '';
       position: absolute;
@@ -159,7 +168,13 @@ import Layout from '../../layouts/Layout.astro';
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple), var(--solar-orange));
+      background: linear-gradient(
+        45deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple),
+        var(--solar-orange)
+      );
       background-size: 300% 300%;
       animation: galaxy-flow 6s ease-in-out infinite;
       border-radius: 24px;
@@ -167,16 +182,16 @@ import Layout from '../../layouts/Layout.astro';
       opacity: 0;
       transition: opacity 0.4s ease;
     }
-    
+
     .product-card:hover {
       transform: translateY(-12px) scale(1.02);
       box-shadow: 0 20px 60px rgba(16, 185, 129, 0.4);
     }
-    
+
     .product-card:hover::after {
       opacity: 1;
     }
-    
+
     /* BUTTON STYLES */
     .space-button {
       background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
@@ -195,7 +210,7 @@ import Layout from '../../layouts/Layout.astro';
       overflow: hidden;
       margin: 0 8px;
     }
-    
+
     .space-button::before {
       content: '';
       position: absolute;
@@ -203,19 +218,19 @@ import Layout from '../../layouts/Layout.astro';
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: left 0.5s ease;
     }
-    
+
     .space-button:hover::before {
       left: 100%;
     }
-    
+
     .space-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
     }
-    
+
     /* RESERVE BUTTON */
     .reserve-button {
       background: linear-gradient(135deg, var(--aurora-green), var(--plasma-cyan));
@@ -232,13 +247,13 @@ import Layout from '../../layouts/Layout.astro';
       position: relative;
       overflow: hidden;
     }
-    
+
     .reserve-button:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
       background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green));
     }
-    
+
     /* FAQ STYLES */
     .faq-item {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(30, 58, 138, 0.1));
@@ -250,7 +265,7 @@ import Layout from '../../layouts/Layout.astro';
       overflow: hidden;
       margin-bottom: var(--small-gap);
     }
-    
+
     .faq-item::before {
       content: '';
       position: absolute;
@@ -258,23 +273,28 @@ import Layout from '../../layouts/Layout.astro';
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       opacity: 0;
       transition: opacity 0.4s ease;
       z-index: -1;
       border-radius: 20px;
     }
-    
+
     .faq-item:hover::before {
       opacity: 0.1;
     }
-    
+
     .faq-item:hover {
       transform: translateY(-5px);
       border-color: var(--aurora-green);
       animation: glow-pulse 2s infinite;
     }
-    
+
     .faq-question {
       padding: 28px 32px;
       cursor: pointer;
@@ -284,11 +304,11 @@ import Layout from '../../layouts/Layout.astro';
       transition: all 0.3s ease;
       position: relative;
     }
-    
+
     .faq-question:hover {
       background: rgba(16, 185, 129, 0.05);
     }
-    
+
     .faq-question h3 {
       margin: 0;
       font-size: 20px;
@@ -297,11 +317,11 @@ import Layout from '../../layouts/Layout.astro';
       flex: 1;
       padding-right: 20px;
     }
-    
+
     .faq-item:hover .faq-question h3 {
       color: var(--aurora-green);
     }
-    
+
     .faq-icon {
       font-size: 24px;
       color: var(--aurora-green);
@@ -311,24 +331,24 @@ import Layout from '../../layouts/Layout.astro';
       align-items: center;
       justify-content: center;
     }
-    
+
     .faq-item.active .faq-icon {
       transform: rotate(180deg);
       color: var(--nebula-purple);
     }
-    
+
     .faq-answer {
       max-height: 0;
       overflow: hidden;
       transition: all 0.4s ease;
       opacity: 0;
     }
-    
+
     .faq-item.active .faq-answer {
       max-height: 300px;
       opacity: 1;
     }
-    
+
     .faq-answer-content {
       padding: 0 32px 32px;
       color: var(--starlight-white);
@@ -338,37 +358,37 @@ import Layout from '../../layouts/Layout.astro';
       margin-top: 0;
       padding-top: 24px;
     }
-    
+
     .faq-highlight {
       background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
       border: 2px solid var(--aurora-green);
       animation: glow-pulse 3s infinite;
     }
-    
+
     .faq-highlight .faq-question h3 {
       color: var(--aurora-green);
     }
-    
+
     /* GRIDS */
-    .benefits-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: var(--small-gap); 
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--small-gap);
     }
-    .products-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: var(--card-gap); 
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--card-gap);
     }
-    .process-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-      gap: var(--small-gap); 
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--small-gap);
     }
-    .testimonials-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: var(--small-gap); 
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--small-gap);
     }
     .faq-grid {
       display: grid;
@@ -384,7 +404,7 @@ import Layout from '../../layouts/Layout.astro';
       padding: 0;
       margin: 0;
     }
-    
+
     .spec-list li {
       display: flex;
       align-items: center;
@@ -392,7 +412,7 @@ import Layout from '../../layouts/Layout.astro';
       color: var(--starlight-white);
       font-size: 14px;
     }
-    
+
     .spec-list li::before {
       content: '✓';
       color: var(--aurora-green);
@@ -400,7 +420,7 @@ import Layout from '../../layouts/Layout.astro';
       margin-right: 12px;
       font-size: 16px;
     }
-    
+
     /* MOBILE OPTIMIZATIONS */
     @media (max-width: 768px) {
       :root {
@@ -410,52 +430,52 @@ import Layout from '../../layouts/Layout.astro';
         --card-gap: 24px;
         --small-gap: 16px;
       }
-      
+
       .section-bg,
       .section-bg-alt {
         background-attachment: scroll;
       }
-      
+
       .container {
         padding: 0 16px;
       }
-      
-      .benefits-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: var(--small-gap); 
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--small-gap);
       }
-      .products-grid { 
-        grid-template-columns: 1fr; 
-        gap: var(--small-gap); 
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: var(--small-gap);
       }
-      .process-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: var(--small-gap); 
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--small-gap);
       }
-      .testimonials-grid { 
-        grid-template-columns: 1fr; 
-        gap: var(--small-gap); 
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--small-gap);
       }
-      .space-button { 
-        padding: 12px 24px; 
-        font-size: 13px; 
+      .space-button {
+        padding: 12px 24px;
+        font-size: 13px;
         margin: 4px;
       }
-      
+
       .faq-question {
         padding: 24px 20px;
       }
-      
+
       .faq-question h3 {
         font-size: 18px;
       }
-      
+
       .faq-answer-content {
         padding: 0 20px 24px;
         font-size: 14px;
       }
     }
-    
+
     @media (max-width: 480px) {
       :root {
         --section-padding: 60px 0;
@@ -464,19 +484,19 @@ import Layout from '../../layouts/Layout.astro';
         --card-gap: 16px;
         --small-gap: 12px;
       }
-      
+
       .container {
         padding: 0 12px;
       }
-      
+
       .benefits-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .process-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .space-button {
         padding: 10px 20px;
         font-size: 12px;
@@ -489,25 +509,43 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg main-section">
       <div class="container">
         <div class="section-header">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;">
-            <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
-            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">💻 NEW & REFURBISHED COMPUTERS</span>
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;"
+          >
+            <div
+              style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"
+            >
+            </div>
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;"
+              >💻 NEW & REFURBISHED COMPUTERS</span
+            >
           </div>
-          
-          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(36px, 7vw, 64px); margin-bottom: 24px; line-height: 1.1;">
+
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(36px, 7vw, 64px); margin-bottom: 24px; line-height: 1.1;"
+          >
             NEW & REFURBISHED COMPUTERS
           </h1>
-          
-          <p class="alien-font section-subtitle" style="font-size: clamp(18px, 3.5vw, 22px); margin-bottom: 40px; line-height: 1.5;">
-            Brand new builds and professional refurbished laptops & desktops. All systems thoroughly tested, Windows 11 ready. Perfect for students, home, and business use.
+
+          <p
+            class="alien-font section-subtitle"
+            style="font-size: clamp(18px, 3.5vw, 22px); margin-bottom: 40px; line-height: 1.5;"
+          >
+            Brand new builds and professional refurbished laptops & desktops. All systems thoroughly
+            tested, Windows 11 ready. Perfect for students, home, and business use.
           </p>
-          
+
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <a href="#products" class="space-button space-font">
               <span>🛸</span>
               VIEW OFFERS
             </a>
-            <a href="#contact" class="space-button space-font" style="background: rgba(6, 182, 212, 0.15);">
+            <a
+              href="#contact"
+              class="space-button space-font"
+              style="background: rgba(6, 182, 212, 0.15);"
+            >
               <span>📞</span>
               CONTACT US
             </a>
@@ -525,39 +563,74 @@ import Layout from '../../layouts/Layout.astro';
           </h2>
           <div class="section-divider"></div>
           <p class="alien-font section-subtitle">
-            Whether you need a brand new custom build or a professionally refurbished system, we ensure quality and reliability in every computer we sell.
+            Whether you need a brand new custom build or a professionally refurbished system, we
+            ensure quality and reliability in every computer we sell.
           </p>
         </div>
 
         <div class="benefits-grid">
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">🆕</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">NEW PC BUILDS</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
-              Custom-built new systems with latest components, tailored to your exact needs and budget.
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;"
+            >
+              NEW PC BUILDS
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
+              Custom-built new systems with latest components, tailored to your exact needs and
+              budget.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">🔧</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">PROFESSIONALLY REFURBISHED</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
-              Thoroughly tested, cleaned, and restored to optimal performance standards with great value.
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;"
+            >
+              PROFESSIONALLY REFURBISHED
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
+              Thoroughly tested, cleaned, and restored to optimal performance standards with great
+              value.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">💻</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;">WINDOWS 11 READY</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;"
+            >
+              WINDOWS 11 READY
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               Pre-installed and activated Windows 11, ready to use straight out of the box.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">🎯</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;">ALL BUDGETS COVERED</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;"
+            >
+              ALL BUDGETS COVERED
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               From budget-friendly refurbished units to high-performance new builds for every need.
             </p>
           </div>
@@ -569,44 +642,79 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg main-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="space-font galaxy-text cosmic-glow section-title">
-            OUR SOLUTIONS
-          </h2>
-          <div class="section-divider" style="background: linear-gradient(90deg, var(--solar-orange), var(--mars-red));"></div>
+          <h2 class="space-font galaxy-text cosmic-glow section-title">OUR SOLUTIONS</h2>
+          <div
+            class="section-divider"
+            style="background: linear-gradient(90deg, var(--solar-orange), var(--mars-red));"
+          >
+          </div>
           <p class="alien-font section-subtitle">
-            From custom new builds to comprehensive refurbishment, we provide complete computer services.
+            From custom new builds to comprehensive refurbishment, we provide complete computer
+            services.
           </p>
         </div>
-        
+
         <div class="process-grid">
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">🔧</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;">CUSTOM NEW BUILDS</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;"
+            >
+              CUSTOM NEW BUILDS
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               Built to your specifications with latest components and full manufacturer warranties.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">🧹</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;">REFURBISHMENT PROCESS</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;"
+            >
+              REFURBISHMENT PROCESS
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               Professional cleaning, testing, component replacement, and software installation.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">⚙️</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;">SOFTWARE & SETUP</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;"
+            >
+              SOFTWARE & SETUP
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               Fresh Windows 11 installation with all updates, Office 2021, and data transfer.
             </p>
           </div>
-          
+
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
             <div style="font-size: 48px; margin-bottom: 20px;">✅</div>
-            <h3 class="space-font cosmic-glow" style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;">QUALITY ASSURANCE</h3>
-            <p class="alien-font" style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;">
+            <h3
+              class="space-font cosmic-glow"
+              style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;"
+            >
+              QUALITY ASSURANCE
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--starlight-white); font-size: 14px; line-height: 1.5;"
+            >
               Complete system testing, performance verification, and warranty coverage.
             </p>
           </div>
@@ -618,10 +726,12 @@ import Layout from '../../layouts/Layout.astro';
     <section id="products" class="section-bg-alt main-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="space-font galaxy-text cosmic-glow section-title">
-            CURRENT OFFERS
-          </h2>
-          <div class="section-divider" style="background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green));"></div>
+          <h2 class="space-font galaxy-text cosmic-glow section-title">CURRENT OFFERS</h2>
+          <div
+            class="section-divider"
+            style="background: linear-gradient(90deg, var(--nebula-purple), var(--aurora-green));"
+          >
+          </div>
           <p class="alien-font section-subtitle">
             New stock updated weekly. All computers come with Windows 11 and Office 2021.
           </p>
@@ -632,8 +742,18 @@ import Layout from '../../layouts/Layout.astro';
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
               <div style="font-size: 60px; margin-bottom: 16px;">🎮</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--mars-red); font-size: 24px; margin-bottom: 16px;">NEW GAMING PC</h3>
-              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £899</p>
+              <h3
+                class="space-font cosmic-glow"
+                style="color: var(--mars-red); font-size: 24px; margin-bottom: 16px;"
+              >
+                NEW GAMING PC
+              </h3>
+              <p
+                class="space-font price-glow"
+                style="font-size: 36px; font-weight: 700; margin-bottom: 20px;"
+              >
+                FROM £899
+              </p>
             </div>
             <ul class="spec-list" style="margin-bottom: 32px;">
               <li>AMD Ryzen 5 / Intel i5</li>
@@ -650,11 +770,21 @@ import Layout from '../../layouts/Layout.astro';
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
               <div style="font-size: 60px; margin-bottom: 16px;">🏢</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px;">NEW DESKTOP PC</h3>
-              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £450</p>
+              <h3
+                class="space-font cosmic-glow"
+                style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px;"
+              >
+                NEW DESKTOP PC
+              </h3>
+              <p
+                class="space-font price-glow"
+                style="font-size: 36px; font-weight: 700; margin-bottom: 20px;"
+              >
+                FROM £450
+              </p>
             </div>
             <ul class="spec-list" style="margin-bottom: 32px;">
-              <li>Intel i3 / AMD </li>
+              <li>Intel i3 / AMD</li>
               <li>8GB DDR4 RAM</li>
               <li>500GB NVMe SSD</li>
               <li>Integrated Graphics</li>
@@ -668,8 +798,18 @@ import Layout from '../../layouts/Layout.astro';
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
               <div style="font-size: 60px; margin-bottom: 16px;">💼</div>
-              <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;">REFURB LAPTOP</h3>
-              <p class="space-font price-glow" style="font-size: 36px; font-weight: 700; margin-bottom: 20px;">FROM £250</p>
+              <h3
+                class="space-font cosmic-glow"
+                style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;"
+              >
+                REFURB LAPTOP
+              </h3>
+              <p
+                class="space-font price-glow"
+                style="font-size: 36px; font-weight: 700; margin-bottom: 20px;"
+              >
+                FROM £250
+              </p>
             </div>
             <ul class="spec-list" style="margin-bottom: 32px;">
               <li>Quad-Core CPU</li>
@@ -681,276 +821,438 @@ import Layout from '../../layouts/Layout.astro';
             </ul>
             <a href="#contact" class="reserve-button space-font">RESERVE NOW</a>
           </article>
-
-          
-    </section>
-
-    <!-- Customer Reviews -->
-    <section class="section-bg main-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="space-font galaxy-text cosmic-glow section-title">
-            WHAT OUR CUSTOMERS SAY
-          </h2>
-          <div class="section-divider" style="background: linear-gradient(90deg, var(--aurora-green), var(--nebula-purple));"></div>
         </div>
-        
-        <div class="testimonials-grid">
-          <blockquote class="cosmic-card" style="padding: 28px;">
-            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-              <div class="space-font cosmic-glow" style="color: var(--mars-red); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+
+        <!-- Customer Reviews -->
+        <section class="section-bg main-section">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="space-font galaxy-text cosmic-glow section-title">
+                WHAT OUR CUSTOMERS SAY
+              </h2>
+              <div
+                class="section-divider"
+                style="background: linear-gradient(90deg, var(--aurora-green), var(--nebula-purple));"
+              >
+              </div>
             </div>
-            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
-              "Fantastic new gaming PC build! David helped me choose the perfect specs for my budget and it runs everything perfectly."
+
+            <div class="testimonials-grid">
+              <blockquote class="cosmic-card" style="padding: 28px;">
+                <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                  <div
+                    class="space-font cosmic-glow"
+                    style="color: var(--mars-red); font-size: 20px;"
+                  >
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p
+                  class="alien-font"
+                  style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;"
+                >
+                  "Fantastic new gaming PC build! David helped me choose the perfect specs for my
+                  budget and it runs everything perfectly."
+                </p>
+                <footer style="text-align: center;">
+                  <div
+                    class="space-font"
+                    style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;"
+                  >
+                    Mike T.
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
+                    Upminster
+                  </div>
+                </footer>
+              </blockquote>
+
+              <blockquote class="cosmic-card" style="padding: 28px;">
+                <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                  <div
+                    class="space-font cosmic-glow"
+                    style="color: var(--solar-orange); font-size: 20px;"
+                  >
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p
+                  class="alien-font"
+                  style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;"
+                >
+                  "Bought a refurbished laptop for my daughter's university. Works perfectly and
+                  saved us hundreds!"
+                </p>
+                <footer style="text-align: center;">
+                  <div
+                    class="space-font"
+                    style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;"
+                  >
+                    Lisa M.
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
+                    Harold Hill
+                  </div>
+                </footer>
+              </blockquote>
+
+              <blockquote class="cosmic-card" style="padding: 28px;">
+                <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+                  <div
+                    class="space-font cosmic-glow"
+                    style="color: var(--aurora-green); font-size: 20px;"
+                  >
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </div>
+                <p
+                  class="alien-font"
+                  style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;"
+                >
+                  "Great quality refurbished desktop. Runs like new and came with everything set up.
+                  Excellent service!"
+                </p>
+                <footer style="text-align: center;">
+                  <div
+                    class="space-font"
+                    style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;"
+                  >
+                    John K.
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">
+                    Romford
+                  </div>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-bg-alt main-section">
+          <div class="container">
+            <div class="section-header">
+              <h2 class="space-font galaxy-text cosmic-glow section-title">
+                FREQUENTLY ASKED QUESTIONS
+              </h2>
+              <div
+                class="section-divider"
+                style="background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green), var(--nebula-purple)); width: 200px;"
+              >
+              </div>
+              <p class="alien-font section-subtitle">
+                Everything you need to know about our new builds and refurbished computers
+              </p>
+            </div>
+
+            <div class="faq-grid">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">
+                    🖥️ What's the difference between new builds and refurbished?
+                  </h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    New builds use brand new components with full manufacturer warranties (typically
+                    3 years) and can be customised to your exact specifications. Refurbished
+                    computers are professionally restored ex-business machines that offer excellent
+                    value. New builds are ideal for gaming, high-performance work, or specific
+                    requirements, while refurbished units are perfect for general use, students, and
+                    budget-conscious customers.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item faq-highlight">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">🚀 Are the refurbished units fast?</h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Absolutely! All our refurbished computers come equipped with solid state drives
+                    (SSDs) and a minimum of 8GB RAM, ensuring lightning-fast boot times and smooth
+                    performance. The SSDs are significantly faster than traditional hard drives,
+                    making your computer feel brand new.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">🎮 Can you build custom gaming PCs?</h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Yes! We specialize in custom gaming PC builds tailored to your budget and
+                    performance needs. Whether you want to play the latest AAA games at 1080p,
+                    1440p, or 4K, we'll recommend the perfect combination of CPU, GPU, RAM, and
+                    storage. All gaming builds come with cable management, latest drivers and
+                    Windows updates installed.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">⏱️ How long do custom builds take?</h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Custom new builds typically take 3-5 business days once all components are
+                    confirmed and ordered. If we have the parts in stock, we can often complete
+                    builds within 2-3 days. We'll provide a detailed timeline when you place your
+                    order and keep you updated throughout the build process.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">
+                    💾 Can you transfer my data from my old computer?
+                  </h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Yes, we provide comprehensive data transfer services for both new and
+                    refurbished systems! We can migrate all your personal files, photos, documents,
+                    browser bookmarks, saved passwords, and even your desktop setup.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">
+                    🚚 Do you offer collection and delivery services?
+                  </h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Yes! We offer free local collection and delivery within Harold Hill, Romford,
+                    and surrounding areas. We can also arrange secure courier delivery across the UK
+                    for a small fee. All deliveries include setup assistance if needed.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">🛡️ What warranty do you provide?</h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    New builds come with full manufacturer warranties (typically 3 years on
+                    components). Refurbished computers include a 30 day guarantee, covering hardware
+                    issues and defects. We also provide free technical support for the first month
+                    on all systems, including help with software setup and troubleshooting.
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 class="space-font cosmic-glow">💰 Do you offer payment plans?</h3>
+                  <div class="faq-icon">▼</div>
+                </div>
+                <div class="faq-answer">
+                  <div class="faq-answer-content alien-font">
+                    Not at this time. All payments made by bank transfer, cash or Paypal.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="text-align: center; margin-top: var(--content-gap); padding: 40px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border-radius: 20px; border: 1px solid var(--plasma-cyan); position: relative; overflow: hidden;"
+            >
+              <div
+                style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent); animation: shimmer 3s infinite;"
+              >
+              </div>
+              <h3
+                class="space-font cosmic-glow"
+                style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;"
+              >
+                Need help choosing the right system?
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); margin-bottom: 24px; font-size: 16px;"
+              >
+                Our friendly team can help you decide between a new build or refurbished system
+                based on your needs and budget.
+              </p>
+              <div>
+                <a
+                  href="https://wa.me/447971331814"
+                  class="space-button space-font"
+                  style="background: linear-gradient(135deg, #25d366, #128c7e);"
+                >
+                  <span>📱</span>
+                  WHATSAPP US
+                </a>
+                <a href="tel:07971331814" class="space-button space-font">
+                  <span>📞</span>
+                  CALL NOW
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Areas We Serve -->
+        <section class="section-bg main-section" style="padding: 60px 0;">
+          <div class="container" style="text-align: center;">
+            <h2
+              class="space-font galaxy-text cosmic-glow"
+              style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;"
+            >
+              NEW & REFURBISHED PCs ACROSS HAVERING
+            </h2>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 16px; margin-bottom: 32px;"
+            >
+              We deliver new builds and refurbished systems throughout these areas:
             </p>
-            <footer style="text-align: center;">
-              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Mike T.</div>
-              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Upminster</div>
-            </footer>
-          </blockquote>
-          
-          <blockquote class="cosmic-card" style="padding: 28px;">
-            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-              <div class="space-font cosmic-glow" style="color: var(--solar-orange); font-size: 20px;">⭐⭐⭐⭐⭐</div>
+            <div
+              style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;"
+            >
+              <a
+                href="/areas/harold-hill/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px; background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green);"
+                >Harold Hill</a
+              >
+              <a
+                href="/areas/romford/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px;">Romford</a
+              >
+              <a
+                href="/areas/hornchurch/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px;">Hornchurch</a
+              >
+              <a
+                href="/areas/upminster/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px;">Upminster</a
+              >
+              <a
+                href="/areas/dagenham/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px;">Dagenham</a
+              >
+              <a
+                href="/areas/brentwood/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px;">Brentwood</a
+              >
+              <a
+                href="/areas/"
+                class="space-button"
+                style="padding: 10px 18px; font-size: 13px; background: rgba(124, 58, 237, 0.2); border-color: var(--nebula-purple);"
+                >View All Areas →</a
+              >
             </div>
-            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
-              "Bought a refurbished laptop for my daughter's university. Works perfectly and saved us hundreds!"
-            </p>
-            <footer style="text-align: center;">
-              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">Lisa M.</div>
-              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Harold Hill</div>
-            </footer>
-          </blockquote>
-          
-          <blockquote class="cosmic-card" style="padding: 28px;">
-            <div style="display: flex; justify-content: center; margin-bottom: 16px;">
-              <div class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px;">⭐⭐⭐⭐⭐</div>
-            </div>
-            <p class="alien-font" style="color: var(--starlight-white); font-style: italic; margin-bottom: 20px; text-align: center; font-size: 16px; line-height: 1.6;">
-              "Great quality refurbished desktop. Runs like new and came with everything set up. Excellent service!"
-            </p>
-            <footer style="text-align: center;">
-              <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px; font-weight: bold;">John K.</div>
-              <div class="tech-font" style="color: var(--comet-silver); font-size: 12px;">Romford</div>
-            </footer>
-          </blockquote>
-          
-          
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
 
-    <!-- FAQ Section -->
-    <section class="section-bg-alt main-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="space-font galaxy-text cosmic-glow section-title">
-            FREQUENTLY ASKED QUESTIONS
-          </h2>
-          <div class="section-divider" style="background: linear-gradient(90deg, var(--cosmic-blue), var(--aurora-green), var(--nebula-purple)); width: 200px;"></div>
-          <p class="alien-font section-subtitle">
-            Everything you need to know about our new builds and refurbished computers
-          </p>
-        </div>
-        
-        <div class="faq-grid">
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">🖥️ What's the difference between new builds and refurbished?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                New builds use brand new components with full manufacturer warranties (typically 3 years) and can be customised to your exact specifications. Refurbished computers are professionally restored ex-business machines that offer excellent value. New builds are ideal for gaming, high-performance work, or specific requirements, while refurbished units are perfect for general use, students, and budget-conscious customers.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item faq-highlight">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">🚀 Are the refurbished units fast?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Absolutely! All our refurbished computers come equipped with solid state drives (SSDs) and a minimum of 8GB RAM, ensuring lightning-fast boot times and smooth performance. The SSDs are significantly faster than traditional hard drives, making your computer feel brand new.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">🎮 Can you build custom gaming PCs?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Yes! We specialize in custom gaming PC builds tailored to your budget and performance needs. Whether you want to play the latest AAA games at 1080p, 1440p, or 4K, we'll recommend the perfect combination of CPU, GPU, RAM, and storage. All gaming builds come with cable management, latest drivers and Windows updates installed.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">⏱️ How long do custom builds take?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Custom new builds typically take 3-5 business days once all components are confirmed and ordered. If we have the parts in stock, we can often complete builds within 2-3 days. We'll provide a detailed timeline when you place your order and keep you updated throughout the build process.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">💾 Can you transfer my data from my old computer?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Yes, we provide comprehensive data transfer services for both new and refurbished systems! We can migrate all your personal files, photos, documents, browser bookmarks, saved passwords, and even your desktop setup.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">🚚 Do you offer collection and delivery services?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Yes! We offer free local collection and delivery within Harold Hill, Romford, and surrounding areas. We can also arrange secure courier delivery across the UK for a small fee. All deliveries include setup assistance if needed.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">🛡️ What warranty do you provide?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                New builds come with full manufacturer warranties (typically 3 years on components). Refurbished computers include a 30 day guarantee, covering hardware issues and defects. We also provide free technical support for the first month on all systems, including help with software setup and troubleshooting.
-              </div>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <div class="faq-question">
-              <h3 class="space-font cosmic-glow">💰 Do you offer payment plans?</h3>
-              <div class="faq-icon">▼</div>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content alien-font">
-                Not at this time. All payments  made by bank transfer, cash or Paypal.
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: var(--content-gap); padding: 40px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border-radius: 20px; border: 1px solid var(--plasma-cyan); position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.1), transparent); animation: shimmer 3s infinite;"></div>
-          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;">Need help choosing the right system?</h3>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 16px;">Our friendly team can help you decide between a new build or refurbished system based on your needs and budget.</p>
-          <div>
-            <a href="https://wa.me/447971331814" class="space-button space-font" style="background: linear-gradient(135deg, #25d366, #128c7e);">
-              <span>📱</span>
-              WHATSAPP US
-            </a>
-            <a href="tel:07971331814" class="space-button space-font">
-              <span>📞</span>
-              CALL NOW
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Call to Action -->
+        <section id="contact" class="section-bg main-section">
+          <div class="container">
+            <div
+              class="cosmic-card"
+              style="padding: 60px 40px; text-align: center; border: 2px solid var(--aurora-green);"
+            >
+              <h2
+                class="space-font galaxy-text cosmic-glow"
+                style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;"
+              >
+                QUICK DELIVERY – RESERVE YOURS TODAY!
+              </h2>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); margin-bottom: 32px; font-size: 18px; line-height: 1.6;"
+              >
+                Call or message us for new build quotes, current refurbished stock, or to place a
+                custom request.
+              </p>
 
-    <!-- Areas We Serve -->
-    <section class="section-bg main-section" style="padding: 60px 0;">
-      <div class="container" style="text-align: center;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;">
-          NEW & REFURBISHED PCs ACROSS HAVERING
-        </h2>
-        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; margin-bottom: 32px;">
-          We deliver new builds and refurbished systems throughout these areas:
-        </p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
-          <a href="/areas/harold-hill/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green);">Harold Hill</a>
-          <a href="/areas/romford/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Romford</a>
-          <a href="/areas/hornchurch/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Hornchurch</a>
-          <a href="/areas/upminster/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Upminster</a>
-          <a href="/areas/dagenham/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Dagenham</a>
-          <a href="/areas/brentwood/" class="space-button" style="padding: 10px 18px; font-size: 13px;">Brentwood</a>
-          <a href="/areas/" class="space-button" style="padding: 10px 18px; font-size: 13px; background: rgba(124, 58, 237, 0.2); border-color: var(--nebula-purple);">View All Areas →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section id="contact" class="section-bg main-section">
-      <div class="container">
-        <div class="cosmic-card" style="padding: 60px 40px; text-align: center; border: 2px solid var(--aurora-green);">
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px;">
-            QUICK DELIVERY – RESERVE YOURS TODAY!
-          </h2>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 32px; font-size: 18px; line-height: 1.6;">
-            Call or message us for new build quotes, current refurbished stock, or to place a custom request.
-          </p>
-          
-          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
-            <a href="https://wa.me/447971331814" class="space-button space-font" style="background: linear-gradient(135deg, #25d366, #128c7e);">
-              <span>📱</span>
-              WHATSAPP US
-            </a>
-            <a href="/contact/" class="space-button space-font" style="background: linear-gradient(135deg, var(--starlight-white), var(--comet-silver)); color: var(--deep-space);">
-              <span>📧</span>
-              EMAIL US
-            </a>
-            <a href="tel:07971331814" class="space-button space-font" style="background: rgba(6, 182, 212, 0.15); border: 2px solid var(--starlight-white);">
-              <span>📞</span>
-              CALL 07971 331814
-            </a>
+              <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;">
+                <a
+                  href="https://wa.me/447971331814"
+                  class="space-button space-font"
+                  style="background: linear-gradient(135deg, #25d366, #128c7e);"
+                >
+                  <span>📱</span>
+                  WHATSAPP US
+                </a>
+                <a
+                  href="/contact/"
+                  class="space-button space-font"
+                  style="background: linear-gradient(135deg, var(--starlight-white), var(--comet-silver)); color: var(--deep-space);"
+                >
+                  <span>📧</span>
+                  EMAIL US
+                </a>
+                <a
+                  href="tel:07971331814"
+                  class="space-button space-font"
+                  style="background: rgba(6, 182, 212, 0.15); border: 2px solid var(--starlight-white);"
+                >
+                  <span>📞</span>
+                  CALL 07971 331814
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-  </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const faqItems = document.querySelectorAll('.faq-item');
-      
-      faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', function() {
-          const isActive = item.classList.contains('active');
-          
-          // Close all other FAQ items
-          faqItems.forEach(otherItem => {
-            if (otherItem !== item) {
-              otherItem.classList.remove('active');
-            }
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const faqItems = document.querySelectorAll('.faq-item');
+
+          faqItems.forEach((item) => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', function () {
+              const isActive = item.classList.contains('active');
+
+              // Close all other FAQ items
+              faqItems.forEach((otherItem) => {
+                if (otherItem !== item) {
+                  otherItem.classList.remove('active');
+                }
+              });
+
+              // Toggle current item
+              if (isActive) {
+                item.classList.remove('active');
+              } else {
+                item.classList.add('active');
+              }
+            });
           });
-          
-          // Toggle current item
-          if (isActive) {
-            item.classList.remove('active');
-          } else {
-            item.classList.add('active');
+
+          // Auto-open the first (highlighted) FAQ item
+          const highlightedItem = document.querySelector('.faq-highlight');
+          if (highlightedItem) {
+            highlightedItem.classList.add('active');
           }
         });
-      });
-      
-      // Auto-open the first (highlighted) FAQ item
-      const highlightedItem = document.querySelector('.faq-highlight');
-      if (highlightedItem) {
-        highlightedItem.classList.add('active');
-      }
-    });
-  </script>
-</Layout>
+      </script>
+    </section>
+  </main></Layout
+>

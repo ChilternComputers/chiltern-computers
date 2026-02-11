@@ -8,14 +8,20 @@ export interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   noindex?: boolean;
-  breadcrumbs?: Array<{name: string; url: string}>;
-  reviews?: Array<{author: string; location: string; text: string; rating: number; date?: string}>;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  reviews?: Array<{
+    author: string;
+    location: string;
+    text: string;
+    rating: number;
+    date?: string;
+  }>;
 }
 
 const {
   title,
-  description = "Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford. Expert virus removal, data recovery, laptop repair & PC repair services.",
-  image = "/og-image.jpg",
+  description = 'Chiltern Computers - Professional Computer Repair & IT Support in Harold Hill, Romford. Expert virus removal, data recovery, laptop repair & PC repair services.',
+  image = '/og-image.jpg',
   // Enhanced keywords based on high-traffic research
   keywords = "computer repair harold hill, computer repair romford, pc repair near me, laptop repair essex, computer repair services, virus removal romford, data recovery harold hill, computer troubleshooting, laptop screen repair, computer won't start, blue screen repair, computer running slow, macbook repair romford, business IT support essex, same day computer repair, on-site computer repair, emergency computer repair, malware removal, hard drive repair, computer tune-up services",
   type = 'website',
@@ -23,7 +29,7 @@ const {
   modifiedTime,
   noindex = false,
   breadcrumbs = [],
-  reviews = []
+  reviews = [],
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Chiltern` : 'Computer Repair Harold Hill, Romford | Chiltern';
@@ -34,362 +40,371 @@ const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
 // Enhanced structured data with high-traffic service keywords
 const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "ProfessionalService"],
-  "name": "Chiltern Computers",
-  "alternateName": ["Chiltern Computer Repair", "Computer Repair Harold Hill"],
-  "image": [`${baseUrl}/logo_homepage.webp`, `${baseUrl}/logoopengraph.png`],
-  "description": "Professional computer repair and IT support services in Harold Hill, Romford. Specializing in PC repair, laptop repair, virus removal, data recovery, and emergency computer repair services.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "38 Hilldene Avenue",
-    "addressLocality": "Harold Hill",
-    "addressRegion": "Essex",
-    "postalCode": "RM3 8YP",
-    "addressCountry": "GB"
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  name: 'Chiltern Computers',
+  alternateName: ['Chiltern Computer Repair', 'Computer Repair Harold Hill'],
+  image: [`${baseUrl}/logo_homepage.webp`, `${baseUrl}/logoopengraph.png`],
+  description:
+    'Professional computer repair and IT support services in Harold Hill, Romford. Specializing in PC repair, laptop repair, virus removal, data recovery, and emergency computer repair services.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '38 Hilldene Avenue',
+    addressLocality: 'Harold Hill',
+    addressRegion: 'Essex',
+    postalCode: 'RM3 8YP',
+    addressCountry: 'GB',
   },
-  "telephone": ["+447971331814", "+441708347341"],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 51.60589,
-    "longitude": 0.23353
+  telephone: ['+447971331814', '+441708347341'],
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.60589,
+    longitude: 0.23353,
   },
-  "url": baseUrl,
-  "sameAs": [
-    "https://www.facebook.com/chilterncomputers",
-    "https://twitter.com/chilterncomputers"
+  url: baseUrl,
+  sameAs: ['https://www.facebook.com/chilterncomputers', 'https://twitter.com/chilterncomputers'],
+  openingHours: ['Mo-Su 09:00-21:00'],
+  priceRange: '££',
+  paymentAccepted: ['Cash', 'Credit Card', 'Debit Card', 'Bank Transfer'],
+  currenciesAccepted: 'GBP',
+  hasMap: 'https://www.google.com/maps?q=38+Hilldene+Avenue,+Harold+Hill,+Romford,+Essex+RM3+8YP',
+  areaServed: [
+    { '@type': 'City', name: 'Harold Hill' },
+    { '@type': 'City', name: 'Romford' },
+    { '@type': 'City', name: 'Hornchurch' },
+    { '@type': 'City', name: 'Upminster' },
+    { '@type': 'City', name: 'Dagenham' },
+    { '@type': 'City', name: 'Rainham' },
+    { '@type': 'City', name: 'Harold Wood' },
+    { '@type': 'City', name: 'Collier Row' },
+    { '@type': 'City', name: 'Gidea Park' },
+    { '@type': 'City', name: 'Brentwood' },
+    { '@type': 'City', name: 'Elm Park' },
+    { '@type': 'City', name: 'Cranham' },
+    { '@type': 'City', name: 'Emerson Park' },
+    { '@type': 'City', name: 'Chadwell Heath' },
+    { '@type': 'AdministrativeArea', name: 'Havering' },
+    { '@type': 'AdministrativeArea', name: 'Essex' },
   ],
-  "openingHours": [
-    "Mo-Su 09:00-21:00",
-  ],
-  "priceRange": "££",
-  "paymentAccepted": ["Cash", "Credit Card", "Debit Card", "Bank Transfer"],
-  "currenciesAccepted": "GBP",
-  "hasMap": "https://www.google.com/maps?q=38+Hilldene+Avenue,+Harold+Hill,+Romford,+Essex+RM3+8YP",
-  "areaServed": [
-    { "@type": "City", "name": "Harold Hill" },
-    { "@type": "City", "name": "Romford" },
-    { "@type": "City", "name": "Hornchurch" },
-    { "@type": "City", "name": "Upminster" },
-    { "@type": "City", "name": "Dagenham" },
-    { "@type": "City", "name": "Rainham" },
-    { "@type": "City", "name": "Harold Wood" },
-    { "@type": "City", "name": "Collier Row" },
-    { "@type": "City", "name": "Gidea Park" },
-    { "@type": "City", "name": "Brentwood" },
-    { "@type": "City", "name": "Elm Park" },
-    { "@type": "City", "name": "Cranham" },
-    { "@type": "City", "name": "Emerson Park" },
-    { "@type": "City", "name": "Chadwell Heath" },
-    { "@type": "AdministrativeArea", "name": "Havering" },
-    { "@type": "AdministrativeArea", "name": "Essex" }
-  ],
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 51.60589,
-      "longitude": 0.23353
+  serviceArea: {
+    '@type': 'GeoCircle',
+    geoMidpoint: {
+      '@type': 'GeoCoordinates',
+      latitude: 51.60589,
+      longitude: 0.23353,
     },
-    "geoRadius": 10000
+    geoRadius: 10000,
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Computer Repair Services",
-    "itemListElement": [
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Computer Repair Services',
+    itemListElement: [
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Computer Repair Services",
-          "description": "Professional desktop and laptop computer repair services for all brands including Dell, HP, Lenovo, and custom PCs",
-          "serviceType": "Computer Repair"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Computer Repair Services',
+          description:
+            'Professional desktop and laptop computer repair services for all brands including Dell, HP, Lenovo, and custom PCs',
+          serviceType: 'Computer Repair',
+        },
       },
       {
-        "@type": "Offer", 
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Virus Removal & Malware Removal",
-          "description": "Complete virus and malware removal services to restore your computer's performance and security",
-          "serviceType": "Virus Removal"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Virus Removal & Malware Removal',
+          description:
+            "Complete virus and malware removal services to restore your computer's performance and security",
+          serviceType: 'Virus Removal',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service", 
-          "name": "Data Recovery Services",
-          "description": "Professional data recovery from failed hard drives, SSDs, and storage devices with high success rates",
-          "serviceType": "Data Recovery"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Data Recovery Services',
+          description:
+            'Professional data recovery from failed hard drives, SSDs, and storage devices with high success rates',
+          serviceType: 'Data Recovery',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Laptop Screen Repair",
-          "description": "Expert laptop screen replacement and repair services for cracked, damaged, or non-functioning displays",
-          "serviceType": "Screen Repair"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Laptop Screen Repair',
+          description:
+            'Expert laptop screen replacement and repair services for cracked, damaged, or non-functioning displays',
+          serviceType: 'Screen Repair',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Computer Troubleshooting",
-          "description": "Comprehensive computer troubleshooting for issues like blue screen errors, startup problems, and performance issues",
-          "serviceType": "Computer Troubleshooting"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Computer Troubleshooting',
+          description:
+            'Comprehensive computer troubleshooting for issues like blue screen errors, startup problems, and performance issues',
+          serviceType: 'Computer Troubleshooting',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Business IT Support",
-          "description": "Professional IT support services for small and medium businesses including network setup and maintenance",
-          "serviceType": "IT Support"
-        }
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Business IT Support',
+          description:
+            'Professional IT support services for small and medium businesses including network setup and maintenance',
+          serviceType: 'IT Support',
+        },
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Same Day Computer Repair",
-          "description": "Emergency same day computer repair services for urgent business and personal computer issues",
-          "serviceType": "Emergency Repair"
-        }
-      }
-    ]
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Same Day Computer Repair',
+          description:
+            'Emergency same day computer repair services for urgent business and personal computer issues',
+          serviceType: 'Emergency Repair',
+        },
+      },
+    ],
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": 5,
-    "reviewCount": 127,
-    "bestRating": 5,
-    "worstRating": 1
-  }
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 5,
+    reviewCount: 127,
+    bestRating: 5,
+    worstRating: 1,
+  },
 };
 
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Chiltern Computers",
-  "url": baseUrl,
-  "logo": `${baseUrl}/logo_homepage.webp`,
-  "contactPoint": [
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Chiltern Computers',
+  url: baseUrl,
+  logo: `${baseUrl}/logo_homepage.webp`,
+  contactPoint: [
     {
-      "@type": "ContactPoint",
-      "telephone": "+447971331814",
-      "contactType": "customer service",
-      "areaServed": "GB",
-      "availableLanguage": "English",
-      "contactOption": "TollFree"
+      '@type': 'ContactPoint',
+      telephone: '+447971331814',
+      contactType: 'customer service',
+      areaServed: 'GB',
+      availableLanguage: 'English',
+      contactOption: 'TollFree',
     },
     {
-      "@type": "ContactPoint",
-      "telephone": "+441708347341",
-      "contactType": "customer service",
-      "areaServed": "GB",
-      "availableLanguage": "English"
-    }
+      '@type': 'ContactPoint',
+      telephone: '+441708347341',
+      contactType: 'customer service',
+      areaServed: 'GB',
+      availableLanguage: 'English',
+    },
   ],
-  "foundingDate": "2007",
-  "slogan": "Professional Computer Repair & IT Support Services"
+  foundingDate: '2007',
+  slogan: 'Professional Computer Repair & IT Support Services',
 };
 
 const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Chiltern Computers",
-  "alternateName": "Computer Repair Harold Hill",
-  "url": baseUrl,
-  "publisher": {
-    "@type": "Organization",
-    "name": "Chiltern Computers"
-  }
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Chiltern Computers',
+  alternateName: 'Computer Repair Harold Hill',
+  url: baseUrl,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Chiltern Computers',
+  },
 };
 
 // Additional FAQ Schema for high-traffic question keywords
 const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "What computer repair services do you offer in Harold Hill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer comprehensive computer repair services including PC repair, laptop repair, virus removal, data recovery, screen repair, hard drive replacement, and computer troubleshooting for residents and businesses in Harold Hill, Romford, and Havering."
-      }
+      '@type': 'Question',
+      name: 'What computer repair services do you offer in Harold Hill?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We offer comprehensive computer repair services including PC repair, laptop repair, virus removal, data recovery, screen repair, hard drive replacement, and computer troubleshooting for residents and businesses in Harold Hill, Romford, and Havering.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Do you provide same day computer repair services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we offer same day computer repair services for urgent issues. Our experienced engineer can diagnose and repair most computer problems within 24 hours, including virus removal, hardware failures, and software issues."
-      }
+      '@type': 'Question',
+      name: 'Do you provide same day computer repair services?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, we offer same day computer repair services for urgent issues. Our experienced engineer can diagnose and repair most computer problems within 24 hours, including virus removal, hardware failures, and software issues.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Can you fix a computer that won't start?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely! We specialise in diagnosing and repairing computers that won't start, including power supply issues, motherboard problems, hard drive failures, and software corruption. Our diagnostic service will identify the exact cause."
-      }
+      '@type': 'Question',
+      name: "Can you fix a computer that won't start?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Absolutely! We specialise in diagnosing and repairing computers that won't start, including power supply issues, motherboard problems, hard drive failures, and software corruption. Our diagnostic service will identify the exact cause.",
+      },
     },
     {
-      "@type": "Question",
-      "name": "Do you offer on-site computer repair services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, we provide on-site computer repair services for businesses and home users in Harold Hill, Romford, and surrounding Essex areas. This includes network setup, virus removal, and computer maintenance at your location."
-      }
+      '@type': 'Question',
+      name: 'Do you offer on-site computer repair services?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, we provide on-site computer repair services for businesses and home users in Harold Hill, Romford, and surrounding Essex areas. This includes network setup, virus removal, and computer maintenance at your location.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How much does computer repair cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Computer repair costs vary depending on the issue. We offer free diagnostics and provide a quote before any work begins. Typical repairs range from £30 for software fixes to £80+ for hardware replacements. We operate on a no fix, no fee basis - you only pay if we solve the problem."
-      }
+      '@type': 'Question',
+      name: 'How much does computer repair cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Computer repair costs vary depending on the issue. We offer free diagnostics and provide a quote before any work begins. Typical repairs range from £30 for software fixes to £80+ for hardware replacements. We operate on a no fix, no fee basis - you only pay if we solve the problem.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "How long does computer repair take?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most computer repairs are completed within 24-48 hours. Simple fixes like virus removal or software issues can often be done same day. Hardware repairs requiring parts may take 2-3 days depending on availability. We always aim for the fastest turnaround possible."
-      }
+      '@type': 'Question',
+      name: 'How long does computer repair take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most computer repairs are completed within 24-48 hours. Simple fixes like virus removal or software issues can often be done same day. Hardware repairs requiring parts may take 2-3 days depending on availability. We always aim for the fastest turnaround possible.',
+      },
     },
     {
-      "@type": "Question",
-      "name": "Do you offer a warranty on computer repairs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all our computer repairs come with a warranty. Software repairs are covered for 30 days and hardware repairs for 90 days. If the same issue returns within the warranty period, we'll fix it free of charge."
-      }
+      '@type': 'Question',
+      name: 'Do you offer a warranty on computer repairs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes, all our computer repairs come with a warranty. Software repairs are covered for 30 days and hardware repairs for 90 days. If the same issue returns within the warranty period, we'll fix it free of charge.",
+      },
     },
     {
-      "@type": "Question",
-      "name": "What laptop brands do you repair?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We repair all major laptop brands including Dell, HP, Lenovo, Asus, Acer, Toshiba, Samsung, Microsoft Surface, and Apple MacBooks. We also repair custom-built PCs and gaming computers. No matter the brand, we can help."
-      }
-    }
-  ]
+      '@type': 'Question',
+      name: 'What laptop brands do you repair?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We repair all major laptop brands including Dell, HP, Lenovo, Asus, Acer, Toshiba, Samsung, Microsoft Surface, and Apple MacBooks. We also repair custom-built PCs and gaming computers. No matter the brand, we can help.',
+      },
+    },
+  ],
 };
 
 // Standalone Service Schemas for individual service visibility
 const serviceSchemas = [
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Computer Repair",
-    "name": "Computer Repair Services in Harold Hill & Romford",
-    "description": "Professional desktop and laptop computer repair services. We fix PCs that won't start, blue screen errors, slow computers, and hardware failures. Same day service available.",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Chiltern Computers",
-      "telephone": "+447971331814",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "38 Hilldene Avenue",
-        "addressLocality": "Harold Hill",
-        "addressRegion": "Essex",
-        "postalCode": "RM3 8YP",
-        "addressCountry": "GB"
-      }
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Computer Repair',
+    name: 'Computer Repair Services in Harold Hill & Romford',
+    description:
+      "Professional desktop and laptop computer repair services. We fix PCs that won't start, blue screen errors, slow computers, and hardware failures. Same day service available.",
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Chiltern Computers',
+      telephone: '+447971331814',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '38 Hilldene Avenue',
+        addressLocality: 'Harold Hill',
+        addressRegion: 'Essex',
+        postalCode: 'RM3 8YP',
+        addressCountry: 'GB',
+      },
     },
-    "areaServed": {
-      "@type": "GeoCircle",
-      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 51.60589, "longitude": 0.23353 },
-      "geoRadius": "10000"
+    areaServed: {
+      '@type': 'GeoCircle',
+      geoMidpoint: { '@type': 'GeoCoordinates', latitude: 51.60589, longitude: 0.23353 },
+      geoRadius: '10000',
     },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Computer Repair Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PC Repair" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laptop Repair" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hardware Replacement" } }
-      ]
-    }
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Computer Repair Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'PC Repair' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laptop Repair' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hardware Replacement' } },
+      ],
+    },
   },
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Virus Removal",
-    "name": "Virus & Malware Removal in Romford",
-    "description": "Complete virus and malware removal services. We eliminate ransomware, spyware, adware, and all types of malicious software to restore your computer's security and performance.",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Chiltern Computers",
-      "telephone": "+447971331814"
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Virus Removal',
+    name: 'Virus & Malware Removal in Romford',
+    description:
+      "Complete virus and malware removal services. We eliminate ransomware, spyware, adware, and all types of malicious software to restore your computer's security and performance.",
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Chiltern Computers',
+      telephone: '+447971331814',
     },
-    "areaServed": ["Harold Hill", "Romford", "Hornchurch", "Dagenham", "Havering"]
+    areaServed: ['Harold Hill', 'Romford', 'Hornchurch', 'Dagenham', 'Havering'],
   },
   {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Data Recovery",
-    "name": "Data Recovery Services in Essex",
-    "description": "Professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. We recover photos, documents, and business files from damaged or corrupted storage devices.",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Chiltern Computers",
-      "telephone": "+447971331814"
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Data Recovery',
+    name: 'Data Recovery Services in Essex',
+    description:
+      'Professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. We recover photos, documents, and business files from damaged or corrupted storage devices.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Chiltern Computers',
+      telephone: '+447971331814',
     },
-    "areaServed": ["Harold Hill", "Romford", "Essex", "Havering"]
-  }
+    areaServed: ['Harold Hill', 'Romford', 'Essex', 'Havering'],
+  },
 ];
 
 // BreadcrumbList Schema - only render if breadcrumbs provided
-const breadcrumbSchema = breadcrumbs.length > 0 ? {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((crumb, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": crumb.name,
-    "item": `${baseUrl}${crumb.url}`
-  }))
-} : null;
+const breadcrumbSchema =
+  breadcrumbs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbs.map((crumb, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: crumb.name,
+          item: `${baseUrl}${crumb.url}`,
+        })),
+      }
+    : null;
 
 // Review Schema - individual reviews for rich snippets
-const reviewSchemas = reviews.map(review => ({
-  "@context": "https://schema.org",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "LocalBusiness",
-    "name": "Chiltern Computers",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "38 Hilldene Avenue",
-      "addressLocality": "Harold Hill",
-      "addressRegion": "Essex",
-      "postalCode": "RM3 8YP",
-      "addressCountry": "GB"
-    }
+const reviewSchemas = reviews.map((review) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: {
+    '@type': 'LocalBusiness',
+    name: 'Chiltern Computers',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '38 Hilldene Avenue',
+      addressLocality: 'Harold Hill',
+      addressRegion: 'Essex',
+      postalCode: 'RM3 8YP',
+      addressCountry: 'GB',
+    },
   },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": review.rating,
-    "bestRating": 5,
-    "worstRating": 1
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: review.rating,
+    bestRating: 5,
+    worstRating: 1,
   },
-  "author": {
-    "@type": "Person",
-    "name": review.author
+  author: {
+    '@type': 'Person',
+    name: review.author,
   },
-  "reviewBody": review.text,
-  "datePublished": review.date || "2024-12-01",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Chiltern Computers"
-  }
+  reviewBody: review.text,
+  datePublished: review.date || '2024-12-01',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Chiltern Computers',
+  },
 }));
 ---
 
@@ -399,9 +414,20 @@ const reviewSchemas = reviews.map(review => ({
 <meta name="generator" content={Astro.generator} />
 
 <!-- Enhanced robots meta -->
-<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"} />
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta
+  name="robots"
+  content={noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
+/>
+<meta
+  name="googlebot"
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+/>
+<meta
+  name="bingbot"
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalUrl} />
@@ -463,7 +489,6 @@ const reviewSchemas = reviews.map(review => ({
 <meta name="ICBM" content="51.60589, 0.23353" />
 <meta name="DC.title" content={fullTitle} />
 
-
 <!-- Performance optimizations -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -484,6 +509,18 @@ const reviewSchemas = reviews.map(review => ({
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-{serviceSchemas.map(service => <script type="application/ld+json" set:html={JSON.stringify(service)} />)}
-{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-{reviewSchemas.map(review => <script type="application/ld+json" set:html={JSON.stringify(review)} />)}
+{
+  serviceSchemas.map((service) => (
+    <script type="application/ld+json" set:html={JSON.stringify(service)} />
+  ))
+}
+{
+  breadcrumbSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  )
+}
+{
+  reviewSchemas.map((review) => (
+    <script type="application/ld+json" set:html={JSON.stringify(review)} />
+  ))
+}

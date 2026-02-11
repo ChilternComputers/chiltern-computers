@@ -1,32 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const publishDate = "2025-01-23";
-const modifiedDate = "2025-01-23";
-const author = "Chiltern Computers";
-const readTime = "7 min read";
+const publishDate = '2025-01-23';
+const modifiedDate = '2025-01-23';
+const author = 'Chiltern Computers';
+const readTime = '7 min read';
 
 const faqs = [
   {
-    question: "How do I know if my computer is worth repairing?",
-    answer: "Generally, repair is worthwhile if the cost is less than 50% of a replacement and your computer is under 6 years old. Consider your computer's specs too - a 5-year-old PC with good specs and an SSD upgrade can easily last another 3-4 years. A local technician can give you honest advice based on the specific problem."
+    question: 'How do I know if my computer is worth repairing?',
+    answer:
+      "Generally, repair is worthwhile if the cost is less than 50% of a replacement and your computer is under 6 years old. Consider your computer's specs too - a 5-year-old PC with good specs and an SSD upgrade can easily last another 3-4 years. A local technician can give you honest advice based on the specific problem.",
   },
   {
-    question: "What repairs are usually worth doing?",
-    answer: "SSD upgrades, RAM upgrades, screen replacements on newer laptops, keyboard repairs, virus removal, and battery replacements are almost always worth doing. These fixes breathe new life into computers at a fraction of replacement cost. Power jack repairs and motherboard issues on older machines may not be cost-effective."
+    question: 'What repairs are usually worth doing?',
+    answer:
+      'SSD upgrades, RAM upgrades, screen replacements on newer laptops, keyboard repairs, virus removal, and battery replacements are almost always worth doing. These fixes breathe new life into computers at a fraction of replacement cost. Power jack repairs and motherboard issues on older machines may not be cost-effective.',
   },
   {
-    question: "When should I definitely replace instead of repair?",
-    answer: "Replace if: your computer is over 8 years old, repair costs exceed 50% of a new equivalent, it has multiple failing components, or it can't run the software you need. Also consider replacement if the motherboard fails on an older laptop - this repair often costs more than the computer is worth."
+    question: 'When should I definitely replace instead of repair?',
+    answer:
+      "Replace if: your computer is over 8 years old, repair costs exceed 50% of a new equivalent, it has multiple failing components, or it can't run the software you need. Also consider replacement if the motherboard fails on an older laptop - this repair often costs more than the computer is worth.",
   },
   {
-    question: "How much does computer repair cost in Romford?",
-    answer: "Typical repair costs in Romford: virus removal £40-60, SSD upgrade £80-120, screen replacement £100-180, keyboard replacement £60-100, RAM upgrade £40-80. At Chiltern Computers, we charge a small diagnostic fee - if we fix the issue during the diagnostic, that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed."
+    question: 'How much does computer repair cost in Romford?',
+    answer:
+      "Typical repair costs in Romford: virus removal £40-60, SSD upgrade £80-120, screen replacement £100-180, keyboard replacement £60-100, RAM upgrade £40-80. At Chiltern Computers, we charge a small diagnostic fee - if we fix the issue during the diagnostic, that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed.",
   },
   {
-    question: "Should I repair a laptop or desktop?",
-    answer: "Desktops are generally more economical to repair due to standard parts and easier access. Laptops can be worth repairing if under 5 years old, especially for common fixes like SSDs, RAM, or batteries. Specialist laptop repairs (hinges, motherboards) on older machines may not be cost-effective."
-  }
+    question: 'Should I repair a laptop or desktop?',
+    answer:
+      'Desktops are generally more economical to repair due to standard parts and easier access. Laptops can be worth repairing if under 5 years old, especially for common fixes like SSDs, RAM, or batteries. Specialist laptop repairs (hinges, motherboards) on older machines may not be cost-effective.',
+  },
 ];
 ---
 
@@ -36,8 +41,14 @@ const faqs = [
   keywords="is my computer worth repairing, computer repair or replace romford, should i fix my laptop, repair vs new computer essex, computer repair cost romford, laptop repair worth it havering, fix or replace pc harold hill, computer repair advice romford"
 >
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
     :root {
       --cosmic-blue: #1e3a8a;
@@ -52,24 +63,49 @@ const faqs = [
       --mars-red: #dc2626;
     }
 
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
 
     @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
     }
 
     @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
     .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       background-size: 200% 200%;
       animation: galaxy-flow 4s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -115,7 +151,8 @@ const faqs = [
       margin-bottom: 20px;
     }
 
-    .article-content ul, .article-content ol {
+    .article-content ul,
+    .article-content ol {
       margin: 20px 0;
       padding-left: 24px;
     }
@@ -273,12 +310,22 @@ const faqs = [
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 16px; }
-      .article-content { font-size: 16px; }
-      .article-meta { gap: 16px; }
-      .cost-table { font-size: 13px; }
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .article-meta {
+        gap: 16px;
+      }
+      .cost-table {
+        font-size: 13px;
+      }
       .cost-table th,
-      .cost-table td { padding: 10px 12px; }
+      .cost-table td {
+        padding: 10px 12px;
+      }
     }
   </style>
 
@@ -294,41 +341,120 @@ const faqs = [
           <span>Repair vs Replace</span>
         </nav>
 
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--aurora-green); margin-bottom: 24px;">
-          <span class="tech-font" style="color: var(--aurora-green); font-size: 12px;">BUYING GUIDE</span>
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--aurora-green); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--aurora-green); font-size: 12px;"
+            >BUYING GUIDE</span
+          >
         </div>
 
-        <h1 class="space-font" style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;">
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
           Is My Computer Worth Repairing? Honest Advice for Romford Residents
         </h1>
 
-        <p class="alien-font" style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;">
-          Not sure whether to repair your computer or buy a new one? Local experts in Harold Hill share honest guidance on when repair makes sense and when replacement is the smarter choice.
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Not sure whether to repair your computer or buy a new one? Local experts in Harold Hill
+          share honest guidance on when repair makes sense and when replacement is the smarter
+          choice.
         </p>
 
         <div class="article-meta tech-font">
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
-            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
           </div>
           <div class="meta-item" style="color: var(--aurora-green);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span>Updated: {new Date(modifiedDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+            <span
+              >Updated: {
+                new Date(modifiedDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span>{readTime}</span>
           </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             <span>Romford, Essex</span>
           </div>
@@ -341,62 +467,110 @@ const faqs = [
       <div class="container">
         <article class="article-content alien-font">
           <p>
-            Your computer's playing up and you're facing the classic dilemma: <strong>repair it or replace it?</strong> It's a question we hear every day at our shop in Harold Hill, and the honest answer is - it depends. But this guide will help you make the right decision for your situation and budget.
+            Your computer's playing up and you're facing the classic dilemma: <strong
+              >repair it or replace it?</strong
+            > It's a question we hear every day at our shop in Harold Hill, and the honest answer is -
+            it depends. But this guide will help you make the right decision for your situation and budget.
           </p>
 
           <p>
-            The good news? Many computers that people assume are "finished" can actually be brought back to life with affordable repairs. The trick is knowing which repairs are worthwhile and which aren't.
+            The good news? Many computers that people assume are "finished" can actually be brought
+            back to life with affordable repairs. The trick is knowing which repairs are worthwhile
+            and which aren't.
           </p>
 
           <h2 class="space-font">The 50% Rule: A Good Starting Point</h2>
 
           <p>
-            Here's a simple rule of thumb used by repair shops across Romford and beyond: <strong>if the repair cost exceeds 50% of what a suitable replacement would cost, consider replacing instead.</strong>
+            Here's a simple rule of thumb used by repair shops across Romford and beyond: <strong
+              >if the repair cost exceeds 50% of what a suitable replacement would cost, consider
+              replacing instead.</strong
+            >
           </p>
 
-          <p>
-            But this rule has important exceptions:
-          </p>
+          <p>But this rule has important exceptions:</p>
 
           <ul>
-            <li><strong>Age matters:</strong> A 3-year-old laptop is worth more investment than a 7-year-old one</li>
-            <li><strong>Specs matter:</strong> A high-spec older machine may still outperform a budget new one</li>
-            <li><strong>Your data matters:</strong> Sometimes a repair is faster than setting up a new computer</li>
-            <li><strong>Environmental impact:</strong> Repairing is always more eco-friendly than replacing</li>
+            <li>
+              <strong>Age matters:</strong> A 3-year-old laptop is worth more investment than a 7-year-old
+              one
+            </li>
+            <li>
+              <strong>Specs matter:</strong> A high-spec older machine may still outperform a budget new
+              one
+            </li>
+            <li>
+              <strong>Your data matters:</strong> Sometimes a repair is faster than setting up a new computer
+            </li>
+            <li>
+              <strong>Environmental impact:</strong> Repairing is always more eco-friendly than replacing
+            </li>
           </ul>
 
           <h2 class="space-font">Repairs That Are Almost Always Worth It</h2>
 
           <div class="decision-box">
-            <h3 class="space-font" style="color: var(--aurora-green); margin-top: 0;">Recommend Repair</h3>
+            <h3 class="space-font" style="color: var(--aurora-green); margin-top: 0;">
+              Recommend Repair
+            </h3>
             <ul style="margin-bottom: 0;">
-              <li><strong>SSD upgrade:</strong> The single best upgrade for any computer. Makes old machines feel new again. £80-120.</li>
-              <li><strong>RAM upgrade:</strong> If you have less than 8GB, this is an easy win. £40-80.</li>
-              <li><strong>Virus/malware removal:</strong> Almost always cheaper than replacement. £40-60.</li>
-              <li><strong>Battery replacement (laptops):</strong> Extends laptop life by years. £50-100.</li>
-              <li><strong>Keyboard replacement:</strong> Common laptop fix, very worthwhile. £60-100.</li>
-              <li><strong>Windows reinstallation:</strong> Fixes most software problems. £40-60.</li>
-              <li><strong>Overheating fixes:</strong> Cleaning and thermal paste can add years of life. £40-60.</li>
+              <li>
+                <strong>SSD upgrade:</strong> The single best upgrade for any computer. Makes old machines
+                feel new again. £80-120.
+              </li>
+              <li>
+                <strong>RAM upgrade:</strong> If you have less than 8GB, this is an easy win. £40-80.
+              </li>
+              <li>
+                <strong>Virus/malware removal:</strong> Almost always cheaper than replacement. £40-60.
+              </li>
+              <li>
+                <strong>Battery replacement (laptops):</strong> Extends laptop life by years. £50-100.
+              </li>
+              <li>
+                <strong>Keyboard replacement:</strong> Common laptop fix, very worthwhile. £60-100.
+              </li>
+              <li>
+                <strong>Windows reinstallation:</strong> Fixes most software problems. £40-60.
+              </li>
+              <li>
+                <strong>Overheating fixes:</strong> Cleaning and thermal paste can add years of life.
+                £40-60.
+              </li>
             </ul>
           </div>
 
           <h2 class="space-font">Repairs That Might Not Be Worth It</h2>
 
           <div class="decision-box replace">
-            <h3 class="space-font" style="color: var(--mars-red); margin-top: 0;">Consider Replacement</h3>
+            <h3 class="space-font" style="color: var(--mars-red); margin-top: 0;">
+              Consider Replacement
+            </h3>
             <ul style="margin-bottom: 0;">
-              <li><strong>Motherboard failure (older laptops):</strong> Often costs £150-300+ and may not last</li>
-              <li><strong>Liquid damage:</strong> Unpredictable - may have multiple failing components</li>
-              <li><strong>Screen + other damage:</strong> Multiple repairs on one machine add up fast</li>
-              <li><strong>Very old machines (8+ years):</strong> May struggle with modern software regardless</li>
-              <li><strong>Broken hinges + chassis:</strong> Often indicates a laptop has had hard use</li>
+              <li>
+                <strong>Motherboard failure (older laptops):</strong> Often costs £150-300+ and may not
+                last
+              </li>
+              <li>
+                <strong>Liquid damage:</strong> Unpredictable - may have multiple failing components
+              </li>
+              <li>
+                <strong>Screen + other damage:</strong> Multiple repairs on one machine add up fast
+              </li>
+              <li>
+                <strong>Very old machines (8+ years):</strong> May struggle with modern software regardless
+              </li>
+              <li>
+                <strong>Broken hinges + chassis:</strong> Often indicates a laptop has had hard use
+              </li>
             </ul>
           </div>
 
           <h2 class="space-font">Typical Repair Costs in Romford & Essex</h2>
 
           <p>
-            Here's what you can expect to pay at reputable repair shops in Romford, Harold Hill, and the surrounding areas:
+            Here's what you can expect to pay at reputable repair shops in Romford, Harold Hill, and
+            the surrounding areas:
           </p>
 
           <table class="cost-table">
@@ -452,31 +626,51 @@ const faqs = [
           </table>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Pro Tip:</strong> Always get a diagnostic first. At Chiltern Computers, we charge a small diagnostic fee - and if we fix the problem during the diagnostic, that's all you pay. For more complex repairs, we'll quote you and waive the diagnostic fee if you go ahead with the repair.</p>
+            <p style="margin: 0;">
+              <strong>Pro Tip:</strong> Always get a diagnostic first. At Chiltern Computers, we charge
+              a small diagnostic fee - and if we fix the problem during the diagnostic, that's all you
+              pay. For more complex repairs, we'll quote you and waive the diagnostic fee if you go ahead
+              with the repair.
+            </p>
           </div>
 
           <h2 class="space-font">Questions to Ask Yourself</h2>
 
-          <p>
-            Before deciding on repair vs replacement, consider:
-          </p>
+          <p>Before deciding on repair vs replacement, consider:</p>
 
           <ol>
-            <li><strong>How old is the computer?</strong> Under 5 years = probably repair. Over 8 years = probably replace.</li>
-            <li><strong>What are the specs?</strong> A 5-year-old i7 with 16GB RAM is still a capable machine.</li>
-            <li><strong>Is this the only problem?</strong> Multiple issues suggest the machine is wearing out.</li>
-            <li><strong>What do you use it for?</strong> Basic use doesn't need the latest hardware.</li>
-            <li><strong>What's your budget?</strong> Sometimes a refurbished PC is better value than an expensive repair.</li>
+            <li>
+              <strong>How old is the computer?</strong> Under 5 years = probably repair. Over 8 years
+              = probably replace.
+            </li>
+            <li>
+              <strong>What are the specs?</strong> A 5-year-old i7 with 16GB RAM is still a capable machine.
+            </li>
+            <li>
+              <strong>Is this the only problem?</strong> Multiple issues suggest the machine is wearing
+              out.
+            </li>
+            <li>
+              <strong>What do you use it for?</strong> Basic use doesn't need the latest hardware.
+            </li>
+            <li>
+              <strong>What's your budget?</strong> Sometimes a refurbished PC is better value than an
+              expensive repair.
+            </li>
           </ol>
 
           <h2 class="space-font">The Refurbished Option</h2>
 
           <p>
-            If repair doesn't make sense but a brand-new computer seems excessive, consider <strong>refurbished business computers</strong>. These are ex-corporate machines that have been professionally restored.
+            If repair doesn't make sense but a brand-new computer seems excessive, consider <strong
+              >refurbished business computers</strong
+            >. These are ex-corporate machines that have been professionally restored.
           </p>
 
           <p>
-            Many of our customers in Romford and Harold Hill are surprised to learn they can get a reliable, fast refurbished PC with an SSD for £150-250 - often better specs than a budget new machine at the same price.
+            Many of our customers in Romford and Harold Hill are surprised to learn they can get a
+            reliable, fast refurbished PC with an SSD for £150-250 - often better specs than a
+            budget new machine at the same price.
           </p>
 
           <p>
@@ -486,46 +680,91 @@ const faqs = [
           <h2 class="space-font">Frequently Asked Questions</h2>
 
           <div class="faq-section">
-            {faqs.map((faq, index) => (
-              <div class="faq-item">
-                <div class="faq-question space-font">
-                  <span>{faq.question}</span>
+            {
+              faqs.map((faq, index) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
                 </div>
-                <div class="faq-answer alien-font">
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <h2 class="space-font">Get Honest Advice</h2>
 
           <p>
-            At Chiltern Computers in Harold Hill, we pride ourselves on giving honest recommendations. We'll never push an expensive repair when replacement makes more sense, and we'll never try to sell you a new computer when a simple fix would do.
+            At Chiltern Computers in Harold Hill, we pride ourselves on giving honest
+            recommendations. We'll never push an expensive repair when replacement makes more sense,
+            and we'll never try to sell you a new computer when a simple fix would do.
           </p>
 
           <p>
-            Bring your computer in for a <strong>diagnostic</strong> and we'll tell you exactly what's wrong, what it would cost to fix, and whether we think it's worth it. We charge a small fee for diagnostics, but if we fix the issue during the diagnostic, that's all you pay. If you proceed with a quoted repair, the diagnostic fee is waived.
+            Bring your computer in for a <strong>diagnostic</strong> and we'll tell you exactly what's
+            wrong, what it would cost to fix, and whether we think it's worth it. We charge a small fee
+            for diagnostics, but if we fix the issue during the diagnostic, that's all you pay. If you
+            proceed with a quoted repair, the diagnostic fee is waived.
           </p>
 
           <p>
-            Serving Romford, Harold Hill, Hornchurch, Upminster, Dagenham, and all of Havering and Essex.
+            Serving Romford, Harold Hill, Hornchurch, Upminster, Dagenham, and all of Havering and
+            Essex.
           </p>
 
           <!-- Author Bio -->
-          <div style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;">
-            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <div>
-              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">David Hagon</div>
-              <p style="margin: 0; font-size: 15px; line-height: 1.6;">Computer repair specialist and founder of Chiltern Computers in Harold Hill. With years of experience fixing PCs and laptops across Romford and Havering, I pride myself on honest advice and transparent pricing - I'll always tell you if a repair isn't worth it.</p>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. With
+                years of experience fixing PCs and laptops across Romford and Havering, I pride
+                myself on honest advice and transparent pricing - I'll always tell you if a repair
+                isn't worth it.
+              </p>
               <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Us</a>
-                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
-                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews ★★★★★</a>
+                <a
+                  href="/about/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >About Us</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews ★★★★★</a
+                >
               </div>
             </div>
           </div>
@@ -534,53 +773,123 @@ const faqs = [
             <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
               Not Sure What to Do?
             </h3>
-            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
-              Get a diagnostic at Chiltern Computers - small fee waived if you proceed with repair. We'll give you honest advice on whether repair or replacement is right for you.
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              Get a diagnostic at Chiltern Computers - small fee waived if you proceed with repair.
+              We'll give you honest advice on whether repair or replacement is right for you.
             </p>
             <a href="/contact/" class="space-button space-font">
               Book Diagnostic
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
           </div>
 
           <!-- Related Services -->
-          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Our Services</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-              <a href="/services/repairs/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">Computer Repairs</div>
+          <div
+            style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Our Services
+            </h3>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"
+            >
+              <a
+                href="/services/repairs/"
+                style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">
+                  Computer Repairs
+                </div>
               </a>
-              <a href="/services/new-used/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">Refurbished PCs</div>
+              <a
+                href="/services/new-used/"
+                style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">
+                  Refurbished PCs
+                </div>
               </a>
-              <a href="/contact/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">Book Diagnostic</div>
+              <a
+                href="/contact/"
+                style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">
+                  Book Diagnostic
+                </div>
               </a>
             </div>
           </div>
 
           <!-- Related Articles -->
-          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Related Articles</h3>
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
             <div style="display: grid; gap: 16px;">
-              <a href="/blog/why-laptop-running-slow-romford-guide/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/why-laptop-running-slow-romford-guide/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Why Your Laptop is Running Slow - Romford Tech Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">10 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Why Your Laptop is Running Slow - Romford Tech Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    10 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/upgrade-old-pc-windows-11-unsupported/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/upgrade-old-pc-windows-11-unsupported/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Windows 11 Upgrade for Old PCs in Romford & Essex</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Windows 11 Upgrade for Old PCs in Romford & Essex
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/best-computer-repair-near-romford/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/best-computer-repair-near-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Best Computer Repair Near Romford - Local Expert Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Best Computer Repair Near Romford - Local Expert Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
             </div>
@@ -591,43 +900,50 @@ const faqs = [
   </main>
 
   <!-- FAQ Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
 
   <!-- Article Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Is My Computer Worth Repairing? Romford Expert Advice 2025",
-    "description": "Wondering whether to repair or replace your computer in Romford? Local experts share honest advice on when repair makes sense, typical costs, and what to consider before deciding.",
-    "image": "https://chilterncomputers.co.uk/repair-pic.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Chiltern Computers"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Chiltern Computers",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://chilterncomputers.co.uk/logo_homepage.webp"
-      }
-    },
-    "datePublished": publishDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://chilterncomputers.co.uk/blog/is-my-computer-worth-repairing-romford/"
-    }
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Is My Computer Worth Repairing? Romford Expert Advice 2025',
+      description:
+        'Wondering whether to repair or replace your computer in Romford? Local experts share honest advice on when repair makes sense, typical costs, and what to consider before deciding.',
+      image: 'https://chilterncomputers.co.uk/repair-pic.webp',
+      author: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://chilterncomputers.co.uk/logo_homepage.webp',
+        },
+      },
+      datePublished: publishDate,
+      dateModified: modifiedDate,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://chilterncomputers.co.uk/blog/is-my-computer-worth-repairing-romford/',
+      },
+    })}
+  />
 </Layout>

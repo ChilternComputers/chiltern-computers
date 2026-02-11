@@ -2,32 +2,54 @@
 import Layout from '../../layouts/Layout.astro';
 
 const reviews = [
-  { author: "James T.", location: "Romford", text: "Built me an amazing gaming PC that runs everything at max settings. Incredible value!", rating: 5, date: "2024-11-08" },
-  { author: "Sarah K.", location: "Harold Hill", text: "Perfect work PC for my home office. Fast, quiet, and exactly what I needed.", rating: 5, date: "2024-10-15" },
-  { author: "Omar A.", location: "Brentwood", text: "Outstanding customer service and technical expertise. My content creation rig is absolutely perfect for streaming and video editing!", rating: 5, date: "2024-09-22" }
+  {
+    author: 'James T.',
+    location: 'Romford',
+    text: 'Built me an amazing gaming PC that runs everything at max settings. Incredible value!',
+    rating: 5,
+    date: '2024-11-08',
+  },
+  {
+    author: 'Sarah K.',
+    location: 'Harold Hill',
+    text: 'Perfect work PC for my home office. Fast, quiet, and exactly what I needed.',
+    rating: 5,
+    date: '2024-10-15',
+  },
+  {
+    author: 'Omar A.',
+    location: 'Brentwood',
+    text: 'Outstanding customer service and technical expertise. My content creation rig is absolutely perfect for streaming and video editing!',
+    rating: 5,
+    date: '2024-09-22',
+  },
 ];
 ---
 
 <Layout
   title="Custom Gaming Rigs in Havering"
   description="Custom built gaming PCs in Harold Hill & Romford. High-performance desktops for gaming, work & school. Call 07971 331814."
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Custom PCs", url: "/services/custom-pcs/" }]}
-  reviews={reviews}>
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Custom PCs', url: '/services/custom-pcs/' },
+  ]}
+  reviews={reviews}
+>
   <style>
-    
     /* RESET & BASE */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
-    html, body {
+
+    html,
+    body {
       overflow-x: hidden;
       width: 100%;
       scroll-behavior: smooth;
     }
-    
+
     :root {
       /* Elden Ring Nightreign Inspired Palette */
       --nightreign-gold: #d4af37;
@@ -43,47 +65,89 @@ const reviews = [
       --rune-glow: #fcd34d;
       --blood-red: #dc2626;
     }
-    
+
     /* FONTS */
-    .rune-font { font-family: 'Orbitron', sans-serif; font-weight: 700; }
-    .tarnished-font { font-family: 'Exo 2', sans-serif; }
-    .grace-font { font-family: 'Space Mono', monospace; }
-    
+    .rune-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+    }
+    .tarnished-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .grace-font {
+      font-family: 'Space Mono', monospace;
+    }
+
     /* KEYFRAME ANIMATIONS */
     @keyframes grace-flicker {
-      0%, 100% {
-        text-shadow: 0 0 5px var(--rune-glow), 0 0 10px var(--nightreign-gold);
+      0%,
+      100% {
+        text-shadow:
+          0 0 5px var(--rune-glow),
+          0 0 10px var(--nightreign-gold);
         opacity: 1;
       }
       50% {
-        text-shadow: 0 0 8px var(--rune-glow), 0 0 15px var(--nightreign-gold);
+        text-shadow:
+          0 0 8px var(--rune-glow),
+          0 0 15px var(--nightreign-gold);
         opacity: 1;
       }
     }
-    
+
     @keyframes rune-circle {
-      0% { transform: rotate(0deg) scale(1); }
-      25% { transform: rotate(90deg) scale(1.05); }
-      50% { transform: rotate(180deg) scale(1); }
-      75% { transform: rotate(270deg) scale(0.95); }
-      100% { transform: rotate(360deg) scale(1); }
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      25% {
+        transform: rotate(90deg) scale(1.05);
+      }
+      50% {
+        transform: rotate(180deg) scale(1);
+      }
+      75% {
+        transform: rotate(270deg) scale(0.95);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
     }
-    
+
     @keyframes ember-float {
-      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.7; }
-      25% { transform: translateY(-15px) translateX(5px); opacity: 1; }
-      50% { transform: translateY(-8px) translateX(-3px); opacity: 0.8; }
-      75% { transform: translateY(-20px) translateX(8px); opacity: 0.9; }
+      0%,
+      100% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0.7;
+      }
+      25% {
+        transform: translateY(-15px) translateX(5px);
+        opacity: 1;
+      }
+      50% {
+        transform: translateY(-8px) translateX(-3px);
+        opacity: 0.8;
+      }
+      75% {
+        transform: translateY(-20px) translateX(8px);
+        opacity: 0.9;
+      }
     }
-    
+
     @keyframes nightfall-sweep {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
-    
+
     @keyframes co-op-pulse {
-      0%, 100% {
+      0%,
+      100% {
         box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.3);
         transform: scale(1);
       }
@@ -92,31 +156,48 @@ const reviews = [
         transform: scale(1.005);
       }
     }
-    
+
     @keyframes tarnished-glow {
-      0%, 100% { filter: drop-shadow(0 0 5px var(--nightreign-gold)); }
-      50% { filter: drop-shadow(0 0 15px var(--rune-glow)) drop-shadow(0 0 25px var(--grace-yellow)); }
+      0%,
+      100% {
+        filter: drop-shadow(0 0 5px var(--nightreign-gold));
+      }
+      50% {
+        filter: drop-shadow(0 0 15px var(--rune-glow)) drop-shadow(0 0 25px var(--grace-yellow));
+      }
     }
-    
+
     @keyframes button-shine {
-      0% { left: -100%; }
-      100% { left: 100%; }
+      0% {
+        left: -100%;
+      }
+      100% {
+        left: 100%;
+      }
     }
-    
+
     /* SHARED UTILITY CLASSES */
-    .grace-glow { animation: grace-flicker 3s ease-in-out infinite; }
+    .grace-glow {
+      animation: grace-flicker 3s ease-in-out infinite;
+    }
     .rune-text {
-      background: linear-gradient(135deg, var(--nightreign-gold), var(--grace-yellow), var(--tarnished-bronze), var(--rune-glow));
+      background: linear-gradient(
+        135deg,
+        var(--nightreign-gold),
+        var(--grace-yellow),
+        var(--tarnished-bronze),
+        var(--rune-glow)
+      );
       background-size: 300% 300%;
       animation: nightfall-sweep 8s ease-in-out infinite;
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
+
     /* GLOBAL BACKGROUND */
     body {
-      background: 
+      background:
         radial-gradient(ellipse at 15% 25%, rgba(88, 28, 135, 0.2) 0%, transparent 50%),
         radial-gradient(ellipse at 85% 75%, rgba(30, 64, 175, 0.15) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 10%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
@@ -126,14 +207,14 @@ const reviews = [
       animation: nightfall-sweep 45s ease-in-out infinite;
       min-height: 100vh;
     }
-    
+
     /* CONTAINER */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    
+
     /* HERO SECTION */
     .hero {
       min-height: 100vh;
@@ -147,7 +228,7 @@ const reviews = [
       /* Fixed padding for header space */
       padding-top: 120px; /* Account for header + trust banner */
     }
-    
+
     .hero::before {
       content: '';
       position: absolute;
@@ -155,14 +236,19 @@ const reviews = [
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         url('/eldon.webp') center/cover no-repeat,
-        linear-gradient(135deg, rgba(12, 10, 9, 0.8) 0%, rgba(68, 64, 60, 0.6) 50%, rgba(12, 10, 9, 0.9) 100%);
+        linear-gradient(
+          135deg,
+          rgba(12, 10, 9, 0.8) 0%,
+          rgba(68, 64, 60, 0.6) 50%,
+          rgba(12, 10, 9, 0.9) 100%
+        );
       background-blend-mode: overlay;
       animation: nightfall-sweep 35s ease-in-out infinite reverse;
       filter: brightness(0.7) contrast(1.1) saturate(1.2);
     }
-    
+
     .hero::after {
       content: '';
       position: absolute;
@@ -170,14 +256,14 @@ const reviews = [
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
         radial-gradient(circle at 70% 70%, rgba(251, 191, 36, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(234, 88, 12, 0.12) 0%, transparent 70%);
       animation: nightfall-sweep 40s ease-in-out infinite;
       z-index: 1;
     }
-    
+
     .hero-content {
       position: relative;
       z-index: 3;
@@ -187,17 +273,17 @@ const reviews = [
       border-radius: 20px;
       padding: 40px 32px;
       border: 2px solid rgba(212, 175, 55, 0.4);
-      box-shadow: 
+      box-shadow:
         0 20px 40px rgba(0, 0, 0, 0.5),
         0 0 50px rgba(212, 175, 55, 0.2);
     }
-    
+
     .hero-title {
       font-size: clamp(40px, 10vw, 80px);
       line-height: 1.1;
       margin-bottom: 24px;
     }
-    
+
     .hero-subtitle {
       font-size: clamp(18px, 4vw, 24px);
       color: var(--silver-light);
@@ -205,7 +291,7 @@ const reviews = [
       line-height: 1.4;
       animation: ember-float 8s ease-in-out infinite;
     }
-    
+
     /* FLOATING RUNES */
     .floating-runes {
       position: absolute;
@@ -217,7 +303,7 @@ const reviews = [
       overflow: hidden;
       z-index: 2;
     }
-    
+
     .floating-rune {
       position: absolute;
       font-size: 32px;
@@ -225,23 +311,53 @@ const reviews = [
       animation: ember-float 12s ease-in-out infinite;
       filter: drop-shadow(0 0 8px currentColor);
     }
-    
-    .floating-rune:nth-child(1) { top: 15%; left: 12%; animation-delay: 0s; color: var(--nightreign-gold); }
-    .floating-rune:nth-child(2) { top: 65%; right: 18%; animation-delay: 3s; color: var(--grace-yellow); }
-    .floating-rune:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 6s; color: var(--tarnished-bronze); }
-    .floating-rune:nth-child(4) { top: 35%; right: 30%; animation-delay: 9s; color: var(--ember-orange); }
-    .floating-rune:nth-child(5) { top: 80%; left: 60%; animation-delay: 1.5s; color: var(--frost-cyan); }
-    
+
+    .floating-rune:nth-child(1) {
+      top: 15%;
+      left: 12%;
+      animation-delay: 0s;
+      color: var(--nightreign-gold);
+    }
+    .floating-rune:nth-child(2) {
+      top: 65%;
+      right: 18%;
+      animation-delay: 3s;
+      color: var(--grace-yellow);
+    }
+    .floating-rune:nth-child(3) {
+      bottom: 25%;
+      left: 25%;
+      animation-delay: 6s;
+      color: var(--tarnished-bronze);
+    }
+    .floating-rune:nth-child(4) {
+      top: 35%;
+      right: 30%;
+      animation-delay: 9s;
+      color: var(--ember-orange);
+    }
+    .floating-rune:nth-child(5) {
+      top: 80%;
+      left: 60%;
+      animation-delay: 1.5s;
+      color: var(--frost-cyan);
+    }
+
     /* SERVICES SHOWCASE */
     .services-showcase {
       padding: 80px 20px;
       position: relative;
-      background: 
+      background:
         url('/eldon.webp') center/cover no-repeat fixed,
-        linear-gradient(135deg, rgba(12, 10, 9, 0.95) 0%, rgba(68, 64, 60, 0.9) 50%, rgba(12, 10, 9, 0.95) 100%);
+        linear-gradient(
+          135deg,
+          rgba(12, 10, 9, 0.95) 0%,
+          rgba(68, 64, 60, 0.9) 50%,
+          rgba(12, 10, 9, 0.95) 100%
+        );
       background-blend-mode: overlay;
     }
-    
+
     .services-showcase::before {
       content: '';
       position: absolute;
@@ -249,12 +365,12 @@ const reviews = [
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
         radial-gradient(ellipse at 80% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 60%);
       animation: nightfall-sweep 50s ease-in-out infinite;
     }
-    
+
     .showcase-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -262,7 +378,7 @@ const reviews = [
       position: relative;
       z-index: 2;
     }
-    
+
     .service-card {
       background: linear-gradient(145deg, rgba(15, 12, 10, 0.98), rgba(25, 22, 20, 0.95));
       border: 2px solid rgba(212, 175, 55, 0.4);
@@ -288,7 +404,7 @@ const reviews = [
       pointer-events: none;
       transition: opacity 0.4s ease;
     }
-    
+
     .service-card:hover {
       transform: translateY(-8px) scale(1.01);
       box-shadow:
@@ -308,7 +424,7 @@ const reviews = [
     .service-card:hover .service-description {
       color: #ffffff;
     }
-    
+
     /* SERVICE ICONS */
     .service-icon {
       width: 90px;
@@ -324,64 +440,70 @@ const reviews = [
       border: 3px solid currentColor;
       box-shadow: 0 0 20px currentColor;
     }
-    
+
     .service-card:hover .service-icon {
       animation-play-state: paused;
       transform: scale(1.1);
     }
-    
+
     .service-title {
       font-size: 26px;
       margin-bottom: 18px;
       line-height: 1.2;
     }
-    
+
     .service-description {
       color: var(--silver-light);
       margin-bottom: 32px;
       line-height: 1.6;
       font-size: 16px;
     }
-    
+
     /* SERVICE THEMES */
-    .gaming { --theme-color: var(--blood-red); }
-    .gaming .service-icon { 
-      background: rgba(220, 38, 38, 0.3); 
+    .gaming {
+      --theme-color: var(--blood-red);
+    }
+    .gaming .service-icon {
+      background: rgba(220, 38, 38, 0.3);
       color: var(--blood-red);
       box-shadow: 0 0 25px rgba(220, 38, 38, 0.6);
     }
-    
-    .office { --theme-color: var(--frost-cyan); }
-    .office .service-icon { 
-      background: rgba(8, 145, 178, 0.3); 
+
+    .office {
+      --theme-color: var(--frost-cyan);
+    }
+    .office .service-icon {
+      background: rgba(8, 145, 178, 0.3);
       color: var(--frost-cyan);
       box-shadow: 0 0 25px rgba(8, 145, 178, 0.6);
     }
-    
-    .student { --theme-color: var(--grace-yellow); }
-    .student .service-icon { 
-      background: rgba(251, 191, 36, 0.3); 
+
+    .student {
+      --theme-color: var(--grace-yellow);
+    }
+    .student .service-icon {
+      background: rgba(251, 191, 36, 0.3);
       color: var(--grace-yellow);
       box-shadow: 0 0 25px rgba(251, 191, 36, 0.6);
     }
-    
+
     /* SECTION STYLING */
     .section {
       padding: 80px 20px;
       position: relative;
     }
-    
+
     .section-header {
       text-align: center;
       margin-bottom: 60px;
     }
-    
+
     .section-title {
       font-size: clamp(28px, 6vw, 44px);
       margin-bottom: 16px;
       line-height: 1.2;
     }
-    
+
     .section-subtitle {
       color: var(--silver-light);
       font-size: clamp(16px, 3vw, 18px);
@@ -389,14 +511,14 @@ const reviews = [
       margin: 0 auto;
       line-height: 1.5;
     }
-    
+
     /* PROCESS SECTION */
     .process-section {
       background: linear-gradient(135deg, rgba(12, 10, 9, 0.9), rgba(68, 64, 60, 0.2));
       border-top: 2px solid var(--nightreign-gold);
       border-bottom: 2px solid var(--tarnished-bronze);
     }
-    
+
     .timeline {
       position: relative;
       display: grid;
@@ -404,7 +526,7 @@ const reviews = [
       gap: 32px;
       margin-top: 40px;
     }
-    
+
     .timeline::before {
       content: '';
       position: absolute;
@@ -412,13 +534,19 @@ const reviews = [
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--nightreign-gold), var(--grace-yellow), var(--tarnished-bronze), var(--rune-glow));
+      background: linear-gradient(
+        90deg,
+        var(--nightreign-gold),
+        var(--grace-yellow),
+        var(--tarnished-bronze),
+        var(--rune-glow)
+      );
       transform: translateY(-50%);
       z-index: 1;
       border-radius: 2px;
       box-shadow: 0 0 10px var(--nightreign-gold);
     }
-    
+
     .timeline-step {
       background: linear-gradient(145deg, rgba(12, 10, 9, 0.95), rgba(212, 175, 55, 0.1));
       border: 2px solid var(--tarnished-bronze);
@@ -430,15 +558,15 @@ const reviews = [
       transition: all 0.4s ease;
       backdrop-filter: blur(15px);
     }
-    
+
     .timeline-step:hover {
       transform: translateY(-10px);
       border-color: var(--rune-glow);
-      box-shadow: 
+      box-shadow:
         0 15px 35px rgba(212, 175, 55, 0.4),
         0 0 30px rgba(251, 191, 36, 0.3);
     }
-    
+
     .step-icon {
       width: 70px;
       height: 70px;
@@ -452,19 +580,19 @@ const reviews = [
       animation: rune-circle 20s linear infinite;
       box-shadow: 0 0 15px currentColor;
     }
-    
+
     .step-title {
       font-size: 18px;
       margin-bottom: 12px;
       line-height: 1.3;
     }
-    
+
     .step-description {
       color: var(--silver-light);
       font-size: 14px;
       line-height: 1.5;
     }
-    
+
     /* TESTIMONIALS SECTION */
     .testimonials-grid {
       display: grid;
@@ -472,7 +600,7 @@ const reviews = [
       gap: 32px;
       margin-top: 40px;
     }
-    
+
     .testimonial-card {
       background: linear-gradient(145deg, rgba(12, 10, 9, 0.95), rgba(212, 175, 55, 0.1));
       border: 2px solid var(--ember-orange);
@@ -483,23 +611,23 @@ const reviews = [
       backdrop-filter: blur(15px);
       animation: co-op-pulse 10s ease-in-out infinite;
     }
-    
+
     .testimonial-card:hover {
       transform: translateY(-10px);
       border-color: var(--nightreign-gold);
-      box-shadow: 
+      box-shadow:
         0 20px 40px rgba(212, 175, 55, 0.3),
         0 0 40px rgba(251, 191, 36, 0.2);
       animation-play-state: paused;
     }
-    
+
     .rune-stars {
       color: var(--nightreign-gold);
       font-size: 20px;
       margin-bottom: 20px;
       filter: drop-shadow(0 0 2px rgba(212, 175, 55, 0.3));
     }
-    
+
     .testimonial-text {
       color: var(--silver-light);
       font-style: italic;
@@ -507,24 +635,29 @@ const reviews = [
       line-height: 1.6;
       font-size: 16px;
     }
-    
+
     .testimonial-author {
       color: var(--frost-cyan);
       font-size: 14px;
       font-weight: 600;
     }
-    
+
     /* CTA SECTION */
     .cta-section {
-      background: 
+      background:
         url('/eldon.webp') center/cover no-repeat fixed,
-        linear-gradient(135deg, rgba(88, 28, 135, 0.9), rgba(30, 64, 175, 0.8), rgba(12, 10, 9, 0.9));
+        linear-gradient(
+          135deg,
+          rgba(88, 28, 135, 0.9),
+          rgba(30, 64, 175, 0.8),
+          rgba(12, 10, 9, 0.9)
+        );
       background-blend-mode: multiply;
       text-align: center;
       border-top: 3px solid var(--nightreign-gold);
       overflow: hidden;
     }
-    
+
     .cta-section::before {
       content: '';
       position: absolute;
@@ -532,13 +665,13 @@ const reviews = [
       left: 0;
       right: 0;
       bottom: 0;
-      background: 
+      background:
         radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 70% 70%, rgba(251, 191, 36, 0.2) 0%, transparent 50%),
         radial-gradient(circle at 50% 10%, rgba(234, 88, 12, 0.15) 0%, transparent 60%);
       animation: nightfall-sweep 30s ease-in-out infinite;
     }
-    
+
     .cta-content {
       position: relative;
       z-index: 3;
@@ -549,25 +682,25 @@ const reviews = [
       backdrop-filter: blur(15px);
       border-radius: 20px;
       border: 2px solid rgba(212, 175, 55, 0.5);
-      box-shadow: 
+      box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.6),
         0 0 60px rgba(212, 175, 55, 0.3);
     }
-    
+
     .cta-title {
       font-size: clamp(32px, 7vw, 48px);
       color: var(--silver-light);
       margin-bottom: 20px;
       line-height: 1.2;
     }
-    
+
     .cta-description {
       color: var(--silver-light);
       font-size: clamp(16px, 3vw, 20px);
       margin-bottom: 40px;
       line-height: 1.5;
     }
-    
+
     /* BUTTONS */
     .tarnished-button {
       background: linear-gradient(135deg, var(--nightreign-gold), var(--grace-yellow));
@@ -586,7 +719,7 @@ const reviews = [
       overflow: hidden;
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
     }
-    
+
     .tarnished-button::before {
       content: '';
       position: absolute;
@@ -597,20 +730,20 @@ const reviews = [
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transition: left 0.6s ease;
     }
-    
+
     .tarnished-button:hover {
       transform: translateY(-4px) scale(1.05);
-      box-shadow: 
+      box-shadow:
         0 15px 30px rgba(212, 175, 55, 0.5),
         0 0 40px rgba(251, 191, 36, 0.4);
       border-color: var(--silver-light);
       background: linear-gradient(135deg, var(--rune-glow), var(--nightreign-gold));
     }
-    
+
     .tarnished-button:hover::before {
       left: 100%;
     }
-    
+
     .button-small {
       padding: 14px 28px;
       font-size: 14px;
@@ -629,8 +762,7 @@ const reviews = [
 
     /* FOOTER ADAPTATION STYLES - Make existing footer visible with theme */
     :global(footer) {
-      background: 
-        linear-gradient(135deg, rgba(12, 10, 9, 0.95), rgba(68, 64, 60, 0.9)) !important;
+      background: linear-gradient(135deg, rgba(12, 10, 9, 0.95), rgba(68, 64, 60, 0.9)) !important;
       border-top: 3px solid var(--nightreign-gold) !important;
       color: var(--silver-light) !important;
       position: relative;
@@ -683,119 +815,119 @@ const reviews = [
       border-color: var(--rune-glow) !important;
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     }
-    
+
     /* RESPONSIVE DESIGN - FIXED MOBILE PADDING */
     @media (max-width: 768px) {
       .container {
         padding: 0 16px;
       }
-      
+
       .hero {
         padding: 16px;
         /* FIXED: Ensure consistent padding with desktop for mobile */
         padding-top: 140px; /* Account for header + trust banner on mobile */
         min-height: calc(100vh - 20px); /* Adjust min-height for better mobile experience */
       }
-      
+
       .section {
         padding: 60px 16px;
       }
-      
+
       .services-showcase {
         padding: 60px 16px; /* Match section padding */
       }
-      
+
       .showcase-grid {
         grid-template-columns: 1fr;
         gap: 32px;
       }
-      
+
       .timeline {
         grid-template-columns: 1fr;
         gap: 24px;
       }
-      
+
       .timeline::before {
         display: none;
       }
-      
+
       .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 24px;
       }
-      
+
       .service-card,
       .timeline-step,
       .testimonial-card {
         padding: 24px 20px;
       }
-      
+
       .floating-rune {
         font-size: 24px;
       }
-      
+
       .hero-content {
         padding: 32px 24px;
       }
-      
+
       .cta-content {
         padding: 32px 24px;
       }
     }
-    
+
     @media (max-width: 480px) {
       .container {
         padding: 0 12px;
       }
-      
+
       .hero {
         padding: 12px;
         /* FIXED: Consistent padding for smallest mobile screens */
         padding-top: 160px; /* Account for header + trust banner on small mobile */
         min-height: calc(100vh - 40px);
       }
-      
+
       .section {
         padding: 50px 12px;
       }
-      
+
       .services-showcase {
         padding: 50px 12px; /* Match section padding */
       }
-      
+
       .service-card,
       .timeline-step,
       .testimonial-card {
         padding: 20px 16px;
       }
-      
+
       .floating-rune {
         font-size: 20px;
         opacity: 0.3;
       }
-      
+
       .service-icon {
         width: 75px;
         height: 75px;
         font-size: 30px;
       }
-      
+
       .step-icon {
         width: 60px;
         height: 60px;
         font-size: 24px;
       }
-      
+
       .hero-content,
       .cta-content {
         padding: 24px 20px;
       }
-      
+
       .tarnished-button {
         padding: 14px 24px;
         font-size: 14px;
       }
-      
+
       .button-small {
         padding: 12px 20px;
         font-size: 13px;
@@ -813,16 +945,16 @@ const reviews = [
         <div class="floating-rune">🔥</div>
         <div class="floating-rune">💎</div>
       </div>
-      
+
       <div class="hero-content">
-        <h1 class="rune-font rune-text grace-glow hero-title">
-          CUSTOM GAMING RIGS
-        </h1>
-        
+        <h1 class="rune-font rune-text grace-glow hero-title">CUSTOM GAMING RIGS</h1>
+
         <p class="tarnished-font hero-subtitle">
-         From crushing single-player campaigns to dominating multiplayer arenas and streaming to your audience — we'll build a gaming machine that gives you the edge. Like a legendary weapon forged for battle, we engineer each build for peak performance.
+          From crushing single-player campaigns to dominating multiplayer arenas and streaming to
+          your audience — we'll build a gaming machine that gives you the edge. Like a legendary
+          weapon forged for battle, we engineer each build for peak performance.
         </p>
-        
+
         <div style="margin-top: 32px;">
           <a href="/contact/" class="tarnished-button rune-font">
             <span>⚔️</span>
@@ -833,183 +965,218 @@ const reviews = [
     </section>
 
     <!-- Services Showcase -->
-<section class="services-showcase">
- <div class="container">
-   <div class="showcase-grid">
-     <!-- Intel Gaming Builds -->
-     <div class="service-card gaming">
-       <div class="service-icon">🔥</div>
-       <h2 class="rune-font service-title" style="color: var(--blood-red);">
-         INTEL GAMING RIGS
-       </h2>
-       <p class="tarnished-font service-description">
-         Powered by Intel's latest processors for maximum gaming performance. Crushing single-player campaigns and dominating multiplayer arenas with precision.
-       </p>
-       <a href="/contact/" class="button-small rune-font">
-         <span>⚔️</span>
-         <span>FORGE BUILD</span>
-       </a>
-     </div>
-     
-     <!-- AMD Ryzen Builds -->
-     <div class="service-card office">
-       <div class="service-icon">🚀</div>
-       <h3 class="rune-font service-title" style="color: var(--frost-cyan);">
-         AMD RYZEN POWERHOUSES
-       </h3>
-       <p class="tarnished-font service-description">
-         AMD Ryzen processors delivering exceptional multi-core performance for gaming, streaming, and content creation. Built for peak efficiency.
-       </p>
-       <a href="/contact/" class="button-small rune-font">
-         <span>⚡</span>
-         <span>CRAFT BUILD</span>
-       </a>
-     </div>
-     
-     <!-- Refurbished Systems -->
-     <div class="service-card student">
-       <div class="service-icon">♻️</div>
-       <h3 class="rune-font service-title" style="color: var(--grace-yellow);">
-         REFURB CHAMPIONS
-       </h3>
-       <p class="tarnished-font service-description">
-         Professionally restored business-grade systems with SSD upgrades. Budget-friendly performance for students, home users, and offices.
-       </p>
-       <a href="/contact/" class="button-small rune-font">
-         <span>✨</span>
-         <span>RESTORE BUILD</span>
-       </a>
-     </div>
-   </div>
- </div>
-</section>
+    <section class="services-showcase">
+      <div class="container">
+        <div class="showcase-grid">
+          <!-- Intel Gaming Builds -->
+          <div class="service-card gaming">
+            <div class="service-icon">🔥</div>
+            <h2 class="rune-font service-title" style="color: var(--blood-red);">
+              INTEL GAMING RIGS
+            </h2>
+            <p class="tarnished-font service-description">
+              Powered by Intel's latest processors for maximum gaming performance. Crushing
+              single-player campaigns and dominating multiplayer arenas with precision.
+            </p>
+            <a href="/contact/" class="button-small rune-font">
+              <span>⚔️</span>
+              <span>FORGE BUILD</span>
+            </a>
+          </div>
 
-   <!-- Process Timeline -->
-<section class="section process-section">
- <div class="container">
-   <div class="section-header">
-     <h2 class="rune-font rune-text section-title">
-       OUR BUILD PROCESS
-     </h2>
-     <p class="tarnished-font section-subtitle">
-       From consultation to delivery, we follow a proven process to create your perfect PC.
-     </p>
-   </div>
-          
-   <div class="timeline">
-     <div class="timeline-step">
-       <div class="step-icon" style="background: rgba(8, 145, 178, 0.3); color: var(--frost-cyan);">
-          📝
-       </div>
-       <h3 class="rune-font step-title" style="color: var(--frost-cyan);">
-         1. CONSULTATION
-       </h3>
-       <p class="tarnished-font step-description">
-         We discuss your needs: Gaming performance? Productivity? Budget? Every build starts with understanding your requirements.
-       </p>
-     </div>
-      
-     <div class="timeline-step">
-       <div class="step-icon" style="background: rgba(212, 175, 55, 0.3); color: var(--nightreign-gold);">
-         📦
-       </div>
-       <h3 class="rune-font step-title" style="color: var(--nightreign-gold);">
-         2. DESIGN & QUOTE
-       </h3>
-       <p class="tarnished-font step-description">
-         Receive a detailed specification sheet with component breakdown and transparent pricing for your custom build.
-       </p>
-     </div>
-      
-     <div class="timeline-step">
-       <div class="step-icon" style="background: rgba(234, 88, 12, 0.3); color: var(--ember-orange);">
-         🛠️
-       </div>
-       <h3 class="rune-font step-title" style="color: var(--ember-orange);">
-         3. BUILD & TEST
-       </h3>
-       <p class="tarnished-font step-description">
-         We assemble, stress-test, and optimise your PC with professional cable management and quality assurance.
-       </p>
-     </div>
-      
-     <div class="timeline-step">
-       <div class="step-icon" style="background: rgba(88, 28, 135, 0.3); color: var(--shadow-purple);">
-         🚗
-       </div>
-       <h3 class="rune-font step-title" style="color: var(--shadow-purple);">
-         4. DELIVERY
-       </h3>
-       <p class="tarnished-font step-description">
-         Your custom PC is ready for collection or local delivery. Setup assistance included if needed.
-       </p>
-     </div>
-   </div>
- </div>
-</section>
-   <!-- Testimonials -->
-<section class="section">
- <div class="container">
-   <div class="section-header">
-     <h2 class="rune-font rune-text grace-glow section-title">
-       CUSTOMER TESTIMONIALS
-     </h2>
-     <p class="tarnished-font section-subtitle">
-       Stories from satisfied customers who've trusted us with their PC builds.
-     </p>
-   </div>
-   
-   <div class="testimonials-grid">
-     <div class="testimonial-card">
-       <div class="rune-stars">⭐⭐⭐⭐⭐</div>
-       <p class="tarnished-font testimonial-text">
-         "They built an incredible gaming PC for my son—runs all the latest games flawlessly at high settings. Perfect for multiplayer sessions with friends!"
-       </p>
-       <div class="grace-font testimonial-author">
-         – Mark W., Harold Hill
-       </div>
-     </div>
+          <!-- AMD Ryzen Builds -->
+          <div class="service-card office">
+            <div class="service-icon">🚀</div>
+            <h3 class="rune-font service-title" style="color: var(--frost-cyan);">
+              AMD RYZEN POWERHOUSES
+            </h3>
+            <p class="tarnished-font service-description">
+              AMD Ryzen processors delivering exceptional multi-core performance for gaming,
+              streaming, and content creation. Built for peak efficiency.
+            </p>
+            <a href="/contact/" class="button-small rune-font">
+              <span>⚡</span>
+              <span>CRAFT BUILD</span>
+            </a>
+          </div>
 
-     <div class="testimonial-card">
-       <div class="rune-stars">⭐⭐⭐⭐⭐</div>
-       <p class="tarnished-font testimonial-text">
-         "Fast and professional service. My business PC is whisper-quiet, powerful, and handles everything I need for my office work."
-       </p>
-       <div class="grace-font testimonial-author">
-         – Sarah J., Romford
-       </div>
-     </div>
+          <!-- Refurbished Systems -->
+          <div class="service-card student">
+            <div class="service-icon">♻️</div>
+            <h3 class="rune-font service-title" style="color: var(--grace-yellow);">
+              REFURB CHAMPIONS
+            </h3>
+            <p class="tarnished-font service-description">
+              Professionally restored business-grade systems with SSD upgrades. Budget-friendly
+              performance for students, home users, and offices.
+            </p>
+            <a href="/contact/" class="button-small rune-font">
+              <span>✨</span>
+              <span>RESTORE BUILD</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-     <div class="testimonial-card">
-       <div class="rune-stars">⭐⭐⭐⭐⭐</div>
-       <p class="tarnished-font testimonial-text">
-         "Outstanding customer service and technical expertise. My content creation rig is absolutely perfect for streaming and video editing!"
-       </p>
-       <div class="grace-font testimonial-author">
-         – Omar A., Brentwood
-       </div>
-     </div>
-   </div>
- </div>
-</section>
+    <!-- Process Timeline -->
+    <section class="section process-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="rune-font rune-text section-title">OUR BUILD PROCESS</h2>
+          <p class="tarnished-font section-subtitle">
+            From consultation to delivery, we follow a proven process to create your perfect PC.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div
+              class="step-icon"
+              style="background: rgba(8, 145, 178, 0.3); color: var(--frost-cyan);"
+            >
+              📝
+            </div>
+            <h3 class="rune-font step-title" style="color: var(--frost-cyan);">1. CONSULTATION</h3>
+            <p class="tarnished-font step-description">
+              We discuss your needs: Gaming performance? Productivity? Budget? Every build starts
+              with understanding your requirements.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div
+              class="step-icon"
+              style="background: rgba(212, 175, 55, 0.3); color: var(--nightreign-gold);"
+            >
+              📦
+            </div>
+            <h3 class="rune-font step-title" style="color: var(--nightreign-gold);">
+              2. DESIGN & QUOTE
+            </h3>
+            <p class="tarnished-font step-description">
+              Receive a detailed specification sheet with component breakdown and transparent
+              pricing for your custom build.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div
+              class="step-icon"
+              style="background: rgba(234, 88, 12, 0.3); color: var(--ember-orange);"
+            >
+              🛠️
+            </div>
+            <h3 class="rune-font step-title" style="color: var(--ember-orange);">
+              3. BUILD & TEST
+            </h3>
+            <p class="tarnished-font step-description">
+              We assemble, stress-test, and optimise your PC with professional cable management and
+              quality assurance.
+            </p>
+          </div>
+
+          <div class="timeline-step">
+            <div
+              class="step-icon"
+              style="background: rgba(88, 28, 135, 0.3); color: var(--shadow-purple);"
+            >
+              🚗
+            </div>
+            <h3 class="rune-font step-title" style="color: var(--shadow-purple);">4. DELIVERY</h3>
+            <p class="tarnished-font step-description">
+              Your custom PC is ready for collection or local delivery. Setup assistance included if
+              needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="rune-font rune-text grace-glow section-title">CUSTOMER TESTIMONIALS</h2>
+          <p class="tarnished-font section-subtitle">
+            Stories from satisfied customers who've trusted us with their PC builds.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="rune-stars">⭐⭐⭐⭐⭐</div>
+            <p class="tarnished-font testimonial-text">
+              "They built an incredible gaming PC for my son—runs all the latest games flawlessly at
+              high settings. Perfect for multiplayer sessions with friends!"
+            </p>
+            <div class="grace-font testimonial-author">– Mark W., Harold Hill</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rune-stars">⭐⭐⭐⭐⭐</div>
+            <p class="tarnished-font testimonial-text">
+              "Fast and professional service. My business PC is whisper-quiet, powerful, and handles
+              everything I need for my office work."
+            </p>
+            <div class="grace-font testimonial-author">– Sarah J., Romford</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="rune-stars">⭐⭐⭐⭐⭐</div>
+            <p class="tarnished-font testimonial-text">
+              "Outstanding customer service and technical expertise. My content creation rig is
+              absolutely perfect for streaming and video editing!"
+            </p>
+            <div class="grace-font testimonial-author">– Omar A., Brentwood</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Areas We Serve -->
-    <section class="section" style="background: linear-gradient(135deg, rgba(12, 10, 9, 0.95), rgba(30, 64, 175, 0.3)); padding: 60px 20px;">
+    <section
+      class="section"
+      style="background: linear-gradient(135deg, rgba(12, 10, 9, 0.95), rgba(30, 64, 175, 0.3)); padding: 60px 20px;"
+    >
       <div class="container" style="text-align: center;">
-        <h2 class="rune-font" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px; color: var(--nightreign-gold); text-shadow: 0 0 3px rgba(212, 175, 55, 0.4);">
+        <h2
+          class="rune-font"
+          style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px; color: var(--nightreign-gold); text-shadow: 0 0 3px rgba(212, 175, 55, 0.4);"
+        >
           CUSTOM PC BUILDS ACROSS HAVERING & ESSEX
         </h2>
-        <p class="tarnished-font" style="color: var(--silver-light); font-size: 16px; margin-bottom: 32px;">
+        <p
+          class="tarnished-font"
+          style="color: var(--silver-light); font-size: 16px; margin-bottom: 32px;"
+        >
           We build and deliver custom PCs throughout these areas:
         </p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;">
-          <a href="/areas/harold-hill/" class="button-small rune-font" style="padding: 10px 18px;">Harold Hill</a>
-          <a href="/areas/romford/" class="button-small rune-font" style="padding: 10px 18px;">Romford</a>
-          <a href="/areas/hornchurch/" class="button-small rune-font" style="padding: 10px 18px;">Hornchurch</a>
-          <a href="/areas/brentwood/" class="button-small rune-font" style="padding: 10px 18px;">Brentwood</a>
-          <a href="/areas/upminster/" class="button-small rune-font" style="padding: 10px 18px;">Upminster</a>
-          <a href="/areas/dagenham/" class="button-small rune-font" style="padding: 10px 18px;">Dagenham</a>
-          <a href="/areas/" class="button-small rune-font" style="padding: 10px 18px; background: rgba(212, 175, 55, 0.3);">View All Areas →</a>
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 900px; margin: 0 auto;"
+        >
+          <a href="/areas/harold-hill/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Harold Hill</a
+          >
+          <a href="/areas/romford/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Romford</a
+          >
+          <a href="/areas/hornchurch/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Hornchurch</a
+          >
+          <a href="/areas/brentwood/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Brentwood</a
+          >
+          <a href="/areas/upminster/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Upminster</a
+          >
+          <a href="/areas/dagenham/" class="button-small rune-font" style="padding: 10px 18px;"
+            >Dagenham</a
+          >
+          <a
+            href="/areas/"
+            class="button-small rune-font"
+            style="padding: 10px 18px; background: rgba(212, 175, 55, 0.3);">View All Areas →</a
+          >
         </div>
       </div>
     </section>
@@ -1023,7 +1190,8 @@ const reviews = [
           </h2>
 
           <p class="tarnished-font cta-description">
-            Your new gaming rig starts here. Let us forge the perfect PC for your ideal gaming experience.
+            Your new gaming rig starts here. Let us forge the perfect PC for your ideal gaming
+            experience.
           </p>
 
           <a href="/contact/" class="tarnished-button rune-font">

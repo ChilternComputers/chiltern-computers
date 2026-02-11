@@ -1,32 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const publishDate = "2025-01-15";
-const modifiedDate = "2025-01-15";
-const author = "Chiltern Computers";
-const readTime = "8 min read";
+const publishDate = '2025-01-15';
+const modifiedDate = '2025-01-15';
+const author = 'Chiltern Computers';
+const readTime = '8 min read';
 
 const faqs = [
   {
-    question: "What is the average cost of computer repair in Romford?",
-    answer: "Computer repair costs in Romford typically range from £30-£150 depending on the issue. Simple software fixes may cost around £30-50, while hardware repairs like screen replacements can range from £80-150. At Chiltern Computers, we charge a small diagnostic fee - and if we fix the issue during the diagnostic, that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed."
+    question: 'What is the average cost of computer repair in Romford?',
+    answer:
+      "Computer repair costs in Romford typically range from £30-£150 depending on the issue. Simple software fixes may cost around £30-50, while hardware repairs like screen replacements can range from £80-150. At Chiltern Computers, we charge a small diagnostic fee - and if we fix the issue during the diagnostic, that's all you pay. For larger repairs, the diagnostic fee is waived if you proceed.",
   },
   {
-    question: "How quickly can I get my computer repaired in Romford?",
-    answer: "Most reputable computer repair services in Romford offer same-day repairs for common issues like virus removal, software problems, and simple hardware fixes. More complex repairs requiring parts may take 1-3 days. Chiltern Computers in Harold Hill typically completes most repairs within 24 hours."
+    question: 'How quickly can I get my computer repaired in Romford?',
+    answer:
+      'Most reputable computer repair services in Romford offer same-day repairs for common issues like virus removal, software problems, and simple hardware fixes. More complex repairs requiring parts may take 1-3 days. Chiltern Computers in Harold Hill typically completes most repairs within 24 hours.',
   },
   {
-    question: "Should I repair my old computer or buy a new one?",
-    answer: "As a general rule, if repair costs exceed 50% of a new computer's price, consider buying new. However, for computers less than 5 years old with good specs, repair is often the smarter choice. A local technician can advise you based on your specific situation and budget."
+    question: 'Should I repair my old computer or buy a new one?',
+    answer:
+      "As a general rule, if repair costs exceed 50% of a new computer's price, consider buying new. However, for computers less than 5 years old with good specs, repair is often the smarter choice. A local technician can advise you based on your specific situation and budget.",
   },
   {
-    question: "Do Romford computer repair shops offer home visits?",
-    answer: "Yes, several computer repair services in Romford and surrounding areas like Harold Hill, Hornchurch, and Upminster offer home visits and on-site repairs. This is particularly useful for desktop computers or if you have mobility issues. Call ahead to check availability and any call-out fees."
+    question: 'Do Romford computer repair shops offer home visits?',
+    answer:
+      'Yes, several computer repair services in Romford and surrounding areas like Harold Hill, Hornchurch, and Upminster offer home visits and on-site repairs. This is particularly useful for desktop computers or if you have mobility issues. Call ahead to check availability and any call-out fees.',
   },
   {
-    question: "What should I look for in a local computer repair service?",
-    answer: "Look for established businesses with positive Google reviews, clear pricing, affordable diagnostics, and transparent quotes. Check if they handle your specific brand and type of computer. Local shops with physical premises in Romford or Harold Hill are generally more accountable than online-only services."
-  }
+    question: 'What should I look for in a local computer repair service?',
+    answer:
+      'Look for established businesses with positive Google reviews, clear pricing, affordable diagnostics, and transparent quotes. Check if they handle your specific brand and type of computer. Local shops with physical premises in Romford or Harold Hill are generally more accountable than online-only services.',
+  },
 ];
 ---
 
@@ -36,8 +41,14 @@ const faqs = [
   keywords="computer repair romford, computer repair near me romford, pc repair romford, laptop repair romford, computer fix romford, computer repair harold hill, computer repair havering, romford computer services"
 >
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
     :root {
       --cosmic-blue: #1e3a8a;
@@ -51,24 +62,49 @@ const faqs = [
       --comet-silver: #e5e7eb;
     }
 
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
 
     @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
     }
 
     @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
     .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       background-size: 200% 200%;
       animation: galaxy-flow 4s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -114,7 +150,8 @@ const faqs = [
       margin-bottom: 20px;
     }
 
-    .article-content ul, .article-content ol {
+    .article-content ul,
+    .article-content ol {
       margin: 20px 0;
       padding-left: 24px;
     }
@@ -227,9 +264,15 @@ const faqs = [
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 16px; }
-      .article-content { font-size: 16px; }
-      .article-meta { gap: 16px; }
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .article-meta {
+        gap: 16px;
+      }
     }
   </style>
 
@@ -245,41 +288,119 @@ const faqs = [
           <span>Computer Repair Romford</span>
         </nav>
 
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
-          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;">COMPUTER REPAIR</span>
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;"
+            >COMPUTER REPAIR</span
+          >
         </div>
 
-        <h1 class="space-font" style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;">
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
           Best Computer Repair Near Romford - Local Expert Guide 2025
         </h1>
 
-        <p class="alien-font" style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;">
-          Everything you need to know about finding reliable, affordable computer repair services in Romford, Harold Hill, and the wider Havering area.
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Everything you need to know about finding reliable, affordable computer repair services in
+          Romford, Harold Hill, and the wider Havering area.
         </p>
 
         <div class="article-meta tech-font">
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
-            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
           </div>
           <div class="meta-item" style="color: var(--aurora-green);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span>Updated: {new Date(modifiedDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+            <span
+              >Updated: {
+                new Date(modifiedDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span>{readTime}</span>
           </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             <span>Romford, Essex</span>
           </div>
@@ -292,23 +413,33 @@ const faqs = [
       <div class="container">
         <article class="article-content alien-font">
           <p>
-            When your computer breaks down in Romford, finding a trustworthy repair service quickly becomes a priority. Whether you're dealing with a laptop that won't turn on, a desktop plagued by viruses, or a PC that's become frustratingly slow, knowing where to turn for reliable <strong>computer repair near Romford</strong> can save you time, money, and stress.
+            When your computer breaks down in Romford, finding a trustworthy repair service quickly
+            becomes a priority. Whether you're dealing with a laptop that won't turn on, a desktop
+            plagued by viruses, or a PC that's become frustratingly slow, knowing where to turn for
+            reliable <strong>computer repair near Romford</strong> can save you time, money, and stress.
           </p>
 
           <p>
-            This comprehensive guide covers everything local residents in Romford, Harold Hill, Hornchurch, and surrounding areas of Havering need to know about finding quality computer repair services in 2025.
+            This comprehensive guide covers everything local residents in Romford, Harold Hill,
+            Hornchurch, and surrounding areas of Havering need to know about finding quality
+            computer repair services in 2025.
           </p>
 
           <h2 class="space-font">What to Look for in a Romford Computer Repair Service</h2>
 
           <p>
-            Not all computer repair shops are created equal. When searching for <strong>computer repair in Romford</strong> or nearby areas like Harold Hill and Hornchurch, there are several key factors that separate excellent services from mediocre ones.
+            Not all computer repair shops are created equal. When searching for <strong
+              >computer repair in Romford</strong
+            > or nearby areas like Harold Hill and Hornchurch, there are several key factors that separate
+            excellent services from mediocre ones.
           </p>
 
           <h3 class="space-font">1. Local Reputation and Reviews</h3>
 
           <p>
-            The best indicator of a quality computer repair service is their local reputation. Check Google reviews, Facebook recommendations, and ask neighbours or colleagues in Romford who they've used. Look for services with:
+            The best indicator of a quality computer repair service is their local reputation. Check
+            Google reviews, Facebook recommendations, and ask neighbours or colleagues in Romford
+            who they've used. Look for services with:
           </p>
 
           <ul>
@@ -321,23 +452,35 @@ const faqs = [
           <h3 class="space-font">2. Transparent Pricing</h3>
 
           <p>
-            Reputable <strong>PC repair services in Romford</strong> should provide clear pricing before starting any work. Be wary of shops that are vague about costs or try to upsell unnecessary services. The best local repair shops offer:
+            Reputable <strong>PC repair services in Romford</strong> should provide clear pricing before
+            starting any work. Be wary of shops that are vague about costs or try to upsell unnecessary
+            services. The best local repair shops offer:
           </p>
 
           <ul>
             <li><strong>Free diagnostics</strong> - Understanding the problem before committing</li>
             <li><strong>Fixed price quotes</strong> - No surprises when you collect your device</li>
-            <li><strong>No fix, no fee policies</strong> - You only pay if they solve the problem</li>
+            <li>
+              <strong>No fix, no fee policies</strong> - You only pay if they solve the problem
+            </li>
           </ul>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Local Tip:</strong> At Chiltern Computers in Harold Hill, we charge a small diagnostic fee. If we can fix the problem during the diagnostic, that's all you pay. For more complex repairs, we'll give you a quote - and if you go ahead with the repair, the diagnostic fee is waived. It's a fair way to understand what you're dealing with before committing to larger repairs.</p>
+            <p style="margin: 0;">
+              <strong>Local Tip:</strong> At Chiltern Computers in Harold Hill, we charge a small diagnostic
+              fee. If we can fix the problem during the diagnostic, that's all you pay. For more complex
+              repairs, we'll give you a quote - and if you go ahead with the repair, the diagnostic fee
+              is waived. It's a fair way to understand what you're dealing with before committing to larger
+              repairs.
+            </p>
           </div>
 
           <h3 class="space-font">3. Range of Services</h3>
 
           <p>
-            A well-established computer repair service should handle a wide range of issues. When looking for <strong>laptop repair in Romford</strong> or PC services, check that they can handle:
+            A well-established computer repair service should handle a wide range of issues. When
+            looking for <strong>laptop repair in Romford</strong> or PC services, check that they can
+            handle:
           </p>
 
           <ul>
@@ -352,13 +495,15 @@ const faqs = [
           <h2 class="space-font">Common Computer Problems in Romford Homes and Businesses</h2>
 
           <p>
-            Based on years of serving the Romford and Havering community, certain computer issues come up time and again. Here's what local residents most commonly need help with:
+            Based on years of serving the Romford and Havering community, certain computer issues
+            come up time and again. Here's what local residents most commonly need help with:
           </p>
 
           <h3 class="space-font">Slow Computer Performance</h3>
 
           <p>
-            The most frequent complaint from Romford residents is computers that have become unbearably slow. This is often caused by:
+            The most frequent complaint from Romford residents is computers that have become
+            unbearably slow. This is often caused by:
           </p>
 
           <ul>
@@ -369,13 +514,18 @@ const faqs = [
           </ul>
 
           <p>
-            The good news? Many slow computer issues can be fixed affordably, often with a professional clean-up or a simple SSD upgrade that breathes new life into older machines.
+            The good news? Many slow computer issues can be fixed affordably, often with a
+            professional clean-up or a simple SSD upgrade that breathes new life into older
+            machines.
           </p>
 
           <h3 class="space-font">Virus and Malware Infections</h3>
 
           <p>
-            Despite improved security in modern operating systems, virus infections remain common. Many Romford residents come to local repair shops after clicking suspicious email links or downloading infected software. Professional <strong>virus removal in Romford</strong> typically involves:
+            Despite improved security in modern operating systems, virus infections remain common.
+            Many Romford residents come to local repair shops after clicking suspicious email links
+            or downloading infected software. Professional <strong>virus removal in Romford</strong> typically
+            involves:
           </p>
 
           <ul>
@@ -388,19 +538,23 @@ const faqs = [
           <h3 class="space-font">Laptop Screen Damage</h3>
 
           <p>
-            Cracked or malfunctioning laptop screens are another frequent repair request. Whether from accidental drops or simply wear and tear, <strong>laptop screen repair</strong> is something most local Romford computer shops can handle within 24-48 hours, depending on parts availability.
+            Cracked or malfunctioning laptop screens are another frequent repair request. Whether
+            from accidental drops or simply wear and tear, <strong>laptop screen repair</strong> is something
+            most local Romford computer shops can handle within 24-48 hours, depending on parts availability.
           </p>
 
           <h2 class="space-font">Where to Find Computer Repair in Romford and Surrounding Areas</h2>
 
           <p>
-            The Romford and Havering area has several options for computer repair services. Here's an overview of what's available:
+            The Romford and Havering area has several options for computer repair services. Here's
+            an overview of what's available:
           </p>
 
           <h3 class="space-font">Local Independent Repair Shops</h3>
 
           <p>
-            Independent computer repair shops, like Chiltern Computers in Harold Hill, often provide the best value and most personalised service. Benefits include:
+            Independent computer repair shops, like Chiltern Computers in Harold Hill, often provide
+            the best value and most personalised service. Benefits include:
           </p>
 
           <ul>
@@ -413,13 +567,16 @@ const faqs = [
           <h3 class="space-font">National Chain Stores</h3>
 
           <p>
-            While national chains exist in the Romford area, they often have longer wait times and higher prices due to their overhead costs. They may also send devices away for repair rather than fixing them on-site.
+            While national chains exist in the Romford area, they often have longer wait times and
+            higher prices due to their overhead costs. They may also send devices away for repair
+            rather than fixing them on-site.
           </p>
 
           <h3 class="space-font">On-Site and Home Visit Services</h3>
 
           <p>
-            For those who can't easily transport their computer, some Romford-area repair services offer home visits. This is particularly useful for:
+            For those who can't easily transport their computer, some Romford-area repair services
+            offer home visits. This is particularly useful for:
           </p>
 
           <ul>
@@ -432,7 +589,8 @@ const faqs = [
           <h2 class="space-font">Average Computer Repair Costs in Romford (2025)</h2>
 
           <p>
-            Understanding typical repair costs helps you budget appropriately and spot any overcharging. Here's what you can expect to pay for common repairs in the Romford area:
+            Understanding typical repair costs helps you budget appropriately and spot any
+            overcharging. Here's what you can expect to pay for common repairs in the Romford area:
           </p>
 
           <ul>
@@ -446,48 +604,96 @@ const faqs = [
           </ul>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Money-Saving Tip:</strong> Before paying for expensive repairs, ask your local technician whether an upgrade might be more cost-effective. Sometimes a £100 SSD upgrade can make a sluggish old computer feel brand new, saving you hundreds compared to buying a replacement.</p>
+            <p style="margin: 0;">
+              <strong>Money-Saving Tip:</strong> Before paying for expensive repairs, ask your local technician
+              whether an upgrade might be more cost-effective. Sometimes a £100 SSD upgrade can make a
+              sluggish old computer feel brand new, saving you hundreds compared to buying a replacement.
+            </p>
           </div>
 
           <h2 class="space-font">Frequently Asked Questions</h2>
 
           <div class="faq-section">
-            {faqs.map((faq, index) => (
-              <div class="faq-item">
-                <div class="faq-question space-font">
-                  <span>{faq.question}</span>
+            {
+              faqs.map((faq, index) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
                 </div>
-                <div class="faq-answer alien-font">
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <h2 class="space-font">Choosing the Right Repair Service for Your Needs</h2>
 
           <p>
-            When your computer needs repair in Romford or the wider Havering area, taking a few minutes to research your options pays off. Look for services with strong local reviews, transparent pricing, and the technical expertise to handle your specific issue.
+            When your computer needs repair in Romford or the wider Havering area, taking a few
+            minutes to research your options pays off. Look for services with strong local reviews,
+            transparent pricing, and the technical expertise to handle your specific issue.
           </p>
 
           <p>
-            Whether you're in Harold Hill, Hornchurch, Upminster, or central Romford, quality computer repair services are available nearby. Don't let a broken computer disrupt your work or daily life longer than necessary - reach out to a local expert who can diagnose the problem and get you back up and running quickly.
+            Whether you're in Harold Hill, Hornchurch, Upminster, or central Romford, quality
+            computer repair services are available nearby. Don't let a broken computer disrupt your
+            work or daily life longer than necessary - reach out to a local expert who can diagnose
+            the problem and get you back up and running quickly.
           </p>
 
           <!-- Author Bio -->
-          <div style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;">
-            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <div>
-              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">David Hagon</div>
-              <p style="margin: 0; font-size: 15px; line-height: 1.6;">Computer repair specialist and founder of Chiltern Computers in Harold Hill. With years of experience fixing PCs and laptops across Romford and Havering, I pride myself on honest advice and transparent pricing - I'll always tell you if a repair isn't worth it.</p>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. With
+                years of experience fixing PCs and laptops across Romford and Havering, I pride
+                myself on honest advice and transparent pricing - I'll always tell you if a repair
+                isn't worth it.
+              </p>
               <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Us</a>
-                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
-                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews ★★★★★</a>
+                <a
+                  href="/about/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >About Us</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews ★★★★★</a
+                >
               </div>
             </div>
           </div>
@@ -496,53 +702,124 @@ const faqs = [
             <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
               Need Computer Repair in Romford?
             </h3>
-            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
-              Chiltern Computers in Harold Hill offers affordable diagnostics (fee waived if you proceed with repair), same-day repairs, and honest advice. Serving Romford, Hornchurch, Upminster, and all of Havering.
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              Chiltern Computers in Harold Hill offers affordable diagnostics (fee waived if you
+              proceed with repair), same-day repairs, and honest advice. Serving Romford,
+              Hornchurch, Upminster, and all of Havering.
             </p>
             <a href="/contact/" class="space-button space-font">
               Book Diagnostic
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
           </div>
 
           <!-- Related Services -->
-          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Our Repair Services</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-              <a href="/services/repairs/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">Computer Repairs</div>
+          <div
+            style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Our Repair Services
+            </h3>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"
+            >
+              <a
+                href="/services/repairs/"
+                style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">
+                  Computer Repairs
+                </div>
               </a>
-              <a href="/services/new-used/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">New & Refurbished PCs</div>
+              <a
+                href="/services/new-used/"
+                style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">
+                  New & Refurbished PCs
+                </div>
               </a>
-              <a href="/services/custom-pcs/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">Custom Gaming PCs</div>
+              <a
+                href="/services/custom-pcs/"
+                style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">
+                  Custom Gaming PCs
+                </div>
               </a>
             </div>
           </div>
 
           <!-- Related Articles -->
-          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Related Articles</h3>
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
             <div style="display: grid; gap: 16px;">
-              <a href="/blog/why-laptop-running-slow-romford-guide/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/why-laptop-running-slow-romford-guide/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Why Your Laptop is Running Slow - Romford Tech Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">10 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Why Your Laptop is Running Slow - Romford Tech Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    10 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/upgrade-old-pc-windows-11-unsupported/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/upgrade-old-pc-windows-11-unsupported/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Windows 11 Upgrade for Old PCs in Romford & Essex</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Windows 11 Upgrade for Old PCs in Romford & Essex
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/gaming-pc-build-tips-essex/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/gaming-pc-build-tips-essex/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Gaming PC Build Tips for Essex Gamers</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">12 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Gaming PC Build Tips for Essex Gamers
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    12 min read
+                  </div>
                 </div>
               </a>
             </div>
@@ -553,43 +830,50 @@ const faqs = [
   </main>
 
   <!-- FAQ Schema for this article -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
 
   <!-- Article Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Best Computer Repair Near Romford - Local Expert Guide 2025",
-    "description": "Looking for reliable computer repair in Romford? Discover what makes a great local repair service, average costs, and how to find trusted technicians in Harold Hill, Hornchurch & Havering.",
-    "image": "https://chilterncomputers.co.uk/repair-pic.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Chiltern Computers"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Chiltern Computers",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://chilterncomputers.co.uk/logo_homepage.webp"
-      }
-    },
-    "datePublished": publishDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://chilterncomputers.co.uk/blog/best-computer-repair-near-romford/"
-    }
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Best Computer Repair Near Romford - Local Expert Guide 2025',
+      description:
+        'Looking for reliable computer repair in Romford? Discover what makes a great local repair service, average costs, and how to find trusted technicians in Harold Hill, Hornchurch & Havering.',
+      image: 'https://chilterncomputers.co.uk/repair-pic.webp',
+      author: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://chilterncomputers.co.uk/logo_homepage.webp',
+        },
+      },
+      datePublished: publishDate,
+      dateModified: modifiedDate,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://chilterncomputers.co.uk/blog/best-computer-repair-near-romford/',
+      },
+    })}
+  />
 </Layout>

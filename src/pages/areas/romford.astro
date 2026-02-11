@@ -10,7 +10,11 @@ const area = getAreaBySlug('romford')!;
   title={`PC Repair ${area.name} - Same Day Service`}
   description={`PC repair in ${area.name} town centre. Same day laptop repairs, screen replacement, virus removal. Call 07971 331814.`}
   keywords={`computer repair ${area.name.toLowerCase()}, pc repair ${area.name.toLowerCase()}, laptop repair ${area.postcode.toLowerCase()}, computer shop ${area.name.toLowerCase()}, virus removal ${area.name.toLowerCase()}, data recovery ${area.name.toLowerCase()}`}
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Areas", url: "/areas/" }, { name: area.name, url: `/areas/romford/` }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Areas', url: '/areas/' },
+    { name: area.name, url: `/areas/romford/` },
+  ]}
 >
   <AreaPage area={area} />
 </Layout>

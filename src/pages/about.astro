@@ -5,10 +5,13 @@ import Layout from '../layouts/Layout.astro';
 <Layout
   title="About Us - PC Repair Harold Hill, Romford"
   description="Meet David, your local PC repair expert. 20+ years of honest, affordable computer repairs in Harold Hill, Romford and Essex."
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "About Us", url: "/about/" }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about/' },
+  ]}
 >
   <!-- REMOVED DUPLICATE SEO COMPONENT - Layout handles SEO automatically -->
-  
+
   <style>
     /* PAGE-SPECIFIC STYLES FOR ABOUT PAGE */
 
@@ -33,7 +36,9 @@ import Layout from '../layouts/Layout.astro';
         radial-gradient(ellipse at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 20%, rgba(30, 58, 138, 0.12) 0%, transparent 50%),
         var(--void-black);
-      background-size: 800px 600px, 900px 700px;
+      background-size:
+        800px 600px,
+        900px 700px;
       animation: plasma-flow 30s ease-in-out infinite;
       min-height: 100vh;
       width: 100%;
@@ -47,13 +52,13 @@ import Layout from '../layouts/Layout.astro';
       line-height: 1.7;
       margin-bottom: 24px;
     }
-    
+
     .contact-info {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    
+
     .contact-info li {
       color: var(--starlight-white);
       font-size: 16px;
@@ -62,17 +67,17 @@ import Layout from '../layouts/Layout.astro';
       align-items: center;
       gap: 12px;
     }
-    
+
     .contact-info a {
       color: var(--plasma-cyan);
       text-decoration: none;
       transition: color 0.3s ease;
     }
-    
+
     .contact-info a:hover {
       color: var(--aurora-green);
     }
-    
+
     /* TESTIMONIALS */
     .testimonial-grid {
       display: grid;
@@ -80,7 +85,7 @@ import Layout from '../layouts/Layout.astro';
       gap: 24px;
       margin-top: 40px;
     }
-    
+
     .testimonial-card {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
       border: 1px solid var(--solar-orange);
@@ -91,69 +96,71 @@ import Layout from '../layouts/Layout.astro';
       transition: all 0.3s ease;
       position: relative;
     }
-    
+
     .testimonial-card:hover {
       transform: translateY(-4px);
       border-color: var(--aurora-green);
       box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
     }
-    
+
     .stars {
       color: var(--solar-orange);
       font-size: 20px;
       margin-bottom: 16px;
       animation: stellar-blink 3s ease-in-out infinite;
     }
-    
+
     .testimonial-text {
       color: var(--starlight-white);
       font-style: italic;
       margin-bottom: 16px;
       line-height: 1.6;
     }
-    
+
     .testimonial-author {
       color: var(--plasma-cyan);
       font-size: 14px;
       font-weight: 600;
     }
-    
+
     /* MOBILE OPTIMIZATIONS */
     @media (max-width: 768px) {
       .section-bg {
-        background-size: 400px 300px, 450px 350px;
+        background-size:
+          400px 300px,
+          450px 350px;
       }
-      
+
       .container {
         padding: 0 16px;
       }
-      
+
       .planet-icon {
         width: 60px;
         height: 60px;
         font-size: 24px;
       }
-      
+
       .small-planet-icon {
         width: 40px;
         height: 40px;
         font-size: 16px;
       }
-      
+
       .testimonial-grid {
         grid-template-columns: 1fr;
       }
     }
-    
+
     @media (max-width: 480px) {
       .container {
         padding: 0 12px;
       }
-      
+
       .content-text {
         font-size: 14px;
       }
-      
+
       .contact-info li {
         font-size: 14px;
       }
@@ -165,73 +172,108 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <!-- Header -->
       <div style="text-align: center; margin-bottom: 60px;">
-        <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; margin-top: 20px; line-height: 1.2;">
+        <h1
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; margin-top: 20px; line-height: 1.2;"
+        >
           ABOUT YOUR LOCAL COMPUTER REPAIR EXPERT
         </h1>
-        
-        <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;">
-          Meet David, the expert engineer behind Chiltern Computers with over 20 years of professional IT experience.
+
+        <p
+          class="alien-font"
+          style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;"
+        >
+          Meet David, the expert engineer behind Chiltern Computers with over 20 years of
+          professional IT experience.
         </p>
       </div>
-      
+
       <!-- Main Content -->
-      <div style="display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 900px; margin: 0 auto;">
+      <div
+        style="display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 900px; margin: 0 auto;"
+      >
         <!-- About Content -->
         <div class="cosmic-card" style="padding: 40px;">
-          <div class="planet-icon" style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan); margin-bottom: 32px;">
+          <div
+            class="planet-icon"
+            style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan); margin-bottom: 32px;"
+          >
             👨‍💻
           </div>
-          
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 32px; text-align: center;">
+
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 32px; text-align: center;"
+          >
             PROFESSIONAL IT ENGINEER
           </h2>
-          
+
           <p class="alien-font content-text">
-            I'm David, the founder and engineer behind Chiltern Computers. With over 20 years of hands-on experience in repairing, upgrading, and supplying computers and laptops, I've helped thousands of satisfied customers across Romford and nearby areas.
+            I'm David, the founder and engineer behind Chiltern Computers. With over 20 years of
+            hands-on experience in repairing, upgrading, and supplying computers and laptops, I've
+            helped thousands of satisfied customers across Romford and nearby areas.
           </p>
-          
+
           <p class="alien-font content-text">
-            My goal is simple: to offer friendly, honest, and affordable computer services — without the jargon. Whether you're a home user, student, or small business, I provide professional support tailored to your needs.
+            My goal is simple: to offer friendly, honest, and affordable computer services — without
+            the jargon. Whether you're a home user, student, or small business, I provide
+            professional support tailored to your needs.
           </p>
-          
+
           <p class="alien-font content-text">
-            From fixing a slow laptop to building a high-performance gaming PC, I handle every job personally with care and precision. I also offer a local collection and return service if you're unable to make the journey.
+            From fixing a slow laptop to building a high-performance gaming PC, I handle every job
+            personally with care and precision. I also offer a local collection and return service
+            if you're unable to make the journey.
           </p>
-          
+
           <p class="alien-font content-text">
             Need help? Don't hesitate to get in touch. I'd be happy to assist.
           </p>
         </div>
-        
+
         <!-- Contact Info -->
         <div class="cosmic-card" style="padding: 32px;">
-          <div class="small-planet-icon" style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);">
+          <div
+            class="small-planet-icon"
+            style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);"
+          >
             📍
           </div>
-          
-          <h3 class="space-font cosmic-glow" style="color: var(--aurora-green); font-size: 20px; margin-bottom: 24px; text-align: center;">
+
+          <h3
+            class="space-font cosmic-glow"
+            style="color: var(--aurora-green); font-size: 20px; margin-bottom: 24px; text-align: center;"
+          >
             CONTACT INFORMATION
           </h3>
-          
+
           <ul class="contact-info alien-font">
             <li>📍 Based in: Harold Hill, covering the local area</li>
             <li>📞 Phone: 07971 331814 / 01708 347341</li>
-            <li>📧 Email: <a href="mailto:david@chilterncomputers.net">david@chilterncomputers.net</a></li>
+            <li>
+              📧 Email: <a href="mailto:david@chilterncomputers.net">david@chilterncomputers.net</a>
+            </li>
             <li>💬 WhatsApp: <a href="https://wa.me/447971331814">07971 331814</a></li>
           </ul>
         </div>
       </div>
-      
+
       <!-- Testimonials Section -->
       <div style="margin-top: 80px;">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 40px; text-align: center;">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 40px; text-align: center;"
+        >
           CUSTOMER TESTIMONIALS
         </h2>
-        
-        <p class="alien-font" style="font-size: clamp(16px, 3vw, 18px); color: var(--comet-silver); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.4;">
+
+        <p
+          class="alien-font"
+          style="font-size: clamp(16px, 3vw, 18px); color: var(--comet-silver); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; line-height: 1.4;"
+        >
           Hear from satisfied customers who trust Chiltern Computers for their IT needs.
         </p>
-        
+
         <div class="testimonial-grid">
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
@@ -240,7 +282,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <div class="testimonial-author tech-font">– Sarah M.</div>
           </div>
-          
+
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text alien-font">
@@ -248,7 +290,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <div class="testimonial-author tech-font">– James P.</div>
           </div>
-          
+
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text alien-font">
@@ -256,7 +298,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <div class="testimonial-author tech-font">– Anita L.</div>
           </div>
-          
+
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
             <p class="testimonial-text alien-font">

@@ -6,38 +6,162 @@ import Layout from '../../layouts/Layout.astro';
   title="Laptop Repair Dagenham - Same Day Screen & Keyboard Repairs"
   description="Professional laptop repair in Dagenham. Screen replacement, keyboard repair, battery replacement & more. Free collection, no fix no fee. Call 07971 331814."
   keywords="laptop repair dagenham, laptop screen repair dagenham, laptop keyboard repair dagenham, laptop battery replacement dagenham, laptop repair near me, laptop screen replacement dagenham, broken laptop screen dagenham, laptop not charging dagenham, laptop repair barking dagenham"
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Services", url: "/services/repairs/" }, { name: "Laptop Repair Dagenham", url: "/services/laptop-repair-dagenham/" }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'Laptop Repair Dagenham', url: '/services/laptop-repair-dagenham/' },
+  ]}
 >
   <style>
-    * { box-sizing: border-box; } html, body { overflow-x: hidden; width: 100%; }
-    :root { --cosmic-blue: #1e3a8a; --nebula-purple: #7c3aed; --starlight-white: #f8fafc; --plasma-cyan: #06b6d4; --aurora-green: #10b981; --solar-orange: #f59e0b; --deep-space: #0f172a; --comet-silver: #e5e7eb; }
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; } .alien-font { font-family: 'Exo 2', sans-serif; } .tech-font { font-family: 'Space Mono', monospace; }
-    @keyframes cosmic-pulse { 0%, 100% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor; } }
-    @keyframes galaxy-flow { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text { background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple)); background-size: 200% 200%; animation: galaxy-flow 4s ease-in-out infinite; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-bg { background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9)); }
-    .cosmic-card { background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid var(--plasma-cyan); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2); transition: all 0.3s ease; }
-    .cosmic-card:hover { transform: translateY(-5px); border-color: var(--aurora-green); }
-    .space-button { background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
-    .space-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4); }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+    }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+    }
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 0 16px;
+      }
+    }
   </style>
 
   <main>
     <section class="section-bg" style="padding: 100px 0 60px;">
       <div class="container">
         <div style="text-align: center; margin-bottom: 50px;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;">
-            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">💻 SAME DAY LAPTOP REPAIRS</span>
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;"
+          >
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;"
+              >💻 SAME DAY LAPTOP REPAIRS</span
+            >
           </div>
-          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;">LAPTOP REPAIR DAGENHAM</h1>
-          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">Professional laptop repair services for Dagenham and Barking & Dagenham. We fix all laptop brands including Dell, HP, Lenovo, Asus, Acer, and Apple MacBooks. Free collection and delivery.</p>
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+          >
+            LAPTOP REPAIR DAGENHAM
+          </h1>
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+          >
+            Professional laptop repair services for Dagenham and Barking & Dagenham. We fix all
+            laptop brands including Dell, HP, Lenovo, Asus, Acer, and Apple MacBooks. Free
+            collection and delivery.
+          </p>
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <a href="/contact/" class="space-button space-font"><span>🛠️</span> Book Repair</a>
-            <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(16, 185, 129, 0.2);"><span>📱</span> 07971 331814</a>
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(16, 185, 129, 0.2);"><span>📱</span> 07971 331814</a
+            >
           </div>
         </div>
       </div>
@@ -45,12 +169,53 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;">DAGENHAM LAPTOP REPAIR SERVICES</h2>
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          DAGENHAM LAPTOP REPAIR SERVICES
+        </h2>
         <div class="services-grid">
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🖥️</span><h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">SCREEN REPLACEMENT</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Cracked, broken or damaged laptop screens replaced. All sizes and brands.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">⌨️</span><h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">KEYBOARD REPAIR</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Broken keys, sticky keyboards, liquid damage repair and replacement.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🔋</span><h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">BATTERY REPLACEMENT</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Laptop not holding charge? We replace worn out batteries for all models.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🔌</span><h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">CHARGING PORT REPAIR</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Laptop not charging? DC jack and charging port repairs and replacements.</p></div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🖥️</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              SCREEN REPLACEMENT
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Cracked, broken or damaged laptop screens replaced. All sizes and brands.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">⌨️</span><h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              KEYBOARD REPAIR
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Broken keys, sticky keyboards, liquid damage repair and replacement.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🔋</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              BATTERY REPLACEMENT
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Laptop not holding charge? We replace worn out batteries for all models.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🔌</span><h3
+              class="space-font"
+              style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            >
+              CHARGING PORT REPAIR
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Laptop not charging? DC jack and charging port repairs and replacements.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -58,23 +223,74 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
         <div class="cosmic-card" style="padding: 40px;">
-          <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">WHY DAGENHAM CHOOSES US FOR LAPTOP REPAIRS</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+          <h2
+            class="space-font"
+            style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;"
+          >
+            WHY DAGENHAM CHOOSES US FOR LAPTOP REPAIRS
+          </h2>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;"
+          >
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🚗 FREE COLLECTION</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Free pickup and delivery throughout Dagenham, Becontree, Dagenham Heathway, and surrounding areas. No need to travel.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                🚗 FREE COLLECTION
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Free pickup and delivery throughout Dagenham, Becontree, Dagenham Heathway, and
+                surrounding areas. No need to travel.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">⚡ FAST TURNAROUND</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Most laptop repairs completed within 24-48 hours. Screen replacements often done same day when we have parts in stock.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                ⚡ FAST TURNAROUND
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Most laptop repairs completed within 24-48 hours. Screen replacements often done
+                same day when we have parts in stock.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">💷 NO FIX, NO FEE</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Free diagnosis on all laptop repairs. If we can't fix your laptop, you don't pay a penny. Transparent pricing with no hidden charges.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                💷 NO FIX, NO FEE
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Free diagnosis on all laptop repairs. If we can't fix your laptop, you don't pay a
+                penny. Transparent pricing with no hidden charges.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🛡️ WARRANTY INCLUDED</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">All laptop repairs come with a 90-day warranty. If the same issue returns, we'll fix it free of charge.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                🛡️ WARRANTY INCLUDED
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                All laptop repairs come with a 90-day warranty. If the same issue returns, we'll fix
+                it free of charge.
+              </p>
             </div>
           </div>
         </div>
@@ -83,23 +299,76 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">LAPTOP REPAIR DAGENHAM FAQ</h2>
+        <h2
+          class="space-font"
+          style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          LAPTOP REPAIR DAGENHAM FAQ
+        </h2>
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">How much does laptop screen replacement cost in Dagenham?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Laptop screen replacement typically costs between £60-£120 depending on the screen size and type (standard LCD vs touchscreen). We provide a free quote before any work begins and prices include fitting.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How much does laptop screen replacement cost in Dagenham?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Laptop screen replacement typically costs between £60-£120 depending on the screen
+              size and type (standard LCD vs touchscreen). We provide a free quote before any work
+              begins and prices include fitting.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">Do you repair MacBooks in Dagenham?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Yes! We repair all Apple MacBooks including MacBook Air and MacBook Pro models. Common repairs include screen replacement, keyboard repair, battery replacement, and SSD upgrades.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Do you repair MacBooks in Dagenham?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Yes! We repair all Apple MacBooks including MacBook Air and MacBook Pro models. Common
+              repairs include screen replacement, keyboard repair, battery replacement, and SSD
+              upgrades.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">Can you fix a laptop that won't turn on?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Yes, we diagnose and repair laptops that won't power on. Common causes include faulty power supplies, dead batteries, motherboard issues, or failed components. We offer free diagnosis to identify the exact problem.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Can you fix a laptop that won't turn on?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Yes, we diagnose and repair laptops that won't power on. Common causes include faulty
+              power supplies, dead batteries, motherboard issues, or failed components. We offer
+              free diagnosis to identify the exact problem.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">What areas of Dagenham do you cover for laptop repairs?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">We cover all of Dagenham including Dagenham Heathway, Becontree, Dagenham Dock, Dagenham East, and the surrounding Barking & Dagenham areas. Free collection and delivery throughout the RM8, RM9, and RM10 postcodes.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              What areas of Dagenham do you cover for laptop repairs?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              We cover all of Dagenham including Dagenham Heathway, Becontree, Dagenham Dock,
+              Dagenham East, and the surrounding Barking & Dagenham areas. Free collection and
+              delivery throughout the RM8, RM9, and RM10 postcodes.
+            </p>
           </div>
         </div>
       </div>
@@ -107,19 +376,59 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">RELATED SERVICES</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-          <a href="/areas/dagenham/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">📍 Computer Repair Dagenham</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">All our computer repair services for Dagenham including PC repairs and virus removal.</p>
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          RELATED SERVICES
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+        >
+          <a
+            href="/areas/dagenham/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              📍 Computer Repair Dagenham
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              All our computer repair services for Dagenham including PC repairs and virus removal.
+            </p>
           </a>
-          <a href="/services/repairs/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">🛠️ All Repair Services</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">View our full range of PC and laptop repair services available to Dagenham customers.</p>
+          <a
+            href="/services/repairs/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              🛠️ All Repair Services
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              View our full range of PC and laptop repair services available to Dagenham customers.
+            </p>
           </a>
-          <a href="/contact/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">📞 Get a Quote</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Contact us for a free quote on any laptop repair. No obligation, honest pricing.</p>
+          <a
+            href="/contact/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              📞 Get a Quote
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Contact us for a free quote on any laptop repair. No obligation, honest pricing.
+            </p>
           </a>
         </div>
       </div>
@@ -127,10 +436,27 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0 80px;">
       <div class="container">
-        <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);">
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;">BROKEN LAPTOP IN DAGENHAM?</h2>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;">Free collection from Dagenham. Open 7 days, 9AM-9PM. No fix, no fee.</p>
-          <a href="tel:+447971331814" class="space-button space-font" style="font-size: 16px; padding: 16px 32px;"><span>📱</span> 07971 331814</a>
+        <div
+          class="cosmic-card"
+          style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+          >
+            BROKEN LAPTOP IN DAGENHAM?
+          </h2>
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
+          >
+            Free collection from Dagenham. Open 7 days, 9AM-9PM. No fix, no fee.
+          </p>
+          <a
+            href="tel:+447971331814"
+            class="space-button space-font"
+            style="font-size: 16px; padding: 16px 32px;"><span>📱</span> 07971 331814</a
+          >
         </div>
       </div>
     </section>

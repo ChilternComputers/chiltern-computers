@@ -1,32 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const publishDate = "2025-01-23";
-const modifiedDate = "2025-01-23";
-const author = "Chiltern Computers";
-const readTime = "8 min read";
+const publishDate = '2025-01-23';
+const modifiedDate = '2025-01-23';
+const author = 'Chiltern Computers';
+const readTime = '8 min read';
 
 const faqs = [
   {
-    question: "Will Windows 11 work on my old PC without TPM 2.0?",
-    answer: "Yes, Windows 11 can run on PCs without TPM 2.0 using official and unofficial bypass methods. Microsoft even provides a registry workaround for TPM 1.2 systems. Many older PCs run Windows 11 perfectly well - the requirements are more about security policy than actual capability."
+    question: 'Will Windows 11 work on my old PC without TPM 2.0?',
+    answer:
+      'Yes, Windows 11 can run on PCs without TPM 2.0 using official and unofficial bypass methods. Microsoft even provides a registry workaround for TPM 1.2 systems. Many older PCs run Windows 11 perfectly well - the requirements are more about security policy than actual capability.',
   },
   {
-    question: "Is it safe to install Windows 11 on an unsupported PC?",
-    answer: "Generally yes, with some caveats. Your PC will work normally, but Microsoft warns that unsupported systems may not receive all updates. In practice, most users report receiving updates without issues. The main risk is potential future compatibility problems, not immediate safety concerns."
+    question: 'Is it safe to install Windows 11 on an unsupported PC?',
+    answer:
+      'Generally yes, with some caveats. Your PC will work normally, but Microsoft warns that unsupported systems may not receive all updates. In practice, most users report receiving updates without issues. The main risk is potential future compatibility problems, not immediate safety concerns.',
   },
   {
-    question: "Will I still get Windows updates on unsupported hardware?",
-    answer: "Currently, yes. Microsoft has continued to deliver updates to unsupported Windows 11 installations. However, they reserve the right to exclude unsupported hardware from future updates. For most home users, this hasn't been a practical problem."
+    question: 'Will I still get Windows updates on unsupported hardware?',
+    answer:
+      "Currently, yes. Microsoft has continued to deliver updates to unsupported Windows 11 installations. However, they reserve the right to exclude unsupported hardware from future updates. For most home users, this hasn't been a practical problem.",
   },
   {
-    question: "Can a computer shop upgrade my old PC to Windows 11?",
-    answer: "Yes, local computer repair shops like Chiltern Computers can assess your PC, determine the best upgrade path, and perform the installation properly. We can also advise whether your hardware will genuinely benefit from Windows 11 or if other upgrades (like an SSD) would be more beneficial."
+    question: 'Can a computer shop upgrade my old PC to Windows 11?',
+    answer:
+      'Yes, local computer repair shops like Chiltern Computers can assess your PC, determine the best upgrade path, and perform the installation properly. We can also advise whether your hardware will genuinely benefit from Windows 11 or if other upgrades (like an SSD) would be more beneficial.',
   },
   {
-    question: "Should I upgrade to Windows 11 or buy a new PC?",
-    answer: "If your PC has an SSD (or can be upgraded to one), 8GB+ RAM, and a reasonable processor (Intel 4th gen or newer, or equivalent AMD), Windows 11 will likely run well. If your PC is very old or struggling with Windows 10, a new or refurbished machine might be more cost-effective than upgrading."
-  }
+    question: 'Should I upgrade to Windows 11 or buy a new PC?',
+    answer:
+      'If your PC has an SSD (or can be upgraded to one), 8GB+ RAM, and a reasonable processor (Intel 4th gen or newer, or equivalent AMD), Windows 11 will likely run well. If your PC is very old or struggling with Windows 10, a new or refurbished machine might be more cost-effective than upgrading.',
+  },
 ];
 ---
 
@@ -36,8 +41,14 @@ const faqs = [
   keywords="windows 11 upgrade romford, upgrade old pc windows 11 essex, windows 11 unsupported pc havering, windows 11 without tpm romford, pc upgrade harold hill, windows 11 upgrade service essex, computer upgrade hornchurch, windows 11 incompatible pc fix romford"
 >
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
     :root {
       --cosmic-blue: #1e3a8a;
@@ -53,24 +64,49 @@ const faqs = [
       --windows-blue: #0078d4;
     }
 
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
 
     @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
     }
 
     @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
     .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       background-size: 200% 200%;
       animation: galaxy-flow 4s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -116,7 +152,8 @@ const faqs = [
       margin-bottom: 20px;
     }
 
-    .article-content ul, .article-content ol {
+    .article-content ul,
+    .article-content ol {
       margin: 20px 0;
       padding-left: 24px;
     }
@@ -291,12 +328,22 @@ const faqs = [
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 16px; }
-      .article-content { font-size: 16px; }
-      .article-meta { gap: 16px; }
-      .requirements-table { font-size: 13px; }
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .article-meta {
+        gap: 16px;
+      }
+      .requirements-table {
+        font-size: 13px;
+      }
       .requirements-table th,
-      .requirements-table td { padding: 10px 12px; }
+      .requirements-table td {
+        padding: 10px 12px;
+      }
     }
   </style>
 
@@ -312,41 +359,119 @@ const faqs = [
           <span>Windows 11 Upgrade Guide</span>
         </nav>
 
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 120, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--windows-blue); margin-bottom: 24px;">
-          <span class="tech-font" style="color: var(--windows-blue); font-size: 12px;">WINDOWS 11</span>
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 120, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--windows-blue); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--windows-blue); font-size: 12px;"
+            >WINDOWS 11</span
+          >
         </div>
 
-        <h1 class="space-font" style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;">
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
           Windows 11 Upgrade for Old PCs in Romford & Essex
         </h1>
 
-        <p class="alien-font" style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;">
-          Microsoft says your PC can't run Windows 11? That's not always true. Local experts in Harold Hill explain how to safely upgrade older computers across Havering and Essex.
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Microsoft says your PC can't run Windows 11? That's not always true. Local experts in
+          Harold Hill explain how to safely upgrade older computers across Havering and Essex.
         </p>
 
         <div class="article-meta tech-font">
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
             </svg>
-            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
           </div>
           <div class="meta-item" style="color: var(--aurora-green);">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-              </svg>
-              <span>Updated: {new Date(modifiedDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
-            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              ></path>
+            </svg>
+            <span
+              >Updated: {
+                new Date(modifiedDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             <span>{readTime}</span>
           </div>
           <div class="meta-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
             <span>Romford, Essex</span>
           </div>
@@ -359,17 +484,25 @@ const faqs = [
       <div class="container">
         <article class="article-content alien-font">
           <p>
-            With <strong>Windows 10 support ending in October 2025</strong>, millions of PC owners are facing a dilemma. Microsoft's PC Health Check app tells them their computer "doesn't meet Windows 11 system requirements" - but in many cases, these PCs are perfectly capable of running Windows 11. They're just being blocked by Microsoft's strict (and somewhat controversial) hardware requirements.
+            With <strong>Windows 10 support ending in October 2025</strong>, millions of PC owners
+            are facing a dilemma. Microsoft's PC Health Check app tells them their computer "doesn't
+            meet Windows 11 system requirements" - but in many cases, these PCs are perfectly
+            capable of running Windows 11. They're just being blocked by Microsoft's strict (and
+            somewhat controversial) hardware requirements.
           </p>
 
           <p>
-            If you're in Romford, Harold Hill, or anywhere in Essex with a PC that's been deemed "incompatible," don't rush to buy a new computer just yet. This guide explains what the requirements really mean, whether your PC can actually run Windows 11, and how to upgrade safely.
+            If you're in Romford, Harold Hill, or anywhere in Essex with a PC that's been deemed
+            "incompatible," don't rush to buy a new computer just yet. This guide explains what the
+            requirements really mean, whether your PC can actually run Windows 11, and how to
+            upgrade safely.
           </p>
 
           <h2 class="space-font">Why Microsoft Says Your PC Can't Run Windows 11</h2>
 
           <p>
-            Microsoft introduced strict hardware requirements for Windows 11, primarily focused on security features. Here's what they officially require:
+            Microsoft introduced strict hardware requirements for Windows 11, primarily focused on
+            security features. Here's what they officially require:
           </p>
 
           <table class="requirements-table">
@@ -410,38 +543,64 @@ const faqs = [
           </table>
 
           <p>
-            The most common blockers are <strong>TPM 2.0</strong> and <strong>CPU generation</strong>. Many perfectly capable PCs from 2015-2017 have TPM 1.2 (or no TPM) and 6th or 7th generation Intel processors. These machines often have plenty of power for Windows 11 - they just don't meet Microsoft's security requirements.
+            The most common blockers are <strong>TPM 2.0</strong> and <strong>CPU generation</strong
+            >. Many perfectly capable PCs from 2015-2017 have TPM 1.2 (or no TPM) and 6th or 7th
+            generation Intel processors. These machines often have plenty of power for Windows 11 -
+            they just don't meet Microsoft's security requirements.
           </p>
 
           <div class="info-box">
-            <p style="margin: 0;"><strong>What is TPM?</strong> The Trusted Platform Module is a security chip that stores encryption keys and helps protect against certain types of attacks. While it's a genuine security feature, most home users won't notice any practical difference with or without it. TPM 2.0 is primarily important for enterprise security features like BitLocker.</p>
+            <p style="margin: 0;">
+              <strong>What is TPM?</strong> The Trusted Platform Module is a security chip that stores
+              encryption keys and helps protect against certain types of attacks. While it's a genuine
+              security feature, most home users won't notice any practical difference with or without
+              it. TPM 2.0 is primarily important for enterprise security features like BitLocker.
+            </p>
           </div>
 
           <h2 class="space-font">Can Your PC Actually Run Windows 11?</h2>
 
           <p>
-            Forget the official requirements for a moment. Here's what actually matters for Windows 11 to run well:
+            Forget the official requirements for a moment. Here's what actually matters for Windows
+            11 to run well:
           </p>
 
           <ul>
-            <li><strong>A reasonable processor:</strong> Intel Core 4th generation (Haswell, 2013) or newer, or AMD equivalent. Even some older processors work.</li>
-            <li><strong>8GB RAM:</strong> The official minimum is 4GB, but 8GB is realistic for comfortable use.</li>
-            <li><strong>An SSD:</strong> This is the single biggest factor for performance. Windows 11 on a traditional hard drive is painfully slow.</li>
-            <li><strong>UEFI firmware:</strong> Most PCs from 2012 onwards have this. Very old BIOS-only systems may struggle.</li>
+            <li>
+              <strong>A reasonable processor:</strong> Intel Core 4th generation (Haswell, 2013) or newer,
+              or AMD equivalent. Even some older processors work.
+            </li>
+            <li>
+              <strong>8GB RAM:</strong> The official minimum is 4GB, but 8GB is realistic for comfortable
+              use.
+            </li>
+            <li>
+              <strong>An SSD:</strong> This is the single biggest factor for performance. Windows 11 on
+              a traditional hard drive is painfully slow.
+            </li>
+            <li>
+              <strong>UEFI firmware:</strong> Most PCs from 2012 onwards have this. Very old BIOS-only
+              systems may struggle.
+            </li>
           </ul>
 
           <p>
-            If your PC currently runs Windows 10 reasonably well, there's a good chance it can run Windows 11 - regardless of what the PC Health Check says.
+            If your PC currently runs Windows 10 reasonably well, there's a good chance it can run
+            Windows 11 - regardless of what the PC Health Check says.
           </p>
 
           <h2 class="space-font">Can You Upgrade an Unsupported PC to Windows 11?</h2>
 
           <p>
-            Yes - there are legitimate methods to install Windows 11 on PCs that don't meet Microsoft's official requirements. These range from Microsoft's own workarounds (for systems with TPM 1.2) to more advanced techniques for older hardware.
+            Yes - there are legitimate methods to install Windows 11 on PCs that don't meet
+            Microsoft's official requirements. These range from Microsoft's own workarounds (for
+            systems with TPM 1.2) to more advanced techniques for older hardware.
           </p>
 
           <p>
-            However, the upgrade process requires technical knowledge to do correctly. Getting it wrong can result in data loss, failed installations, or systems that won't boot. The process involves:
+            However, the upgrade process requires technical knowledge to do correctly. Getting it
+            wrong can result in data loss, failed installations, or systems that won't boot. The
+            process involves:
           </p>
 
           <ul>
@@ -453,24 +612,43 @@ const faqs = [
           </ul>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Professional Windows 11 Upgrade Service:</strong> At Chiltern Computers, we offer a complete Windows 11 upgrade service for unsupported PCs. We'll assess your hardware, back up your data, perform the upgrade safely, and ensure everything works correctly afterwards. No risk of data loss or failed installations.</p>
+            <p style="margin: 0;">
+              <strong>Professional Windows 11 Upgrade Service:</strong> At Chiltern Computers, we offer
+              a complete Windows 11 upgrade service for unsupported PCs. We'll assess your hardware, back
+              up your data, perform the upgrade safely, and ensure everything works correctly afterwards.
+              No risk of data loss or failed installations.
+            </p>
           </div>
 
           <h2 class="space-font">What Are the Risks?</h2>
 
           <p>
-            Microsoft warns that unsupported PCs may have compatibility issues and might not receive updates. In practice, here's what we've observed:
+            Microsoft warns that unsupported PCs may have compatibility issues and might not receive
+            updates. In practice, here's what we've observed:
           </p>
 
           <ul>
-            <li><strong>Updates:</strong> So far, Microsoft has continued to deliver updates to unsupported installations. This could change, but hasn't yet.</li>
-            <li><strong>Stability:</strong> Windows 11 runs stably on most unsupported hardware. The requirements are more about policy than technical capability.</li>
-            <li><strong>Driver support:</strong> Older hardware may have limited driver support, but this affects supported and unsupported systems equally.</li>
-            <li><strong>Future compatibility:</strong> There's a small risk that future Windows 11 updates could cause issues on unsupported hardware.</li>
+            <li>
+              <strong>Updates:</strong> So far, Microsoft has continued to deliver updates to unsupported
+              installations. This could change, but hasn't yet.
+            </li>
+            <li>
+              <strong>Stability:</strong> Windows 11 runs stably on most unsupported hardware. The requirements
+              are more about policy than technical capability.
+            </li>
+            <li>
+              <strong>Driver support:</strong> Older hardware may have limited driver support, but this
+              affects supported and unsupported systems equally.
+            </li>
+            <li>
+              <strong>Future compatibility:</strong> There's a small risk that future Windows 11 updates
+              could cause issues on unsupported hardware.
+            </li>
           </ul>
 
           <p>
-            For most home users, the practical risks are minimal. Business users may want to stick with supported hardware for compliance and support reasons.
+            For most home users, the practical risks are minimal. Business users may want to stick
+            with supported hardware for compliance and support reasons.
           </p>
 
           <h2 class="space-font">When Upgrading Makes Sense (And When It Doesn't)</h2>
@@ -494,7 +672,12 @@ const faqs = [
           </ul>
 
           <div class="highlight-box">
-            <p style="margin: 0;"><strong>Pro Tip:</strong> Before upgrading to Windows 11, consider upgrading your hardware first. Adding an SSD to an older PC often makes a bigger difference than the operating system upgrade. Many PCs that "feel old" are actually held back by slow hard drives, not outdated processors.</p>
+            <p style="margin: 0;">
+              <strong>Pro Tip:</strong> Before upgrading to Windows 11, consider upgrading your hardware
+              first. Adding an SSD to an older PC often makes a bigger difference than the operating system
+              upgrade. Many PCs that "feel old" are actually held back by slow hard drives, not outdated
+              processors.
+            </p>
           </div>
 
           <h2 class="space-font">What About Just Staying on Windows 10?</h2>
@@ -510,59 +693,112 @@ const faqs = [
             <li>Online banking and other services may eventually require newer systems</li>
           </ul>
 
-          <p>
-            For PCs that genuinely can't run Windows 11, alternatives include:
-          </p>
+          <p>For PCs that genuinely can't run Windows 11, alternatives include:</p>
 
           <ul>
-            <li><strong>Extended Security Updates:</strong> Microsoft offers paid updates for businesses (and may extend to consumers)</li>
-            <li><strong>Linux:</strong> Distributions like Linux Mint or Ubuntu are free and run well on older hardware</li>
-            <li><strong>Replacement:</strong> If your PC is very old, a refurbished business PC with Windows 11 support may be cost-effective</li>
+            <li>
+              <strong>Extended Security Updates:</strong> Microsoft offers paid updates for businesses
+              (and may extend to consumers)
+            </li>
+            <li>
+              <strong>Linux:</strong> Distributions like Linux Mint or Ubuntu are free and run well on
+              older hardware
+            </li>
+            <li>
+              <strong>Replacement:</strong> If your PC is very old, a refurbished business PC with Windows
+              11 support may be cost-effective
+            </li>
           </ul>
 
           <h2 class="space-font">Frequently Asked Questions</h2>
 
           <div class="faq-section">
-            {faqs.map((faq, index) => (
-              <div class="faq-item">
-                <div class="faq-question space-font">
-                  <span>{faq.question}</span>
+            {
+              faqs.map((faq, index) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
                 </div>
-                <div class="faq-answer alien-font">
-                  {faq.answer}
-                </div>
-              </div>
-            ))}
+              ))
+            }
           </div>
 
           <h2 class="space-font">Getting Help With Your Windows 11 Upgrade</h2>
 
           <p>
-            Upgrading to Windows 11 on unsupported hardware isn't difficult, but it does require some technical knowledge. If you're not comfortable with registry edits and bootable USB drives, or if you simply want peace of mind that it's done correctly, a local computer shop can help.
+            Upgrading to Windows 11 on unsupported hardware isn't difficult, but it does require
+            some technical knowledge. If you're not comfortable with registry edits and bootable USB
+            drives, or if you simply want peace of mind that it's done correctly, a local computer
+            shop can help.
           </p>
 
           <p>
-            At Chiltern Computers in Harold Hill, we can assess your PC, advise whether Windows 11 is the right choice, perform the upgrade safely, and ensure everything works properly afterwards. We can also recommend whether hardware upgrades (like adding an SSD) would benefit your system.
+            At Chiltern Computers in Harold Hill, we can assess your PC, advise whether Windows 11
+            is the right choice, perform the upgrade safely, and ensure everything works properly
+            afterwards. We can also recommend whether hardware upgrades (like adding an SSD) would
+            benefit your system.
           </p>
 
           <p>
-            Don't let Microsoft's requirements force you into buying a new PC before you're ready. Many "unsupported" computers have years of useful life left with Windows 11.
+            Don't let Microsoft's requirements force you into buying a new PC before you're ready.
+            Many "unsupported" computers have years of useful life left with Windows 11.
           </p>
 
           <!-- Author Bio -->
-          <div style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;">
-            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
               </svg>
             </div>
             <div>
-              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">David Hagon</div>
-              <p style="margin: 0; font-size: 15px; line-height: 1.6;">Computer repair specialist and founder of Chiltern Computers in Harold Hill. With years of experience fixing PCs and laptops across Romford and Havering, I pride myself on honest advice and transparent pricing - I'll always tell you if a repair isn't worth it.</p>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. With
+                years of experience fixing PCs and laptops across Romford and Havering, I pride
+                myself on honest advice and transparent pricing - I'll always tell you if a repair
+                isn't worth it.
+              </p>
               <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Us</a>
-                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
-                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews ★★★★★</a>
+                <a
+                  href="/about/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >About Us</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews ★★★★★</a
+                >
               </div>
             </div>
           </div>
@@ -571,53 +807,123 @@ const faqs = [
             <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
               Need Help Upgrading to Windows 11?
             </h3>
-            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
-              Chiltern Computers can assess your PC and perform a safe Windows 11 upgrade - even on "unsupported" systems. Free advice on whether it's right for your computer.
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              Chiltern Computers can assess your PC and perform a safe Windows 11 upgrade - even on
+              "unsupported" systems. Free advice on whether it's right for your computer.
             </p>
             <a href="/contact/" class="space-button space-font">
               Get Windows 11 Upgrade Help
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
             </a>
           </div>
 
           <!-- Related Services -->
-          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Our Upgrade Services</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
-              <a href="/services/repairs/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">PC Upgrades</div>
+          <div
+            style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Our Upgrade Services
+            </h3>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"
+            >
+              <a
+                href="/services/repairs/"
+                style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">
+                  PC Upgrades
+                </div>
               </a>
-              <a href="/services/new-used/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">Refurbished PCs</div>
+              <a
+                href="/services/new-used/"
+                style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">
+                  Refurbished PCs
+                </div>
               </a>
-              <a href="/contact/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
-                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">Get a Quote</div>
+              <a
+                href="/contact/"
+                style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">
+                  Get a Quote
+                </div>
               </a>
             </div>
           </div>
 
           <!-- Related Articles -->
-          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
-            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">Related Articles</h3>
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
             <div style="display: grid; gap: 16px;">
-              <a href="/blog/why-laptop-running-slow-romford-guide/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/why-laptop-running-slow-romford-guide/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Why Your Laptop is Running Slow - Romford Tech Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">10 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Why Your Laptop is Running Slow - Romford Tech Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    10 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/best-computer-repair-near-romford/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/best-computer-repair-near-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Best Computer Repair Near Romford - Local Expert Guide</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Best Computer Repair Near Romford - Local Expert Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
                 </div>
               </a>
-              <a href="/blog/computer-maintenance-tips-romford-businesses/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+              <a
+                href="/blog/computer-maintenance-tips-romford-businesses/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
                 <div>
-                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">Computer Maintenance Tips for Romford Businesses</div>
-                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">9 min read</div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Computer Maintenance Tips for Romford Businesses
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    9 min read
+                  </div>
                 </div>
               </a>
             </div>
@@ -628,43 +934,50 @@ const faqs = [
   </main>
 
   <!-- FAQ Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
 
   <!-- Article Schema -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "How to Upgrade Old PCs to Windows 11 (Even Unsupported Ones) - Romford Guide",
-    "description": "Got an older PC that Microsoft says can't run Windows 11? Learn how to safely upgrade unsupported computers to Windows 11, what the real requirements are, and when it makes sense to upgrade.",
-    "image": "https://chilterncomputers.co.uk/repair-pic.webp",
-    "author": {
-      "@type": "Organization",
-      "name": "Chiltern Computers"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Chiltern Computers",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://chilterncomputers.co.uk/logo_homepage.webp"
-      }
-    },
-    "datePublished": publishDate,
-    "dateModified": modifiedDate,
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://chilterncomputers.co.uk/blog/upgrade-old-pc-windows-11-unsupported/"
-    }
-  })} />
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'How to Upgrade Old PCs to Windows 11 (Even Unsupported Ones) - Romford Guide',
+      description:
+        "Got an older PC that Microsoft says can't run Windows 11? Learn how to safely upgrade unsupported computers to Windows 11, what the real requirements are, and when it makes sense to upgrade.",
+      image: 'https://chilterncomputers.co.uk/repair-pic.webp',
+      author: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Chiltern Computers',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://chilterncomputers.co.uk/logo_homepage.webp',
+        },
+      },
+      datePublished: publishDate,
+      dateModified: modifiedDate,
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://chilterncomputers.co.uk/blog/upgrade-old-pc-windows-11-unsupported/',
+      },
+    })}
+  />
 </Layout>

@@ -3,99 +3,108 @@ import Layout from '../../layouts/Layout.astro';
 
 // Define categories for topic clusters
 const categories = [
-  { id: "all", name: "All Posts", color: "var(--plasma-cyan)" },
-  { id: "repairs", name: "Repairs & Troubleshooting", color: "var(--aurora-green)" },
-  { id: "guides", name: "Buying Guides", color: "var(--solar-orange)" },
-  { id: "gaming", name: "Gaming PCs", color: "var(--nebula-purple)" },
-  { id: "business", name: "Business IT", color: "var(--plasma-cyan)" },
+  { id: 'all', name: 'All Posts', color: 'var(--plasma-cyan)' },
+  { id: 'repairs', name: 'Repairs & Troubleshooting', color: 'var(--aurora-green)' },
+  { id: 'guides', name: 'Buying Guides', color: 'var(--solar-orange)' },
+  { id: 'gaming', name: 'Gaming PCs', color: 'var(--nebula-purple)' },
+  { id: 'business', name: 'Business IT', color: 'var(--plasma-cyan)' },
 ];
 
 // Blog posts data - will be updated as posts are added
 const blogPosts = [
   {
-    slug: "virus-malware-removal-romford-guide",
-    title: "Virus & Malware Removal in Romford - Complete Guide",
-    excerpt: "Think your computer has a virus? Learn the warning signs of malware infection, what to do if you're infected, and how local Romford experts can help.",
-    date: "2025-01-23",
-    readTime: "9 min read",
-    category: "Virus Removal",
-    categoryId: "repairs",
-    image: "/repair-pic.webp",
-    imageAlt: "Virus and malware removal service at computer repair shop in Romford"
+    slug: 'virus-malware-removal-romford-guide',
+    title: 'Virus & Malware Removal in Romford - Complete Guide',
+    excerpt:
+      "Think your computer has a virus? Learn the warning signs of malware infection, what to do if you're infected, and how local Romford experts can help.",
+    date: '2025-01-23',
+    readTime: '9 min read',
+    category: 'Virus Removal',
+    categoryId: 'repairs',
+    image: '/repair-pic.webp',
+    imageAlt: 'Virus and malware removal service at computer repair shop in Romford',
   },
   {
-    slug: "is-my-computer-worth-repairing-romford",
-    title: "Is My Computer Worth Repairing? Romford Expert Advice",
-    excerpt: "Not sure whether to repair or replace your computer? Local experts share honest advice on when repair makes sense and typical costs in Romford.",
-    date: "2025-01-23",
-    readTime: "7 min read",
-    category: "Buying Guide",
-    categoryId: "guides",
-    image: "/repair-pic.webp",
-    imageAlt: "Computer repair technician assessing whether a desktop PC is worth repairing in Romford"
+    slug: 'is-my-computer-worth-repairing-romford',
+    title: 'Is My Computer Worth Repairing? Romford Expert Advice',
+    excerpt:
+      'Not sure whether to repair or replace your computer? Local experts share honest advice on when repair makes sense and typical costs in Romford.',
+    date: '2025-01-23',
+    readTime: '7 min read',
+    category: 'Buying Guide',
+    categoryId: 'guides',
+    image: '/repair-pic.webp',
+    imageAlt:
+      'Computer repair technician assessing whether a desktop PC is worth repairing in Romford',
   },
   {
-    slug: "upgrade-old-pc-windows-11-unsupported",
-    title: "Windows 11 Upgrade for Old PCs in Romford & Essex",
-    excerpt: "Microsoft says your PC can't run Windows 11? Local experts in Harold Hill explain how to safely upgrade unsupported computers and when it makes sense.",
-    date: "2025-01-23",
-    readTime: "8 min read",
-    category: "Windows 11",
-    categoryId: "repairs",
-    image: "/repair-pic.webp",
-    imageAlt: "Windows 11 upgrade being installed on an older PC at computer repair shop in Harold Hill"
+    slug: 'upgrade-old-pc-windows-11-unsupported',
+    title: 'Windows 11 Upgrade for Old PCs in Romford & Essex',
+    excerpt:
+      "Microsoft says your PC can't run Windows 11? Local experts in Harold Hill explain how to safely upgrade unsupported computers and when it makes sense.",
+    date: '2025-01-23',
+    readTime: '8 min read',
+    category: 'Windows 11',
+    categoryId: 'repairs',
+    image: '/repair-pic.webp',
+    imageAlt:
+      'Windows 11 upgrade being installed on an older PC at computer repair shop in Harold Hill',
   },
   {
-    slug: "best-computer-repair-near-romford",
-    title: "Best Computer Repair Near Romford - Local Expert Guide 2025",
-    excerpt: "Looking for reliable computer repair in Romford? Discover what makes a great local repair service and how to find trusted technicians in Havering.",
-    date: "2025-01-15",
-    readTime: "8 min read",
-    category: "Computer Repair",
-    categoryId: "repairs",
-    image: "/repair-pic.webp",
-    imageAlt: "Professional computer repair service in Romford - technician working on laptop"
+    slug: 'best-computer-repair-near-romford',
+    title: 'Best Computer Repair Near Romford - Local Expert Guide 2025',
+    excerpt:
+      'Looking for reliable computer repair in Romford? Discover what makes a great local repair service and how to find trusted technicians in Havering.',
+    date: '2025-01-15',
+    readTime: '8 min read',
+    category: 'Computer Repair',
+    categoryId: 'repairs',
+    image: '/repair-pic.webp',
+    imageAlt: 'Professional computer repair service in Romford - technician working on laptop',
   },
   {
-    slug: "why-laptop-running-slow-romford-guide",
-    title: "Why Your Laptop is Running Slow - Romford Tech Guide",
-    excerpt: "Is your laptop frustratingly slow? Learn the most common causes of slow laptop performance and how local Romford experts can help speed it up.",
-    date: "2025-01-12",
-    readTime: "10 min read",
-    category: "Laptop Tips",
-    categoryId: "repairs",
-    image: "/repair-pic.webp",
-    imageAlt: "Slow laptop being diagnosed for performance issues at Romford computer repair shop"
+    slug: 'why-laptop-running-slow-romford-guide',
+    title: 'Why Your Laptop is Running Slow - Romford Tech Guide',
+    excerpt:
+      'Is your laptop frustratingly slow? Learn the most common causes of slow laptop performance and how local Romford experts can help speed it up.',
+    date: '2025-01-12',
+    readTime: '10 min read',
+    category: 'Laptop Tips',
+    categoryId: 'repairs',
+    image: '/repair-pic.webp',
+    imageAlt: 'Slow laptop being diagnosed for performance issues at Romford computer repair shop',
   },
   {
-    slug: "gaming-pc-build-tips-essex",
-    title: "Gaming PC Build Tips for Essex Gamers - Complete Guide",
-    excerpt: "Planning to build a gaming PC in Essex? Get expert advice on components, budgets, and where to find local support for your custom build.",
-    date: "2025-01-08",
-    readTime: "12 min read",
-    category: "Gaming PCs",
-    categoryId: "gaming",
-    image: "/repair-pic.webp",
-    imageAlt: "Custom gaming PC build with RGB lighting - built by Essex computer specialists"
+    slug: 'gaming-pc-build-tips-essex',
+    title: 'Gaming PC Build Tips for Essex Gamers - Complete Guide',
+    excerpt:
+      'Planning to build a gaming PC in Essex? Get expert advice on components, budgets, and where to find local support for your custom build.',
+    date: '2025-01-08',
+    readTime: '12 min read',
+    category: 'Gaming PCs',
+    categoryId: 'gaming',
+    image: '/repair-pic.webp',
+    imageAlt: 'Custom gaming PC build with RGB lighting - built by Essex computer specialists',
   },
   {
-    slug: "computer-maintenance-tips-romford-businesses",
-    title: "Computer Maintenance Tips for Romford Businesses",
-    excerpt: "Essential IT maintenance advice for small businesses in Romford and Havering. Keep your business computers running smoothly year-round.",
-    date: "2025-01-05",
-    readTime: "9 min read",
-    category: "Business IT",
-    categoryId: "business",
-    image: "/repair-pic.webp",
-    imageAlt: "Business IT maintenance and computer support for Romford small businesses"
-  }
+    slug: 'computer-maintenance-tips-romford-businesses',
+    title: 'Computer Maintenance Tips for Romford Businesses',
+    excerpt:
+      'Essential IT maintenance advice for small businesses in Romford and Havering. Keep your business computers running smoothly year-round.',
+    date: '2025-01-05',
+    readTime: '9 min read',
+    category: 'Business IT',
+    categoryId: 'business',
+    image: '/repair-pic.webp',
+    imageAlt: 'Business IT maintenance and computer support for Romford small businesses',
+  },
 ];
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',
-    year: 'numeric'
+    year: 'numeric',
   });
 }
 ---
@@ -106,8 +115,14 @@ function formatDate(dateString: string) {
   keywords="computer repair blog romford, tech tips essex, laptop repair guide havering, gaming pc advice romford, IT tips harold hill"
 >
   <style>
-    * { box-sizing: border-box; }
-    html, body { overflow-x: hidden; width: 100%; }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
 
     :root {
       --cosmic-blue: #1e3a8a;
@@ -121,24 +136,49 @@ function formatDate(dateString: string) {
       --comet-silver: #e5e7eb;
     }
 
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; }
-    .alien-font { font-family: 'Exo 2', sans-serif; }
-    .tech-font { font-family: 'Space Mono', monospace; }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
 
     @keyframes cosmic-pulse {
-      0%, 100% { text-shadow: 0 0 5px currentColor; }
-      50% { text-shadow: 0 0 15px currentColor; }
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
     }
 
     @keyframes galaxy-flow {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
     }
 
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
     .galaxy-text {
-      background: linear-gradient(135deg, var(--plasma-cyan), var(--aurora-green), var(--nebula-purple));
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
       background-size: 200% 200%;
       animation: galaxy-flow 4s ease-in-out infinite;
       -webkit-background-clip: text;
@@ -268,7 +308,8 @@ function formatDate(dateString: string) {
       text-decoration: none;
     }
 
-    .category-btn:hover, .category-btn.active {
+    .category-btn:hover,
+    .category-btn.active {
       background: rgba(6, 182, 212, 0.2);
       border-color: var(--plasma-cyan);
       color: var(--plasma-cyan);
@@ -307,16 +348,30 @@ function formatDate(dateString: string) {
     }
 
     @media (max-width: 768px) {
-      .container { padding: 0 16px; }
-      .blog-grid { grid-template-columns: 1fr; gap: 20px; }
-      .blog-card-title { font-size: 18px; }
-      .featured-post { grid-template-columns: 1fr; }
+      .container {
+        padding: 0 16px;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .blog-card-title {
+        font-size: 18px;
+      }
+      .featured-post {
+        grid-template-columns: 1fr;
+      }
       .featured-post .blog-card-image {
         border-radius: 20px 20px 0 0;
         min-height: 200px;
       }
-      .category-filters { gap: 8px; }
-      .category-btn { padding: 8px 16px; font-size: 13px; }
+      .category-filters {
+        gap: 8px;
+      }
+      .category-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+      }
     }
   </style>
 
@@ -325,26 +380,45 @@ function formatDate(dateString: string) {
     <section class="blog-hero" style="padding: 100px 0 60px;">
       <div class="container">
         <div style="text-align: center;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;">
-            <div style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"></div>
-            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">TECH TIPS & LOCAL GUIDES</span>
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 30px;"
+          >
+            <div
+              style="width: 10px; height: 10px; background: var(--aurora-green); border-radius: 50%; animation: cosmic-pulse 1s ease-in-out infinite;"
+            >
+            </div>
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;"
+              >TECH TIPS & LOCAL GUIDES</span
+            >
           </div>
 
-          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(36px, 7vw, 56px); margin-bottom: 24px; line-height: 1.1;">
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(36px, 7vw, 56px); margin-bottom: 24px; line-height: 1.1;"
+          >
             COMPUTER REPAIR BLOG
           </h1>
 
-          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto; line-height: 1.6;">
-            Expert advice, troubleshooting guides, and local tech tips for Romford, Harold Hill, and the wider Essex area.
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto; line-height: 1.6;"
+          >
+            Expert advice, troubleshooting guides, and local tech tips for Romford, Harold Hill, and
+            the wider Essex area.
           </p>
 
           <!-- Category Filters -->
           <div class="category-filters" style="margin-top: 40px;">
-            {categories.map((cat, index) => (
-              <span class={`category-btn tech-font ${index === 0 ? 'active' : ''}`} data-category={cat.id}>
-                {cat.name}
-              </span>
-            ))}
+            {
+              categories.map((cat, index) => (
+                <span
+                  class={`category-btn tech-font ${index === 0 ? 'active' : ''}`}
+                  data-category={cat.id}
+                >
+                  {cat.name}
+                </span>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -354,15 +428,33 @@ function formatDate(dateString: string) {
     <section class="blog-section" style="padding: 60px 0 100px;">
       <div class="container">
         <!-- Featured Post (Most Recent) -->
-        <a href={`/blog/${blogPosts[0].slug}/`} class="blog-card featured-post" data-category={blogPosts[0].categoryId} style="margin-bottom: 30px;">
-          <img src={blogPosts[0].image} alt={blogPosts[0].imageAlt} class="blog-card-image" width="768" height="512" loading="eager" />
+        <a
+          href={`/blog/${blogPosts[0].slug}/`}
+          class="blog-card featured-post"
+          data-category={blogPosts[0].categoryId}
+          style="margin-bottom: 30px;"
+        >
+          <img
+            src={blogPosts[0].image}
+            alt={blogPosts[0].imageAlt}
+            class="blog-card-image"
+            width="768"
+            height="512"
+            loading="eager"
+          />
           <div class="blog-card-content">
             <div>
               <span class="featured-label tech-font">LATEST POST</span>
-              <span class="blog-category tech-font" style="margin-left: 8px;">{blogPosts[0].category}</span>
+              <span class="blog-category tech-font" style="margin-left: 8px;"
+                >{blogPosts[0].category}</span
+              >
             </div>
-            <h2 class="blog-card-title space-font" style="font-size: 28px; margin: 16px 0;">{blogPosts[0].title}</h2>
-            <p class="blog-card-excerpt alien-font" style="font-size: 16px;">{blogPosts[0].excerpt}</p>
+            <h2 class="blog-card-title space-font" style="font-size: 28px; margin: 16px 0;">
+              {blogPosts[0].title}
+            </h2>
+            <p class="blog-card-excerpt alien-font" style="font-size: 16px;">
+              {blogPosts[0].excerpt}
+            </p>
             <div class="blog-card-meta" style="border-top: none; padding-top: 0; margin-top: 16px;">
               <span class="blog-date tech-font">{formatDate(blogPosts[0].date)}</span>
               <span class="blog-read-time tech-font">{blogPosts[0].readTime}</span>
@@ -372,20 +464,29 @@ function formatDate(dateString: string) {
 
         <!-- Rest of Posts -->
         <div class="blog-grid">
-          {blogPosts.slice(1).map((post) => (
-            <a href={`/blog/${post.slug}/`} class="blog-card" data-category={post.categoryId}>
-              <img src={post.image} alt={post.imageAlt} class="blog-card-image" width="768" height="512" loading="lazy" />
-              <div class="blog-card-content">
-                <span class="blog-category tech-font">{post.category}</span>
-                <h2 class="blog-card-title space-font">{post.title}</h2>
-                <p class="blog-card-excerpt alien-font">{post.excerpt}</p>
-                <div class="blog-card-meta">
-                  <span class="blog-date tech-font">{formatDate(post.date)}</span>
-                  <span class="blog-read-time tech-font">{post.readTime}</span>
+          {
+            blogPosts.slice(1).map((post) => (
+              <a href={`/blog/${post.slug}/`} class="blog-card" data-category={post.categoryId}>
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  class="blog-card-image"
+                  width="768"
+                  height="512"
+                  loading="lazy"
+                />
+                <div class="blog-card-content">
+                  <span class="blog-category tech-font">{post.category}</span>
+                  <h2 class="blog-card-title space-font">{post.title}</h2>
+                  <p class="blog-card-excerpt alien-font">{post.excerpt}</p>
+                  <div class="blog-card-meta">
+                    <span class="blog-date tech-font">{formatDate(post.date)}</span>
+                    <span class="blog-read-time tech-font">{post.readTime}</span>
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -393,17 +494,39 @@ function formatDate(dateString: string) {
     <!-- CTA Section -->
     <section class="blog-section" style="padding: 0 0 100px;">
       <div class="container">
-        <div style="background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border: 2px solid var(--aurora-green); border-radius: 20px; padding: 50px 40px; text-align: center;">
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px;">
+        <div
+          style="background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2)); border: 2px solid var(--aurora-green); border-radius: 20px; padding: 50px 40px; text-align: center;"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px;"
+          >
             NEED EXPERT HELP NOW?
           </h2>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 17px;">
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 17px;"
+          >
             Our local technicians in Harold Hill are ready to help with any computer problem.
           </p>
-          <a href="/contact/" class="space-font" style="background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 14px;">
+          <a
+            href="/contact/"
+            class="space-font"
+            style="background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; font-size: 14px;"
+          >
             <span>Get Free Quote</span>
-            <svg xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 16px; height: 16px;"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </a>
         </div>
@@ -416,22 +539,24 @@ function formatDate(dateString: string) {
     document.addEventListener('DOMContentLoaded', () => {
       const categoryBtns = document.querySelectorAll('.category-btn');
       const featuredPost = document.querySelector('.featured-post') as HTMLElement;
-      const blogCards = document.querySelectorAll('.blog-grid .blog-card') as NodeListOf<HTMLElement>;
+      const blogCards = document.querySelectorAll(
+        '.blog-grid .blog-card'
+      ) as NodeListOf<HTMLElement>;
       const featuredCategory = featuredPost?.getAttribute('data-category');
 
-      categoryBtns.forEach(btn => {
+      categoryBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
           const category = btn.getAttribute('data-category');
 
           // Update active state
-          categoryBtns.forEach(b => b.classList.remove('active'));
+          categoryBtns.forEach((b) => b.classList.remove('active'));
           btn.classList.add('active');
 
           // Filter posts
           if (category === 'all') {
             // Show all posts
             if (featuredPost) featuredPost.style.display = 'grid';
-            blogCards.forEach(card => {
+            blogCards.forEach((card) => {
               card.style.display = 'block';
             });
           } else {
@@ -440,7 +565,7 @@ function formatDate(dateString: string) {
               featuredPost.style.display = featuredCategory === category ? 'grid' : 'none';
             }
 
-            blogCards.forEach(card => {
+            blogCards.forEach((card) => {
               const cardCategory = card.getAttribute('data-category');
               card.style.display = cardCategory === category ? 'block' : 'none';
             });

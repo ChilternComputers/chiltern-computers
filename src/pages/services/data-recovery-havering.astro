@@ -6,38 +6,162 @@ import Layout from '../../layouts/Layout.astro';
   title="Data Recovery Havering - Hard Drive & SSD File Recovery"
   description="Professional data recovery in Havering. Recover files from failed hard drives, SSDs, USB drives & memory cards. High success rate, free diagnosis. Call 07971 331814."
   keywords="data recovery havering, hard drive recovery romford, ssd data recovery havering, file recovery havering, data recovery near me, recover deleted files havering, hard drive repair romford, data recovery essex, lost files recovery, failed hard drive recovery"
-  breadcrumbs={[{ name: "Home", url: "/" }, { name: "Services", url: "/services/repairs/" }, { name: "Data Recovery Havering", url: "/services/data-recovery-havering/" }]}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'Data Recovery Havering', url: '/services/data-recovery-havering/' },
+  ]}
 >
   <style>
-    * { box-sizing: border-box; } html, body { overflow-x: hidden; width: 100%; }
-    :root { --cosmic-blue: #1e3a8a; --nebula-purple: #7c3aed; --starlight-white: #f8fafc; --plasma-cyan: #06b6d4; --aurora-green: #10b981; --solar-orange: #f59e0b; --deep-space: #0f172a; --comet-silver: #e5e7eb; }
-    .space-font { font-family: 'Orbitron', sans-serif; font-weight: 600; } .alien-font { font-family: 'Exo 2', sans-serif; } .tech-font { font-family: 'Space Mono', monospace; }
-    @keyframes cosmic-pulse { 0%, 100% { text-shadow: 0 0 5px currentColor; } 50% { text-shadow: 0 0 15px currentColor; } }
-    @keyframes galaxy-flow { 0% { background-position: 0% 0%; } 50% { background-position: 100% 100%; } 100% { background-position: 0% 0%; } }
-    .cosmic-glow { animation: cosmic-pulse 3s ease-in-out infinite alternate; }
-    .galaxy-text { background: linear-gradient(135deg, var(--nebula-purple), var(--plasma-cyan), var(--aurora-green)); background-size: 200% 200%; animation: galaxy-flow 4s ease-in-out infinite; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .section-bg { background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9)); }
-    .cosmic-card { background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid var(--plasma-cyan); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2); transition: all 0.3s ease; }
-    .cosmic-card:hover { transform: translateY(-5px); border-color: var(--aurora-green); }
-    .space-button { background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border: 1px solid var(--aurora-green); color: var(--starlight-white); padding: 14px 28px; border-radius: 25px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
-    .space-button:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4); }
-    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } .container { padding: 0 16px; } }
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+    }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--nebula-purple),
+        var(--plasma-cyan),
+        var(--aurora-green)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+    }
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 0 16px;
+      }
+    }
   </style>
 
   <main>
     <section class="section-bg" style="padding: 100px 0 60px;">
       <div class="container">
         <div style="text-align: center; margin-bottom: 50px;">
-          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(124, 58, 237, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--nebula-purple); margin-bottom: 24px;">
-            <span class="tech-font" style="color: var(--nebula-purple); font-size: 13px;">💾 PROFESSIONAL DATA RECOVERY</span>
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(124, 58, 237, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--nebula-purple); margin-bottom: 24px;"
+          >
+            <span class="tech-font" style="color: var(--nebula-purple); font-size: 13px;"
+              >💾 PROFESSIONAL DATA RECOVERY</span
+            >
           </div>
-          <h1 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;">DATA RECOVERY HAVERING</h1>
-          <p class="alien-font" style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;">Lost important files? We recover data from failed hard drives, SSDs, USB drives, and memory cards. Serving Romford, Harold Hill, Hornchurch, Upminster, and all Havering areas.</p>
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+          >
+            DATA RECOVERY HAVERING
+          </h1>
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+          >
+            Lost important files? We recover data from failed hard drives, SSDs, USB drives, and
+            memory cards. Serving Romford, Harold Hill, Hornchurch, Upminster, and all Havering
+            areas.
+          </p>
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <a href="/contact/" class="space-button space-font"><span>💾</span> Free Assessment</a>
-            <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(124, 58, 237, 0.3);"><span>📱</span> 07971 331814</a>
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(124, 58, 237, 0.3);"><span>📱</span> 07971 331814</a
+            >
           </div>
         </div>
       </div>
@@ -45,12 +169,54 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;">DATA RECOVERY SERVICES</h2>
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          DATA RECOVERY SERVICES
+        </h2>
         <div class="services-grid">
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">💽</span><h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">HARD DRIVE RECOVERY</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Recover files from failed, clicking, or undetected hard drives. Desktop and laptop HDDs.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">⚡</span><h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">SSD DATA RECOVERY</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Recover data from failed SSDs including NVMe, SATA, and M.2 drives.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">🔌</span><h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">USB & EXTERNAL DRIVES</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Recovery from USB flash drives, external hard drives, and portable SSDs.</p></div>
-          <div class="cosmic-card" style="padding: 24px; text-align: center;"><span style="font-size: 36px; display: block; margin-bottom: 12px;">📷</span><h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">MEMORY CARD RECOVERY</h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">Recover photos and videos from SD cards, microSD, CF cards, and camera storage.</p></div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">💽</span><h3
+              class="space-font"
+              style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            >
+              HARD DRIVE RECOVERY
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Recover files from failed, clicking, or undetected hard drives. Desktop and laptop
+              HDDs.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">⚡</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              SSD DATA RECOVERY
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Recover data from failed SSDs including NVMe, SATA, and M.2 drives.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">🔌</span><h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              USB & EXTERNAL DRIVES
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Recovery from USB flash drives, external hard drives, and portable SSDs.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;">📷</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              MEMORY CARD RECOVERY
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Recover photos and videos from SD cards, microSD, CF cards, and camera storage.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -58,23 +224,74 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
         <div class="cosmic-card" style="padding: 40px;">
-          <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;">COMMON DATA LOSS SCENARIOS WE HANDLE</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+          <h2
+            class="space-font"
+            style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;"
+          >
+            COMMON DATA LOSS SCENARIOS WE HANDLE
+          </h2>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;"
+          >
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">❌ ACCIDENTAL DELETION</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Accidentally deleted important files or emptied the recycle bin? We can often recover recently deleted data.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                ❌ ACCIDENTAL DELETION
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Accidentally deleted important files or emptied the recycle bin? We can often
+                recover recently deleted data.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🔧 DRIVE FAILURE</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Hard drive clicking, not spinning, or not detected? We specialise in recovering data from mechanically failed drives.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                🔧 DRIVE FAILURE
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Hard drive clicking, not spinning, or not detected? We specialise in recovering data
+                from mechanically failed drives.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">💧 WATER DAMAGE</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Liquid spill on your laptop? We can attempt data recovery from water-damaged storage devices.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                💧 WATER DAMAGE
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Liquid spill on your laptop? We can attempt data recovery from water-damaged storage
+                devices.
+              </p>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🔒 RANSOMWARE</h3>
-              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">Files encrypted by ransomware? We may be able to help recover your data depending on the variant.</p>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                🔒 RANSOMWARE
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Files encrypted by ransomware? We may be able to help recover your data depending on
+                the variant.
+              </p>
             </div>
           </div>
         </div>
@@ -83,23 +300,77 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">DATA RECOVERY HAVERING FAQ</h2>
+        <h2
+          class="space-font"
+          style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          DATA RECOVERY HAVERING FAQ
+        </h2>
         <div style="display: flex; flex-direction: column; gap: 16px;">
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">How much does data recovery cost in Havering?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Data recovery costs vary depending on the type of failure. Simple logical recoveries (deleted files, formatted drives) start from £60. More complex recoveries from failed drives typically cost £80-£150. We provide a free assessment and quote before any work.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How much does data recovery cost in Havering?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Data recovery costs vary depending on the type of failure. Simple logical recoveries
+              (deleted files, formatted drives) start from £60. More complex recoveries from failed
+              drives typically cost £80-£150. We provide a free assessment and quote before any
+              work.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">What's your success rate for data recovery?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Our success rate is approximately 80-90% for logical failures (deleted files, corrupted drives) and 60-70% for physical failures (clicking drives, head crashes). We always provide an honest assessment of recovery chances before starting work.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              What's your success rate for data recovery?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Our success rate is approximately 80-90% for logical failures (deleted files,
+              corrupted drives) and 60-70% for physical failures (clicking drives, head crashes). We
+              always provide an honest assessment of recovery chances before starting work.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">How long does data recovery take?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">Most data recovery jobs are completed within 2-5 days. Simple recoveries can sometimes be done same day. Complex cases requiring specialist techniques may take longer. We'll give you an estimated timeframe after initial assessment.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How long does data recovery take?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Most data recovery jobs are completed within 2-5 days. Simple recoveries can sometimes
+              be done same day. Complex cases requiring specialist techniques may take longer. We'll
+              give you an estimated timeframe after initial assessment.
+            </p>
           </div>
           <div class="cosmic-card" style="padding: 24px;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;">What areas of Havering do you cover for data recovery?</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;">We cover all of Havering including Romford, Harold Hill, Hornchurch, Upminster, Rainham, Harold Wood, Gidea Park, Collier Row, and Elm Park. Free collection and delivery available throughout the borough.</p>
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              What areas of Havering do you cover for data recovery?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              We cover all of Havering including Romford, Harold Hill, Hornchurch, Upminster,
+              Rainham, Harold Wood, Gidea Park, Collier Row, and Elm Park. Free collection and
+              delivery available throughout the borough.
+            </p>
           </div>
         </div>
       </div>
@@ -108,11 +379,26 @@ import Layout from '../../layouts/Layout.astro';
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
         <div class="cosmic-card" style="padding: 40px; border-color: var(--solar-orange);">
-          <h2 class="space-font" style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px; text-align: center;">⚠️ IMPORTANT: WHAT TO DO IF YOUR DRIVE FAILS</h2>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <h2
+            class="space-font"
+            style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px; text-align: center;"
+          >
+            ⚠️ IMPORTANT: WHAT TO DO IF YOUR DRIVE FAILS
+          </h2>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;"
+          >
             <div>
-              <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">✅ DO:</h3>
-              <ul class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;">
+              <h3
+                class="space-font"
+                style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+              >
+                ✅ DO:
+              </h3>
+              <ul
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;"
+              >
                 <li>Stop using the drive immediately</li>
                 <li>Power off the computer</li>
                 <li>Contact a data recovery professional</li>
@@ -120,8 +406,16 @@ import Layout from '../../layouts/Layout.astro';
               </ul>
             </div>
             <div>
-              <h3 class="space-font" style="color: var(--danger-red, #ef4444); font-size: 16px; margin-bottom: 8px;">❌ DON'T:</h3>
-              <ul class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;">
+              <h3
+                class="space-font"
+                style="color: var(--danger-red, #ef4444); font-size: 16px; margin-bottom: 8px;"
+              >
+                ❌ DON'T:
+              </h3>
+              <ul
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;"
+              >
                 <li>Keep trying to restart the computer</li>
                 <li>Open the drive casing yourself</li>
                 <li>Put the drive in a freezer (old myth)</li>
@@ -135,19 +429,61 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0;">
       <div class="container">
-        <h2 class="space-font" style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;">RELATED SERVICES</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-          <a href="/services/repairs/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">🛠️ PC & Laptop Repairs</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Full repair services including hard drive replacement, upgrades, and system restoration.</p>
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          RELATED SERVICES
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+        >
+          <a
+            href="/services/repairs/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              🛠️ PC & Laptop Repairs
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Full repair services including hard drive replacement, upgrades, and system
+              restoration.
+            </p>
           </a>
-          <a href="/areas/romford/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">📍 Computer Repair Romford</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">All our services available in Romford including data recovery and hard drive repair.</p>
+          <a
+            href="/areas/romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              📍 Computer Repair Romford
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              All our services available in Romford including data recovery and hard drive repair.
+            </p>
           </a>
-          <a href="/contact/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">📞 Free Assessment</h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">Contact us for a free data recovery assessment. We'll tell you if recovery is possible.</p>
+          <a
+            href="/contact/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              📞 Free Assessment
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Contact us for a free data recovery assessment. We'll tell you if recovery is
+              possible.
+            </p>
           </a>
         </div>
       </div>
@@ -155,10 +491,28 @@ import Layout from '../../layouts/Layout.astro';
 
     <section class="section-bg" style="padding: 60px 0 80px;">
       <div class="container">
-        <div class="cosmic-card" style="padding: 50px 40px; text-align: center; border: 2px solid var(--nebula-purple);">
-          <h2 class="space-font galaxy-text cosmic-glow" style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;">LOST IMPORTANT DATA IN HAVERING?</h2>
-          <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;">Free assessment. No data, no fee guarantee. Call now for emergency recovery.</p>
-          <a href="tel:+447971331814" class="space-button space-font" style="font-size: 16px; padding: 16px 32px; background: linear-gradient(135deg, var(--nebula-purple), var(--plasma-cyan));"><span>📱</span> 07971 331814</a>
+        <div
+          class="cosmic-card"
+          style="padding: 50px 40px; text-align: center; border: 2px solid var(--nebula-purple);"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+          >
+            LOST IMPORTANT DATA IN HAVERING?
+          </h2>
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
+          >
+            Free assessment. No data, no fee guarantee. Call now for emergency recovery.
+          </p>
+          <a
+            href="tel:+447971331814"
+            class="space-button space-font"
+            style="font-size: 16px; padding: 16px 32px; background: linear-gradient(135deg, var(--nebula-purple), var(--plasma-cyan));"
+            ><span>📱</span> 07971 331814</a
+          >
         </div>
       </div>
     </section>
