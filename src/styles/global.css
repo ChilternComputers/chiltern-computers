@@ -262,15 +262,6 @@ body {
   }
 }
 
-@keyframes cosmic-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes shine-sweep {
   0% {
     left: -100%;
@@ -1810,10 +1801,6 @@ select:focus-visible {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .scroll-content {
-    animation-duration: 80s;
   }
 
   .service-area-primary {

@@ -19,6 +19,24 @@ export const GET: APIRoute = async () => {
     { url: '/services/repairs/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
     { url: '/services/custom-pcs/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
     { url: '/services/new-used/', priority: 0.9, changefreq: 'monthly', lastmod: currentDate },
+    {
+      url: '/services/data-recovery-havering/',
+      priority: 0.9,
+      changefreq: 'monthly',
+      lastmod: currentDate,
+    },
+    {
+      url: '/services/laptop-repair-dagenham/',
+      priority: 0.9,
+      changefreq: 'monthly',
+      lastmod: currentDate,
+    },
+    {
+      url: '/services/virus-removal-romford/',
+      priority: 0.9,
+      changefreq: 'monthly',
+      lastmod: currentDate,
+    },
 
     // Core pages
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
