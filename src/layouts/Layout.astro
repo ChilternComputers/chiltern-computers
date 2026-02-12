@@ -12,12 +12,14 @@ export interface Props {
 }
 
 const { title, description, image, keywords } = Astro.props;
+const isHomepage = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
 <html lang="en-GB">
   <head>
     <SEO title={title} description={description} image={image} keywords={keywords} />
+    {isHomepage && <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />}
   </head>
   <body class="min-h-screen" style="background: var(--void-black);">
     <a href="#main-content" class="skip-link">Skip to main content</a>

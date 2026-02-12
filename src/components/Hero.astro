@@ -226,7 +226,6 @@ const features = [
         rgba(30, 41, 59, 0.8) 50%,
         rgba(0, 0, 0, 0.7) 100%
       );
-      backdrop-filter: blur(1px);
     }
 
     /* Background Effects */
@@ -240,9 +239,10 @@ const features = [
     .floating-orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(60px);
       opacity: 0.4;
       animation: float-enhanced 8s ease-in-out infinite;
+      will-change: transform;
+      contain: strict;
     }
 
     .floating-orb--blue {
@@ -703,20 +703,6 @@ const features = [
       }
 
       setupPerformanceOptimizations() {
-        // Lazy load background image if not in viewport
-        const heroBackground = document.querySelector('.hero-bg-image');
-        if (heroBackground && 'loading' in HTMLImageElement.prototype) {
-          const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                img.style.opacity = '0.3';
-                imageObserver.unobserve(img);
-              }
-            });
-          });
-          imageObserver.observe(heroBackground);
-        }
 
         // Preload critical resources
         const preloadLink = document.createElement('link');
