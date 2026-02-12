@@ -1,8 +1,7 @@
-export const onRequest: PagesFunction = async (context) => {
+export async function onRequest(context) {
   const response = await context.next();
   const newHeaders = new Headers(response.headers);
 
-  // Delete any existing CSP and set our own
   newHeaders.delete('Content-Security-Policy');
   newHeaders.set(
     'Content-Security-Policy',
@@ -14,7 +13,7 @@ export const onRequest: PagesFunction = async (context) => {
       "connect-src 'self' https://formspree.io https://*.cloudflareinsights.com; " +
       "frame-src https://maps.google.com https://www.google.com https://*.google.com; " +
       "object-src 'none'; " +
-      "base-uri 'self'"
+      "base-uri 'self'",
   );
 
   return new Response(response.body, {
@@ -22,4 +21,4 @@ export const onRequest: PagesFunction = async (context) => {
     statusText: response.statusText,
     headers: newHeaders,
   });
-};
+}

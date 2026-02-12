@@ -1,5 +1,7 @@
 {
   "name": "chiltern-computers",
   "compatibility_date": "2025-07-06",
-  "pages_build_output_dir": "./dist",
+  "assets": {
+    "directory": "./dist",
+  },
 }
