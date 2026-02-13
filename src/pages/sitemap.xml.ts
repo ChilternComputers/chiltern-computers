@@ -67,48 +67,48 @@ export const GET: APIRoute = async () => {
       url: '/blog/virus-malware-removal-romford-guide/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-23',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/is-my-computer-worth-repairing-romford/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-23',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/upgrade-old-pc-windows-11-unsupported/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-23',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/best-computer-repair-near-romford/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-15',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/why-laptop-running-slow-romford-guide/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-12',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/gaming-pc-build-tips-essex/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-08',
+      lastmod: '2026-02-13',
     },
     {
       url: '/blog/computer-maintenance-tips-romford-businesses/',
       priority: 0.7,
       changefreq: 'monthly',
-      lastmod: '2025-01-05',
+      lastmod: '2026-02-13',
     },
 
     // Legal pages
-    { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
-    { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2025-01-10' },
+    { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2026-02-13' },
+    { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2026-02-13' },
   ];
 
   // Generate XML with proper formatting
