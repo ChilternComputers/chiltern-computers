@@ -539,10 +539,20 @@ const reviewSchemas = reviews.map((review) => ({
   }
 </style>
 
-<!-- Preload hero image for faster LCP (homepage only) -->
+<!-- Preload hero image for faster LCP -->
 {
   Astro.url.pathname === '/' && (
     <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
+  )
+}
+{
+  Astro.url.pathname === '/services/repairs/' && (
+    <link rel="preload" href="/repair-pic.webp" as="image" type="image/webp" />
+  )
+}
+{
+  Astro.url.pathname === '/blog/' && (
+    <link rel="preload" href="/repair-pic.webp" as="image" type="image/webp" />
   )
 }
 
