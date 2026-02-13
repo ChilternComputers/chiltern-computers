@@ -1,0 +1,17 @@
+# Redirects for old/legacy URLs reported as 404 in Google Search Console
+/contact-me/ /contact/ 301
+/contact-me /contact/ 301
+/emergency-repair/ /services/repairs/ 301
+/emergency-repair /services/repairs/ 301
+/quote/ /contact/ 301
+/quote /contact/ 301
+/gaming/ /free-play/ 301
+/gaming /free-play/ 301
+/mot-your-pc/ /services/repairs/ 301
+/mot-your-pc /services/repairs/ 301
+/shop/ / 301
+/shop / 301
+/s-1/ / 301
+/s-1 / 301
+/ccasm/ / 301
+/ccasm / 301
