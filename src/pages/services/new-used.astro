@@ -504,7 +504,7 @@ import Layout from '../../layouts/Layout.astro';
     }
   </style>
 
-  <main>
+  <div>
     <!-- Hero Section -->
     <section class="section-bg main-section">
       <div class="container">
@@ -1226,8 +1226,10 @@ import Layout from '../../layouts/Layout.astro';
 
           faqItems.forEach((item) => {
             const question = item.querySelector('.faq-question');
+            question.setAttribute('role', 'button');
+            question.setAttribute('tabindex', '0');
 
-            question.addEventListener('click', function () {
+            function toggleFaq() {
               const isActive = item.classList.contains('active');
 
               // Close all other FAQ items
@@ -1243,6 +1245,14 @@ import Layout from '../../layouts/Layout.astro';
               } else {
                 item.classList.add('active');
               }
+            }
+
+            question.addEventListener('click', toggleFaq);
+            question.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFaq();
+              }
             });
           });
 
@@ -1254,5 +1264,5 @@ import Layout from '../../layouts/Layout.astro';
         });
       </script>
     </section>
-  </main></Layout
+  </div></Layout
 >
