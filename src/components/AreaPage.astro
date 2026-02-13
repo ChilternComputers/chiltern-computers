@@ -8,7 +8,22 @@ interface Props {
 }
 
 const { area } = Astro.props;
+
+const areaFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: area.faqs.map((faq: { question: string; answer: string }) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(areaFaqSchema)} />
 
 <div>
   <!-- Hero Section -->
