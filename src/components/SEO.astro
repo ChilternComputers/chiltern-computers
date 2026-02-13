@@ -34,7 +34,7 @@ const {
 
 const fullTitle = title ? `${title} | Chiltern` : 'Computer Repair Harold Hill, Romford | Chiltern';
 
-const baseUrl = 'https://chilterncomputers.net';
+const baseUrl = Astro.site?.toString().replace(/\/$/, '') || 'https://chilterncomputers.net';
 const canonicalUrl = `${baseUrl}${Astro.url.pathname}`;
 const fullImageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
 
@@ -62,10 +62,7 @@ const localBusinessSchema = {
     longitude: 0.23353,
   },
   url: baseUrl,
-  sameAs: [
-    'https://www.facebook.com/profile.php?id=61587354241770',
-    'https://twitter.com/chilterncomputers',
-  ],
+  sameAs: ['https://www.facebook.com/profile.php?id=61587354241770'],
   openingHours: ['Mo-Su 09:00-21:00'],
   priceRange: '££',
   paymentAccepted: ['Cash', 'Credit Card', 'Debit Card', 'Bank Transfer'],
