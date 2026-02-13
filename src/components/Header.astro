@@ -195,6 +195,8 @@ import { siteConfig } from '../config';
                 class="alien-font"
                 style="color:var(--aurora-green); font-size:12px; font-weight:600;"
                 id="header-status"
+                aria-live="polite"
+                aria-atomic="true"
               >
                 9AM - 9PM
               </div>
@@ -254,6 +256,17 @@ import { siteConfig } from '../config';
         // Update button text based on menu state
         if (menuText) {
           menuText.textContent = mobileMenuOpen ? 'Close' : 'Menu';
+        }
+      });
+
+      // Close mobile menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenuOpen) {
+          mobileMenuOpen = false;
+          headerNav.style.display = 'none';
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          if (menuText) menuText.textContent = 'Menu';
+          mobileMenuBtn.focus();
         }
       });
     }

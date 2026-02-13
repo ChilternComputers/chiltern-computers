@@ -340,13 +340,20 @@ body {
   top: 0;
 }
 
-/* Form Input Focus States - Accessibility */
-input:focus,
+/* Focus States - Accessibility */
+a:focus-visible,
+button:focus-visible,
 input:focus-visible,
-textarea:focus,
 textarea:focus-visible,
-select:focus,
-select:focus-visible {
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--aurora-green);
+  outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
   outline: 3px solid var(--aurora-green);
   outline-offset: 2px;
 }
@@ -1797,14 +1804,17 @@ select:focus-visible {
    ACCESSIBILITY FEATURES
    ======================================== */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0s !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
   }
 
   .service-area-primary {
-    animation: none;
+    animation: none !important;
   }
 
   .animate-on-scroll {
