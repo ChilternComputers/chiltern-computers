@@ -58,7 +58,8 @@ const reviews = [
   <section
     class="section-bg-5"
     style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0;"
-    role="main"
+    role="region"
+    aria-label="Contact information"
   >
     <!-- Header -->
     <div style="text-align: center; margin-bottom: 60px;">
@@ -392,8 +393,7 @@ const reviews = [
           >
             <div
               style="border-radius: 12px; overflow: hidden; border: 1px solid #1e40af; background: linear-gradient(135deg, #1e3a5f, #0f172a); padding: 40px 20px; text-align: center; transition: all 0.3s ease;"
-              onmouseover="this.style.borderColor='#3b82f6'"
-              onmouseout="this.style.borderColor='#1e40af'"
+              class="maps-card"
             >
               <span style="font-size: 48px; display: block; margin-bottom: 16px;">📍</span>
               <p class="space-font" style="color: #3b82f6; font-size: 16px; margin-bottom: 8px;">
@@ -451,7 +451,9 @@ const reviews = [
                 Sarah Mitchell
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
                 Harold Hill resident
@@ -486,7 +488,9 @@ const reviews = [
                 Mike Thompson
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
                 Romford business owner
@@ -520,7 +524,9 @@ const reviews = [
                 Linda Johnson
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Hornchurch resident</p>
             </div>
@@ -553,7 +559,9 @@ const reviews = [
                 James Wilson
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Upminster resident</p>
             </div>
@@ -586,7 +594,9 @@ const reviews = [
                 Rachel Davis
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
                 Collier Row resident
@@ -620,7 +630,9 @@ const reviews = [
                 Alan Roberts
               </h4>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;">⭐⭐⭐⭐⭐</span>
+                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars"
+                  >⭐⭐⭐⭐⭐</span
+                >
               </div>
               <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Gidea Park resident</p>
             </div>
@@ -636,6 +648,16 @@ const reviews = [
       </div>
     </div>
   </section>
+
+  <style>
+    .maps-card {
+      transition: all 0.3s ease;
+    }
+    .maps-card:hover,
+    .maps-card:focus-within {
+      border-color: #3b82f6;
+    }
+  </style>
 
   <!-- Mobile Responsive Styles -->
   <style>

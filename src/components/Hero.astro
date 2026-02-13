@@ -44,7 +44,7 @@ const features = [
 ];
 ---
 
-<section class="hero-section" role="banner" aria-labelledby="hero-title">
+<section class="hero-section" aria-labelledby="hero-title">
   <!-- Background -->
   <div class="hero-background" aria-hidden="true">
     <img
@@ -171,8 +171,6 @@ const features = [
             <div
               class="card service-card animate-on-scroll"
               style={`animation-delay: ${1.8 + index * 0.15}s;`}
-              role="article"
-              tabindex="0"
             >
               <div class="service-icon" aria-hidden="true">
                 {service.icon}
@@ -682,17 +680,6 @@ const features = [
       }
 
       setupAccessibilityFeatures() {
-        // Enhanced keyboard navigation for service cards
-        const serviceCards = document.querySelectorAll('.service-card');
-        serviceCards.forEach((card) => {
-          card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              card.click();
-            }
-          });
-        });
-
         // Auto-focus management for better UX
         const ctaButtons = document.querySelectorAll('.cta-button');
         ctaButtons.forEach((button, index) => {
@@ -703,14 +690,6 @@ const features = [
       }
 
       setupPerformanceOptimizations() {
-
-        // Preload critical resources
-        const preloadLink = document.createElement('link');
-        preloadLink.rel = 'preload';
-        preloadLink.as = 'image';
-        preloadLink.href = '/mainpcpic.webp';
-        document.head.appendChild(preloadLink);
-
         // Optimize animations based on device capabilities
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         const updateAnimationPreference = () => {

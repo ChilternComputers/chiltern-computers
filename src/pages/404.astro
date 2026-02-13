@@ -547,7 +547,8 @@ const description =
         type="search"
         placeholder="🔍 Search our site..."
         class="search-input alien-font"
-        onkeypress="if(event.key==='Enter') window.location.href='/search?q='+encodeURIComponent(this.value)"
+        id="search-404"
+        aria-label="Search our site"
       />
     </div>
 
@@ -614,6 +615,21 @@ const description =
     }
     updateStatus();
     setInterval(updateStatus, 60000);
+
+    // Search redirects to Google site search since no /search page exists
+    const searchInput = document.getElementById('search-404');
+    if (searchInput) {
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+          const query = searchInput.value.trim();
+          if (query) {
+            window.location.href =
+              'https://www.google.com/search?q=site:chilterncomputers.net+' +
+              encodeURIComponent(query);
+          }
+        }
+      });
+    }
 
     // Analytics tracking for 404 errors
     if (typeof gtag !== 'undefined') {

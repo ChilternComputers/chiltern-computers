@@ -9,17 +9,49 @@ export interface Props {
   description?: string;
   image?: string;
   keywords?: string;
+  type?: 'website' | 'article' | 'service';
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  reviews?: Array<{
+    author: string;
+    location: string;
+    text: string;
+    rating: number;
+    date?: string;
+  }>;
 }
 
-const { title, description, image, keywords } = Astro.props;
-const isHomepage = Astro.url.pathname === '/';
+const {
+  title,
+  description,
+  image,
+  keywords,
+  type,
+  publishedTime,
+  modifiedTime,
+  noindex,
+  breadcrumbs,
+  reviews,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <SEO title={title} description={description} image={image} keywords={keywords} />
-    {isHomepage && <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />}
+    <SEO
+      title={title}
+      description={description}
+      image={image}
+      keywords={keywords}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      noindex={noindex}
+      breadcrumbs={breadcrumbs}
+      reviews={reviews}
+    />
   </head>
   <body class="min-h-screen" style="background: var(--void-black);">
     <a href="#main-content" class="skip-link">Skip to main content</a>

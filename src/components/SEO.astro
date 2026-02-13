@@ -62,7 +62,10 @@ const localBusinessSchema = {
     longitude: 0.23353,
   },
   url: baseUrl,
-  sameAs: ['https://www.facebook.com/chilterncomputers', 'https://twitter.com/chilterncomputers'],
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61587354241770',
+    'https://twitter.com/chilterncomputers',
+  ],
   openingHours: ['Mo-Su 09:00-21:00'],
   priceRange: '££',
   paymentAccepted: ['Cash', 'Credit Card', 'Debit Card', 'Bank Transfer'],
@@ -422,11 +425,15 @@ const reviewSchemas = reviews.map((review) => ({
 />
 <meta
   name="googlebot"
-  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  content={noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
 />
 <meta
   name="bingbot"
-  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  content={noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
 />
 
 <!-- Canonical URL -->
@@ -530,14 +537,22 @@ const reviewSchemas = reviews.map((review) => ({
   }
 </style>
 
-<!-- Preload hero image for faster LCP -->
-<link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
+<!-- Preload hero image for faster LCP (homepage only) -->
+{
+  Astro.url.pathname === '/' && (
+    <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
+  )
+}
 
 <!-- Structured Data -->
 <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+{
+  Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  )
+}
 {
   serviceSchemas.map((service) => (
     <script type="application/ld+json" set:html={JSON.stringify(service)} />
