@@ -338,6 +338,8 @@ body {
 
 .skip-link:focus {
   top: 0;
+  outline: 3px solid var(--aurora-green);
+  outline-offset: 2px;
 }
 
 /* Focus States - Accessibility */

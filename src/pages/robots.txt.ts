@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /thank-you/
 Allow: /
 
-Sitemap: https://chilterncomputers.net/sitemap.xml`;
+Sitemap: https://chilterncomputers.net/sitemap-index.xml`;
 
   return new Response(robotsTxt, {
     headers: {

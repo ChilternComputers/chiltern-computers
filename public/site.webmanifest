@@ -1,0 +1,21 @@
+{
+  "name": "Chiltern Computers — Expert IT Support",
+  "short_name": "Chiltern",
+  "description": "Professional computer repair, custom gaming PCs, and IT support in Harold Hill, Romford & Essex.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1a202c",
+  "background_color": "#020617",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

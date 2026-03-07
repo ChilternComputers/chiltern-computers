@@ -1,0 +1,56 @@
+---
+// CookieConsent.astro - GDPR cookie consent banner
+---
+
+<div
+  id="cookie-consent"
+  role="dialog"
+  aria-label="Cookie consent"
+  aria-modal="false"
+  style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; padding: 16px; background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98)); border-top: 2px solid rgba(6,182,212,0.4); backdrop-filter: blur(12px);"
+>
+  <div style="max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+    <p style="color: #e5e7eb; font-family: 'Exo 2', sans-serif; font-size: 14px; line-height: 1.6; margin: 0; flex: 1; min-width: 200px;">
+      We use essential cookies to keep this site running. No tracking, no ads.
+      <a href="/privacy-policy/" style="color: #06b6d4; text-decoration: underline;">Privacy Policy</a>
+    </p>
+    <div style="display: flex; gap: 10px; flex-shrink: 0;">
+      <button
+        id="cookie-accept"
+        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;"
+      >
+        Accept
+      </button>
+      <button
+        id="cookie-decline"
+        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;"
+      >
+        Decline
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const declineBtn = document.getElementById('cookie-decline');
+
+  if (banner && !localStorage.getItem('cookie-consent')) {
+    banner.style.display = 'block';
+  }
+
+  function dismiss(value: string) {
+    localStorage.setItem('cookie-consent', value);
+    if (banner) banner.style.display = 'none';
+  }
+
+  acceptBtn?.addEventListener('click', () => dismiss('accepted'));
+  declineBtn?.addEventListener('click', () => dismiss('declined'));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && banner?.style.display === 'block') {
+      dismiss('declined');
+    }
+  });
+</script>

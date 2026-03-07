@@ -5,6 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout
   title="Terms of Service - PC Repair Harold Hill"
   description="Terms of Service for Chiltern Computers - Service agreements, warranties, payment terms, and liability information."
+  noindex={true}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Terms of Service', url: '/terms-of-service/' },
+  ]}
 >
   <div class="section-bg-1" style="padding: 120px 20px 80px; min-height: 100vh;">
     <div class="container">

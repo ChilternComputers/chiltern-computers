@@ -5,6 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout
   title="Privacy Policy - PC Repair Harold Hill"
   description="Privacy Policy for Chiltern Computers - How we handle your personal data and protect your privacy."
+  noindex={true}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy', url: '/privacy-policy/' },
+  ]}
 >
   <div class="section-bg-1" style="padding: 120px 20px 80px; min-height: 100vh;">
     <div class="container">

@@ -5,6 +5,11 @@ import Layout from '../layouts/Layout.astro';
 <Layout
   title="Accessibility Statement - PC Repair"
   description="Accessibility statement for Chiltern Computers - Our commitment to making our services accessible to everyone."
+  noindex={true}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Accessibility', url: '/accessibility/' },
+  ]}
 >
   <div class="section-bg-3" style="padding: 120px 20px 80px; min-height: 100vh;">
     <div class="container">

@@ -34,13 +34,13 @@ import { siteConfig } from '../config';
       class="tech-font"
       style="color:var(--solar-orange); font-size:11px; margin:0; font-weight:600; position:relative; z-index:2;"
     >
-      🚨 <span style="color:var(--aurora-green);">EMERGENCY REPAIRS?</span>
+      <span aria-hidden="true">🚨</span> <span style="color:var(--aurora-green);">EMERGENCY REPAIRS?</span>
       Call <a
         href={`tel:${siteConfig.phone.mobile}`}
         style="color:var(--aurora-green); font-weight:bold; text-decoration:none;"
         >{siteConfig.phone.mobileDisplay}</a
       >
-      🚨
+      <span aria-hidden="true">🚨</span>
     </p>
   </div>
 
@@ -87,6 +87,7 @@ import { siteConfig } from '../config';
       <nav
         class="header-nav"
         id="main-nav"
+        aria-label="Main navigation"
         style="flex:1 1 0; display:flex; justify-content:center; min-width:210px;"
       >
         <ul
@@ -172,7 +173,7 @@ import { siteConfig } from '../config';
             style="position:absolute; inset:0; background:linear-gradient(45deg, transparent, rgba(139,92,246,0.3), transparent); opacity:0; transition:opacity 0.3s ease;"
           >
           </div>
-          <span style="font-size:16px; position:relative; z-index:2;">📱</span>
+          <span aria-hidden="true" style="font-size:16px; position:relative; z-index:2;">📱</span>
           <div style="position:relative; z-index:2;">
             <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">CALL NOW</div>
             <div
@@ -188,7 +189,7 @@ import { siteConfig } from '../config';
           style="padding:10px 16px; background:rgba(16,185,129,0.15); border:2px solid var(--aurora-green); border-radius:10px;"
         >
           <div style="display:flex; align-items:center; gap:8px;">
-            <span style="font-size:14px;">🕒</span>
+            <span aria-hidden="true" style="font-size:14px;">🕒</span>
             <div>
               <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">OPEN</div>
               <div
