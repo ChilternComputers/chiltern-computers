@@ -5,7 +5,7 @@ export default defineConfig({
   site: 'https://chilterncomputers.net',
   trailingSlash: 'always',
   build: {
-    inlineStylesheets: 'always',
+    inlineStylesheets: 'auto',
   },
   vite: {
     plugins: [tailwindcss()],

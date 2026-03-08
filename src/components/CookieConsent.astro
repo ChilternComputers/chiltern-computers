@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<script>
+<script lang="ts">
   const banner = document.getElementById('cookie-consent');
   const acceptBtn = document.getElementById('cookie-accept');
   const declineBtn = document.getElementById('cookie-decline');
@@ -40,7 +40,7 @@
     banner.style.display = 'block';
   }
 
-  function dismiss(value: string) {
+  function dismiss(value) {
     localStorage.setItem('cookie-consent', value);
     if (banner) banner.style.display = 'none';
   }

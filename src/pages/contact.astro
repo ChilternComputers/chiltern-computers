@@ -793,14 +793,14 @@ const reviews = [
     }
   </style>
 
-  <script>
+  <script lang="ts">
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('contact-form');
 
       if (form) {
         form.addEventListener('submit', function (e) {
-          const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-          const humanCheck = document.getElementById('human-check') as HTMLInputElement | null;
+          const submitBtn = /** @type {HTMLButtonElement | null} */ (document.getElementById('submit-btn'));
+          const humanCheck = /** @type {HTMLInputElement | null} */ (document.getElementById('human-check'));
 
           // Check human verification
           if (!humanCheck?.checked) {
