@@ -119,7 +119,7 @@ import Layout from '../../layouts/Layout.astro';
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .container {
@@ -128,7 +128,12 @@ import Layout from '../../layouts/Layout.astro';
       margin: 0 auto;
       padding: 0 20px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 580px) {
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -224,6 +229,26 @@ import Layout from '../../layouts/Layout.astro';
               STRANGE BEHAVIOUR
             </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
               Programs crashing, settings changing, or unknown programs installed.
+            </p>
+          </div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🔒</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              BROWSER HIJACKING
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Homepage changed, unwanted search engines, or redirected to dodgy sites. We remove browser hijackers and restore your settings.
+            </p>
+          </div>
+          <div class="cosmic-card danger-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">📧</span><h3
+              class="space-font"
+              style="color: var(--danger-red); font-size: 16px; margin-bottom: 8px;"
+            >
+              EMAIL & ACCOUNT COMPROMISE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Hacked email, suspicious account activity, or phishing attacks. We secure your accounts and remove the threat.
             </p>
           </div>
         </div>

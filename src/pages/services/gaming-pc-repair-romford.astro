@@ -115,7 +115,7 @@ import Layout from '../../layouts/Layout.astro';
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .container {
@@ -124,7 +124,12 @@ import Layout from '../../layouts/Layout.astro';
       margin: 0 auto;
       padding: 0 20px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 580px) {
       .services-grid {
         grid-template-columns: 1fr;
       }
@@ -238,6 +243,26 @@ import Layout from '../../layouts/Layout.astro';
             </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
               PC shutting off under load, not turning on, or random restarts? Underpowered or
               failing PSUs are a common gaming PC issue.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">💾</span><h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              STORAGE & LOAD TIMES
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Games loading slowly or stuttering? We upgrade to NVMe SSDs and optimise your storage for faster load times and smoother gameplay.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🖥️</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              DISPLAY & MONITOR ISSUES
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              No display output, flickering, artefacts, or screen tearing. We diagnose GPU, cable, and monitor connection problems.
             </p>
           </div>
         </div>

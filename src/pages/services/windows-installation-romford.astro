@@ -114,7 +114,7 @@ import Layout from '../../layouts/Layout.astro';
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .container {
@@ -123,10 +123,17 @@ import Layout from '../../layouts/Layout.astro';
       margin: 0 auto;
       padding: 0 20px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 580px) {
       .services-grid {
         grid-template-columns: 1fr;
       }
+    }
+    @media (max-width: 768px) {
       .container {
         padding: 0 16px;
       }
@@ -237,6 +244,26 @@ import Layout from '../../layouts/Layout.astro';
             </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
               We back up and restore your documents, photos, music, bookmarks, and email. No
               important files left behind after the reinstall.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🔒</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              SECURITY & UPDATES
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Full Windows Update, antivirus installation, firewall configuration, and security hardening included with every install.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🔧</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              SOFTWARE SETUP
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              We install your essential apps — Office, browsers, email, printers — so your PC is ready to use straight away.
             </p>
           </div>
         </div>

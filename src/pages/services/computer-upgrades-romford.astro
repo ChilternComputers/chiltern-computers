@@ -114,7 +114,7 @@ import Layout from '../../layouts/Layout.astro';
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
     .container {
@@ -123,10 +123,17 @@ import Layout from '../../layouts/Layout.astro';
       margin: 0 auto;
       padding: 0 20px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 968px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 580px) {
       .services-grid {
         grid-template-columns: 1fr;
       }
+    }
+    @media (max-width: 768px) {
       .container {
         padding: 0 16px;
       }
@@ -237,6 +244,26 @@ import Layout from '../../layouts/Layout.astro';
             </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
               Complete system overhaul — new motherboard, CPU, RAM, and SSD. Keep your case and
               peripherals while getting a modern, fast system at a lower cost than buying new.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🌀</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              COOLING UPGRADE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Better fans, thermal paste, and airflow improvements. Keep your upgraded components running cool and quiet under load.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">⚡</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              PSU UPGRADE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Upgrading your GPU or adding components? We ensure your power supply can handle the extra demand with a reliable PSU swap.
             </p>
           </div>
         </div>
