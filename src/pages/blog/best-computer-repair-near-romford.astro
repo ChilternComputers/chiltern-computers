@@ -42,6 +42,11 @@ const faqs = [
   type="article"
   publishedTime={publishDate}
   modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Best Computer Repair Near Romford 2026', url: '/blog/best-computer-repair-near-romford/' },
+  ]}
 >
   <style>
     * {
@@ -695,7 +700,7 @@ const faqs = [
                   target="_blank"
                   rel="noopener noreferrer"
                   style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
-                  >Google Reviews ★★★★★</a
+                  >Google Reviews <span aria-hidden="true">★★★★★</span></a
                 >
               </div>
             </div>

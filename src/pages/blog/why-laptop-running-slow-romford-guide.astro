@@ -42,6 +42,11 @@ const faqs = [
   type="article"
   publishedTime={publishDate}
   modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Why Your Laptop is Running Slow | Fix', url: '/blog/why-laptop-running-slow-romford-guide/' },
+  ]}
 >
   <style>
     * {
@@ -937,7 +942,7 @@ const faqs = [
                   target="_blank"
                   rel="noopener noreferrer"
                   style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
-                  >Google Reviews ★★★★★</a
+                  >Google Reviews <span aria-hidden="true">★★★★★</span></a
                 >
               </div>
             </div>

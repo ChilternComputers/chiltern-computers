@@ -11,7 +11,7 @@ const APP_SHELL = [
   '/privacy-policy/',
   '/terms-of-service/',
   '/accessibility/',
-  '/offline.html',
+  '/offline/',
   '/favicon.svg'
 ];
 
@@ -49,7 +49,7 @@ self.addEventListener('fetch', (event) => {
         })
         .catch(() => {
           if (event.request.mode === 'navigate') {
-            return caches.match('/offline.html');
+            return caches.match('/offline/');
           }
           return cached;
         });

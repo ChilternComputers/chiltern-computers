@@ -395,8 +395,3 @@ export const areas: AreaData[] = [
 export function getAreaBySlug(slug: string): AreaData | undefined {
   return areas.find((area) => area.slug === slug);
 }
-
-// Get all area slugs for static path generation
-export function getAllAreaSlugs(): string[] {
-  return areas.map((area) => area.slug);
-}

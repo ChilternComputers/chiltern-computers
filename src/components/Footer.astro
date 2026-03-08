@@ -272,7 +272,7 @@ import { siteConfig } from '../config';
                 style="color: var(--aurora-green); font-size: 10px; font-weight: 500;"
                 id="availability-status"
                 aria-live="polite"
-                aria-atomic="true">✅ Available Now</span
+                aria-atomic="true"><span aria-hidden="true" id="availability-icon">✅</span> <span id="availability-text">Available Now</span></span
               >
             </div>
           </div>
@@ -559,12 +559,17 @@ import { siteConfig } from '../config';
       const hour = now.getHours();
       const statusElement = document.getElementById('availability-status');
 
-      if (statusElement) {
+      const iconEl = document.getElementById('availability-icon');
+      const textEl = document.getElementById('availability-text');
+
+      if (statusElement && iconEl && textEl) {
         if (hour >= 9 && hour < 21) {
-          statusElement.textContent = '✅ Available Now';
+          iconEl.textContent = '✅';
+          textEl.textContent = 'Available Now';
           statusElement.style.color = 'var(--aurora-green)';
         } else {
-          statusElement.textContent = '🌙 Call Tomorrow 9AM';
+          iconEl.textContent = '🌙';
+          textEl.textContent = 'Call Tomorrow 9AM';
           statusElement.style.color = 'var(--solar-orange)';
         }
       }

@@ -42,10 +42,6 @@ export const GET: APIRoute = async () => {
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
     { url: '/about/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
 
-    // Other pages
-    { url: '/free-play/', priority: 0.6, changefreq: 'monthly', lastmod: currentDate },
-    { url: '/accessibility/', priority: 0.4, changefreq: 'yearly', lastmod: currentDate },
-
     // Area pages (Local SEO)
     { url: '/areas/', priority: 0.8, changefreq: 'monthly', lastmod: currentDate },
     { url: '/areas/harold-hill/', priority: 0.7, changefreq: 'monthly', lastmod: currentDate },
@@ -106,9 +102,6 @@ export const GET: APIRoute = async () => {
       lastmod: '2026-02-13',
     },
 
-    // Legal pages
-    { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: '2026-02-13' },
-    { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: '2026-02-13' },
   ];
 
   // Generate XML with proper formatting

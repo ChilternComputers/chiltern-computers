@@ -461,7 +461,7 @@ const reviewSchemas = reviews.map((review) => ({
 <meta name="business:contact_data:phone_number" content="01708347341" />
 
 <!-- Enhanced Open Graph -->
-<meta property="og:type" content={type} />
+<meta property="og:type" content={type === 'service' ? 'website' : type} />
 <meta property="og:site_name" content="Chiltern Computers" />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />

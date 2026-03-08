@@ -42,6 +42,11 @@ const faqs = [
   type="article"
   publishedTime={publishDate}
   modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Computer Maintenance Tips for Businesses', url: '/blog/computer-maintenance-tips-romford-businesses/' },
+  ]}
 >
   <style>
     * {
@@ -525,7 +530,7 @@ const faqs = [
 
           <div class="checklist-card">
             <div class="checklist-card-header">
-              <div class="checklist-card-icon">📋</div>
+              <div class="checklist-card-icon"><span aria-hidden="true">📋</span></div>
               <span class="checklist-card-title space-font">Daily IT Checklist</span>
             </div>
             <div class="alien-font">
@@ -565,7 +570,7 @@ const faqs = [
 
           <div class="checklist-card">
             <div class="checklist-card-header">
-              <div class="checklist-card-icon">📆</div>
+              <div class="checklist-card-icon"><span aria-hidden="true">📆</span></div>
               <span class="checklist-card-title space-font">Weekly IT Checklist</span>
             </div>
             <div class="alien-font">
@@ -612,7 +617,7 @@ const faqs = [
 
           <div class="checklist-card">
             <div class="checklist-card-header">
-              <div class="checklist-card-icon">📅</div>
+              <div class="checklist-card-icon"><span aria-hidden="true">📅</span></div>
               <span class="checklist-card-title space-font">Monthly IT Checklist</span>
             </div>
             <div class="alien-font">
@@ -946,7 +951,7 @@ const faqs = [
                   target="_blank"
                   rel="noopener noreferrer"
                   style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
-                  >Google Reviews ★★★★★</a
+                  >Google Reviews <span aria-hidden="true">★★★★★</span></a
                 >
               </div>
             </div>

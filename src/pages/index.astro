@@ -124,7 +124,7 @@ const reviews = [
           class="cosmic-card"
           style="padding: 12px 20px; display: flex; align-items: center; gap: 10px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.4);"
         >
-          <div style="font-size: 24px;">🏆</div>
+          <div style="font-size: 24px;" aria-hidden="true">🏆</div>
           <div>
             <div
               class="space-font"
@@ -143,7 +143,7 @@ const reviews = [
           class="cosmic-card"
           style="padding: 12px 20px; display: flex; align-items: center; gap: 10px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.4);"
         >
-          <div style="font-size: 24px;">🛡️</div>
+          <div style="font-size: 24px;" aria-hidden="true">🛡️</div>
           <div>
             <div
               class="space-font"
@@ -162,7 +162,7 @@ const reviews = [
           class="cosmic-card"
           style="padding: 12px 20px; display: flex; align-items: center; gap: 10px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.4);"
         >
-          <div style="font-size: 24px;">📍</div>
+          <div style="font-size: 24px;" aria-hidden="true">📍</div>
           <div>
             <div
               class="space-font"
@@ -193,7 +193,7 @@ const reviews = [
             >
             </div>
             <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px;"
-              >💻 COMPUTER SERVICES</span
+              ><span aria-hidden="true">💻</span> COMPUTER SERVICES</span
             >
           </div>
           <!-- Company name in badge -->
@@ -224,7 +224,7 @@ const reviews = [
         <!-- buttons -->
         <div class="button-container">
           <a href="/contact/" class="space-button space-font">
-            <span>🚀</span>
+            <span aria-hidden="true">🚀</span>
             CONTACT US
           </a>
         </div>
@@ -233,7 +233,7 @@ const reviews = [
       <!-- Stats Cards -->
       <div class="stats-grid">
         <div class="cosmic-card" style="padding: 20px; text-align: center;">
-          <div style="font-size: 32px; margin-bottom: 12px;">🌌</div>
+          <div style="font-size: 32px; margin-bottom: 12px;" aria-hidden="true">🌌</div>
           <div
             class="space-font cosmic-glow"
             style="font-size: 24px; color: var(--plasma-cyan); margin-bottom: 8px;"
@@ -245,7 +245,7 @@ const reviews = [
           </div>
         </div>
         <div class="cosmic-card" style="padding: 20px; text-align: center;">
-          <div style="font-size: 32px; margin-bottom: 12px;">🚀</div>
+          <div style="font-size: 32px; margin-bottom: 12px;" aria-hidden="true">🚀</div>
           <div
             class="space-font cosmic-glow"
             style="font-size: 24px; color: var(--aurora-green); margin-bottom: 8px;"
@@ -257,7 +257,7 @@ const reviews = [
           </div>
         </div>
         <div class="cosmic-card" style="padding: 20px; text-align: center;">
-          <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
+          <div style="font-size: 32px; margin-bottom: 12px;" aria-hidden="true">⭐</div>
           <div
             class="space-font cosmic-glow"
             style="font-size: 24px; color: var(--solar-orange); margin-bottom: 8px;"
@@ -269,7 +269,7 @@ const reviews = [
           </div>
         </div>
         <div class="cosmic-card" style="padding: 20px; text-align: center;">
-          <div style="font-size: 32px; margin-bottom: 12px;">🛰️</div>
+          <div style="font-size: 32px; margin-bottom: 12px;" aria-hidden="true">🛰️</div>
           <div
             class="space-font cosmic-glow"
             style="font-size: 24px; color: var(--nebula-purple); margin-bottom: 8px;"
@@ -285,10 +285,11 @@ const reviews = [
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="section-bg-2" style="padding: 80px 0;">
+  <section id="services" class="section-bg-2" style="padding: 80px 0;" aria-labelledby="solutions-heading">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
         <h2
+          id="solutions-heading"
           class="space-font galaxy-text cosmic-glow mobile-text"
           style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;"
         >
@@ -311,6 +312,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue);"
+            aria-hidden="true"
           >
             🛠️
           </div>
@@ -333,6 +335,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);"
+            aria-hidden="true"
           >
             🖥️
           </div>
@@ -354,6 +357,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange);"
+            aria-hidden="true"
           >
             ⚡
           </div>
@@ -376,6 +380,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(6, 182, 212, 0.2); color: var(--plasma-cyan);"
+            aria-hidden="true"
           >
             🛸
           </div>
@@ -397,6 +402,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(220, 38, 38, 0.2); color: var(--mars-red);"
+            aria-hidden="true"
           >
             🛡️
           </div>
@@ -418,6 +424,7 @@ const reviews = [
           <div
             class="planet-icon"
             style="background: rgba(124, 58, 237, 0.2); color: var(--nebula-purple);"
+            aria-hidden="true"
           >
             🎮
           </div>
@@ -439,10 +446,11 @@ const reviews = [
   </section>
 
   <!-- Why Choose Us -->
-  <section class="section-bg-3" style="padding: 80px 0;">
+  <section class="section-bg-3" style="padding: 80px 0;" aria-labelledby="why-choose-heading">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
         <h2
+          id="why-choose-heading"
           class="space-font galaxy-text cosmic-glow mobile-text"
           style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;"
         >
@@ -459,7 +467,7 @@ const reviews = [
 
       <div class="features-grid">
         <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 20px;">🌟</div>
+          <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🌟</div>
           <h3
             class="space-font cosmic-glow"
             style="color: var(--aurora-green); font-size: 18px; margin-bottom: 8px;"
@@ -481,7 +489,7 @@ const reviews = [
         </div>
 
         <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 20px;">🚀</div>
+          <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🚀</div>
           <h3
             class="space-font cosmic-glow"
             style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 8px;"
@@ -503,7 +511,7 @@ const reviews = [
         </div>
 
         <div class="cosmic-card" style="padding: 32px; text-align: center;">
-          <div style="font-size: 48px; margin-bottom: 20px;">💎</div>
+          <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">💎</div>
           <h3
             class="space-font cosmic-glow"
             style="color: var(--solar-orange); font-size: 18px; margin-bottom: 8px;"
@@ -528,10 +536,11 @@ const reviews = [
   </section>
 
   <!-- Customer Reviews -->
-  <section class="section-bg-4" style="padding: 80px 0;">
+  <section class="section-bg-4" style="padding: 80px 0;" aria-labelledby="reviews-heading">
     <div class="container">
       <div style="text-align: center; margin-bottom: 48px;">
         <h2
+          id="reviews-heading"
           class="space-font galaxy-text cosmic-glow mobile-text"
           style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;"
         >
@@ -552,7 +561,7 @@ const reviews = [
             class="space-font cosmic-glow"
             style="color: var(--aurora-green); font-size: 14px; margin-bottom: 8px;"
           >
-            <span aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</span>
+            <span aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</span>
           </div>
           <p
             class="mobile-text"
@@ -571,7 +580,7 @@ const reviews = [
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Romford</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -581,7 +590,7 @@ const reviews = [
             class="space-font cosmic-glow"
             style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 8px;"
           >
-            <span aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</span>
+            <span aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</span>
           </div>
           <p
             class="mobile-text"
@@ -602,7 +611,7 @@ const reviews = [
               </p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -612,7 +621,7 @@ const reviews = [
             class="space-font cosmic-glow"
             style="color: var(--nebula-purple); font-size: 14px; margin-bottom: 8px;"
           >
-            <span aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</span>
+            <span aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</span>
           </div>
           <p
             class="mobile-text"
@@ -631,7 +640,7 @@ const reviews = [
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Hornchurch</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -641,7 +650,7 @@ const reviews = [
             class="space-font cosmic-glow"
             style="color: var(--solar-orange); font-size: 14px; margin-bottom: 8px;"
           >
-            <span aria-label="5 out of 5 stars">⭐⭐⭐⭐⭐</span>
+            <span aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</span>
           </div>
           <p
             class="mobile-text"
@@ -660,7 +669,7 @@ const reviews = [
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Dagenham</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
