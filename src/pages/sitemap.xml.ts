@@ -44,6 +44,7 @@ export const GET: APIRoute = async () => {
     { url: '/services/gaming-pc-repair-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/network-wifi-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
 
     // Core pages
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },

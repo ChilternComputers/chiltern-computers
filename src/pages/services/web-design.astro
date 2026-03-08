@@ -1,0 +1,921 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+  {
+    question: 'How long does it take to build a website?',
+    answer:
+      'A single-page site typically takes 1-2 weeks from start to finish. Premium multi-page sites take 3-6 weeks depending on scope. We give you a clear timeline upfront and keep you updated throughout.',
+  },
+  {
+    question: 'Do I need to provide content and images?',
+    answer:
+      'If you have content and photos, great — we will work with what you have. If not, we can help write copy and source professional imagery. We will guide you through everything you need.',
+  },
+  {
+    question: 'What if I want more pages later?',
+    answer:
+      'You can upgrade anytime. Start with a single page at £299, prove it works for your business, then add more pages when you are ready. No lock-in, no pressure.',
+  },
+  {
+    question: 'Are there any monthly fees?',
+    answer:
+      'No. Your site is hosted on Cloudflare Pages for free — no monthly hosting fees, no subscriptions. The only ongoing cost is your domain name, which is typically around £10 per year.',
+  },
+  {
+    question: 'Can I update the website myself?',
+    answer:
+      'We handle updates for you — just email or call us with changes. If you need frequent content updates (like a blog), we can add a headless CMS so you can edit content directly without touching code.',
+  },
+  {
+    question: "What's the difference between the £299 and £500 packages?",
+    answer:
+      'Both are single-page websites. The £500 Professional package adds local SEO with JSON-LD schema markup, security headers, performance optimisation for sub-second load times, analytics setup, and a second round of revisions. It is the better choice if you want to rank in Google for local searches.',
+  },
+];
+---
+
+<Layout
+  title="Web Design Essex - Professional Websites from £299"
+  description="Professional one-page websites from £299. Mobile-ready, fast-loading, £0 monthly hosting. Romford, Havering & Essex. Call 07971 331814."
+  keywords="web design romford, website design essex, cheap website romford, one page website essex, small business website romford, affordable web design havering"
+  type="service"
+  publishedTime="2026-03-08"
+  modifiedTime="2026-03-08"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'Web Design', url: '/services/web-design/' },
+  ]}
+>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --void-black: #020617;
+      --comet-silver: #e5e7eb;
+      --mars-red: #dc2626;
+    }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--solar-orange)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+    }
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pricing-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(6, 182, 212, 0.25);
+    }
+    .pricing-card.featured {
+      border-color: var(--aurora-green);
+      box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+      position: relative;
+    }
+    .pricing-card.premium {
+      border-color: var(--nebula-purple);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
+    }
+    .pricing-card .price {
+      font-size: clamp(28px, 4vw, 36px);
+      margin: 16px 0;
+    }
+    .pricing-card .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      flex-grow: 1;
+    }
+    .pricing-card .features li {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+      color: var(--comet-silver);
+      font-size: 14px;
+    }
+    .pricing-card .features li .check {
+      color: var(--aurora-green);
+      flex-shrink: 0;
+    }
+    .pricing-card .best-for {
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--comet-silver);
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* Process Steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 2px solid var(--aurora-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--starlight-white);
+    }
+
+    /* Comparison Grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .comparison-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .comparison-card.bad {
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+    .comparison-card.good {
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .comparison-card ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .comparison-card li {
+      color: var(--comet-silver);
+      font-size: 14px;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    /* Backend Feature Grid */
+    .backend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 968px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 580px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div>
+    <!-- HERO -->
+    <section class="section-bg" style="padding: 100px 0 60px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--aurora-green); margin-bottom: 24px;"
+          >
+            <span class="tech-font" style="color: var(--aurora-green); font-size: 13px;"
+              ><span aria-hidden="true">🌐</span> WEB DESIGN SERVICE</span
+            >
+          </div>
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+          >
+            PROFESSIONAL WEBSITES FROM £299
+          </h1>
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+          >
+            Get your business online with a website that actually works. Fast, mobile-ready,
+            found on Google — and £0 per month to host. No subscriptions, no templates, no nonsense.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact/" class="space-button space-font"><span aria-hidden="true">💬</span> Get Started</a>
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(16, 185, 129, 0.2);"><span aria-hidden="true">📱</span> 07971 331814</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING TIERS -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          CHOOSE YOUR PACKAGE
+        </h2>
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <div class="pricing-card">
+            <span class="tech-font" style="color: var(--plasma-cyan); font-size: 12px; letter-spacing: 1px;">STARTER</span>
+            <div class="price space-font" style="color: var(--aurora-green);">£299</div>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin-bottom: 20px;">
+              Single-page website to get you online
+            </p>
+            <ul class="features alien-font">
+              <li><span class="check">&#10003;</span> Single-page responsive design</li>
+              <li><span class="check">&#10003;</span> Mobile-friendly layout</li>
+              <li><span class="check">&#10003;</span> Contact form</li>
+              <li><span class="check">&#10003;</span> Basic SEO (meta tags, sitemap)</li>
+              <li><span class="check">&#10003;</span> SSL certificate</li>
+              <li><span class="check">&#10003;</span> Cloudflare hosting (£0/month)</li>
+              <li><span class="check">&#10003;</span> 1 round of revisions</li>
+            </ul>
+            <div class="best-for alien-font">
+              <strong style="color: var(--plasma-cyan);">Best for:</strong> New businesses, tradespeople, freelancers getting started
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+              <a href="/contact/" class="space-button space-font" style="font-size: 13px; padding: 12px 24px;">
+                <span aria-hidden="true">🚀</span> Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Professional -->
+          <div class="pricing-card featured">
+            <div
+              style="position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--aurora-green); color: #000; padding: 4px 16px; border-radius: 0 0 10px 10px; font-size: 11px; font-weight: 700; letter-spacing: 1px;"
+              class="tech-font"
+            >
+              MOST POPULAR
+            </div>
+            <span class="tech-font" style="color: var(--aurora-green); font-size: 12px; letter-spacing: 1px; margin-top: 16px;">PROFESSIONAL</span>
+            <div class="price space-font" style="color: var(--aurora-green);">£500</div>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin-bottom: 20px;">
+              Single-page premium design built to rank
+            </p>
+            <ul class="features alien-font">
+              <li><span class="check">&#10003;</span> Single-page premium design</li>
+              <li><span class="check">&#10003;</span> Mobile-first responsive</li>
+              <li><span class="check">&#10003;</span> Contact form with spam protection</li>
+              <li><span class="check">&#10003;</span> Local SEO (JSON-LD schema, Google Business guidance)</li>
+              <li><span class="check">&#10003;</span> Security headers &amp; performance optimised</li>
+              <li><span class="check">&#10003;</span> Cloudflare hosting (£0/month)</li>
+              <li><span class="check">&#10003;</span> Sub-second load times</li>
+              <li><span class="check">&#10003;</span> Analytics setup</li>
+              <li><span class="check">&#10003;</span> 2 rounds of revisions</li>
+            </ul>
+            <div class="best-for alien-font" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
+              <strong style="color: var(--aurora-green);">Best for:</strong> Established businesses wanting a professional online presence
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+              <a href="/contact/" class="space-button space-font" style="font-size: 13px; padding: 12px 24px; background: linear-gradient(135deg, #065f46, #047857); border-color: var(--aurora-green);">
+                <span aria-hidden="true">⭐</span> Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- SiteForge Premium -->
+          <div class="pricing-card premium">
+            <span class="tech-font" style="color: var(--nebula-purple); font-size: 12px; letter-spacing: 1px;">SITEFORGE PREMIUM</span>
+            <div class="price space-font" style="color: var(--nebula-purple);">From £5,000</div>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin-bottom: 20px;">
+              Fully bespoke multi-page website
+            </p>
+            <ul class="features alien-font">
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Fully bespoke multi-page design</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Custom animations &amp; interactions</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Progressive Web App (PWA)</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> WCAG accessibility compliance</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Advanced structured data</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Full security suite</li>
+              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Unlimited pages &amp; ongoing support</li>
+            </ul>
+            <div class="best-for alien-font" style="border-color: rgba(124, 58, 237, 0.3); background: rgba(124, 58, 237, 0.1);">
+              <strong style="color: var(--nebula-purple);">Best for:</strong> Businesses ready to dominate their local market
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+              <a href="/contact/" class="space-button space-font" style="font-size: 13px; padding: 12px 24px; background: linear-gradient(135deg, #4c1d95, #7c3aed); border-color: var(--nebula-purple);">
+                <span aria-hidden="true">👑</span> Enquire
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU ACTUALLY GET -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px; text-align: center;"
+        >
+          WHAT YOU ACTUALLY GET
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); text-align: center; max-width: 650px; margin: 0 auto 40px; font-size: 16px;">
+          Not just a pretty page — a working business tool that brings in customers.
+        </p>
+        <div class="benefits-grid">
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🔍</span>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">
+              FOUND ON GOOGLE
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Your business appears in local searches. Proper meta tags, structured data, and sitemap so Google knows exactly what you do and where you are.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">💼</span>
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">
+              PROFESSIONAL IMAGE
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              No more "I don't have a website" when customers ask. A clean, professional site that builds trust before they even call you.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">📱</span>
+            <h3 class="space-font" style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;">
+              MOBILE-READY
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Over 60% of searches happen on phones. Your site looks and works perfectly on mobile, tablet, and desktop — no pinching and zooming.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">📬</span>
+            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;">
+              LEADS TO YOUR INBOX
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              A contact form that actually works — enquiries go straight to your email. With spam protection so you do not get buried in junk.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">💷</span>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">
+              £0 MONTHLY HOSTING
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              No Wix subscriptions. No Squarespace fees. Your site is hosted on Cloudflare for free — the only ongoing cost is your domain (~£10/year).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MORE THAN JUST A PRETTY DESIGN -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px; text-align: center;"
+        >
+          MORE THAN JUST A PRETTY DESIGN
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); text-align: center; max-width: 750px; margin: 0 auto 20px; font-size: 16px;">
+          What you see on screen is only half the work. Behind every page is a stack of backend
+          engineering that most web designers either skip or do not know how to do. This is what
+          makes the difference between a website that sits there and one that actually performs.
+        </p>
+        <p class="alien-font" style="color: var(--comet-silver); text-align: center; max-width: 750px; margin: 0 auto 40px; font-size: 16px;">
+          Here is what goes into every site we build:
+        </p>
+        <div class="backend-grid">
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">🔍</span> SEO &amp; STRUCTURED DATA
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              Meta titles, descriptions, Open Graph tags for social sharing, Twitter cards,
+              canonical URLs, XML sitemap, robots.txt, and JSON-LD schema markup that tells
+              Google exactly what your business does, where you are, and how to contact you.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">🔒</span> SECURITY HEADERS
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              SSL/HTTPS encryption, Content Security Policy, X-Frame-Options, X-Content-Type-Options,
+              Referrer-Policy, and Permissions-Policy headers. These protect your visitors and your
+              reputation — and Google rewards secure sites with higher rankings.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--solar-orange); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">⚡</span> PERFORMANCE OPTIMISATION
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              Image compression and modern formats (WebP/AVIF), lazy loading, minified CSS and
+              JavaScript, efficient font loading with preconnect hints, optimised critical rendering
+              path, and Cloudflare CDN caching. The result: sub-second load times.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">♿</span> ACCESSIBILITY
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              Semantic HTML structure, ARIA labels, keyboard navigation, sufficient colour contrast,
+              alt text on images, and proper heading hierarchy. Your site works for everyone —
+              including screen reader users — and meets legal accessibility requirements.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">📨</span> CONTACT FORM BACKEND
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              Server-side form handling with validation, honeypot spam traps, rate limiting,
+              and email delivery configuration. Enquiries land in your inbox reliably — not
+              in spam — and bots cannot flood you with junk submissions.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 15px; margin-bottom: 10px;">
+              <span aria-hidden="true">📊</span> ANALYTICS &amp; MONITORING
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.6;">
+              Google Analytics or privacy-friendly alternatives configured properly — tracking
+              real visitors, not bots. You will know how people find your site, which pages they
+              visit, and whether your site is converting visitors into enquiries.
+            </p>
+          </div>
+        </div>
+        <div
+          style="background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05)); border-left: 4px solid var(--aurora-green); padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0;"
+        >
+          <p class="alien-font" style="color: var(--comet-silver); margin: 0; font-size: 15px; line-height: 1.7;">
+            <strong style="color: var(--starlight-white);">The iceberg effect:</strong> What visitors
+            see is the tip — colours, layout, images. Underneath is hundreds of lines of configuration,
+            optimisation, and security that make the site fast, safe, and findable. This is why a
+            properly built website costs more than a Wix drag-and-drop — and why it performs better.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT'S BETTER THAN WIX -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 16px; text-align: center;"
+        >
+          WHY IT'S BETTER THAN WIX
+        </h2>
+        <p class="alien-font" style="color: var(--comet-silver); text-align: center; max-width: 650px; margin: 0 auto 40px; font-size: 16px;">
+          Wix and Squarespace are fine for a hobby blog. For a real business, you need more.
+        </p>
+        <div class="comparison-grid">
+          <div class="comparison-card bad">
+            <h3 class="space-font" style="color: var(--mars-red); font-size: 16px; margin: 0 0 16px;">
+              <span aria-hidden="true">&#10007;</span> Wix / Squarespace / WordPress
+            </h3>
+            <ul class="alien-font">
+              <li>£12-40/month hosting fees (£144-480/year)</li>
+              <li>Bloated code, 3-5 second load times</li>
+              <li>Template designs shared by thousands</li>
+              <li>WordPress: constant plugin updates and security patches</li>
+              <li>Locked into their platform — you cannot take your site elsewhere</li>
+              <li>Limited SEO control and generic schema</li>
+            </ul>
+          </div>
+          <div class="comparison-card good">
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin: 0 0 16px;">
+              <span aria-hidden="true">&#10003;</span> Our Hand-Built Sites
+            </h3>
+            <ul class="alien-font">
+              <li>£0/month hosting on Cloudflare CDN</li>
+              <li>Clean code, sub-second load times</li>
+              <li>Bespoke design — unique to your business</li>
+              <li>No plugins, no databases, virtually unhackable</li>
+              <li>You own everything — no platform lock-in</li>
+              <li>Full SEO control with custom structured data</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          style="background: linear-gradient(145deg, rgba(220, 38, 38, 0.1), rgba(245, 158, 11, 0.05)); border-left: 4px solid var(--solar-orange); padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0;"
+        >
+          <p class="alien-font" style="color: var(--comet-silver); margin: 0; font-size: 15px; line-height: 1.7;">
+            <strong style="color: var(--starlight-white);">The hidden cost of cheap platforms:</strong> A Wix
+            "Business" plan at £27/month adds up to £972 over 3 years — more than triple our Starter
+            package. And you still do not own the site. Our £299 site costs £0/month to run. The domain
+            is your only ongoing cost (~£10/year).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          HOW IT WORKS
+        </h2>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="step-number space-font">1</div>
+            <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 15px; margin-bottom: 8px;">
+              CHAT
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.5;">
+              We discuss your business, goals, and what you need. No jargon, no pressure — just a straight conversation.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number space-font">2</div>
+            <h3 class="space-font" style="color: var(--aurora-green); font-size: 15px; margin-bottom: 8px;">
+              DESIGN &amp; BUILD
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.5;">
+              We design and hand-code your site. No templates, no page builders — built from scratch to match your brand.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number space-font">3</div>
+            <h3 class="space-font" style="color: var(--solar-orange); font-size: 15px; margin-bottom: 8px;">
+              REVIEW &amp; REFINE
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.5;">
+              You see the site, give feedback, and we refine it until you are happy. No surprises, no rushing.
+            </p>
+          </div>
+          <div class="process-step">
+            <div class="step-number space-font">4</div>
+            <h3 class="space-font" style="color: var(--nebula-purple); font-size: 15px; margin-bottom: 8px;">
+              GO LIVE
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 13px; line-height: 1.5;">
+              We deploy your site, connect your domain, and you are online. Full handover — you own everything.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font"
+          style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          WEB DESIGN FAQ
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 800px; margin: 0 auto;">
+          {
+            faqs.map((faq) => (
+              <div class="faq-item">
+                <h3
+                  class="space-font"
+                  style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+                >
+                  {faq.question}
+                </h3>
+                <p
+                  class="alien-font"
+                  style="color: var(--comet-silver); font-size: 14px; line-height: 1.7; margin: 0;"
+                >
+                  {faq.answer}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- RELATED SERVICES -->
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          RELATED SERVICES
+        </h2>
+        <div class="services-grid">
+          <a
+            href="/services/repairs/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">🛠️</span> Computer Repairs
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              PC and laptop repairs in Romford. Same day service, £20 diagnostic waived with repair.
+            </p>
+          </a>
+          <a
+            href="/services/custom-pcs/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">🎮</span> Custom Gaming PCs
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Custom-built gaming and workstation PCs tailored to your budget and requirements.
+            </p>
+          </a>
+          <a
+            href="/services/network-wifi-romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">📡</span> Network &amp; WiFi
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              WiFi troubleshooting, router setup, and network configuration for homes and businesses.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section-bg" style="padding: 60px 0 80px;">
+      <div class="container">
+        <div
+          class="cosmic-card"
+          style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+          >
+            READY TO GET YOUR BUSINESS ONLINE?
+          </h2>
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px; max-width: 600px; margin-left: auto; margin-right: auto;"
+          >
+            Professional websites from £299. No monthly fees, no templates, no lock-in.
+            Call us or get in touch for a free, no-obligation chat.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact/" class="space-button space-font">
+              <span aria-hidden="true">💬</span> Get a Quote
+            </a>
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(16, 185, 129, 0.2);"
+            >
+              <span aria-hidden="true">📱</span> 07971 331814
+            </a>
+            <a
+              href="mailto:david@chilterncomputers.net"
+              class="space-button space-font"
+              style="background: rgba(124, 58, 237, 0.2); border-color: var(--nebula-purple);"
+            >
+              <span aria-hidden="true">✉️</span> Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Web Design",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chiltern Computers",
+      "telephone": "+447971331814",
+      "email": "david@chilterncomputers.net",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "38 Hilldene Avenue",
+        "addressLocality": "Harold Hill",
+        "addressRegion": "Romford",
+        "postalCode": "RM3 8YP",
+        "addressCountry": "GB"
+      }
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.6039,
+        "longitude": 0.2340
+      },
+      "geoRadius": "20000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Design Packages",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Starter Website",
+          "description": "Single-page responsive website with contact form, basic SEO, SSL, and free Cloudflare hosting.",
+          "price": "299",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "name": "Professional Website",
+          "description": "Single-page premium website with local SEO, JSON-LD schema, security headers, performance optimisation, and analytics.",
+          "price": "500",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "name": "SiteForge Premium Website",
+          "description": "Fully bespoke multi-page website with custom animations, PWA, accessibility compliance, and unlimited pages.",
+          "price": "5000",
+          "priceCurrency": "GBP"
+        }
+      ]
+    }
+  })} />
+</Layout>
