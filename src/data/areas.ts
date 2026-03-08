@@ -978,6 +978,161 @@ export const areas: AreaData[] = [
       },
     ],
   },
+  {
+    slug: 'harold-park',
+    name: 'Harold Park',
+    region: 'Havering',
+    postcode: 'RM3',
+    distance: '1.5 miles',
+    landmarks: ['Harold Park Road', 'Harold Court Road', 'Dagnam Park Drive'],
+    nearby: ['Harold Hill', 'Harold Wood', 'Noak Hill', 'Romford'],
+    faqs: [
+      {
+        question: 'Do you cover Harold Park for computer repairs?',
+        answer:
+          "Yes! Harold Park is one of our closest areas at just 1.5 miles away. We're practically neighbours — same day collection and repair available.",
+      },
+      {
+        question: 'Is there a collection charge from Harold Park?',
+        answer:
+          'No! Collection and delivery is completely free for Harold Park customers. We can usually be with you within the hour given how close we are.',
+      },
+      {
+        question: 'What computer repairs do you offer?',
+        answer:
+          'Full PC and laptop repairs including virus removal, data recovery, screen replacements, keyboard repairs, SSD upgrades, and more. All brands repaired.',
+      },
+      {
+        question: 'Do you offer same day service?',
+        answer:
+          "Yes! Given our close proximity to Harold Park, most software repairs and virus removal can be completed same day. We're open 7 days a week, 9AM to 9PM.",
+      },
+    ],
+  },
+  {
+    slug: 'heath-park',
+    name: 'Heath Park',
+    region: 'Havering',
+    postcode: 'RM2',
+    distance: '2.5 miles',
+    landmarks: ['Heath Park Road', 'Heath Drive', 'Gidea Park Station'],
+    nearby: ['Gidea Park', 'Ardleigh Green', 'Romford', 'Emerson Park'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Heath Park?',
+        answer:
+          'Yes! We cover Heath Park and the wider RM2 area. Free collection from Heath Park Road, Heath Drive, and all surrounding streets.',
+      },
+      {
+        question: 'How far are you from Heath Park?',
+        answer:
+          "We're about 2.5 miles from Heath Park in Harold Hill. We offer free collection and delivery, or you can drop off at our workshop on Hilldene Avenue.",
+      },
+      {
+        question: 'Can you speed up my old computer?',
+        answer:
+          "Yes! We specialise in breathing new life into older PCs. An SSD upgrade and RAM increase can transform performance. We'll advise on the most cost-effective upgrades.",
+      },
+      {
+        question: 'Do you repair laptops with water damage?',
+        answer:
+          'Yes, we can assess and repair liquid-damaged laptops. The sooner you bring it in, the better the chances of recovery. Free diagnosis included.',
+      },
+    ],
+  },
+  {
+    slug: 'hacton',
+    name: 'Hacton',
+    region: 'Havering',
+    postcode: 'RM12',
+    distance: '4 miles',
+    landmarks: ['Hacton Lane', 'Hacton Parkway', 'Hornchurch Stadium'],
+    nearby: ['Hornchurch', 'Elm Park', 'Upminster', 'Emerson Park'],
+    faqs: [
+      {
+        question: 'Do you cover Hacton for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Hacton and the wider RM12 area. Free collection and delivery available throughout Hacton Lane and surrounding streets.',
+      },
+      {
+        question: 'How quickly can you collect from Hacton?',
+        answer:
+          "We can usually collect from Hacton within a couple of hours. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+      },
+      {
+        question: 'Do you fix desktop PCs as well as laptops?',
+        answer:
+          'Yes, we repair all types of computers — desktops, laptops, all-in-ones, gaming PCs, and custom builds. All brands including Dell, HP, Lenovo, Asus, and Apple.',
+      },
+      {
+        question: 'What if you can\'t fix my computer?',
+        answer:
+          "We operate on a no fix, no fee basis. If we can't resolve your issue, you don't pay a penny. We'll also advise on the best next steps if a repair isn't viable.",
+      },
+    ],
+  },
+  {
+    slug: 'corbets-tey',
+    name: 'Corbets Tey',
+    region: 'Havering',
+    postcode: 'RM14',
+    distance: '5 miles',
+    landmarks: ['Corbets Tey Road', 'Harwood Hall Lane', 'Fen Lane'],
+    nearby: ['Upminster', 'Cranham', 'Rainham', 'Harold Wood'],
+    faqs: [
+      {
+        question: 'Do you cover Corbets Tey?',
+        answer:
+          'Yes! We provide computer repair services to Corbets Tey and surrounding RM14 areas. Free collection from Corbets Tey Road and all nearby lanes.',
+      },
+      {
+        question: 'How do I get my computer to you from Corbets Tey?',
+        answer:
+          "We offer free collection and delivery for Corbets Tey customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+      },
+      {
+        question: 'Do you offer data recovery?',
+        answer:
+          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any work begins.',
+      },
+      {
+        question: 'Can you set up a new computer for me?',
+        answer:
+          'Yes, we offer full setup services including data transfer from your old computer, software installation, printer setup, and email configuration. Ready to use when returned.',
+      },
+    ],
+  },
+  {
+    slug: 'north-ockendon',
+    name: 'North Ockendon',
+    region: 'Havering',
+    postcode: 'RM14',
+    distance: '5 miles',
+    landmarks: ['North Ockendon Road', 'Church Lane', "St Mary Magdalene's Church"],
+    nearby: ['Upminster', 'Cranham', 'Corbets Tey', 'Rainham'],
+    faqs: [
+      {
+        question: 'Do you cover North Ockendon?',
+        answer:
+          'Yes! We provide computer repair services to North Ockendon and surrounding areas. Free collection and delivery available — we come to you.',
+      },
+      {
+        question: 'Is there an extra charge for rural areas?',
+        answer:
+          'No! Collection and delivery is free regardless of location. North Ockendon is about 5 miles from our base in Harold Hill. Call 07971 331814 to arrange.',
+      },
+      {
+        question: 'What services do you offer?',
+        answer:
+          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, new computer sales, and more. All brands serviced.',
+      },
+      {
+        question: 'Are you open at weekends?',
+        answer:
+          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect for those who can't get to us during the week.",
+      },
+    ],
+  },
 ];
 
 // Helper function to get area by slug
