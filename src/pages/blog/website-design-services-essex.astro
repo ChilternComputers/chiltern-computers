@@ -1,0 +1,771 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = '2026-03-08';
+const modifiedDate = '2026-03-08';
+const author = 'Chiltern Computers';
+const readTime = '8 min read';
+
+const faqs = [
+  {
+    question: 'How much does a website cost for a small business?',
+    answer:
+      'It depends on what you need. A single-page website with professional design and solid backend starts from around £300-500. A full multi-page bespoke website with custom features, SEO, and performance optimisation typically ranges from £1,500 to £5,000+. We offer packages to suit every budget.',
+  },
+  {
+    question: 'Do you build websites for businesses outside Essex?',
+    answer:
+      'Yes! While we are based in Harold Hill, Romford, we build websites for businesses anywhere in the UK. Everything is handled remotely — we discuss your requirements, design your site, and deliver a finished product you can manage yourself.',
+  },
+  {
+    question: 'What platform do you build websites on?',
+    answer:
+      'We use modern frameworks like Astro and Next.js to build fast, static websites that load in under a second. Unlike WordPress sites that rely on databases and plugins, our sites are lightweight, secure, and virtually unhackable. They are hosted on Cloudflare Pages with free SSL, global CDN, and DDoS protection.',
+  },
+  {
+    question: 'Will my website work on mobile phones?',
+    answer:
+      'Absolutely. Every website we build is fully responsive and tested across all devices — phones, tablets, laptops, and desktops. Mobile-first design is standard, not an add-on.',
+  },
+  {
+    question: 'Do you offer website maintenance and updates?',
+    answer:
+      'Yes. We offer ongoing maintenance packages, or you can contact us whenever you need changes. Because our sites are static and hosted on Cloudflare, there are no plugin updates, security patches, or database maintenance to worry about — unlike WordPress.',
+  },
+];
+---
+
+<Layout
+  title="Website Design Services Essex - From Basic to Bespoke"
+  description="Professional website design for Essex businesses. Fast, secure, mobile-friendly websites from £300. Built by SiteForge Digital. Call 07971 331814."
+  keywords="website design essex, web design romford, website designer harold hill, small business website essex, bespoke website design, affordable web design romford, website builder havering, business website essex"
+  type="article"
+  publishedTime={publishDate}
+  modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Website Design Services', url: '/blog/website-design-services-essex/' },
+  ]}
+>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --void-black: #020617;
+      --comet-silver: #e5e7eb;
+      --mars-red: #dc2626;
+    }
+
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .article-hero {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+
+    .article-section {
+      background: linear-gradient(180deg, var(--void-black), var(--deep-space));
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .article-content {
+      color: var(--comet-silver);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      color: var(--starlight-white);
+      font-size: clamp(24px, 4vw, 32px);
+      margin: 48px 0 20px;
+      line-height: 1.3;
+    }
+
+    .article-content h3 {
+      color: var(--plasma-cyan);
+      font-size: clamp(20px, 3vw, 24px);
+      margin: 36px 0 16px;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 12px;
+    }
+    .article-content strong {
+      color: var(--starlight-white);
+    }
+
+    .highlight-box {
+      background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05));
+      border-left: 4px solid var(--aurora-green);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .warning-box {
+      background: linear-gradient(145deg, rgba(220, 38, 38, 0.1), rgba(245, 158, 11, 0.05));
+      border-left: 4px solid var(--solar-orange);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .package-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .package-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .package-card-title {
+      font-size: 20px;
+      color: var(--starlight-white);
+    }
+
+    .package-card-price {
+      font-size: 24px;
+      color: var(--aurora-green);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+    }
+
+    .feature-check {
+      color: var(--aurora-green);
+      flex-shrink: 0;
+    }
+
+    .feature-text {
+      color: var(--comet-silver);
+    }
+
+    .faq-section {
+      margin: 48px 0;
+    }
+
+    .faq-item {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      color: var(--starlight-white);
+      font-size: 17px;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--comet-silver);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--plasma-cyan);
+      text-decoration: none;
+    }
+    .breadcrumb span {
+      color: var(--comet-silver);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--comet-silver);
+      font-size: 14px;
+    }
+
+    .cta-box {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2));
+      border: 2px solid var(--aurora-green);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .comparison-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .comparison-card.bad {
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .comparison-card.good {
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .package-card-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>Website Design</span>
+        </nav>
+
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--aurora-green); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--aurora-green); font-size: 12px;"
+            >NEW SERVICE</span
+          >
+        </div>
+
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
+          Website Design Services for Essex Businesses
+        </h1>
+
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          We're now offering professional website design through SiteForge Digital — from simple
+          single-page sites to fully bespoke, high-performance websites built to dominate search
+          results.
+        </p>
+
+        <div class="article-meta alien-font">
+          <div class="meta-item">
+            <span aria-hidden="true">📅</span>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
+          <div class="meta-item">
+            <span aria-hidden="true">⏱️</span>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <span aria-hidden="true">✍️</span>
+            <span>{author}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 60px 0;">
+      <div class="container">
+        <article class="article-content alien-font">
+          <p>
+            After 20+ years in IT, we've seen hundreds of local businesses struggle with their
+            websites. Overpriced WordPress templates that break every update. Sites that take 5
+            seconds to load. Designers who disappear after taking the money. We've partnered with
+            <strong>SiteForge Digital</strong> to offer something better — websites built with the same
+            technology and attention to detail that powers this very site.
+          </p>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              <strong>Why us?</strong> The website you're reading right now scores 97+ across every category
+              in professional audits — performance, accessibility, SEO, security, and code quality.
+              That's the standard we build to for every client. Not a template. Not a drag-and-drop page
+              builder. Properly engineered websites.
+            </p>
+          </div>
+
+          <h2 class="space-font">What We Offer</h2>
+
+          <p>
+            Whether you're a sole trader needing a simple online presence or an established business
+            wanting a premium website that outranks your competitors, we've got a solution. Every
+            site we build includes the fundamentals that most web designers skip — proper SEO,
+            security headers, accessibility compliance, and lightning-fast performance.
+          </p>
+
+          <!-- Package Cards -->
+          <h3 class="space-font">Starter — Single Page Website</h3>
+          <div class="package-card">
+            <div class="package-card-header">
+              <span class="package-card-title space-font">Starter</span>
+              <span class="package-card-price space-font">From £300</span>
+            </div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Professional single-page design tailored to your business</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Mobile responsive — looks perfect on every device</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Contact form with spam protection</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">SEO fundamentals — meta tags, schema markup, sitemap</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">SSL certificate and security headers</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Free Cloudflare hosting — no monthly fees</span>
+              </div>
+            </div>
+            <p style="color: var(--comet-silver); font-size: 14px; margin-top: 16px; margin-bottom: 0;">
+              Perfect for tradespeople, freelancers, and small businesses who need a clean, professional
+              online presence without the ongoing costs.
+            </p>
+          </div>
+
+          <h3 class="space-font">Business — Multi-Page Website</h3>
+          <div class="package-card" style="border-color: rgba(16, 185, 129, 0.4);">
+            <div class="package-card-header">
+              <span class="package-card-title space-font">Business</span>
+              <span class="package-card-price space-font">From £800</span>
+            </div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">5-10 pages with bespoke design and branding</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Everything in Starter, plus:</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Local SEO with area-specific landing pages</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Google Business Profile integration</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Blog/news section for content marketing</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Cookie consent and GDPR compliance</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Performance optimised — sub-second load times</span>
+              </div>
+            </div>
+            <p style="color: var(--comet-silver); font-size: 14px; margin-top: 16px; margin-bottom: 0;">
+              For businesses ready to compete online. Multiple service pages, area coverage,
+              and the SEO foundation to start ranking in Google.
+            </p>
+          </div>
+
+          <h3 class="space-font">Premium — Bespoke Website</h3>
+          <div class="package-card" style="border-color: rgba(124, 58, 237, 0.4);">
+            <div class="package-card-header">
+              <span class="package-card-title space-font">Premium</span>
+              <span class="package-card-price space-font">From £2,000</span>
+            </div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Fully bespoke design — no templates, no page builders</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Everything in Business, plus:</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Custom animations and interactive elements</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Progressive Web App (PWA) — installable on phones</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">WCAG 2.1 AA accessibility compliance</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Advanced structured data (JSON-LD schema)</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Full security header suite — CSP, HSTS, Permissions-Policy</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-check">✓</span>
+                <span class="feature-text">Unlimited pages — as many as your business needs</span>
+              </div>
+            </div>
+            <p style="color: var(--comet-silver); font-size: 14px; margin-top: 16px; margin-bottom: 0;">
+              The full package. Enterprise-grade infrastructure for businesses that want to dominate
+              their local market online. This is the level this website is built to.
+            </p>
+          </div>
+
+          <h2 class="space-font">Why Not WordPress?</h2>
+
+          <p>
+            Most web designers will sell you a WordPress site because it's quick and easy for
+            <em>them</em>. But WordPress comes with serious baggage that they won't mention until
+            it's too late.
+          </p>
+
+          <div class="comparison-grid">
+            <div class="comparison-card bad">
+              <h3 class="space-font" style="color: var(--mars-red); font-size: 16px; margin: 0 0 16px;">
+                Typical WordPress Site
+              </h3>
+              <ul style="padding-left: 20px; margin: 0;">
+                <li>2-5 second load times</li>
+                <li>Monthly hosting fees (£10-50/month)</li>
+                <li>Constant plugin updates and breakages</li>
+                <li>Vulnerable to hacking (database-driven)</li>
+                <li>Bloated code from page builders</li>
+                <li>Shared hosting = slow when busy</li>
+              </ul>
+            </div>
+            <div class="comparison-card good">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin: 0 0 16px;">
+                Our Static Sites
+              </h3>
+              <ul style="padding-left: 20px; margin: 0;">
+                <li>Sub-second load times</li>
+                <li>Free hosting on Cloudflare CDN</li>
+                <li>No plugins, no updates, no breakages</li>
+                <li>Virtually unhackable (no database)</li>
+                <li>Clean, hand-written code</li>
+                <li>Global CDN = fast everywhere, always</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p style="margin: 0;">
+              <strong>The hidden cost of WordPress:</strong> A typical WordPress site costs £20-50/month
+              for decent hosting, plus annual theme and plugin licence renewals. Over 3 years, that's
+              £720-1,800 in running costs alone — on top of what you paid for the site. Our sites
+              cost £0/month to host. The domain is your only ongoing cost (~£10/year).
+            </p>
+          </div>
+
+          <h2 class="space-font">What Every Website Gets — Standard</h2>
+
+          <p>
+            We don't cut corners. Every website we deliver, regardless of package, includes the
+            technical foundations that separate professional sites from amateur ones:
+          </p>
+
+          <ul>
+            <li><strong>SSL/HTTPS</strong> — encrypted connections, padlock in the browser bar</li>
+            <li><strong>Mobile responsive</strong> — tested on phones, tablets, and desktops</li>
+            <li><strong>SEO fundamentals</strong> — meta tags, Open Graph, Twitter cards, sitemap, robots.txt</li>
+            <li><strong>Performance optimised</strong> — compressed images, lazy loading, efficient code</li>
+            <li><strong>Security headers</strong> — protection against clickjacking, XSS, and content sniffing</li>
+            <li><strong>Contact form</strong> — with spam filtering and email notifications</li>
+            <li><strong>Analytics ready</strong> — set up for Google Analytics or privacy-friendly alternatives</li>
+            <li><strong>Cloudflare hosting</strong> — global CDN, DDoS protection, 99.99% uptime, free</li>
+          </ul>
+
+          <h2 class="space-font">Who Is This For?</h2>
+
+          <p>We build websites for anyone who needs a professional online presence:</p>
+
+          <ul>
+            <li><strong>Tradespeople</strong> — plumbers, electricians, builders, decorators, roofers</li>
+            <li><strong>Local businesses</strong> — shops, salons, barbers, cafes, takeaways</li>
+            <li><strong>Professional services</strong> — accountants, solicitors, consultants, coaches</li>
+            <li><strong>Health & beauty</strong> — spas, clinics, therapists, personal trainers</li>
+            <li><strong>Hospitality</strong> — restaurants, pubs, hotels, event venues</li>
+            <li><strong>Start-ups</strong> — new businesses needing to establish credibility fast</li>
+          </ul>
+
+          <p>
+            If you've got a business card, you need a website. And it needs to be fast, professional,
+            and show up when people search for what you do.
+          </p>
+
+          <h2 class="space-font">Our Process</h2>
+
+          <ol>
+            <li>
+              <strong>Discovery call</strong> — we discuss your business, your goals, and what you
+              need from your website. No jargon, no pressure.
+            </li>
+            <li>
+              <strong>Design</strong> — we create a bespoke design that matches your brand. You see
+              it before we build it.
+            </li>
+            <li>
+              <strong>Build</strong> — we hand-code your site using modern frameworks. No templates,
+              no page builders, no bloat.
+            </li>
+            <li>
+              <strong>Test</strong> — we test across devices, run accessibility checks, verify SEO,
+              and audit performance.
+            </li>
+            <li>
+              <strong>Launch</strong> — we deploy to Cloudflare, set up your domain, and hand over
+              a live, working website.
+            </li>
+          </ol>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              <strong>Powered by SiteForge Digital</strong> — our web design services are delivered through
+              SiteForge Digital Ltd, our dedicated web design studio. Same people, same standards,
+              same local support. You deal directly with us, not a faceless agency.
+            </p>
+          </div>
+
+          <h2 class="space-font">See What We Can Do</h2>
+
+          <p>
+            Don't take our word for it — you're looking at our work right now. This website is a
+            70-page static site with 45 area landing pages, 180 FAQ schema entries, 8 JSON-LD
+            schema types, progressive web app features, WCAG 2.1 AA accessibility, and full
+            security headers. It loads in under a second and costs nothing to host.
+          </p>
+
+          <p>
+            That's the premium end. But we apply the same principles to every build — clean code,
+            fast loading, proper SEO, secure hosting. Whether it's a single page for a local
+            plumber or a 50-page site for a law firm.
+          </p>
+
+          <!-- FAQ Section -->
+          <div class="faq-section">
+            <h2 class="space-font" style="text-align: center;">
+              Website Design FAQ
+            </h2>
+
+            {
+              faqs.map((faq) => (
+                <div class="faq-item">
+                  <h3 class="faq-question space-font">{faq.question}</h3>
+                  <p class="faq-answer alien-font">{faq.answer}</p>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- CTA Box -->
+          <div class="cta-box">
+            <h2
+              class="space-font galaxy-text cosmic-glow"
+              style="font-size: clamp(24px, 4vw, 32px); margin-bottom: 16px;"
+            >
+              READY TO GET ONLINE?
+            </h2>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px; max-width: 600px; margin-left: auto; margin-right: auto;"
+            >
+              Get in touch for a free, no-obligation chat about your website. We'll give you honest
+              advice on what you need — and what you don't.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+              <a href="/contact/" class="space-button space-font">
+                <span aria-hidden="true">💬</span> Get a Quote
+              </a>
+              <a href="tel:+447971331814" class="space-button space-font" style="background: rgba(16, 185, 129, 0.2);">
+                <span aria-hidden="true">📱</span> 07971 331814
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  })} />
+</Layout>
