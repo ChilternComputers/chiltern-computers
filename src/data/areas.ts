@@ -389,6 +389,347 @@ export const areas: AreaData[] = [
       },
     ],
   },
+  {
+    slug: 'emerson-park',
+    name: 'Emerson Park',
+    region: 'Havering',
+    postcode: 'RM11',
+    distance: '2.5 miles',
+    landmarks: ['Emerson Park Station', 'Nelmes Way', 'Butts Green Road'],
+    nearby: ['Hornchurch', 'Gidea Park', 'Ardleigh Green', 'Upminster'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Emerson Park?',
+        answer:
+          'Yes! We provide full computer and laptop repair services to Emerson Park and the RM11 area. We offer free collection and delivery throughout Emerson Park.',
+      },
+      {
+        question: 'How far are you from Emerson Park?',
+        answer:
+          "We're based in Harold Hill, just 2.5 miles from Emerson Park. We can collect from your door or you can drop off at our workshop on Hilldene Avenue.",
+      },
+      {
+        question: 'Do you repair Apple Macs in Emerson Park?',
+        answer:
+          'Yes, we repair all brands including MacBooks, iMacs, Dell, HP, Lenovo, and Asus. Both hardware and software repairs for Windows and macOS.',
+      },
+      {
+        question: 'What are your prices for Emerson Park customers?',
+        answer:
+          'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee.',
+      },
+    ],
+  },
+  {
+    slug: 'cranham',
+    name: 'Cranham',
+    region: 'Havering',
+    postcode: 'RM14',
+    distance: '4 miles',
+    landmarks: ['Cranham Hall', 'Front Lane', 'All Saints Church Cranham'],
+    nearby: ['Upminster', 'Hornchurch', 'Harold Wood', 'Emerson Park'],
+    faqs: [
+      {
+        question: 'Do you cover Cranham for computer repairs?',
+        answer:
+          'Yes! We cover Cranham and surrounding RM14 areas. Free collection and delivery available throughout Cranham, including Front Lane and the surrounding residential streets.',
+      },
+      {
+        question: 'How quickly can you collect from Cranham?',
+        answer:
+          "We can usually collect from Cranham within a few hours of booking. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+      },
+      {
+        question: 'Do you fix slow computers?',
+        answer:
+          "Yes! Slow PC diagnosis is one of our most popular services. We'll identify the cause — whether it's malware, a failing hard drive, or simply needing an SSD upgrade — and get it running fast again.",
+      },
+      {
+        question: 'Can you set up a new computer for me in Cranham?',
+        answer:
+          'Yes, we offer full setup services for new PCs and laptops. We can transfer your data from your old computer, install your software, and configure everything ready to use.',
+      },
+    ],
+  },
+  {
+    slug: 'noak-hill',
+    name: 'Noak Hill',
+    region: 'Romford',
+    postcode: 'RM3',
+    distance: '1.5 miles',
+    landmarks: ['Noak Hill Road', 'Dagnam Park', 'Harold Court Road'],
+    nearby: ['Harold Hill', 'Harold Wood', 'Havering-atte-Bower', 'Collier Row'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Noak Hill?',
+        answer:
+          "Yes! Noak Hill is one of our closest areas at just 1.5 miles away. We can often collect and return same day. We're practically on your doorstep.",
+      },
+      {
+        question: 'Is there an extra charge for Noak Hill collection?',
+        answer:
+          'No! Collection and delivery is completely free for Noak Hill customers. Given how close we are, we can usually be with you within the hour.',
+      },
+      {
+        question: 'Do you repair gaming PCs in Noak Hill?',
+        answer:
+          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, and custom builds to your specifications.',
+      },
+      {
+        question: 'Can you help with data recovery?',
+        answer:
+          'Yes, we provide data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any charges.',
+      },
+    ],
+  },
+  {
+    slug: 'chase-cross',
+    name: 'Chase Cross',
+    region: 'Romford',
+    postcode: 'RM5',
+    distance: '1 mile',
+    landmarks: ['Chase Cross Road', 'Rise Park', 'Havering College'],
+    nearby: ['Harold Hill', 'Collier Row', 'Romford', 'Gidea Park'],
+    faqs: [
+      {
+        question: 'How close are you to Chase Cross?',
+        answer:
+          "We're just 1 mile from Chase Cross — one of the closest areas we serve. Drop off on Hilldene Avenue or we can collect from Chase Cross Road and surrounding streets in minutes.",
+      },
+      {
+        question: 'Do you offer same day repairs for Chase Cross?',
+        answer:
+          "Absolutely! Given our close proximity, most software repairs and virus removal for Chase Cross customers are completed same day. We're open 7 days a week, 9AM to 9PM.",
+      },
+      {
+        question: 'What laptop brands do you repair?',
+        answer:
+          'We repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and all other makes. Both Windows and Mac.',
+      },
+      {
+        question: 'Do you sell refurbished computers?',
+        answer:
+          'Yes! We have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
+      },
+    ],
+  },
+  {
+    slug: 'south-hornchurch',
+    name: 'South Hornchurch',
+    region: 'Havering',
+    postcode: 'RM13',
+    distance: '5 miles',
+    landmarks: ['Hornchurch Country Park', 'Sycamore Way', 'Marsh Way'],
+    nearby: ['Rainham', 'Elm Park', 'Hornchurch', 'Dagenham'],
+    faqs: [
+      {
+        question: 'Do you cover South Hornchurch?',
+        answer:
+          'Yes! We provide full computer repair services to South Hornchurch and all RM13 postcodes. Free collection and delivery throughout the area.',
+      },
+      {
+        question: 'How do I get my computer to you from South Hornchurch?',
+        answer:
+          "We offer free collection and delivery for South Hornchurch customers. Just call 07971 331814 and we'll arrange a convenient time. Or drop off at our Harold Hill workshop.",
+      },
+      {
+        question: 'What services do you offer?',
+        answer:
+          'Full PC and laptop repairs, virus removal, data recovery, screen and keyboard replacements, SSD upgrades, and more. We also sell new and refurbished computers.',
+      },
+      {
+        question: 'Do you offer a warranty on repairs?',
+        answer:
+          'Yes, all our repairs come with a warranty. We also operate on a no fix, no fee basis — so you only pay if we successfully resolve your issue.',
+      },
+    ],
+  },
+  {
+    slug: 'ardleigh-green',
+    name: 'Ardleigh Green',
+    region: 'Havering',
+    postcode: 'RM11',
+    distance: '2.5 miles',
+    landmarks: ['Ardleigh Green Road', 'Squirrels Heath Lane', 'Emerson Park Station'],
+    nearby: ['Hornchurch', 'Emerson Park', 'Gidea Park', 'Harold Wood'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Ardleigh Green?',
+        answer:
+          'Yes! We cover Ardleigh Green and the wider RM11 area. Free collection from Ardleigh Green Road, Squirrels Heath Lane, and all surrounding streets.',
+      },
+      {
+        question: 'How far are you from Ardleigh Green?',
+        answer:
+          "We're based in Harold Hill, about 2.5 miles from Ardleigh Green. We offer free collection and delivery, or you can drop off at our workshop.",
+      },
+      {
+        question: 'Can you fix a laptop that won\'t turn on?',
+        answer:
+          "Yes! We diagnose and repair laptops that won't power on. Common causes include faulty chargers, dead batteries, motherboard issues, and power jack problems. Free diagnosis included.",
+      },
+      {
+        question: 'Do you provide IT support for small businesses?',
+        answer:
+          'Yes, we offer IT support for Ardleigh Green businesses including PC repairs, network setup, ongoing maintenance, and emergency callout services.',
+      },
+    ],
+  },
+  {
+    slug: 'hainault',
+    name: 'Hainault',
+    region: 'Redbridge',
+    postcode: 'IG7',
+    distance: '4 miles',
+    landmarks: ['Hainault Forest Country Park', 'Hainault Station', 'New North Road'],
+    nearby: ['Collier Row', 'Chadwell Heath', 'Romford', 'Ilford'],
+    faqs: [
+      {
+        question: 'Do you cover Hainault for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Hainault and IG7 postcodes. Free collection and delivery available throughout Hainault.',
+      },
+      {
+        question: 'How far are you from Hainault?',
+        answer:
+          "We're about 4 miles from Hainault in Harold Hill. We offer free collection — just call 07971 331814 and we can usually be with you within a couple of hours.",
+      },
+      {
+        question: 'Do you remove viruses and malware?',
+        answer:
+          "Yes! Virus and malware removal is one of our core services. We'll thoroughly clean your system and install protection to prevent future infections. Most virus removals completed same day.",
+      },
+      {
+        question: 'Can you upgrade my old computer?',
+        answer:
+          'Yes, we offer RAM upgrades, SSD upgrades, graphics card installations, and more. An SSD upgrade alone can make an old PC feel brand new. Free advice on the best upgrades for your budget.',
+      },
+    ],
+  },
+  {
+    slug: 'barking',
+    name: 'Barking',
+    region: 'Barking & Dagenham',
+    postcode: 'IG11',
+    distance: '6 miles',
+    landmarks: ['Barking Station', 'Vicarage Field Shopping Centre', 'Barking Park'],
+    nearby: ['Dagenham', 'Ilford', 'Chadwell Heath', 'Goodmayes'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Barking?',
+        answer:
+          'Yes! We cover Barking and all IG11 postcodes. Free collection from Barking Station, Vicarage Field, and all surrounding areas.',
+      },
+      {
+        question: 'How much does a repair cost?',
+        answer:
+          'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. We offer free diagnosis and operate on a no fix, no fee basis.',
+      },
+      {
+        question: 'Do you repair both PCs and laptops in Barking?',
+        answer:
+          'Yes, we repair all types of computers — desktops, laptops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
+      },
+      {
+        question: 'How long do repairs take?',
+        answer:
+          "Most software repairs and virus removal can be completed within 24 hours. Hardware repairs typically take 24-48 hours depending on parts. We're open 7 days a week for your convenience.",
+      },
+    ],
+  },
+  {
+    slug: 'ilford',
+    name: 'Ilford',
+    region: 'Redbridge',
+    postcode: 'IG1',
+    distance: '5 miles',
+    landmarks: ['The Exchange Ilford', 'Ilford Station', 'Valentines Park'],
+    nearby: ['Barking', 'Goodmayes', 'Chadwell Heath', 'Hainault'],
+    faqs: [
+      {
+        question: 'Do you cover Ilford for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Ilford and all IG1 postcodes. Free collection from Ilford Station, The Exchange, and surrounding areas.',
+      },
+      {
+        question: 'Can you collect from Ilford?',
+        answer:
+          "Yes, we offer free collection and delivery throughout Ilford. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+      },
+      {
+        question: 'Do you offer data recovery in Ilford?',
+        answer:
+          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
+      },
+      {
+        question: 'Do you support businesses in Ilford?',
+        answer:
+          'Yes, we provide IT support for Ilford businesses including emergency repairs, ongoing maintenance contracts, network setup, and hardware procurement.',
+      },
+    ],
+  },
+  {
+    slug: 'havering-atte-bower',
+    name: 'Havering-atte-Bower',
+    region: 'Havering',
+    postcode: 'RM4',
+    distance: '2 miles',
+    landmarks: ['Havering Village Green', 'Bower House', 'Orange Tree Hill'],
+    nearby: ['Harold Hill', 'Noak Hill', 'Collier Row', 'Stapleford Abbotts'],
+    faqs: [
+      {
+        question: 'Do you cover Havering-atte-Bower?',
+        answer:
+          "Yes! We're just 2 miles from Havering-atte-Bower in Harold Hill. One of the closest areas we serve, with quick collection and delivery available.",
+      },
+      {
+        question: 'Is collection free from Havering-atte-Bower?',
+        answer:
+          'Yes, collection and delivery is completely free. Given our close proximity, we can usually collect within the hour. Call 07971 331814 to arrange.',
+      },
+      {
+        question: 'Can you fix my internet or Wi-Fi issues?',
+        answer:
+          "Yes, we can diagnose and resolve connectivity issues including slow Wi-Fi, network dropouts, and router problems. We'll get you back online quickly.",
+      },
+      {
+        question: 'Do you sell new computers?',
+        answer:
+          'Yes, we sell both new and refurbished PCs and laptops. We can advise on the best machine for your needs and budget, and set it up ready to use.',
+      },
+    ],
+  },
+  {
+    slug: 'goodmayes',
+    name: 'Goodmayes',
+    region: 'Redbridge',
+    postcode: 'IG3',
+    distance: '5 miles',
+    landmarks: ['Goodmayes Station', 'Goodmayes Park', 'Barley Lane'],
+    nearby: ['Chadwell Heath', 'Ilford', 'Dagenham', 'Barking'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Goodmayes?',
+        answer:
+          'Yes! We cover Goodmayes and all IG3 postcodes. Free collection from Goodmayes Station, Barley Lane, and surrounding areas.',
+      },
+      {
+        question: 'How do I book a repair from Goodmayes?',
+        answer:
+          "Simply call us on 07971 331814 or visit our contact page. We can arrange free collection from Goodmayes, usually within a few hours of booking. We're open 7 days a week.",
+      },
+      {
+        question: 'What types of computer problems do you fix?',
+        answer:
+          'We fix everything from virus infections, slow performance, and blue screens to cracked screens, keyboard failures, and data loss. If it has a power button, we can probably fix it!',
+      },
+      {
+        question: 'Do you offer a no fix, no fee guarantee?',
+        answer:
+          "Yes! We operate on a no fix, no fee basis. If we can't resolve your issue, you don't pay a penny. Free diagnosis included with every repair.",
+      },
+    ],
+  },
 ];
 
 // Helper function to get area by slug
