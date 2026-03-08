@@ -240,13 +240,13 @@ import Layout from '../../layouts/Layout.astro';
                 class="space-font"
                 style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
               >
-                <span aria-hidden="true">🚗</span> FREE COLLECTION
+                <span aria-hidden="true">🚗</span> COLLECTION & DROP-OFF
               </h3>
               <p
                 class="alien-font"
                 style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
               >
-                Free pickup and delivery throughout Dagenham, Becontree, Dagenham Heathway, and
+                Collection and drop-off service available throughout Dagenham, Becontree, Dagenham Heathway, and
                 surrounding areas. No need to travel.
               </p>
             </div>
@@ -369,8 +369,8 @@ import Layout from '../../layouts/Layout.astro';
               style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
             >
               We cover all of Dagenham including Dagenham Heathway, Becontree, Dagenham Dock,
-              Dagenham East, and the surrounding Barking & Dagenham areas. Free collection and
-              delivery throughout the RM8, RM9, and RM10 postcodes.
+              Dagenham East, and the surrounding Barking & Dagenham areas. Collection and
+              drop-off service available throughout the RM8, RM9, and RM10 postcodes.
             </p>
           </div>
         </div>
@@ -389,7 +389,7 @@ import Layout from '../../layouts/Layout.astro';
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
         >
           <a
-            href="/areas/dagenham/"
+            href="/services/laptop-repair-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -397,10 +397,25 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">📍</span> Computer Repair Dagenham
+              <span aria-hidden="true">💻</span> Laptop Repair Romford
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              All our computer repair services for Dagenham including PC repairs and virus removal.
+              Professional laptop repairs in Romford — screens, keyboards, batteries, and more.
+            </p>
+          </a>
+          <a
+            href="/services/computer-upgrades-romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">⚡</span> Computer Upgrades
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              SSD and RAM upgrades to speed up your laptop. Data cloned so nothing is lost.
             </p>
           </a>
           <a
@@ -410,27 +425,12 @@ import Layout from '../../layouts/Layout.astro';
           >
             <h3
               class="space-font"
-              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
             >
               <span aria-hidden="true">🛡️</span> Virus Removal
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
               Same-day virus and malware removal. We clean your laptop and protect against future threats.
-            </p>
-          </a>
-          <a
-            href="/services/data-recovery-havering/"
-            class="cosmic-card"
-            style="padding: 24px; text-decoration: none; display: block;"
-          >
-            <h3
-              class="space-font"
-              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
-            >
-              <span aria-hidden="true">💾</span> Data Recovery
-            </h3>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Recover important files from failed laptop drives. Free assessment, no data no fee.
             </p>
           </a>
         </div>
@@ -464,4 +464,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does laptop screen replacement cost in Dagenham?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laptop screen replacement typically costs between £60-£120 depending on the screen size and type (standard LCD vs touchscreen). We provide a free quote before any work begins and prices include fitting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair MacBooks in Dagenham?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We repair all Apple MacBooks including MacBook Air and MacBook Pro models. Common repairs include screen replacement, keyboard repair, battery replacement, and SSD upgrades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you fix a laptop that won't turn on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we diagnose and repair laptops that won't power on. Common causes include faulty power supplies, dead batteries, motherboard issues, or failed components. We offer a £20 diagnostic check to identify the exact problem — waived if you proceed with repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas of Dagenham do you cover for laptop repairs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We cover all of Dagenham including Dagenham Heathway, Becontree, Dagenham Dock, Dagenham East, and the surrounding Barking & Dagenham areas. Collection and drop-off service available throughout the RM8, RM9, and RM10 postcodes."
+      }
+    }
+  ]
+})} />
 </Layout>

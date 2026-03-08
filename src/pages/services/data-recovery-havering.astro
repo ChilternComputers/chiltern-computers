@@ -371,7 +371,7 @@ import Layout from '../../layouts/Layout.astro';
               style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
             >
               We cover all of Havering including Romford, Harold Hill, Hornchurch, Upminster,
-              Rainham, Harold Wood, Gidea Park, Collier Row, and Elm Park. Free collection and
+              Rainham, Harold Wood, Gidea Park, Collier Row, and Elm Park. Collection and
               delivery available throughout the borough.
             </p>
           </div>
@@ -442,7 +442,7 @@ import Layout from '../../layouts/Layout.astro';
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
         >
           <a
-            href="/services/repairs/"
+            href="/services/pc-repair-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -450,15 +450,14 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🛠️</span> PC & Laptop Repairs
+              <span aria-hidden="true">🖥️</span> PC Repair Romford
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Full repair services including hard drive replacement, upgrades, and system
-              restoration.
+              Desktop PC repairs including hard drive replacement, upgrades, and system restoration.
             </p>
           </a>
           <a
-            href="/services/virus-removal-romford/"
+            href="/services/computer-upgrades-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -466,10 +465,10 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🛡️</span> Virus Removal
+              <span aria-hidden="true">⚡</span> Computer Upgrades
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Same-day virus and malware removal service. Protect your data from threats.
+              SSD upgrades with full data cloning. Keep everything, just make it faster.
             </p>
           </a>
           <a
@@ -481,10 +480,10 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">💻</span> Laptop Repair
+              <span aria-hidden="true">💻</span> Laptop Repair Dagenham
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Professional laptop repairs including screen, keyboard, and hardware fixes.
+              Professional laptop repairs in Dagenham including screen, keyboard, and hardware fixes.
             </p>
           </a>
         </div>
@@ -519,4 +518,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does data recovery cost in Havering?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Data recovery costs vary depending on the type of failure. Simple logical recoveries (deleted files, formatted drives) start from £60. More complex recoveries from failed drives typically cost £80-£150. We provide a free assessment and quote before any work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's your success rate for data recovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our success rate is approximately 80-90% for logical failures (deleted files, corrupted drives) and 60-70% for physical failures (clicking drives, head crashes). We always provide an honest assessment of recovery chances before starting work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does data recovery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most data recovery jobs are completed within 2-5 days. Simple recoveries can sometimes be done same day. Complex cases requiring specialist techniques may take longer. We'll give you an estimated timeframe after initial assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What areas of Havering do you cover for data recovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We cover all of Havering including Romford, Harold Hill, Hornchurch, Upminster, Rainham, Harold Wood, Gidea Park, Collier Row, and Elm Park. Collection and delivery available throughout the borough."
+      }
+    }
+  ]
+})} />
 </Layout>

@@ -553,4 +553,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "My gaming PC keeps crashing mid-game — what's wrong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mid-game crashes are usually caused by overheating (GPU or CPU), insufficient PSU wattage, faulty RAM, or driver issues. We run stress tests and diagnostics to find the exact cause. Our £20 diagnostic fee is waived if you proceed with the repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you replace my graphics card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We can supply and fit a replacement GPU, or install one you've purchased. We'll also check your PSU can handle the new card and ensure proper driver installation for optimal gaming performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My gaming PC is overheating — can you fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We clean out dust, replace old thermal paste, check fan operation, and can upgrade your cooler if needed. Proper cooling is essential for gaming performance and component longevity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you also build custom gaming PCs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We build custom gaming PCs to any specification and budget. Check out our Custom Gaming PCs page for more details. We also offer upgrade services to improve your existing rig."
+      }
+    }
+  ]
+})} />
 </Layout>

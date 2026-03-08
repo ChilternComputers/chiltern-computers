@@ -579,4 +579,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which Mac models do you repair?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We repair MacBook Air, MacBook Pro, iMac, and Mac Mini models. We handle software fixes, SSD upgrades, RAM upgrades (where possible), screen replacements, and battery swaps. We don't offer logic board repair, but we can help with most other Mac issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My Mac is running really slowly — can you speed it up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! A slow Mac is usually caused by a full hard drive, insufficient RAM, or an ageing mechanical drive. We can upgrade to an SSD, add RAM, clean up macOS, and remove unnecessary startup items to dramatically improve speed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a MacBook screen replacement cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MacBook screen replacements vary by model, typically ranging from £120-£250. This is usually significantly cheaper than Apple's out-of-warranty pricing. We provide a clear quote before starting any work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you recover data from a Mac that won't start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, yes. Even if your Mac won't boot, we can usually remove the drive and recover your files. We offer a free assessment for data recovery — no data, no fee."
+      }
+    }
+  ]
+})} />
 </Layout>

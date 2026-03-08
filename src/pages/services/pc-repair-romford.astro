@@ -439,7 +439,7 @@ import Layout from '../../layouts/Layout.astro';
             </p>
           </a>
           <a
-            href="/services/virus-removal-romford/"
+            href="/services/network-wifi-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -447,10 +447,10 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🛡️</span> Virus Removal
+              <span aria-hidden="true">🌐</span> Network & WiFi Fixes
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Same-day virus and malware removal to get your PC clean and protected.
+              WiFi dead spots, slow speeds, connection dropouts, and router setup.
             </p>
           </a>
         </div>
@@ -551,4 +551,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does PC repair cost in Romford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PC repairs typically start from £40 for software fixes and go up depending on the issue. Hardware replacements depend on parts needed. We always provide a clear quote after our £20 diagnostic — which is waived if you proceed with the repair."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My PC won't turn on at all — can you fix it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this is one of our most common repairs. A PC that won't turn on could have a faulty power supply, dead motherboard, or loose connections. We diagnose the exact cause and replace the failed component."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you repair custom-built gaming PCs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We repair all types of PCs including custom-built gaming rigs, pre-built systems, and business desktops. We're experienced with all hardware configurations and component brands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you repair my PC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most PC repairs are completed within 24-48 hours. Simple fixes like software issues or component swaps are often done same day. We're open 7 days a week, 9AM-9PM, and offer collection and drop-off service throughout Romford."
+      }
+    }
+  ]
+})} />
 </Layout>

@@ -551,4 +551,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "My WiFi doesn't reach upstairs — can you fix this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Poor WiFi coverage is very common in multi-storey homes. We can optimise your router placement, set up a mesh WiFi system, or install a WiFi extender to ensure strong coverage throughout your entire home."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My internet keeps disconnecting — is it my router or my ISP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We'll diagnose whether the problem is your router, your internal wiring, WiFi interference, or your ISP's service. If it's an ISP issue, we'll help you communicate the problem to them with the evidence they need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you set up a new router for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We set up and configure new routers, including WiFi name and password, security settings, port forwarding, and connecting all your devices. We can also recommend the best router for your home and internet plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does WiFi troubleshooting cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our WiFi and network troubleshooting starts with a £20 diagnostic — waived if you proceed with the fix. Most network issues are resolved for £40-£80 depending on complexity. We're open 7 days, 9AM-9PM, and serve all of Romford."
+      }
+    }
+  ]
+})} />
 </Layout>

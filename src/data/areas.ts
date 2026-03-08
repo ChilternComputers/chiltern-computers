@@ -123,7 +123,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hornchurch for computer repairs?',
         answer:
-          'Yes! We provide full computer repair services to Hornchurch and all RM11/RM12 postcodes. We offer free collection and delivery throughout Hornchurch.',
+          'Yes! We provide full computer repair services to Hornchurch and all RM11/RM12 postcodes. We offer a collection and drop-off service throughout Hornchurch.',
       },
       {
         question: 'How quickly can you repair my computer in Hornchurch?',
@@ -154,12 +154,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Upminster?',
         answer:
-          'Yes! We provide full computer and laptop repair services to Upminster and surrounding RM14 areas. Free collection and delivery available.',
+          'Yes! We provide full computer and laptop repair services to Upminster and surrounding RM14 areas. Collection and drop-off service available.',
       },
       {
         question: 'How far is your shop from Upminster?',
         answer:
-          "We're based in Harold Hill, about 4 miles from Upminster. We offer free collection from Upminster or you can drop off at our workshop.",
+          "We're based in Harold Hill, about 4 miles from Upminster. We offer a collection and drop-off service from Upminster or you can drop off at our workshop.",
       },
       {
         question: "What's your turnaround time for Upminster customers?",
@@ -185,7 +185,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Dagenham?',
         answer:
-          'Yes! We provide full computer and laptop repair services to all Dagenham postcodes including RM8, RM9, and RM10. We offer free collection and delivery throughout Dagenham, Becontree, and surrounding areas.',
+          'Yes! We provide full computer and laptop repair services to all Dagenham postcodes including RM8, RM9, and RM10. We offer a collection and drop-off service throughout Dagenham, Becontree, and surrounding areas.',
       },
       {
         question: 'How much does computer repair cost in Dagenham?',
@@ -216,12 +216,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Rainham for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Rainham and all RM13 postcodes. Free collection and delivery available throughout Rainham.',
+          'Yes! We provide computer repair services to Rainham and all RM13 postcodes. Collection and drop-off service available throughout Rainham.',
       },
       {
         question: 'How do I get my computer to you from Rainham?',
         answer:
-          'We offer free collection and delivery for Rainham customers, or you can drop off at our Harold Hill workshop. Call 07971 331814 to arrange.',
+          'We offer a collection and drop-off service for Rainham customers, or you can drop off at our Harold Hill workshop. Call 07971 331814 to arrange.',
       },
       {
         question: 'What services do you offer in Rainham?',
@@ -246,12 +246,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Brentwood?',
         answer:
-          'Yes! We cover Brentwood and all CM13, CM14, CM15 postcodes. Free collection from Brentwood High Street, Shenfield, and surrounding areas.',
+          'Yes! We cover Brentwood and all CM13, CM14, CM15 postcodes. Collection and drop-off available from Brentwood High Street, Shenfield, and surrounding areas.',
       },
       {
         question: 'How far are you from Brentwood?',
         answer:
-          "We're based in Harold Hill, about 5 miles from Brentwood town centre. We offer free collection and delivery for Brentwood customers.",
+          "We're based in Harold Hill, about 5 miles from Brentwood town centre. We offer a collection and drop-off service for Brentwood customers.",
       },
       {
         question: 'Do you support businesses in Brentwood?',
@@ -339,7 +339,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Chadwell Heath?',
         answer:
-          'Yes! We provide computer repair services to Chadwell Heath and all RM6 postcodes. Free collection from Chadwell Heath Station and surrounding areas.',
+          'Yes! We provide computer repair services to Chadwell Heath and all RM6 postcodes. Collection and drop-off available from Chadwell Heath Station and surrounding areas.',
       },
       {
         question: "What's your pricing for Chadwell Heath customers?",
@@ -370,7 +370,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Elm Park?',
         answer:
-          'Yes! We cover Elm Park and all RM12 postcodes. Free collection from Elm Park Station and surrounding areas.',
+          'Yes! We cover Elm Park and all RM12 postcodes. Collection and drop-off available from Elm Park Station and surrounding areas.',
       },
       {
         question: 'Can you fix my laptop screen?',
@@ -401,7 +401,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Emerson Park?',
         answer:
-          'Yes! We provide full computer and laptop repair services to Emerson Park and the RM11 area. We offer free collection and delivery throughout Emerson Park.',
+          'Yes! We provide full computer and laptop repair services to Emerson Park and the RM11 area. We offer a collection and drop-off service throughout Emerson Park.',
       },
       {
         question: 'How far are you from Emerson Park?',
@@ -432,7 +432,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Cranham for computer repairs?',
         answer:
-          'Yes! We cover Cranham and surrounding RM14 areas. Free collection and delivery available throughout Cranham, including Front Lane and the surrounding residential streets.',
+          'Yes! We cover Cranham and surrounding RM14 areas. Collection and drop-off service available throughout Cranham, including Front Lane and the surrounding residential streets.',
       },
       {
         question: 'How quickly can you collect from Cranham?',
@@ -525,12 +525,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover South Hornchurch?',
         answer:
-          'Yes! We provide full computer repair services to South Hornchurch and all RM13 postcodes. Free collection and delivery throughout the area.',
+          'Yes! We provide full computer repair services to South Hornchurch and all RM13 postcodes. Collection and drop-off service throughout the area.',
       },
       {
         question: 'How do I get my computer to you from South Hornchurch?',
         answer:
-          "We offer free collection and delivery for South Hornchurch customers. Just call 07971 331814 and we'll arrange a convenient time. Or drop off at our Harold Hill workshop.",
+          "We offer a collection and drop-off service for South Hornchurch customers. Just call 07971 331814 and we'll arrange a convenient time. Or drop off at our Harold Hill workshop.",
       },
       {
         question: 'What services do you offer?',
@@ -556,12 +556,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Ardleigh Green?',
         answer:
-          'Yes! We cover Ardleigh Green and the wider RM11 area. Free collection from Ardleigh Green Road, Squirrels Heath Lane, and all surrounding streets.',
+          'Yes! We cover Ardleigh Green and the wider RM11 area. Collection and drop-off available from Ardleigh Green Road, Squirrels Heath Lane, and all surrounding streets.',
       },
       {
         question: 'How far are you from Ardleigh Green?',
         answer:
-          "We're based in Harold Hill, about 2.5 miles from Ardleigh Green. We offer free collection and delivery, or you can drop off at our workshop.",
+          "We're based in Harold Hill, about 2.5 miles from Ardleigh Green. We offer a collection and drop-off service, or you can drop off at our workshop.",
       },
       {
         question: 'Can you fix a laptop that won\'t turn on?',
@@ -587,12 +587,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hainault for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hainault and IG7 postcodes. Free collection and delivery available throughout Hainault.',
+          'Yes! We provide computer repair services to Hainault and IG7 postcodes. Collection and drop-off service available throughout Hainault.',
       },
       {
         question: 'How far are you from Hainault?',
         answer:
-          "We're about 4 miles from Hainault in Harold Hill. We offer free collection — just call 07971 331814 and we can usually be with you within a couple of hours.",
+          "We're about 4 miles from Hainault in Harold Hill. We offer a collection and drop-off service — just call 07971 331814 and we can usually be with you within a couple of hours.",
       },
       {
         question: 'Do you remove viruses and malware?',
@@ -618,7 +618,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Barking?',
         answer:
-          'Yes! We cover Barking and all IG11 postcodes. Free collection from Barking Station, Vicarage Field, and all surrounding areas.',
+          'Yes! We cover Barking and all IG11 postcodes. Collection and drop-off available from Barking Station, Vicarage Field, and all surrounding areas.',
       },
       {
         question: 'How much does a repair cost?',
@@ -649,12 +649,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Ilford for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Ilford and all IG1 postcodes. Free collection from Ilford Station, The Exchange, and surrounding areas.',
+          'Yes! We provide computer repair services to Ilford and all IG1 postcodes. Collection and drop-off available from Ilford Station, The Exchange, and surrounding areas.',
       },
       {
         question: 'Can you collect from Ilford?',
         answer:
-          "Yes, we offer free collection and delivery throughout Ilford. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+          "Yes, we offer a collection and drop-off service throughout Ilford. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
       },
       {
         question: 'Do you offer data recovery in Ilford?',
@@ -711,12 +711,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Goodmayes?',
         answer:
-          'Yes! We cover Goodmayes and all IG3 postcodes. Free collection from Goodmayes Station, Barley Lane, and surrounding areas.',
+          'Yes! We cover Goodmayes and all IG3 postcodes. Collection and drop-off available from Goodmayes Station, Barley Lane, and surrounding areas.',
       },
       {
         question: 'How do I book a repair from Goodmayes?',
         answer:
-          "Simply call us on 07971 331814 or visit our contact page. We can arrange free collection from Goodmayes, usually within a few hours of booking. We're open 7 days a week.",
+          "Simply call us on 07971 331814 or visit our contact page. We can arrange collection and drop-off from Goodmayes, usually within a few hours of booking. We're open 7 days a week.",
       },
       {
         question: 'What types of computer problems do you fix?',
@@ -742,12 +742,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Pilgrims Hatch for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Pilgrims Hatch and surrounding CM15 areas. Free collection and delivery available.',
+          'Yes! We provide computer repair services to Pilgrims Hatch and surrounding CM15 areas. Collection and drop-off service available.',
       },
       {
         question: 'How far are you from Pilgrims Hatch?',
         answer:
-          "We're about 6 miles from Pilgrims Hatch in Harold Hill. We offer free collection — call 07971 331814 and we can usually arrange same day pickup.",
+          "We're about 6 miles from Pilgrims Hatch in Harold Hill. We offer a collection and drop-off service — call 07971 331814 and we can usually arrange same day pickup.",
       },
       {
         question: 'Do you repair all computer brands?',
@@ -773,7 +773,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Warley?',
         answer:
-          'Yes! We cover Warley and surrounding CM14 postcodes. Free collection from Warley Hill, Great Warley, and Little Warley areas.',
+          'Yes! We cover Warley and surrounding CM14 postcodes. Collection and drop-off available from Warley Hill, Great Warley, and Little Warley areas.',
       },
       {
         question: 'How quickly can you collect from Warley?',
@@ -804,12 +804,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Wennington?',
         answer:
-          'Yes! We provide computer repair services to Wennington and surrounding RM13 areas. Free collection and delivery available.',
+          'Yes! We provide computer repair services to Wennington and surrounding RM13 areas. Collection and drop-off service available.',
       },
       {
         question: 'How do I get my computer to you from Wennington?',
         answer:
-          "We offer free collection and delivery for Wennington customers. Call 07971 331814 and we'll come to you. Or drop off at our Harold Hill workshop.",
+          "We offer a collection and drop-off service for Wennington customers. Call 07971 331814 and we'll come to you. Or drop off at our Harold Hill workshop.",
       },
       {
         question: 'What services do you offer?',
@@ -835,7 +835,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Stapleford Abbotts?',
         answer:
-          "Yes! We're just 3.5 miles from Stapleford Abbotts in Harold Hill. Free collection and delivery available throughout the village and surrounding lanes.",
+          "Yes! We're just 3.5 miles from Stapleford Abbotts in Harold Hill. Collection and drop-off service available throughout the village and surrounding lanes.",
       },
       {
         question: 'Is there a callout charge?',
@@ -866,7 +866,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Becontree?',
         answer:
-          'Yes! We cover Becontree and surrounding RM8/RM9 postcodes. Free collection from Becontree Station, Valence Park area, and all surrounding streets.',
+          'Yes! We cover Becontree and surrounding RM8/RM9 postcodes. Collection and drop-off available from Becontree Station, Valence Park area, and all surrounding streets.',
       },
       {
         question: 'How much does a repair cost?',
@@ -897,12 +897,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Rush Green for computer repairs?',
         answer:
-          "Yes! We provide computer repair services to Rush Green and all RM7 postcodes. We're just 3.5 miles away with free collection and delivery.",
+          "Yes! We provide computer repair services to Rush Green and all RM7 postcodes. We're just 3.5 miles away with a collection and drop-off service.",
       },
       {
         question: 'Can you collect from Rush Green?',
         answer:
-          "Yes, free collection and delivery throughout Rush Green. We can usually collect within a couple of hours. Call 07971 331814 to arrange. We're open 7 days.",
+          "Yes, collection and drop-off service throughout Rush Green. We can usually collect within a couple of hours. Call 07971 331814 to arrange. We're open 7 days.",
       },
       {
         question: 'Do you fix slow computers?',
@@ -928,12 +928,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Seven Kings?',
         answer:
-          'Yes! We cover Seven Kings and the wider IG3 area. Free collection from Seven Kings Station, High Road, and all surrounding streets.',
+          'Yes! We cover Seven Kings and the wider IG3 area. Collection and drop-off available from Seven Kings Station, High Road, and all surrounding streets.',
       },
       {
         question: 'How do I book a repair?',
         answer:
-          "Call us on 07971 331814 or use our contact form. We can arrange free collection from Seven Kings, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+          "Call us on 07971 331814 or use our contact form. We can arrange collection and drop-off from Seven Kings, usually within a few hours. We're open 7 days, 9AM to 9PM.",
       },
       {
         question: 'What computer problems do you fix?',
@@ -964,7 +964,7 @@ export const areas: AreaData[] = [
       {
         question: 'Is collection free from Marks Gate?',
         answer:
-          'Yes, free collection and delivery for all Marks Gate customers. Call 07971 331814 and we can usually be with you within the hour.',
+          'Yes, collection and drop-off service for all Marks Gate customers. Call 07971 331814 and we can usually be with you within the hour.',
       },
       {
         question: 'What are your prices?',
@@ -1021,12 +1021,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Heath Park?',
         answer:
-          'Yes! We cover Heath Park and the wider RM2 area. Free collection from Heath Park Road, Heath Drive, and all surrounding streets.',
+          'Yes! We cover Heath Park and the wider RM2 area. Collection and drop-off available from Heath Park Road, Heath Drive, and all surrounding streets.',
       },
       {
         question: 'How far are you from Heath Park?',
         answer:
-          "We're about 2.5 miles from Heath Park in Harold Hill. We offer free collection and delivery, or you can drop off at our workshop on Hilldene Avenue.",
+          "We're about 2.5 miles from Heath Park in Harold Hill. We offer a collection and drop-off service, or you can drop off at our workshop on Hilldene Avenue.",
       },
       {
         question: 'Can you speed up my old computer?',
@@ -1052,7 +1052,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hacton for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hacton and the wider RM12 area. Free collection and delivery available throughout Hacton Lane and surrounding streets.',
+          'Yes! We provide computer repair services to Hacton and the wider RM12 area. Collection and drop-off service available throughout Hacton Lane and surrounding streets.',
       },
       {
         question: 'How quickly can you collect from Hacton?',
@@ -1083,12 +1083,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Corbets Tey?',
         answer:
-          'Yes! We provide computer repair services to Corbets Tey and surrounding RM14 areas. Free collection from Corbets Tey Road and all nearby lanes.',
+          'Yes! We provide computer repair services to Corbets Tey and surrounding RM14 areas. Collection and drop-off available from Corbets Tey Road and all nearby lanes.',
       },
       {
         question: 'How do I get my computer to you from Corbets Tey?',
         answer:
-          "We offer free collection and delivery for Corbets Tey customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+          "We offer a collection and drop-off service for Corbets Tey customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
       },
       {
         question: 'Do you offer data recovery?',
@@ -1114,7 +1114,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover North Ockendon?',
         answer:
-          'Yes! We provide computer repair services to North Ockendon and surrounding areas. Free collection and delivery available — we come to you.',
+          'Yes! We provide computer repair services to North Ockendon and surrounding areas. Collection and drop-off service available — we come to you.',
       },
       {
         question: 'Is there an extra charge for rural areas?',
@@ -1145,12 +1145,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Gants Hill?',
         answer:
-          'Yes! We cover Gants Hill and all IG2 postcodes. Free collection from Gants Hill Roundabout, the station area, and all surrounding streets.',
+          'Yes! We cover Gants Hill and all IG2 postcodes. Collection and drop-off available from Gants Hill Roundabout, the station area, and all surrounding streets.',
       },
       {
         question: 'How far are you from Gants Hill?',
         answer:
-          "We're about 5 miles from Gants Hill in Harold Hill. We offer free collection and delivery — call 07971 331814 and we can usually arrange same day pickup.",
+          "We're about 5 miles from Gants Hill in Harold Hill. We offer a collection and drop-off service — call 07971 331814 and we can usually arrange same day pickup.",
       },
       {
         question: 'Do you fix laptops and desktops?',
@@ -1176,12 +1176,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Barkingside?',
         answer:
-          'Yes! We cover Barkingside and all IG6 postcodes. Free collection from Barkingside Station, High Street, and all surrounding areas.',
+          'Yes! We cover Barkingside and all IG6 postcodes. Collection and drop-off available from Barkingside Station, High Street, and all surrounding areas.',
       },
       {
         question: 'How far are you from Barkingside?',
         answer:
-          "We're about 5 miles from Barkingside in Harold Hill. We offer free collection and delivery — call 07971 331814 to arrange same day pickup.",
+          "We're about 5 miles from Barkingside in Harold Hill. We offer a collection and drop-off service — call 07971 331814 to arrange same day pickup.",
       },
       {
         question: 'Do you repair all brands?',
@@ -1207,12 +1207,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Newbury Park for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Newbury Park and all IG2 postcodes. Free collection from the station area and surrounding streets.',
+          'Yes! We provide computer repair services to Newbury Park and all IG2 postcodes. Collection and drop-off available from the station area and surrounding streets.',
       },
       {
         question: 'Can you collect from Newbury Park?',
         answer:
-          "Yes, free collection and delivery throughout Newbury Park. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+          "Yes, collection and drop-off service throughout Newbury Park. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
       },
       {
         question: 'Do you fix slow laptops?',
@@ -1238,12 +1238,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Shenfield?',
         answer:
-          'Yes! We cover Shenfield and surrounding CM15 areas. Free collection from Shenfield Station, High Street, and all nearby roads.',
+          'Yes! We cover Shenfield and surrounding CM15 areas. Collection and drop-off available from Shenfield Station, High Street, and all nearby roads.',
       },
       {
         question: 'How far are you from Shenfield?',
         answer:
-          "We're about 6 miles from Shenfield in Harold Hill. We offer free collection and delivery — call 07971 331814 to arrange.",
+          "We're about 6 miles from Shenfield in Harold Hill. We offer a collection and drop-off service — call 07971 331814 to arrange.",
       },
       {
         question: 'Do you repair gaming PCs?',
@@ -1269,12 +1269,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Upney for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Upney and surrounding IG11 areas. Free collection from Upney Station and all nearby streets.',
+          'Yes! We provide computer repair services to Upney and surrounding IG11 areas. Collection and drop-off available from Upney Station and all nearby streets.',
       },
       {
         question: 'How do I book a repair from Upney?',
         answer:
-          "Call us on 07971 331814 or use our contact form. We can arrange free collection from Upney, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+          "Call us on 07971 331814 or use our contact form. We can arrange collection and drop-off from Upney, usually within a few hours. We're open 7 days, 9AM to 9PM.",
       },
       {
         question: 'What types of repairs do you offer?',
@@ -1300,12 +1300,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Clayhall?',
         answer:
-          'Yes! We cover Clayhall and all IG5 postcodes. Free collection from Clayhall Avenue, Clayhall Park area, and all surrounding streets.',
+          'Yes! We cover Clayhall and all IG5 postcodes. Collection and drop-off available from Clayhall Avenue, Clayhall Park area, and all surrounding streets.',
       },
       {
         question: 'How far are you from Clayhall?',
         answer:
-          "We're about 5 miles from Clayhall in Harold Hill. Free collection and delivery available — call 07971 331814 to arrange.",
+          "We're about 5 miles from Clayhall in Harold Hill. Collection and drop-off service available — call 07971 331814 to arrange.",
       },
       {
         question: 'Can you fix a laptop with a broken screen?',
@@ -1331,7 +1331,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Aldborough Hatch?',
         answer:
-          "Yes! We're just 4 miles from Aldborough Hatch in Harold Hill. Free collection and delivery available throughout the area.",
+          "Yes! We're just 4 miles from Aldborough Hatch in Harold Hill. Collection and drop-off service available throughout the area.",
       },
       {
         question: 'Is there a callout charge?',
@@ -1362,7 +1362,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Fairlop?',
         answer:
-          'Yes! We cover Fairlop and the wider IG6 area. Free collection from Fairlop Station, Fairlop Waters area, and all surrounding streets.',
+          'Yes! We cover Fairlop and the wider IG6 area. Collection and drop-off available from Fairlop Station, Fairlop Waters area, and all surrounding streets.',
       },
       {
         question: 'How quickly can you collect from Fairlop?',
@@ -1393,12 +1393,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hutton for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hutton and surrounding CM13 areas. Free collection from Hutton Village, Wash Road, and all nearby lanes.',
+          'Yes! We provide computer repair services to Hutton and surrounding CM13 areas. Collection and drop-off available from Hutton Village, Wash Road, and all nearby lanes.',
       },
       {
         question: 'How do I get my computer to you from Hutton?',
         answer:
-          "We offer free collection and delivery for Hutton customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+          "We offer a collection and drop-off service for Hutton customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
       },
       {
         question: 'Do you offer data recovery in Hutton?',

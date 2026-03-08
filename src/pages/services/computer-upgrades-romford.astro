@@ -490,7 +490,7 @@ import Layout from '../../layouts/Layout.astro';
             </p>
           </a>
           <a
-            href="/services/custom-pcs/"
+            href="/services/gaming-pc-repair-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -498,10 +498,10 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🎮</span> Custom Gaming PCs
+              <span aria-hidden="true">🎮</span> Gaming PC Repair
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Want a completely new build? We design and build custom gaming and work PCs to your spec.
+              GPU failures, overheating, crashes, and PSU problems. Expert gaming rig diagnosis.
             </p>
           </a>
         </div>
@@ -591,7 +591,7 @@ import Layout from '../../layouts/Layout.astro';
             class="alien-font"
             style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
           >
-            An SSD upgrade can transform your PC. Collection and drop-off service available. Open 7 days, 9AM-9PM.
+            An SSD upgrade can transform your PC. £20 diagnostic — waived with repair. Collection and drop-off service available. Open 7 days, 9AM-9PM.
           </p>
           <a
             href="tel:+447971331814"
@@ -603,4 +603,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it worth upgrading my old computer or should I buy new?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, upgrading is much better value. An SSD and RAM upgrade can make a 5-year-old PC feel new for under £100. We'll give you an honest assessment — if your system is too old to benefit from upgrades, we'll tell you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I lose my files during an SSD upgrade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We clone your entire hard drive to the new SSD — Windows, programs, files, everything. When you get your computer back, it will look exactly the same, just much faster. We always back up your data as a precaution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you upgrade laptops as well as desktops?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Most laptops can have their SSD and RAM upgraded. Some newer ultra-thin models have soldered components, but we'll check compatibility before quoting. We upgrade all major brands including Dell, HP, Lenovo, Asus, and Acer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a computer upgrade take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most upgrades are completed same day or within 24 hours. SSD cloning can take a few hours depending on the amount of data. We're open 7 days, 9AM-9PM, and offer collection and drop-off service throughout Romford."
+      }
+    }
+  ]
+})} />
 </Layout>

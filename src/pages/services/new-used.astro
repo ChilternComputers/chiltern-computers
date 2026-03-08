@@ -3,14 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-  title="New & Refurbished PCs & Laptops"
-  description="Buy quality new and refurbished PCs, laptops & desktops in Havering. Professionally tested with warranty. Visit or call 07971 331814."
+  title="New & Refurbished PCs Romford - Quality Computers"
+  description="Buy quality new and refurbished PCs, laptops & desktops in Romford & Havering. Professionally tested with warranty. Call 07971 331814."
+  keywords="new computers romford, refurbished pc romford, buy laptop romford, cheap computers havering, refurbished laptops romford, new pc harold hill, budget computers essex"
   type="service"
   publishedTime="2025-01-15"
-  modifiedTime="2026-03-07"
+  modifiedTime="2026-03-08"
   breadcrumbs={[
     { name: 'Home', url: '/' },
-    { name: 'New & Used PCs', url: '/services/new-used/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'New & Refurbished PCs', url: '/services/new-used/' },
   ]}
 >
   <style>
@@ -1045,7 +1047,7 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
                 <div class="faq-answer">
                   <div class="faq-answer-content alien-font">
-                    Yes! We offer free local collection and delivery within Harold Hill, Romford,
+                    Yes! We offer collection and drop-off service within Harold Hill, Romford,
                     and surrounding areas. We can also arrange secure courier delivery across the UK
                     for a small fee. All deliveries include setup assistance if needed.
                   </div>
@@ -1307,5 +1309,76 @@ import Layout from '../../layouts/Layout.astro';
         });
       </script>
     </section>
-  </div></Layout
->
+  </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between new builds and refurbished?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New builds use brand new components with full manufacturer warranties (typically 3 years) and can be customised to your exact specifications. Refurbished computers are professionally restored ex-business machines that offer excellent value. New builds are ideal for gaming, high-performance work, or specific requirements, while refurbished units are perfect for general use, students, and budget-conscious customers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the refurbished units fast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely! All our refurbished computers come equipped with solid state drives (SSDs) and a minimum of 8GB RAM, ensuring lightning-fast boot times and smooth performance. The SSDs are significantly faster than traditional hard drives, making your computer feel brand new."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you build custom gaming PCs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We specialize in custom gaming PC builds tailored to your budget and performance needs. Whether you want to play the latest AAA games at 1080p, 1440p, or 4K, we'll recommend the perfect combination of CPU, GPU, RAM, and storage. All gaming builds come with cable management, latest drivers and Windows updates installed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do custom builds take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Custom new builds typically take 3-5 business days once all components are confirmed and ordered. If we have the parts in stock, we can often complete builds within 2-3 days. We'll provide a detailed timeline when you place your order and keep you updated throughout the build process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you transfer my data from my old computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we provide comprehensive data transfer services for both new and refurbished systems! We can migrate all your personal files, photos, documents, browser bookmarks, saved passwords, and even your desktop setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer collection and delivery services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer collection and drop-off service within Harold Hill, Romford, and surrounding areas. We can also arrange secure courier delivery across the UK for a small fee. All deliveries include setup assistance if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What warranty do you provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "New builds come with full manufacturer warranties (typically 3 years on components). Refurbished computers include a 30 day guarantee, covering hardware issues and defects. We also provide free technical support for the first month on all systems, including help with software setup and troubleshooting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer payment plans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not at this time. All payments made by bank transfer, cash or Paypal."
+      }
+    }
+  ]
+})} />
+</Layout>

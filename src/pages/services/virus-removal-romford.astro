@@ -376,8 +376,8 @@ import Layout from '../../layouts/Layout.astro';
               style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
             >
               Yes! We serve all of Romford including the town centre, Harold Hill, Collier Row,
-              Gidea Park, Harold Wood, and surrounding areas. We offer free collection and delivery
-              throughout RM postcodes.
+              Gidea Park, Harold Wood, and surrounding areas. Collection and drop-off service
+              available throughout RM postcodes.
             </p>
           </div>
         </div>
@@ -396,7 +396,7 @@ import Layout from '../../layouts/Layout.astro';
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
         >
           <a
-            href="/services/repairs/"
+            href="/services/pc-repair-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -404,15 +404,14 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🛠️</span> PC & Laptop Repairs
+              <span aria-hidden="true">🖥️</span> PC Repair Romford
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Full repair services including hardware fixes, software issues, and performance
-              optimisation.
+              Desktop PC repairs including blue screens, startup failures, and hardware faults.
             </p>
           </a>
           <a
-            href="/services/laptop-repair-dagenham/"
+            href="/services/laptop-repair-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -420,14 +419,14 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">💻</span> Laptop Repair
+              <span aria-hidden="true">💻</span> Laptop Repair Romford
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Professional laptop repairs including screen replacement, keyboard fixes, and hardware upgrades.
+              Professional laptop repairs including screen, keyboard, battery, and charging fixes.
             </p>
           </a>
           <a
-            href="/services/data-recovery-havering/"
+            href="/services/windows-installation-romford/"
             class="cosmic-card"
             style="padding: 24px; text-decoration: none; display: block;"
           >
@@ -435,10 +434,10 @@ import Layout from '../../layouts/Layout.astro';
               class="space-font"
               style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">💾</span> Data Recovery
+              <span aria-hidden="true">🪟</span> Windows Installation
             </h3>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
-              Recover important files from failed or corrupted drives. Free assessment, no data no fee.
+              Fresh Windows installs and reinstalls. Get a clean, virus-free system with all your data intact.
             </p>
           </a>
         </div>
@@ -473,4 +472,43 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
   </div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does virus removal cost in Romford?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our virus removal service starts from just £40. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. £20 diagnostic check — waived if you go ahead with the repair. No fix, no fee on unfixable issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you remove ransomware and recover my files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we specialise in ransomware removal. While file recovery depends on the type of ransomware, we have high success rates with many variants. We'll always give you an honest assessment of what's possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does virus removal take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most virus removals are completed same day or within 24 hours. Severe infections or ransomware cases may take 24-48 hours. We always aim to get your computer back to you as quickly as possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover all of Romford for virus removal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We serve all of Romford including the town centre, Harold Hill, Collier Row, Gidea Park, Harold Wood, and surrounding areas. Collection and drop-off service available throughout RM postcodes."
+      }
+    }
+  ]
+})} />
 </Layout>
