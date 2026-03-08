@@ -1164,6 +1164,254 @@ export const areas: AreaData[] = [
       },
     ],
   },
+  {
+    slug: 'barkingside',
+    name: 'Barkingside',
+    region: 'Redbridge',
+    postcode: 'IG6',
+    distance: '5 miles',
+    landmarks: ['Barkingside Station', 'Fullwell Cross Library', 'Barkingside High Street'],
+    nearby: ['Hainault', 'Gants Hill', 'Fairlop', 'Newbury Park'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Barkingside?',
+        answer:
+          'Yes! We cover Barkingside and all IG6 postcodes. Free collection from Barkingside Station, High Street, and all surrounding areas.',
+      },
+      {
+        question: 'How far are you from Barkingside?',
+        answer:
+          "We're about 5 miles from Barkingside in Harold Hill. We offer free collection and delivery — call 07971 331814 to arrange same day pickup.",
+      },
+      {
+        question: 'Do you repair all brands?',
+        answer:
+          'Yes, we repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows and Mac systems.',
+      },
+      {
+        question: 'What are your opening hours?',
+        answer:
+          "We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
+      },
+    ],
+  },
+  {
+    slug: 'newbury-park',
+    name: 'Newbury Park',
+    region: 'Redbridge',
+    postcode: 'IG2',
+    distance: '5 miles',
+    landmarks: ['Newbury Park Station', 'Oaks Park', 'Eastern Avenue'],
+    nearby: ['Gants Hill', 'Hainault', 'Barkingside', 'Ilford'],
+    faqs: [
+      {
+        question: 'Do you cover Newbury Park for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Newbury Park and all IG2 postcodes. Free collection from the station area and surrounding streets.',
+      },
+      {
+        question: 'Can you collect from Newbury Park?',
+        answer:
+          "Yes, free collection and delivery throughout Newbury Park. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+      },
+      {
+        question: 'Do you fix slow laptops?',
+        answer:
+          "Yes! We'll diagnose why your laptop is running slow — whether it's malware, a failing hard drive, or simply needing an SSD upgrade. Most issues resolved same day.",
+      },
+      {
+        question: 'Do you offer a no fix, no fee guarantee?',
+        answer:
+          "Yes! If we can't fix your computer, you don't pay. Free diagnosis included with every repair. No hidden charges.",
+      },
+    ],
+  },
+  {
+    slug: 'shenfield',
+    name: 'Shenfield',
+    region: 'Brentwood, Essex',
+    postcode: 'CM15',
+    distance: '6 miles',
+    landmarks: ['Shenfield Station', 'Shenfield High Street', 'Shenfield Common'],
+    nearby: ['Brentwood', 'Pilgrims Hatch', 'Harold Wood', 'Hutton'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Shenfield?',
+        answer:
+          'Yes! We cover Shenfield and surrounding CM15 areas. Free collection from Shenfield Station, High Street, and all nearby roads.',
+      },
+      {
+        question: 'How far are you from Shenfield?',
+        answer:
+          "We're about 6 miles from Shenfield in Harold Hill. We offer free collection and delivery — call 07971 331814 to arrange.",
+      },
+      {
+        question: 'Do you repair gaming PCs?',
+        answer:
+          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds to your spec.',
+      },
+      {
+        question: 'Can you transfer data from my old computer?',
+        answer:
+          "Yes, we offer full data transfer services. We'll move your files, photos, documents, and settings from your old PC to your new one. Quick turnaround.",
+      },
+    ],
+  },
+  {
+    slug: 'upney',
+    name: 'Upney',
+    region: 'Barking & Dagenham',
+    postcode: 'IG11',
+    distance: '6 miles',
+    landmarks: ['Upney Station', 'Upney Lane', 'Barking Park'],
+    nearby: ['Barking', 'Becontree', 'Dagenham', 'Ilford'],
+    faqs: [
+      {
+        question: 'Do you cover Upney for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Upney and surrounding IG11 areas. Free collection from Upney Station and all nearby streets.',
+      },
+      {
+        question: 'How do I book a repair from Upney?',
+        answer:
+          "Call us on 07971 331814 or use our contact form. We can arrange free collection from Upney, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+      },
+      {
+        question: 'What types of repairs do you offer?',
+        answer:
+          'Full PC and laptop repairs including virus removal, data recovery, screen replacements, keyboard repairs, SSD upgrades, and more. All brands serviced.',
+      },
+      {
+        question: 'Do you sell computers?',
+        answer:
+          'Yes, we sell both new and refurbished PCs and laptops. All refurbished machines come with Windows 11 and a warranty. Delivery available.',
+      },
+    ],
+  },
+  {
+    slug: 'clayhall',
+    name: 'Clayhall',
+    region: 'Redbridge',
+    postcode: 'IG5',
+    distance: '5 miles',
+    landmarks: ['Clayhall Park', 'Clayhall Avenue', 'Longwood Gardens'],
+    nearby: ['Gants Hill', 'Barkingside', 'Ilford', 'Hainault'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Clayhall?',
+        answer:
+          'Yes! We cover Clayhall and all IG5 postcodes. Free collection from Clayhall Avenue, Clayhall Park area, and all surrounding streets.',
+      },
+      {
+        question: 'How far are you from Clayhall?',
+        answer:
+          "We're about 5 miles from Clayhall in Harold Hill. Free collection and delivery available — call 07971 331814 to arrange.",
+      },
+      {
+        question: 'Can you fix a laptop with a broken screen?',
+        answer:
+          'Yes! We repair cracked, broken, and flickering laptop screens. We stock screens for most popular models and can often complete the repair within 24 hours.',
+      },
+      {
+        question: 'Do you offer virus removal?',
+        answer:
+          "Yes! Virus and malware removal is one of our core services. We'll clean your system thoroughly and install protection to prevent future infections. Most completed same day.",
+      },
+    ],
+  },
+  {
+    slug: 'aldborough-hatch',
+    name: 'Aldborough Hatch',
+    region: 'Redbridge',
+    postcode: 'IG2',
+    distance: '4 miles',
+    landmarks: ['Aldborough Road', 'Aldborough Hatch Lane', 'Oaks Park'],
+    nearby: ['Marks Gate', 'Hainault', 'Newbury Park', 'Chadwell Heath'],
+    faqs: [
+      {
+        question: 'Do you cover Aldborough Hatch?',
+        answer:
+          "Yes! We're just 4 miles from Aldborough Hatch in Harold Hill. Free collection and delivery available throughout the area.",
+      },
+      {
+        question: 'Is there a callout charge?',
+        answer:
+          'No! Collection and delivery is completely free. We also offer free diagnosis on all repairs and operate on a no fix, no fee basis.',
+      },
+      {
+        question: 'What brands do you repair?',
+        answer:
+          'We repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and custom-built PCs.',
+      },
+      {
+        question: 'Can you help with Wi-Fi and network issues?',
+        answer:
+          "Yes, we can diagnose and fix connectivity issues including slow Wi-Fi, network dropouts, router problems, and printer connectivity. We'll get you back online quickly.",
+      },
+    ],
+  },
+  {
+    slug: 'fairlop',
+    name: 'Fairlop',
+    region: 'Redbridge',
+    postcode: 'IG6',
+    distance: '4.5 miles',
+    landmarks: ['Fairlop Station', 'Fairlop Waters', 'Forest Road'],
+    nearby: ['Hainault', 'Barkingside', 'Aldborough Hatch', 'Marks Gate'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Fairlop?',
+        answer:
+          'Yes! We cover Fairlop and the wider IG6 area. Free collection from Fairlop Station, Fairlop Waters area, and all surrounding streets.',
+      },
+      {
+        question: 'How quickly can you collect from Fairlop?',
+        answer:
+          "We can usually collect from Fairlop within a couple of hours. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+      },
+      {
+        question: 'Do you fix computers that won\'t start?',
+        answer:
+          "Yes! We diagnose and repair PCs and laptops that won't power on. Common causes include power supply failure, motherboard issues, and dead batteries. Free diagnosis included.",
+      },
+      {
+        question: 'Do you offer business IT support?',
+        answer:
+          'Yes, we provide IT support for local businesses including emergency repairs, ongoing maintenance, network setup, and hardware procurement.',
+      },
+    ],
+  },
+  {
+    slug: 'hutton',
+    name: 'Hutton',
+    region: 'Brentwood, Essex',
+    postcode: 'CM13',
+    distance: '6 miles',
+    landmarks: ['Hutton Village', 'Wash Road', 'Hutton Country Park'],
+    nearby: ['Brentwood', 'Shenfield', 'Pilgrims Hatch', 'Warley'],
+    faqs: [
+      {
+        question: 'Do you cover Hutton for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Hutton and surrounding CM13 areas. Free collection from Hutton Village, Wash Road, and all nearby lanes.',
+      },
+      {
+        question: 'How do I get my computer to you from Hutton?',
+        answer:
+          "We offer free collection and delivery for Hutton customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+      },
+      {
+        question: 'Do you offer data recovery in Hutton?',
+        answer:
+          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
+      },
+      {
+        question: 'Are you open at weekends?',
+        answer:
+          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect if you can't get to us during the working week.",
+      },
+    ],
+  },
 ];
 
 // Helper function to get area by slug
