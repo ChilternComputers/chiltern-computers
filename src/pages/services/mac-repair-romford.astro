@@ -1,0 +1,582 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Mac Repair Romford - Same Day Service"
+  description="Mac repair in Romford. MacBook, iMac & Mac Mini repairs. SSD upgrades, screen replacement, battery fixes. £20 diagnostic — waived with repair. Call 07971 331814."
+  keywords="mac repair romford, macbook repair romford, apple repair romford, imac repair romford, macbook screen repair romford, macbook battery replacement romford, mac running slow romford, apple computer repair near me"
+  type="service"
+  publishedTime="2026-03-08"
+  modifiedTime="2026-03-08"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services/repairs/' },
+    { name: 'Mac Repair Romford', url: '/services/mac-repair-romford/' },
+  ]}
+>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --comet-silver: #e5e7eb;
+    }
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--nebula-purple),
+        var(--aurora-green)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-bg {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+    .cosmic-card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid var(--plasma-cyan);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(6, 182, 212, 0.2);
+      transition: all 0.3s ease;
+    }
+    .cosmic-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--aurora-green);
+    }
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .services-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (max-width: 768px) {
+      .services-grid,
+      .services-grid-3 {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 0 16px;
+      }
+    }
+    .area-tag {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 20px;
+      color: var(--comet-silver);
+      text-decoration: none;
+      font-size: 13px;
+      transition: all 0.3s ease;
+    }
+    .area-tag:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: var(--plasma-cyan);
+      color: var(--plasma-cyan);
+    }
+  </style>
+
+  <div>
+    <section class="section-bg" style="padding: 100px 0 60px;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+          <div
+            style="display: inline-flex; align-items: center; gap: 8px; background: rgba(124, 58, 237, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--nebula-purple); margin-bottom: 24px;"
+          >
+            <span class="tech-font" style="color: var(--nebula-purple); font-size: 13px;"
+              ><span aria-hidden="true">🍎</span> APPLE MAC REPAIRS</span
+            >
+          </div>
+          <h1
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+          >
+            MAC REPAIR ROMFORD
+          </h1>
+          <p
+            class="alien-font"
+            style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+          >
+            Professional Apple Mac repair services in Romford. We fix MacBooks, iMacs, and Mac
+            Minis — software issues, SSD upgrades, screen replacements, battery swaps, and more.
+            A faster, more affordable alternative to the Apple Store.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact/" class="space-button space-font"><span aria-hidden="true">🛠️</span> Book Mac Repair</a>
+            <a
+              href="tel:+447971331814"
+              class="space-button space-font"
+              style="background: rgba(124, 58, 237, 0.2);"><span aria-hidden="true">📱</span> 07971 331814</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+        >
+          MAC REPAIR SERVICES
+        </h2>
+        <div class="services-grid-3">
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">💻</span><h3
+              class="space-font"
+              style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            >
+              SOFTWARE FIXES
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              macOS reinstallation, system cleanup, slow performance fixes, startup issues, and
+              software troubleshooting.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">💾</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              SSD UPGRADE
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Replace your Mac's old hard drive or small SSD with a larger, faster drive. Data
+              cloned so nothing is lost.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🖥️</span><h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              SCREEN REPLACEMENT
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Cracked or damaged MacBook screen? We replace MacBook Air and MacBook Pro screens
+              with quality parts.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">🔋</span><h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              BATTERY REPLACEMENT
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              MacBook battery swollen, not holding charge, or showing "Service Battery"? We
+              replace batteries for all MacBook models.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">📁</span><h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              DATA TRANSFER
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              Moving from PC to Mac or upgrading to a new Mac? We transfer all your files, photos,
+              and documents safely.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px; text-align: center;">
+            <span style="font-size: 36px; display: block; margin-bottom: 12px;" aria-hidden="true">⚙️</span><h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              SETUP & CONFIGURATION
+            </h3><p class="alien-font" style="color: var(--comet-silver); font-size: 13px;">
+              New Mac setup, email configuration, printer setup, Time Machine backups, and
+              iCloud configuration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2
+            class="space-font"
+            style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;"
+          >
+            WHY CHOOSE US OVER THE APPLE STORE?
+          </h2>
+          <div
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;"
+          >
+            <div>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                <span aria-hidden="true">💷</span> LOWER PRICES
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                We charge significantly less than Apple for the same repairs. No appointment needed,
+                no waiting weeks for parts.
+              </p>
+            </div>
+            <div>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                <span aria-hidden="true">⚡</span> FASTER TURNAROUND
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Most Mac repairs completed within 24-48 hours. No need to book a Genius Bar
+                appointment or wait days for a diagnosis.
+              </p>
+            </div>
+            <div>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                <span aria-hidden="true">🚗</span> LOCAL & CONVENIENT
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                No need to travel to Stratford or Lakeside. We offer collection and drop-off
+                service throughout Romford and surrounding areas.
+              </p>
+            </div>
+            <div>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                <span aria-hidden="true">🛡️</span> £20 DIAGNOSTIC
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                Full diagnostic for just £20 — waived if you proceed with the repair. No fix, no
+                fee on unfixable issues.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font"
+          style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          MAC REPAIR ROMFORD FAQ
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Which Mac models do you repair?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              We repair MacBook Air, MacBook Pro, iMac, and Mac Mini models. We handle software
+              fixes, SSD upgrades, RAM upgrades (where possible), screen replacements, and battery
+              swaps. We don't offer logic board repair, but we can help with most other Mac issues.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              My Mac is running really slowly — can you speed it up?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              Yes! A slow Mac is usually caused by a full hard drive, insufficient RAM, or an
+              ageing mechanical drive. We can upgrade to an SSD, add RAM, clean up macOS, and
+              remove unnecessary startup items to dramatically improve speed.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              How much does a MacBook screen replacement cost?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              MacBook screen replacements vary by model, typically ranging from £120-£250. This is
+              usually significantly cheaper than Apple's out-of-warranty pricing. We provide a
+              clear quote before starting any work.
+            </p>
+          </div>
+          <div class="cosmic-card" style="padding: 24px;">
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              Can you recover data from a Mac that won't start?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              In most cases, yes. Even if your Mac won't boot, we can usually remove the drive and
+              recover your files. We offer a free assessment for data recovery — no data, no fee.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+        >
+          RELATED SERVICES
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+        >
+          <a
+            href="/services/laptop-repair-romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">💻</span> Laptop Repair Romford
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Repairs for all laptop brands including screen, keyboard, and battery replacement.
+            </p>
+          </a>
+          <a
+            href="/services/data-recovery-havering/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">💾</span> Data Recovery
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              Recover files from failed Mac drives. Free assessment, no data no fee.
+            </p>
+          </a>
+          <a
+            href="/services/computer-upgrades-romford/"
+            class="cosmic-card"
+            style="padding: 24px; text-decoration: none; display: block;"
+          >
+            <h3
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            >
+              <span aria-hidden="true">🚀</span> Computer Upgrades
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+              SSD and RAM upgrades for Macs and PCs. Transform your slow computer.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0;">
+      <div class="container" style="text-align: center;">
+        <h2
+          class="space-font"
+          style="font-size: clamp(20px, 4vw, 28px); margin-bottom: 16px; color: var(--plasma-cyan);"
+        >
+          MAC REPAIR ACROSS HAVERING & ESSEX
+        </h2>
+        <p
+          class="alien-font"
+          style="color: var(--comet-silver); font-size: 16px; margin-bottom: 24px;"
+        >
+          Collection and drop-off service available across all areas:
+        </p>
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1000px; margin: 0 auto;"
+        >
+          <a href="/areas/aldborough-hatch/" class="area-tag alien-font">Aldborough Hatch</a>
+          <a href="/areas/ardleigh-green/" class="area-tag alien-font">Ardleigh Green</a>
+          <a href="/areas/barking/" class="area-tag alien-font">Barking</a>
+          <a href="/areas/barkingside/" class="area-tag alien-font">Barkingside</a>
+          <a href="/areas/becontree/" class="area-tag alien-font">Becontree</a>
+          <a href="/areas/brentwood/" class="area-tag alien-font">Brentwood</a>
+          <a href="/areas/chadwell-heath/" class="area-tag alien-font">Chadwell Heath</a>
+          <a href="/areas/chase-cross/" class="area-tag alien-font">Chase Cross</a>
+          <a href="/areas/clayhall/" class="area-tag alien-font">Clayhall</a>
+          <a href="/areas/collier-row/" class="area-tag alien-font">Collier Row</a>
+          <a href="/areas/corbets-tey/" class="area-tag alien-font">Corbets Tey</a>
+          <a href="/areas/cranham/" class="area-tag alien-font">Cranham</a>
+          <a href="/areas/dagenham/" class="area-tag alien-font">Dagenham</a>
+          <a href="/areas/elm-park/" class="area-tag alien-font">Elm Park</a>
+          <a href="/areas/emerson-park/" class="area-tag alien-font">Emerson Park</a>
+          <a href="/areas/fairlop/" class="area-tag alien-font">Fairlop</a>
+          <a href="/areas/gants-hill/" class="area-tag alien-font">Gants Hill</a>
+          <a href="/areas/gidea-park/" class="area-tag alien-font">Gidea Park</a>
+          <a href="/areas/goodmayes/" class="area-tag alien-font">Goodmayes</a>
+          <a href="/areas/hacton/" class="area-tag alien-font">Hacton</a>
+          <a href="/areas/hainault/" class="area-tag alien-font">Hainault</a>
+          <a href="/areas/harold-hill/" class="area-tag alien-font">Harold Hill</a>
+          <a href="/areas/harold-park/" class="area-tag alien-font">Harold Park</a>
+          <a href="/areas/harold-wood/" class="area-tag alien-font">Harold Wood</a>
+          <a href="/areas/havering-atte-bower/" class="area-tag alien-font">Havering-atte-Bower</a>
+          <a href="/areas/heath-park/" class="area-tag alien-font">Heath Park</a>
+          <a href="/areas/hornchurch/" class="area-tag alien-font">Hornchurch</a>
+          <a href="/areas/hutton/" class="area-tag alien-font">Hutton</a>
+          <a href="/areas/ilford/" class="area-tag alien-font">Ilford</a>
+          <a href="/areas/marks-gate/" class="area-tag alien-font">Marks Gate</a>
+          <a href="/areas/newbury-park/" class="area-tag alien-font">Newbury Park</a>
+          <a href="/areas/noak-hill/" class="area-tag alien-font">Noak Hill</a>
+          <a href="/areas/north-ockendon/" class="area-tag alien-font">North Ockendon</a>
+          <a href="/areas/pilgrims-hatch/" class="area-tag alien-font">Pilgrims Hatch</a>
+          <a href="/areas/rainham/" class="area-tag alien-font">Rainham</a>
+          <a href="/areas/romford/" class="area-tag alien-font">Romford</a>
+          <a href="/areas/rush-green/" class="area-tag alien-font">Rush Green</a>
+          <a href="/areas/seven-kings/" class="area-tag alien-font">Seven Kings</a>
+          <a href="/areas/shenfield/" class="area-tag alien-font">Shenfield</a>
+          <a href="/areas/south-hornchurch/" class="area-tag alien-font">South Hornchurch</a>
+          <a href="/areas/stapleford-abbotts/" class="area-tag alien-font">Stapleford Abbotts</a>
+          <a href="/areas/upminster/" class="area-tag alien-font">Upminster</a>
+          <a href="/areas/upney/" class="area-tag alien-font">Upney</a>
+          <a href="/areas/warley/" class="area-tag alien-font">Warley</a>
+          <a href="/areas/wennington/" class="area-tag alien-font">Wennington</a>
+          <a href="/areas/" class="area-tag alien-font" style="background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green); color: var(--aurora-green);">View All Areas →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg" style="padding: 60px 0 80px;">
+      <div class="container">
+        <div
+          class="cosmic-card"
+          style="padding: 50px 40px; text-align: center; border: 2px solid var(--nebula-purple);"
+        >
+          <h2
+            class="space-font galaxy-text cosmic-glow"
+            style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+          >
+            MAC PROBLEMS IN ROMFORD?
+          </h2>
+          <p
+            class="alien-font"
+            style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
+          >
+            Faster and cheaper than the Apple Store. Open 7 days, 9AM-9PM. £20 diagnostic — waived with repair.
+          </p>
+          <a
+            href="tel:+447971331814"
+            class="space-button space-font"
+            style="font-size: 16px; padding: 16px 32px; background: linear-gradient(135deg, var(--nebula-purple), var(--plasma-cyan));"
+            ><span aria-hidden="true">📱</span> 07971 331814</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
