@@ -241,7 +241,21 @@
       "Bash(__NEW_LINE_7e26d4fbba73dea8__ echo \"\")",
       "Bash(__NEW_LINE_fcb3184cd287bf04__ echo \"\")",
       "Bash(echo === All link destinations on homepage ===:*)",
-      "Bash(echo === Homepage sections with aria ===:*)"
+      "Bash(echo === Homepage sections with aria ===:*)",
+      "Bash(do grep:*)",
+      "WebFetch(domain:www.essexpcfix.co.uk)",
+      "WebFetch(domain:www.pc-restore.co.uk)",
+      "WebFetch(domain:computerrepairessex.com)",
+      "WebFetch(domain:www.cranhamcomputercentre.co.uk)",
+      "WebFetch(domain:www.illit.co.uk)",
+      "WebFetch(domain:www.modxpcrepairs.co.uk)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:geekscallout.co.uk)",
+      "WebFetch(domain:www.geeksquad.co.uk)",
+      "WebFetch(domain:www.techfixrepair.co.uk)",
+      "WebFetch(domain:www.repaird.uk)",
+      "WebFetch(domain:geeks-on-wheels.com)",
+      "WebFetch(domain:www.computerrepairltd.co.uk)"
     ]
   }
 }

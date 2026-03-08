@@ -66,7 +66,7 @@ export const areas: AreaData[] = [
       {
         question: 'How much does computer repair cost in Romford?',
         answer:
-          'Our repairs start from just £30 for software fixes, with hardware repairs typically £50-£80. We offer free diagnosis and operate on a no fix, no fee basis - so you only pay if we solve your problem.',
+          'Our repairs start from just £30 for software fixes, with hardware repairs typically £50-£80. We charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it turns out to be unfixable — liquid damage, unavailable parts — no fix, no fee applies.',
       },
       {
         question: 'Do you offer same day computer repairs in Romford?',
@@ -97,7 +97,7 @@ export const areas: AreaData[] = [
       {
         question: 'How much does laptop repair cost in Harold Wood?',
         answer:
-          'Laptop repairs start from £30 for software issues. Screen replacements from £60, keyboard repairs from £50. We offer free diagnosis on all repairs.',
+          'Laptop repairs start from £30 for software issues. Screen replacements from £60, keyboard repairs from £50. We offer a £20 diagnostic check — waived if you proceed with repair.',
       },
       {
         question: 'Can you fix my computer the same day?',
@@ -190,7 +190,7 @@ export const areas: AreaData[] = [
       {
         question: 'How much does computer repair cost in Dagenham?',
         answer:
-          'We offer competitive fixed prices with free diagnosis. Virus removal starts from £40, screen replacements from £60, and most software repairs from £30. Call us for a free quote on 07971 331814.',
+          'Competitive fixed prices with a £20 diagnostic check — waived if you go ahead with repair. Virus removal from £40, screen replacements from £60, software repairs from £30. Call 07971 331814 for a quote.',
       },
       {
         question: 'How quickly can you repair my computer?',
@@ -344,7 +344,7 @@ export const areas: AreaData[] = [
       {
         question: "What's your pricing for Chadwell Heath customers?",
         answer:
-          'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen repairs from £60. Free diagnosis on all repairs.',
+          'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen repairs from £60. £20 diagnostic check — waived if you proceed with repair.',
       },
       {
         question: 'How do I book a repair?',
@@ -416,7 +416,7 @@ export const areas: AreaData[] = [
       {
         question: 'What are your prices for Emerson Park customers?',
         answer:
-          'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee.',
+          'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen replacements from £60. £20 diagnostic — waived if you proceed with repair. No fix, no fee on unfixable issues.',
       },
     ],
   },
@@ -566,7 +566,7 @@ export const areas: AreaData[] = [
       {
         question: 'Can you fix a laptop that won\'t turn on?',
         answer:
-          "Yes! We diagnose and repair laptops that won't power on. Common causes include faulty chargers, dead batteries, motherboard issues, and power jack problems. Free diagnosis included.",
+          "Yes! We diagnose and repair laptops that won't power on. Common causes include faulty chargers, dead batteries, motherboard issues, and power jack problems. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you provide IT support for small businesses?',
@@ -623,7 +623,7 @@ export const areas: AreaData[] = [
       {
         question: 'How much does a repair cost?',
         answer:
-          'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. We offer free diagnosis and operate on a no fix, no fee basis.',
+          'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. We offer a £20 diagnostic check — waived if you proceed with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'Do you repair both PCs and laptops in Barking?',
@@ -726,7 +726,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer a no fix, no fee guarantee?',
         answer:
-          "Yes! We operate on a no fix, no fee basis. If we can't resolve your issue, you don't pay a penny. Free diagnosis included with every repair.",
+          "We charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If the issue is unfixable — liquid damage, unavailable parts — no fix, no fee applies.",
       },
     ],
   },
@@ -840,7 +840,7 @@ export const areas: AreaData[] = [
       {
         question: 'Is there a callout charge?',
         answer:
-          'No! Collection and delivery is completely free. We also offer free diagnosis on all repairs and operate on a no fix, no fee basis.',
+          'Collection and drop-off service available. We charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'Can you fix my laptop screen?',
@@ -871,7 +871,7 @@ export const areas: AreaData[] = [
       {
         question: 'How much does a repair cost?',
         answer:
-          'Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee guarantee on all repairs.',
+          'Software repairs from £30, virus removal from £40, screen replacements from £60. £20 diagnostic check — waived if you go ahead with repair. No fix, no fee on unfixable issues.',
       },
       {
         question: 'How long do repairs take?',
@@ -907,7 +907,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you fix slow computers?',
         answer:
-          "Yes! We'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. Free diagnosis included.",
+          "Yes! We'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you repair Macs and Apple laptops?',
@@ -969,7 +969,7 @@ export const areas: AreaData[] = [
       {
         question: 'What are your prices?',
         answer:
-          'Competitive fixed prices with free diagnosis. Software repairs from £30, virus removal from £40, screen replacements from £60. No fix, no fee guarantee.',
+          'Competitive fixed prices with a £20 diagnostic check — waived if you proceed with repair. Software repairs from £30, virus removal from £40, screen replacements from £60. No fix, no fee on unfixable issues.',
       },
       {
         question: 'Do you sell refurbished laptops?',
@@ -1036,7 +1036,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you repair laptops with water damage?',
         answer:
-          'Yes, we can assess and repair liquid-damaged laptops. The sooner you bring it in, the better the chances of recovery. Free diagnosis included.',
+          'Yes, we can assess and repair liquid-damaged laptops. The sooner you bring it in, the better the chances of recovery. £20 diagnostic check included — waived if you proceed with repair.',
       },
     ],
   },
@@ -1160,7 +1160,7 @@ export const areas: AreaData[] = [
       {
         question: 'What are your prices?',
         answer:
-          'Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee guarantee on all repairs.',
+          'Software repairs from £30, virus removal from £40, screen replacements from £60. £20 diagnostic check — waived if you go ahead with repair. No fix, no fee on unfixable issues.',
       },
     ],
   },
@@ -1222,7 +1222,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer a no fix, no fee guarantee?',
         answer:
-          "Yes! If we can't fix your computer, you don't pay. Free diagnosis included with every repair. No hidden charges.",
+          "We charge £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it's unfixable — liquid damage, unavailable parts — no fix, no fee applies. No hidden charges.",
       },
     ],
   },
@@ -1336,7 +1336,7 @@ export const areas: AreaData[] = [
       {
         question: 'Is there a callout charge?',
         answer:
-          'No! Collection and delivery is completely free. We also offer free diagnosis on all repairs and operate on a no fix, no fee basis.',
+          'Collection and drop-off service available. We charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'What brands do you repair?',
@@ -1372,7 +1372,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you fix computers that won\'t start?',
         answer:
-          "Yes! We diagnose and repair PCs and laptops that won't power on. Common causes include power supply failure, motherboard issues, and dead batteries. Free diagnosis included.",
+          "Yes! We diagnose and repair PCs and laptops that won't power on. Common causes include power supply failure, motherboard issues, and dead batteries. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you offer business IT support?',
