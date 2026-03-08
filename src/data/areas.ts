@@ -1133,6 +1133,37 @@ export const areas: AreaData[] = [
       },
     ],
   },
+  {
+    slug: 'gants-hill',
+    name: 'Gants Hill',
+    region: 'Redbridge',
+    postcode: 'IG2',
+    distance: '5 miles',
+    landmarks: ['Gants Hill Roundabout', 'Gants Hill Station', 'Valentines Park'],
+    nearby: ['Ilford', 'Hainault', 'Seven Kings', 'Goodmayes'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Gants Hill?',
+        answer:
+          'Yes! We cover Gants Hill and all IG2 postcodes. Free collection from Gants Hill Roundabout, the station area, and all surrounding streets.',
+      },
+      {
+        question: 'How far are you from Gants Hill?',
+        answer:
+          "We're about 5 miles from Gants Hill in Harold Hill. We offer free collection and delivery — call 07971 331814 and we can usually arrange same day pickup.",
+      },
+      {
+        question: 'Do you fix laptops and desktops?',
+        answer:
+          'Yes, we repair all types of computers — laptops, desktops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
+      },
+      {
+        question: 'What are your prices?',
+        answer:
+          'Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee guarantee on all repairs.',
+      },
+    ],
+  },
 ];
 
 // Helper function to get area by slug
