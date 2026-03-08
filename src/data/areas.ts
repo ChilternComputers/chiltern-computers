@@ -730,6 +730,254 @@ export const areas: AreaData[] = [
       },
     ],
   },
+  {
+    slug: 'pilgrims-hatch',
+    name: 'Pilgrims Hatch',
+    region: 'Brentwood, Essex',
+    postcode: 'CM15',
+    distance: '6 miles',
+    landmarks: ['Pilgrims Hatch Village', 'Ongar Road', "St Mary's Church"],
+    nearby: ['Brentwood', 'Harold Wood', 'Warley', 'Romford'],
+    faqs: [
+      {
+        question: 'Do you cover Pilgrims Hatch for computer repairs?',
+        answer:
+          'Yes! We provide computer repair services to Pilgrims Hatch and surrounding CM15 areas. Free collection and delivery available.',
+      },
+      {
+        question: 'How far are you from Pilgrims Hatch?',
+        answer:
+          "We're about 6 miles from Pilgrims Hatch in Harold Hill. We offer free collection — call 07971 331814 and we can usually arrange same day pickup.",
+      },
+      {
+        question: 'Do you repair all computer brands?',
+        answer:
+          'Yes, we repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows PCs and Apple Macs.',
+      },
+      {
+        question: 'What are your opening hours?',
+        answer:
+          "We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to arrange a repair.",
+      },
+    ],
+  },
+  {
+    slug: 'warley',
+    name: 'Warley',
+    region: 'Brentwood, Essex',
+    postcode: 'CM14',
+    distance: '5.5 miles',
+    landmarks: ['Warley Hill', 'Essex Regiment Way', 'Brentwood Railway Station'],
+    nearby: ['Brentwood', 'Pilgrims Hatch', 'Harold Wood', 'Upminster'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Warley?',
+        answer:
+          'Yes! We cover Warley and surrounding CM14 postcodes. Free collection from Warley Hill, Great Warley, and Little Warley areas.',
+      },
+      {
+        question: 'How quickly can you collect from Warley?',
+        answer:
+          "We can usually collect from Warley within a few hours of booking. We're open 7 days a week, 9AM to 9PM. Call 07971 331814 to arrange.",
+      },
+      {
+        question: 'Do you offer SSD upgrades?',
+        answer:
+          "Yes! An SSD upgrade is one of the best ways to speed up an older computer. We'll clone your existing drive so you don't lose any data. Upgrades from £60 including fitting.",
+      },
+      {
+        question: 'Do you offer a warranty on repairs?',
+        answer:
+          'Yes, all our repairs come with a warranty. We also operate on a no fix, no fee basis — you only pay if we successfully resolve your issue.',
+      },
+    ],
+  },
+  {
+    slug: 'wennington',
+    name: 'Wennington',
+    region: 'Havering',
+    postcode: 'RM13',
+    distance: '6 miles',
+    landmarks: ['Wennington Road', 'Wennington Marshes', 'Church Lane'],
+    nearby: ['Rainham', 'South Hornchurch', 'Upminster', 'Dagenham'],
+    faqs: [
+      {
+        question: 'Do you cover Wennington?',
+        answer:
+          'Yes! We provide computer repair services to Wennington and surrounding RM13 areas. Free collection and delivery available.',
+      },
+      {
+        question: 'How do I get my computer to you from Wennington?',
+        answer:
+          "We offer free collection and delivery for Wennington customers. Call 07971 331814 and we'll come to you. Or drop off at our Harold Hill workshop.",
+      },
+      {
+        question: 'What services do you offer?',
+        answer:
+          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, keyboard repairs, and more. We also sell new and refurbished computers.',
+      },
+      {
+        question: 'Are you open at weekends?',
+        answer:
+          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
+      },
+    ],
+  },
+  {
+    slug: 'stapleford-abbotts',
+    name: 'Stapleford Abbotts',
+    region: 'Essex',
+    postcode: 'RM4',
+    distance: '3.5 miles',
+    landmarks: ['Stapleford Road', 'Tysea Hill', 'The Rabbits pub'],
+    nearby: ['Havering-atte-Bower', 'Noak Hill', 'Harold Hill', 'Brentwood'],
+    faqs: [
+      {
+        question: 'Do you cover Stapleford Abbotts?',
+        answer:
+          "Yes! We're just 3.5 miles from Stapleford Abbotts in Harold Hill. Free collection and delivery available throughout the village and surrounding lanes.",
+      },
+      {
+        question: 'Is there a callout charge?',
+        answer:
+          'No! Collection and delivery is completely free. We also offer free diagnosis on all repairs and operate on a no fix, no fee basis.',
+      },
+      {
+        question: 'Can you fix my laptop screen?',
+        answer:
+          'Yes! We repair cracked, broken, and flickering laptop screens. We stock screens for most popular models and can often complete the repair within 24 hours.',
+      },
+      {
+        question: 'Do you help with printer and Wi-Fi setup?',
+        answer:
+          'Yes, we can help with printer setup, Wi-Fi connectivity issues, network configuration, and general IT support for your home or business.',
+      },
+    ],
+  },
+  {
+    slug: 'becontree',
+    name: 'Becontree',
+    region: 'Barking & Dagenham',
+    postcode: 'RM8/RM9',
+    distance: '5.5 miles',
+    landmarks: ['Becontree Station', 'Valence Park', 'Parsloes Park'],
+    nearby: ['Dagenham', 'Barking', 'Chadwell Heath', 'Rush Green'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Becontree?',
+        answer:
+          'Yes! We cover Becontree and surrounding RM8/RM9 postcodes. Free collection from Becontree Station, Valence Park area, and all surrounding streets.',
+      },
+      {
+        question: 'How much does a repair cost?',
+        answer:
+          'Software repairs from £30, virus removal from £40, screen replacements from £60. Free diagnosis and no fix, no fee guarantee on all repairs.',
+      },
+      {
+        question: 'How long do repairs take?',
+        answer:
+          "Most software repairs and virus removal completed within 24 hours. Hardware repairs typically 24-48 hours depending on parts. We're open 7 days a week.",
+      },
+      {
+        question: 'Do you repair gaming PCs?',
+        answer:
+          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds.',
+      },
+    ],
+  },
+  {
+    slug: 'rush-green',
+    name: 'Rush Green',
+    region: 'Havering',
+    postcode: 'RM7',
+    distance: '3.5 miles',
+    landmarks: ['Rush Green Road', "Queen's Hospital", 'Rush Green Gardens'],
+    nearby: ['Romford', 'Dagenham', 'Hornchurch', 'Elm Park'],
+    faqs: [
+      {
+        question: 'Do you cover Rush Green for computer repairs?',
+        answer:
+          "Yes! We provide computer repair services to Rush Green and all RM7 postcodes. We're just 3.5 miles away with free collection and delivery.",
+      },
+      {
+        question: 'Can you collect from Rush Green?',
+        answer:
+          "Yes, free collection and delivery throughout Rush Green. We can usually collect within a couple of hours. Call 07971 331814 to arrange. We're open 7 days.",
+      },
+      {
+        question: 'Do you fix slow computers?',
+        answer:
+          "Yes! We'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. Free diagnosis included.",
+      },
+      {
+        question: 'Do you repair Macs and Apple laptops?',
+        answer:
+          'Yes, we repair all brands including Apple MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Both macOS and Windows systems.',
+      },
+    ],
+  },
+  {
+    slug: 'seven-kings',
+    name: 'Seven Kings',
+    region: 'Redbridge',
+    postcode: 'IG3',
+    distance: '5.5 miles',
+    landmarks: ['Seven Kings Station', 'Seven Kings Park', 'High Road'],
+    nearby: ['Ilford', 'Goodmayes', 'Chadwell Heath', 'Barking'],
+    faqs: [
+      {
+        question: 'Do you offer computer repair in Seven Kings?',
+        answer:
+          'Yes! We cover Seven Kings and the wider IG3 area. Free collection from Seven Kings Station, High Road, and all surrounding streets.',
+      },
+      {
+        question: 'How do I book a repair?',
+        answer:
+          "Call us on 07971 331814 or use our contact form. We can arrange free collection from Seven Kings, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+      },
+      {
+        question: 'What computer problems do you fix?',
+        answer:
+          'Everything from viruses and slow performance to cracked screens, dead batteries, and data loss. Desktops, laptops, and all-in-ones. All brands repaired.',
+      },
+      {
+        question: 'Do you offer business IT support in Seven Kings?',
+        answer:
+          'Yes, we provide IT support for Seven Kings businesses including emergency repairs, maintenance contracts, network setup, and hardware procurement.',
+      },
+    ],
+  },
+  {
+    slug: 'marks-gate',
+    name: 'Marks Gate',
+    region: 'Barking & Dagenham',
+    postcode: 'RM5',
+    distance: '3 miles',
+    landmarks: ['Marks Gate Community Centre', 'Rose Lane', 'Warren Drive'],
+    nearby: ['Chadwell Heath', 'Collier Row', 'Harold Hill', 'Hainault'],
+    faqs: [
+      {
+        question: 'Do you cover Marks Gate?',
+        answer:
+          "Yes! We're just 3 miles from Marks Gate in Harold Hill. One of our closer service areas with quick collection and same day repairs available.",
+      },
+      {
+        question: 'Is collection free from Marks Gate?',
+        answer:
+          'Yes, free collection and delivery for all Marks Gate customers. Call 07971 331814 and we can usually be with you within the hour.',
+      },
+      {
+        question: 'What are your prices?',
+        answer:
+          'Competitive fixed prices with free diagnosis. Software repairs from £30, virus removal from £40, screen replacements from £60. No fix, no fee guarantee.',
+      },
+      {
+        question: 'Do you sell refurbished laptops?',
+        answer:
+          'Yes! We have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
+      },
+    ],
+  },
 ];
 
 // Helper function to get area by slug
