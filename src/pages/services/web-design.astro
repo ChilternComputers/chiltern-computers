@@ -346,6 +346,56 @@ const faqs = [
       -webkit-overflow-scrolling: touch;
       border-radius: 16px;
     }
+    .proof-cards-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .proof-card-mobile {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .proof-card-mobile.highlight {
+      border-color: var(--aurora-green);
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+    }
+    .proof-card-mobile .card-name {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+    .proof-card-mobile .card-url {
+      font-size: 11px;
+      color: var(--comet-silver);
+      margin-bottom: 16px;
+    }
+    .proof-card-mobile .card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+      font-size: 13px;
+    }
+    .proof-card-mobile .card-row:last-child {
+      border-bottom: none;
+    }
+    .proof-card-mobile .card-label {
+      color: var(--comet-silver);
+    }
+    .proof-card-mobile .card-value {
+      text-align: right;
+      font-weight: 600;
+    }
+    @media (max-width: 768px) {
+      .proof-table-wrapper {
+        display: none;
+      }
+      .proof-cards-mobile {
+        display: flex;
+      }
+    }
 
     /* FAQ */
     .faq-item {
@@ -901,6 +951,61 @@ const faqs = [
             </tbody>
           </table>
         </div>
+
+        <!-- Mobile stacked cards -->
+        <div class="proof-cards-mobile alien-font">
+          <div class="proof-card-mobile highlight">
+            <div class="card-name space-font" style="color: var(--aurora-green);">Chiltern Computers</div>
+            <div class="card-url">chilterncomputers.net</div>
+            <div class="card-row"><span class="card-label">Built With</span><span class="card-value" style="color: var(--aurora-green);">Hand-coded</span></div>
+            <div class="card-row"><span class="card-label">Works on Mobile</span><span class="card-value check-yes">&#10003;</span></div>
+            <div class="card-row"><span class="card-label">Google-Ready</span><span class="card-value check-yes">&#10003; Fully optimised</span></div>
+            <div class="card-row"><span class="card-label">Security</span><span class="card-value check-yes">&#10003; Full protection</span></div>
+            <div class="card-row"><span class="card-label">Fast Loading</span><span class="card-value check-yes">&#10003; Under 1 second</span></div>
+            <div class="card-row"><span class="card-label">Monthly Cost</span><span class="card-value check-yes">£0</span></div>
+          </div>
+          <div class="proof-card-mobile">
+            <div class="card-name space-font" style="color: var(--starlight-white);">Essex PC Fix</div>
+            <div class="card-url">essexpcfix.co.uk</div>
+            <div class="card-row"><span class="card-label">Built With</span><span class="card-value" style="color: var(--comet-silver);">Old-style code</span></div>
+            <div class="card-row"><span class="card-label">Works on Mobile</span><span class="card-value check-no">&#10007; Desktop only</span></div>
+            <div class="card-row"><span class="card-label">Google-Ready</span><span class="card-value check-no">&#10007; Not set up</span></div>
+            <div class="card-row"><span class="card-label">Security</span><span class="card-value check-no">&#10007; None</span></div>
+            <div class="card-row"><span class="card-label">Fast Loading</span><span class="card-value check-no">&#10007; Slow</span></div>
+            <div class="card-row"><span class="card-label">Monthly Cost</span><span class="card-value" style="color: var(--comet-silver);">Paid hosting</span></div>
+          </div>
+          <div class="proof-card-mobile">
+            <div class="card-name space-font" style="color: var(--starlight-white);">ILL IT Solutions</div>
+            <div class="card-url">illit.co.uk</div>
+            <div class="card-row"><span class="card-label">Built With</span><span class="card-value" style="color: var(--comet-silver);">WordPress template</span></div>
+            <div class="card-row"><span class="card-label">Works on Mobile</span><span class="card-value check-yes">&#10003;</span></div>
+            <div class="card-row"><span class="card-label">Google-Ready</span><span class="card-value check-partial">~ Partial</span></div>
+            <div class="card-row"><span class="card-label">Security</span><span class="card-value check-no">&#10007; Basic only</span></div>
+            <div class="card-row"><span class="card-label">Fast Loading</span><span class="card-value check-no">&#10007; Sluggish</span></div>
+            <div class="card-row"><span class="card-label">Monthly Cost</span><span class="card-value" style="color: var(--comet-silver);">£10-30+</span></div>
+          </div>
+          <div class="proof-card-mobile">
+            <div class="card-name space-font" style="color: var(--starlight-white);">MODXPC Repairs</div>
+            <div class="card-url">modxpcrepairs.co.uk</div>
+            <div class="card-row"><span class="card-label">Built With</span><span class="card-value" style="color: var(--comet-silver);">WordPress template</span></div>
+            <div class="card-row"><span class="card-label">Works on Mobile</span><span class="card-value check-yes">&#10003;</span></div>
+            <div class="card-row"><span class="card-label">Google-Ready</span><span class="card-value check-partial">~ Partial</span></div>
+            <div class="card-row"><span class="card-label">Security</span><span class="card-value check-no">&#10007; Basic only</span></div>
+            <div class="card-row"><span class="card-label">Fast Loading</span><span class="card-value check-no">&#10007; Heavy &amp; slow</span></div>
+            <div class="card-row"><span class="card-label">Monthly Cost</span><span class="card-value" style="color: var(--comet-silver);">£10-30+</span></div>
+          </div>
+          <div class="proof-card-mobile">
+            <div class="card-name space-font" style="color: var(--starlight-white);">Cranham Computer Centre</div>
+            <div class="card-url">cranhamcomputercentre.co.uk</div>
+            <div class="card-row"><span class="card-label">Built With</span><span class="card-value" style="color: var(--comet-silver);">WordPress template</span></div>
+            <div class="card-row"><span class="card-label">Works on Mobile</span><span class="card-value check-yes">&#10003;</span></div>
+            <div class="card-row"><span class="card-label">Google-Ready</span><span class="card-value check-partial">~ Partial</span></div>
+            <div class="card-row"><span class="card-label">Security</span><span class="card-value check-no">&#10007; Basic only</span></div>
+            <div class="card-row"><span class="card-label">Fast Loading</span><span class="card-value check-no">&#10007; Heavy &amp; slow</span></div>
+            <div class="card-row"><span class="card-label">Monthly Cost</span><span class="card-value" style="color: var(--comet-silver);">£10-30+</span></div>
+          </div>
+        </div>
+
         <div
           style="background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05)); border-left: 4px solid var(--aurora-green); padding: 24px; margin: 32px 0; border-radius: 0 12px 12px 0;"
         >
