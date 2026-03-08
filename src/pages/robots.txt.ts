@@ -3,10 +3,9 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
   const robotsTxt = `User-agent: *
-Disallow: /admin/
-Disallow: /api/
-Disallow: /thank-you/
 Allow: /
+Disallow: /offline/
+Disallow: /thank-you/
 
 Sitemap: https://chilterncomputers.net/sitemap.xml`;
 
