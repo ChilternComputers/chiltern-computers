@@ -514,17 +514,29 @@ const faqs = [
       line-height: 1.2;
     }
     .demo-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--plasma-cyan);
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
       text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: 8px;
-      transition: color 0.2s ease;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+      border: 2px solid var(--aurora-green);
+      color: var(--aurora-green);
+      background: rgba(16, 185, 129, 0.1);
+      transition: all 0.3s ease;
+      animation: glowPulse 2.5s ease-in-out infinite;
     }
-    .demo-link:hover { color: var(--aurora-green); }
+    .demo-link:hover {
+      background: var(--aurora-green);
+      color: #0a0a14;
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.5);
+    }
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.2), 0 0 16px rgba(16, 185, 129, 0.1); }
+      50% { box-shadow: 0 0 16px rgba(16, 185, 129, 0.4), 0 0 32px rgba(16, 185, 129, 0.2); }
+    }
 
     /* Benchmark Comparison Table */
     .benchmark-table {
@@ -1274,7 +1286,7 @@ const faqs = [
                 <div class="score-label alien-font">SEO</div>
               </div>
             </div>
-            <a href="https://chiltern-demo-starter.pages.dev/" target="_blank" rel="noopener noreferrer" class="demo-link alien-font">View Live Site →</a>
+            <a href="https://chiltern-demo-starter.pages.dev/" target="_blank" rel="noopener noreferrer" class="demo-link space-font">VIEW LIVE SITE →</a>
           </div>
           <div class="demo-card highlight-demo">
             <span class="demo-tier professional space-font">PROFESSIONAL — £500</span>
@@ -1298,17 +1310,20 @@ const faqs = [
                 <div class="score-label alien-font">SEO</div>
               </div>
             </div>
-            <a href="https://chiltern-demo-professional.pages.dev/" target="_blank" rel="noopener noreferrer" class="demo-link alien-font">View Live Site →</a>
+            <a href="https://chiltern-demo-professional.pages.dev/" target="_blank" rel="noopener noreferrer" class="demo-link space-font">VIEW LIVE SITE →</a>
           </div>
         </div>
 
         <!-- Comparison heading -->
         <h3
           class="space-font"
-          style="color: var(--plasma-cyan); font-size: 16px; text-align: center; margin-bottom: 24px; letter-spacing: 1px;"
+          style="color: var(--plasma-cyan); font-size: 16px; text-align: center; margin-bottom: 8px; letter-spacing: 1px;"
         >
           HOW THEY COMPARE
         </h3>
+        <p class="alien-font" style="color: var(--comet-silver); text-align: center; max-width: 600px; margin: 0 auto 24px; font-size: 14px;">
+          Our demo sites vs real plumber and barber websites in Essex — the same trades, tested the same way.
+        </p>
 
         <!-- Desktop Table -->
         <div class="benchmark-table-wrapper">
@@ -1316,68 +1331,77 @@ const faqs = [
             <thead class="space-font">
               <tr>
                 <th>Website</th>
+                <th>Type</th>
                 <th>Performance</th>
                 <th>Accessibility</th>
                 <th>Best Practices</th>
                 <th>SEO</th>
-                <th>Security Headers</th>
-                <th>Valid HTML</th>
               </tr>
             </thead>
             <tbody>
               <tr class="our-row">
-                <td>Our Demo — Starter</td>
+                <td>Our Demo — Starter<div style="font-size:10px;font-weight:400;">Plumber (£299 package)</div></td>
+                <td style="color:var(--aurora-green);">Hand-coded</td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
-                <td><span style="color: #0cce6b;">7/7</span></td>
-                <td><span style="color: #0cce6b;">0 errors</span></td>
               </tr>
               <tr class="our-row">
-                <td>Our Demo — Professional</td>
+                <td>Our Demo — Professional<div style="font-size:10px;font-weight:400;">Barber (£500 package)</div></td>
+                <td style="color:var(--aurora-green);">Hand-coded</td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
-                <td><span style="color: #0cce6b;">7/7</span></td>
-                <td><span style="color: #0cce6b;">0 errors</span></td>
               </tr>
               <tr>
-                <td>Essex PC Fix<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">essexpcfix.co.uk</div></td>
-                <td><span style="color: #ffa400;">88</span></td>
-                <td><span style="color: #ff4e42;">66</span></td>
-                <td><span style="color: #ff4e42;">61</span></td>
-                <td><span style="color: #0cce6b;">91</span></td>
-                <td><span style="color: #ff4e42;">1/7</span></td>
-                <td><span style="color: var(--comet-silver);">—</span></td>
-              </tr>
-              <tr>
-                <td>ILL IT Solutions<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">illit.co.uk</div></td>
-                <td><span style="color: #ff4e42;">47</span></td>
-                <td><span style="color: #ffa400;">88</span></td>
-                <td><span style="color: #0cce6b;">96</span></td>
-                <td><span style="color: #0cce6b;">100</span></td>
-                <td><span style="color: #ff4e42;">2/7</span></td>
-                <td><span style="color: var(--comet-silver);">—</span></td>
-              </tr>
-              <tr>
-                <td>MODXPC Repairs<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">modxpcrepairs.co.uk</div></td>
-                <td><span style="color: #ff4e42;">41</span></td>
-                <td><span style="color: #ffa400;">82</span></td>
-                <td><span style="color: #ff4e42;">61</span></td>
-                <td><span style="color: #0cce6b;">92</span></td>
-                <td><span style="color: #ff4e42;">1/7</span></td>
-                <td><span style="color: var(--comet-silver);">—</span></td>
-              </tr>
-              <tr>
-                <td>Cranham Computer Centre<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">cranhamcomputercentre.co.uk</div></td>
-                <td><span style="color: #ffa400;">67</span></td>
-                <td><span style="color: #ffa400;">76</span></td>
+                <td>Plumbing Essex<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">plumbingessex.co.uk</div></td>
+                <td>Plumber</td>
+                <td><span style="color: #ffa400;">64</span></td>
+                <td><span style="color: #ffa400;">89</span></td>
                 <td><span style="color: #ffa400;">75</span></td>
                 <td><span style="color: #0cce6b;">100</span></td>
-                <td><span style="color: #ff4e42;">2/7</span></td>
-                <td><span style="color: var(--comet-silver);">—</span></td>
+              </tr>
+              <tr>
+                <td>24/7 Plumbing Essex<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">247plumbingessex.co.uk</div></td>
+                <td>Plumber</td>
+                <td><span style="color: #ffa400;">64</span></td>
+                <td><span style="color: #ffa400;">82</span></td>
+                <td><span style="color: #ffa400;">79</span></td>
+                <td><span style="color: #0cce6b;">100</span></td>
+              </tr>
+              <tr>
+                <td>Essex Plumbing &amp; Heating<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">essexplumbingandheating.co.uk</div></td>
+                <td>Plumber</td>
+                <td><span style="color: #ff4e42;">38</span></td>
+                <td><span style="color: #ffa400;">82</span></td>
+                <td><span style="color: #0cce6b;">100</span></td>
+                <td><span style="color: #ffa400;">82</span></td>
+              </tr>
+              <tr>
+                <td>Tony's Barbers<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">tonysbarbers.co.uk</div></td>
+                <td>Barber</td>
+                <td><span style="color: #ffa400;">88</span></td>
+                <td><span style="color: #ffa400;">76</span></td>
+                <td><span style="color: #0cce6b;">96</span></td>
+                <td><span style="color: #ffa400;">77</span></td>
+              </tr>
+              <tr>
+                <td>Headcase Barbers<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">headcasebarbers.co.uk</div></td>
+                <td>Barber</td>
+                <td><span style="color: #ffa400;">66</span></td>
+                <td><span style="color: #ffa400;">89</span></td>
+                <td><span style="color: #ffa400;">75</span></td>
+                <td><span style="color: #0cce6b;">100</span></td>
+              </tr>
+              <tr>
+                <td>Classic Barbers<div style="font-size:10px;color:var(--comet-silver);font-weight:400;">classicbarbers.co.uk</div></td>
+                <td>Barber</td>
+                <td><span style="color: #ffa400;">74</span></td>
+                <td><span style="color: #ffa400;">86</span></td>
+                <td><span style="color: #0cce6b;">93</span></td>
+                <td><span style="color: #0cce6b;">91</span></td>
               </tr>
             </tbody>
           </table>
@@ -1387,6 +1411,7 @@ const faqs = [
         <div class="benchmark-cards-mobile alien-font">
           <div class="benchmark-card our-card">
             <div class="bm-name space-font" style="color: var(--aurora-green);">Our Demo — Starter (£299)</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Plumber &bull; Hand-coded</div>
             <div class="bm-scores">
               <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">Perf</span></div>
               <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">A11y</span></div>
@@ -1396,6 +1421,7 @@ const faqs = [
           </div>
           <div class="benchmark-card our-card">
             <div class="bm-name space-font" style="color: var(--aurora-green);">Our Demo — Professional (£500)</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Barber &bull; Hand-coded</div>
             <div class="bm-scores">
               <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">Perf</span></div>
               <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">A11y</span></div>
@@ -1404,39 +1430,63 @@ const faqs = [
             </div>
           </div>
           <div class="benchmark-card">
-            <div class="bm-name space-font" style="color: var(--starlight-white);">Essex PC Fix</div>
+            <div class="bm-name space-font" style="color: var(--starlight-white);">Plumbing Essex</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Plumber</div>
             <div class="bm-scores">
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">88</span><span class="bm-score-lbl">Perf</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">66</span><span class="bm-score-lbl">A11y</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">61</span><span class="bm-score-lbl">Best P.</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">91</span><span class="bm-score-lbl">SEO</span></div>
-            </div>
-          </div>
-          <div class="benchmark-card">
-            <div class="bm-name space-font" style="color: var(--starlight-white);">ILL IT Solutions</div>
-            <div class="bm-scores">
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">47</span><span class="bm-score-lbl">Perf</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">88</span><span class="bm-score-lbl">A11y</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">96</span><span class="bm-score-lbl">Best P.</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">SEO</span></div>
-            </div>
-          </div>
-          <div class="benchmark-card">
-            <div class="bm-name space-font" style="color: var(--starlight-white);">MODXPC Repairs</div>
-            <div class="bm-scores">
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">41</span><span class="bm-score-lbl">Perf</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">82</span><span class="bm-score-lbl">A11y</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">61</span><span class="bm-score-lbl">Best P.</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">92</span><span class="bm-score-lbl">SEO</span></div>
-            </div>
-          </div>
-          <div class="benchmark-card">
-            <div class="bm-name space-font" style="color: var(--starlight-white);">Cranham Computer Centre</div>
-            <div class="bm-scores">
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">67</span><span class="bm-score-lbl">Perf</span></div>
-              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">76</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">64</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">89</span><span class="bm-score-lbl">A11y</span></div>
               <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">75</span><span class="bm-score-lbl">Best P.</span></div>
               <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">SEO</span></div>
+            </div>
+          </div>
+          <div class="benchmark-card">
+            <div class="bm-name space-font" style="color: var(--starlight-white);">24/7 Plumbing Essex</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Plumber</div>
+            <div class="bm-scores">
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">64</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">82</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">79</span><span class="bm-score-lbl">Best P.</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">SEO</span></div>
+            </div>
+          </div>
+          <div class="benchmark-card">
+            <div class="bm-name space-font" style="color: var(--starlight-white);">Essex Plumbing &amp; Heating</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Plumber</div>
+            <div class="bm-scores">
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ff4e42;">38</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">82</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">Best P.</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">82</span><span class="bm-score-lbl">SEO</span></div>
+            </div>
+          </div>
+          <div class="benchmark-card">
+            <div class="bm-name space-font" style="color: var(--starlight-white);">Tony's Barbers</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Barber</div>
+            <div class="bm-scores">
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">88</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">76</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">96</span><span class="bm-score-lbl">Best P.</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">77</span><span class="bm-score-lbl">SEO</span></div>
+            </div>
+          </div>
+          <div class="benchmark-card">
+            <div class="bm-name space-font" style="color: var(--starlight-white);">Headcase Barbers</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Barber</div>
+            <div class="bm-scores">
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">66</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">89</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">75</span><span class="bm-score-lbl">Best P.</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">100</span><span class="bm-score-lbl">SEO</span></div>
+            </div>
+          </div>
+          <div class="benchmark-card">
+            <div class="bm-name space-font" style="color: var(--starlight-white);">Classic Barbers</div>
+            <div style="font-size:11px;color:var(--comet-silver);margin-bottom:8px;">Barber</div>
+            <div class="bm-scores">
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">74</span><span class="bm-score-lbl">Perf</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#ffa400;">86</span><span class="bm-score-lbl">A11y</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">93</span><span class="bm-score-lbl">Best P.</span></div>
+              <div class="bm-score-item"><span class="bm-score-val" style="color:#0cce6b;">91</span><span class="bm-score-lbl">SEO</span></div>
             </div>
           </div>
         </div>
