@@ -2,6 +2,13 @@
   "name": "chiltern-computers",
   "compatibility_date": "2025-07-06",
   "assets": {
-    "directory": "./dist",
+    "directory": "./dist"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "chiltern-bookings",
+      "database_id": "PLACEHOLDER_CREATE_WITH_WRANGLER"
+    }
+  ]
 }

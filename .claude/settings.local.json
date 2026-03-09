@@ -255,7 +255,14 @@
       "WebFetch(domain:www.techfixrepair.co.uk)",
       "WebFetch(domain:www.repaird.uk)",
       "WebFetch(domain:geeks-on-wheels.com)",
-      "WebFetch(domain:www.computerrepairltd.co.uk)"
+      "WebFetch(domain:www.computerrepairltd.co.uk)",
+      "Bash(CHROME_PATH=\"/c/Program Files/Google/Chrome/Application/chrome.exe\" npx lighthouse:*)",
+      "Bash(identify:*)",
+      "WebFetch(domain:www.barbersharoldhill.co.uk)",
+      "WebFetch(domain:nearcut.com)",
+      "WebFetch(domain:countrywoodfloors.co.uk)",
+      "Bash(__NEW_LINE_2d209145d19e31fe__ npx:*)",
+      "Bash(npx sharp-cli:*)"
     ]
   }
 }
