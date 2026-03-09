@@ -1,4 +1,4 @@
-import { type Env, type Barber, corsHeaders, corsOptionsHeaders, jsonResponse, jsonError } from './_shared';
+import { type Env, type Barber, corsOptionsHeaders, jsonResponse, jsonError } from './_shared';
 
 // GET — look up booking by token (for the cancel page to display details)
 export const onRequestGet: PagesFunction<Env> = async (context) => {

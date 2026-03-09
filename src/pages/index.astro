@@ -757,7 +757,7 @@ const reviews = [
         </div>
 
         <!-- Error -->
-        <div id="booking-error" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:14px 18px;margin-top:16px;">
+        <div id="booking-error" role="alert" aria-live="assertive" style="display:none;background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.3);border-radius:8px;padding:14px 18px;margin-top:16px;">
           <p id="error-text" style="color:#ef4444;font-size:13px;margin:0;"></p>
         </div>
       </div>
@@ -1160,24 +1160,46 @@ const reviews = [
           const initial = b.name.charAt(0).toUpperCase();
 
           if (b.status !== 'active') {
-            card.innerHTML = `
-              <div class="barber-avatar" style="opacity:0.3;">${initial}</div>
-              <div class="barber-info">
-                <span class="barber-name" style="opacity:0.4;">${b.name}</span>
-                <span class="barber-role" style="opacity:0.3;">${b.role}</span>
-                <span class="barber-status-badge ${b.status}">${b.status === 'away' ? 'Away' : 'On Holiday'}</span>
-              </div>
-            `;
+            const avatar = document.createElement('div');
+            avatar.className = 'barber-avatar';
+            avatar.style.opacity = '0.3';
+            avatar.textContent = initial;
+            const info = document.createElement('div');
+            info.className = 'barber-info';
+            const nameEl = document.createElement('span');
+            nameEl.className = 'barber-name';
+            nameEl.style.opacity = '0.4';
+            nameEl.textContent = b.name;
+            const roleEl = document.createElement('span');
+            roleEl.className = 'barber-role';
+            roleEl.style.opacity = '0.3';
+            roleEl.textContent = b.role;
+            const badge = document.createElement('span');
+            badge.className = `barber-status-badge ${b.status}`;
+            badge.textContent = b.status === 'away' ? 'Away' : 'On Holiday';
+            info.appendChild(nameEl);
+            info.appendChild(roleEl);
+            info.appendChild(badge);
+            card.appendChild(avatar);
+            card.appendChild(info);
             card.style.cursor = 'not-allowed';
             card.style.opacity = '0.5';
           } else {
-            card.innerHTML = `
-              <div class="barber-avatar">${initial}</div>
-              <div class="barber-info">
-                <span class="barber-name">${b.name}</span>
-                <span class="barber-role">${b.role}</span>
-              </div>
-            `;
+            const avatar = document.createElement('div');
+            avatar.className = 'barber-avatar';
+            avatar.textContent = initial;
+            const info = document.createElement('div');
+            info.className = 'barber-info';
+            const nameEl = document.createElement('span');
+            nameEl.className = 'barber-name';
+            nameEl.textContent = b.name;
+            const roleEl = document.createElement('span');
+            roleEl.className = 'barber-role';
+            roleEl.textContent = b.role;
+            info.appendChild(nameEl);
+            info.appendChild(roleEl);
+            card.appendChild(avatar);
+            card.appendChild(info);
             card.addEventListener('click', () => selectBarber(b.id, b.name));
           }
           barberGridEl.appendChild(card);
@@ -1234,7 +1256,17 @@ const reviews = [
           el.type = 'button';
           const parts = day.day.split(' ');
           el.className = `cal-day ${day.status}`;
-          el.innerHTML = `<span class="cal-label">${parts[0]}</span><span class="cal-num">${parts[1]}</span><span class="cal-indicator"></span>`;
+          const labelSpan = document.createElement('span');
+          labelSpan.className = 'cal-label';
+          labelSpan.textContent = parts[0];
+          const numSpan = document.createElement('span');
+          numSpan.className = 'cal-num';
+          numSpan.textContent = parts[1];
+          const indicator = document.createElement('span');
+          indicator.className = 'cal-indicator';
+          el.appendChild(labelSpan);
+          el.appendChild(numSpan);
+          el.appendChild(indicator);
           el.dataset.date = day.date;
           if (day.status === 'green' || day.status === 'amber') {
             el.addEventListener('click', () => {
@@ -1375,13 +1407,28 @@ const reviews = [
       const dateObj = new Date(booking.date + 'T12:00:00Z');
       const dateStr = dateObj.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
       const displayBarber = booking.chosenBarberName || booking.barberName;
-      summary.innerHTML = `
-        <div class="summary-row"><span class="summary-label">Barber</span><span class="summary-value">${displayBarber}</span></div>
-        <div class="summary-row"><span class="summary-label">Date</span><span class="summary-value">${dateStr}</span></div>
-        <div class="summary-row"><span class="summary-label">Time</span><span class="summary-value">${booking.time}</span></div>
-        <div class="summary-row"><span class="summary-label">Service</span><span class="summary-value">${booking.service}</span></div>
-        <div class="summary-row" style="border-top:1px solid rgba(6,182,212,0.15);padding-top:10px;margin-top:4px;"><span class="summary-label">Price</span><span class="summary-value gold">£${booking.price}</span></div>
-      `;
+      summary.innerHTML = '';
+      const fields: Array<[string, string, string?]> = [
+        ['Barber', displayBarber],
+        ['Date', dateStr],
+        ['Time', booking.time],
+        ['Service', booking.service],
+        ['Price', `£${booking.price}`, 'gold'],
+      ];
+      fields.forEach(([label, value, cls], i) => {
+        const row = document.createElement('div');
+        row.className = 'summary-row';
+        if (i === fields.length - 1) row.setAttribute('style', 'border-top:1px solid rgba(6,182,212,0.15);padding-top:10px;margin-top:4px;');
+        const labelEl = document.createElement('span');
+        labelEl.className = 'summary-label';
+        labelEl.textContent = label;
+        const valueEl = document.createElement('span');
+        valueEl.className = cls ? `summary-value ${cls}` : 'summary-value';
+        valueEl.textContent = value;
+        row.appendChild(labelEl);
+        row.appendChild(valueEl);
+        summary.appendChild(row);
+      });
     }
 
     // Confirm booking
@@ -1430,14 +1477,25 @@ const reviews = [
         const dateStr = dateObj.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
         const confirmedBarber = data.booking?.barberName || booking.barberName;
         const msg = document.getElementById('confirm-message') as HTMLElement;
-        msg.innerHTML = `
-          <strong style="color:var(--plasma-cyan);">${booking.service}</strong> with
-          <strong style="color:var(--starlight-white);">${confirmedBarber}</strong> booked for
-          <strong style="color:var(--starlight-white);">${dateStr}</strong> at
-          <strong style="color:var(--starlight-white);">${booking.time}</strong>.<br/>
-          A confirmation email has been sent to <strong style="color:var(--plasma-cyan);">${email}</strong>.<br/>
-          We'll see you then, ${name}!
-        `;
+        msg.innerHTML = '';
+        const svc = document.createElement('strong');
+        svc.style.color = 'var(--plasma-cyan)';
+        svc.textContent = booking.service;
+        const barberEl = document.createElement('strong');
+        barberEl.style.color = 'var(--starlight-white)';
+        barberEl.textContent = confirmedBarber;
+        const dateEl = document.createElement('strong');
+        dateEl.style.color = 'var(--starlight-white)';
+        dateEl.textContent = dateStr;
+        const timeEl = document.createElement('strong');
+        timeEl.style.color = 'var(--starlight-white)';
+        timeEl.textContent = booking.time;
+        const emailEl = document.createElement('strong');
+        emailEl.style.color = 'var(--plasma-cyan)';
+        emailEl.textContent = email;
+        msg.append(svc, ' with ', barberEl, ' booked for ', dateEl, ' at ', timeEl, '.', document.createElement('br'),
+          'A confirmation email has been sent to ', emailEl, '.', document.createElement('br'),
+          `We'll see you then, ${name}!`);
         showStep('done');
         document.querySelectorAll('.step').forEach(s => s.classList.add('completed'));
       } catch {

@@ -36,6 +36,7 @@ self.addEventListener('activate', (event) => {
 // Fetch — stale-while-revalidate
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  if (event.request.url.includes('/api/')) return;
 
   event.respondWith(
     caches.match(event.request).then((cached) => {

@@ -82,14 +82,17 @@ export function generateToken(): string {
     if (b < 248) {
       result += chars[b % chars.length];
     } else {
-      result += chars[Math.floor(Math.random() * chars.length)];
+      // Retry with fresh crypto random byte instead of Math.random
+      const extra = new Uint8Array(1);
+      crypto.getRandomValues(extra);
+      result += chars[extra[0] % chars.length];
     }
   }
   return result;
 }
 
 export function escapeHtml(str: string): string {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 }
 
 export function jsonResponse(data: unknown, status: number, request: Request, extraHeaders?: Record<string, string>): Response {

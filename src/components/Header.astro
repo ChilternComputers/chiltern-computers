@@ -1,6 +1,7 @@
 ---
 // Header.astro - Logo, Brand, Tabs, Call Now, Open - Each in Their Own Card
 import { siteConfig } from '../config';
+const currentPath = Astro.url.pathname;
 ---
 
 <header
@@ -99,6 +100,7 @@ import { siteConfig } from '../config';
               href="/"
               class="nav-link space-button"
               aria-label="Go to homepage"
+              aria-current={currentPath === '/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">🏠</span>Home</a
             >
@@ -108,6 +110,7 @@ import { siteConfig } from '../config';
               href="/services/custom-pcs/"
               class="nav-link space-button"
               aria-label="Gaming PCs - Custom gaming PC builds"
+              aria-current={currentPath === '/services/custom-pcs/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">🎮</span>Gaming PCs</a
             >
@@ -117,6 +120,7 @@ import { siteConfig } from '../config';
               href="/services/repairs/"
               class="nav-link space-button"
               aria-label="Repairs - Computer repair services"
+              aria-current={currentPath.startsWith('/services/repairs') ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--solar-orange); background:rgba(245,158,11,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">🛠️</span>Repairs</a
             >
@@ -126,6 +130,7 @@ import { siteConfig } from '../config';
               href="/services/new-used/"
               class="nav-link space-button"
               aria-label="PCs & Laptops - New and refurbished computers"
+              aria-current={currentPath === '/services/new-used/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--nebula-purple); background:rgba(139,92,246,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">💻</span>PCs & Laptops</a
             >
@@ -135,6 +140,7 @@ import { siteConfig } from '../config';
               href="/services/web-design/"
               class="nav-link space-button"
               aria-label="Web Design - Professional websites from £299"
+              aria-current={currentPath === '/services/web-design/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">🌐</span>Web Design</a
             >
@@ -144,6 +150,7 @@ import { siteConfig } from '../config';
               href="/about/"
               class="nav-link space-button"
               aria-label="About Chiltern Computers"
+              aria-current={currentPath === '/about/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">ℹ️</span>About</a
             >
@@ -153,6 +160,7 @@ import { siteConfig } from '../config';
               href="/blog/"
               class="nav-link space-button"
               aria-label="Computer repair tips and blog"
+              aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">📝</span>Blog</a
             >
@@ -162,6 +170,7 @@ import { siteConfig } from '../config';
               href="/contact/"
               class="nav-link space-button cta-primary"
               aria-label="Contact us for repairs"
+              aria-current={currentPath === '/contact/' ? 'page' : undefined}
               style="padding:8px 16px; font-size:12px; text-decoration:none; background:linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border:2px solid var(--aurora-green); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; gap:6px;"
               ><span aria-hidden="true">📞</span>Contact</a
             >
@@ -243,7 +252,7 @@ import { siteConfig } from '../config';
     let mobileMenuOpen = false;
 
     function handleResize() {
-      if (window.innerWidth <= 950) {
+      if (window.innerWidth <= 1100) {
         if (mobileToggle) mobileToggle.style.display = 'block';
         // Only show the menu if user has opened it
         if (headerNav) headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';

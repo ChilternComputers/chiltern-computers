@@ -1,4 +1,4 @@
-import { type Env, type Barber, corsHeaders, corsOptionsHeaders, jsonResponse, jsonError, SERVICES, generateSlots } from './_shared';
+import { type Env, type Barber, corsOptionsHeaders, jsonResponse, jsonError, SERVICES, generateSlots } from './_shared';
 
 async function getActiveBarbers(db: D1Database): Promise<Barber[]> {
   const { results } = await db.prepare(
@@ -85,7 +85,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         }
       }
 
-      return jsonResponse({ barber, days, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
+      return jsonResponse({ success: true, barber, days, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
     }
 
     // Single day slots mode
@@ -102,7 +102,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     const allSlots = generateSlots(dayOfWeek);
 
     if (allSlots.length === 0) {
-      return jsonResponse({ date, barber, closed: true, slots: [], services: SERVICES }, 200, context.request, { 'Cache-Control': 'no-cache' });
+      return jsonResponse({ success: true, date, barber, closed: true, slots: [], services: SERVICES }, 200, context.request, { 'Cache-Control': 'no-cache' });
     }
 
     if (barber === 'any') {
@@ -132,7 +132,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
         return { time, available: anyFree, slotBarbers };
       });
 
-      return jsonResponse({ date, barber, closed: false, slots, services: SERVICES, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
+      return jsonResponse({ success: true, date, barber, closed: false, slots, services: SERVICES, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
     }
 
     // Specific barber
@@ -146,7 +146,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       available: !bookedTimes.has(time),
     }));
 
-    return jsonResponse({ date, barber, closed: false, slots, services: SERVICES, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
+    return jsonResponse({ success: true, date, barber, closed: false, slots, services: SERVICES, barbers: activeBarbers }, 200, context.request, { 'Cache-Control': 'no-cache' });
   } catch (err) {
     console.error('Slots error:', err);
     return jsonError('Failed to load availability.', 500, context.request);

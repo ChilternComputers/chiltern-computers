@@ -16,6 +16,7 @@ const title = "Cancel Booking — Blades & Fades";
 </head>
 <body>
   <main class="cancel-page" id="main-content" aria-live="polite">
+    <h1 class="sr-only">Booking Management</h1>
     <div class="cancel-card">
       <div id="state-loading" role="status">
         <div class="spinner" aria-hidden="true"></div>
@@ -27,7 +28,7 @@ const title = "Cancel Booking — Blades & Fades";
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <h1 id="page-heading">Cancel Your Booking</h1>
+        <h2 id="page-heading">Cancel Your Booking</h2>
         <div class="booking-details" role="list" aria-label="Booking details">
           <div class="detail-row" role="listitem"><span class="label">Barber</span><span class="value" id="d-barber"></span></div>
           <div class="detail-row" role="listitem"><span class="label">Service</span><span class="value" id="d-service"></span></div>
@@ -45,7 +46,7 @@ const title = "Cancel Booking — Blades & Fades";
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
         <div class="tick" aria-hidden="true">&#10003;</div>
-        <h1>Booking Cancelled</h1>
+        <h2>Booking Cancelled</h2>
         <p class="subtle">Your appointment has been cancelled and the time slot is now available for others.</p>
         <a href="/#booking" class="btn-rebook">Book a New Appointment</a>
       </div>
@@ -55,7 +56,7 @@ const title = "Cancel Booking — Blades & Fades";
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <h1>Already Cancelled</h1>
+        <h2>Already Cancelled</h2>
         <p class="subtle" style="font-size:16px;margin-bottom:24px;">This booking has already been cancelled.</p>
         <a href="/#booking" class="btn-rebook">Book a New Appointment</a>
       </div>
@@ -65,7 +66,7 @@ const title = "Cancel Booking — Blades & Fades";
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <h1>Error</h1>
+        <h2>Error</h2>
         <p class="error-text" id="error-msg" role="alert">Booking not found. The link may have expired or be invalid.</p>
         <a href="/" class="back-link">Go to homepage</a>
       </div>
@@ -103,9 +104,13 @@ const title = "Cancel Booking — Blades & Fades";
     display: block; font-size: 9px; font-weight: 700;
     letter-spacing: 4px; color: #06b6d4; margin-top: 4px;
   }
-  h1 {
+  h1, h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 22px; font-weight: 700; margin-bottom: 24px; color: #f8fafc;
+  }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
   }
   .booking-details {
     background: rgba(6,182,212,0.05); border: 1px solid rgba(6,182,212,0.12);
@@ -167,7 +172,7 @@ const title = "Cancel Booking — Blades & Fades";
     // Move focus to the newly visible state for screen readers
     const target = document.getElementById(id);
     if (target) {
-      const focusEl = target.querySelector('h1, a, button, [role="alert"]') as HTMLElement | null;
+      const focusEl = target.querySelector('h2, a, button, [role="alert"]') as HTMLElement | null;
       if (focusEl) focusEl.focus();
     }
   }

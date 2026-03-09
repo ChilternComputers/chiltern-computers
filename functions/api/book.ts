@@ -1,4 +1,4 @@
-import { type Env, type Barber, corsHeaders, corsOptionsHeaders, jsonResponse, jsonError, generateToken, escapeHtml, VALID_SERVICE_NAMES, isValidSlotTime, isDateTodayOrFuture } from './_shared';
+import { type Env, type Barber, corsOptionsHeaders, jsonResponse, jsonError, generateToken, escapeHtml, VALID_SERVICE_NAMES, isValidSlotTime, isDateTodayOrFuture } from './_shared';
 
 const SITE_URL = 'https://chilterncomputers.net';
 
@@ -25,32 +25,32 @@ function buildConfirmationEmail(
     <tr><td align="center">
       <table width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;">
         <tr><td style="text-align:center;padding-bottom:32px;">
-          <span style="font-size:22px;font-weight:800;letter-spacing:3px;color:#f8fafc;">BLADES <span style="color:#c8a96e;">&amp;</span> FADES</span>
-          <br/><span style="font-size:10px;letter-spacing:4px;color:#c8a96e;font-weight:700;">PREMIUM BARBERING</span>
+          <span style="font-size:22px;font-weight:800;letter-spacing:3px;color:#f8fafc;">BLADES <span style="color:#06b6d4;">&amp;</span> FADES</span>
+          <br/><span style="font-size:10px;letter-spacing:4px;color:#06b6d4;font-weight:700;">PREMIUM BARBERING</span>
         </td></tr>
-        <tr><td style="background:#1e293b;border:1px solid rgba(200,169,110,0.15);border-radius:12px;padding:36px 32px;">
-          <p style="color:#c8a96e;font-size:12px;font-weight:700;letter-spacing:3px;margin:0 0 8px;">BOOKING CONFIRMED</p>
+        <tr><td style="background:#1e293b;border:1px solid rgba(6,182,212,0.15);border-radius:12px;padding:36px 32px;">
+          <p style="color:#06b6d4;font-size:12px;font-weight:700;letter-spacing:3px;margin:0 0 8px;">BOOKING CONFIRMED</p>
           <h1 style="color:#f8fafc;font-size:24px;font-weight:700;margin:0 0 24px;">You're all set, ${eName}!</h1>
           <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
             <tr>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Barber</td>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eBarber}</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Barber</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eBarber}</td>
             </tr>
             <tr>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Service</td>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eService}</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Service</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eService}</td>
             </tr>
             <tr>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Date</td>
-              <td style="padding:12px 0;border-bottom:1px solid rgba(200,169,110,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eDate}</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:rgba(248,250,252,0.55);font-size:14px;">Date</td>
+              <td style="padding:12px 0;border-bottom:1px solid rgba(6,182,212,0.1);color:#f8fafc;font-size:14px;font-weight:600;text-align:right;">${eDate}</td>
             </tr>
             <tr>
               <td style="padding:12px 0;color:rgba(248,250,252,0.55);font-size:14px;">Time</td>
-              <td style="padding:12px 0;color:#c8a96e;font-size:16px;font-weight:800;text-align:right;">${eTime}</td>
+              <td style="padding:12px 0;color:#06b6d4;font-size:16px;font-weight:800;text-align:right;">${eTime}</td>
             </tr>
           </table>
-          <div style="background:rgba(200,169,110,0.06);border:1px solid rgba(200,169,110,0.12);border-radius:8px;padding:16px;margin-bottom:24px;">
-            <p style="color:#c8a96e;font-size:11px;font-weight:700;letter-spacing:2px;margin:0 0 6px;">FIND US</p>
+          <div style="background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.12);border-radius:8px;padding:16px;margin-bottom:24px;">
+            <p style="color:#06b6d4;font-size:11px;font-weight:700;letter-spacing:2px;margin:0 0 6px;">FIND US</p>
             <p style="color:rgba(248,250,252,0.7);font-size:14px;margin:0;line-height:1.6;">42 High Street, Romford, Essex, RM1 1HR</p>
           </div>
           <div style="text-align:center;margin-bottom:24px;">
@@ -59,7 +59,7 @@ function buildConfirmationEmail(
             </a>
           </div>
           <p style="color:rgba(248,250,252,0.4);font-size:12px;line-height:1.7;margin:0;text-align:center;">
-            Or call us on <a href="tel:07845123456" style="color:#c8a96e;text-decoration:none;">07845 123 456</a>
+            Or call us on <a href="tel:07845123456" style="color:#06b6d4;text-decoration:none;">07845 123 456</a>
           </p>
         </td></tr>
         <tr><td style="text-align:center;padding-top:24px;">
@@ -124,34 +124,40 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonError('Invalid email address.', 400, context.request);
   }
 
+  // Rate limit: max 3 bookings per email per hour
+  try {
+    const recentBookings = await context.env.DB.prepare(
+      "SELECT COUNT(*) as count FROM bookings WHERE email = ? AND created_at > datetime('now', '-1 hour')"
+    ).bind(cleanEmail).first<{ count: number }>();
+    if (recentBookings && recentBookings.count >= 3) {
+      return jsonError('Too many bookings. Please try again later.', 429, context.request);
+    }
+  } catch {
+    // If rate limit check fails, allow the booking to proceed
+  }
+
   try {
     // Resolve actual barber for "any" selection
     let assignedBarber = barber;
     if (barber === 'any') {
-      const { results: activeBarbers } = await context.env.DB.prepare(
-        "SELECT id FROM barbers WHERE status = 'active' ORDER BY sort_order"
-      ).all<Pick<Barber, 'id'>>();
+      const available = await context.env.DB.prepare(
+        `SELECT b.id FROM barbers b
+         WHERE b.status = 'active'
+         AND b.id NOT IN (
+           SELECT barber FROM bookings
+           WHERE date = ? AND time = ? AND status = 'confirmed'
+         )
+         ORDER BY b.sort_order LIMIT 1`
+      ).bind(date, time).first<Pick<Barber, 'id'>>();
 
-      let found = false;
-      for (const b of activeBarbers) {
-        const existing = await context.env.DB.prepare(
-          "SELECT id FROM bookings WHERE barber = ? AND date = ? AND time = ? AND status = 'confirmed'"
-        ).bind(b.id, date, time).first();
-
-        if (!existing) {
-          assignedBarber = b.id;
-          found = true;
-          break;
-        }
-      }
-
-      if (!found) {
+      if (!available) {
         return jsonError('No barbers available at this time. Please choose another slot.', 409, context.request);
       }
+      assignedBarber = available.id;
     } else {
-      // Validate barber exists
+      // Validate barber exists and is active
       const barberExists = await context.env.DB.prepare(
-        "SELECT id FROM barbers WHERE id = ?"
+        "SELECT id FROM barbers WHERE id = ? AND status = 'active'"
       ).bind(assignedBarber).first();
       if (!barberExists) {
         return jsonError('Invalid barber.', 400, context.request);

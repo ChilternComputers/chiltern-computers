@@ -262,7 +262,9 @@
       "WebFetch(domain:nearcut.com)",
       "WebFetch(domain:countrywoodfloors.co.uk)",
       "Bash(__NEW_LINE_2d209145d19e31fe__ npx:*)",
-      "Bash(npx sharp-cli:*)"
+      "Bash(npx sharp-cli:*)",
+      "Bash(/tmp/contrast_check.txt:*)",
+      "Bash(/tmp/check_seo.py:*)"
     ]
   }
 }

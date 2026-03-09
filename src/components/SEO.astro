@@ -8,6 +8,7 @@ export interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   noindex?: boolean;
+  articleAuthor?: string;
   breadcrumbs?: Array<{ name: string; url: string }>;
   reviews?: Array<{
     author: string;
@@ -28,6 +29,7 @@ const {
   publishedTime,
   modifiedTime,
   noindex = false,
+  articleAuthor = 'David Hagon',
   breadcrumbs = [],
   reviews = [],
 } = Astro.props;
@@ -416,6 +418,23 @@ const reviewSchemas = reviews.map((review) => ({
     name: 'Chiltern Computers',
   },
 }));
+
+// Article Schema for blog posts
+const articleSchema = type === 'article' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  author: { '@type': 'Person', name: articleAuthor },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Chiltern Computers',
+    logo: { '@type': 'ImageObject', url: `${baseUrl}/logo_homepage.webp` },
+  },
+  datePublished: publishedTime,
+  ...(modifiedTime && { dateModified: modifiedTime }),
+  image: fullImageUrl,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+} : null;
 ---
 
 <meta charset="UTF-8" />
@@ -580,4 +599,9 @@ const reviewSchemas = reviews.map((review) => ({
   reviewSchemas.map((review) => (
     <script type="application/ld+json" set:html={JSON.stringify(review)} />
   ))
+}
+{
+  articleSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  )
 }

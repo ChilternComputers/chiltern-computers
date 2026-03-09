@@ -272,7 +272,7 @@ const reviews = [
                 name="human"
                 required
                 aria-required="true"
-                aria-describedby="human-hint"
+                aria-describedby="human-hint human-check-error"
                 style="width: 18px; height: 18px; accent-color: #1e40af; cursor: pointer;"
               />
               <span class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600;"
@@ -805,9 +805,21 @@ const reviews = [
           // Check human verification
           if (!humanCheck?.checked) {
             e.preventDefault();
-            alert('Please confirm that you are human');
+            let errEl = document.getElementById('human-check-error');
+            if (!errEl) {
+              errEl = document.createElement('p');
+              errEl.id = 'human-check-error';
+              errEl.setAttribute('role', 'alert');
+              errEl.style.cssText = 'color:#ef4444;font-size:14px;margin-top:4px;';
+              humanCheck?.parentElement?.appendChild(errEl);
+            }
+            errEl.textContent = 'Please confirm that you are human.';
+            humanCheck?.focus();
             return;
           }
+          // Clear any previous human-check error
+          const prevErr = document.getElementById('human-check-error');
+          if (prevErr) prevErr.textContent = '';
 
           // Show loading state
           if (submitBtn) {

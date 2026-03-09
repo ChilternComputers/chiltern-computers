@@ -38,19 +38,31 @@
 
   if (banner && !localStorage.getItem('cookie-consent')) {
     banner.style.display = 'block';
+    banner.setAttribute('aria-modal', 'true');
+    acceptBtn?.focus();
   }
 
-  function dismiss(value) {
+  function dismiss(value: string) {
     localStorage.setItem('cookie-consent', value);
-    if (banner) banner.style.display = 'none';
+    if (banner) {
+      banner.style.display = 'none';
+      banner.setAttribute('aria-modal', 'false');
+    }
   }
 
   acceptBtn?.addEventListener('click', () => dismiss('accepted'));
   declineBtn?.addEventListener('click', () => dismiss('declined'));
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && banner?.style.display === 'block') {
-      dismiss('declined');
+    if (banner?.style.display !== 'block') return;
+    if (e.key === 'Escape') { dismiss('declined'); return; }
+    if (e.key === 'Tab' && acceptBtn && declineBtn) {
+      const focusable = [acceptBtn, declineBtn];
+      if (e.shiftKey && document.activeElement === focusable[0]) {
+        e.preventDefault(); focusable[focusable.length - 1].focus();
+      } else if (!e.shiftKey && document.activeElement === focusable[focusable.length - 1]) {
+        e.preventDefault(); focusable[0].focus();
+      }
     }
   });
 </script>

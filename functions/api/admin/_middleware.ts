@@ -1,4 +1,4 @@
-import { type Env, corsHeaders, getCorsOrigin } from '../_shared';
+import { type Env, corsHeaders } from '../_shared';
 
 export const onRequest: PagesFunction<Env> = async (context) => {
   const url = new URL(context.request.url);

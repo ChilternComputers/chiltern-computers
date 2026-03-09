@@ -1,4 +1,4 @@
-import { type Env, type Barber, corsHeaders, corsOptionsHeaders, jsonResponse, jsonError } from './_shared';
+import { type Env, type Barber, corsOptionsHeaders, jsonResponse, jsonError } from './_shared';
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   try {
@@ -6,7 +6,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       "SELECT id, name, role, status FROM barbers ORDER BY sort_order"
     ).all<Barber>();
 
-    return jsonResponse({ barbers: results }, 200, context.request, { 'Cache-Control': 'no-cache' });
+    return jsonResponse({ success: true, barbers: results }, 200, context.request, { 'Cache-Control': 'no-cache' });
   } catch (err) {
     console.error('Barbers list error:', err);
     return jsonError('Failed to load barbers.', 500, context.request);
