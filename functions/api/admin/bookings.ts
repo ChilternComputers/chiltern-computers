@@ -1,11 +1,4 @@
-interface Env {
-  DB: D1Database;
-}
-
-const CORS = {
-  'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': '*',
-};
+import { type Env, type Booking, corsOptionsHeaders, jsonResponse, jsonError } from '../_shared';
 
 // GET — list bookings with optional filters
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -35,13 +28,18 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     query += ' WHERE ' + conditions.join(' AND ');
   }
 
-  query += ' ORDER BY b.date ASC, b.time ASC';
+  query += ' ORDER BY b.date ASC, b.time ASC LIMIT 500';
 
-  const stmt = context.env.DB.prepare(query);
-  const bound = params.length > 0 ? stmt.bind(...params) : stmt;
-  const { results } = await bound.all();
+  try {
+    const stmt = context.env.DB.prepare(query);
+    const bound = params.length > 0 ? stmt.bind(...params) : stmt;
+    const { results } = await bound.all<Booking>();
 
-  return new Response(JSON.stringify({ bookings: results }), { status: 200, headers: CORS });
+    return jsonResponse({ success: true, bookings: results }, 200, context.request);
+  } catch (err) {
+    console.error('Bookings list error:', err);
+    return jsonError('Failed to load bookings.', 500, context.request);
+  }
 };
 
 // DELETE — cancel a booking by id
@@ -50,31 +48,29 @@ export const onRequestDelete: PagesFunction<Env> = async (context) => {
   const id = url.searchParams.get('id');
 
   if (!id) {
-    return new Response(JSON.stringify({ error: 'Booking ID is required.' }), { status: 400, headers: CORS });
+    return jsonError('Booking ID is required.', 400, context.request);
   }
 
-  const booking = await context.env.DB.prepare(
-    'SELECT id, status FROM bookings WHERE id = ?'
-  ).bind(id).first();
+  try {
+    const booking = await context.env.DB.prepare(
+      'SELECT id, status FROM bookings WHERE id = ?'
+    ).bind(id).first<{ id: number; status: string }>();
 
-  if (!booking) {
-    return new Response(JSON.stringify({ error: 'Booking not found.' }), { status: 404, headers: CORS });
+    if (!booking) {
+      return jsonError('Booking not found.', 404, context.request);
+    }
+
+    await context.env.DB.prepare(
+      "UPDATE bookings SET status = 'cancelled' WHERE id = ?"
+    ).bind(id).run();
+
+    return jsonResponse({ success: true, message: 'Booking cancelled.' }, 200, context.request);
+  } catch (err) {
+    console.error('Cancel booking error:', err);
+    return jsonError('Failed to cancel booking.', 500, context.request);
   }
-
-  await context.env.DB.prepare(
-    "UPDATE bookings SET status = 'cancelled' WHERE id = ?"
-  ).bind(id).run();
-
-  return new Response(JSON.stringify({ success: true, message: 'Booking cancelled.' }), { status: 200, headers: CORS });
 };
 
-export const onRequestOptions: PagesFunction = async () => {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    },
-  });
+export const onRequestOptions: PagesFunction<Env> = async (context) => {
+  return new Response(null, { status: 204, headers: corsOptionsHeaders(context.request, 'GET, DELETE, OPTIONS') });
 };

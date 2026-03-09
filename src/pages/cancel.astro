@@ -2,37 +2,37 @@
 const title = "Cancel Booking — Blades & Fades";
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://chilterncomputers.net/cancel/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-  <div class="cancel-page">
+  <main class="cancel-page" id="main-content" aria-live="polite">
     <div class="cancel-card">
-      <div id="state-loading">
-        <div class="spinner"></div>
+      <div id="state-loading" role="status">
+        <div class="spinner" aria-hidden="true"></div>
         <p class="subtle">Looking up your booking...</p>
       </div>
 
       <div id="state-found" style="display:none;">
-        <div class="logo-block">
+        <div class="logo-block" aria-hidden="true">
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <h1>Cancel Your Booking</h1>
-        <div class="booking-details">
-          <div class="detail-row"><span class="label">Barber</span><span class="value" id="d-barber"></span></div>
-          <div class="detail-row"><span class="label">Service</span><span class="value" id="d-service"></span></div>
-          <div class="detail-row"><span class="label">Date</span><span class="value" id="d-date"></span></div>
-          <div class="detail-row last"><span class="label">Time</span><span class="value cyan" id="d-time"></span></div>
+        <h1 id="page-heading">Cancel Your Booking</h1>
+        <div class="booking-details" role="list" aria-label="Booking details">
+          <div class="detail-row" role="listitem"><span class="label">Barber</span><span class="value" id="d-barber"></span></div>
+          <div class="detail-row" role="listitem"><span class="label">Service</span><span class="value" id="d-service"></span></div>
+          <div class="detail-row" role="listitem"><span class="label">Date</span><span class="value" id="d-date"></span></div>
+          <div class="detail-row last" role="listitem"><span class="label">Time</span><span class="value cyan" id="d-time"></span></div>
         </div>
         <p class="warn">This will cancel your appointment and free the slot for others.</p>
         <button type="button" class="btn-cancel" id="cancel-btn">Cancel This Booking</button>
@@ -40,35 +40,37 @@ const title = "Cancel Booking — Blades & Fades";
       </div>
 
       <div id="state-cancelled" style="display:none;">
-        <div class="logo-block">
+        <div class="logo-block" aria-hidden="true">
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <div class="tick">&#10003;</div>
+        <div class="tick" aria-hidden="true">&#10003;</div>
         <h1>Booking Cancelled</h1>
         <p class="subtle">Your appointment has been cancelled and the time slot is now available for others.</p>
         <a href="/#booking" class="btn-rebook">Book a New Appointment</a>
       </div>
 
       <div id="state-already" style="display:none;">
-        <div class="logo-block">
+        <div class="logo-block" aria-hidden="true">
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
+        <h1>Already Cancelled</h1>
         <p class="subtle" style="font-size:16px;margin-bottom:24px;">This booking has already been cancelled.</p>
         <a href="/#booking" class="btn-rebook">Book a New Appointment</a>
       </div>
 
       <div id="state-error" style="display:none;">
-        <div class="logo-block">
+        <div class="logo-block" aria-hidden="true">
           <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
           <span class="logo-sub">PREMIUM BARBERING</span>
         </div>
-        <p class="error-text" id="error-msg">Booking not found. The link may have expired or be invalid.</p>
+        <h1>Error</h1>
+        <p class="error-text" id="error-msg" role="alert">Booking not found. The link may have expired or be invalid.</p>
         <a href="/" class="back-link">Go to homepage</a>
       </div>
     </div>
-  </div>
+  </main>
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,6 +83,10 @@ const title = "Cancel Booking — Blades & Fades";
     align-items: center;
     justify-content: center;
     -webkit-font-smoothing: antialiased;
+  }
+  *:focus-visible { outline: 3px solid #06b6d4; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
   .cancel-page { padding: 24px; width: 100%; max-width: 480px; }
   .cancel-card {
@@ -118,19 +124,19 @@ const title = "Cancel Booking — Blades & Fades";
     display: block; width: 100%; padding: 14px; background: #dc2626; color: #fff;
     border: none; border-radius: 8px; font-family: 'Inter', sans-serif;
     font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s ease;
-    margin-bottom: 16px;
+    margin-bottom: 16px; min-height: 44px;
   }
   .btn-cancel:hover { background: #b91c1c; }
   .btn-cancel:disabled { opacity: 0.5; cursor: not-allowed; }
   .btn-rebook {
     display: inline-block; padding: 14px 32px; background: #06b6d4; color: #020617;
     border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease; min-height: 44px;
   }
   .btn-rebook:hover { background: #0891b2; }
   .back-link {
     display: block; font-size: 13px; color: rgba(248,250,252,0.4);
-    text-decoration: none; transition: color 0.2s ease;
+    text-decoration: none; transition: color 0.2s ease; padding: 8px;
   }
   .back-link:hover { color: #06b6d4; }
   .tick { font-size: 56px; color: #22c55e; margin-bottom: 16px; }
@@ -151,15 +157,19 @@ const title = "Cancel Booking — Blades & Fades";
   const params = new URLSearchParams(window.location.search);
   const token = params.get('token');
 
-  const stateLoading = document.getElementById('state-loading') as HTMLElement;
-  const stateFound = document.getElementById('state-found') as HTMLElement;
-  const stateCancelled = document.getElementById('state-cancelled') as HTMLElement;
-  const stateAlready = document.getElementById('state-already') as HTMLElement;
-  const stateError = document.getElementById('state-error') as HTMLElement;
+  const allStates = ['state-loading', 'state-found', 'state-cancelled', 'state-already', 'state-error'];
 
   function showState(id: string) {
-    [stateLoading, stateFound, stateCancelled, stateAlready, stateError].forEach(el => el.style.display = 'none');
-    document.getElementById(id)!.style.display = 'block';
+    allStates.forEach(s => {
+      const el = document.getElementById(s);
+      if (el) el.style.display = s === id ? 'block' : 'none';
+    });
+    // Move focus to the newly visible state for screen readers
+    const target = document.getElementById(id);
+    if (target) {
+      const focusEl = target.querySelector('h1, a, button, [role="alert"]') as HTMLElement | null;
+      if (focusEl) focusEl.focus();
+    }
   }
 
   async function init() {
@@ -217,12 +227,14 @@ const title = "Cancel Booking — Blades & Fades";
       } else {
         btn.disabled = false;
         btn.textContent = 'Cancel This Booking';
-        alert(data.error || 'Cancellation failed. Please try again.');
+        (document.getElementById('error-msg') as HTMLElement).textContent = data.error || 'Cancellation failed. Please try again.';
+        showState('state-error');
       }
     } catch {
       btn.disabled = false;
       btn.textContent = 'Cancel This Booking';
-      alert('Network error. Please try again.');
+      (document.getElementById('error-msg') as HTMLElement).textContent = 'Network error. Please try again.';
+      showState('state-error');
     }
   });
 

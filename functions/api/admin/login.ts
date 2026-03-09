@@ -1,57 +1,78 @@
-interface Env {
-  DB: D1Database;
-  ADMIN_PASSWORD: string;
-}
+import { type Env, corsOptionsHeaders, jsonResponse, jsonError, generateToken } from '../_shared';
 
-function generateToken(): string {
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const arr = new Uint8Array(32);
-  crypto.getRandomValues(arr);
-  return Array.from(arr, b => chars[b % chars.length]).join('');
+// Simple in-memory rate limiter (per-isolate, resets on cold start)
+const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+const MAX_ATTEMPTS = 5;
+const WINDOW_MS = 60_000; // 1 minute
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = loginAttempts.get(ip);
+  if (!entry || now > entry.resetAt) {
+    loginAttempts.set(ip, { count: 1, resetAt: now + WINDOW_MS });
+    return false;
+  }
+  entry.count++;
+  return entry.count > MAX_ATTEMPTS;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-  };
+  const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
 
-  let body: any;
+  if (isRateLimited(ip)) {
+    return jsonError('Too many login attempts. Try again in a minute.', 429, context.request);
+  }
+
+  let body: { password?: string };
   try {
     body = await context.request.json();
   } catch {
-    return new Response(JSON.stringify({ error: 'Invalid request.' }), { status: 400, headers });
+    return jsonError('Invalid request.', 400, context.request);
   }
 
   const { password } = body;
 
-  if (!password || password !== context.env.ADMIN_PASSWORD) {
-    return new Response(JSON.stringify({ error: 'Invalid password.' }), { status: 401, headers });
+  if (!password) {
+    return jsonError('Invalid password.', 401, context.request);
   }
 
-  // Generate session token (expires in 24 hours)
-  const token = generateToken();
-  const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+  // Timing-safe comparison
+  const expected = context.env.ADMIN_PASSWORD || '';
+  const encoder = new TextEncoder();
+  const a = encoder.encode(password);
+  const b = encoder.encode(expected);
 
-  await context.env.DB.prepare(
-    'INSERT INTO admin_sessions (token, expires_at) VALUES (?, ?)'
-  ).bind(token, expiresAt).run();
+  let match = a.length === b.length;
+  const len = Math.max(a.length, b.length);
+  for (let i = 0; i < len; i++) {
+    if ((a[i] ?? 0) !== (b[i] ?? 0)) match = false;
+  }
 
-  // Clean up expired sessions
-  await context.env.DB.prepare(
-    "DELETE FROM admin_sessions WHERE expires_at < datetime('now')"
-  ).run();
+  if (!match) {
+    return jsonError('Invalid password.', 401, context.request);
+  }
 
-  return new Response(JSON.stringify({ success: true, token }), { status: 200, headers });
+  try {
+    // Generate session token (expires in 2 hours)
+    const token = generateToken();
+    const expiresAt = new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString();
+
+    await context.env.DB.prepare(
+      'INSERT INTO admin_sessions (token, expires_at) VALUES (?, ?)'
+    ).bind(token, expiresAt).run();
+
+    // Clean up expired sessions
+    await context.env.DB.prepare(
+      "DELETE FROM admin_sessions WHERE expires_at < datetime('now')"
+    ).run();
+
+    return jsonResponse({ success: true, token }, 200, context.request);
+  } catch (err) {
+    console.error('Login error:', err);
+    return jsonError('Login failed.', 500, context.request);
+  }
 };
 
-export const onRequestOptions: PagesFunction = async () => {
-  return new Response(null, {
-    status: 204,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    },
-  });
+export const onRequestOptions: PagesFunction<Env> = async (context) => {
+  return new Response(null, { status: 204, headers: corsOptionsHeaders(context.request, 'POST, OPTIONS') });
 };

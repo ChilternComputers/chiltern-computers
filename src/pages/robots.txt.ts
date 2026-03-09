@@ -6,6 +6,8 @@ export const GET: APIRoute = async () => {
 Allow: /
 Disallow: /offline/
 Disallow: /thank-you/
+Disallow: /admin/
+Disallow: /cancel/
 
 Sitemap: https://chilterncomputers.net/sitemap.xml`;
 

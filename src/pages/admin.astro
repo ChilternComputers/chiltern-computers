@@ -2,32 +2,35 @@
 const title = "Admin — Blades & Fades";
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://chilterncomputers.net/admin/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Login Screen -->
-  <div id="login-screen" class="screen">
+  <div id="login-screen" class="screen" role="region" aria-label="Login">
     <div class="login-card">
-      <div class="logo-block">
+      <div class="logo-block" aria-hidden="true">
         <span class="logo-text">BLADES <span class="amp">&</span> FADES</span>
         <span class="logo-sub">ADMIN DASHBOARD</span>
       </div>
+      <h1 class="sr-only">Blades & Fades Admin Dashboard</h1>
       <div class="form-group">
         <label class="field-label" for="admin-pw">Password</label>
         <input type="password" id="admin-pw" class="input" autocomplete="current-password" />
       </div>
       <button type="button" id="login-btn" class="btn-primary">Log In</button>
-      <p id="login-error" class="error-text" style="display:none;"></p>
+      <p id="login-error" class="error-text" role="alert" style="display:none;"></p>
     </div>
   </div>
 
@@ -36,44 +39,45 @@ const title = "Admin — Blades & Fades";
     <header class="admin-header">
       <div class="header-inner">
         <div class="logo-block-sm">
-          <span class="logo-text-sm">BLADES <span class="amp">&</span> FADES</span>
-          <span class="logo-sub-sm">ADMIN</span>
+          <span class="logo-text-sm" aria-hidden="true">BLADES <span class="amp">&</span> FADES</span>
+          <span class="logo-sub-sm" aria-hidden="true">ADMIN</span>
         </div>
         <div class="header-actions">
-          <button type="button" id="refresh-btn" class="btn-refresh" title="Refresh">&#8635;</button>
+          <button type="button" id="refresh-btn" class="btn-refresh" aria-label="Refresh data">&#8635;</button>
           <a href="/" class="btn-back">Back to Site</a>
           <button type="button" id="logout-btn" class="btn-logout">Log Out</button>
         </div>
       </div>
     </header>
 
-    <div class="admin-container">
+    <main id="main-content" class="admin-container">
+      <h2 class="sr-only">Dashboard</h2>
       <!-- Tabs -->
-      <div class="tabs">
-        <button type="button" class="tab active" data-tab="bookings">Bookings</button>
-        <button type="button" class="tab" data-tab="barbers">Barbers</button>
+      <div class="tabs" role="tablist" aria-label="Dashboard sections">
+        <button type="button" class="tab active" role="tab" aria-selected="true" aria-controls="tab-bookings" id="tab-btn-bookings" data-tab="bookings">Bookings</button>
+        <button type="button" class="tab" role="tab" aria-selected="false" aria-controls="tab-barbers" id="tab-btn-barbers" data-tab="barbers">Barbers</button>
       </div>
 
       <!-- Bookings Tab -->
-      <div class="tab-content" id="tab-bookings">
+      <div class="tab-content" id="tab-bookings" role="tabpanel" aria-labelledby="tab-btn-bookings">
         <div class="filters">
           <div class="filter-group">
-            <label class="filter-label">Date</label>
-            <div class="date-btns">
+            <label class="filter-label" id="label-date">Date</label>
+            <div class="date-btns" role="group" aria-labelledby="label-date">
               <button type="button" class="date-btn active" data-offset="0">Today</button>
               <button type="button" class="date-btn" data-offset="1">Tomorrow</button>
               <button type="button" class="date-btn" data-offset="">All</button>
             </div>
-            <input type="date" id="filter-date" class="input input-sm" style="display:none;" />
+            <input type="date" id="filter-date" class="input input-sm" aria-label="Filter date" style="display:none;" />
           </div>
           <div class="filter-group">
-            <label class="filter-label">Barber</label>
+            <label class="filter-label" for="filter-barber">Barber</label>
             <select id="filter-barber" class="input input-sm">
               <option value="">All</option>
             </select>
           </div>
           <div class="filter-group">
-            <label class="filter-label">Status</label>
+            <label class="filter-label" for="filter-status">Status</label>
             <select id="filter-status" class="input input-sm">
               <option value="confirmed">Confirmed</option>
               <option value="cancelled">Cancelled</option>
@@ -83,27 +87,29 @@ const title = "Admin — Blades & Fades";
           <button type="button" id="filter-apply" class="btn-sm">Apply</button>
         </div>
 
-        <div id="bookings-loading" class="loading">Loading bookings...</div>
-        <div id="bookings-list"></div>
+        <div id="bookings-loading" class="loading" role="status">Loading bookings...</div>
+        <div id="bookings-list" aria-live="polite"></div>
         <p id="bookings-empty" class="empty-text" style="display:none;">No bookings found.</p>
       </div>
 
       <!-- Barbers Tab -->
-      <div class="tab-content" id="tab-barbers" style="display:none;">
+      <div class="tab-content" id="tab-barbers" role="tabpanel" aria-labelledby="tab-btn-barbers" style="display:none;">
         <div class="add-barber-form">
           <h3 class="section-title">Add New Barber</h3>
           <div class="form-row">
+            <label for="new-barber-name" class="sr-only">Name</label>
             <input type="text" id="new-barber-name" class="input input-sm" placeholder="Name" />
+            <label for="new-barber-role" class="sr-only">Role</label>
             <input type="text" id="new-barber-role" class="input input-sm" placeholder="Role (e.g. Barber)" />
             <button type="button" id="add-barber-btn" class="btn-sm btn-primary-sm">Add</button>
           </div>
-          <p id="barber-add-error" class="error-text-sm" style="display:none;"></p>
+          <p id="barber-add-error" class="error-text-sm" role="alert" style="display:none;"></p>
         </div>
 
-        <div id="barbers-loading" class="loading">Loading barbers...</div>
-        <div id="barbers-list"></div>
+        <div id="barbers-loading" class="loading" role="status">Loading barbers...</div>
+        <div id="barbers-list" aria-live="polite"></div>
       </div>
-    </div>
+    </main>
   </div>
 
 <style is:global>
@@ -114,6 +120,22 @@ const title = "Admin — Blades & Fades";
     color: #f8fafc;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
+  }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .skip-link {
+    position: absolute; top: -100px; left: 16px; z-index: 9999;
+    padding: 12px 24px; background: #06b6d4; color: #020617;
+    font-weight: 700; border-radius: 0 0 8px 8px; text-decoration: none;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0; }
+  *:focus-visible { outline: 3px solid #06b6d4; outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
 
   .screen { width: 100%; }
@@ -154,6 +176,7 @@ const title = "Admin — Blades & Fades";
     width: 100%; padding: 14px; background: #06b6d4; color: #020617;
     border: none; border-radius: 8px; font-family: 'Inter', sans-serif;
     font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s;
+    min-height: 44px;
   }
   .btn-primary:hover { background: #0891b2; }
   .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -180,7 +203,7 @@ const title = "Admin — Blades & Fades";
   }
   .header-actions { display: flex; gap: 8px; align-items: center; }
   .btn-refresh {
-    width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
     background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.2);
     border-radius: 6px; color: #06b6d4; font-size: 18px; cursor: pointer;
     transition: all 0.2s; line-height: 1;
@@ -193,6 +216,7 @@ const title = "Admin — Blades & Fades";
     border: 1px solid rgba(6,182,212,0.2); border-radius: 6px;
     color: rgba(6,182,212,0.6); font-size: 12px; font-weight: 600;
     cursor: pointer; transition: all 0.2s; text-decoration: none;
+    min-height: 44px; display: flex; align-items: center;
   }
   .btn-back:hover { border-color: #06b6d4; color: #06b6d4; }
   .btn-logout {
@@ -200,6 +224,7 @@ const title = "Admin — Blades & Fades";
     border: 1px solid rgba(248,250,252,0.2); border-radius: 6px;
     color: rgba(248,250,252,0.6); font-size: 12px; font-weight: 600;
     cursor: pointer; transition: all 0.2s;
+    min-height: 44px; display: flex; align-items: center;
   }
   .btn-logout:hover { border-color: #ef4444; color: #ef4444; }
 
@@ -214,10 +239,10 @@ const title = "Admin — Blades & Fades";
     flex: 1; padding: 10px 20px; background: transparent;
     border: none; border-radius: 8px; color: rgba(248,250,252,0.5);
     font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
-    cursor: pointer; transition: all 0.2s;
+    cursor: pointer; transition: all 0.2s; min-height: 44px;
   }
   .tab:hover { color: #f8fafc; }
-  .tab.active { background: rgba(6,182,212,0.12); color: #06b6d4; }
+  .tab.active, .tab[aria-selected="true"] { background: rgba(6,182,212,0.12); color: #06b6d4; }
 
   .filters {
     display: flex; gap: 12px; align-items: flex-end;
@@ -230,6 +255,7 @@ const title = "Admin — Blades & Fades";
     border: 1px solid rgba(6,182,212,0.15); border-radius: 6px;
     color: rgba(248,250,252,0.5); font-size: 12px; font-weight: 600;
     cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
+    min-height: 44px;
   }
   .date-btn:hover { border-color: rgba(6,182,212,0.4); color: #f8fafc; }
   .date-btn.active { background: rgba(6,182,212,0.15); border-color: #06b6d4; color: #06b6d4; }
@@ -238,13 +264,14 @@ const title = "Admin — Blades & Fades";
     padding: 8px 16px; background: rgba(6,182,212,0.15);
     border: 1px solid rgba(6,182,212,0.3); border-radius: 6px;
     color: #06b6d4; font-size: 12px; font-weight: 600; cursor: pointer;
-    transition: all 0.2s; font-family: 'Inter', sans-serif;
+    transition: all 0.2s; font-family: 'Inter', sans-serif; min-height: 44px;
   }
   .btn-sm:hover { background: rgba(6,182,212,0.25); }
   .btn-primary-sm {
     padding: 8px 16px; background: #06b6d4; border: none;
     border-radius: 6px; color: #020617; font-size: 12px; font-weight: 700;
     cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif;
+    min-height: 44px;
   }
   .btn-primary-sm:hover { background: #0891b2; }
 
@@ -252,7 +279,7 @@ const title = "Admin — Blades & Fades";
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2306b6d4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 12px center;
-    padding-right: 32px;
+    padding-right: 32px; min-height: 44px;
   }
 
   .loading { color: rgba(248,250,252,0.4); font-size: 13px; padding: 24px 0; text-align: center; }
@@ -303,7 +330,7 @@ const title = "Admin — Blades & Fades";
     border: 1px solid rgba(239,68,68,0.3); border-radius: 6px;
     color: #ef4444; font-size: 11px; font-weight: 600;
     cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
-    text-align: center;
+    text-align: center; min-height: 44px;
   }
   .btn-cancel-sm:hover { background: rgba(239,68,68,0.1); border-color: #ef4444; }
   .status-cancelled { opacity: 0.35; }
@@ -336,6 +363,7 @@ const title = "Admin — Blades & Fades";
     padding: 7px 12px; background: #020617;
     border: 1px solid rgba(6,182,212,0.15); border-radius: 6px;
     color: #f8fafc; font-size: 12px; font-family: 'Inter', sans-serif;
+    min-height: 44px;
   }
   .status-select:focus { outline: none; border-color: #06b6d4; }
   .btn-delete-sm {
@@ -343,6 +371,7 @@ const title = "Admin — Blades & Fades";
     border: 1px solid rgba(239,68,68,0.2); border-radius: 6px;
     color: rgba(239,68,68,0.5); font-size: 11px; font-weight: 600;
     cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
+    min-height: 44px;
   }
   .btn-delete-sm:hover { background: rgba(239,68,68,0.1); border-color: #ef4444; color: #ef4444; }
 
@@ -352,7 +381,7 @@ const title = "Admin — Blades & Fades";
   }
   .section-title { font-family: 'Orbitron', sans-serif; font-size: 16px; color: #f8fafc; margin-bottom: 14px; }
   .form-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-  .form-row .input-sm { flex: 1; min-width: 120px; }
+  .form-row .input-sm { flex: 1; min-width: 120px; min-height: 44px; }
 
   @media (max-width: 700px) {
     .booking-row { grid-template-columns: 1fr 1fr; gap: 8px 16px; }
@@ -368,6 +397,13 @@ const title = "Admin — Blades & Fades";
 </style>
 
 <script>
+  // Helper: escape HTML to prevent XSS when building DOM strings
+  function esc(str: string): string {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+
   let token = sessionStorage.getItem('admin_token') || '';
 
   const loginScreen = document.getElementById('login-screen') as HTMLElement;
@@ -429,32 +465,46 @@ const title = "Admin — Blades & Fades";
     if (e.key === 'Enter') document.getElementById('login-btn')?.click();
   });
 
-  // Logout
-  document.getElementById('logout-btn')?.addEventListener('click', () => {
+  // Logout — also invalidate session server-side
+  document.getElementById('logout-btn')?.addEventListener('click', async () => {
+    if (token) {
+      try { await api('/api/admin/logout', { method: 'POST' }); } catch {}
+    }
     token = '';
     sessionStorage.removeItem('admin_token');
     loginScreen.style.display = 'flex';
     dashScreen.style.display = 'none';
-    (document.getElementById('admin-pw') as HTMLInputElement).value = '';
+    const pwInput = document.getElementById('admin-pw') as HTMLInputElement;
+    pwInput.value = '';
+    pwInput.focus(); // Move focus back to login
     const btn = document.getElementById('login-btn') as HTMLButtonElement;
     btn.disabled = false;
     btn.textContent = 'Log In';
   });
 
-  // Tabs
-  document.querySelectorAll('.tab').forEach(tab => {
+  // Tabs with ARIA
+  document.querySelectorAll('[role="tab"]').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('[role="tab"]').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
       const target = (tab as HTMLElement).dataset.tab;
-      document.querySelectorAll('.tab-content').forEach(c => (c as HTMLElement).style.display = 'none');
-      (document.getElementById(`tab-${target}`) as HTMLElement).style.display = 'block';
+      document.querySelectorAll('[role="tabpanel"]').forEach(c => (c as HTMLElement).style.display = 'none');
+      const panel = document.getElementById(`tab-${target}`) as HTMLElement;
+      panel.style.display = 'block';
+      panel.focus();
     });
   });
 
   async function showDashboard() {
     loginScreen.style.display = 'none';
     dashScreen.style.display = 'block';
+    // Move focus to the main content area
+    const main = document.getElementById('main-content');
+    if (main) main.focus();
     await Promise.all([loadBookings(), loadAdminBarbers()]);
   }
 
@@ -496,10 +546,19 @@ const title = "Admin — Blades & Fades";
       if (barberColorMap.size > 1) {
         const legend = document.createElement('div');
         legend.className = 'barber-legend';
+        legend.setAttribute('aria-label', 'Barber colour legend');
         barberColorMap.forEach((color, barberId) => {
           const booking = data.bookings.find((b: any) => b.barber === barberId);
           const name = booking?.barber_name || barberId;
-          legend.innerHTML += `<span class="barber-legend-item"><span class="barber-legend-dot" style="background:${color};"></span>${name}</span>`;
+          const item = document.createElement('span');
+          item.className = 'barber-legend-item';
+          const dot = document.createElement('span');
+          dot.className = 'barber-legend-dot';
+          dot.style.background = color;
+          dot.setAttribute('aria-hidden', 'true');
+          item.appendChild(dot);
+          item.appendChild(document.createTextNode(name));
+          legend.appendChild(item);
         });
         list.appendChild(legend);
       }
@@ -519,7 +578,18 @@ const title = "Admin — Blades & Fades";
         const dayName = dateObj.toLocaleDateString('en-GB', { weekday: 'long' });
         const dateStr = dateObj.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
         const totalBookings = Array.from(timeMap.values()).reduce((s, a) => s + a.length, 0);
-        group.innerHTML = `<div class="date-group-header"><span class="date-group-day">${dayName} ${dateStr}</span><span class="date-group-count">${totalBookings} booking${totalBookings !== 1 ? 's' : ''}</span></div>`;
+
+        const header = document.createElement('div');
+        header.className = 'date-group-header';
+        const daySpan = document.createElement('span');
+        daySpan.className = 'date-group-day';
+        daySpan.textContent = `${dayName} ${dateStr}`;
+        const countSpan = document.createElement('span');
+        countSpan.className = 'date-group-count';
+        countSpan.textContent = `${totalBookings} booking${totalBookings !== 1 ? 's' : ''}`;
+        header.appendChild(daySpan);
+        header.appendChild(countSpan);
+        group.appendChild(header);
 
         timeMap.forEach((bookings, time) => {
           const slotDiv = document.createElement('div');
@@ -528,20 +598,72 @@ const title = "Admin — Blades & Fades";
           const ampm = hh >= 12 ? 'PM' : 'AM';
           const h12 = hh === 0 ? 12 : hh > 12 ? hh - 12 : hh;
           const timeDisplay = `${h12}:${String(mm).padStart(2, '0')} ${ampm}`;
-          slotDiv.innerHTML = `<div class="time-slot-label">${timeDisplay}<span class="time-slot-count">${bookings.length > 1 ? ` — ${bookings.length} bookings` : ''}</span></div>`;
+
+          const labelDiv = document.createElement('div');
+          labelDiv.className = 'time-slot-label';
+          labelDiv.textContent = timeDisplay;
+          if (bookings.length > 1) {
+            const countS = document.createElement('span');
+            countS.className = 'time-slot-count';
+            countS.textContent = ` — ${bookings.length} bookings`;
+            labelDiv.appendChild(countS);
+          }
+          slotDiv.appendChild(labelDiv);
 
           bookings.forEach((b: any) => {
             const color = barberColorMap.get(b.barber) || '#06b6d4';
             const row = document.createElement('div');
             row.className = `booking-row${b.status === 'cancelled' ? ' status-cancelled' : ''}`;
             row.style.borderLeftColor = color;
-            row.innerHTML = `
-              <span class="booking-ref">${b.ref || ''}</span>
-              <span class="booking-barber" style="color:${color};"><span class="booking-barber-dot" style="background:${color};"></span>${b.barber_name || b.barber}</span>
-              <span class="booking-client">${b.name}<div class="booking-client-phone">${b.phone}</div></span>
-              <span class="booking-service">${b.service} <span class="status-badge ${b.status}">${b.status}</span></span>
-              ${b.status === 'confirmed' ? `<button type="button" class="btn-cancel-sm" data-id="${b.id}">Cancel</button>` : '<span></span>'}
-            `;
+
+            // Build with textContent to prevent XSS
+            const refSpan = document.createElement('span');
+            refSpan.className = 'booking-ref';
+            refSpan.textContent = b.ref || '';
+
+            const barberSpan = document.createElement('span');
+            barberSpan.className = 'booking-barber';
+            barberSpan.style.color = color;
+            const dot = document.createElement('span');
+            dot.className = 'booking-barber-dot';
+            dot.style.background = color;
+            dot.setAttribute('aria-hidden', 'true');
+            barberSpan.appendChild(dot);
+            barberSpan.appendChild(document.createTextNode(b.barber_name || b.barber));
+
+            const clientSpan = document.createElement('span');
+            clientSpan.className = 'booking-client';
+            clientSpan.textContent = b.name;
+            const phoneDiv = document.createElement('div');
+            phoneDiv.className = 'booking-client-phone';
+            phoneDiv.textContent = b.phone;
+            clientSpan.appendChild(phoneDiv);
+
+            const serviceSpan = document.createElement('span');
+            serviceSpan.className = 'booking-service';
+            serviceSpan.textContent = b.service + ' ';
+            const badge = document.createElement('span');
+            badge.className = `status-badge ${b.status}`;
+            badge.textContent = b.status;
+            serviceSpan.appendChild(badge);
+
+            row.appendChild(refSpan);
+            row.appendChild(barberSpan);
+            row.appendChild(clientSpan);
+            row.appendChild(serviceSpan);
+
+            if (b.status === 'confirmed') {
+              const cancelBtn = document.createElement('button');
+              cancelBtn.type = 'button';
+              cancelBtn.className = 'btn-cancel-sm';
+              cancelBtn.textContent = 'Cancel';
+              cancelBtn.setAttribute('aria-label', `Cancel booking ${b.ref || ''} for ${b.name}`);
+              cancelBtn.dataset.id = String(b.id);
+              row.appendChild(cancelBtn);
+            } else {
+              row.appendChild(document.createElement('span'));
+            }
+
             slotDiv.appendChild(row);
           });
           group.appendChild(slotDiv);
@@ -553,9 +675,20 @@ const title = "Admin — Blades & Fades";
         btn.addEventListener('click', async () => {
           const id = (btn as HTMLElement).dataset.id;
           if (!confirm('Cancel this booking?')) return;
-          const res = await api(`/api/admin/bookings?id=${id}`, { method: 'DELETE' });
-          if (res.ok) loadBookings();
-          else alert('Failed to cancel booking.');
+          try {
+            const res = await api(`/api/admin/bookings?id=${id}`, { method: 'DELETE' });
+            if (res.ok) loadBookings();
+            else {
+              const data = await res.json();
+              const errEl = document.getElementById('bookings-empty') as HTMLElement;
+              errEl.textContent = data.error || 'Failed to cancel booking.';
+              errEl.style.display = 'block';
+            }
+          } catch {
+            const errEl = document.getElementById('bookings-empty') as HTMLElement;
+            errEl.textContent = 'Network error cancelling booking.';
+            errEl.style.display = 'block';
+          }
         });
       });
     } catch {
@@ -620,21 +753,52 @@ const title = "Admin — Blades & Fades";
 
         const row = document.createElement('div');
         row.className = 'barber-row';
-        row.innerHTML = `
-          <div class="barber-row-avatar">${b.name.charAt(0)}</div>
-          <div class="barber-row-info">
-            <div class="barber-row-name">${b.name}</div>
-            <div class="barber-row-role">${b.role}</div>
-          </div>
-          <div class="barber-row-actions">
-            <select class="status-select" data-id="${b.id}">
-              <option value="active"${b.status === 'active' ? ' selected' : ''}>Active</option>
-              <option value="away"${b.status === 'away' ? ' selected' : ''}>Away</option>
-              <option value="holiday"${b.status === 'holiday' ? ' selected' : ''}>Holiday</option>
-            </select>
-            <button type="button" class="btn-delete-sm" data-id="${b.id}" data-name="${b.name}">Delete</button>
-          </div>
-        `;
+
+        const avatar = document.createElement('div');
+        avatar.className = 'barber-row-avatar';
+        avatar.textContent = b.name.charAt(0);
+        avatar.setAttribute('aria-hidden', 'true');
+
+        const info = document.createElement('div');
+        info.className = 'barber-row-info';
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'barber-row-name';
+        nameDiv.textContent = b.name;
+        const roleDiv = document.createElement('div');
+        roleDiv.className = 'barber-row-role';
+        roleDiv.textContent = b.role;
+        info.appendChild(nameDiv);
+        info.appendChild(roleDiv);
+
+        const actions = document.createElement('div');
+        actions.className = 'barber-row-actions';
+
+        const select = document.createElement('select');
+        select.className = 'status-select';
+        select.dataset.id = b.id;
+        select.setAttribute('aria-label', `Status for ${b.name}`);
+        ['active', 'away', 'holiday'].forEach(s => {
+          const opt = document.createElement('option');
+          opt.value = s;
+          opt.textContent = s.charAt(0).toUpperCase() + s.slice(1);
+          if (b.status === s) opt.selected = true;
+          select.appendChild(opt);
+        });
+
+        const delBtn = document.createElement('button');
+        delBtn.type = 'button';
+        delBtn.className = 'btn-delete-sm';
+        delBtn.textContent = 'Delete';
+        delBtn.setAttribute('aria-label', `Delete barber ${b.name}`);
+        delBtn.dataset.id = b.id;
+        delBtn.dataset.name = b.name;
+
+        actions.appendChild(select);
+        actions.appendChild(delBtn);
+
+        row.appendChild(avatar);
+        row.appendChild(info);
+        row.appendChild(actions);
         list.appendChild(row);
       });
 
@@ -642,8 +806,16 @@ const title = "Admin — Blades & Fades";
         sel.addEventListener('change', async () => {
           const id = (sel as HTMLElement).dataset.id;
           const status = (sel as HTMLSelectElement).value;
-          const res = await api('/api/admin/barbers', { method: 'PUT', body: JSON.stringify({ id, status }) });
-          if (!res.ok) { alert('Failed to update status.'); loadAdminBarbers(); }
+          try {
+            const res = await api('/api/admin/barbers', { method: 'PUT', body: JSON.stringify({ id, status }) });
+            if (!res.ok) {
+              const data = await res.json();
+              list.insertAdjacentHTML('afterbegin', `<p class="error-text-sm" role="alert">${esc(data.error || 'Failed to update status.')}</p>`);
+              loadAdminBarbers();
+            }
+          } catch {
+            loadAdminBarbers();
+          }
         });
       });
 
@@ -652,10 +824,16 @@ const title = "Admin — Blades & Fades";
           const id = (btn as HTMLElement).dataset.id;
           const name = (btn as HTMLElement).dataset.name;
           if (!confirm(`Delete barber ${name}? This cannot be undone.`)) return;
-          const res = await api(`/api/admin/barbers?id=${id}`, { method: 'DELETE' });
-          const data = await res.json();
-          if (res.ok) loadAdminBarbers();
-          else alert(data.error || 'Failed to delete.');
+          try {
+            const res = await api(`/api/admin/barbers?id=${id}`, { method: 'DELETE' });
+            const data = await res.json();
+            if (res.ok) loadAdminBarbers();
+            else {
+              list.insertAdjacentHTML('afterbegin', `<p class="error-text-sm" role="alert">${esc(data.error || 'Failed to delete.')}</p>`);
+            }
+          } catch {
+            list.insertAdjacentHTML('afterbegin', '<p class="error-text-sm" role="alert">Network error.</p>');
+          }
         });
       });
     } catch {
