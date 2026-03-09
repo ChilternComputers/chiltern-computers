@@ -3,7 +3,7 @@ import { type Env, type Barber, corsOptionsHeaders, jsonResponse, jsonError } fr
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   try {
     const { results } = await context.env.DB.prepare(
-      "SELECT id, name, role, status FROM barbers ORDER BY sort_order"
+      "SELECT id, name, role, status FROM barbers WHERE status = 'active' ORDER BY sort_order"
     ).all<Barber>();
 
     return jsonResponse({ success: true, barbers: results }, 200, context.request, { 'Cache-Control': 'no-cache' });

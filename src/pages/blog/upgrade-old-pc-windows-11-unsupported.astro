@@ -958,34 +958,4 @@ const faqs = [
     })}
   />
 
-  <!-- Article Schema -->
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'How to Upgrade Old PCs to Windows 11 (Even Unsupported Ones) - Romford Guide',
-      description:
-        "Got an older PC that Microsoft says can't run Windows 11? Learn how to safely upgrade unsupported computers to Windows 11, what the real requirements are, and when it makes sense to upgrade.",
-      image: 'https://chilterncomputers.net/repair-pic.webp',
-      author: {
-        '@type': 'Person',
-        name: 'David Hagon',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Chiltern Computers',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://chilterncomputers.net/logo_homepage.webp',
-        },
-      },
-      datePublished: publishDate,
-      dateModified: modifiedDate,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://chilterncomputers.net/blog/upgrade-old-pc-windows-11-unsupported/',
-      },
-    })}
-  />
 </Layout>

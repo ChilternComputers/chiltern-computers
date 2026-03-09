@@ -425,13 +425,14 @@ function formatDate(dateString: string) {
           <!-- Category Filters -->
           <div class="category-filters" style="margin-top: 40px;">
             {
-              categories.map((cat, index) => (
-                <span
-                  class={`category-btn tech-font ${index === 0 ? 'active' : ''}`}
+              categories.map((cat) => (
+                <button
+                  type="button"
+                  class={`category-btn tech-font ${cat.id === 'all' ? 'active' : ''}`}
                   data-category={cat.id}
                 >
                   {cat.name}
-                </span>
+                </button>
               ))
             }
           </div>

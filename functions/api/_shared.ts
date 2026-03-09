@@ -148,8 +148,8 @@ export function isValidSlotTime(time: string, dayOfWeek: number): boolean {
   return generateSlots(dayOfWeek).includes(time);
 }
 
-/** Check if a date string is today or in the future (UTC) */
+/** Check if a date string is today or in the future (UK timezone) */
 export function isDateTodayOrFuture(dateStr: string): boolean {
-  const today = new Date().toISOString().split('T')[0];
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London' }).format(new Date());
   return dateStr >= today;
 }

@@ -42,13 +42,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const a = encoder.encode(password);
   const b = encoder.encode(expected);
 
-  let match = a.length === b.length;
-  const len = Math.max(a.length, b.length);
-  for (let i = 0; i < len; i++) {
-    if ((a[i] ?? 0) !== (b[i] ?? 0)) match = false;
+  if (a.byteLength !== b.byteLength) {
+    // Compare expected against itself to avoid timing leak on length
+    crypto.subtle.timingSafeEqual(b, b);
+    return jsonError('Invalid password.', 401, context.request);
   }
 
-  if (!match) {
+  if (!crypto.subtle.timingSafeEqual(a, b)) {
     return jsonError('Invalid password.', 401, context.request);
   }
 

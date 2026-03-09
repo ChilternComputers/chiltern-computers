@@ -1172,34 +1172,4 @@ const faqs = [
     })}
   />
 
-  <!-- Article Schema -->
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'Gaming PC Build Tips for Essex Gamers - Complete Guide 2026',
-      description:
-        'Planning to build a gaming PC in Essex? Expert advice on components, budgets, common mistakes to avoid, and where to find local support for your custom gaming rig in Romford & Havering.',
-      image: 'https://chilterncomputers.net/repair-pic.webp',
-      author: {
-        '@type': 'Person',
-        name: 'David Hagon',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Chiltern Computers',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://chilterncomputers.net/logo_homepage.webp',
-        },
-      },
-      datePublished: publishDate,
-      dateModified: modifiedDate,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://chilterncomputers.net/blog/gaming-pc-build-tips-essex/',
-      },
-    })}
-  />
 </Layout>

@@ -924,34 +924,4 @@ const faqs = [
     })}
   />
 
-  <!-- Article Schema -->
-  <script
-    type="application/ld+json"
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: 'Is My Computer Worth Repairing? Romford Expert Advice 2026',
-      description:
-        'Wondering whether to repair or replace your computer in Romford? Local experts share honest advice on when repair makes sense, typical costs, and what to consider before deciding.',
-      image: 'https://chilterncomputers.net/repair-pic.webp',
-      author: {
-        '@type': 'Person',
-        name: 'David Hagon',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Chiltern Computers',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://chilterncomputers.net/logo_homepage.webp',
-        },
-      },
-      datePublished: publishDate,
-      dateModified: modifiedDate,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://chilterncomputers.net/blog/is-my-computer-worth-repairing-romford/',
-      },
-    })}
-  />
 </Layout>

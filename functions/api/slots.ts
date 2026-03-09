@@ -69,19 +69,28 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
           days.push({ date: dateStr, day: `${dayName} ${dayNum}`, status, available: anyAvailable, total });
         } else {
-          const row = await context.env.DB.prepare(
-            "SELECT COUNT(*) as count FROM bookings WHERE barber = ? AND date = ? AND status = 'confirmed'"
-          ).bind(barber, dateStr).first<{ count: number }>();
+          // Placeholder for specific barber — filled by batch query below
+          days.push({ date: dateStr, day: `${dayName} ${dayNum}`, status: 'green', available: total, total });
+        }
+      }
 
-          const booked = row?.count ?? 0;
-          const available = total - booked;
-          const ratio = available / total;
+      // Batch query for specific barber: single query for all 14 days
+      if (barber !== 'any') {
+        const dates = days.map(d => d.date);
+        const startDate = dates[0];
+        const endDate = dates[dates.length - 1];
+        const { results } = await context.env.DB.prepare(
+          "SELECT date, COUNT(*) as count FROM bookings WHERE barber = ? AND date >= ? AND date <= ? AND status = 'confirmed' GROUP BY date"
+        ).bind(barber, startDate, endDate).all<{ date: string; count: number }>();
 
-          let status = 'green';
-          if (ratio <= 0) status = 'red';
-          else if (ratio <= 0.3) status = 'amber';
-
-          days.push({ date: dateStr, day: `${dayName} ${dayNum}`, status, available, total });
+        const bookedByDate = new Map(results.map(r => [r.date, r.count]));
+        for (const day of days) {
+          if (day.status === 'closed') continue;
+          const booked = bookedByDate.get(day.date) ?? 0;
+          const available = day.total - booked;
+          const ratio = available / day.total;
+          day.available = available;
+          day.status = ratio <= 0 ? 'red' : ratio <= 0.3 ? 'amber' : 'green';
         }
       }
 

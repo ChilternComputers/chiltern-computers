@@ -161,7 +161,7 @@ export const onRequestDelete: PagesFunction<Env> = async (context) => {
       return jsonError(`Cannot delete — ${futureBookings!.count} future booking(s) exist. Cancel them first or mark barber as away.`, 409, context.request);
     }
 
-    await context.env.DB.prepare('DELETE FROM barbers WHERE id = ?').bind(id).run();
+    await context.env.DB.prepare("UPDATE barbers SET status = 'deleted' WHERE id = ?").bind(id).run();
 
     return jsonResponse({ success: true, message: 'Barber removed.' }, 200, context.request);
   } catch (err) {
