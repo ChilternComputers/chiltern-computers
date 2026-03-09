@@ -224,11 +224,6 @@ const websiteSchema = {
     '@type': 'Organization',
     name: 'Chiltern Computers',
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${baseUrl}/blog/?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 // Additional FAQ Schema for high-traffic question keywords
@@ -519,7 +514,7 @@ const articleSchema = type === 'article' ? {
 <meta name="DC.title" content={fullTitle} />
 
 <!-- Performance optimizations -->
-<link rel="dns-prefetch" href="//maps.googleapis.com" />
+<link rel="preconnect" href="https://maps.googleapis.com" crossorigin />
 
 <!-- Preload critical fonts to reduce render-blocking -->
 <link rel="preload" href="/fonts/Orbitron-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
@@ -577,16 +572,28 @@ const articleSchema = type === 'article' ? {
 }
 
 <!-- Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+{
+  Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  )
+}
+{
+  Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  )
+}
+{
+  Astro.url.pathname === '/' && (
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  )
+}
 {
   Astro.url.pathname === '/' && (
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   )
 }
 {
-  serviceSchemas.map((service) => (
+  Astro.url.pathname === '/' && serviceSchemas.map((service) => (
     <script type="application/ld+json" set:html={JSON.stringify(service)} />
   ))
 }

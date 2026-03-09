@@ -6,7 +6,6 @@
   id="cookie-consent"
   role="dialog"
   aria-label="Cookie consent"
-  aria-modal="false"
   style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; padding: 16px; background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98)); border-top: 2px solid rgba(6,182,212,0.4); backdrop-filter: blur(12px);"
 >
   <div style="max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
@@ -17,13 +16,15 @@
     <div style="display: flex; gap: 10px; flex-shrink: 0;">
       <button
         id="cookie-accept"
-        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;"
+        aria-label="Accept cookies"
+        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
       >
         Accept
       </button>
       <button
         id="cookie-decline"
-        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;"
+        aria-label="Decline cookies"
+        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
       >
         Decline
       </button>
@@ -46,7 +47,7 @@
     localStorage.setItem('cookie-consent', value);
     if (banner) {
       banner.style.display = 'none';
-      banner.setAttribute('aria-modal', 'false');
+      banner.removeAttribute('aria-modal');
     }
   }
 

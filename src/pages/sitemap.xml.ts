@@ -3,40 +3,20 @@ import type { APIRoute } from 'astro';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
-  const lastUpdated = '2026-03-08';
+  const lastUpdated = '2026-03-09';
 
-  // Only include pages that actually exist
+  // All pages verified against src/pages/ — 79 pages total
   const routes = [
     // Homepage
-    {
-      url: '/',
-      priority: 1.0,
-      changefreq: 'weekly',
-      lastmod: lastUpdated,
-    },
+    { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
 
-    // Service pages
+    // Service pages (14)
     { url: '/services/repairs/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/custom-pcs/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/new-used/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
-    {
-      url: '/services/data-recovery-havering/',
-      priority: 0.9,
-      changefreq: 'monthly',
-      lastmod: lastUpdated,
-    },
-    {
-      url: '/services/laptop-repair-dagenham/',
-      priority: 0.9,
-      changefreq: 'monthly',
-      lastmod: lastUpdated,
-    },
-    {
-      url: '/services/virus-removal-romford/',
-      priority: 0.9,
-      changefreq: 'monthly',
-      lastmod: lastUpdated,
-    },
+    { url: '/services/data-recovery-havering/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/services/laptop-repair-dagenham/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/services/virus-removal-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/laptop-repair-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/pc-repair-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/computer-upgrades-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
@@ -46,15 +26,15 @@ export const GET: APIRoute = async () => {
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Core pages
+    // Core pages (6)
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/about/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/free-play/', priority: 0.4, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
     { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
     { url: '/accessibility/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
-    { url: '/free-play/', priority: 0.4, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Area pages (Local SEO)
+    // Area pages — Local SEO (44)
     { url: '/areas/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/harold-hill/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/romford/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
@@ -102,60 +82,19 @@ export const GET: APIRoute = async () => {
     { url: '/areas/fairlop/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/hutton/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Blog pages
+    // Blog pages (9)
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: lastUpdated },
-    {
-      url: '/blog/virus-malware-removal-romford-guide/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/is-my-computer-worth-repairing-romford/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/upgrade-old-pc-windows-11-unsupported/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/best-computer-repair-near-romford/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/why-laptop-running-slow-romford-guide/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/gaming-pc-build-tips-essex/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/computer-maintenance-tips-romford-businesses/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-02-13',
-    },
-    {
-      url: '/blog/website-design-services-essex/',
-      priority: 0.7,
-      changefreq: 'monthly',
-      lastmod: '2026-03-08',
-    },
-
+    { url: '/blog/virus-malware-removal-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/is-my-computer-worth-repairing-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/upgrade-old-pc-windows-11-unsupported/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/best-computer-repair-near-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/why-laptop-running-slow-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/gaming-pc-build-tips-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/computer-maintenance-tips-romford-businesses/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
+    { url: '/blog/website-design-services-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-08' },
   ];
 
-  // Generate XML with proper formatting
+  // Generate XML with proper formatting — only include lastmod when available
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -164,8 +103,7 @@ export const GET: APIRoute = async () => {
 ${routes
   .map(
     (route) => `  <url>
-    <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${route.lastmod}</lastmod>
+    <loc>${baseUrl}${route.url}</loc>${route.lastmod ? `\n    <lastmod>${route.lastmod}</lastmod>` : ''}
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>
   </url>`

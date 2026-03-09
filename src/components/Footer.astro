@@ -1,6 +1,7 @@
 ---
 // Footer.astro - Clean & Optimized Production Version
 import { siteConfig } from '../config';
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -48,7 +49,7 @@ import { siteConfig } from '../config';
           </h3>
         </a>
 
-        <div class="scroll-container enhanced-ticker" tabindex="0" role="marquee" aria-label="Service areas we cover">
+        <div class="scroll-container enhanced-ticker" tabindex="0" role="region" aria-label="Service areas we cover">
           <div class="scroll-content">
             <span class="service-area-primary"><span aria-hidden="true">🌍</span> Harold Hill</span>
             <span class="service-area"><span aria-hidden="true">🪐</span> Romford</span>
@@ -518,7 +519,7 @@ import { siteConfig } from '../config';
               class="tech-font"
               style="color: var(--comet-silver); font-size: 12px; text-align: center; font-weight: 600;"
             >
-              © <span id="current-year">2025</span> Chiltern Computers
+              © <span id="current-year">{currentYear}</span> Chiltern Computers
             </span>
           </div>
           <span
@@ -577,7 +578,7 @@ import { siteConfig } from '../config';
           backToTopButton.style.opacity = '0.7';
           backToTopButton.style.transform = 'translateY(10px)';
         }
-      });
+      }, { passive: true });
     }
 
     // Real-time availability status

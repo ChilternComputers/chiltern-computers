@@ -51,24 +51,26 @@ const currentPath = Astro.url.pathname;
       style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;"
     >
       <!-- Logo Image Card -->
-      <div
-        class="cosmic-card logo-image-card"
-        style="padding:12px 16px; background:linear-gradient(145deg, rgba(248,250,252,0.95), rgba(226,232,240,0.9)); border-radius:12px; display:flex; align-items:center; justify-content:center; min-width:58px; position:relative; overflow:hidden; border:2px solid rgba(6,182,212,0.4); box-shadow:0 4px 20px rgba(6,182,212,0.3);"
-      >
-        <!-- shimmer overlay, z-index: 1 -->
+      <a href="/" style="text-decoration:none;" aria-label="Chiltern Computers — Home">
         <div
-          style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.15),transparent); animation:shimmer 10s ease-in-out infinite; z-index:1; pointer-events:none;"
+          class="cosmic-card logo-image-card"
+          style="padding:12px 16px; background:linear-gradient(145deg, rgba(248,250,252,0.95), rgba(226,232,240,0.9)); border-radius:12px; display:flex; align-items:center; justify-content:center; min-width:58px; position:relative; overflow:hidden; border:2px solid rgba(6,182,212,0.4); box-shadow:0 4px 20px rgba(6,182,212,0.3);"
         >
+          <!-- shimmer overlay, z-index: 1 -->
+          <div
+            style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.15),transparent); animation:shimmer 10s ease-in-out infinite; z-index:1; pointer-events:none;"
+          >
+          </div>
+          <!-- logo image, z-index:2 -->
+          <img
+            src="/logo_homepage.webp"
+            alt="Chiltern Computers Logo"
+            width="132"
+            height="75"
+            style="height:75px; width:auto; display:block; position:relative; z-index:2;"
+          />
         </div>
-        <!-- logo image, z-index:2 -->
-        <img
-          src="/logo_homepage.webp"
-          alt="Chiltern Computers Logo"
-          width="132"
-          height="75"
-          style="height:75px; width:auto; display:block; position:relative; z-index:2;"
-        />
-      </div>
+      </a>
 
       <!-- Mobile Menu Toggle (hidden desktop, shown mobile) -->
       <div class="mobile-menu-toggle" style="display:none; position:relative;">
@@ -271,6 +273,7 @@ const currentPath = Astro.url.pathname;
         mobileMenuOpen = !mobileMenuOpen;
         headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
         mobileMenuBtn.setAttribute('aria-expanded', mobileMenuOpen.toString());
+        mobileMenuBtn.setAttribute('aria-label', mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu');
 
         // Update button text based on menu state
         if (menuText) {
@@ -285,50 +288,30 @@ const currentPath = Astro.url.pathname;
           headerNav.style.display = 'none';
           mobileMenuBtn.setAttribute('aria-expanded', 'false');
           if (menuText) menuText.textContent = 'Menu';
+          mobileMenuBtn.setAttribute('aria-label', 'Open navigation menu');
           mobileMenuBtn.focus();
         }
       });
     }
 
-    // Hover effects
-    document.querySelectorAll('.nav-link').forEach((link) => {
-      link.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 6px 20px rgba(6,182,212,0.4)';
-      });
-      link.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = 'none';
-      });
-    });
-
-    // Mobile menu button hover effect
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('mouseenter', function () {
-        this.style.transform = 'translateY(-2px)';
-        this.style.boxShadow = '0 6px 20px rgba(6,182,212,0.4)';
-      });
-      mobileMenuBtn.addEventListener('mouseleave', function () {
-        this.style.transform = 'translateY(0)';
-        this.style.boxShadow = 'none';
-      });
-    }
-
-    document.querySelectorAll('.contact-link-premium').forEach((link) => {
-      link.addEventListener('mouseenter', function () {
-        const glowEffect = this.querySelector('.premium-glow-effect');
-        if (glowEffect) glowEffect.style.opacity = '1';
-        this.style.transform = 'scale(1.05)';
-      });
-      link.addEventListener('mouseleave', function () {
-        const glowEffect = this.querySelector('.premium-glow-effect');
-        if (glowEffect) glowEffect.style.opacity = '0';
-        this.style.transform = 'scale(1)';
-      });
-    });
   </script>
 
   <style>
+    .nav-link:hover, .nav-link:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+    }
+    #mobile-menu-btn:hover, #mobile-menu-btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+    }
+    .contact-link-premium:hover, .contact-link-premium:focus-visible {
+      transform: scale(1.05);
+    }
+    .contact-link-premium:hover .premium-glow-effect,
+    .contact-link-premium:focus-visible .premium-glow-effect {
+      opacity: 1;
+    }
     @keyframes cosmic-rotate {
       0% {
         transform: rotate(0deg);

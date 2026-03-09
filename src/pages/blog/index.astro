@@ -430,6 +430,7 @@ function formatDate(dateString: string) {
                   type="button"
                   class={`category-btn tech-font ${cat.id === 'all' ? 'active' : ''}`}
                   data-category={cat.id}
+                  aria-pressed={cat.id === 'all' ? 'true' : 'false'}
                 >
                   {cat.name}
                 </button>
@@ -567,8 +568,9 @@ function formatDate(dateString: string) {
           const category = btn.getAttribute('data-category');
 
           // Update active state
-          categoryBtns.forEach((b) => b.classList.remove('active'));
+          categoryBtns.forEach((b) => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
           btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
 
           // Filter posts
           if (category === 'all') {

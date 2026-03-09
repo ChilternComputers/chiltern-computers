@@ -275,6 +275,7 @@ const features = [
     .floating-particles {
       position: absolute;
       inset: 0;
+      contain: paint;
       background-image:
         radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
         radial-gradient(2px 2px at 40px 70px, rgba(99, 102, 241, 0.4), transparent),
@@ -433,7 +434,8 @@ const features = [
       animation: card-reveal 0.8s ease-out forwards;
     }
 
-    .service-card:hover {
+    .service-card:hover,
+    .service-card:focus-visible {
       transform: translateY(-8px);
     }
 
@@ -535,6 +537,12 @@ const features = [
       100% {
         transform: translateY(0);
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .title-line, .cta-button, .service-card { opacity: 1; transform: none; }
+      .divider-line { transform: scaleX(1); }
+      .hero-bg-image, .floating-particles, .floating-orb { animation: none; }
     }
 
     /* Responsive Design */
