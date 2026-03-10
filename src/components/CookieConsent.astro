@@ -43,7 +43,7 @@
     acceptBtn?.focus();
   }
 
-  function dismiss(value: string) {
+  function dismiss(value) {
     localStorage.setItem('cookie-consent', value);
     if (banner) {
       banner.style.display = 'none';
