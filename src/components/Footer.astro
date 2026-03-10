@@ -76,7 +76,7 @@ const currentYear = new Date().getFullYear();
         <div style="text-align: center; margin-top: 12px; position: relative; z-index: 2;">
           <p
             class="tech-font"
-            style="color: var(--plasma-cyan); font-size: 10px; opacity: 0.8; font-weight: 500;"
+            style="color: var(--plasma-cyan); font-size: 10px; font-weight: 500;"
           >
             <span aria-hidden="true">🛸</span> SERVICE COVERAGE ACROSS HAVERING & ESSEX <span aria-hidden="true">🛸</span>
           </p>
@@ -618,6 +618,9 @@ const currentYear = new Date().getFullYear();
       background: linear-gradient(45deg, #0d9668, #0891b2) !important;
       color: #ffffff !important;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cosmic-bg-animation, .premium-glow-effect, .copyright-bg-effect { animation: none; }
     }
   </style>
 </footer>

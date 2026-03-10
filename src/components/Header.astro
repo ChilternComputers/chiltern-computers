@@ -439,6 +439,9 @@ const currentPath = Astro.url.pathname;
         flex-wrap: nowrap !important;
       }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .header-cosmic-bg *, .logo-image-card *, .cta-primary { animation: none; }
+    }
     @media (max-width: 768px) {
       .logo-image-card,
       .brand-name-card {
