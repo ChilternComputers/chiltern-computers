@@ -46,7 +46,7 @@ const localBusinessSchema = {
   '@type': ['LocalBusiness', 'ProfessionalService'],
   name: 'Chiltern Computers',
   alternateName: ['Chiltern Computer Repair', 'Computer Repair Harold Hill'],
-  image: [`${baseUrl}/logo_homepage.webp`, `${baseUrl}/logoopengraph.webp`],
+  image: [`${baseUrl}/logo.webp`, `${baseUrl}/logoopengraph.webp`],
   description:
     'Professional computer repair and IT support services in Harold Hill, Romford. Specializing in PC repair, laptop repair, virus removal, data recovery, and emergency computer repair services.',
   address: {
@@ -188,7 +188,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Chiltern Computers',
   url: baseUrl,
-  logo: `${baseUrl}/logo_homepage.webp`,
+  logo: `${baseUrl}/logo.webp`,
   contactPoint: [
     {
       '@type': 'ContactPoint',
@@ -423,7 +423,7 @@ const articleSchema = type === 'article' ? {
   publisher: {
     '@type': 'Organization',
     name: 'Chiltern Computers',
-    logo: { '@type': 'ImageObject', url: `${baseUrl}/logo_homepage.webp` },
+    logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.webp` },
   },
   datePublished: publishedTime,
   ...(modifiedTime && { dateModified: modifiedTime }),
