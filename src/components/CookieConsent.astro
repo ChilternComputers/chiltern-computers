@@ -40,7 +40,7 @@
   if (banner && !localStorage.getItem('cookie-consent')) {
     banner.style.display = 'block';
     banner.setAttribute('aria-modal', 'true');
-    acceptBtn?.focus();
+    requestAnimationFrame(() => acceptBtn?.focus());
   }
 
   function dismiss(value) {

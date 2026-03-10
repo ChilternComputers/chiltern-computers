@@ -554,7 +554,7 @@ const articleSchema = type === 'article' ? {
 <!-- Preload hero image for faster LCP -->
 {
   Astro.url.pathname === '/' && (
-    <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/mainpcpic.webp" as="image" type="image/webp" fetchpriority="high" imagesrcset="/mainpcpic-mobile.webp 750w, /mainpcpic.webp 1500w" imagesizes="100vw" />
   )
 }
 {
