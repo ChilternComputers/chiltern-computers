@@ -30,22 +30,22 @@ export const areas: AreaData[] = [
       {
         question: 'Where is your computer repair shop in Harold Hill?',
         answer:
-          "We're based at 38 Hilldene Avenue, Harold Hill, RM3 8YP. We're right in the heart of Harold Hill, easily accessible from Hilldene Shopping Centre and Harold Hill Library.",
+          "I'm based at 38 Hilldene Avenue, Harold Hill, RM3 8YP. I'm right in the heart of Harold Hill, easily accessible from Hilldene Shopping Centre and Harold Hill Library.",
       },
       {
         question: 'What computer repair services do you offer in Harold Hill?',
         answer:
-          'We offer full PC and laptop repairs including virus removal, data recovery, screen replacements, keyboard repairs, hardware upgrades, and more. We also sell new and refurbished computers.',
+          'I offer full PC and laptop repairs including virus removal, data recovery, screen replacements, keyboard repairs, hardware upgrades, and more. I also sell new and refurbished computers.',
       },
       {
         question: 'Do you offer same day repairs in Harold Hill?',
         answer:
-          "Yes! As we're based in Harold Hill, most software repairs and virus removal can be completed same day. Hardware repairs typically take 24-48 hours depending on parts availability.",
+          "Yes! As I'm based in Harold Hill, most software repairs and virus removal can be completed same day. Hardware repairs typically take 24-48 hours depending on parts availability.",
       },
       {
         question: 'What are your opening hours?',
         answer:
-          "We're open 7 days a week, 9AM to 9PM. You can drop off your computer or call us on 07971 331814 to arrange a convenient time.",
+          "I'm open 7 days a week, 9AM to 9PM. You can drop off your computer or call me on 07971 331814 to arrange a convenient time.",
       },
     ],
   },
@@ -61,22 +61,22 @@ export const areas: AreaData[] = [
       {
         question: 'Where is your nearest computer repair shop to Romford town centre?',
         answer:
-          "We're based just 2 miles from Romford town centre in Harold Hill. Whether you're near The Liberty, Romford Market, or Romford Station, we offer quick collection or you can drop off at our workshop on Hilldene Avenue.",
+          "I'm based just 2 miles from Romford town centre in Harold Hill. Whether you're near The Liberty, Romford Market, or Romford Station, I offer quick collection or you can drop off at my workshop on Hilldene Avenue.",
       },
       {
         question: 'How much does computer repair cost in Romford?',
         answer:
-          'Our repairs start from just £30 for software fixes, with hardware repairs typically £50-£80. We charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it turns out to be unfixable — liquid damage, unavailable parts — no fix, no fee applies.',
+          'My repairs start from just £30 for software fixes, with hardware repairs typically £50-£80. I charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it turns out to be unfixable — liquid damage, unavailable parts — no fix, no fee applies.',
       },
       {
         question: 'Do you offer same day computer repairs in Romford?',
         answer:
-          "Yes! Most software repairs and virus removal for Romford customers can be completed same day. Hardware repairs typically take 24-48 hours depending on parts availability. We're open 7 days a week for your convenience.",
+          "Yes! Most software repairs and virus removal for Romford customers can be completed same day. Hardware repairs typically take 24-48 hours depending on parts availability. I'm open 7 days a week for your convenience.",
       },
       {
         question: 'Do you repair Macs and Apple laptops in Romford?',
         answer:
-          "We repair all computer brands including MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Whether it's a Windows PC or Apple Mac, we can diagnose and fix the issue.",
+          "I repair all computer brands including MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Whether it's a Windows PC or Apple Mac, I can diagnose and fix the issue.",
       },
     ],
   },
@@ -92,22 +92,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Harold Wood?',
         answer:
-          "Yes! We're just 1.5 miles from Harold Wood, making us one of the closest computer repair shops. Drop off near Harold Wood Station or we can collect from your home.",
+          "Yes! I'm just 1.5 miles from Harold Wood, making me one of the closest computer repair shops. Drop off near Harold Wood Station or I can collect from your home.",
       },
       {
         question: 'How much does laptop repair cost in Harold Wood?',
         answer:
-          'Laptop repairs start from £30 for software issues. Screen replacements from £60, keyboard repairs from £50. We offer a £20 diagnostic check — waived if you proceed with repair.',
+          'Laptop repairs start from £30 for software issues. Screen replacements from £60, keyboard repairs from £50. I offer a £20 diagnostic check — waived if you proceed with repair.',
       },
       {
         question: 'Can you fix my computer the same day?',
         answer:
-          'Most software repairs and virus removal can be completed same day. For Harold Wood customers, we offer priority service due to our close proximity.',
+          'Most software repairs and virus removal can be completed same day. For Harold Wood customers, I offer priority service due to my close proximity.',
       },
       {
         question: 'Do you sell computers in Harold Wood?',
         answer:
-          'Yes, we sell both new and refurbished PCs and laptops. We can deliver to Harold Wood or you can collect from our Harold Hill workshop.',
+          'Yes, I sell both new and refurbished PCs and laptops. I can deliver to Harold Wood or you can collect from my Harold Hill workshop.',
       },
     ],
   },
@@ -123,22 +123,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hornchurch for computer repairs?',
         answer:
-          'Yes! We provide full computer repair services to Hornchurch and all RM11/RM12 postcodes. We offer a collection and drop-off service throughout Hornchurch.',
+          'Yes! I provide full computer repair services to Hornchurch and all RM11/RM12 postcodes. I offer a collection and drop-off service throughout Hornchurch.',
       },
       {
         question: 'How quickly can you repair my computer in Hornchurch?',
         answer:
-          'Most repairs are completed within 24-48 hours. We offer same-day service for urgent repairs. Collection from Hornchurch is typically within a few hours of booking.',
+          'Most repairs are completed within 24-48 hours. I offer same-day service for urgent repairs. Collection from Hornchurch is typically within a few hours of booking.',
       },
       {
         question: 'What brands do you repair?',
         answer:
-          'We repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, and custom-built PCs. Both Windows and Mac systems.',
+          'I repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, and custom-built PCs. Both Windows and Mac systems.',
       },
       {
         question: 'Do you offer business IT support in Hornchurch?',
         answer:
-          'Yes, we provide IT support for Hornchurch businesses including ongoing maintenance contracts, emergency repairs, and network support.',
+          'Yes, I provide IT support for Hornchurch businesses including ongoing maintenance contracts, emergency repairs, and network support.',
       },
     ],
   },
@@ -154,22 +154,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Upminster?',
         answer:
-          'Yes! We provide full computer and laptop repair services to Upminster and surrounding RM14 areas. Collection and drop-off service available.',
+          'Yes! I provide full computer and laptop repair services to Upminster and surrounding RM14 areas. Collection and drop-off service available.',
       },
       {
         question: 'How far is your shop from Upminster?',
         answer:
-          "We're based in Harold Hill, about 4 miles from Upminster. We offer a collection and drop-off service from Upminster or you can drop off at our workshop.",
+          "I'm based in Harold Hill, about 4 miles from Upminster. I offer a collection and drop-off service from Upminster or you can drop off at my workshop.",
       },
       {
         question: "What's your turnaround time for Upminster customers?",
         answer:
-          "Most repairs completed within 24-48 hours. Same-day service available for urgent repairs. We're open 7 days a week, 9AM-9PM.",
+          "Most repairs completed within 24-48 hours. Same-day service available for urgent repairs. I'm open 7 days a week, 9AM-9PM.",
       },
       {
         question: 'Do you repair gaming PCs?',
         answer:
-          'Yes! We specialise in gaming PC repairs and upgrades. We can also build custom gaming PCs to your specifications.',
+          'Yes! I specialise in gaming PC repairs and upgrades. I can also build custom gaming PCs to your specifications.',
       },
     ],
   },
@@ -185,7 +185,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Dagenham?',
         answer:
-          'Yes! We provide full computer and laptop repair services to all Dagenham postcodes including RM8, RM9, and RM10. We offer a collection and drop-off service throughout Dagenham, Becontree, and surrounding areas.',
+          'Yes! I provide full computer and laptop repair services to all Dagenham postcodes including RM8, RM9, and RM10. I offer a collection and drop-off service throughout Dagenham, Becontree, and surrounding areas.',
       },
       {
         question: 'How much does computer repair cost in Dagenham?',
@@ -195,12 +195,12 @@ export const areas: AreaData[] = [
       {
         question: 'How quickly can you repair my computer?',
         answer:
-          "Most repairs are completed within 24-48 hours. For urgent repairs, we offer same-day service for Dagenham customers. We're open 7 days a week, 9AM to 9PM.",
+          "Most repairs are completed within 24-48 hours. For urgent repairs, I offer same-day service for Dagenham customers. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
         question: 'Do you repair Macs and Apple laptops in Dagenham?',
         answer:
-          'Yes, we repair all computer brands including Apple MacBooks, iMacs, Dell, HP, Lenovo, Asus, Acer, and custom-built PCs. We have experience with both Windows and macOS systems.',
+          'Yes, I repair all computer brands including Apple MacBooks, iMacs, Dell, HP, Lenovo, Asus, Acer, and custom-built PCs. I have experience with both Windows and macOS systems.',
       },
     ],
   },
@@ -216,21 +216,21 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Rainham for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Rainham and all RM13 postcodes. Collection and drop-off service available throughout Rainham.',
+          'Yes! I provide computer repair services to Rainham and all RM13 postcodes. Collection and drop-off service available throughout Rainham.',
       },
       {
         question: 'How do I get my computer to you from Rainham?',
         answer:
-          'We offer a collection and drop-off service for Rainham customers, or you can drop off at our Harold Hill workshop. Call 07971 331814 to arrange.',
+          'I offer a collection and drop-off service for Rainham customers, or you can drop off at my Harold Hill workshop. Call 07971 331814 to arrange.',
       },
       {
         question: 'What services do you offer in Rainham?',
         answer:
-          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, upgrades, and more. We also sell new and refurbished computers.',
+          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, upgrades, and more. I also sell new and refurbished computers.',
       },
       {
         question: 'Are you open weekends?',
-        answer: "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays.",
+        answer: "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays.",
       },
     ],
   },
@@ -246,22 +246,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Brentwood?',
         answer:
-          'Yes! We cover Brentwood and all CM13, CM14, CM15 postcodes. Collection and drop-off available from Brentwood High Street, Shenfield, and surrounding areas.',
+          'Yes! I cover Brentwood and all CM13, CM14, CM15 postcodes. Collection and drop-off available from Brentwood High Street, Shenfield, and surrounding areas.',
       },
       {
         question: 'How far are you from Brentwood?',
         answer:
-          "We're based in Harold Hill, about 5 miles from Brentwood town centre. We offer a collection and drop-off service for Brentwood customers.",
+          "I'm based in Harold Hill, about 5 miles from Brentwood town centre. I offer a collection and drop-off service for Brentwood customers.",
       },
       {
         question: 'Do you support businesses in Brentwood?',
         answer:
-          'Yes, we provide IT support for Brentwood businesses including repairs, maintenance, and ongoing support contracts.',
+          'Yes, I provide IT support for Brentwood businesses including repairs, maintenance, and ongoing support contracts.',
       },
       {
         question: "What's the fastest way to get my computer repaired?",
         answer:
-          'Call us on 07971 331814 and we can often collect same day. Most repairs completed within 24-48 hours.',
+          'Call me on 07971 331814 and I can often collect same day. Most repairs completed within 24-48 hours.',
       },
     ],
   },
@@ -277,22 +277,22 @@ export const areas: AreaData[] = [
       {
         question: 'Where is your nearest computer shop to Gidea Park?',
         answer:
-          "We're just 2.5 miles from Gidea Park in Harold Hill. Easy access from Gidea Park Station or Main Road. Drop off or we can collect.",
+          "I'm just 2.5 miles from Gidea Park in Harold Hill. Easy access from Gidea Park Station or Main Road. Drop off or I can collect.",
       },
       {
         question: 'Do you offer laptop screen repair for Gidea Park residents?',
         answer:
-          'Yes! Laptop screen replacements from £60. We stock screens for most popular laptop models and can often complete same day.',
+          'Yes! Laptop screen replacements from £60. I stock screens for most popular laptop models and can often complete same day.',
       },
       {
         question: 'Can you upgrade my computer?',
         answer:
-          'Yes, we offer RAM upgrades, SSD upgrades, graphics card installations, and more. We can advise on the best upgrades for your needs and budget.',
+          'Yes, I offer RAM upgrades, SSD upgrades, graphics card installations, and more. I can advise on the best upgrades for your needs and budget.',
       },
       {
         question: 'Do you offer data recovery in Gidea Park?',
         answer:
-          "Yes, we provide data recovery services for failed hard drives, SSDs, and USB drives. We've helped many Gidea Park residents recover precious photos and documents.",
+          "Yes, I provide data recovery services for failed hard drives, SSDs, and USB drives. I've helped many Gidea Park residents recover precious photos and documents.",
       },
     ],
   },
@@ -308,22 +308,22 @@ export const areas: AreaData[] = [
       {
         question: 'How close are you to Collier Row?',
         answer:
-          "We're just 2 miles from Collier Row in Harold Hill. One of the closest computer repair shops to Collier Row Road and Chase Cross.",
+          "I'm just 2 miles from Collier Row in Harold Hill. One of the closest computer repair shops to Collier Row Road and Chase Cross.",
       },
       {
         question: 'Do you fix virus-infected computers?',
         answer:
-          "Yes! Virus and malware removal is one of our specialties. We'll clean your computer and install protection to prevent future infections.",
+          "Yes! Virus and malware removal is one of my specialties. I'll clean your computer and install protection to prevent future infections.",
       },
       {
         question: 'Can I drop off my computer out of hours?',
         answer:
-          "We're open 9AM-9PM, 7 days a week. Call ahead on 07971 331814 and we can arrange a convenient time for you.",
+          "I'm open 9AM-9PM, 7 days a week. Call ahead on 07971 331814 and I can arrange a convenient time for you.",
       },
       {
         question: 'Do you sell refurbished laptops?',
         answer:
-          'Yes! We have a range of quality refurbished laptops starting from £150, all with Windows 11 and a warranty.',
+          'Yes! I have a range of quality refurbished laptops starting from £150, all with Windows 11 and a warranty.',
       },
     ],
   },
@@ -339,7 +339,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Chadwell Heath?',
         answer:
-          'Yes! We provide computer repair services to Chadwell Heath and all RM6 postcodes. Collection and drop-off available from Chadwell Heath Station and surrounding areas.',
+          'Yes! I provide computer repair services to Chadwell Heath and all RM6 postcodes. Collection and drop-off available from Chadwell Heath Station and surrounding areas.',
       },
       {
         question: "What's your pricing for Chadwell Heath customers?",
@@ -349,12 +349,12 @@ export const areas: AreaData[] = [
       {
         question: 'How do I book a repair?',
         answer:
-          'Call us on 07971 331814 or visit our contact page. We can usually arrange collection within a few hours.',
+          'Call me on 07971 331814 or visit my contact page. I can usually arrange collection within a few hours.',
       },
       {
         question: 'Do you repair all laptop brands?',
         answer:
-          'Yes, we repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands.',
+          'Yes, I repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands.',
       },
     ],
   },
@@ -370,22 +370,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Elm Park?',
         answer:
-          'Yes! We cover Elm Park and all RM12 postcodes. Collection and drop-off available from Elm Park Station and surrounding areas.',
+          'Yes! I cover Elm Park and all RM12 postcodes. Collection and drop-off available from Elm Park Station and surrounding areas.',
       },
       {
         question: 'Can you fix my laptop screen?',
         answer:
-          'Yes! We repair cracked and broken laptop screens. Most common screens in stock for quick turnaround.',
+          'Yes! I repair cracked and broken laptop screens. Most common screens in stock for quick turnaround.',
       },
       {
         question: 'Do you offer home visits to Elm Park?',
         answer:
-          "For most repairs, it's quicker and more cost-effective to bring your computer to us or arrange collection. However, we can arrange home visits for certain issues.",
+          "For most repairs, it's quicker and more cost-effective to bring your computer to me or arrange collection. However, I can arrange home visits for certain issues.",
       },
       {
         question: 'What payment methods do you accept?',
         answer:
-          "We accept cash, card, and bank transfer. Payment is only due once your repair is complete and you're satisfied.",
+          "I accept cash, card, and bank transfer. Payment is only due once your repair is complete and you're satisfied.",
       },
     ],
   },
@@ -401,17 +401,17 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Emerson Park?',
         answer:
-          'Yes! We provide full computer and laptop repair services to Emerson Park and the RM11 area. We offer a collection and drop-off service throughout Emerson Park.',
+          'Yes! I provide full computer and laptop repair services to Emerson Park and the RM11 area. I offer a collection and drop-off service throughout Emerson Park.',
       },
       {
         question: 'How far are you from Emerson Park?',
         answer:
-          "We're based in Harold Hill, just 2.5 miles from Emerson Park. We can collect from your door or you can drop off at our workshop on Hilldene Avenue.",
+          "I'm based in Harold Hill, just 2.5 miles from Emerson Park. I can collect from your door or you can drop off at my workshop on Hilldene Avenue.",
       },
       {
         question: 'Do you repair Apple Macs in Emerson Park?',
         answer:
-          'Yes, we repair all brands including MacBooks, iMacs, Dell, HP, Lenovo, and Asus. Both hardware and software repairs for Windows and macOS.',
+          'Yes, I repair all brands including MacBooks, iMacs, Dell, HP, Lenovo, and Asus. Both hardware and software repairs for Windows and macOS.',
       },
       {
         question: 'What are your prices for Emerson Park customers?',
@@ -432,22 +432,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Cranham for computer repairs?',
         answer:
-          'Yes! We cover Cranham and surrounding RM14 areas. Collection and drop-off service available throughout Cranham, including Front Lane and the surrounding residential streets.',
+          'Yes! I cover Cranham and surrounding RM14 areas. Collection and drop-off service available throughout Cranham, including Front Lane and the surrounding residential streets.',
       },
       {
         question: 'How quickly can you collect from Cranham?',
         answer:
-          "We can usually collect from Cranham within a few hours of booking. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+          "I can usually collect from Cranham within a few hours of booking. Call 07971 331814 to arrange. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
         question: 'Do you fix slow computers?',
         answer:
-          "Yes! Slow PC diagnosis is one of our most popular services. We'll identify the cause — whether it's malware, a failing hard drive, or simply needing an SSD upgrade — and get it running fast again.",
+          "Yes! Slow PC diagnosis is one of my most popular services. I'll identify the cause — whether it's malware, a failing hard drive, or simply needing an SSD upgrade — and get it running fast again.",
       },
       {
         question: 'Can you set up a new computer for me in Cranham?',
         answer:
-          'Yes, we offer full setup services for new PCs and laptops. We can transfer your data from your old computer, install your software, and configure everything ready to use.',
+          'Yes, I offer full setup services for new PCs and laptops. I can transfer your data from your old computer, install your software, and configure everything ready to use.',
       },
     ],
   },
@@ -463,22 +463,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Noak Hill?',
         answer:
-          "Yes! Noak Hill is one of our closest areas at just 1.5 miles away. We can often collect and return same day. We're practically on your doorstep.",
+          "Yes! Noak Hill is one of my closest areas at just 1.5 miles away. I can often collect and return same day. I'm practically on your doorstep.",
       },
       {
         question: 'Is there an extra charge for Noak Hill collection?',
         answer:
-          'No! Collection and delivery is completely free for Noak Hill customers. Given how close we are, we can usually be with you within the hour.',
+          'No! Collection and delivery is completely free for Noak Hill customers. Given how close I am, I can usually be with you within the hour.',
       },
       {
         question: 'Do you repair gaming PCs in Noak Hill?',
         answer:
-          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, and custom builds to your specifications.',
+          'Yes! I specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, and custom builds to your specifications.',
       },
       {
         question: 'Can you help with data recovery?',
         answer:
-          'Yes, we provide data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any charges.',
+          'Yes, I provide data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any charges.',
       },
     ],
   },
@@ -494,22 +494,22 @@ export const areas: AreaData[] = [
       {
         question: 'How close are you to Chase Cross?',
         answer:
-          "We're just 1 mile from Chase Cross — one of the closest areas we serve. Drop off on Hilldene Avenue or we can collect from Chase Cross Road and surrounding streets in minutes.",
+          "I'm just 1 mile from Chase Cross — one of the closest areas I serve. Drop off on Hilldene Avenue or I can collect from Chase Cross Road and surrounding streets in minutes.",
       },
       {
         question: 'Do you offer same day repairs for Chase Cross?',
         answer:
-          "Absolutely! Given our close proximity, most software repairs and virus removal for Chase Cross customers are completed same day. We're open 7 days a week, 9AM to 9PM.",
+          "Absolutely! Given my close proximity, most software repairs and virus removal for Chase Cross customers are completed same day. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
         question: 'What laptop brands do you repair?',
         answer:
-          'We repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and all other makes. Both Windows and Mac.',
+          'I repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and all other makes. Both Windows and Mac.',
       },
       {
         question: 'Do you sell refurbished computers?',
         answer:
-          'Yes! We have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
+          'Yes! I have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
       },
     ],
   },
@@ -525,22 +525,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover South Hornchurch?',
         answer:
-          'Yes! We provide full computer repair services to South Hornchurch and all RM13 postcodes. Collection and drop-off service throughout the area.',
+          'Yes! I provide full computer repair services to South Hornchurch and all RM13 postcodes. Collection and drop-off service throughout the area.',
       },
       {
         question: 'How do I get my computer to you from South Hornchurch?',
         answer:
-          "We offer a collection and drop-off service for South Hornchurch customers. Just call 07971 331814 and we'll arrange a convenient time. Or drop off at our Harold Hill workshop.",
+          "I offer a collection and drop-off service for South Hornchurch customers. Just call 07971 331814 and I'll arrange a convenient time. Or drop off at my Harold Hill workshop.",
       },
       {
         question: 'What services do you offer?',
         answer:
-          'Full PC and laptop repairs, virus removal, data recovery, screen and keyboard replacements, SSD upgrades, and more. We also sell new and refurbished computers.',
+          'Full PC and laptop repairs, virus removal, data recovery, screen and keyboard replacements, SSD upgrades, and more. I also sell new and refurbished computers.',
       },
       {
         question: 'Do you offer a warranty on repairs?',
         answer:
-          'Yes, all our repairs come with a warranty. We also operate on a no fix, no fee basis — so you only pay if we successfully resolve your issue.',
+          'Yes, all my repairs come with a warranty. I also operate on a no fix, no fee basis — so you only pay if I successfully resolve your issue.',
       },
     ],
   },
@@ -556,22 +556,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Ardleigh Green?',
         answer:
-          'Yes! We cover Ardleigh Green and the wider RM11 area. Collection and drop-off available from Ardleigh Green Road, Squirrels Heath Lane, and all surrounding streets.',
+          'Yes! I cover Ardleigh Green and the wider RM11 area. Collection and drop-off available from Ardleigh Green Road, Squirrels Heath Lane, and all surrounding streets.',
       },
       {
         question: 'How far are you from Ardleigh Green?',
         answer:
-          "We're based in Harold Hill, about 2.5 miles from Ardleigh Green. We offer a collection and drop-off service, or you can drop off at our workshop.",
+          "I'm based in Harold Hill, about 2.5 miles from Ardleigh Green. I offer a collection and drop-off service, or you can drop off at my workshop.",
       },
       {
         question: 'Can you fix a laptop that won\'t turn on?',
         answer:
-          "Yes! We diagnose and repair laptops that won't power on. Common causes include faulty chargers, dead batteries, motherboard issues, and power jack problems. £20 diagnostic check included — waived if you proceed with repair.",
+          "Yes! I diagnose and repair laptops that won't power on. Common causes include faulty chargers, dead batteries, motherboard issues, and power jack problems. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you provide IT support for small businesses?',
         answer:
-          'Yes, we offer IT support for Ardleigh Green businesses including PC repairs, network setup, ongoing maintenance, and emergency callout services.',
+          'Yes, I offer IT support for Ardleigh Green businesses including PC repairs, network setup, ongoing maintenance, and emergency callout services.',
       },
     ],
   },
@@ -587,22 +587,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hainault for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hainault and IG7 postcodes. Collection and drop-off service available throughout Hainault.',
+          'Yes! I provide computer repair services to Hainault and IG7 postcodes. Collection and drop-off service available throughout Hainault.',
       },
       {
         question: 'How far are you from Hainault?',
         answer:
-          "We're about 4 miles from Hainault in Harold Hill. We offer a collection and drop-off service — just call 07971 331814 and we can usually be with you within a couple of hours.",
+          "I'm about 4 miles from Hainault in Harold Hill. I offer a collection and drop-off service — just call 07971 331814 and I can usually be with you within a couple of hours.",
       },
       {
         question: 'Do you remove viruses and malware?',
         answer:
-          "Yes! Virus and malware removal is one of our core services. We'll thoroughly clean your system and install protection to prevent future infections. Most virus removals completed same day.",
+          "Yes! Virus and malware removal is one of my core services. I'll thoroughly clean your system and install protection to prevent future infections. Most virus removals completed same day.",
       },
       {
         question: 'Can you upgrade my old computer?',
         answer:
-          'Yes, we offer RAM upgrades, SSD upgrades, graphics card installations, and more. An SSD upgrade alone can make an old PC feel brand new. Free advice on the best upgrades for your budget.',
+          'Yes, I offer RAM upgrades, SSD upgrades, graphics card installations, and more. An SSD upgrade alone can make an old PC feel brand new. Free advice on the best upgrades for your budget.',
       },
     ],
   },
@@ -618,22 +618,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Barking?',
         answer:
-          'Yes! We cover Barking and all IG11 postcodes. Collection and drop-off available from Barking Station, Vicarage Field, and all surrounding areas.',
+          'Yes! I cover Barking and all IG11 postcodes. Collection and drop-off available from Barking Station, Vicarage Field, and all surrounding areas.',
       },
       {
         question: 'How much does a repair cost?',
         answer:
-          'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. We offer a £20 diagnostic check — waived if you proceed with the repair. No fix, no fee applies to unfixable issues.',
+          'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. I offer a £20 diagnostic check — waived if you proceed with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'Do you repair both PCs and laptops in Barking?',
         answer:
-          'Yes, we repair all types of computers — desktops, laptops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
+          'Yes, I repair all types of computers — desktops, laptops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
       },
       {
         question: 'How long do repairs take?',
         answer:
-          "Most software repairs and virus removal can be completed within 24 hours. Hardware repairs typically take 24-48 hours depending on parts. We're open 7 days a week for your convenience.",
+          "Most software repairs and virus removal can be completed within 24 hours. Hardware repairs typically take 24-48 hours depending on parts. I'm open 7 days a week for your convenience.",
       },
     ],
   },
@@ -649,22 +649,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Ilford for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Ilford and all IG1 postcodes. Collection and drop-off available from Ilford Station, The Exchange, and surrounding areas.',
+          'Yes! I provide computer repair services to Ilford and all IG1 postcodes. Collection and drop-off available from Ilford Station, The Exchange, and surrounding areas.',
       },
       {
         question: 'Can you collect from Ilford?',
         answer:
-          "Yes, we offer a collection and drop-off service throughout Ilford. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+          "Yes, I offer a collection and drop-off service throughout Ilford. Call 07971 331814 and I'll arrange a convenient time. I'm open 7 days a week.",
       },
       {
         question: 'Do you offer data recovery in Ilford?',
         answer:
-          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
+          'Yes, I provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
       },
       {
         question: 'Do you support businesses in Ilford?',
         answer:
-          'Yes, we provide IT support for Ilford businesses including emergency repairs, ongoing maintenance contracts, network setup, and hardware procurement.',
+          'Yes, I provide IT support for Ilford businesses including emergency repairs, ongoing maintenance contracts, network setup, and hardware procurement.',
       },
     ],
   },
@@ -680,22 +680,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Havering-atte-Bower?',
         answer:
-          "Yes! We're just 2 miles from Havering-atte-Bower in Harold Hill. One of the closest areas we serve, with quick collection and delivery available.",
+          "Yes! I'm just 2 miles from Havering-atte-Bower in Harold Hill. One of the closest areas I serve, with quick collection and delivery available.",
       },
       {
         question: 'Is collection free from Havering-atte-Bower?',
         answer:
-          'Yes, collection and delivery is completely free. Given our close proximity, we can usually collect within the hour. Call 07971 331814 to arrange.',
+          'Yes, collection and delivery is completely free. Given my close proximity, I can usually collect within the hour. Call 07971 331814 to arrange.',
       },
       {
         question: 'Can you fix my internet or Wi-Fi issues?',
         answer:
-          "Yes, we can diagnose and resolve connectivity issues including slow Wi-Fi, network dropouts, and router problems. We'll get you back online quickly.",
+          "Yes, I can diagnose and resolve connectivity issues including slow Wi-Fi, network dropouts, and router problems. I'll get you back online quickly.",
       },
       {
         question: 'Do you sell new computers?',
         answer:
-          'Yes, we sell both new and refurbished PCs and laptops. We can advise on the best machine for your needs and budget, and set it up ready to use.',
+          'Yes, I sell both new and refurbished PCs and laptops. I can advise on the best machine for your needs and budget, and set it up ready to use.',
       },
     ],
   },
@@ -711,22 +711,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Goodmayes?',
         answer:
-          'Yes! We cover Goodmayes and all IG3 postcodes. Collection and drop-off available from Goodmayes Station, Barley Lane, and surrounding areas.',
+          'Yes! I cover Goodmayes and all IG3 postcodes. Collection and drop-off available from Goodmayes Station, Barley Lane, and surrounding areas.',
       },
       {
         question: 'How do I book a repair from Goodmayes?',
         answer:
-          "Simply call us on 07971 331814 or visit our contact page. We can arrange collection and drop-off from Goodmayes, usually within a few hours of booking. We're open 7 days a week.",
+          "Simply call me on 07971 331814 or visit my contact page. I can arrange collection and drop-off from Goodmayes, usually within a few hours of booking. I'm open 7 days a week.",
       },
       {
         question: 'What types of computer problems do you fix?',
         answer:
-          'We fix everything from virus infections, slow performance, and blue screens to cracked screens, keyboard failures, and data loss. If it has a power button, we can probably fix it!',
+          'I fix everything from virus infections, slow performance, and blue screens to cracked screens, keyboard failures, and data loss. If it has a power button, I can probably fix it!',
       },
       {
         question: 'Do you offer a no fix, no fee guarantee?',
         answer:
-          "We charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If the issue is unfixable — liquid damage, unavailable parts — no fix, no fee applies.",
+          "I charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If the issue is unfixable — liquid damage, unavailable parts — no fix, no fee applies.",
       },
     ],
   },
@@ -742,22 +742,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Pilgrims Hatch for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Pilgrims Hatch and surrounding CM15 areas. Collection and drop-off service available.',
+          'Yes! I provide computer repair services to Pilgrims Hatch and surrounding CM15 areas. Collection and drop-off service available.',
       },
       {
         question: 'How far are you from Pilgrims Hatch?',
         answer:
-          "We're about 6 miles from Pilgrims Hatch in Harold Hill. We offer a collection and drop-off service — call 07971 331814 and we can usually arrange same day pickup.",
+          "I'm about 6 miles from Pilgrims Hatch in Harold Hill. I offer a collection and drop-off service — call 07971 331814 and I can usually arrange same day pickup.",
       },
       {
         question: 'Do you repair all computer brands?',
         answer:
-          'Yes, we repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows PCs and Apple Macs.',
+          'Yes, I repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows PCs and Apple Macs.',
       },
       {
         question: 'What are your opening hours?',
         answer:
-          "We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to arrange a repair.",
+          "I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to arrange a repair.",
       },
     ],
   },
@@ -773,22 +773,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Warley?',
         answer:
-          'Yes! We cover Warley and surrounding CM14 postcodes. Collection and drop-off available from Warley Hill, Great Warley, and Little Warley areas.',
+          'Yes! I cover Warley and surrounding CM14 postcodes. Collection and drop-off available from Warley Hill, Great Warley, and Little Warley areas.',
       },
       {
         question: 'How quickly can you collect from Warley?',
         answer:
-          "We can usually collect from Warley within a few hours of booking. We're open 7 days a week, 9AM to 9PM. Call 07971 331814 to arrange.",
+          "I can usually collect from Warley within a few hours of booking. I'm open 7 days a week, 9AM to 9PM. Call 07971 331814 to arrange.",
       },
       {
         question: 'Do you offer SSD upgrades?',
         answer:
-          "Yes! An SSD upgrade is one of the best ways to speed up an older computer. We'll clone your existing drive so you don't lose any data. Upgrades from £60 including fitting.",
+          "Yes! An SSD upgrade is one of the best ways to speed up an older computer. I'll clone your existing drive so you don't lose any data. Upgrades from £60 including fitting.",
       },
       {
         question: 'Do you offer a warranty on repairs?',
         answer:
-          'Yes, all our repairs come with a warranty. We also operate on a no fix, no fee basis — you only pay if we successfully resolve your issue.',
+          'Yes, all my repairs come with a warranty. I also operate on a no fix, no fee basis — you only pay if I successfully resolve your issue.',
       },
     ],
   },
@@ -804,22 +804,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Wennington?',
         answer:
-          'Yes! We provide computer repair services to Wennington and surrounding RM13 areas. Collection and drop-off service available.',
+          'Yes! I provide computer repair services to Wennington and surrounding RM13 areas. Collection and drop-off service available.',
       },
       {
         question: 'How do I get my computer to you from Wennington?',
         answer:
-          "We offer a collection and drop-off service for Wennington customers. Call 07971 331814 and we'll come to you. Or drop off at our Harold Hill workshop.",
+          "I offer a collection and drop-off service for Wennington customers. Call 07971 331814 and I'll come to you. Or drop off at my Harold Hill workshop.",
       },
       {
         question: 'What services do you offer?',
         answer:
-          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, keyboard repairs, and more. We also sell new and refurbished computers.',
+          'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, keyboard repairs, and more. I also sell new and refurbished computers.',
       },
       {
         question: 'Are you open at weekends?',
         answer:
-          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
+          "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
       },
     ],
   },
@@ -835,22 +835,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Stapleford Abbotts?',
         answer:
-          "Yes! We're just 3.5 miles from Stapleford Abbotts in Harold Hill. Collection and drop-off service available throughout the village and surrounding lanes.",
+          "Yes! I'm just 3.5 miles from Stapleford Abbotts in Harold Hill. Collection and drop-off service available throughout the village and surrounding lanes.",
       },
       {
         question: 'Is there a callout charge?',
         answer:
-          'Collection and drop-off service available. We charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
+          'Collection and drop-off service available. I charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'Can you fix my laptop screen?',
         answer:
-          'Yes! We repair cracked, broken, and flickering laptop screens. We stock screens for most popular models and can often complete the repair within 24 hours.',
+          'Yes! I repair cracked, broken, and flickering laptop screens. I stock screens for most popular models and can often complete the repair within 24 hours.',
       },
       {
         question: 'Do you help with printer and Wi-Fi setup?',
         answer:
-          'Yes, we can help with printer setup, Wi-Fi connectivity issues, network configuration, and general IT support for your home or business.',
+          'Yes, I can help with printer setup, Wi-Fi connectivity issues, network configuration, and general IT support for your home or business.',
       },
     ],
   },
@@ -866,7 +866,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Becontree?',
         answer:
-          'Yes! We cover Becontree and surrounding RM8/RM9 postcodes. Collection and drop-off available from Becontree Station, Valence Park area, and all surrounding streets.',
+          'Yes! I cover Becontree and surrounding RM8/RM9 postcodes. Collection and drop-off available from Becontree Station, Valence Park area, and all surrounding streets.',
       },
       {
         question: 'How much does a repair cost?',
@@ -876,12 +876,12 @@ export const areas: AreaData[] = [
       {
         question: 'How long do repairs take?',
         answer:
-          "Most software repairs and virus removal completed within 24 hours. Hardware repairs typically 24-48 hours depending on parts. We're open 7 days a week.",
+          "Most software repairs and virus removal completed within 24 hours. Hardware repairs typically 24-48 hours depending on parts. I'm open 7 days a week.",
       },
       {
         question: 'Do you repair gaming PCs?',
         answer:
-          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds.',
+          'Yes! I specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds.',
       },
     ],
   },
@@ -897,22 +897,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Rush Green for computer repairs?',
         answer:
-          "Yes! We provide computer repair services to Rush Green and all RM7 postcodes. We're just 3.5 miles away with a collection and drop-off service.",
+          "Yes! I provide computer repair services to Rush Green and all RM7 postcodes. I'm just 3.5 miles away with a collection and drop-off service.",
       },
       {
         question: 'Can you collect from Rush Green?',
         answer:
-          "Yes, collection and drop-off service throughout Rush Green. We can usually collect within a couple of hours. Call 07971 331814 to arrange. We're open 7 days.",
+          "Yes, collection and drop-off service throughout Rush Green. I can usually collect within a couple of hours. Call 07971 331814 to arrange. I'm open 7 days.",
       },
       {
         question: 'Do you fix slow computers?',
         answer:
-          "Yes! We'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. £20 diagnostic check included — waived if you proceed with repair.",
+          "Yes! I'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you repair Macs and Apple laptops?',
         answer:
-          'Yes, we repair all brands including Apple MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Both macOS and Windows systems.',
+          'Yes, I repair all brands including Apple MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Both macOS and Windows systems.',
       },
     ],
   },
@@ -928,12 +928,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Seven Kings?',
         answer:
-          'Yes! We cover Seven Kings and the wider IG3 area. Collection and drop-off available from Seven Kings Station, High Road, and all surrounding streets.',
+          'Yes! I cover Seven Kings and the wider IG3 area. Collection and drop-off available from Seven Kings Station, High Road, and all surrounding streets.',
       },
       {
         question: 'How do I book a repair?',
         answer:
-          "Call us on 07971 331814 or use our contact form. We can arrange collection and drop-off from Seven Kings, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+          "Call me on 07971 331814 or use my contact form. I can arrange collection and drop-off from Seven Kings, usually within a few hours. I'm open 7 days, 9AM to 9PM.",
       },
       {
         question: 'What computer problems do you fix?',
@@ -943,7 +943,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer business IT support in Seven Kings?',
         answer:
-          'Yes, we provide IT support for Seven Kings businesses including emergency repairs, maintenance contracts, network setup, and hardware procurement.',
+          'Yes, I provide IT support for Seven Kings businesses including emergency repairs, maintenance contracts, network setup, and hardware procurement.',
       },
     ],
   },
@@ -959,12 +959,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Marks Gate?',
         answer:
-          "Yes! We're just 3 miles from Marks Gate in Harold Hill. One of our closer service areas with quick collection and same day repairs available.",
+          "Yes! I'm just 3 miles from Marks Gate in Harold Hill. One of my closer service areas with quick collection and same day repairs available.",
       },
       {
         question: 'Is collection free from Marks Gate?',
         answer:
-          'Yes, collection and drop-off service for all Marks Gate customers. Call 07971 331814 and we can usually be with you within the hour.',
+          'Yes, collection and drop-off service for all Marks Gate customers. Call 07971 331814 and I can usually be with you within the hour.',
       },
       {
         question: 'What are your prices?',
@@ -974,7 +974,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you sell refurbished laptops?',
         answer:
-          'Yes! We have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
+          'Yes! I have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
       },
     ],
   },
@@ -990,12 +990,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Harold Park for computer repairs?',
         answer:
-          "Yes! Harold Park is one of our closest areas at just 1.5 miles away. We're practically neighbours — same day collection and repair available.",
+          "Yes! Harold Park is one of my closest areas at just 1.5 miles away. I'm practically neighbours — same day collection and repair available.",
       },
       {
         question: 'Is there a collection charge from Harold Park?',
         answer:
-          'No! Collection and delivery is completely free for Harold Park customers. We can usually be with you within the hour given how close we are.',
+          'No! Collection and delivery is completely free for Harold Park customers. I can usually be with you within the hour given how close I am.',
       },
       {
         question: 'What computer repairs do you offer?',
@@ -1005,7 +1005,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer same day service?',
         answer:
-          "Yes! Given our close proximity to Harold Park, most software repairs and virus removal can be completed same day. We're open 7 days a week, 9AM to 9PM.",
+          "Yes! Given my close proximity to Harold Park, most software repairs and virus removal can be completed same day. I'm open 7 days a week, 9AM to 9PM.",
       },
     ],
   },
@@ -1021,22 +1021,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Heath Park?',
         answer:
-          'Yes! We cover Heath Park and the wider RM2 area. Collection and drop-off available from Heath Park Road, Heath Drive, and all surrounding streets.',
+          'Yes! I cover Heath Park and the wider RM2 area. Collection and drop-off available from Heath Park Road, Heath Drive, and all surrounding streets.',
       },
       {
         question: 'How far are you from Heath Park?',
         answer:
-          "We're about 2.5 miles from Heath Park in Harold Hill. We offer a collection and drop-off service, or you can drop off at our workshop on Hilldene Avenue.",
+          "I'm about 2.5 miles from Heath Park in Harold Hill. I offer a collection and drop-off service, or you can drop off at my workshop on Hilldene Avenue.",
       },
       {
         question: 'Can you speed up my old computer?',
         answer:
-          "Yes! We specialise in breathing new life into older PCs. An SSD upgrade and RAM increase can transform performance. We'll advise on the most cost-effective upgrades.",
+          "Yes! I specialise in breathing new life into older PCs. An SSD upgrade and RAM increase can transform performance. I'll advise on the most cost-effective upgrades.",
       },
       {
         question: 'Do you repair laptops with water damage?',
         answer:
-          'Yes, we can assess and repair liquid-damaged laptops. The sooner you bring it in, the better the chances of recovery. £20 diagnostic check included — waived if you proceed with repair.',
+          'Yes, I can assess and repair liquid-damaged laptops. The sooner you bring it in, the better the chances of recovery. £20 diagnostic check included — waived if you proceed with repair.',
       },
     ],
   },
@@ -1052,22 +1052,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hacton for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hacton and the wider RM12 area. Collection and drop-off service available throughout Hacton Lane and surrounding streets.',
+          'Yes! I provide computer repair services to Hacton and the wider RM12 area. Collection and drop-off service available throughout Hacton Lane and surrounding streets.',
       },
       {
         question: 'How quickly can you collect from Hacton?',
         answer:
-          "We can usually collect from Hacton within a couple of hours. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+          "I can usually collect from Hacton within a couple of hours. Call 07971 331814 to arrange. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
         question: 'Do you fix desktop PCs as well as laptops?',
         answer:
-          'Yes, we repair all types of computers — desktops, laptops, all-in-ones, gaming PCs, and custom builds. All brands including Dell, HP, Lenovo, Asus, and Apple.',
+          'Yes, I repair all types of computers — desktops, laptops, all-in-ones, gaming PCs, and custom builds. All brands including Dell, HP, Lenovo, Asus, and Apple.',
       },
       {
         question: 'What if you can\'t fix my computer?',
         answer:
-          "We operate on a no fix, no fee basis. If we can't resolve your issue, you don't pay a penny. We'll also advise on the best next steps if a repair isn't viable.",
+          "I operate on a no fix, no fee basis. If I can't resolve your issue, you don't pay a penny. I'll also advise on the best next steps if a repair isn't viable.",
       },
     ],
   },
@@ -1083,22 +1083,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Corbets Tey?',
         answer:
-          'Yes! We provide computer repair services to Corbets Tey and surrounding RM14 areas. Collection and drop-off available from Corbets Tey Road and all nearby lanes.',
+          'Yes! I provide computer repair services to Corbets Tey and surrounding RM14 areas. Collection and drop-off available from Corbets Tey Road and all nearby lanes.',
       },
       {
         question: 'How do I get my computer to you from Corbets Tey?',
         answer:
-          "We offer a collection and drop-off service for Corbets Tey customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+          "I offer a collection and drop-off service for Corbets Tey customers. Call 07971 331814 and I'll arrange a convenient time, or drop off at my Harold Hill workshop.",
       },
       {
         question: 'Do you offer data recovery?',
         answer:
-          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any work begins.',
+          'Yes, I provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment to determine recoverability before any work begins.',
       },
       {
         question: 'Can you set up a new computer for me?',
         answer:
-          'Yes, we offer full setup services including data transfer from your old computer, software installation, printer setup, and email configuration. Ready to use when returned.',
+          'Yes, I offer full setup services including data transfer from your old computer, software installation, printer setup, and email configuration. Ready to use when returned.',
       },
     ],
   },
@@ -1114,12 +1114,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover North Ockendon?',
         answer:
-          'Yes! We provide computer repair services to North Ockendon and surrounding areas. Collection and drop-off service available — we come to you.',
+          'Yes! I provide computer repair services to North Ockendon and surrounding areas. Collection and drop-off service available — I come to you.',
       },
       {
         question: 'Is there an extra charge for rural areas?',
         answer:
-          'No! Collection and delivery is free regardless of location. North Ockendon is about 5 miles from our base in Harold Hill. Call 07971 331814 to arrange.',
+          'No! Collection and delivery is free regardless of location. North Ockendon is about 5 miles from my base in Harold Hill. Call 07971 331814 to arrange.',
       },
       {
         question: 'What services do you offer?',
@@ -1129,7 +1129,7 @@ export const areas: AreaData[] = [
       {
         question: 'Are you open at weekends?',
         answer:
-          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect for those who can't get to us during the week.",
+          "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect for those who can't get to me during the week.",
       },
     ],
   },
@@ -1145,17 +1145,17 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Gants Hill?',
         answer:
-          'Yes! We cover Gants Hill and all IG2 postcodes. Collection and drop-off available from Gants Hill Roundabout, the station area, and all surrounding streets.',
+          'Yes! I cover Gants Hill and all IG2 postcodes. Collection and drop-off available from Gants Hill Roundabout, the station area, and all surrounding streets.',
       },
       {
         question: 'How far are you from Gants Hill?',
         answer:
-          "We're about 5 miles from Gants Hill in Harold Hill. We offer a collection and drop-off service — call 07971 331814 and we can usually arrange same day pickup.",
+          "I'm about 5 miles from Gants Hill in Harold Hill. I offer a collection and drop-off service — call 07971 331814 and I can usually arrange same day pickup.",
       },
       {
         question: 'Do you fix laptops and desktops?',
         answer:
-          'Yes, we repair all types of computers — laptops, desktops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
+          'Yes, I repair all types of computers — laptops, desktops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
       },
       {
         question: 'What are your prices?',
@@ -1176,22 +1176,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Barkingside?',
         answer:
-          'Yes! We cover Barkingside and all IG6 postcodes. Collection and drop-off available from Barkingside Station, High Street, and all surrounding areas.',
+          'Yes! I cover Barkingside and all IG6 postcodes. Collection and drop-off available from Barkingside Station, High Street, and all surrounding areas.',
       },
       {
         question: 'How far are you from Barkingside?',
         answer:
-          "We're about 5 miles from Barkingside in Harold Hill. We offer a collection and drop-off service — call 07971 331814 to arrange same day pickup.",
+          "I'm about 5 miles from Barkingside in Harold Hill. I offer a collection and drop-off service — call 07971 331814 to arrange same day pickup.",
       },
       {
         question: 'Do you repair all brands?',
         answer:
-          'Yes, we repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows and Mac systems.',
+          'Yes, I repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows and Mac systems.',
       },
       {
         question: 'What are your opening hours?',
         answer:
-          "We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
+          "I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
       },
     ],
   },
@@ -1207,22 +1207,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Newbury Park for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Newbury Park and all IG2 postcodes. Collection and drop-off available from the station area and surrounding streets.',
+          'Yes! I provide computer repair services to Newbury Park and all IG2 postcodes. Collection and drop-off available from the station area and surrounding streets.',
       },
       {
         question: 'Can you collect from Newbury Park?',
         answer:
-          "Yes, collection and drop-off service throughout Newbury Park. Call 07971 331814 and we'll arrange a convenient time. We're open 7 days a week.",
+          "Yes, collection and drop-off service throughout Newbury Park. Call 07971 331814 and I'll arrange a convenient time. I'm open 7 days a week.",
       },
       {
         question: 'Do you fix slow laptops?',
         answer:
-          "Yes! We'll diagnose why your laptop is running slow — whether it's malware, a failing hard drive, or simply needing an SSD upgrade. Most issues resolved same day.",
+          "Yes! I'll diagnose why your laptop is running slow — whether it's malware, a failing hard drive, or simply needing an SSD upgrade. Most issues resolved same day.",
       },
       {
         question: 'Do you offer a no fix, no fee guarantee?',
         answer:
-          "We charge £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it's unfixable — liquid damage, unavailable parts — no fix, no fee applies. No hidden charges.",
+          "I charge £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it's unfixable — liquid damage, unavailable parts — no fix, no fee applies. No hidden charges.",
       },
     ],
   },
@@ -1238,22 +1238,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Shenfield?',
         answer:
-          'Yes! We cover Shenfield and surrounding CM15 areas. Collection and drop-off available from Shenfield Station, High Street, and all nearby roads.',
+          'Yes! I cover Shenfield and surrounding CM15 areas. Collection and drop-off available from Shenfield Station, High Street, and all nearby roads.',
       },
       {
         question: 'How far are you from Shenfield?',
         answer:
-          "We're about 6 miles from Shenfield in Harold Hill. We offer a collection and drop-off service — call 07971 331814 to arrange.",
+          "I'm about 6 miles from Shenfield in Harold Hill. I offer a collection and drop-off service — call 07971 331814 to arrange.",
       },
       {
         question: 'Do you repair gaming PCs?',
         answer:
-          'Yes! We specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds to your spec.',
+          'Yes! I specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds to your spec.',
       },
       {
         question: 'Can you transfer data from my old computer?',
         answer:
-          "Yes, we offer full data transfer services. We'll move your files, photos, documents, and settings from your old PC to your new one. Quick turnaround.",
+          "Yes, I offer full data transfer services. I'll move your files, photos, documents, and settings from your old PC to your new one. Quick turnaround.",
       },
     ],
   },
@@ -1269,12 +1269,12 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Upney for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Upney and surrounding IG11 areas. Collection and drop-off available from Upney Station and all nearby streets.',
+          'Yes! I provide computer repair services to Upney and surrounding IG11 areas. Collection and drop-off available from Upney Station and all nearby streets.',
       },
       {
         question: 'How do I book a repair from Upney?',
         answer:
-          "Call us on 07971 331814 or use our contact form. We can arrange collection and drop-off from Upney, usually within a few hours. We're open 7 days, 9AM to 9PM.",
+          "Call me on 07971 331814 or use my contact form. I can arrange collection and drop-off from Upney, usually within a few hours. I'm open 7 days, 9AM to 9PM.",
       },
       {
         question: 'What types of repairs do you offer?',
@@ -1284,7 +1284,7 @@ export const areas: AreaData[] = [
       {
         question: 'Do you sell computers?',
         answer:
-          'Yes, we sell both new and refurbished PCs and laptops. All refurbished machines come with Windows 11 and a warranty. Delivery available.',
+          'Yes, I sell both new and refurbished PCs and laptops. All refurbished machines come with Windows 11 and a warranty. Delivery available.',
       },
     ],
   },
@@ -1300,22 +1300,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Clayhall?',
         answer:
-          'Yes! We cover Clayhall and all IG5 postcodes. Collection and drop-off available from Clayhall Avenue, Clayhall Park area, and all surrounding streets.',
+          'Yes! I cover Clayhall and all IG5 postcodes. Collection and drop-off available from Clayhall Avenue, Clayhall Park area, and all surrounding streets.',
       },
       {
         question: 'How far are you from Clayhall?',
         answer:
-          "We're about 5 miles from Clayhall in Harold Hill. Collection and drop-off service available — call 07971 331814 to arrange.",
+          "I'm about 5 miles from Clayhall in Harold Hill. Collection and drop-off service available — call 07971 331814 to arrange.",
       },
       {
         question: 'Can you fix a laptop with a broken screen?',
         answer:
-          'Yes! We repair cracked, broken, and flickering laptop screens. We stock screens for most popular models and can often complete the repair within 24 hours.',
+          'Yes! I repair cracked, broken, and flickering laptop screens. I stock screens for most popular models and can often complete the repair within 24 hours.',
       },
       {
         question: 'Do you offer virus removal?',
         answer:
-          "Yes! Virus and malware removal is one of our core services. We'll clean your system thoroughly and install protection to prevent future infections. Most completed same day.",
+          "Yes! Virus and malware removal is one of my core services. I'll clean your system thoroughly and install protection to prevent future infections. Most completed same day.",
       },
     ],
   },
@@ -1331,22 +1331,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Aldborough Hatch?',
         answer:
-          "Yes! We're just 4 miles from Aldborough Hatch in Harold Hill. Collection and drop-off service available throughout the area.",
+          "Yes! I'm just 4 miles from Aldborough Hatch in Harold Hill. Collection and drop-off service available throughout the area.",
       },
       {
         question: 'Is there a callout charge?',
         answer:
-          'Collection and drop-off service available. We charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
+          'Collection and drop-off service available. I charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
         question: 'What brands do you repair?',
         answer:
-          'We repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and custom-built PCs.',
+          'I repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and custom-built PCs.',
       },
       {
         question: 'Can you help with Wi-Fi and network issues?',
         answer:
-          "Yes, we can diagnose and fix connectivity issues including slow Wi-Fi, network dropouts, router problems, and printer connectivity. We'll get you back online quickly.",
+          "Yes, I can diagnose and fix connectivity issues including slow Wi-Fi, network dropouts, router problems, and printer connectivity. I'll get you back online quickly.",
       },
     ],
   },
@@ -1362,22 +1362,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you offer computer repair in Fairlop?',
         answer:
-          'Yes! We cover Fairlop and the wider IG6 area. Collection and drop-off available from Fairlop Station, Fairlop Waters area, and all surrounding streets.',
+          'Yes! I cover Fairlop and the wider IG6 area. Collection and drop-off available from Fairlop Station, Fairlop Waters area, and all surrounding streets.',
       },
       {
         question: 'How quickly can you collect from Fairlop?',
         answer:
-          "We can usually collect from Fairlop within a couple of hours. Call 07971 331814 to arrange. We're open 7 days a week, 9AM to 9PM.",
+          "I can usually collect from Fairlop within a couple of hours. Call 07971 331814 to arrange. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
         question: 'Do you fix computers that won\'t start?',
         answer:
-          "Yes! We diagnose and repair PCs and laptops that won't power on. Common causes include power supply failure, motherboard issues, and dead batteries. £20 diagnostic check included — waived if you proceed with repair.",
+          "Yes! I diagnose and repair PCs and laptops that won't power on. Common causes include power supply failure, motherboard issues, and dead batteries. £20 diagnostic check included — waived if you proceed with repair.",
       },
       {
         question: 'Do you offer business IT support?',
         answer:
-          'Yes, we provide IT support for local businesses including emergency repairs, ongoing maintenance, network setup, and hardware procurement.',
+          'Yes, I provide IT support for local businesses including emergency repairs, ongoing maintenance, network setup, and hardware procurement.',
       },
     ],
   },
@@ -1393,22 +1393,22 @@ export const areas: AreaData[] = [
       {
         question: 'Do you cover Hutton for computer repairs?',
         answer:
-          'Yes! We provide computer repair services to Hutton and surrounding CM13 areas. Collection and drop-off available from Hutton Village, Wash Road, and all nearby lanes.',
+          'Yes! I provide computer repair services to Hutton and surrounding CM13 areas. Collection and drop-off available from Hutton Village, Wash Road, and all nearby lanes.',
       },
       {
         question: 'How do I get my computer to you from Hutton?',
         answer:
-          "We offer a collection and drop-off service for Hutton customers. Call 07971 331814 and we'll arrange a convenient time, or drop off at our Harold Hill workshop.",
+          "I offer a collection and drop-off service for Hutton customers. Call 07971 331814 and I'll arrange a convenient time, or drop off at my Harold Hill workshop.",
       },
       {
         question: 'Do you offer data recovery in Hutton?',
         answer:
-          'Yes, we provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
+          'Yes, I provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
       },
       {
         question: 'Are you open at weekends?',
         answer:
-          "Yes! We're open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect if you can't get to us during the working week.",
+          "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect if you can't get to me during the working week.",
       },
     ],
   },

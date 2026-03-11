@@ -49,7 +49,7 @@ const currentYear = new Date().getFullYear();
           </h3>
         </a>
 
-        <div class="scroll-container enhanced-ticker" tabindex="0" role="region" aria-label="Service areas we cover">
+        <div class="scroll-container enhanced-ticker" tabindex="0" role="region" aria-label="Service areas I cover">
           <div class="scroll-content">
             <span class="service-area-primary"><span aria-hidden="true">🌍</span> Harold Hill</span>
             <span class="service-area"><span aria-hidden="true">🪐</span> Romford</span>
@@ -184,7 +184,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">ℹ️</span>About Us
+              <span aria-hidden="true" style="color: var(--plasma-cyan);">ℹ️</span>About Me
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -440,17 +440,6 @@ const currentYear = new Date().getFullYear();
       </a>
     </div>
 
-    <!-- Back to Top Button -->
-    <div style="display: flex; justify-content: center; margin-bottom: 32px;">
-      <button
-        id="back-to-top"
-        class="space-button back-to-top-enhanced"
-        aria-label="Scroll back to top of page"
-        style="font-size: 12px; padding: 10px 20px; cursor: pointer; transition: all 0.3s ease;"
-      >
-        <span aria-hidden="true">🚀</span>Back to Top
-      </button>
-    </div>
   </div>
 
   <!-- Copyright Section -->
@@ -559,27 +548,6 @@ const currentYear = new Date().getFullYear();
       yearElement.textContent = currentYear;
     }
 
-    // Back to top functionality with scroll-based visibility
-    const backToTopButton = document.getElementById('back-to-top');
-    if (backToTopButton) {
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth',
-        });
-      });
-
-      // Show/hide back to top based on scroll position
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTopButton.style.opacity = '1';
-          backToTopButton.style.transform = 'translateY(0)';
-        } else {
-          backToTopButton.style.opacity = '0.7';
-          backToTopButton.style.transform = 'translateY(10px)';
-        }
-      }, { passive: true });
-    }
 
     // Real-time availability status
     function updateAvailabilityStatus() {
