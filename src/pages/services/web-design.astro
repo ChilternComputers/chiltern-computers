@@ -185,8 +185,10 @@ const faqs = [
     /* Pricing Grid */
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .pricing-card {
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
@@ -205,10 +207,6 @@ const faqs = [
       border-color: var(--aurora-green);
       box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
       position: relative;
-    }
-    .pricing-card.premium {
-      border-color: var(--nebula-purple);
-      box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
     }
     .pricing-card .price {
       font-size: clamp(28px, 4vw, 36px);
@@ -442,9 +440,6 @@ const faqs = [
     }
 
     @media (max-width: 1200px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
       .pricing-card.featured {
         grid-column: 1 / -1;
       }
@@ -763,6 +758,7 @@ const faqs = [
               <li><span class="check">&#10003;</span> Mobile-friendly layout</li>
               <li><span class="check">&#10003;</span> Contact form</li>
               <li><span class="check">&#10003;</span> Basic SEO &amp; sitemap</li>
+              <li><span class="check">&#10003;</span> Basic gallery</li>
               <li><span class="check">&#10003;</span> SSL certificate</li>
               <li><span class="check">&#10003;</span> Free secure hosting</li>
               <li><span class="check">&#10003;</span> Business email forwarding</li>
@@ -789,54 +785,26 @@ const faqs = [
             <span class="tech-font" style="color: var(--aurora-green); font-size: 12px; letter-spacing: 1px; margin-top: 16px;">PROFESSIONAL</span>
             <div class="price space-font" style="color: var(--aurora-green);">£800</div>
             <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin-bottom: 20px;">
-              Multi-page premium design built to rank
+              Single-page premium design built to rank
             </p>
             <ul class="features alien-font">
-              <li><span class="check">&#10003;</span> Multi-page premium design</li>
-              <li><span class="check">&#10003;</span> Mobile-first responsive</li>
+              <li><span class="check">&#10003;</span> Single-page premium design</li>
+              <li><span class="check">&#10003;</span> Enhanced styling, animations &amp; fonts</li>
               <li><span class="check">&#10003;</span> Contact form with spam protection</li>
               <li><span class="check">&#10003;</span> Enhanced SEO &amp; code structure</li>
+              <li><span class="check">&#10003;</span> Enhanced gallery</li>
               <li><span class="check">&#10003;</span> Security headers &amp; performance optimised</li>
-              <li><span class="check">&#10003;</span> Proper business email mailbox</li>
+              <li><span class="check">&#10003;</span> Business email forwarding &amp; domain mailbox</li>
               <li><span class="check">&#10003;</span> Sub-second load times</li>
               <li><span class="check">&#10003;</span> Analytics setup</li>
               <li><span class="check">&#10003;</span> 2 rounds of revisions</li>
             </ul>
             <div class="best-for alien-font" style="border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.1);">
-              <strong style="color: var(--aurora-green);">Best for:</strong><br>Established businesses wanting to rank online
+              <strong style="color: var(--aurora-green);">Best for:</strong><br>Established businesses wanting to stand out online
             </div>
             <div style="margin-top: 20px; text-align: center;">
               <a href="https://chiltern-demo-professional.pages.dev/" target="_blank" rel="noopener" class="space-button space-font" style="font-size: 13px; padding: 12px 24px; background: linear-gradient(135deg, #065f46, #047857); border-color: var(--aurora-green);">
                 <span aria-hidden="true">⭐</span> View Live Demo
-              </a>
-            </div>
-          </div>
-
-          <!-- Bespoke Premium -->
-          <div class="pricing-card premium">
-            <span class="tech-font" style="color: var(--nebula-purple); font-size: 12px; letter-spacing: 1px;">BESPOKE PREMIUM</span>
-            <div class="price space-font" style="color: var(--nebula-purple);">POA</div>
-            <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin-bottom: 20px;">
-              Fully bespoke multi-page website
-            </p>
-            <ul class="features alien-font">
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Fully bespoke multi-page design</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Custom animations &amp; interactions</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Progressive Web App (PWA)</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> WCAG accessibility compliance</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Advanced structured data</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Full security suite</li>
-              <li><span class="check" style="color: var(--nebula-purple);">&#10003;</span> Unlimited pages &amp; ongoing support</li>
-            </ul>
-            <div class="best-for alien-font" style="border-color: rgba(124, 58, 237, 0.3); background: rgba(124, 58, 237, 0.1);">
-              <strong style="color: var(--nebula-purple);">Best for:</strong><br>Businesses ready to dominate their local market
-            </div>
-            <p class="alien-font" style="color: var(--nebula-purple); font-size: 12px; text-align: center; margin-top: 12px; opacity: 0.9;">
-              This website (chilterncomputers.net) is built at this tier.
-            </p>
-            <div style="margin-top: 8px; text-align: center;">
-              <a href="/contact/" class="space-button space-font" style="font-size: 13px; padding: 12px 24px; background: linear-gradient(135deg, #5b21b6, #7c3aed); border-color: var(--nebula-purple);">
-                <span aria-hidden="true">👑</span> Enquire
               </a>
             </div>
           </div>
@@ -1873,15 +1841,8 @@ const faqs = [
         {
           "@type": "Offer",
           "name": "Professional Website",
-          "description": "Multi-page premium website with dedicated sub pages, proper business email, enhanced SEO with JSON-LD schema, security headers, performance optimisation, and analytics.",
+          "description": "Single-page premium website with enhanced styling, animations, custom fonts, enhanced SEO, enhanced gallery, domain email mailbox, security headers, performance optimisation, and analytics.",
           "price": "800",
-          "priceCurrency": "GBP"
-        },
-        {
-          "@type": "Offer",
-          "name": "Bespoke Premium Website",
-          "description": "Fully bespoke multi-page website with custom animations, PWA, accessibility compliance, and unlimited pages.",
-          "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "GBP", "description": "Price on application — contact for quote" },
           "priceCurrency": "GBP"
         }
       ]
