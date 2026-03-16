@@ -405,7 +405,7 @@ const reviews = [
                 Harold Hill, Romford, RM3 8YP
               </p>
               <span
-                style="background: #3b82f6; color: white; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;"
+                style="background: #2563eb; color: white; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;"
               >
                 <span aria-hidden="true">🗺️</span> Open in Google Maps
               </span>
@@ -465,12 +465,12 @@ const reviews = [
               S
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Sarah Mitchell
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -502,12 +502,12 @@ const reviews = [
               M
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Mike Thompson
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -538,12 +538,12 @@ const reviews = [
               L
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Linda Johnson
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -573,12 +573,12 @@ const reviews = [
               J
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 James Wilson
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -608,12 +608,12 @@ const reviews = [
               R
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Rachel Davis
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -644,12 +644,12 @@ const reviews = [
               A
             </div>
             <div>
-              <h4
+              <h3
                 class="space-font"
                 style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Alan Roberts
-              </h4>
+              </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
                 <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
@@ -794,14 +794,14 @@ const reviews = [
     }
   </style>
 
-  <script lang="ts">
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('contact-form');
 
       if (form) {
         form.addEventListener('submit', function (e) {
-          const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
-          const humanCheck = document.getElementById('human-check') as HTMLInputElement | null;
+          const submitBtn = document.getElementById('submit-btn');
+          const humanCheck = document.getElementById('human-check');
 
           // Check human verification
           if (!humanCheck?.checked) {
