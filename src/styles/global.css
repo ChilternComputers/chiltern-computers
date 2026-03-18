@@ -645,7 +645,7 @@ select:focus {
   gap: 24px;
 }
 
-/* Section Backgrounds — .section-bg is the canonical class; numbered variants kept for backwards compat */
+/* Section Backgrounds */
 .section-bg-1,
 .section-bg-2,
 .section-bg-3,
@@ -664,7 +664,6 @@ select:focus {
   content-visibility: auto;
   contain-intrinsic-size: auto 600px;
 }
-/* NOTE: .section-bg defined in LAYOUT UTILITIES above is identical — new pages should use .section-bg */
 
 /* ========================================
    SERVICE AREA TICKER
@@ -827,7 +826,7 @@ select:focus {
 
 .footer-link-sm {
   color: var(--comet-silver);
-  font-size: 13px;
+  font-size: 14px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -876,7 +875,7 @@ select:focus {
 
 /* Card description text */
 .card-desc { color: var(--comet-silver); font-size: 14px; margin: 0; }
-.card-desc-sm { color: var(--comet-silver); font-size: 13px; }
+.card-desc-sm { color: var(--comet-silver); font-size: 14px; }
 
 /* Section heading */
 .section-heading {
@@ -1057,7 +1056,7 @@ select:user-valid {
 
 .field-error {
   color: var(--error);
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 4px;
   display: none;
 }
