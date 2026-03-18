@@ -6,10 +6,6 @@ export const siteConfig = {
   alternateName: 'Chiltern Computer Repair',
   tagline: 'Expert IT Support in Romford & Havering',
   foundingDate: '2007',
-
-  // Feature flags
-  showWebDesign: false, // Set to true to re-enable web design service across the site
-
   // URLs
   baseUrl: 'https://chilterncomputers.net',
 

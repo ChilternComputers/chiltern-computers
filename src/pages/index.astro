@@ -8,7 +8,7 @@ import Icon from '../components/Icon.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 
 const reviews = getReviews(4);
-const showWebDesign = siteConfig.showWebDesign;
+
 ---
 
 <Layout
@@ -484,29 +484,6 @@ const showWebDesign = siteConfig.showWebDesign;
           </p>
         </a>
 
-        {showWebDesign && (
-        <a href="/services/web-design/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
-          <div
-            class="planet-icon"
-            style="background: rgba(16, 185, 129, 0.2); color: var(--aurora-green);"
-            aria-hidden="true"
-          >
-            <Icon name="globe" size={24} />
-          </div>
-          <h3
-            class="space-font"
-            style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
-          >
-            WEB DESIGN
-          </h3>
-          <p
-            class="alien-font mobile-text"
-            style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;"
-          >
-            Professional websites from £299. Fast, mobile-ready, with free first-year hosting.
-          </p>
-        </a>
-        )}
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@
 import { siteConfig } from '../config';
 import Icon from './Icon.astro';
 const currentPath = Astro.url.pathname;
-const showWebDesign = siteConfig.showWebDesign;
+
 ---
 
 <header class="hdr">
@@ -50,9 +50,6 @@ const showWebDesign = siteConfig.showWebDesign;
           <li><a href="/services/custom-pcs/" class="nav-link hdr-nav-item hdr-nav-green" aria-label="Gaming PCs" aria-current={currentPath === '/services/custom-pcs/' ? 'page' : undefined}><Icon name="gaming" size={14} />Gaming PCs</a></li>
           <li><a href="/services/repairs/" class="nav-link hdr-nav-item hdr-nav-orange" aria-label="Repairs" aria-current={currentPath.startsWith('/services/repairs') ? 'page' : undefined}><Icon name="wrench" size={14} />Repairs</a></li>
           <li><a href="/services/new-used/" class="nav-link hdr-nav-item hdr-nav-purple" aria-label="PCs & Laptops" aria-current={currentPath === '/services/new-used/' ? 'page' : undefined}><Icon name="laptop" size={14} />PCs & Laptops</a></li>
-          {showWebDesign && (
-          <li><a href="/services/web-design/" class="nav-link hdr-nav-item" aria-label="Web Design" aria-current={currentPath === '/services/web-design/' ? 'page' : undefined}><Icon name="globe" size={14} />Web Design</a></li>
-          )}
           <li><a href="/about/" class="nav-link hdr-nav-item" aria-label="About" aria-current={currentPath === '/about/' ? 'page' : undefined}><Icon name="info" size={14} />About</a></li>
           <li><a href="/blog/" class="nav-link hdr-nav-item" aria-label="Blog" aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}><Icon name="blog" size={14} />Blog</a></li>
           <li><a href="/book-repair/" class="nav-link hdr-nav-cta" aria-label="Book a repair" aria-current={currentPath === '/book-repair/' ? 'page' : undefined}><Icon name="wrench" size={14} />Book Repair</a></li>

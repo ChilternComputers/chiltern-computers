@@ -5,7 +5,6 @@ import { siteConfig } from '../config';
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
   const lastUpdated = '2026-03-09';
-  const showWebDesign = siteConfig.showWebDesign;
 
   // All pages verified against src/pages/ — 79 pages total
   const routes = [
@@ -26,7 +25,6 @@ export const GET: APIRoute = async () => {
     { url: '/services/gaming-pc-repair-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/network-wifi-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
-    ...(showWebDesign ? [{ url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated }] : []),
 
     // Core pages (9)
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
@@ -100,7 +98,6 @@ export const GET: APIRoute = async () => {
     { url: '/blog/why-laptop-running-slow-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
     { url: '/blog/gaming-pc-build-tips-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
     { url: '/blog/computer-maintenance-tips-romford-businesses/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
-    ...(showWebDesign ? [{ url: '/blog/website-design-services-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-08' }] : []),
   ];
 
   // Generate XML with proper formatting — only include lastmod when available
