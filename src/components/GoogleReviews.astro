@@ -1,58 +1,42 @@
 ---
 // GoogleReviews.astro — Static Google Reviews display with link to leave a review
-// Uses real review data from the centralized reviews.ts file
 import { getReviews } from '../data/reviews';
 import StarRating from './StarRating.astro';
-import Icon from './Icon.astro';
 
 const reviews = getReviews(3);
 const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
 ---
 
-<section class="section-bg" style="padding: 60px 0 80px;" aria-labelledby="reviews-heading">
+<section class="section-bg gr-section" aria-labelledby="reviews-heading">
   <div class="container">
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h2 id="reviews-heading" class="space-font galaxy-text cosmic-glow" style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 12px;">
-        WHAT MY CUSTOMERS SAY
-      </h2>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px;">
+    <div class="gr-header">
+      <h2 id="reviews-heading" class="space-font galaxy-text cosmic-glow gr-title">WHAT MY CUSTOMERS SAY</h2>
+      <div class="gr-rating-row">
         <StarRating rating={5} size={20} />
-        <span class="space-font" style="color: var(--starlight-white); font-size: 18px;">5.0</span>
+        <span class="space-font gr-rating-num">5.0</span>
       </div>
-      <p class="alien-font" style="color: var(--comet-silver); font-size: 14px;">
-        Based on Google Reviews
-      </p>
+      <p class="alien-font gr-sub">Based on Google Reviews</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto 32px;">
+    <div class="gr-grid">
       {reviews.map((review) => (
-        <div class="cosmic-card" style="padding: 24px;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px; flex-shrink: 0;">
-              {review.author.charAt(0)}
-            </div>
+        <div class="cosmic-card gr-card">
+          <div class="gr-author-row">
+            <div class="gr-avatar">{review.author.charAt(0)}</div>
             <div>
-              <div class="space-font" style="color: var(--starlight-white); font-size: 14px;">{review.author}</div>
-              <div class="alien-font" style="color: var(--text-muted); font-size: 12px;">{review.location}</div>
+              <div class="space-font gr-author-name">{review.author}</div>
+              <div class="alien-font gr-author-loc">{review.location}</div>
             </div>
           </div>
           <StarRating rating={review.rating} size={14} />
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6; margin-top: 12px; font-style: italic;">
-            "{review.text}"
-          </p>
+          <p class="alien-font gr-review-text">"{review.text}"</p>
         </div>
       ))}
     </div>
 
-    <div style="text-align: center;">
-      <a
-        href={googleReviewUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="space-button space-font"
-        style="font-size: 14px;"
-      >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="flex-shrink:0;">
+    <div class="text-center">
+      <a href={googleReviewUrl} target="_blank" rel="noopener noreferrer" class="space-button space-font gr-cta-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="gr-google-icon">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
           <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
           <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -63,3 +47,21 @@ const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
     </div>
   </div>
 </section>
+
+<style>
+  .gr-section { padding: 60px 0 80px; }
+  .gr-header { text-align: center; margin-bottom: 40px; }
+  .gr-title { font-size: clamp(24px, 4vw, 36px); margin-bottom: 12px; }
+  .gr-rating-row { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px; }
+  .gr-rating-num { color: var(--starlight-white); font-size: 18px; }
+  .gr-sub { color: var(--comet-silver); font-size: 14px; }
+  .gr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto 32px; }
+  .gr-card { padding: 24px; }
+  .gr-author-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .gr-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+  .gr-author-name { color: var(--starlight-white); font-size: 14px; }
+  .gr-author-loc { color: var(--text-muted); font-size: 12px; }
+  .gr-review-text { color: var(--comet-silver); font-size: 14px; line-height: 1.6; margin-top: 12px; font-style: italic; }
+  .gr-cta-btn { font-size: 14px; }
+  .gr-google-icon { flex-shrink: 0; }
+</style>

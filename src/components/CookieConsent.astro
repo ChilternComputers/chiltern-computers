@@ -2,30 +2,15 @@
 // CookieConsent.astro - GDPR cookie consent banner with proper modal behavior
 ---
 
-<div
-  id="cookie-consent"
-  role="dialog"
-  aria-label="Cookie consent"
-  style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; padding: 16px; background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98)); border-top: 2px solid rgba(6,182,212,0.4); backdrop-filter: blur(12px);"
->
-  <div style="max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-    <p style="color: #e5e7eb; font-family: 'Exo 2', sans-serif; font-size: 14px; line-height: 1.6; margin: 0; flex: 1; min-width: 200px;">
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" class="cc-banner">
+  <div class="cc-inner">
+    <p class="cc-text">
       I use essential cookies to keep this site running. No tracking, no ads.
-      <a href="/privacy-policy/" style="color: #06b6d4; text-decoration: underline;">Privacy Policy</a>
+      <a href="/privacy-policy/" class="cc-link">Privacy Policy</a>
     </p>
-    <div style="display: flex; gap: 10px; flex-shrink: 0;">
-      <button
-        id="cookie-accept"
-        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
-      >
-        Accept
-      </button>
-      <button
-        id="cookie-decline"
-        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
-      >
-        Decline
-      </button>
+    <div class="cc-buttons">
+      <button id="cookie-accept" class="cc-btn cc-btn-accept">Accept</button>
+      <button id="cookie-decline" class="cc-btn cc-btn-decline">Decline</button>
     </div>
   </div>
 </div>
@@ -40,7 +25,6 @@
     if (!banner) return;
     banner.style.display = 'block';
     banner.setAttribute('aria-modal', 'true');
-    // Make background content inert so screen readers can't access it
     if (mainContent) mainContent.setAttribute('inert', '');
     document.querySelector('header')?.setAttribute('inert', '');
     document.querySelector('footer')?.setAttribute('inert', '');
@@ -53,7 +37,6 @@
       banner.style.display = 'none';
       banner.removeAttribute('aria-modal');
     }
-    // Remove inert from background
     if (mainContent) mainContent.removeAttribute('inert');
     document.querySelector('header')?.removeAttribute('inert');
     document.querySelector('footer')?.removeAttribute('inert');
@@ -79,3 +62,14 @@
     }
   });
 </script>
+
+<style>
+  .cc-banner { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; padding: 16px; background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,41,59,0.98)); border-top: 2px solid rgba(6,182,212,0.4); backdrop-filter: blur(12px); }
+  .cc-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .cc-text { color: var(--comet-silver); font-family: 'Exo 2', sans-serif; font-size: 14px; line-height: 1.6; margin: 0; flex: 1; min-width: 200px; }
+  .cc-link { color: var(--plasma-cyan); text-decoration: underline; }
+  .cc-buttons { display: flex; gap: 10px; flex-shrink: 0; }
+  .cc-btn { padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px; border: none; }
+  .cc-btn-accept { background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); color: #fff; }
+  .cc-btn-decline { background: transparent; color: var(--comet-silver); border: 1px solid rgba(229,231,235,0.3); }
+</style>
