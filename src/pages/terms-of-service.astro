@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -174,9 +175,9 @@ import Layout from '../layouts/Layout.astro';
               class="alien-font"
               style="color: var(--starlight-white); font-size: 14px; margin: 0;"
             >
-              📧 david@chilterncomputers.net<br />
-              📱 07971 331814<br />
-              📍 38 Hilldene Avenue, Harold Hill, Romford, Essex, RM3 8YP
+              <Icon name="email" size={14} class="icon-inline" /> david@chilterncomputers.net<br />
+              <Icon name="mobile" size={14} class="icon-inline" /> 07971 331814<br />
+              <Icon name="map-pin" size={14} class="icon-inline" /> 38 Hilldene Avenue, Harold Hill, Romford, Essex, RM3 8YP
             </p>
           </div>
         </div>
@@ -185,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
           style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--plasma-cyan);"
         >
           <a href="/contact/" class="space-button">
-            <span>📞</span>
+            <Icon name="phone" size={14} />
             Contact Me
           </a>
         </div>

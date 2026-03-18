@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -25,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
             class="planet-icon construction-planet"
             style="width: 120px; height: 120px; font-size: 60px; margin: 0 auto 32px; background: rgba(245, 158, 11, 0.2); color: var(--solar-orange); border-color: var(--solar-orange);"
           >
-            🚧
+            <Icon name="wrench" size={60} />
           </div>
         </div>
 
@@ -37,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
           <span
             class="tech-font"
             style="color: var(--solar-orange); font-size: 12px; font-weight: 600;"
-            >🔧 UNDER CONSTRUCTION</span
+            ><Icon name="wrench" size={12} class="icon-inline" /> UNDER CONSTRUCTION</span
           >
         </div>
         <h1
@@ -104,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🎮 Brand New Releases
+                    <Icon name="gaming" size={20} class="icon-inline" /> Brand New Releases
                   </h3>
                   <p
                     class="alien-font"
@@ -123,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🏆 Award-Winning AAA Titles
+                    <Icon name="trophy" size={20} class="icon-inline" /> Award-Winning AAA Titles
                   </h3>
                   <p
                     class="alien-font"
@@ -142,7 +143,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🌟 Online Multiplayer Sensations
+                    <Icon name="star" size={20} class="icon-inline" /> Online Multiplayer Sensations
                   </h3>
                   <p
                     class="alien-font"
@@ -160,7 +161,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🎯 Indie Gaming Gems
+                    <Icon name="star" size={20} class="icon-inline" /> Indie Gaming Gems
                   </h3>
                   <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6;">
                     Discover hidden treasures from independent developers including Hades, Stardew
@@ -194,7 +195,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🌍 Immersive VR Adventures
+                    <Icon name="globe" size={20} class="icon-inline" /> Immersive VR Adventures
                   </h3>
                   <p
                     class="alien-font"
@@ -212,7 +213,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    ⚔️ Action-Packed VR Combat
+                    <Icon name="gaming" size={20} class="icon-inline" /> Action-Packed VR Combat
                   </h3>
                   <p
                     class="alien-font"
@@ -231,7 +232,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🎨 Creative VR Experiences
+                    <Icon name="star" size={20} class="icon-inline" /> Creative VR Experiences
                   </h3>
                   <p
                     class="alien-font"
@@ -249,7 +250,7 @@ import Layout from '../layouts/Layout.astro';
                     class="space-font"
                     style="color: var(--plasma-cyan); font-size: 20px; margin-bottom: 16px;"
                   >
-                    🎢 Social VR Hangouts
+                    <Icon name="chat" size={20} class="icon-inline" /> Social VR Hangouts
                   </h3>
                   <p class="alien-font" style="color: var(--starlight-white); line-height: 1.6;">
                     Meet people from around the world in VRChat, attend virtual concerts in Horizon
@@ -279,7 +280,7 @@ import Layout from '../layouts/Layout.astro';
                       class="space-font"
                       style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 12px;"
                     >
-                      🎮 Premium Gaming Setups
+                      <Icon name="gaming" size={16} class="icon-inline" /> Premium Gaming Setups
                     </h4>
                     <p
                       class="alien-font"
@@ -297,7 +298,7 @@ import Layout from '../layouts/Layout.astro';
                       class="space-font"
                       style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
                     >
-                      📚 Massive Game Library
+                      <Icon name="clipboard" size={16} class="icon-inline" /> Massive Game Library
                     </h4>
                     <p
                       class="alien-font"
@@ -315,7 +316,7 @@ import Layout from '../layouts/Layout.astro';
                       class="space-font"
                       style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 12px;"
                     >
-                      🔥 Always Current
+                      <Icon name="bolt" size={16} class="icon-inline" /> Always Current
                     </h4>
                     <p
                       class="alien-font"

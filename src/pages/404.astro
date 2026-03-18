@@ -1,6 +1,7 @@
 ---
 // src/pages/404.astro
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
 const title = 'Page Not Found - PC Repair Harold Hill';
 const description =
@@ -520,20 +521,20 @@ const description =
     <!-- Emergency contact banner matching your header style -->
     <div class="emergency-banner">
       <p class="tech-font">
-        <span aria-hidden="true">🚨</span> <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span>
-        Call <a href="tel:+447971331814">07971 331814</a> <span aria-hidden="true">🚨</span>
+        <Icon name="alert" size={14} class="icon-inline" /> <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span>
+        Call <a href="tel:+447971331814">07971 331814</a> <Icon name="alert" size={14} class="icon-inline" />
       </p>
     </div>
 
     <div class="cta-buttons">
       <a href="/" class="cosmic-card btn btn-primary space-font">
-        <span aria-hidden="true">🏠</span> Go to Homepage
+        <Icon name="home" size={14} /> Go to Homepage
       </a>
       <a href="/contact/" class="cosmic-card btn btn-secondary space-font">
-        <span aria-hidden="true">📞</span> Contact Me
+        <Icon name="phone" size={14} /> Contact Me
       </a>
       <a href="tel:+447971331814" class="phone-link space-font">
-        <span aria-hidden="true">📱</span>
+        <Icon name="mobile" size={14} />
         <div>
           <div class="tech-font" style="font-size: 0.8rem; color: var(--comet-silver);">
             CALL NOW
@@ -546,7 +547,7 @@ const description =
     <div class="search-box">
       <input
         type="search"
-        placeholder="🔍 Search my site..."
+        placeholder="Search my site..."
         class="search-input alien-font"
         id="search-404"
         aria-label="Search my site"
@@ -561,20 +562,20 @@ const description =
     </h3>
     <div class="services-grid">
       <div class="service-card">
-        <h4><a href="/services/custom-pcs/" class="space-font">🎮 Gaming PCs</a></h4>
+        <h4><a href="/services/custom-pcs/" class="space-font"><Icon name="gaming" size={14} class="icon-inline" /> Gaming PCs</a></h4>
         <p class="alien-font">
           Custom built gaming computers and high-performance workstations in Harold Hill and
           Romford.
         </p>
       </div>
       <div class="service-card">
-        <h4><a href="/services/repairs/" class="space-font">🛠️ Computer Repairs</a></h4>
+        <h4><a href="/services/repairs/" class="space-font"><Icon name="wrench" size={14} class="icon-inline" /> Computer Repairs</a></h4>
         <p class="alien-font">
           Fast and reliable PC and laptop repairs with same-day service available.
         </p>
       </div>
       <div class="service-card">
-        <h4><a href="/services/new-used/" class="space-font">💻 PCs & Laptops</a></h4>
+        <h4><a href="/services/new-used/" class="space-font"><Icon name="laptop" size={14} class="icon-inline" /> PCs & Laptops</a></h4>
         <p class="alien-font">
           New and refurbished computers, laptops, and accessories for home and business.
         </p>
@@ -582,17 +583,17 @@ const description =
     </div>
 
     <div class="contact-section">
-      <h3 class="space-font cosmic-glow">🚀 Need Technical Support?</h3>
+      <h3 class="space-font cosmic-glow"><Icon name="rocket" size={18} class="icon-inline" /> Need Technical Support?</h3>
       <p class="alien-font">
         Chiltern Computers in Harold Hill is here to help. I provide professional IT
         support for homes and businesses across Romford, Essex, and surrounding areas.
       </p>
       <p class="alien-font">
-        <strong>📍 Service Areas:</strong> Harold Hill, Romford, Hornchurch, Upminster, Rainham, and surrounding
+        <strong><Icon name="map-pin" size={14} class="icon-inline" /> Service Areas:</strong> Harold Hill, Romford, Hornchurch, Upminster, Rainham, and surrounding
         Essex areas.
       </p>
       <p class="alien-font">
-        <strong>🕒 Hours:</strong>
+        <strong><Icon name="clock" size={14} class="icon-inline" /> Hours:</strong>
         <span id="status-display">9AM - 9PM</span> Daily
       </p>
     </div>

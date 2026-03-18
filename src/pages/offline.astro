@@ -1,5 +1,6 @@
 ---
 // Minimal offline page — no Layout wrapper to keep it lightweight
+import Icon from '../components/Icon.astro';
 ---
 <!DOCTYPE html>
 <html lang="en-GB">
@@ -65,11 +66,11 @@
 </head>
 <body>
   <main class="container">
-    <span class="icon" aria-hidden="true">📡</span>
+    <Icon name="wifi" size={64} class="icon" />
     <h1>You're Offline</h1>
     <p>It looks like you've lost your internet connection. You can still reach me by phone — I'm happy to help.</p>
     <a href="tel:+447971331814" class="phone-link">
-      <span aria-hidden="true">📞</span>
+      <Icon name="phone" size={14} />
       07971 331814
     </a>
     <a href="/" class="retry">Try again</a>

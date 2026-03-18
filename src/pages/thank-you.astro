@@ -1,6 +1,7 @@
 ---
 // src/pages/thank-you.astro
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <Layout
@@ -25,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
         <div
           style="width: 120px; height: 120px; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);"
         >
-          <span style="font-size: 60px;">✅</span>
+          <Icon name="check-circle" size={60} />
         </div>
       </div>
 
@@ -81,19 +82,19 @@ import Layout from '../layouts/Layout.astro';
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;"
         >
           <div style="text-align: center;">
-            <div style="font-size: 40px; margin-bottom: 10px;">📧</div>
+            <Icon name="email" size={40} style="display:block; margin-bottom:10px;" />
             <p class="alien-font" style="color: #b0c4de; font-size: 14px;">
               I'll review your message
             </p>
           </div>
           <div style="text-align: center;">
-            <div style="font-size: 40px; margin-bottom: 10px;">📞</div>
+            <Icon name="phone" size={40} style="display:block; margin-bottom:10px;" />
             <p class="alien-font" style="color: #b0c4de; font-size: 14px;">
               Contact you with next steps
             </p>
           </div>
           <div style="text-align: center;">
-            <div style="font-size: 40px; margin-bottom: 10px;">🔧</div>
+            <Icon name="wrench" size={40} style="display:block; margin-bottom:10px;" />
             <p class="alien-font" style="color: #b0c4de; font-size: 14px;">Schedule your repair</p>
           </div>
         </div>
@@ -105,14 +106,14 @@ import Layout from '../layouts/Layout.astro';
           href="/"
           style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"
         >
-          🏠 Back to Home
+          <Icon name="home" size={14} class="icon-inline" /> Back to Home
         </a>
 
         <a
           href="/#services"
           style="background: rgba(26, 31, 46, 0.8); border: 1px solid #3b82f6; color: #3b82f6; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"
         >
-          🔧 My Services
+          <Icon name="wrench" size={14} class="icon-inline" /> My Services
         </a>
       </div>
 
@@ -130,7 +131,7 @@ import Layout from '../layouts/Layout.astro';
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;"
         >
           <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">💻</div>
+            <Icon name="laptop" size={32} style="display:block; margin-bottom:8px;" />
             <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">
               PC & Laptop Repairs
             </h4>
@@ -139,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </div>
           <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🦠</div>
+            <Icon name="virus" size={32} style="display:block; margin-bottom:8px;" />
             <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">
               Virus Removal
             </h4>
@@ -148,7 +149,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </div>
           <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">💾</div>
+            <Icon name="database" size={32} style="display:block; margin-bottom:8px;" />
             <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">
               Data Recovery
             </h4>
@@ -157,7 +158,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </div>
           <div style="text-align: center; padding: 16px;">
-            <div style="font-size: 32px; margin-bottom: 8px;">🎮</div>
+            <Icon name="gaming" size={32} style="display:block; margin-bottom:8px;" />
             <h4 class="space-font" style="color: #e2e8f0; font-size: 14px; margin-bottom: 8px;">
               Custom Gaming PCs
             </h4>
@@ -176,7 +177,7 @@ import Layout from '../layouts/Layout.astro';
           class="alien-font"
           style="color: #ef4444; font-size: 16px; font-weight: 600; margin-bottom: 8px;"
         >
-          🚨 Computer Emergency?
+          <Icon name="alert" size={14} class="icon-inline" /> Computer Emergency?
         </p>
         <p class="alien-font" style="color: #b0c4de; font-size: 14px;">
           If your computer issue is urgent and affecting your work, call me immediately at <strong

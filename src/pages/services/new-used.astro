@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import StarRating from '../../components/StarRating.astro';
 ---
 
 <Layout
@@ -522,7 +524,7 @@ import Layout from '../../layouts/Layout.astro';
             >
             </div>
             <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;"
-              ><span aria-hidden="true">💻</span> NEW & REFURBISHED COMPUTERS</span
+              ><Icon name="laptop" size={14} class="icon-inline" /> NEW & REFURBISHED COMPUTERS</span
             >
           </div>
 
@@ -543,7 +545,7 @@ import Layout from '../../layouts/Layout.astro';
 
           <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <a href="#products" class="space-button space-font">
-              <span aria-hidden="true">🛸</span>
+              <Icon name="rocket" size={14} />
               VIEW OFFERS
             </a>
             <a
@@ -551,7 +553,7 @@ import Layout from '../../layouts/Layout.astro';
               class="space-button space-font"
               style="background: rgba(6, 182, 212, 0.15);"
             >
-              <span aria-hidden="true">📞</span>
+              <Icon name="phone" size={14} />
               CONTACT ME
             </a>
           </div>
@@ -575,7 +577,7 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="benefits-grid">
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🆕</div>
+            <Icon name="desktop" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;"
@@ -592,7 +594,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🔧</div>
+            <Icon name="wrench" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;"
@@ -609,7 +611,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">💻</div>
+            <Icon name="laptop" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;"
@@ -625,7 +627,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🎯</div>
+            <Icon name="star" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;"
@@ -661,7 +663,7 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="process-grid">
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🔧</div>
+            <Icon name="wrench" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 12px;"
@@ -677,7 +679,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">🧹</div>
+            <Icon name="repair" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--aurora-green); font-size: 18px; margin-bottom: 12px;"
@@ -693,7 +695,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">⚙️</div>
+            <Icon name="repair" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--solar-orange); font-size: 18px; margin-bottom: 12px;"
@@ -709,7 +711,7 @@ import Layout from '../../layouts/Layout.astro';
           </div>
 
           <div class="cosmic-card" style="padding: 28px; text-align: center;">
-            <div style="font-size: 48px; margin-bottom: 20px;" aria-hidden="true">✅</div>
+            <Icon name="check-circle" size={48} style="display:block; margin-bottom:20px;" />
             <h3
               class="space-font cosmic-glow"
               style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 12px;"
@@ -746,7 +748,7 @@ import Layout from '../../layouts/Layout.astro';
           <!-- New Gaming PC -->
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
-              <div style="font-size: 60px; margin-bottom: 16px;" aria-hidden="true">🎮</div>
+              <Icon name="gaming" size={60} style="display:block; margin-bottom:16px;" />
               <h3
                 class="space-font cosmic-glow"
                 style="color: var(--mars-red); font-size: 24px; margin-bottom: 16px;"
@@ -774,7 +776,7 @@ import Layout from '../../layouts/Layout.astro';
           <!-- New Business Desktop -->
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
-              <div style="font-size: 60px; margin-bottom: 16px;" aria-hidden="true">🏢</div>
+              <Icon name="desktop" size={60} style="display:block; margin-bottom:16px;" />
               <h3
                 class="space-font cosmic-glow"
                 style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px;"
@@ -802,7 +804,7 @@ import Layout from '../../layouts/Layout.astro';
           <!-- Business Laptop -->
           <article class="product-card" style="padding: 32px;">
             <div style="text-align: center; margin-bottom: 24px;">
-              <div style="font-size: 60px; margin-bottom: 16px;" aria-hidden="true">💼</div>
+              <Icon name="laptop" size={60} style="display:block; margin-bottom:16px;" />
               <h3
                 class="space-font cosmic-glow"
                 style="color: var(--aurora-green); font-size: 24px; margin-bottom: 16px;"
@@ -851,7 +853,7 @@ import Layout from '../../layouts/Layout.astro';
                     aria-label="5 out of 5 stars"
                     role="img"
                   >
-                    ⭐⭐⭐⭐⭐
+                    <StarRating rating={5} size={16} />
                   </div>
                 </div>
                 <p
@@ -882,7 +884,7 @@ import Layout from '../../layouts/Layout.astro';
                     aria-label="5 out of 5 stars"
                     role="img"
                   >
-                    ⭐⭐⭐⭐⭐
+                    <StarRating rating={5} size={16} />
                   </div>
                 </div>
                 <p
@@ -913,7 +915,7 @@ import Layout from '../../layouts/Layout.astro';
                     aria-label="5 out of 5 stars"
                     role="img"
                   >
-                    ⭐⭐⭐⭐⭐
+                    <StarRating rating={5} size={16} />
                   </div>
                 </div>
                 <p
@@ -960,7 +962,7 @@ import Layout from '../../layouts/Layout.astro';
               <div class="faq-item">
                 <div class="faq-question">
                   <h3 class="space-font cosmic-glow">
-                    <span aria-hidden="true">🖥️</span> What's the difference between new builds and refurbished?
+                    <Icon name="desktop" size={14} class="icon-inline" /> What's the difference between new builds and refurbished?
                   </h3>
                   <div class="faq-icon">▼</div>
                 </div>
@@ -978,7 +980,7 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="faq-item faq-highlight">
                 <div class="faq-question">
-                  <h3 class="space-font cosmic-glow"><span aria-hidden="true">🚀</span> Are the refurbished units fast?</h3>
+                  <h3 class="space-font cosmic-glow"><Icon name="rocket" size={14} class="icon-inline" /> Are the refurbished units fast?</h3>
                   <div class="faq-icon">▼</div>
                 </div>
                 <div class="faq-answer">
@@ -993,7 +995,7 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="faq-item">
                 <div class="faq-question">
-                  <h3 class="space-font cosmic-glow"><span aria-hidden="true">🎮</span> Can you build custom gaming PCs?</h3>
+                  <h3 class="space-font cosmic-glow"><Icon name="gaming" size={14} class="icon-inline" /> Can you build custom gaming PCs?</h3>
                   <div class="faq-icon">▼</div>
                 </div>
                 <div class="faq-answer">
@@ -1009,7 +1011,7 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="faq-item">
                 <div class="faq-question">
-                  <h3 class="space-font cosmic-glow"><span aria-hidden="true">⏱️</span> How long do custom builds take?</h3>
+                  <h3 class="space-font cosmic-glow"><Icon name="clock" size={14} class="icon-inline" /> How long do custom builds take?</h3>
                   <div class="faq-icon">▼</div>
                 </div>
                 <div class="faq-answer">
@@ -1025,7 +1027,7 @@ import Layout from '../../layouts/Layout.astro';
               <div class="faq-item">
                 <div class="faq-question">
                   <h3 class="space-font cosmic-glow">
-                    <span aria-hidden="true">💾</span> Can you transfer my data from my old computer?
+                    <Icon name="database" size={14} class="icon-inline" /> Can you transfer my data from my old computer?
                   </h3>
                   <div class="faq-icon">▼</div>
                 </div>
@@ -1041,7 +1043,7 @@ import Layout from '../../layouts/Layout.astro';
               <div class="faq-item">
                 <div class="faq-question">
                   <h3 class="space-font cosmic-glow">
-                    <span aria-hidden="true">🚚</span> Do you offer collection and delivery services?
+                    <Icon name="car" size={14} class="icon-inline" /> Do you offer collection and delivery services?
                   </h3>
                   <div class="faq-icon">▼</div>
                 </div>
@@ -1056,7 +1058,7 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="faq-item">
                 <div class="faq-question">
-                  <h3 class="space-font cosmic-glow"><span aria-hidden="true">🛡️</span> What warranty do you provide?</h3>
+                  <h3 class="space-font cosmic-glow"><Icon name="shield" size={14} class="icon-inline" /> What warranty do you provide?</h3>
                   <div class="faq-icon">▼</div>
                 </div>
                 <div class="faq-answer">
@@ -1071,7 +1073,7 @@ import Layout from '../../layouts/Layout.astro';
 
               <div class="faq-item">
                 <div class="faq-question">
-                  <h3 class="space-font cosmic-glow"><span aria-hidden="true">💰</span> Do you offer payment plans?</h3>
+                  <h3 class="space-font cosmic-glow"><Icon name="bolt" size={14} class="icon-inline" /> Do you offer payment plans?</h3>
                   <div class="faq-icon">▼</div>
                 </div>
                 <div class="faq-answer">
@@ -1110,11 +1112,11 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-button space-font"
                   style="background: linear-gradient(135deg, #25d366, #128c7e);"
                 >
-                  <span aria-hidden="true">📱</span>
+                  <Icon name="mobile" size={14} />
                   WHATSAPP ME
                 </a>
                 <a href="tel:+447971331814" class="space-button space-font">
-                  <span aria-hidden="true">📞</span>
+                  <Icon name="phone" size={14} />
                   CALL NOW
                 </a>
               </div>
@@ -1232,7 +1234,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-font"
                   style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
                 >
-                  <span aria-hidden="true">🎮</span> Custom Gaming PCs
+                  <Icon name="gaming" size={14} class="icon-inline" /> Custom Gaming PCs
                 </h3>
                 <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
                   Bespoke gaming and workstation builds tailored to your budget and performance needs.
@@ -1247,7 +1249,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-font"
                   style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
                 >
-                  <span aria-hidden="true">⚡</span> Computer Upgrades
+                  <Icon name="bolt" size={14} class="icon-inline" /> Computer Upgrades
                 </h3>
                 <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
                   Breathe new life into your existing PC with SSD, RAM and component upgrades.
@@ -1262,7 +1264,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-font"
                   style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
                 >
-                  <span aria-hidden="true">💾</span> Data Recovery & Transfer
+                  <Icon name="database" size={14} class="icon-inline" /> Data Recovery & Transfer
                 </h3>
                 <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
                   Transfer data from your old computer or recover files from failed drives.
@@ -1301,7 +1303,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-button space-font"
                   style="background: linear-gradient(135deg, #25d366, #128c7e);"
                 >
-                  <span aria-hidden="true">📱</span>
+                  <Icon name="mobile" size={14} />
                   WHATSAPP ME
                 </a>
                 <a
@@ -1309,7 +1311,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-button space-font"
                   style="background: linear-gradient(135deg, var(--starlight-white), var(--comet-silver)); color: var(--deep-space);"
                 >
-                  <span aria-hidden="true">📧</span>
+                  <Icon name="email" size={14} />
                   EMAIL ME
                 </a>
                 <a
@@ -1317,7 +1319,7 @@ import Layout from '../../layouts/Layout.astro';
                   class="space-button space-font"
                   style="background: rgba(6, 182, 212, 0.15); border: 2px solid var(--starlight-white);"
                 >
-                  <span aria-hidden="true">📞</span>
+                  <Icon name="phone" size={14} />
                   CALL 07971 331814
                 </a>
               </div>

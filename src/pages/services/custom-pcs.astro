@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../config';
+import Icon from '../../components/Icon.astro';
+import StarRating from '../../components/StarRating.astro';
 
 const showWebDesign = siteConfig.showWebDesign;
 const reviews = [
@@ -946,11 +948,11 @@ const reviews = [
     <!-- Hero Section -->
     <section class="hero">
       <div class="floating-runes">
-        <div class="floating-rune" aria-hidden="true">⚔️</div>
-        <div class="floating-rune" aria-hidden="true">🛡️</div>
-        <div class="floating-rune" aria-hidden="true">✨</div>
-        <div class="floating-rune" aria-hidden="true">🔥</div>
-        <div class="floating-rune" aria-hidden="true">💎</div>
+        <div class="floating-rune" aria-hidden="true"><Icon name="gaming" size={32} /></div>
+        <div class="floating-rune" aria-hidden="true"><Icon name="shield" size={32} /></div>
+        <div class="floating-rune" aria-hidden="true"><Icon name="star" size={32} /></div>
+        <div class="floating-rune" aria-hidden="true"><Icon name="bolt" size={32} /></div>
+        <div class="floating-rune" aria-hidden="true"><Icon name="star" size={32} /></div>
       </div>
 
       <div class="hero-content">
@@ -964,7 +966,7 @@ const reviews = [
 
         <div style="margin-top: 32px;">
           <a href="/contact/" class="tarnished-button rune-font">
-            <span aria-hidden="true">⚔️</span>
+            <Icon name="gaming" size={14} />
             <span>BEGIN YOUR QUEST</span>
           </a>
         </div>
@@ -978,7 +980,7 @@ const reviews = [
         <div class="showcase-grid">
           <!-- Intel Gaming Builds -->
           <div class="service-card gaming">
-            <div class="service-icon" aria-hidden="true">🔥</div>
+            <div class="service-icon" aria-hidden="true"><Icon name="bolt" size={36} /></div>
             <h3 class="rune-font service-title" style="color: var(--blood-red);">
               INTEL GAMING RIGS
             </h3>
@@ -987,14 +989,14 @@ const reviews = [
               single-player campaigns and dominating multiplayer arenas with precision.
             </p>
             <a href="/contact/" class="button-small rune-font">
-              <span aria-hidden="true">⚔️</span>
+              <Icon name="gaming" size={14} />
               <span>FORGE BUILD</span>
             </a>
           </div>
 
           <!-- AMD Ryzen Builds -->
           <div class="service-card office">
-            <div class="service-icon" aria-hidden="true">🚀</div>
+            <div class="service-icon" aria-hidden="true"><Icon name="rocket" size={36} /></div>
             <h3 class="rune-font service-title" style="color: var(--frost-cyan);">
               AMD RYZEN POWERHOUSES
             </h3>
@@ -1003,14 +1005,14 @@ const reviews = [
               streaming, and content creation. Built for peak efficiency.
             </p>
             <a href="/contact/" class="button-small rune-font">
-              <span aria-hidden="true">⚡</span>
+              <Icon name="bolt" size={14} />
               <span>CRAFT BUILD</span>
             </a>
           </div>
 
           <!-- Refurbished Systems -->
           <div class="service-card student">
-            <div class="service-icon" aria-hidden="true">♻️</div>
+            <div class="service-icon" aria-hidden="true"><Icon name="repair" size={36} /></div>
             <h3 class="rune-font service-title" style="color: var(--grace-yellow);">
               REFURB CHAMPIONS
             </h3>
@@ -1019,7 +1021,7 @@ const reviews = [
               performance for students, home users, and offices.
             </p>
             <a href="/contact/" class="button-small rune-font">
-              <span aria-hidden="true">✨</span>
+              <Icon name="star" size={14} />
               <span>RESTORE BUILD</span>
             </a>
           </div>
@@ -1044,7 +1046,7 @@ const reviews = [
               style="background: rgba(8, 145, 178, 0.3); color: var(--frost-cyan);"
               aria-hidden="true"
             >
-              📝
+              <Icon name="blog" size={28} />
             </div>
             <h3 class="rune-font step-title" style="color: var(--frost-cyan);">1. CONSULTATION</h3>
             <p class="tarnished-font step-description">
@@ -1059,7 +1061,7 @@ const reviews = [
               style="background: rgba(212, 175, 55, 0.3); color: var(--nightreign-gold);"
               aria-hidden="true"
             >
-              📦
+              <Icon name="clipboard" size={28} />
             </div>
             <h3 class="rune-font step-title" style="color: var(--nightreign-gold);">
               2. DESIGN & QUOTE
@@ -1076,7 +1078,7 @@ const reviews = [
               style="background: rgba(234, 88, 12, 0.3); color: var(--ember-orange);"
               aria-hidden="true"
             >
-              🛠️
+              <Icon name="wrench" size={28} />
             </div>
             <h3 class="rune-font step-title" style="color: var(--ember-orange);">
               3. BUILD & TEST
@@ -1093,7 +1095,7 @@ const reviews = [
               style="background: rgba(88, 28, 135, 0.3); color: var(--shadow-purple);"
               aria-hidden="true"
             >
-              🚗
+              <Icon name="car" size={28} />
             </div>
             <h3 class="rune-font step-title" style="color: var(--shadow-purple);">4. DELIVERY</h3>
             <p class="tarnished-font step-description">
@@ -1116,7 +1118,7 @@ const reviews = [
 
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <div class="rune-stars" aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</div>
+            <div class="rune-stars"><StarRating rating={5} size={16} /></div>
             <p class="tarnished-font testimonial-text">
               "They built an incredible gaming PC for my son—runs all the latest games flawlessly at
               high settings. Perfect for multiplayer sessions with friends!"
@@ -1125,7 +1127,7 @@ const reviews = [
           </div>
 
           <div class="testimonial-card">
-            <div class="rune-stars" aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</div>
+            <div class="rune-stars"><StarRating rating={5} size={16} /></div>
             <p class="tarnished-font testimonial-text">
               "Fast and professional service. My business PC is whisper-quiet, powerful, and handles
               everything I need for my office work."
@@ -1134,7 +1136,7 @@ const reviews = [
           </div>
 
           <div class="testimonial-card">
-            <div class="rune-stars" aria-label="5 out of 5 stars" role="img">⭐⭐⭐⭐⭐</div>
+            <div class="rune-stars"><StarRating rating={5} size={16} /></div>
             <p class="tarnished-font testimonial-text">
               "Outstanding customer service and technical expertise. My content creation rig is
               absolutely perfect for streaming and video editing!"
@@ -1232,7 +1234,7 @@ const reviews = [
               class="rune-font"
               style="color: var(--gold-accent); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🎮</span> Gaming PC Repair
+              <Icon name="gaming" size={14} class="icon-inline" /> Gaming PC Repair
             </h3>
             <p class="tarnished-font" style="color: var(--silver-light); font-size: 14px; margin: 0;">
               GPU failures, overheating, crashes and PSU issues — I fix all gaming PC problems.
@@ -1247,7 +1249,7 @@ const reviews = [
               class="rune-font"
               style="color: var(--gold-accent); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">⚡</span> PC Upgrades Romford
+              <Icon name="bolt" size={14} class="icon-inline" /> PC Upgrades Romford
             </h3>
             <p class="tarnished-font" style="color: var(--silver-light); font-size: 14px; margin: 0;">
               SSD, RAM and GPU upgrades to boost your existing PC's performance.
@@ -1262,7 +1264,7 @@ const reviews = [
               class="rune-font"
               style="color: var(--gold-accent); font-size: 16px; margin-bottom: 8px;"
             >
-              <span aria-hidden="true">🔧</span> Computer Repairs
+              <Icon name="wrench" size={14} class="icon-inline" /> Computer Repairs
             </h3>
             <p class="tarnished-font" style="color: var(--silver-light); font-size: 14px; margin: 0;">
               Same-day desktop and laptop repairs across Romford, Harold Hill and Havering.
@@ -1310,7 +1312,7 @@ const reviews = [
           </p>
 
           <a href="/contact/" class="tarnished-button rune-font">
-            <span aria-hidden="true">⚔️</span>
+            <Icon name="gaming" size={14} />
             <span>BEGIN YOUR ADVENTURE</span>
           </a>
         </div>
