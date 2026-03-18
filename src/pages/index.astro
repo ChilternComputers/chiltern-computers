@@ -5,6 +5,7 @@ import { getReviews } from '../data/reviews';
 import { siteConfig } from '../config';
 import StarRating from '../components/StarRating.astro';
 import Icon from '../components/Icon.astro';
+import GoogleReviews from '../components/GoogleReviews.astro';
 
 const reviews = getReviews(4);
 const showWebDesign = siteConfig.showWebDesign;
@@ -600,146 +601,7 @@ const showWebDesign = siteConfig.showWebDesign;
     </div>
   </section>
 
-  <!-- Customer Reviews -->
-  <section class="section-bg-4" style="padding: 80px 0;" aria-labelledby="reviews-heading">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 48px;">
-        <h2
-          id="reviews-heading"
-          class="space-font galaxy-text cosmic-glow mobile-text"
-          style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;"
-        >
-          CUSTOMER REVIEWS
-        </h2>
-        <div
-          style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--mars-red)); margin: 0 auto 20px; border-radius: 2px;"
-        >
-        </div>
-        <p class="alien-font mobile-text" style="color: var(--comet-silver); font-size: 16px;">
-          What my satisfied customers say about my services.
-        </p>
-      </div>
-
-      <div class="reviews-grid">
-        <div class="cosmic-card" style="padding: 16px;">
-          <div
-            class="space-font cosmic-glow"
-            style="color: var(--aurora-green); font-size: 14px; margin-bottom: 8px;"
-          >
-            <StarRating rating={5} size={16} />
-          </div>
-          <p
-            class="mobile-text"
-            style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;"
-          >
-            "Excellent service! Fixed my laptop quickly and reasonably priced. Highly recommend!"
-          </p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <p
-                class="space-font"
-                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
-              >
-                Sarah J.
-              </p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Romford</p>
-            </div>
-            <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cosmic-card" style="padding: 16px;">
-          <div
-            class="space-font cosmic-glow"
-            style="color: var(--plasma-cyan); font-size: 14px; margin-bottom: 8px;"
-          >
-            <StarRating rating={5} size={16} />
-          </div>
-          <p
-            class="mobile-text"
-            style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;"
-          >
-            "Great repair service. Professional work and my PC runs like new!"
-          </p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <p
-                class="space-font"
-                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
-              >
-                Tom H.
-              </p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">
-                Harold Wood
-              </p>
-            </div>
-            <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cosmic-card" style="padding: 16px;">
-          <div
-            class="space-font cosmic-glow"
-            style="color: var(--nebula-purple); font-size: 14px; margin-bottom: 8px;"
-          >
-            <StarRating rating={5} size={16} />
-          </div>
-          <p
-            class="mobile-text"
-            style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;"
-          >
-            "Built me an amazing gaming computer within budget. Excellent quality!"
-          </p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <p
-                class="space-font"
-                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
-              >
-                Rachel A.
-              </p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Hornchurch</p>
-            </div>
-            <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="cosmic-card" style="padding: 16px;">
-          <div
-            class="space-font cosmic-glow"
-            style="color: var(--solar-orange); font-size: 14px; margin-bottom: 8px;"
-          >
-            <StarRating rating={5} size={16} />
-          </div>
-          <p
-            class="mobile-text"
-            style="color: var(--starlight-white); font-style: italic; margin-bottom: 12px; line-height: 1.4; font-size: 13px;"
-          >
-            "Best computer support! Always helpful, reliable, and knowledgeable."
-          </p>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <p
-                class="space-font"
-                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
-              >
-                Mike D.
-              </p>
-              <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Dagenham</p>
-            </div>
-            <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Google Reviews -->
+  <GoogleReviews />
 
 </Layout>
