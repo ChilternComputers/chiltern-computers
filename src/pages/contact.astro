@@ -38,8 +38,7 @@ const reviews = getReviews(3);
   reviews={reviews}
 >
   <section
-    class="section-bg-5"
-    style="min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0;"
+    class="section-bg-5 contact-hero"
     role="region"
     aria-label="Contact information"
   >
@@ -61,13 +60,9 @@ const reviews = getReviews(3);
     </div>
 
     <!-- Two Column Layout -->
-    <div
-      style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;"
-    >
+    <div class="contact-grid">
       <!-- Left Column - Contact Form -->
-      <div
-        style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 40px;"
-      >
+      <div class="contact-form-card">
         <h2
           class="space-font cosmic-glow"
           style="color: var(--primary-blue); font-size: 24px; font-weight: 600; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;"
@@ -653,117 +648,31 @@ const reviews = getReviews(3);
     }
   </style>
 
-  <!-- Mobile Responsive Styles -->
+  <!-- Contact Page Styles -->
   <style>
+    .contact-hero { min-height: 100vh; padding: 120px 20px 40px; position: relative; margin: 0; }
+    .contact-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .contact-form-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 40px; }
+
     @media (max-width: 1024px) {
-      section:first-child > div:last-child {
-        grid-template-columns: 1fr !important;
-        gap: 32px !important;
-      }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
     @media (max-width: 768px) {
-      section:first-child {
-        padding: 140px 16px 32px !important;
-      }
-
-      section:first-child > div:first-child h1 {
-        font-size: 36px !important;
-      }
-
-      section:first-child > div:last-child > div {
-        padding: 24px !important;
-      }
-
-      /* Ensure form appears first on mobile */
-      section:first-child > div:last-child {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-
-      section:first-child > div:last-child > div:first-child {
-        order: 1;
-      }
-
-      section:first-child > div:last-child > div:last-child {
-        order: 2;
-      }
-
-      /* Human verification and submit button mobile */
-      .human-submit-row {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 16px !important;
-      }
-
-      .human-submit-row button {
-        min-width: auto !important;
-        width: 100% !important;
-      }
-
-      /* Reviews section mobile */
-      section:last-child {
-        padding: 60px 0 !important;
-      }
-
-      section:last-child > div {
-        max-width: 1400px !important;
-        margin: 0 auto !important;
-      }
-
-      section:last-child h2 {
-        font-size: 28px !important;
-      }
-
-      section:last-child > div > div:first-child {
-        margin-bottom: 40px !important;
-      }
-
-      section:last-child > div > div:nth-child(2) {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        margin: 0 16px !important;
-      }
-
-      section:last-child > div > div:nth-child(2) > div {
-        padding: 24px !important;
-      }
-
-      section:last-child > div > div:last-child {
-        padding: 32px 24px !important;
-      }
+      .contact-hero { padding: 140px 16px 32px; }
+      .contact-hero h1 { font-size: 36px; }
+      .contact-form-card { padding: 24px; }
+      .contact-grid { display: flex; flex-direction: column; }
+      .contact-grid > div:first-child { order: 1; }
+      .contact-grid > div:last-child { order: 2; }
+      .human-submit-row { flex-direction: column; align-items: stretch; gap: 16px; }
+      .human-submit-row button { min-width: auto; width: 100%; }
     }
 
     @media (max-width: 480px) {
-      section:first-child {
-        padding: 120px 12px 24px !important;
-      }
-
-      section:first-child > div:first-child h1 {
-        font-size: 28px !important;
-      }
-
-      section:first-child > div:last-child > div {
-        padding: 20px !important;
-      }
-
-      /* Reviews section mobile small */
-      section:last-child {
-        padding: 40px 12px !important;
-      }
-
-      section:last-child > div > div:nth-child(2) {
-        grid-template-columns: 1fr !important;
-        margin: 0 !important;
-      }
-
-      section:last-child > div > div:nth-child(2) > div {
-        padding: 20px !important;
-      }
-
-      section:last-child > div > div:last-child {
-        padding: 24px 20px !important;
-      }
+      .contact-hero { padding: 120px 12px 24px; }
+      .contact-hero h1 { font-size: 28px; }
+      .contact-form-card { padding: 20px; }
     }
   </style>
 
