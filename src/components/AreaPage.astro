@@ -186,6 +186,14 @@ const areaFaqSchema = {
             area.region
           } areas. With nearly two decades of experience, I'm the trusted choice for {area.name} computer repairs.
         </p>
+        {area.localContent && (
+        <p
+          class="alien-font"
+          style="color: var(--comet-silver); font-size: 15px; line-height: 1.7; margin-bottom: 24px; border-left: 3px solid var(--plasma-cyan); padding-left: 16px;"
+        >
+          {area.localContent}
+        </p>
+        )}
         <div style="display: flex; gap: 16px; flex-wrap: wrap;">
           <a
             href="/areas/"

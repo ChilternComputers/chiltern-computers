@@ -9,7 +9,7 @@ import StarRating from '../components/StarRating.astro';
   description="Meet David, your local PC repair expert. Established 2007 — honest, affordable computer repairs in Harold Hill, Romford and Essex."
   keywords="about chiltern computers, computer repair harold hill, pc repair romford, david hagon, local computer repair essex"
   type="website"
-  modifiedTime="2026-03-08"
+  modifiedTime="2026-03-18"
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'About Us', url: '/about/' },
@@ -186,8 +186,8 @@ import StarRating from '../components/StarRating.astro';
           class="alien-font"
           style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4;"
         >
-          Meet David, the expert engineer behind Chiltern Computers with over 20 years of
-          professional IT experience.
+          Meet David, the engineer behind Chiltern Computers — established 2007, serving
+          Harold Hill, Romford, and Essex.
         </p>
       </div>
 
@@ -213,8 +213,8 @@ import StarRating from '../components/StarRating.astro';
           </h2>
 
           <p class="alien-font content-text">
-            I'm David, the founder and engineer behind Chiltern Computers. With over 20 years of
-            hands-on experience in repairing, upgrading, and supplying computers and laptops, I've
+            I'm David, the founder and engineer behind Chiltern Computers. Since 2007, I've been
+            repairing, upgrading, and supplying computers and laptops, and I've
             helped thousands of satisfied customers across <a href="/areas/romford/" style="color: var(--plasma-cyan);">Romford</a> and nearby areas.
           </p>
 
@@ -237,6 +237,84 @@ import StarRating from '../components/StarRating.astro';
           <p class="alien-font content-text">
             Need help? Don't hesitate to <a href="/contact/" style="color: var(--plasma-cyan);">get in touch</a>. I'd be happy to assist.
           </p>
+        </div>
+
+        <!-- Qualifications & Experience -->
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2
+            class="space-font"
+            style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px; text-align: center;"
+          >
+            QUALIFICATIONS & EXPERIENCE
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+            <div>
+              <h3 class="space-font heading-cyan" style="font-size: 15px;">Technical Skills</h3>
+              <ul class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;">
+                <li>Hardware diagnostics & component-level repair</li>
+                <li>Windows, macOS & Linux installation and troubleshooting</li>
+                <li>Network infrastructure, WiFi & router configuration</li>
+                <li>Data recovery from failed HDDs, SSDs & USB drives</li>
+                <li>Custom PC building & cable management</li>
+                <li>Virus/malware removal & security hardening</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="space-font heading-green" style="font-size: 15px;">Experience</h3>
+              <ul class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px;">
+                <li><strong style="color: var(--starlight-white);">Est. 2007</strong> — Chiltern Computers founded</li>
+                <li><strong style="color: var(--starlight-white);">10,000+</strong> repairs completed</li>
+                <li><strong style="color: var(--starlight-white);">5/5</strong> Google Reviews rating</li>
+                <li>Residential, business & education sector clients</li>
+                <li>All major brands: Dell, HP, Lenovo, Asus, Acer, Apple</li>
+                <li>Custom gaming builds from budget to high-end</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case Studies -->
+        <div class="cosmic-card" style="padding: 40px;">
+          <h2
+            class="space-font"
+            style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px; text-align: center;"
+          >
+            RECENT REPAIR STORIES
+          </h2>
+
+          <div style="display: flex; flex-direction: column; gap: 24px;">
+            <!-- Case Study 1 -->
+            <div style="border-left: 3px solid var(--plasma-cyan); padding-left: 20px;">
+              <h3 class="space-font" style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;">
+                Laptop wouldn't boot — data recovered, SSD upgraded
+              </h3>
+              <p class="tech-font" style="color: var(--text-muted); font-size: 12px; margin-bottom: 8px;">
+                Client: Home user, Hornchurch · Device: HP Pavilion (2019)
+              </p>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7; margin-bottom: 8px;">
+                Customer brought in a laptop that wouldn't get past the Windows loading screen. Diagnostic revealed a failing mechanical hard drive with bad sectors. I recovered all photos, documents, and work files onto an external drive, then cloned the recoverable data to a new 512GB SSD. Reinstalled Windows, restored their files, and the laptop now boots in under 15 seconds.
+              </p>
+              <p class="alien-font" style="color: var(--aurora-green); font-size: 13px; font-weight: 600;">
+                Result: Full data recovery + 10x faster boot time. Cost: £95 (inc. SSD)
+              </p>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div style="border-left: 3px solid var(--aurora-green); padding-left: 20px;">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;">
+                Business network down — remote office back online same day
+              </h3>
+              <p class="tech-font" style="color: var(--text-muted); font-size: 12px; margin-bottom: 8px;">
+                Client: Small business (3 staff), Harold Hill · Issue: No internet, WiFi dropping
+              </p>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7; margin-bottom: 8px;">
+                A local accountancy firm called at 10am — their internet had been intermittent for a week and finally died. I visited on-site within the hour, diagnosed a failing router and incorrectly configured DNS settings from their ISP. Replaced the router, configured a proper network with separate guest WiFi, set up automatic backups to a NAS drive, and had all three workstations back online by 2pm.
+              </p>
+              <p class="alien-font" style="color: var(--aurora-green); font-size: 13px; font-weight: 600;">
+                Result: Same-day fix, zero data loss, reliable network. Cost: £80 (exc. router)
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Contact Info -->

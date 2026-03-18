@@ -15,6 +15,8 @@ export interface AreaData {
   landmarks: string[];
   nearby: string[];
   faqs: AreaFAQ[];
+  /** Optional rich local content for top-priority area pages */
+  localContent?: string;
 }
 
 export const areas: AreaData[] = [
@@ -48,6 +50,7 @@ export const areas: AreaData[] = [
           "I'm open 7 days a week, 9AM to 9PM. You can drop off your computer or call me on 07971 331814 to arrange a convenient time.",
       },
     ],
+    localContent: "As my home base, Harold Hill is where it all started. I'm at 38 Hilldene Avenue — just a short walk from Hilldene Shopping Centre and Harold Hill Library. Most of my Harold Hill customers drop off before work and collect the same evening. If you're on the Dagnam Park estate or near Gallows Corner, I'm under 5 minutes away by car. Free street parking outside my workshop. I know Harold Hill inside out — I've been repairing computers for residents and businesses here since 2007.",
   },
   {
     slug: 'romford',
@@ -79,6 +82,7 @@ export const areas: AreaData[] = [
           "I repair all computer brands including MacBooks, iMacs, Dell, HP, Lenovo, Asus, and custom-built PCs. Whether it's a Windows PC or Apple Mac, I can diagnose and fix the issue.",
       },
     ],
+    localContent: "Romford town centre is just 2 miles from my Harold Hill workshop — a quick drive down the A12 or a short bus ride on the 174. Many Romford customers drop off on the way to the station or during a shopping trip to The Liberty. I regularly service businesses along South Street and the High Street. If you're near Romford station, Queen's Hospital, or Raphael Park, I offer collection and delivery too.",
   },
   {
     slug: 'harold-wood',
@@ -110,6 +114,7 @@ export const areas: AreaData[] = [
           'Yes, I sell both new and refurbished PCs and laptops. I can deliver to Harold Wood or you can collect from my Harold Hill workshop.',
       },
     ],
+    localContent: "Harold Wood is practically next door — less than a mile from my workshop. If you're near Harold Wood station, the Harwood Hall estate, or Gubbins Lane, I can collect your device in minutes. Many Harold Wood customers walk round to drop off and pick up the same day. The 294 bus runs right past my door from Harold Wood Broadway.",
   },
   {
     slug: 'hornchurch',
@@ -141,6 +146,7 @@ export const areas: AreaData[] = [
           'Yes, I provide IT support for Hornchurch businesses including ongoing maintenance contracts, emergency repairs, and network support.',
       },
     ],
+    localContent: "Hornchurch is about 3 miles south of my workshop — a quick drive down Straight Road or the A124. I regularly service customers near Hornchurch station, St Andrew's Church, Harrow Lodge Park, and the Queens Theatre area. The 252 bus from Hornchurch stops near Harold Hill. Several Hornchurch businesses use me for ongoing IT support, and I've built gaming PCs for plenty of Emerson Park residents too.",
   },
   {
     slug: 'upminster',
@@ -233,6 +239,7 @@ export const areas: AreaData[] = [
         answer: "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays.",
       },
     ],
+    localContent: "Dagenham is about 5 miles west — a straight run along the A12. I cover all Dagenham postcodes: RM8 (Dagenham East), RM9 (Becontree), and RM10 (Dagenham Heathway). I collect from customers near Dagenham Heathway station, the Merrielands Retail Park, and Eastbrookend Country Park. Several Dagenham businesses rely on me for regular IT support and I've built PCs for gaming enthusiasts across Becontree too.",
   },
   {
     slug: 'brentwood',
