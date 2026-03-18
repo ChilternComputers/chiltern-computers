@@ -7,6 +7,9 @@ export const siteConfig = {
   tagline: 'Expert IT Support in Romford & Havering',
   foundingDate: '2007',
 
+  // Feature flags
+  showWebDesign: false, // Set to true to re-enable web design service across the site
+
   // URLs
   baseUrl: 'https://chilterncomputers.net',
 
@@ -23,7 +26,6 @@ export const siteConfig = {
   // Social Media
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=61587354241770',
-    twitter: 'https://twitter.com/chilterncomputers',
     google: 'https://g.page/chilterncomputers',
   },
 
@@ -91,14 +93,4 @@ export function getMapUrl(): string {
   return `https://www.google.com/maps/search/${encodeURIComponent(`Chiltern Computers ${street} ${locality} ${city} ${postcode}`)}`;
 }
 
-export function isBusinessOpen(): boolean {
-  const hour = new Date().getHours();
-  return hour >= siteConfig.hours.open && hour < siteConfig.hours.close;
-}
-
-export function getAvailabilityStatus(): { text: string; available: boolean } {
-  if (isBusinessOpen()) {
-    return { text: 'Available Now', available: true };
-  }
-  return { text: 'Call Tomorrow 9AM', available: false };
-}
+// Business hours logic moved to src/utils/business-hours.ts

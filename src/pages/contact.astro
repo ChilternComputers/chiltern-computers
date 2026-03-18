@@ -1,6 +1,7 @@
 ---
 // src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
+import { getReviews } from '../data/reviews';
 
 const url = new URL(Astro.request.url);
 const success = url.searchParams.get('success');
@@ -20,30 +21,7 @@ const errorMessage = error
   ? errorMessages[error as keyof typeof errorMessages] || errorMessages.default
   : null;
 
-// Reviews for Review schema rich snippets
-const reviews = [
-  {
-    author: 'Sarah Mitchell',
-    location: 'Harold Hill',
-    text: 'Absolutely brilliant service! My laptop was running incredibly slow and David had it fixed within 2 hours. He explained everything clearly and the price was very reasonable.',
-    rating: 5,
-    date: '2024-11-28',
-  },
-  {
-    author: 'Mike Thompson',
-    location: 'Romford',
-    text: "Professional and efficient service. David sorted out our office network issues and set up a proper backup system. Haven't had any problems since.",
-    rating: 5,
-    date: '2024-10-15',
-  },
-  {
-    author: 'Linda Johnson',
-    location: 'Hornchurch',
-    text: "My computer wouldn't start and I thought I'd lost everything. David recovered all my photos and documents and got my PC running like new.",
-    rating: 5,
-    date: '2024-09-20',
-  },
-];
+const reviews = getReviews(3);
 ---
 
 <Layout
@@ -67,14 +45,14 @@ const reviews = [
     <div style="text-align: center; margin-bottom: 60px;">
       <h1
         class="space-font cosmic-glow"
-        style="color: #3b82f6; font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: 2px;"
+        style="color: var(--primary-blue); font-size: 48px; font-weight: 700; margin-bottom: 16px; letter-spacing: 2px;"
       >
         Contact Me
       </h1>
       <div style="height: 3px; width: 120px; background: #3b82f6; margin: 0 auto 24px;"></div>
       <p
         class="alien-font"
-        style="color: #b0c4de; font-size: 18px; max-width: 600px; margin: 0 auto;"
+        style="color: var(--text-subtle); font-size: 18px; max-width: 600px; margin: 0 auto;"
       >
         Get expert computer repair and IT support in Harold Hill, Romford, and throughout Essex.
       </p>
@@ -86,11 +64,11 @@ const reviews = [
     >
       <!-- Left Column - Contact Form -->
       <div
-        style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 40px;"
+        style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 40px;"
       >
         <h2
           class="space-font cosmic-glow"
-          style="color: #3b82f6; font-size: 24px; font-weight: 600; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;"
+          style="color: var(--primary-blue); font-size: 24px; font-weight: 600; margin-bottom: 32px; display: flex; align-items: center; gap: 12px;"
         >
           <span aria-hidden="true">💬</span> Send Me a Message
         </h2>
@@ -142,7 +120,7 @@ const reviews = [
             <label
               for="name"
               class="space-font"
-              style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
+              style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
               >Your Name *</label
             >
             <input
@@ -154,9 +132,10 @@ const reviews = [
               aria-describedby="name-hint"
               placeholder="Enter your name"
               autocomplete="name"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
             />
             <span id="name-hint" class="sr-only">Required. Enter your full name.</span>
+            <p class="field-error" id="name-error" aria-live="polite">Please enter your name.</p>
           </div>
 
           <!-- Email Field -->
@@ -164,7 +143,7 @@ const reviews = [
             <label
               for="email"
               class="space-font"
-              style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
+              style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
               >Email Address *</label
             >
             <input
@@ -176,11 +155,12 @@ const reviews = [
               aria-describedby="email-hint"
               placeholder="your.email@example.com"
               autocomplete="email"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
             />
             <span id="email-hint" class="sr-only"
               >Required. Enter a valid email address so I can respond to you.</span
             >
+            <p class="field-error" id="email-error" aria-live="polite">Please enter a valid email address.</p>
           </div>
 
           <!-- Phone Field -->
@@ -188,7 +168,7 @@ const reviews = [
             <label
               for="phone"
               class="space-font"
-              style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
+              style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
               >Phone Number</label
             >
             <input
@@ -198,7 +178,7 @@ const reviews = [
               aria-describedby="phone-hint"
               placeholder="Your number"
               autocomplete="tel"
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
             />
             <span id="phone-hint" class="sr-only"
               >Optional. Enter your phone number if you prefer a callback.</span
@@ -210,7 +190,7 @@ const reviews = [
             <label
               for="location"
               class="space-font"
-              style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
+              style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
               >Your Location/Area</label
             >
             <input
@@ -219,7 +199,7 @@ const reviews = [
               name="location"
               aria-describedby="location-hint"
               placeholder="e.g. Harold Hill, Romford, Hornchurch..."
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px;"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
             />
             <span id="location-hint" class="sr-only"
               >Optional. Enter your area to help me understand if I can provide local service.</span
@@ -231,7 +211,7 @@ const reviews = [
             <label
               for="message"
               class="space-font"
-              style="color: #e2e8f0; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
+              style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
               >Message *</label
             >
             <textarea
@@ -242,11 +222,12 @@ const reviews = [
               aria-describedby="message-hint"
               rows="5"
               placeholder="Briefly describe your computer issue or service requirements..."
-              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid #1e40af; border-radius: 8px; color: #e2e8f0; font-size: 16px; resize: vertical; font-family: inherit;"
+              style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; resize: vertical; font-family: inherit;"
             ></textarea>
             <span id="message-hint" class="sr-only"
               >Required. Describe your computer issue or what service you need.</span
             >
+            <p class="field-error" id="message-error" aria-live="polite">Please describe your issue.</p>
           </div>
 
           <!-- Basic Formspree Configuration (Free Plan) -->
@@ -275,7 +256,7 @@ const reviews = [
                 aria-describedby="human-hint human-check-error"
                 style="width: 18px; height: 18px; accent-color: #1e40af; cursor: pointer;"
               />
-              <span class="space-font" style="color: #e2e8f0; font-size: 14px; font-weight: 600;"
+              <span class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600;"
                 >I am human *</span
               >
             </label>
@@ -302,11 +283,11 @@ const reviews = [
       <div style="display: flex; flex-direction: column; gap: 24px;">
         <!-- Get in Touch Card -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 32px;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 32px;"
         >
           <h3
             class="space-font cosmic-glow"
-            style="color: #3b82f6; font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;"
+            style="color: var(--primary-blue); font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;"
           >
             <span aria-hidden="true">📞</span> Get in Touch
           </h3>
@@ -315,36 +296,36 @@ const reviews = [
           <div style="margin-bottom: 20px;">
             <h4
               class="space-font"
-              style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
+              style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
             >
               <span aria-hidden="true">📱</span> Call Me
             </h4>
-            <p class="alien-font" style="color: #b0c4de; margin-bottom: 8px;">
-              <span aria-hidden="true">📱</span> Mobile: <a href="tel:07971331814" style="color: #b0c4de; text-decoration: none;">07971 331814</a>
+            <p class="alien-font" style="color: var(--text-subtle); margin-bottom: 8px;">
+              <span aria-hidden="true">📱</span> Mobile: <a href="tel:07971331814" style="color: var(--text-subtle); text-decoration: none;">07971 331814</a>
             </p>
-            <p class="alien-font" style="color: #b0c4de;"><span aria-hidden="true">☎️</span> Landline: <a href="tel:01708347341" style="color: #b0c4de; text-decoration: none;">01708 347341</a></p>
+            <p class="alien-font" style="color: var(--text-subtle);"><span aria-hidden="true">☎️</span> Landline: <a href="tel:01708347341" style="color: var(--text-subtle); text-decoration: none;">01708 347341</a></p>
           </div>
 
           <!-- Email Us -->
           <div style="margin-bottom: 20px;">
             <h4
               class="space-font"
-              style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
+              style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
             >
               <span aria-hidden="true">✉️</span> Email Me
             </h4>
-            <p class="alien-font" style="color: #b0c4de;"><a href="mailto:david@chilterncomputers.net" style="color: #b0c4de; text-decoration: none;">david@chilterncomputers.net</a></p>
+            <p class="alien-font" style="color: var(--text-subtle);"><a href="mailto:david@chilterncomputers.net" style="color: var(--text-subtle); text-decoration: none;">david@chilterncomputers.net</a></p>
           </div>
 
           <!-- Visit Us -->
           <div>
             <h4
               class="space-font"
-              style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
+              style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"
             >
               <span aria-hidden="true">📍</span> Visit Me
             </h4>
-            <p class="alien-font" style="color: #b0c4de; line-height: 1.6;">
+            <p class="alien-font" style="color: var(--text-subtle); line-height: 1.6;">
               38 Hilldene Avenue<br />Harold Hill, Romford<br />Essex, RM3 8YP
             </p>
           </div>
@@ -352,11 +333,11 @@ const reviews = [
 
         <!-- Operating Hours Card -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #2563eb; border-radius: 16px; padding: 32px;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border-alt); border-radius: 16px; padding: 32px;"
         >
           <h3
             class="space-font cosmic-glow"
-            style="color: #2563eb; font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;"
+            style="color: var(--card-border-alt); font-size: 24px; font-weight: 600; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;"
           >
             <span aria-hidden="true">🕒</span> Operating Hours
           </h3>
@@ -364,26 +345,26 @@ const reviews = [
           <div
             style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;"
           >
-            <span class="space-font" style="color: #e2e8f0; font-weight: 600;"
+            <span class="space-font" style="color: var(--text-light); font-weight: 600;"
               >Monday - Sunday:</span
             >
-            <span class="space-font" style="color: #3b82f6; font-weight: 600;"
+            <span class="space-font" style="color: var(--primary-blue); font-weight: 600;"
               >9:00 AM - 9:00 PM</span
             >
           </div>
 
-          <p class="alien-font" style="color: #b0c4de; font-size: 14px;">
+          <p class="alien-font" style="color: var(--text-subtle); font-size: 14px;">
             Emergency repairs available by appointment
           </p>
         </div>
 
         <!-- Google Maps Link -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 24px; overflow: hidden;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; overflow: hidden;"
         >
           <h3
             class="space-font cosmic-glow"
-            style="color: #3b82f6; font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;"
+            style="color: var(--primary-blue); font-size: 20px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 12px;"
           >
             <span aria-hidden="true">🗺️</span> Find Me
           </h3>
@@ -394,14 +375,14 @@ const reviews = [
             style="display: block; text-decoration: none;"
           >
             <div
-              style="border-radius: 12px; overflow: hidden; border: 1px solid #1e40af; background: linear-gradient(135deg, #1e3a5f, #0f172a); padding: 40px 20px; text-align: center; transition: all 0.3s ease;"
+              style="border-radius: 12px; overflow: hidden; border: 1px solid var(--card-border); background: linear-gradient(135deg, #1e3a5f, #0f172a); padding: 40px 20px; text-align: center; transition: all 0.3s ease;"
               class="maps-card"
             >
               <span style="font-size: 48px; display: block; margin-bottom: 16px;" aria-hidden="true">📍</span>
-              <p class="space-font" style="color: #3b82f6; font-size: 16px; margin-bottom: 8px;">
+              <p class="space-font" style="color: var(--primary-blue); font-size: 16px; margin-bottom: 8px;">
                 38 Hilldene Avenue
               </p>
-              <p class="alien-font" style="color: #b0c4de; font-size: 14px; margin-bottom: 16px;">
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 14px; margin-bottom: 16px;">
                 Harold Hill, Romford, RM3 8YP
               </p>
               <span
@@ -419,7 +400,7 @@ const reviews = [
   <!-- My Services -->
   <section class="section-bg-5" style="padding: 40px 20px 0;">
     <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-      <h2 class="space-font cosmic-glow" style="color: #3b82f6; font-size: 20px; margin-bottom: 24px;">
+      <h2 class="space-font cosmic-glow" style="color: var(--primary-blue); font-size: 20px; margin-bottom: 24px;">
         MY SERVICES
       </h2>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
@@ -439,11 +420,11 @@ const reviews = [
     <div style="max-width: 1400px; margin: 0 auto;">
       <!-- Reviews Header -->
       <div style="text-align: center; margin-bottom: 60px;">
-        <h2 class="space-font cosmic-glow" style="color: #00d4ff; font-size: 24px; margin-bottom: 16px;">Customer Reviews</h2>
-        <div style="height: 3px; width: 100px; background: #00d4ff; margin: 0 auto 24px;"></div>
+        <h2 class="space-font cosmic-glow" style="color: var(--link-blue); font-size: 24px; margin-bottom: 16px;">Customer Reviews</h2>
+        <div style="height: 3px; width: 100px; background: var(--link-blue); margin: 0 auto 24px;"></div>
         <p
           class="alien-font"
-          style="color: #b0c4de; font-size: 16px; max-width: 500px; margin: 0 auto;"
+          style="color: var(--text-subtle); font-size: 16px; max-width: 500px; margin: 0 auto;"
         >
           Don't just take my word for it - see what my satisfied customers have to say about my
           computer repair services.
@@ -456,7 +437,7 @@ const reviews = [
       >
         <!-- Review 1 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -467,23 +448,23 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Sarah Mitchell
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
                 Harold Hill resident
               </p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "Absolutely brilliant service! My laptop was running incredibly slow and David had it
             fixed within 2 hours. He explained everything clearly and the price was very reasonable.
@@ -493,7 +474,7 @@ const reviews = [
 
         <!-- Review 2 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #2563eb; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border-alt); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -504,23 +485,23 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Mike Thompson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
                 Romford business owner
               </p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "Professional and efficient service. David sorted out our office network issues and set
             up a proper backup system. Haven't had any problems since. Great value for money!"
@@ -529,7 +510,7 @@ const reviews = [
 
         <!-- Review 3 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -540,21 +521,21 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Linda Johnson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Hornchurch resident</p>
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Hornchurch resident</p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "My computer wouldn't start and I thought I'd lost everything. David recovered all my
             photos and documents and got my PC running like new. Couldn't be happier with the
@@ -564,7 +545,7 @@ const reviews = [
 
         <!-- Review 4 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #2563eb; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border-alt); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -575,21 +556,21 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 James Wilson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Upminster resident</p>
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Upminster resident</p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "Fast, friendly, and knowledgeable. David came to my house the same day I called and
             fixed my gaming PC. The price was fair and the service was excellent. Will definitely
@@ -599,7 +580,7 @@ const reviews = [
 
         <!-- Review 5 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #1e40af; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -610,23 +591,23 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Rachel Davis
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
                 Collier Row resident
               </p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "David is a lifesaver! My laptop crashed right before an important presentation. He
             worked late to get it fixed and recovered all my files. Outstanding customer service!"
@@ -635,7 +616,7 @@ const reviews = [
 
         <!-- Review 6 -->
         <div
-          style="background: rgba(26, 31, 46, 0.8); border: 1px solid #2563eb; border-radius: 16px; padding: 32px; position: relative;"
+          style="background: rgba(26, 31, 46, 0.8); border: 1px solid var(--card-border-alt); border-radius: 16px; padding: 32px; position: relative;"
         >
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
             <div
@@ -646,21 +627,21 @@ const reviews = [
             <div>
               <h3
                 class="space-font"
-                style="color: #e2e8f0; font-size: 16px; font-weight: 600; margin-bottom: 4px;"
+                style="color: var(--text-light); font-size: 16px; font-weight: 600; margin-bottom: 4px;"
               >
                 Alan Roberts
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: #fbbf24; font-size: 16px;" aria-label="5 out of 5 stars" role="img"
+                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
                   >⭐⭐⭐⭐⭐</span
                 >
               </div>
-              <p class="alien-font" style="color: #b0c4de; font-size: 12px;">Gidea Park resident</p>
+              <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Gidea Park resident</p>
             </div>
           </div>
           <p
             class="alien-font"
-            style="color: #b0c4de; line-height: 1.6; font-size: 14px; font-style: italic;"
+            style="color: var(--text-subtle); line-height: 1.6; font-size: 14px; font-style: italic;"
           >
             "Excellent service and very reasonable prices. David upgraded my old computer and it's
             running better than ever. He's patient, explains things clearly, and does quality work."
@@ -676,7 +657,7 @@ const reviews = [
     }
     .maps-card:hover,
     .maps-card:focus-within {
-      border-color: #3b82f6;
+      border-color: var(--primary-blue);
     }
   </style>
 

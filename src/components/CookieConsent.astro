@@ -1,5 +1,5 @@
 ---
-// CookieConsent.astro - GDPR cookie consent banner
+// CookieConsent.astro - GDPR cookie consent banner with proper modal behavior
 ---
 
 <div
@@ -16,15 +16,13 @@
     <div style="display: flex; gap: 10px; flex-shrink: 0;">
       <button
         id="cookie-accept"
-        aria-label="Accept cookies"
-        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
+        style="background: linear-gradient(45deg, #10b981, #06b6d4); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
       >
         Accept
       </button>
       <button
         id="cookie-decline"
-        aria-label="Decline cookies"
-        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
+        style="background: transparent; color: #e5e7eb; border: 1px solid rgba(229,231,235,0.3); padding: 10px 24px; border-radius: 8px; font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; transition: transform 0.2s ease; min-height: 44px;"
       >
         Decline
       </button>
@@ -36,19 +34,33 @@
   const banner = document.getElementById('cookie-consent');
   const acceptBtn = document.getElementById('cookie-accept');
   const declineBtn = document.getElementById('cookie-decline');
+  const mainContent = document.getElementById('main-content');
 
-  if (banner && !localStorage.getItem('cookie-consent')) {
+  function showBanner() {
+    if (!banner) return;
     banner.style.display = 'block';
     banner.setAttribute('aria-modal', 'true');
+    // Make background content inert so screen readers can't access it
+    if (mainContent) mainContent.setAttribute('inert', '');
+    document.querySelector('header')?.setAttribute('inert', '');
+    document.querySelector('footer')?.setAttribute('inert', '');
     requestAnimationFrame(() => acceptBtn?.focus());
   }
 
-  function dismiss(value) {
+  function dismiss(value: string) {
     localStorage.setItem('cookie-consent', value);
     if (banner) {
       banner.style.display = 'none';
       banner.removeAttribute('aria-modal');
     }
+    // Remove inert from background
+    if (mainContent) mainContent.removeAttribute('inert');
+    document.querySelector('header')?.removeAttribute('inert');
+    document.querySelector('footer')?.removeAttribute('inert');
+  }
+
+  if (banner && !localStorage.getItem('cookie-consent')) {
+    showBanner();
   }
 
   acceptBtn?.addEventListener('click', () => dismiss('accepted'));

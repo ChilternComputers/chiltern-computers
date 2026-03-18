@@ -32,9 +32,9 @@ const ctaButtons = [
 ];
 
 const services = [
-  { title: 'Computer Repairs', desc: 'Fast diagnosis & repair', icon: '🔧' },
-  { title: 'Custom PCs', desc: 'Gaming & business builds', icon: '🖥️' },
-  { title: 'IT Support', desc: 'Ongoing technical support', icon: '🛠️' },
+  { title: 'Computer Repairs', desc: 'Fast diagnosis & repair', icon: '🔧', href: '/services/repairs/' },
+  { title: 'Custom PCs', desc: 'Gaming & business builds', icon: '🖥️', href: '/services/custom-pcs/' },
+  { title: 'IT Support', desc: 'Ongoing technical support', icon: '🛠️', href: '/contact/' },
 ];
 
 const features = [
@@ -170,9 +170,10 @@ const features = [
       <div class="services-grid grid grid--auto-fit">
         {
           services.map((service, index) => (
-            <div
+            <a
+              href={service.href}
               class="card service-card animate-on-scroll"
-              style={`animation-delay: ${1.8 + index * 0.15}s;`}
+              style={`animation-delay: ${1.8 + index * 0.15}s; text-decoration:none; color:inherit;`}
             >
               <div class="service-icon" aria-hidden="true">
                 {service.icon}
@@ -180,7 +181,7 @@ const features = [
               <h3 class="service-title">{service.title}</h3>
               <p class="service-description">{service.desc}</p>
               <div class="card__glow" aria-hidden="true" />
-            </div>
+            </a>
           ))
         }
       </div>

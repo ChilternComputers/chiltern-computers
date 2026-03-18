@@ -430,6 +430,32 @@ const articleSchema = type === 'article' ? {
   image: fullImageUrl,
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
 } : null;
+
+// Consolidated @graph schemas for homepage (reduces 8+ script tags to 1-2)
+const stripContext = (s: Record<string, any>) => {
+  const { '@context': _, ...rest } = s;
+  return rest;
+};
+
+const homepageGraph = Astro.url.pathname === '/'
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        stripContext(localBusinessSchema),
+        stripContext(organizationSchema),
+        stripContext(websiteSchema),
+        stripContext(faqSchema),
+        ...serviceSchemas.map(stripContext),
+      ],
+    })
+  : null;
+
+const reviewsGraph = reviewSchemas.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': reviewSchemas.map(stripContext),
+    })
+  : null;
 ---
 
 <meta charset="UTF-8" />
@@ -457,8 +483,10 @@ const articleSchema = type === 'article' ? {
     : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
 />
 
-<!-- Canonical URL -->
+<!-- Canonical URL & regional targeting -->
 <link rel="canonical" href={canonicalUrl} />
+<link rel="alternate" hreflang="en-GB" href={canonicalUrl} />
+<link rel="alternate" hreflang="x-default" href={canonicalUrl} />
 
 <!-- Language and content -->
 <meta http-equiv="Content-Language" content="en-GB" />
@@ -468,7 +496,7 @@ const articleSchema = type === 'article' ? {
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
+<!-- meta keywords intentionally omitted — ignored by Google since 2009 -->
 <meta name="author" content="Chiltern Computers" />
 
 <!-- Local search meta -->
@@ -493,8 +521,6 @@ const articleSchema = type === 'article' ? {
 
 <!-- Enhanced Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@chilterncomputers" />
-<meta name="twitter:creator" content="@chilterncomputers" />
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullImageUrl} />
@@ -513,9 +539,25 @@ const articleSchema = type === 'article' ? {
 <meta name="ICBM" content="51.60589, 0.23353" />
 <meta name="DC.title" content={fullTitle} />
 
+<!-- DNS prefetch for external domains -->
+<link rel="dns-prefetch" href="https://www.google.com" />
+<link rel="dns-prefetch" href="https://www.facebook.com" />
+<link rel="dns-prefetch" href="https://formspree.io" />
+
 <!-- Preload critical fonts to reduce render-blocking -->
 <link rel="preload" href="/fonts/Orbitron-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/Exo2-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Prefetch likely next pages from homepage -->
+{
+  Astro.url.pathname === '/' && (
+    <>
+      <link rel="prefetch" href="/services/repairs/" />
+      <link rel="prefetch" href="/contact/" />
+      <link rel="prefetch" href="/services/custom-pcs/" />
+    </>
+  )
+}
 
 <!-- Critical CSS inline for faster FCP -->
 <style>
@@ -568,44 +610,8 @@ const articleSchema = type === 'article' ? {
   )
 }
 
-<!-- Structured Data -->
-{
-  Astro.url.pathname === '/' && (
-    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
-  )
-}
-{
-  Astro.url.pathname === '/' && (
-    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-  )
-}
-{
-  Astro.url.pathname === '/' && (
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-  )
-}
-{
-  Astro.url.pathname === '/' && (
-    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  )
-}
-{
-  Astro.url.pathname === '/' && serviceSchemas.map((service) => (
-    <script type="application/ld+json" set:html={JSON.stringify(service)} />
-  ))
-}
-{
-  breadcrumbSchema && (
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  )
-}
-{
-  reviewSchemas.map((review) => (
-    <script type="application/ld+json" set:html={JSON.stringify(review)} />
-  ))
-}
-{
-  articleSchema && (
-    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-  )
-}
+<!-- Structured Data — consolidated into @graph for performance -->
+{homepageGraph && <script type="application/ld+json" set:html={homepageGraph} />}
+{breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+{reviewsGraph && <script type="application/ld+json" set:html={reviewsGraph} />}
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

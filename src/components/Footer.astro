@@ -1,7 +1,9 @@
 ---
 // Footer.astro - Clean & Optimized Production Version
 import { siteConfig } from '../config';
+import Icon from './Icon.astro';
 const currentYear = new Date().getFullYear();
+const showWebDesign = siteConfig.showWebDesign;
 ---
 
 <footer
@@ -9,21 +11,21 @@ const currentYear = new Date().getFullYear();
   style="padding: 60px 0 0 0; position: relative; margin: 0;"
   role="contentinfo"
 >
-  <!-- Emergency Contact Banner -->
+  <!-- Quick Contact Strip -->
   <div
-    style="background: linear-gradient(45deg, rgba(220, 38, 38, 0.15), rgba(245, 158, 11, 0.15)); border-bottom: 2px solid rgba(220, 38, 38, 0.3); padding: 12px; text-align: center; animation: emergencyPulse 3s ease-in-out infinite;"
+    style="background: rgba(16, 185, 129, 0.1); border-bottom: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; text-align: center;"
   >
     <p
       class="tech-font"
-      style="color: var(--solar-orange); font-size: 12px; margin: 0; font-weight: 600;"
+      style="color: var(--aurora-green); font-size: 12px; margin: 0; font-weight: 600;"
     >
-      <span aria-hidden="true">🚨</span> <span style="color: var(--aurora-green);">EMERGENCY REPAIRS?</span>
-      Call <a
+      <Icon name="phone" size={12} style="display:inline-block; vertical-align:-2px;" />
+      Need help? Call <a
         href={`tel:${siteConfig.phone.mobile}`}
-        style="color: var(--aurora-green); font-weight: bold; text-decoration: none;"
+        style="color: var(--plasma-cyan); font-weight: bold; text-decoration: none;"
         >{siteConfig.phone.mobileDisplay}</a
       >
-      - Available {siteConfig.hours.display} <span aria-hidden="true">🚨</span>
+      — Open {siteConfig.hours.display}
     </p>
   </div>
 
@@ -76,7 +78,7 @@ const currentYear = new Date().getFullYear();
         <div style="text-align: center; margin-top: 12px; position: relative; z-index: 2;">
           <p
             class="tech-font"
-            style="color: var(--plasma-cyan); font-size: 10px; font-weight: 500;"
+            style="color: var(--plasma-cyan); font-size: 12px; font-weight: 500;"
           >
             <span aria-hidden="true">🛸</span> SERVICE COVERAGE ACROSS HAVERING & ESSEX <span aria-hidden="true">🛸</span>
           </p>
@@ -94,7 +96,7 @@ const currentYear = new Date().getFullYear();
           class="space-font cosmic-glow"
           style="color: var(--aurora-green); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;"
         >
-          <span aria-hidden="true">🚀</span>Services
+          <Icon name="rocket" size={18} />Services
         </h3>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="margin-bottom: 12px;">
@@ -103,7 +105,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">🛠️</span>Computer Repairs
+              <Icon name="wrench" size={14} style="color: var(--plasma-cyan);" />Computer Repairs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -112,7 +114,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">🎮</span>Custom Gaming PCs
+              <Icon name="gaming" size={14} style="color: var(--plasma-cyan);" />Custom Gaming PCs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -121,7 +123,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">💻</span>New & Refurb PCs
+              <Icon name="laptop" size={14} style="color: var(--plasma-cyan);" />New & Refurb PCs
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -130,7 +132,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">🛡️</span>Virus Removal
+              <Icon name="shield" size={14} style="color: var(--plasma-cyan);" />Virus Removal
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -139,7 +141,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">💾</span>Data Recovery
+              <Icon name="database" size={14} style="color: var(--plasma-cyan);" />Data Recovery
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -148,7 +150,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">🍎</span>Mac Repair
+              <Icon name="apple" size={14} style="color: var(--plasma-cyan);" />Mac Repair
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -157,7 +159,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">📡</span>Network & WiFi
+              <Icon name="wifi" size={14} style="color: var(--plasma-cyan);" />Network & WiFi
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -166,10 +168,10 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">⚡</span>Computer Upgrades
+              <Icon name="bolt" size={14} style="color: var(--plasma-cyan);" />Computer Upgrades
             </a>
           </li>
-          {/* Web Design footer link hidden — service temporarily inactive
+          {showWebDesign && (
           <li style="margin-bottom: 12px;">
             <a
               href="/services/web-design/"
@@ -179,14 +181,14 @@ const currentYear = new Date().getFullYear();
               <span aria-hidden="true" style="color: var(--plasma-cyan);">🌐</span>Web Design
             </a>
           </li>
-          */}
+          )}
           <li style="margin-bottom: 12px;">
             <a
               href="/about/"
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">ℹ️</span>About Me
+              <Icon name="info" size={14} style="color: var(--plasma-cyan);" />About Me
             </a>
           </li>
           <li style="margin-bottom: 12px;">
@@ -195,7 +197,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">📝</span>Blog & Tips
+              <Icon name="blog" size={14} style="color: var(--plasma-cyan);" />Blog & Tips
             </a>
           </li>
           <li>
@@ -204,7 +206,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font footer-link"
               style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
-              <span aria-hidden="true" style="color: var(--plasma-cyan);">📞</span>Contact
+              <Icon name="phone" size={14} style="color: var(--plasma-cyan);" />Contact
             </a>
           </li>
         </ul>
@@ -221,7 +223,7 @@ const currentYear = new Date().getFullYear();
           class="space-font cosmic-glow"
           style="color: var(--nebula-purple); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; position: relative; z-index: 2;"
         >
-          <span aria-hidden="true" style="animation: float-cosmic 2s ease-in-out infinite;">📡</span>Contact
+          <Icon name="phone" size={18} />Contact
         </h3>
 
         <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 2;">
@@ -231,7 +233,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font contact-link-premium"
               style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
             >
-              <span aria-hidden="true" style="font-size: 16px;">📱</span>
+              <Icon name="mobile" size={16} />
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Mobile</div>
                 <div style="font-weight: 600;">{siteConfig.phone.mobileDisplay}</div>
@@ -244,7 +246,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font contact-link-premium"
               style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
             >
-              <span aria-hidden="true" style="font-size: 16px;">☎️</span>
+              <Icon name="landline" size={16} />
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Landline</div>
                 <div style="font-weight: 600;">{siteConfig.phone.landlineDisplay}</div>
@@ -257,7 +259,7 @@ const currentYear = new Date().getFullYear();
               class="alien-font contact-link-premium"
               style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
             >
-              <span aria-hidden="true" style="font-size: 16px;">✉️</span>
+              <Icon name="email" size={16} />
               <div>
                 <div style="font-size: 12px; color: var(--comet-silver);">Email</div>
                 <div style="font-weight: 600;">{siteConfig.email}</div>
@@ -276,7 +278,7 @@ const currentYear = new Date().getFullYear();
             <div
               style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; justify-content: center;"
             >
-              <span aria-hidden="true" style="font-size: 14px;">🕒</span>
+              <Icon name="clock" size={14} />
               <span
                 class="tech-font"
                 style="color: var(--nebula-purple); font-size: 12px; font-weight: 600;">HOURS</span
@@ -299,10 +301,10 @@ const currentYear = new Date().getFullYear();
             >
               <span
                 class="tech-font"
-                style="color: var(--aurora-green); font-size: 10px; font-weight: 500;"
-                id="availability-status"
+                style="color: var(--aurora-green); font-size: 12px; font-weight: 500;"
+                data-business-status
                 aria-live="polite"
-                aria-atomic="true"><span aria-hidden="true" id="availability-icon">✅</span> <span id="availability-text">Available Now</span></span
+                aria-atomic="true"><span aria-hidden="true" data-business-status-icon>✅</span> <span data-business-status-text>Available Now</span></span
               >
             </div>
           </div>
@@ -315,13 +317,13 @@ const currentYear = new Date().getFullYear();
           class="space-font cosmic-glow"
           style="color: var(--solar-orange); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px;"
         >
-          <span aria-hidden="true">🌍</span>Location
+          <Icon name="map-pin" size={18} />Location
         </h3>
 
         <!-- Address -->
         <div style="margin-bottom: 24px;">
           <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">
-            <span aria-hidden="true" style="font-size: 16px; color: var(--solar-orange);">📍</span>
+            <Icon name="map-pin" size={16} style="color: var(--solar-orange); flex-shrink:0;" />
             <address
               class="alien-font"
               style="color: var(--starlight-white); font-size: 14px; font-style: normal; line-height: 1.4; font-weight: 500;"
@@ -341,7 +343,7 @@ const currentYear = new Date().getFullYear();
               class="space-button map-button-enhanced"
               style="font-size: 12px; padding: 10px 18px; text-decoration: none;"
             >
-              <span aria-hidden="true">🗺️</span>View Map
+              <Icon name="map" size={14} />View Map
             </a>
           </div>
         </div>
@@ -363,10 +365,10 @@ const currentYear = new Date().getFullYear();
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">🗺️</span>
+                <Icon name="map" size={13} style="color: var(--solar-orange);" />
                 <span>Sitemap</span>
                 <span
-                  style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600;"
+                  style="background: rgba(245, 158, 11, 0.2); color: var(--solar-orange); padding: 2px 6px; border-radius: 4px; font-size: 12px; font-weight: 600;"
                   >XML</span
                 >
               </a>
@@ -377,7 +379,7 @@ const currentYear = new Date().getFullYear();
                 class="alien-font footer-link"
                 style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">🔒</span>Privacy Policy
+                <Icon name="lock" size={13} style="color: var(--solar-orange);" />Privacy Policy
               </a>
             </li>
             <li style="margin-bottom: 8px;">
@@ -386,27 +388,27 @@ const currentYear = new Date().getFullYear();
                 class="alien-font footer-link"
                 style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">📋</span>Terms of Service
+                <Icon name="clipboard" size={13} style="color: var(--solar-orange);" />Terms of Service
               </a>
             </li>
-            {/* Web Design Terms footer link hidden — service temporarily inactive
+            {showWebDesign && (
             <li style="margin-bottom: 8px;">
               <a
                 href="/web-design-terms/"
                 class="alien-font footer-link"
                 style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">🌐</span>Web Design Terms
+                <Icon name="globe" size={13} style="color: var(--solar-orange);" />Web Design Terms
               </a>
             </li>
-            */}
+            )}
             <li style="margin-bottom: 8px;">
               <a
                 href="/accessibility/"
                 class="alien-font footer-link"
                 style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">♿</span>Accessibility
+                <Icon name="accessibility" size={13} style="color: var(--solar-orange);" />Accessibility
               </a>
             </li>
             <li>
@@ -415,7 +417,7 @@ const currentYear = new Date().getFullYear();
                 class="alien-font footer-link"
                 style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
               >
-                <span aria-hidden="true" style="color: var(--solar-orange);">🎮</span>Free Play
+                <Icon name="gaming" size={13} style="color: var(--solar-orange);" />Free Play
               </a>
             </li>
           </ul>
@@ -433,7 +435,7 @@ const currentYear = new Date().getFullYear();
         aria-label="Get Quote"
         style="font-size: 12px; padding: 12px 24px; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border: 2px solid var(--aurora-green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; justify-content: center; text-align: center;"
       >
-        <span aria-hidden="true">💬</span> Get Quote
+        <Icon name="chat" size={14} /> Get Quote
       </a>
       <a
         href={`tel:${siteConfig.phone.mobile}`}
@@ -441,7 +443,7 @@ const currentYear = new Date().getFullYear();
         aria-label="Call Now"
         style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--solar-orange); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;"
       >
-        <span aria-hidden="true">📱</span> Call Now
+        <Icon name="mobile" size={14} /> Call Now
       </a>
       <a
         href="/services/repairs/"
@@ -449,7 +451,7 @@ const currentYear = new Date().getFullYear();
         aria-label="Book Repair"
         style="font-size: 12px; padding: 12px 24px; border: 2px solid var(--nebula-purple); font-weight: 600; display: flex; align-items: center; justify-content: center; text-align: center;"
       >
-        <span aria-hidden="true">🛠️</span> Book Repair
+        <Icon name="wrench" size={14} /> Book Repair
       </a>
     </div>
 
@@ -473,7 +475,7 @@ const currentYear = new Date().getFullYear();
           style="display: flex; gap: 10px; justify-content: center; margin-bottom: 12px; flex-wrap: wrap;"
         >
           <span
-            style="background: rgba(66, 133, 244, 0.2); border: 1px solid #4285f4; color: #4285f4; padding: 6px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
+            style="background: rgba(66, 133, 244, 0.2); border: 1px solid #4285f4; color: #4285f4; padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
               ><path
@@ -489,7 +491,7 @@ const currentYear = new Date().getFullYear();
             Google Reviewed
           </span>
           <span
-            style="background: rgba(24, 119, 242, 0.2); border: 1px solid #1877f2; color: #1877f2; padding: 6px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
+            style="background: rgba(24, 119, 242, 0.2); border: 1px solid #1877f2; color: #1877f2; padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
               ><path
@@ -499,14 +501,14 @@ const currentYear = new Date().getFullYear();
             Facebook Rated
           </span>
           <span
-            style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--aurora-green); color: var(--aurora-green); padding: 6px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
+            style="background: rgba(16, 185, 129, 0.2); border: 1px solid var(--aurora-green); color: var(--aurora-green); padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
           >
-            ✓ 20+ Years Trading
+            ✓ Est. 2007
           </span>
           <span
-            style="background: rgba(245, 158, 11, 0.2); border: 1px solid var(--solar-orange); color: var(--solar-orange); padding: 6px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
+            style="background: rgba(245, 158, 11, 0.2); border: 1px solid var(--solar-orange); color: var(--solar-orange); padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px;"
           >
-            <span aria-hidden="true">⭐</span> 5/5 Rating
+            <Icon name="star" size={11} /> 5/5 Rating
           </span>
         </div>
 
@@ -515,7 +517,7 @@ const currentYear = new Date().getFullYear();
           <div
             style="display: flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap;"
           >
-            <span aria-hidden="true" style="font-size: 16px; animation: float-cosmic 3s ease-in-out infinite;">🛸</span
+            <Icon name="rocket" size={16} style="color: var(--plasma-cyan);" /
             >
             <span
               class="tech-font"
@@ -526,7 +528,7 @@ const currentYear = new Date().getFullYear();
           </div>
           <span
             class="tech-font"
-            style="color: var(--comet-silver); font-size: 11px; opacity: 0.8; text-align: center;"
+            style="color: var(--comet-silver); font-size: 12px; text-align: center;"
           >
             All rights reserved
           </span>
@@ -537,16 +539,16 @@ const currentYear = new Date().getFullYear();
           style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 8px;"
         >
           <span
-            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600;"
-            ><span aria-hidden="true">⚡</span> Fast</span
+            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;"
+            ><Icon name="bolt" size={10} /> Fast</span
           >
           <span
-            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600;"
-            ><span aria-hidden="true">🔒</span> Secure</span
+            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;"
+            ><Icon name="lock" size={10} /> Secure</span
           >
           <span
-            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 10px; font-weight: 600;"
-            ><span aria-hidden="true">📱</span> Responsive</span
+            style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.4); color: var(--plasma-cyan); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;"
+            ><Icon name="mobile" size={10} /> Responsive</span
           >
         </div>
       </div>
@@ -558,36 +560,10 @@ const currentYear = new Date().getFullYear();
     const currentYear = new Date().getFullYear();
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
-      yearElement.textContent = currentYear;
+      yearElement.textContent = String(currentYear);
     }
-
-
-    // Real-time availability status
-    function updateAvailabilityStatus() {
-      const now = new Date();
-      const hour = now.getHours();
-      const statusElement = document.getElementById('availability-status');
-
-      const iconEl = document.getElementById('availability-icon');
-      const textEl = document.getElementById('availability-text');
-
-      if (statusElement && iconEl && textEl) {
-        if (hour >= 9 && hour < 21) {
-          iconEl.textContent = '✅';
-          textEl.textContent = 'Available Now';
-          statusElement.style.color = 'var(--aurora-green)';
-        } else {
-          iconEl.textContent = '🌙';
-          textEl.textContent = 'Call Tomorrow 9AM';
-          statusElement.style.color = 'var(--solar-orange)';
-        }
-      }
-    }
-
-    // Update availability immediately and every minute
-    updateAvailabilityStatus();
-    setInterval(updateAvailabilityStatus, 60000);
-
+    // Business hours status is handled by the shared updateAllBusinessStatus()
+    // function defined in Header.astro (uses [data-business-status] elements)
   </script>
 
   <style>

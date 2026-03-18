@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { siteConfig } from '../../config';
+
+const showWebDesign = siteConfig.showWebDesign;
 
 // Define categories for topic clusters
 const categories = [
@@ -8,25 +11,23 @@ const categories = [
   { id: 'guides', name: 'Buying Guides', color: 'var(--solar-orange)' },
   { id: 'gaming', name: 'Gaming PCs', color: 'var(--nebula-purple)' },
   { id: 'business', name: 'Business IT', color: 'var(--plasma-cyan)' },
-  // Web Design category hidden — service temporarily inactive
-  // { id: 'services', name: 'Web Design', color: 'var(--aurora-green)' },
+  ...(showWebDesign ? [{ id: 'services', name: 'Web Design', color: 'var(--aurora-green)' }] : []),
 ];
 
 // Blog posts data - will be updated as posts are added
 const blogPosts = [
-  // Web Design blog post hidden — service temporarily inactive
-  // {
-  //   slug: 'website-design-services-essex',
-  //   title: 'Website Design Services for Essex Businesses',
-  //   excerpt:
-  //     'I now offer professional website design — from single-page starter sites to fully bespoke, high-performance builds.',
-  //   date: '2026-03-08',
-  //   readTime: '8 min read',
-  //   category: 'Web Design',
-  //   categoryId: 'services',
-  //   image: '/repair-pic.webp',
-  //   imageAlt: 'Professional website design services for Essex businesses by Chiltern Computers',
-  // },
+  ...(showWebDesign ? [{
+    slug: 'website-design-services-essex',
+    title: 'Website Design Services for Essex Businesses',
+    excerpt:
+      'I now offer professional website design — from single-page starter sites to fully bespoke, high-performance builds.',
+    date: '2026-03-08',
+    readTime: '8 min read',
+    category: 'Web Design',
+    categoryId: 'services',
+    image: '/repair-pic.webp',
+    imageAlt: 'Professional website design services for Essex businesses by Chiltern Computers',
+  }] : []),
   {
     slug: 'virus-malware-removal-romford-guide',
     title: 'Virus & Malware Removal in Romford - Complete Guide',
@@ -359,7 +360,7 @@ function formatDate(dateString: string) {
       color: var(--void-black);
       padding: 4px 12px;
       border-radius: 12px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 600;
       margin-bottom: 12px;
     }

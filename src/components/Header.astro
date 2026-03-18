@@ -1,7 +1,9 @@
 ---
 // Header.astro - Logo, Brand, Tabs, Call Now, Open - Each in Their Own Card
 import { siteConfig } from '../config';
+import Icon from './Icon.astro';
 const currentPath = Astro.url.pathname;
+const showWebDesign = siteConfig.showWebDesign;
 ---
 
 <header
@@ -14,34 +16,26 @@ const currentPath = Astro.url.pathname;
     style="position:absolute; top:0; left:0; right:0; bottom:0; overflow:hidden; pointer-events:none;"
   >
     <div
-      style="position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(6,182,212,0.1) 0%, transparent 70%); animation:cosmic-rotate 20s linear infinite;"
-    >
-    </div>
-    <div
-      style="position:absolute; top:20%; right:10%; width:100px; height:100px; background:radial-gradient(circle,rgba(139,92,246,0.15) 0%, transparent 70%); border-radius:50%; animation:float-cosmic 4s ease-in-out infinite;"
-    >
-    </div>
-    <div
-      style="position:absolute; bottom:30%; left:15%; width:80px; height:80px; background:radial-gradient(circle,rgba(16,185,129,0.12) 0%, transparent 70%); border-radius:50%; animation:float-cosmic 3s ease-in-out infinite reverse;"
+      style="position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle,rgba(6,182,212,0.1) 0%, transparent 70%); animation:orbit 20s linear infinite;"
     >
     </div>
   </div>
 
-  <!-- Emergency Contact Bar -->
+  <!-- Emergency Contact Bar — only visible when closed -->
   <div
-    style="background:linear-gradient(45deg,rgba(220,38,38,0.15),rgba(245,158,11,0.15)); border-bottom:1px solid rgba(220,38,38,0.3); padding:8px; text-align:center; animation:emergencyPulse 3s ease-in-out infinite;"
+    id="emergency-bar"
+    style="background:linear-gradient(45deg,rgba(220,38,38,0.15),rgba(245,158,11,0.15)); border-bottom:1px solid rgba(220,38,38,0.3); padding:8px; text-align:center; display:none;"
   >
     <p
       class="tech-font"
-      style="color:var(--solar-orange); font-size:11px; margin:0; font-weight:600; position:relative; z-index:2;"
+      style="color:var(--solar-orange); font-size:12px; margin:0; font-weight:600; position:relative; z-index:2;"
     >
-      <span aria-hidden="true">🚨</span> <span style="color:var(--aurora-green);">EMERGENCY REPAIRS?</span>
+      <Icon name="alert" size={12} style="display:inline-block; vertical-align:-2px; color:var(--solar-orange);" /> <span style="color:var(--aurora-green);">CLOSED — EMERGENCY REPAIRS?</span>
       Call <a
         href={`tel:${siteConfig.phone.mobile}`}
         style="color:var(--aurora-green); font-weight:bold; text-decoration:none;"
         >{siteConfig.phone.mobileDisplay}</a
       >
-      <span aria-hidden="true">🚨</span>
     </p>
   </div>
 
@@ -56,12 +50,6 @@ const currentPath = Astro.url.pathname;
           class="cosmic-card logo-image-card"
           style="padding:12px 16px; background:linear-gradient(145deg, rgba(248,250,252,0.95), rgba(226,232,240,0.9)); border-radius:12px; display:flex; align-items:center; justify-content:center; min-width:58px; position:relative; overflow:hidden; border:2px solid rgba(6,182,212,0.4); box-shadow:0 4px 20px rgba(6,182,212,0.3);"
         >
-          <!-- shimmer overlay, z-index: 1 -->
-          <div
-            style="position:absolute; inset:0; background:linear-gradient(45deg,transparent,rgba(6,182,212,0.15),transparent); animation:shimmer 10s ease-in-out infinite; z-index:1; pointer-events:none;"
-          >
-          </div>
-          <!-- logo image, z-index:2 -->
           <img
             src="/logo.webp"
             alt="Chiltern Computers Logo"
@@ -77,7 +65,7 @@ const currentPath = Astro.url.pathname;
         <button
           id="mobile-menu-btn"
           class="space-button"
-          style="padding:10px 16px; font-size:14px; border:2px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); color:var(--starlight-white); border-radius:8px; font-weight:600; transition:all 0.3s ease;"
+          style="padding:10px 16px; font-size:14px; border:2px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); color:var(--starlight-white); border-radius:8px; font-weight:600; transition:all 0.3s ease; min-height:44px; min-width:44px;"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
           aria-controls="main-nav"
@@ -103,8 +91,8 @@ const currentPath = Astro.url.pathname;
               class="nav-link space-button"
               aria-label="Go to homepage"
               aria-current={currentPath === '/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">🏠</span>Home</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="home" size={14} />Home</a
             >
           </li>
           <li>
@@ -113,8 +101,8 @@ const currentPath = Astro.url.pathname;
               class="nav-link space-button"
               aria-label="Gaming PCs - Custom gaming PC builds"
               aria-current={currentPath === '/services/custom-pcs/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">🎮</span>Gaming PCs</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--aurora-green); background:rgba(16,185,129,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="gaming" size={14} />Gaming PCs</a
             >
           </li>
           <li>
@@ -123,8 +111,8 @@ const currentPath = Astro.url.pathname;
               class="nav-link space-button"
               aria-label="Repairs - Computer repair services"
               aria-current={currentPath.startsWith('/services/repairs') ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--solar-orange); background:rgba(245,158,11,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">🛠️</span>Repairs</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--solar-orange); background:rgba(245,158,11,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="wrench" size={14} />Repairs</a
             >
           </li>
           <li>
@@ -133,30 +121,30 @@ const currentPath = Astro.url.pathname;
               class="nav-link space-button"
               aria-label="PCs & Laptops - New and refurbished computers"
               aria-current={currentPath === '/services/new-used/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--nebula-purple); background:rgba(139,92,246,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">💻</span>PCs & Laptops</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--nebula-purple); background:rgba(139,92,246,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="laptop" size={14} />PCs & Laptops</a
             >
           </li>
-          {/* Web Design nav link hidden — service temporarily inactive
+          {showWebDesign && (
           <li>
             <a
               href="/services/web-design/"
               class="nav-link space-button"
               aria-label="Web Design - Professional websites from £299"
               aria-current={currentPath === '/services/web-design/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">🌐</span>Web Design</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="globe" size={14} />Web Design</a
             >
           </li>
-          */}
+          )}
           <li>
             <a
               href="/about/"
               class="nav-link space-button"
               aria-label="About Chiltern Computers"
               aria-current={currentPath === '/about/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">ℹ️</span>About</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="info" size={14} />About</a
             >
           </li>
           <li>
@@ -165,18 +153,18 @@ const currentPath = Astro.url.pathname;
               class="nav-link space-button"
               aria-label="Computer repair tips and blog"
               aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">📝</span>Blog</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; border:1px solid var(--plasma-cyan); background:rgba(6,182,212,0.1); transition:all 0.3s ease; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="blog" size={14} />Blog</a
             >
           </li>
           <li>
             <a
               href="/contact/"
               class="nav-link space-button cta-primary"
-              aria-label="Contact us for repairs"
+              aria-label="Contact me for repairs"
               aria-current={currentPath === '/contact/' ? 'page' : undefined}
-              style="padding:8px 11px; font-size:12px; text-decoration:none; white-space:nowrap; background:linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border:2px solid var(--aurora-green); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; gap:6px;"
-              ><span aria-hidden="true">📞</span>Contact</a
+              style="padding:10px 14px; font-size:12px; text-decoration:none; white-space:nowrap; background:linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)) !important; border:2px solid var(--aurora-green); font-weight:600; text-transform:uppercase; letter-spacing:0.5px; display:flex; align-items:center; gap:6px; min-height:44px;"
+              ><Icon name="phone" size={14} />Contact</a
             >
           </li>
         </ul>
@@ -188,16 +176,16 @@ const currentPath = Astro.url.pathname;
           href="tel:+447971331814"
           class="cosmic-card contact-link-premium"
           aria-label="Call Now 07971 331814"
-          style="padding:10px 16px; background:rgba(139,92,246,0.15); border:2px solid var(--nebula-purple); border-radius:10px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; position:relative; overflow:hidden;"
+          style="padding:10px 16px; background:rgba(139,92,246,0.15); border:2px solid var(--nebula-purple); border-radius:10px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:all 0.3s ease; position:relative; overflow:hidden; min-height:44px;"
         >
           <div
             class="premium-glow-effect"
             style="position:absolute; inset:0; background:linear-gradient(45deg, transparent, rgba(139,92,246,0.3), transparent); opacity:0; transition:opacity 0.3s ease;"
           >
           </div>
-          <span aria-hidden="true" style="font-size:16px; position:relative; z-index:2;">📱</span>
+          <Icon name="mobile" size={16} style="position:relative; z-index:2; color:var(--nebula-purple);" />
           <div style="position:relative; z-index:2;">
-            <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">CALL NOW</div>
+            <div class="tech-font" style="color:var(--comet-silver); font-size:12px;">CALL NOW</div>
             <div
               class="alien-font"
               style="color:var(--starlight-white); font-size:13px; font-weight:600;"
@@ -211,17 +199,17 @@ const currentPath = Astro.url.pathname;
           style="padding:10px 16px; background:rgba(16,185,129,0.15); border:2px solid var(--aurora-green); border-radius:10px;"
         >
           <div style="display:flex; align-items:center; gap:8px;">
-            <span aria-hidden="true" style="font-size:14px;">🕒</span>
+            <Icon name="clock" size={14} style="color:var(--aurora-green);" />
             <div>
-              <div class="tech-font" style="color:var(--comet-silver); font-size:10px;">OPEN</div>
+              <div class="tech-font" style="color:var(--comet-silver); font-size:12px;">OPEN</div>
               <div
                 class="alien-font"
                 style="color:var(--aurora-green); font-size:12px; font-weight:600;"
-                id="header-status"
+                data-business-status
                 aria-live="polite"
                 aria-atomic="true"
               >
-                9AM - 9PM
+                <span data-business-status-text>9AM - 9PM</span>
               </div>
             </div>
           </div>
@@ -231,23 +219,25 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <script>
-    // Real-time status update
-    function updateHeaderStatus() {
-      const now = new Date();
-      const hour = now.getHours();
-      const statusElement = document.getElementById('header-status');
-      if (statusElement) {
-        if (hour >= 9 && hour < 21) {
-          statusElement.textContent = 'OPEN NOW';
-          statusElement.style.color = 'var(--aurora-green)';
-        } else {
-          statusElement.textContent = '9AM - 9PM';
-          statusElement.style.color = 'var(--solar-orange)';
-        }
+    // Business hours status — shared update logic
+    function updateAllBusinessStatus() {
+      const hour = new Date().getHours();
+      const isOpen = hour >= 9 && hour < 21;
+      document.querySelectorAll('[data-business-status]').forEach(function(el) {
+        const iconEl = el.querySelector('[data-business-status-icon]');
+        const textEl = el.querySelector('[data-business-status-text]');
+        if (textEl) textEl.textContent = isOpen ? 'OPEN NOW' : '9AM - 9PM';
+        if (iconEl) iconEl.textContent = isOpen ? '✅' : '🌙';
+        el.style.color = isOpen ? 'var(--aurora-green)' : 'var(--solar-orange)';
+      });
+      // Show/hide emergency bar based on business hours
+      const emergencyBar = document.getElementById('emergency-bar');
+      if (emergencyBar) {
+        emergencyBar.style.display = isOpen ? 'none' : 'block';
       }
     }
-    updateHeaderStatus();
-    setInterval(updateHeaderStatus, 60000);
+    updateAllBusinessStatus();
+    setInterval(updateAllBusinessStatus, 60000);
 
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const headerNav = document.getElementById('main-nav');
@@ -258,13 +248,12 @@ const currentPath = Astro.url.pathname;
     function handleResize() {
       if (window.innerWidth <= 1100) {
         if (mobileToggle) mobileToggle.style.display = 'block';
-        // Only show the menu if user has opened it
         if (headerNav) headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
       } else {
         if (mobileToggle) mobileToggle.style.display = 'none';
         if (headerNav) headerNav.style.display = 'flex';
-        mobileMenuOpen = false; // reset mobile menu state when on desktop
-        if (menuText) menuText.textContent = 'Menu'; // reset text when returning to desktop
+        mobileMenuOpen = false;
+        if (menuText) menuText.textContent = 'Menu';
       }
     }
     window.addEventListener('resize', handleResize);
@@ -276,14 +265,16 @@ const currentPath = Astro.url.pathname;
         headerNav.style.display = mobileMenuOpen ? 'flex' : 'none';
         mobileMenuBtn.setAttribute('aria-expanded', mobileMenuOpen.toString());
         mobileMenuBtn.setAttribute('aria-label', mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu');
-
-        // Update button text based on menu state
         if (menuText) {
           menuText.textContent = mobileMenuOpen ? 'Close' : 'Menu';
         }
+        // Focus first nav link when menu opens
+        if (mobileMenuOpen) {
+          const firstLink = headerNav.querySelector('a');
+          if (firstLink) requestAnimationFrame(() => firstLink.focus());
+        }
       });
 
-      // Close mobile menu on Escape key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileMenuOpen) {
           mobileMenuOpen = false;
@@ -295,7 +286,6 @@ const currentPath = Astro.url.pathname;
         }
       });
     }
-
   </script>
 
   <style>
@@ -314,64 +304,13 @@ const currentPath = Astro.url.pathname;
     .contact-link-premium:focus-visible .premium-glow-effect {
       opacity: 1;
     }
-    @keyframes cosmic-rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-    @keyframes float-cosmic {
-      0%,
-      100% {
-        transform: translateY(0px) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-10px) rotate(5deg);
-      }
-    }
-    @keyframes shimmer {
-      0% {
-        transform: translateX(-200%);
-      }
-      50% {
-        transform: translateX(200%);
-      }
-      100% {
-        transform: translateX(-200%);
-      }
-    }
-    @keyframes nav-scan {
-      0%,
-      100% {
-        transform: translateX(-100%);
-      }
-      50% {
-        transform: translateX(100%);
-      }
-    }
-    @keyframes emergencyPulse {
-      0%,
-      100% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.8;
-      }
-    }
     .cosmic-glow {
       text-shadow:
         0 0 10px currentColor,
         0 0 20px currentColor,
         0 0 30px currentColor;
     }
-    .space-button:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 6px 25px rgba(6, 182, 212, 0.5) !important;
-    }
     .cta-primary {
-      animation: pulse-glow 2s ease-in-out infinite;
       color: #ffffff !important;
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
     }
@@ -379,15 +318,6 @@ const currentPath = Astro.url.pathname;
       background: linear-gradient(45deg, #0d9668, #0891b2) !important;
       color: #ffffff !important;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-    }
-    @keyframes pulse-glow {
-      0%,
-      100% {
-        box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
-      }
     }
     @media (max-width: 1100px) {
       .header-toolbar {
@@ -430,8 +360,6 @@ const currentPath = Astro.url.pathname;
         flex-direction: column !important;
         align-items: stretch !important;
       }
-
-      /* Center the contact info cards and keep them on same line */
       .header-toolbar > div:last-child {
         display: flex !important;
         justify-content: center !important;
@@ -442,22 +370,18 @@ const currentPath = Astro.url.pathname;
       }
     }
     @media (prefers-reduced-motion: reduce) {
-      .header-cosmic-bg *, .logo-image-card *, .cta-primary { animation: none; }
+      .header-cosmic-bg * { animation: none; }
     }
     @media (max-width: 768px) {
       .logo-image-card,
       .brand-name-card {
         max-width: 160px !important;
       }
-
-      /* Ensure contact cards stay centered and on same line on smaller screens */
       .header-toolbar > div:last-child {
         flex-wrap: nowrap !important;
         justify-content: center !important;
         gap: 8px !important;
       }
-
-      /* Make contact cards slightly smaller on very small screens if needed */
       .contact-link-premium,
       .cosmic-card {
         padding: 8px 12px !important;

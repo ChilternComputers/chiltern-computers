@@ -38,9 +38,24 @@
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-fast: all 0.2s ease-out;
 
+  /* Form & Card Colors */
+  --card-bg: rgba(26, 31, 46, 0.8);
+  --card-border: #1e40af;
+  --card-border-alt: #2563eb;
+  --input-bg: rgba(15, 20, 25, 0.8);
+  --text-light: #e2e8f0;
+  --text-subtle: #c4d5e8; /* improved from #b0c4de for WCAG AA contrast on dark bg */
+  --success: #22c55e;
+  --error: #ef4444;
+  --star-color: #fbbf24;
+  --link-blue: #00d4ff;
+
   /* Shadows */
   --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.3);
   --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  /* Breakpoints (for reference — used in media queries) */
+  /* --bp-sm: 480px; --bp-md: 768px; --bp-lg: 1024px; --bp-xl: 1100px; --bp-2xl: 1400px; */
 }
 
 /* ========================================
@@ -725,6 +740,8 @@ select:focus {
   animation: plasma-flow 30s ease-in-out infinite;
   width: 100%;
   overflow-x: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
 }
 
 /* ========================================
@@ -1046,7 +1063,7 @@ select:focus {
 }
 
 #header-availability-status {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   color: #10b981;
 }
@@ -1587,7 +1604,7 @@ select:focus {
   }
 
   .emergency-text {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .brand-name {
@@ -1595,7 +1612,7 @@ select:focus {
   }
 
   .brand-tagline {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .logo-image {
@@ -1729,7 +1746,7 @@ select:focus {
   }
 
   .emergency-text {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .brand-name {
@@ -1737,7 +1754,7 @@ select:focus {
   }
 
   .brand-tagline {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .logo-image {
@@ -1900,8 +1917,35 @@ select:focus {
   }
 }
 /* ========================================
+   FORM VALIDATION STATES
+   ======================================== */
+input:user-invalid,
+textarea:user-invalid,
+select:user-invalid {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
+}
+
+input:user-valid,
+textarea:user-valid,
+select:user-valid {
+  border-color: var(--aurora-green) !important;
+}
+
+.field-error {
+  color: var(--error);
+  font-size: 13px;
+  margin-top: 4px;
+  display: none;
+}
+
+input:user-invalid ~ .field-error,
+textarea:user-invalid ~ .field-error {
+  display: block;
+}
+
+/* ========================================
    ADDITIONAL GRID LAYOUTS & COMPONENTS
-   Add this to the bottom of your global.css
    ======================================== */
 
 /* Review Grid */

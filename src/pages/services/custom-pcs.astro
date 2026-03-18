@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { siteConfig } from '../../config';
 
+const showWebDesign = siteConfig.showWebDesign;
 const reviews = [
   {
     author: 'James T.',
@@ -1270,7 +1272,7 @@ const reviews = [
       </div>
     </section>
 
-    {/* Web Design Cross-sell hidden — service temporarily inactive
+    {showWebDesign && (
     <section class="section" style="padding: 40px 0;">
       <div class="container">
         <a
@@ -1279,7 +1281,7 @@ const reviews = [
         >
           <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
             <div>
-              <span class="rune-font" style="color: var(--gold-accent); font-size: 11px; letter-spacing: 1px;">NEW SERVICE</span>
+              <span class="rune-font" style="color: var(--gold-accent); font-size: 12px; letter-spacing: 1px;">NEW SERVICE</span>
               <h3 class="rune-font" style="color: var(--silver-light); font-size: 18px; margin: 4px 0;">
                 Need a Website for Your Business?
               </h3>
@@ -1292,7 +1294,7 @@ const reviews = [
         </a>
       </div>
     </section>
-    */}
+    )}
 
     <!-- Call to Action -->
     <section class="section cta-section">

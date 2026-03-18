@@ -1,37 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import { getReviews } from '../data/reviews';
+import { siteConfig } from '../config';
 
-const reviews = [
-  {
-    author: 'Sarah J.',
-    location: 'Romford',
-    text: 'Excellent service! Fixed my laptop quickly and reasonably priced. Highly recommend!',
-    rating: 5,
-    date: '2024-12-05',
-  },
-  {
-    author: 'Tom H.',
-    location: 'Harold Wood',
-    text: 'Great repair service. Professional work and my PC runs like new!',
-    rating: 5,
-    date: '2024-11-20',
-  },
-  {
-    author: 'Rachel A.',
-    location: 'Hornchurch',
-    text: 'Built me an amazing gaming computer within budget. Excellent quality!',
-    rating: 5,
-    date: '2024-10-28',
-  },
-  {
-    author: 'Mike D.',
-    location: 'Dagenham',
-    text: 'Best computer support! Always helpful, reliable, and knowledgeable.',
-    rating: 5,
-    date: '2024-09-15',
-  },
-];
+const reviews = getReviews(4);
+const showWebDesign = siteConfig.showWebDesign;
 ---
 
 <Layout
@@ -85,7 +59,7 @@ const reviews = [
                   aria-label="5 out of 5 stars"
                   role="img">★★★★★</span
                 >
-                <span class="alien-font" style="color: var(--comet-silver); font-size: 11px;"
+                <span class="alien-font" style="color: var(--comet-silver); font-size: 12px;"
                   >5/5</span
                 >
               </div>
@@ -114,7 +88,7 @@ const reviews = [
               <div class="space-font" style="color: #1877f2; font-size: 12px; font-weight: 700;">
                 FACEBOOK
               </div>
-              <div class="alien-font" style="color: var(--comet-silver); font-size: 11px;">
+              <div class="alien-font" style="color: var(--comet-silver); font-size: 12px;">
                 Follow Me
               </div>
             </div>
@@ -134,8 +108,8 @@ const reviews = [
             >
               ESTABLISHED
             </div>
-            <div class="alien-font" style="color: var(--comet-silver); font-size: 11px;">
-              20+ Years Trading
+            <div class="alien-font" style="color: var(--comet-silver); font-size: 12px;">
+              Est. 2007
             </div>
           </div>
         </div>
@@ -153,7 +127,7 @@ const reviews = [
             >
               GUARANTEE
             </div>
-            <div class="alien-font" style="color: var(--comet-silver); font-size: 11px;">
+            <div class="alien-font" style="color: var(--comet-silver); font-size: 12px;">
               No Fix, No Fee
             </div>
           </div>
@@ -172,7 +146,7 @@ const reviews = [
             >
               LOCAL BUSINESS
             </div>
-            <div class="alien-font" style="color: var(--comet-silver); font-size: 11px;">
+            <div class="alien-font" style="color: var(--comet-silver); font-size: 12px;">
               Harold Hill, Romford
             </div>
           </div>
@@ -510,7 +484,7 @@ const reviews = [
           </p>
         </a>
 
-        {/* Web Design service card hidden — service temporarily inactive
+        {showWebDesign && (
         <a href="/services/web-design/" class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
           <div
             class="planet-icon"
@@ -532,7 +506,7 @@ const reviews = [
             Professional websites from £299. Fast, mobile-ready, with free first-year hosting.
           </p>
         </a>
-        */}
+        )}
       </div>
     </div>
   </section>
@@ -570,7 +544,7 @@ const reviews = [
             class="space-font"
             style="color: var(--starlight-white); font-size: 14px; margin-bottom: 16px;"
           >
-            20+ Years Experience
+            Est. 2007
           </h4>
           <p
             class="alien-font mobile-text"
@@ -665,14 +639,14 @@ const reviews = [
             <div>
               <p
                 class="space-font"
-                style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;"
+                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
               >
                 Sarah J.
               </p>
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Romford</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -694,7 +668,7 @@ const reviews = [
             <div>
               <p
                 class="space-font"
-                style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;"
+                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
               >
                 Tom H.
               </p>
@@ -703,7 +677,7 @@ const reviews = [
               </p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -725,14 +699,14 @@ const reviews = [
             <div>
               <p
                 class="space-font"
-                style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;"
+                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
               >
                 Rachel A.
               </p>
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Hornchurch</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
@@ -754,14 +728,14 @@ const reviews = [
             <div>
               <p
                 class="space-font"
-                style="color: var(--starlight-white); font-size: 11px; margin-bottom: 2px;"
+                style="color: var(--starlight-white); font-size: 12px; margin-bottom: 2px;"
               >
                 Mike D.
               </p>
               <p class="tech-font" style="color: var(--plasma-cyan); font-size: 9px;">Dagenham</p>
             </div>
             <div class="review-badge">
-              <span style="color: var(--deep-space); font-weight: bold; font-size: 10px;" aria-hidden="true">✓</span>
+              <span style="color: var(--deep-space); font-weight: bold; font-size: 12px;" aria-hidden="true">✓</span>
             </div>
           </div>
         </div>
