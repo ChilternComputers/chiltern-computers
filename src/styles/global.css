@@ -956,7 +956,7 @@ select:focus {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .services-grid { grid-template-columns: 1fr; gap: 16px; }
   .features-grid { grid-template-columns: 1fr; gap: 20px; }
-  .space-button { padding: 10px 20px; font-size: 13px; }
+  .space-button { padding: 10px 20px; font-size: 14px; }
   .planet-icon { width: 50px; height: 50px; font-size: 20px; }
 
   .scroll-container { height: 50px; border-radius: 8px; }

@@ -215,8 +215,7 @@ const areaFaqSchema = {
               <Icon name="bolt" size={16} class="icon-inline" /> Same Day Service
             </h3>
             <p
-              class="alien-font"
-              class="area-why-text"
+              class="alien-font area-why-text"
             >
               Most repairs completed within 24 hours. Emergency same-day service available for {
                 area.name
@@ -230,8 +229,7 @@ const areaFaqSchema = {
               <Icon name="repair" size={16} class="icon-inline" /> £20 Diagnostic Check
             </h3>
             <p
-              class="alien-font"
-              class="area-why-text"
+              class="alien-font area-why-text"
             >
               Full diagnostic usually completed within an hour for just £20. If you go ahead with the repair, the diagnostic fee is waived. If it's unfixable — liquid damage, unavailable parts — no fix, no fee applies.
             </p>
@@ -243,8 +241,7 @@ const areaFaqSchema = {
               <Icon name="car" size={16} class="icon-inline" /> Easy Drop-Off
             </h3>
             <p
-              class="alien-font"
-              class="area-why-text"
+              class="alien-font area-why-text"
             >
               {
                 area.distance === '0 miles'
@@ -260,8 +257,7 @@ const areaFaqSchema = {
               <Icon name="trophy" size={16} class="icon-inline" /> Est. 2007
             </h3>
             <p
-              class="alien-font"
-              class="area-why-text"
+              class="alien-font area-why-text"
             >
               Trusted by hundreds of customers across {area.region}. Check my 5-star Google reviews
               from satisfied customers.
@@ -286,14 +282,12 @@ const areaFaqSchema = {
           area.faqs.map((faq) => (
             <div class="cosmic-card" style="padding: 24px;">
               <h3
-                class="space-font"
-                class="area-faq-q"
+                class="space-font area-faq-q"
               >
                 {faq.question}
               </h3>
               <p
-                class="alien-font"
-                class="area-faq-a"
+                class="alien-font area-faq-a"
               >
                 {faq.answer}
               </p>
@@ -426,8 +420,7 @@ const areaFaqSchema = {
   <section class="section-bg area-cta-pad">
     <div class="container">
       <div
-        class="cosmic-card"
-        class="area-cta-card"
+        class="cosmic-card area-cta-card"
       >
         <h2
           class="space-font galaxy-text cosmic-glow"
@@ -436,16 +429,14 @@ const areaFaqSchema = {
           NEED COMPUTER REPAIR IN {area.name.toUpperCase()}?
         </h2>
         <p
-          class="alien-font"
-          class="area-cta-text"
+          class="alien-font area-cta-text"
         >
           Open 7 days a week, {siteConfig.hours.display}. £20 diagnostic check — waived if you go ahead with repair.
         </p>
         <div class="cta-row">
           <a
             href={`tel:${siteConfig.phone.mobile}`}
-            class="space-button space-font"
-            class="area-cta-btn"
+            class="space-button space-font area-cta-btn"
           >
             <Icon name="mobile" size={14} />
             {siteConfig.phone.mobileDisplay}
