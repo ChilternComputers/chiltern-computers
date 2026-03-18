@@ -28,8 +28,9 @@ export const GET: APIRoute = async () => {
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     ...(showWebDesign ? [{ url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated }] : []),
 
-    // Core pages (8)
+    // Core pages (9)
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/book-repair/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/pricing/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/faq/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/about/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },

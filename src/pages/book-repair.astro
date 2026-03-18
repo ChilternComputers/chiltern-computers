@@ -1,0 +1,314 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { siteConfig } from '../config';
+---
+
+<Layout
+  title="Book a Repair - Computer Repair Harold Hill, Romford"
+  description="Book a computer repair online. Tell me about your device and issue, and I'll get back to you with a quote — usually within the hour."
+  type="website"
+  modifiedTime="2026-03-18"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Book a Repair', url: '/book-repair/' },
+  ]}
+>
+  <section class="section-bg-3" style="padding: 120px 20px 80px; min-height: 100vh;">
+    <div class="container">
+      <!-- Header -->
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h1
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px;"
+        >
+          Book a Repair
+        </h1>
+        <div style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 24px; border-radius: 2px;"></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 18px; max-width: 550px; margin: 0 auto; line-height: 1.6;">
+          Tell me about your device and the issue. I'll reply with a quote — usually within the hour during business hours.
+        </p>
+      </div>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <!-- Quick Contact Alternative -->
+        <div class="cosmic-card" style="padding: 20px 24px; margin-bottom: 32px; border-color: var(--aurora-green); text-align: center;">
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+            Prefer to talk? Call <a href={`tel:${siteConfig.phone.mobile}`} style="color: var(--aurora-green); text-decoration: none; font-weight: 600;">{siteConfig.phone.mobileDisplay}</a> or
+            <a href={siteConfig.whatsapp} target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); text-decoration: none; font-weight: 600;">WhatsApp me</a> — open {siteConfig.hours.display}.
+          </p>
+        </div>
+
+        <!-- Repair Request Form -->
+        <div class="cosmic-card" style="padding: 40px;">
+          <form
+            id="repair-form"
+            action="https://formspree.io/f/xeozjjgj"
+            method="POST"
+            aria-label="Book a repair form"
+          >
+            <input type="hidden" name="_subject" value="New Repair Booking from Website" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <!-- Step 1: Device Type -->
+            <fieldset style="border: none; padding: 0; margin: 0 0 28px;">
+              <legend class="space-font" style="color: var(--plasma-cyan); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <Icon name="laptop" size={18} /> What device needs repairing? *
+              </legend>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px;">
+                <label class="device-option">
+                  <input type="radio" name="device" value="Laptop" required aria-required="true" />
+                  <span class="device-label alien-font"><Icon name="laptop" size={16} /> Laptop</span>
+                </label>
+                <label class="device-option">
+                  <input type="radio" name="device" value="Desktop PC" />
+                  <span class="device-label alien-font"><Icon name="desktop" size={16} /> Desktop PC</span>
+                </label>
+                <label class="device-option">
+                  <input type="radio" name="device" value="Gaming PC" />
+                  <span class="device-label alien-font"><Icon name="gaming" size={16} /> Gaming PC</span>
+                </label>
+                <label class="device-option">
+                  <input type="radio" name="device" value="Mac / MacBook" />
+                  <span class="device-label alien-font"><Icon name="apple" size={16} /> Mac</span>
+                </label>
+                <label class="device-option">
+                  <input type="radio" name="device" value="Other" />
+                  <span class="device-label alien-font"><Icon name="cpu" size={16} /> Other</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 2: Issue Type -->
+            <fieldset style="border: none; padding: 0; margin: 0 0 28px;">
+              <legend class="space-font" style="color: var(--plasma-cyan); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <Icon name="wrench" size={18} /> What's the issue? *
+              </legend>
+              <select
+                name="issue"
+                id="issue"
+                required
+                aria-required="true"
+                style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; font-family: inherit;"
+              >
+                <option value="" disabled selected>Select the main issue...</option>
+                <option value="Running slow / freezing">Running slow / freezing</option>
+                <option value="Won't turn on / won't boot">Won't turn on / won't boot</option>
+                <option value="Blue screen / crashing">Blue screen / crashing</option>
+                <option value="Virus / malware">Virus / malware</option>
+                <option value="Broken screen">Broken screen</option>
+                <option value="Battery / charging issue">Battery / charging issue</option>
+                <option value="Data recovery">Data recovery needed</option>
+                <option value="WiFi / network problem">WiFi / network problem</option>
+                <option value="Want an upgrade (SSD/RAM)">Want an upgrade (SSD/RAM)</option>
+                <option value="New PC setup">New PC setup</option>
+                <option value="Custom PC build">Custom PC build request</option>
+                <option value="Other">Other (describe below)</option>
+              </select>
+            </fieldset>
+
+            <!-- Step 3: Description -->
+            <div style="margin-bottom: 28px;">
+              <label for="description" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
+                Tell me more about the problem *
+              </label>
+              <textarea
+                id="description"
+                name="message"
+                required
+                aria-required="true"
+                rows="4"
+                placeholder="e.g. My laptop has been running really slow for the past week. It takes 5 minutes to start up and programs keep freezing..."
+                style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; resize: vertical; font-family: inherit;"
+              ></textarea>
+            </div>
+
+            <!-- Step 4: Urgency -->
+            <fieldset style="border: none; padding: 0; margin: 0 0 28px;">
+              <legend class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px;">
+                How urgent is this?
+              </legend>
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <label class="urgency-option">
+                  <input type="radio" name="urgency" value="Emergency (today)" />
+                  <span class="urgency-label alien-font">Emergency</span>
+                </label>
+                <label class="urgency-option">
+                  <input type="radio" name="urgency" value="Soon (this week)" checked />
+                  <span class="urgency-label alien-font">This week</span>
+                </label>
+                <label class="urgency-option">
+                  <input type="radio" name="urgency" value="No rush" />
+                  <span class="urgency-label alien-font">No rush</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Step 5: Contact Details -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px;">
+              <div>
+                <label for="booking-name" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  id="booking-name"
+                  name="name"
+                  required
+                  aria-required="true"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
+                />
+              </div>
+              <div>
+                <label for="booking-phone" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="booking-phone"
+                  name="phone"
+                  required
+                  aria-required="true"
+                  placeholder="Your number"
+                  autocomplete="tel"
+                  style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
+                />
+              </div>
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <label for="booking-email" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="booking-email"
+                name="email"
+                placeholder="your.email@example.com (optional)"
+                autocomplete="email"
+                style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 28px;">
+              <label for="booking-location" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
+                Your Area
+              </label>
+              <input
+                type="text"
+                id="booking-location"
+                name="location"
+                placeholder="e.g. Harold Hill, Romford, Hornchurch..."
+                style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
+              />
+            </div>
+
+            <!-- Human check + Submit -->
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+              <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                <input
+                  type="checkbox"
+                  id="repair-human-check"
+                  name="human"
+                  required
+                  aria-required="true"
+                  style="width: 18px; height: 18px; accent-color: var(--card-border); cursor: pointer;"
+                />
+                <span class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600;">I am human *</span>
+              </label>
+
+              <button
+                type="submit"
+                id="repair-submit-btn"
+                style="background: linear-gradient(135deg, var(--aurora-green), var(--plasma-cyan)); border: none; color: white; padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; min-height: 44px; font-family: inherit;"
+              >
+                <Icon name="rocket" size={16} /> Submit Repair Request
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- What happens next -->
+        <div class="cosmic-card" style="padding: 28px; margin-top: 24px;">
+          <h2 class="space-font" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 16px;">What happens next?</h2>
+          <ol class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px; margin: 0;">
+            <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">I'll review your request</strong> — usually within the hour during business hours.</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">I'll call or text you</strong> with a free estimate and to arrange drop-off or collection.</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">£20 diagnostic</strong> — waived if you go ahead with the repair. No fix, no fee.</li>
+            <li><strong style="color: var(--starlight-white);">Most repairs completed within 24-48 hours.</strong></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* Device selection radio buttons */
+    .device-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .device-label {
+      display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+      background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border);
+      border-radius: 8px; cursor: pointer; transition: all 0.2s ease;
+      color: var(--comet-silver); font-size: 14px; min-height: 44px;
+    }
+    .device-option input:checked + .device-label {
+      border-color: var(--plasma-cyan); background: rgba(6, 182, 212, 0.15);
+      color: var(--starlight-white);
+    }
+    .device-option input:focus-visible + .device-label {
+      outline: 3px solid var(--aurora-green); outline-offset: 2px;
+    }
+    .device-label:hover { border-color: rgba(6, 182, 212, 0.5); }
+
+    /* Urgency radio buttons */
+    .urgency-option input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .urgency-label {
+      display: inline-flex; align-items: center; padding: 10px 20px;
+      background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border);
+      border-radius: 20px; cursor: pointer; transition: all 0.2s ease;
+      color: var(--comet-silver); font-size: 14px; min-height: 44px;
+    }
+    .urgency-option input:checked + .urgency-label {
+      border-color: var(--aurora-green); background: rgba(16, 185, 129, 0.15);
+      color: var(--starlight-white);
+    }
+    .urgency-option input:focus-visible + .urgency-label {
+      outline: 3px solid var(--aurora-green); outline-offset: 2px;
+    }
+    .urgency-label:hover { border-color: rgba(16, 185, 129, 0.5); }
+
+    @media (max-width: 600px) {
+      form > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+
+  <script>
+    const form = document.getElementById('repair-form');
+    if (form) {
+      const requiredFields = form.querySelectorAll('[required]');
+      requiredFields.forEach((field) => {
+        field.addEventListener('invalid', () => field.setAttribute('aria-invalid', 'true'));
+        field.addEventListener('input', () => {
+          if (field.validity.valid) field.removeAttribute('aria-invalid');
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        const humanCheck = document.getElementById('repair-human-check');
+        if (!humanCheck?.checked) {
+          e.preventDefault();
+          humanCheck?.setAttribute('aria-invalid', 'true');
+          humanCheck?.focus();
+          return;
+        }
+        humanCheck?.removeAttribute('aria-invalid');
+        const btn = document.getElementById('repair-submit-btn');
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      });
+    }
+  </script>
+</Layout>
