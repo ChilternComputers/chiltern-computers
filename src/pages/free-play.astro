@@ -511,30 +511,18 @@ import Icon from '../components/Icon.astro';
           animation-delay: 4s;
         }
 
+        /* Construction planet - override global .planet-icon */
+        .planet-icon.construction-planet { width: 100px; height: 100px; font-size: 48px; }
+
         /* Mobile optimizations */
         @media (max-width: 768px) {
-          .construction-planet {
-            width: 80px !important;
-            height: 80px !important;
-            font-size: 40px !important;
-          }
-
-          .floating-tool {
-            font-size: 18px;
-          }
-
-          .features-grid {
-            grid-template-columns: 1fr !important;
-            gap: 16px !important;
-          }
+          .planet-icon.construction-planet { width: 80px; height: 80px; font-size: 40px; }
+          .floating-tool { font-size: 18px; }
+          .features-grid { grid-template-columns: 1fr; gap: 16px; }
         }
 
         @media (max-width: 480px) {
-          .construction-planet {
-            width: 60px !important;
-            height: 60px !important;
-            font-size: 30px !important;
-          }
+          .planet-icon.construction-planet { width: 60px; height: 60px; font-size: 30px; }
 
           .floating-elements {
             display: none; /* Hide floating elements on very small screens */
