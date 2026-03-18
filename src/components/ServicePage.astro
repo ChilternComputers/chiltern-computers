@@ -1,0 +1,327 @@
+---
+import Icon from './Icon.astro';
+import { siteConfig } from '../config';
+import { areas } from '../data/areas';
+
+interface ServiceItem {
+  iconName: string;
+  title: string;
+  description: string;
+  color: 'cyan' | 'green' | 'orange' | 'purple';
+}
+
+interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface RelatedService {
+  iconName: string;
+  title: string;
+  description: string;
+  url: string;
+  color: 'cyan' | 'green' | 'orange' | 'purple';
+}
+
+interface Props {
+  heroTitle: string;
+  heroDescription: string;
+  heroBadgeIcon: string;
+  heroBadgeText: string;
+  servicesTitle: string;
+  services: ServiceItem[];
+  processTitle: string;
+  processSteps: ProcessStep[];
+  faqs: FAQ[];
+  relatedServices: RelatedService[];
+  ctaTitle: string;
+  ctaDescription: string;
+  areasTitle: string;
+}
+
+const {
+  heroTitle,
+  heroDescription,
+  heroBadgeIcon,
+  heroBadgeText,
+  servicesTitle,
+  services,
+  processTitle,
+  processSteps,
+  faqs,
+  relatedServices,
+  ctaTitle,
+  ctaDescription,
+  areasTitle,
+} = Astro.props;
+
+const colorMap = {
+  cyan: 'var(--plasma-cyan)',
+  green: 'var(--aurora-green)',
+  orange: 'var(--solar-orange)',
+  purple: 'var(--nebula-purple)',
+};
+
+const headingClassMap = {
+  cyan: 'heading-cyan',
+  green: 'heading-green',
+  orange: 'heading-orange',
+  purple: 'heading-purple',
+};
+---
+
+<div>
+  <!-- Hero Section -->
+  <section class="section-bg" style="padding: 100px 0 60px;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <div
+          style={`display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;`}
+        >
+          <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;">
+            <Icon name={heroBadgeIcon} size={14} class="icon-inline" style="color: var(--plasma-cyan);" />
+            {' '}{heroBadgeText}
+          </span>
+        </div>
+        <h1
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(28px, 5vw, 48px); margin-bottom: 20px; line-height: 1.1;"
+        >
+          {heroTitle}
+        </h1>
+        <p
+          class="alien-font"
+          style="font-size: clamp(16px, 3vw, 20px); color: var(--comet-silver); max-width: 700px; margin: 0 auto 30px; line-height: 1.6;"
+        >
+          {heroDescription}
+        </p>
+        <div class="cta-row">
+          <a href="/contact/" class="space-button space-font">
+            <Icon name="wrench" size={16} class="icon-inline" /> Book Repair
+          </a>
+          <a
+            href={`tel:${siteConfig.phone.mobile}`}
+            class="space-button space-font"
+            style="background: rgba(16, 185, 129, 0.2);"
+          >
+            <Icon name="phone" size={16} class="icon-inline" /> {siteConfig.phone.mobileDisplay}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="section-bg section-pad">
+    <div class="container">
+      <h2
+        class="space-font galaxy-text cosmic-glow"
+        style="font-size: clamp(24px, 4vw, 36px); margin-bottom: 40px; text-align: center;"
+      >
+        {servicesTitle}
+      </h2>
+      <div class="services-grid">
+        {services.map((service) => (
+          <div class="cosmic-card card-pad" style="text-align: center;">
+            <span style={`font-size: 36px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: ${colorMap[service.color]};`} aria-hidden="true">
+              <Icon name={service.iconName} size={36} />
+            </span>
+            <h3 class:list={['space-font', headingClassMap[service.color]]}>
+              {service.title}
+            </h3>
+            <p class="alien-font card-desc-sm">
+              {service.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process / Why Choose Section -->
+  <section class="section-bg section-pad">
+    <div class="container">
+      <div class="cosmic-card" style="padding: 40px;">
+        <h2
+          class="space-font"
+          style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 24px;"
+        >
+          {processTitle}
+        </h2>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;"
+        >
+          {processSteps.map((step) => (
+            <div>
+              <h3
+                class="space-font"
+                style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              >
+                {step.title}
+              </h3>
+              <p
+                class="alien-font"
+                style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;"
+              >
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-bg section-pad">
+    <div class="container">
+      <h2
+        class="space-font"
+        style="color: var(--plasma-cyan); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+      >
+        {heroTitle} FAQ
+      </h2>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        {faqs.map((faq) => (
+          <div class="cosmic-card card-pad">
+            <h3
+              class="space-font"
+              style="color: var(--aurora-green); font-size: 16px; margin-bottom: 12px;"
+            >
+              {faq.question}
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); font-size: 14px; line-height: 1.7;"
+            >
+              {faq.answer}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Services Section -->
+  <section class="section-bg section-pad">
+    <div class="container">
+      <h2
+        class="space-font"
+        style="color: var(--aurora-green); font-size: clamp(20px, 4vw, 28px); margin-bottom: 30px; text-align: center;"
+      >
+        RELATED SERVICES
+      </h2>
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+      >
+        {relatedServices.map((related) => (
+          <a
+            href={related.url}
+            class="cosmic-card area-service-link"
+          >
+            <h3 class:list={['space-font', headingClassMap[related.color]]}>
+              <Icon name={related.iconName} size={16} class="icon-inline" /> {related.title}
+            </h3>
+            <p class="alien-font card-desc">
+              {related.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Area Coverage Section -->
+  <section class="section-bg section-pad">
+    <div class="container" style="text-align: center;">
+      <h2
+        class="space-font"
+        style="font-size: clamp(20px, 4vw, 28px); margin-bottom: 16px; color: var(--plasma-cyan);"
+      >
+        {areasTitle}
+      </h2>
+      <p
+        class="alien-font"
+        style="color: var(--comet-silver); font-size: 16px; margin-bottom: 24px;"
+      >
+        Collection and drop-off service available across all areas:
+      </p>
+      <div
+        style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1000px; margin: 0 auto;"
+      >
+        {areas.map((area) => (
+          <a href={`/areas/${area.slug}/`} class="area-tag alien-font">{area.name}</a>
+        ))}
+        <a href="/areas/" class="area-tag alien-font" style="background: rgba(16, 185, 129, 0.2); border-color: var(--aurora-green); color: var(--aurora-green);">View All Areas &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Footer Section -->
+  <section class="section-bg" style="padding: 60px 0 80px;">
+    <div class="container">
+      <div
+        class="cosmic-card"
+        style="padding: 50px 40px; text-align: center; border: 2px solid var(--aurora-green);"
+      >
+        <h2
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(22px, 4vw, 32px); margin-bottom: 16px;"
+        >
+          {ctaTitle}
+        </h2>
+        <p
+          class="alien-font"
+          style="color: var(--comet-silver); margin-bottom: 28px; font-size: 16px;"
+        >
+          {ctaDescription}
+        </p>
+        <a
+          href={`tel:${siteConfig.phone.mobile}`}
+          class="space-button space-font"
+          style="font-size: 16px; padding: 16px 32px;"
+        >
+          <Icon name="phone" size={16} class="icon-inline" /> {siteConfig.phone.mobileDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FAQPage JSON-LD Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+})} />
+
+<style>
+  .area-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    border-radius: 20px;
+    color: var(--comet-silver);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+  }
+  .area-tag:hover {
+    background: rgba(6, 182, 212, 0.2);
+    border-color: var(--plasma-cyan);
+    color: var(--plasma-cyan);
+  }
+</style>
