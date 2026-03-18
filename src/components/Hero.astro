@@ -1,6 +1,7 @@
 ---
 // Hero.astro - Streamlined version using global styles
 import { siteConfig } from '../config';
+import Icon from './Icon.astro';
 
 const title = 'PC and Laptop Repairs and Supply';
 const subtitle = siteConfig.tagline;
@@ -32,9 +33,9 @@ const ctaButtons = [
 ];
 
 const services = [
-  { title: 'Computer Repairs', desc: 'Fast diagnosis & repair', icon: '🔧', href: '/services/repairs/' },
-  { title: 'Custom PCs', desc: 'Gaming & business builds', icon: '🖥️', href: '/services/custom-pcs/' },
-  { title: 'IT Support', desc: 'Ongoing technical support', icon: '🛠️', href: '/contact/' },
+  { title: 'Computer Repairs', desc: 'Fast diagnosis & repair', iconName: 'wrench', href: '/services/repairs/' },
+  { title: 'Custom PCs', desc: 'Gaming & business builds', iconName: 'desktop', href: '/services/custom-pcs/' },
+  { title: 'IT Support', desc: 'Ongoing technical support', iconName: 'tools', href: '/contact/' },
 ];
 
 const features = [
@@ -176,7 +177,7 @@ const features = [
               style={`animation-delay: ${1.8 + index * 0.15}s; text-decoration:none; color:inherit;`}
             >
               <div class="service-icon" aria-hidden="true">
-                {service.icon}
+                <Icon name={service.iconName} size={32} />
               </div>
               <h3 class="service-title">{service.title}</h3>
               <p class="service-description">{service.desc}</p>

@@ -1,0 +1,206 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { siteConfig } from '../config';
+---
+
+<Layout
+  title="Pricing - Computer Repair Costs Harold Hill, Romford"
+  description="Transparent computer repair pricing from Chiltern Computers. £20 diagnostic, virus removal from £40, screen repair from £60. No fix, no fee."
+  type="website"
+  modifiedTime="2026-03-18"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Pricing', url: '/pricing/' },
+  ]}
+>
+  <section class="section-bg-3" style="padding: 120px 20px 40px; min-height: 100vh;">
+    <div class="container">
+      <!-- Header -->
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px;"
+        >
+          Pricing
+        </h1>
+        <div
+          style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--aurora-green), var(--plasma-cyan)); margin: 0 auto 24px; border-radius: 2px;"
+        ></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 18px; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+          Honest, upfront pricing with no hidden fees. £20 diagnostic — waived if you go ahead with the repair.
+        </p>
+      </div>
+
+      <!-- Pricing Guarantee Banner -->
+      <div class="cosmic-card" style="padding: 20px 24px; margin-bottom: 40px; border-color: var(--aurora-green); text-align: center;">
+        <p class="alien-font" style="color: var(--aurora-green); font-size: 16px; font-weight: 600; margin: 0;">
+          <Icon name="shield" size={16} style="display:inline-block; vertical-align:-3px;" />
+          No Fix, No Fee — If I can't fix it, you don't pay for the repair.
+        </p>
+      </div>
+
+      <!-- Pricing Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 48px;">
+
+        <!-- Diagnostic -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="repair" size={24} style="color: var(--plasma-cyan);" />
+            <h2 class="space-font" style="color: var(--plasma-cyan); font-size: 20px; margin: 0;">Diagnostic</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">£20</span>
+            <span class="alien-font" style="color: var(--comet-silver); font-size: 14px;"> / usually within 1 hour</span>
+          </div>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
+            Full hardware and software diagnostic to identify the problem. Fee waived if you proceed with the repair.
+          </p>
+          <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
+            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><Icon name="check-circle" size={14} style="color: var(--aurora-green); flex-shrink:0;" /> Hardware health check</li>
+            <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;"><Icon name="check-circle" size={14} style="color: var(--aurora-green); flex-shrink:0;" /> Software & OS assessment</li>
+            <li style="display: flex; align-items: center; gap: 8px;"><Icon name="check-circle" size={14} style="color: var(--aurora-green); flex-shrink:0;" /> Written report & quote</li>
+          </ul>
+        </div>
+
+        <!-- Software Repairs -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="shield" size={24} style="color: var(--aurora-green);" />
+            <h2 class="space-font" style="color: var(--aurora-green); font-size: 20px; margin: 0;">Software Repairs</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £30</span>
+          </div>
+          <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Virus & malware removal</span><span style="color: var(--aurora-green); font-weight: 600;">£40</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Windows reinstall (clean)</span><span style="color: var(--aurora-green); font-weight: 600;">£50</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>OS tune-up & optimisation</span><span style="color: var(--aurora-green); font-weight: 600;">£30</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Driver updates & cleanup</span><span style="color: var(--aurora-green); font-weight: 600;">£30</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0;">
+              <span>Data backup & transfer</span><span style="color: var(--aurora-green); font-weight: 600;">£40</span>
+            </li>
+          </ul>
+          <p class="alien-font" style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">30-day warranty on all software repairs</p>
+        </div>
+
+        <!-- Hardware Repairs -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="wrench" size={24} style="color: var(--solar-orange);" />
+            <h2 class="space-font" style="color: var(--solar-orange); font-size: 20px; margin: 0;">Hardware Repairs</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £50</span>
+            <span class="alien-font" style="color: var(--comet-silver); font-size: 14px;"> + parts</span>
+          </div>
+          <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Laptop screen replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>SSD upgrade (inc. clone)</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>RAM upgrade</span><span style="color: var(--solar-orange); font-weight: 600;">From £30</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Power supply replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £50</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Keyboard replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £50</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0;">
+              <span>Data recovery</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+            </li>
+          </ul>
+          <p class="alien-font" style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">90-day warranty on all hardware repairs. Parts priced at cost.</p>
+        </div>
+
+        <!-- Networking -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="wifi" size={24} style="color: var(--nebula-purple);" />
+            <h2 class="space-font" style="color: var(--nebula-purple); font-size: 20px; margin: 0;">Network & WiFi</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £40</span>
+          </div>
+          <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>WiFi troubleshooting</span><span style="color: var(--nebula-purple); font-weight: 600;">£40</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+              <span>Router setup & config</span><span style="color: var(--nebula-purple); font-weight: 600;">£40</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; padding: 10px 0;">
+              <span>Home network setup</span><span style="color: var(--nebula-purple); font-weight: 600;">From £60</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- New PC Setup -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="desktop" size={24} style="color: var(--plasma-cyan);" />
+            <h2 class="space-font" style="color: var(--plasma-cyan); font-size: 20px; margin: 0;">New PC Setup</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">£50</span>
+          </div>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+            Full setup of your new PC or laptop — file transfers, email, passwords, printers, and software installed ready to go.
+          </p>
+        </div>
+
+        <!-- Custom Gaming PCs -->
+        <div class="cosmic-card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <Icon name="gaming" size={24} style="color: var(--aurora-green);" />
+            <h2 class="space-font" style="color: var(--aurora-green); font-size: 20px; margin: 0;">Custom Gaming PCs</h2>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £500</span>
+          </div>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.6;">
+            Built to your spec and budget. Includes assembly, cable management, OS install, stress testing, and delivery. Parts sourced at competitive prices.
+          </p>
+          <a href="/services/custom-pcs/" class="space-button space-font" style="margin-top: 16px; font-size: 13px;">
+            View Gaming PCs
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cosmic-card" style="padding: 40px; text-align: center; border-color: var(--aurora-green); margin-bottom: 40px;">
+        <h2 class="space-font" style="color: var(--aurora-green); font-size: 24px; margin-bottom: 12px;">Not sure what you need?</h2>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 16px; margin-bottom: 24px;">
+          Call or message me to describe the issue — I'll give you a free estimate before you commit.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href={`tel:${siteConfig.phone.mobile}`} class="space-button space-font" style="font-size: 14px;">
+            <Icon name="phone" size={14} /> {siteConfig.phone.mobileDisplay}
+          </a>
+          <a href="/contact/" class="space-button space-font" style="font-size: 14px; background: rgba(16,185,129,0.2);">
+            <Icon name="chat" size={14} /> Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <!-- Small print -->
+      <div style="text-align: center;">
+        <p class="alien-font" style="color: var(--text-muted); font-size: 13px; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+          All prices are guide prices and may vary depending on the specific issue. A full quote is always provided after the diagnostic. Prices include labour unless stated. Parts charged at cost.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

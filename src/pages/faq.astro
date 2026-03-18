@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { siteConfig } from '../config';
+
+const faqs = [
+  {
+    q: 'What computer repair services do you offer?',
+    a: 'I offer PC repair, laptop repair, virus removal, data recovery, screen replacement, SSD/RAM upgrades, network & WiFi setup, Windows installation, and custom gaming PC builds. I cover all major brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, and custom-built PCs.',
+  },
+  {
+    q: 'How much does a repair cost?',
+    a: "I charge £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the diagnostic fee is waived. Typical software repairs start from £30, hardware repairs from £50 plus parts. I always provide a full quote before starting any work.",
+  },
+  {
+    q: 'Do you offer same-day repairs?',
+    a: "Yes — most software issues like virus removal, system tune-ups, and driver problems can be fixed the same day. Hardware repairs depend on parts availability but I always aim for the fastest turnaround possible.",
+  },
+  {
+    q: "What does 'No Fix, No Fee' mean?",
+    a: "If I can't fix the issue — whether it's liquid damage, unavailable parts, or a fault beyond repair — you don't pay for the repair. You only pay the £20 diagnostic fee, which is waived if I do fix it.",
+  },
+  {
+    q: "Can you fix a computer that won't start?",
+    a: "Absolutely. I specialise in diagnosing startup failures including power supply issues, motherboard problems, hard drive failures, blue screens, and software corruption. The diagnostic will pinpoint the exact cause.",
+  },
+  {
+    q: 'Do you do on-site repairs?',
+    a: 'Yes — I provide on-site repairs for businesses and home users across Harold Hill, Romford, and surrounding Essex areas. This includes network setup, virus removal, and general maintenance at your location.',
+  },
+  {
+    q: 'What areas do you cover?',
+    a: "I'm based in Harold Hill, Romford, and cover all of Havering and surrounding Essex areas including Hornchurch, Upminster, Dagenham, Brentwood, Collier Row, Gidea Park, Rainham, and more. Check my Areas page for the full list.",
+  },
+  {
+    q: 'What are your opening hours?',
+    a: "I'm open 9AM to 9PM, 7 days a week including weekends and bank holidays. Emergency repairs can be arranged outside these hours by calling me directly.",
+  },
+  {
+    q: 'Do you offer a warranty?',
+    a: "Yes. Software repairs are covered for 30 days and hardware repairs for 90 days. If the same issue returns within the warranty period, I'll fix it free of charge.",
+  },
+  {
+    q: 'How long does a repair take?',
+    a: 'Most repairs are completed within 24-48 hours. Simple software fixes are often same-day. Hardware repairs requiring parts may take 2-3 business days depending on availability.',
+  },
+  {
+    q: 'Can you recover data from a failed hard drive?',
+    a: "In most cases, yes. I can recover photos, documents, and files from failed hard drives, SSDs, and USB drives. Success depends on the type of failure — I'll assess this during the diagnostic and give you an honest answer before proceeding.",
+  },
+  {
+    q: 'Do you build custom gaming PCs?',
+    a: "Yes — I build high-performance gaming PCs tailored to your budget and requirements. This includes part selection, assembly, cable management, OS installation, stress testing, and delivery. Prices start from around £500.",
+  },
+];
+
+// FAQ schema for structured data
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title="FAQ - Computer Repair Questions Harold Hill, Romford"
+  description="Frequently asked questions about computer repair services from Chiltern Computers. Pricing, turnaround times, warranties, and more."
+  type="website"
+  modifiedTime="2026-03-18"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'FAQ', url: '/faq/' },
+  ]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <section class="section-bg-3" style="padding: 120px 20px 80px; min-height: 100vh;">
+    <div class="container">
+      <!-- Header -->
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1
+          class="space-font galaxy-text cosmic-glow"
+          style="font-size: clamp(32px, 6vw, 48px); margin-bottom: 16px;"
+        >
+          Frequently Asked Questions
+        </h1>
+        <div
+          style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--plasma-cyan), var(--aurora-green)); margin: 0 auto 24px; border-radius: 2px;"
+        ></div>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 18px; max-width: 600px; margin: 0 auto;">
+          Quick answers to the most common questions about my repair services.
+        </p>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div style="max-width: 800px; margin: 0 auto 48px; display: flex; flex-direction: column; gap: 12px;">
+        {faqs.map((faq, i) => (
+          <details class="cosmic-card faq-item" style="padding: 0; overflow: hidden;">
+            <summary
+              class="space-font faq-summary"
+              style="color: var(--starlight-white); font-size: 15px; padding: 20px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; list-style: none; user-select: none;"
+            >
+              <span>{faq.q}</span>
+              <Icon name="arrow-right" size={16} class="faq-chevron" style="flex-shrink: 0; color: var(--plasma-cyan); transition: transform 0.2s ease;" />
+            </summary>
+            <div style="padding: 0 24px 20px;">
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.7; margin: 0;">
+                {faq.a}
+              </p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="cosmic-card" style="padding: 40px; text-align: center; border-color: var(--aurora-green); max-width: 600px; margin: 0 auto;">
+        <h2 class="space-font" style="color: var(--aurora-green); font-size: 22px; margin-bottom: 12px;">Still have questions?</h2>
+        <p class="alien-font" style="color: var(--comet-silver); font-size: 15px; margin-bottom: 24px;">
+          Give me a call or send a message — happy to help.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href={`tel:${siteConfig.phone.mobile}`} class="space-button space-font" style="font-size: 14px;">
+            <Icon name="phone" size={14} /> {siteConfig.phone.mobileDisplay}
+          </a>
+          <a href="/contact/" class="space-button space-font" style="font-size: 14px; background: rgba(16,185,129,0.2);">
+            <Icon name="chat" size={14} /> Contact Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item[open] .faq-chevron { transform: rotate(90deg); }
+    .faq-item summary:hover { background: rgba(6, 182, 212, 0.05); }
+    .faq-item summary:focus-visible { outline: 3px solid var(--aurora-green); outline-offset: -3px; }
+  </style>
+</Layout>
