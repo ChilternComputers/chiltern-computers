@@ -4,9 +4,9 @@ import { siteConfig } from '../config';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
-  const lastUpdated = '2026-03-09';
+  const lastUpdated = '2026-03-18';
 
-  // All pages verified against src/pages/ — 79 pages total
+  // All pages verified against src/pages/ — 78 URLs
   const routes = [
     // Homepage
     { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
