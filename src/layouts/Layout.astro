@@ -59,7 +59,7 @@ const {
   <body class="min-h-screen" style="background: var(--void-black);">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header />
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />
@@ -159,6 +159,18 @@ const {
           setTimeout(() => {
             btt.classList.remove('launching');
           }, 700);
+        });
+      }
+    </script>
+    <script>
+      // Skip link focus management — move focus to main content
+      const skipLink = document.querySelector('.skip-link');
+      const mainContent = document.getElementById('main-content');
+      if (skipLink && mainContent) {
+        skipLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          mainContent.focus();
+          mainContent.scrollIntoView();
         });
       }
     </script>

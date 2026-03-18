@@ -2,6 +2,7 @@
 // src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
 import { getReviews } from '../data/reviews';
+import StarRating from '../components/StarRating.astro';
 
 const url = new URL(Astro.request.url);
 const success = url.searchParams.get('success');
@@ -453,8 +454,7 @@ const reviews = getReviews(3);
                 Sarah Mitchell
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
@@ -490,8 +490,7 @@ const reviews = getReviews(3);
                 Mike Thompson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
@@ -526,8 +525,7 @@ const reviews = getReviews(3);
                 Linda Johnson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Hornchurch resident</p>
@@ -561,8 +559,7 @@ const reviews = getReviews(3);
                 James Wilson
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Upminster resident</p>
@@ -596,8 +593,7 @@ const reviews = getReviews(3);
                 Rachel Davis
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">
@@ -632,8 +628,7 @@ const reviews = getReviews(3);
                 Alan Roberts
               </h3>
               <div style="display: flex; gap: 4px; margin-bottom: 4px;">
-                <span style="color: var(--star-color); font-size: 16px;" aria-label="5 out of 5 stars" role="img"
-                  >⭐⭐⭐⭐⭐</span
+                <StarRating rating={5} size={16} />
                 >
               </div>
               <p class="alien-font" style="color: var(--text-subtle); font-size: 12px;">Gidea Park resident</p>
@@ -780,6 +775,19 @@ const reviews = getReviews(3);
       const form = document.getElementById('contact-form');
 
       if (form) {
+        // Set aria-invalid on fields that fail validation
+        const requiredFields = form.querySelectorAll('[required]');
+        requiredFields.forEach((field) => {
+          field.addEventListener('invalid', () => {
+            field.setAttribute('aria-invalid', 'true');
+          });
+          field.addEventListener('input', () => {
+            if (field.validity.valid) {
+              field.removeAttribute('aria-invalid');
+            }
+          });
+        });
+
         form.addEventListener('submit', function (e) {
           const submitBtn = document.getElementById('submit-btn');
           const humanCheck = document.getElementById('human-check');
@@ -787,19 +795,21 @@ const reviews = getReviews(3);
           // Check human verification
           if (!humanCheck?.checked) {
             e.preventDefault();
+            humanCheck?.setAttribute('aria-invalid', 'true');
             let errEl = document.getElementById('human-check-error');
             if (!errEl) {
               errEl = document.createElement('p');
               errEl.id = 'human-check-error';
               errEl.setAttribute('role', 'alert');
-              errEl.style.cssText = 'color:#ef4444;font-size:14px;margin-top:4px;';
+              errEl.style.cssText = 'color:var(--error);font-size:14px;margin-top:4px;';
               humanCheck?.parentElement?.appendChild(errEl);
             }
             errEl.textContent = 'Please confirm that you are human.';
             humanCheck?.focus();
             return;
           }
-          // Clear any previous human-check error
+          // Clear errors
+          humanCheck?.removeAttribute('aria-invalid');
           const prevErr = document.getElementById('human-check-error');
           if (prevErr) prevErr.textContent = '';
 
@@ -808,9 +818,6 @@ const reviews = getReviews(3);
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
           }
-
-          // Form will submit normally to Formspree
-          // User will see Formspree's default thank you page
         });
       }
     });

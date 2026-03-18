@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import { getReviews } from '../data/reviews';
 import { siteConfig } from '../config';
+import StarRating from '../components/StarRating.astro';
 
 const reviews = getReviews(4);
 const showWebDesign = siteConfig.showWebDesign;
@@ -54,10 +55,7 @@ const showWebDesign = siteConfig.showWebDesign;
                 GOOGLE REVIEWS
               </div>
               <div style="display: flex; align-items: center; gap: 4px;">
-                <span
-                  style="color: #fbbc05; font-size: 14px;"
-                  aria-label="5 out of 5 stars"
-                  role="img">★★★★★</span
+                <StarRating rating={5} size={14} />
                 >
                 <span class="alien-font" style="color: var(--comet-silver); font-size: 12px;"
                   >5/5</span

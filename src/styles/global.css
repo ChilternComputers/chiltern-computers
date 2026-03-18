@@ -357,6 +357,11 @@ body {
   outline-offset: 2px;
 }
 
+/* Hide focus ring on main when programmatically focused via skip link */
+#main-content:focus {
+  outline: none;
+}
+
 /* Focus States - Accessibility */
 a:focus-visible,
 button:focus-visible,

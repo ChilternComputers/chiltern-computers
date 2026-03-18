@@ -2,6 +2,7 @@
 // AreaPage.astro - Reusable template for area service pages
 import type { AreaData } from '../data/areas';
 import { siteConfig } from '../config';
+import Icon from './Icon.astro';
 
 interface Props {
   area: AreaData;
@@ -34,7 +35,7 @@ const areaFaqSchema = {
           style="display: inline-flex; align-items: center; gap: 8px; background: rgba(6, 182, 212, 0.15); padding: 8px 20px; border-radius: 25px; border: 1px solid var(--plasma-cyan); margin-bottom: 24px;"
         >
           <span class="tech-font" style="color: var(--plasma-cyan); font-size: 13px;"
-            >📍 {area.distance} FROM BASE - {area.postcode}</span
+            ><Icon name="map-pin" size={13} style="display:inline-block; vertical-align:-2px;" /> {area.distance} FROM BASE - {area.postcode}</span
           >
         </div>
         <h1
@@ -56,13 +57,13 @@ const areaFaqSchema = {
           needs.
         </p>
         <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <a href="/contact/" class="space-button space-font"><span aria-hidden="true">🛠️</span> Book Repair</a>
+          <a href="/contact/" class="space-button space-font"><Icon name="wrench" size={14} /> Book Repair</a>
           <a
             href={`tel:${siteConfig.phone.mobile}`}
             class="space-button space-font"
             style="background: rgba(16, 185, 129, 0.2);"
           >
-            <span aria-hidden="true">📱</span>
+            <Icon name="mobile" size={14} />
             {siteConfig.phone.mobileDisplay}
           </a>
         </div>
@@ -81,7 +82,7 @@ const areaFaqSchema = {
       </h2>
       <div class="services-grid">
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">💻</span>
+          <Icon name="laptop" size={36} style="display: block; margin: 0 auto 12px; color: var(--plasma-cyan);" />
           <h3
             class="space-font"
             style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
@@ -93,7 +94,7 @@ const areaFaqSchema = {
           </p>
         </div>
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">🖥️</span>
+          <Icon name="desktop" size={36} style="display: block; margin: 0 auto 12px; color: var(--aurora-green);" />
           <h3
             class="space-font"
             style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
@@ -105,7 +106,7 @@ const areaFaqSchema = {
           </p>
         </div>
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">🦠</span>
+          <Icon name="virus" size={36} style="display: block; margin: 0 auto 12px; color: var(--solar-orange);" />
           <h3
             class="space-font"
             style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
@@ -117,7 +118,7 @@ const areaFaqSchema = {
           </p>
         </div>
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">💾</span>
+          <Icon name="database" size={36} style="display: block; margin: 0 auto 12px; color: var(--nebula-purple);" />
           <h3
             class="space-font"
             style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
@@ -129,7 +130,7 @@ const areaFaqSchema = {
           </p>
         </div>
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">⚡</span>
+          <Icon name="bolt" size={36} style="display: block; margin: 0 auto 12px; color: var(--plasma-cyan);" />
           <h3
             class="space-font"
             style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
@@ -141,7 +142,7 @@ const areaFaqSchema = {
           </p>
         </div>
         <div class="cosmic-card" style="padding: 24px; text-align: center;">
-          <span aria-hidden="true" style="font-size: 36px; display: block; margin-bottom: 12px;">🌐</span>
+          <Icon name="wifi" size={36} style="display: block; margin: 0 auto 12px; color: var(--aurora-green);" />
           <h3
             class="space-font"
             style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
@@ -189,9 +190,9 @@ const areaFaqSchema = {
           <a
             href="/areas/"
             class="space-button space-font"
-            style="background: rgba(6, 182, 212, 0.2);"><span aria-hidden="true">📍</span> All Areas</a
+            style="background: rgba(6, 182, 212, 0.2);"><Icon name="map-pin" size={14} /> All Areas</a
           >
-          <a href="/contact/" class="space-button space-font"><span aria-hidden="true">📞</span> Contact Me</a>
+          <a href="/contact/" class="space-button space-font"><Icon name="phone" size={14} /> Contact Me</a>
         </div>
       </div>
     </div>
@@ -215,7 +216,7 @@ const areaFaqSchema = {
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              ⚡ Same Day Service
+              <Icon name="bolt" size={16} style="display:inline-block; vertical-align:-3px;" /> Same Day Service
             </h3>
             <p
               class="alien-font"
@@ -231,7 +232,7 @@ const areaFaqSchema = {
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              💷 £20 Diagnostic Check
+              <Icon name="repair" size={16} style="display:inline-block; vertical-align:-3px;" /> £20 Diagnostic Check
             </h3>
             <p
               class="alien-font"
@@ -245,7 +246,7 @@ const areaFaqSchema = {
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              🚗 Easy Drop-Off
+              <Icon name="car" size={16} style="display:inline-block; vertical-align:-3px;" /> Easy Drop-Off
             </h3>
             <p
               class="alien-font"
@@ -263,7 +264,7 @@ const areaFaqSchema = {
               class="space-font"
               style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
             >
-              🏆 Est. 2007
+              <Icon name="trophy" size={16} style="display:inline-block; vertical-align:-3px;" /> Est. 2007
             </h3>
             <p
               class="alien-font"
@@ -331,7 +332,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
           >
-            💻 Laptop Repair
+            <Icon name="laptop" size={16} style="display:inline-block; vertical-align:-3px;" /> Laptop Repair
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             Screen, keyboard, battery and charging repairs for {area.name} customers.
@@ -346,7 +347,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
           >
-            🖥️ PC Repair
+            <Icon name="desktop" size={16} style="display:inline-block; vertical-align:-3px;" /> PC Repair
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             Desktop repairs including blue screens, hardware faults, and startup failures.
@@ -361,7 +362,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
           >
-            🦠 Virus Removal
+            <Icon name="shield" size={16} style="display:inline-block; vertical-align:-3px;" /> Virus Removal
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             Same-day virus, malware, and ransomware removal for {area.name} residents.
@@ -376,7 +377,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
           >
-            ⚡ Computer Upgrades
+            <Icon name="bolt" size={16} style="display:inline-block; vertical-align:-3px;" /> Computer Upgrades
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             SSD, RAM, and GPU upgrades to speed up your existing PC or laptop.
@@ -391,7 +392,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
           >
-            💾 Data Recovery
+            <Icon name="database" size={16} style="display:inline-block; vertical-align:-3px;" /> Data Recovery
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             Recover files from failed hard drives, SSDs, and USB drives. No data, no fee.
@@ -406,7 +407,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
           >
-            🎮 Custom Gaming PCs
+            <Icon name="gaming" size={16} style="display:inline-block; vertical-align:-3px;" /> Custom Gaming PCs
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             High-performance gaming builds delivered to {area.name}. Built to your specs.
@@ -421,7 +422,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
           >
-            🍎 Mac Repair
+            <Icon name="apple" size={16} style="display:inline-block; vertical-align:-3px;" /> Mac Repair
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             MacBook and iMac repairs — software fixes, SSD upgrades, screen and battery replacement.
@@ -436,7 +437,7 @@ const areaFaqSchema = {
             class="space-font"
             style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
           >
-            📶 Network & WiFi
+            <Icon name="wifi" size={16} style="display:inline-block; vertical-align:-3px;" /> Network & WiFi
           </h3>
           <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
             WiFi dead spots, slow speeds, dropouts, and router setup for {area.name} homes and businesses.
@@ -471,7 +472,7 @@ const areaFaqSchema = {
             class="space-button space-font"
             style="font-size: 16px; padding: 16px 32px;"
           >
-            <span aria-hidden="true">📱</span>
+            <Icon name="mobile" size={14} />
             {siteConfig.phone.mobileDisplay}
           </a>
         </div>
