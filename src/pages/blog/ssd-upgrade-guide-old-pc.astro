@@ -1,0 +1,737 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = '2026-03-18';
+const modifiedDate = '2026-03-18';
+const author = 'David Hagon';
+const readTime = '8 min read';
+
+const faqs = [
+  {
+    question: 'How much does an SSD upgrade cost including installation?',
+    answer:
+      'At Chiltern Computers, an SSD upgrade starts from £60 which includes the drive, professional installation, and cloning your existing data so everything is exactly as you left it. The final price depends on the storage capacity you need - 256GB is the minimum I recommend, with 512GB or 1TB for people with larger collections of files.',
+  },
+  {
+    question: 'Will I lose my files if I upgrade to an SSD?',
+    answer:
+      'No. I clone your existing hard drive onto the new SSD, which means your Windows installation, programs, files, photos, and settings all transfer across exactly as they are. You turn on your computer and everything looks the same - it just works much faster.',
+  },
+  {
+    question: 'Can any computer be upgraded to an SSD?',
+    answer:
+      'Almost any computer made in the last 15 years can accept an SSD. Desktops use a standard SATA connection, and most laptops have either a 2.5-inch SATA bay or an M.2 NVMe slot. Some very thin ultrabooks have soldered storage that cannot be upgraded, but this is relatively uncommon. I can check your specific machine for compatibility.',
+  },
+  {
+    question: 'How long does an SSD upgrade take?',
+    answer:
+      'The physical installation takes about 15-30 minutes. The cloning process depends on how much data you have - typically 1-3 hours. Most SSD upgrades are completed same day or next day at Chiltern Computers in Harold Hill.',
+  },
+  {
+    question: 'Is an SSD upgrade worth it on a very old computer?',
+    answer:
+      'Generally yes, as long as the computer has at least 4GB of RAM and a dual-core processor. I have upgraded 10-year-old laptops with SSDs and the difference is remarkable. The only time I would advise against it is if the machine has other failing components or is so old that it cannot run a supported operating system.',
+  },
+];
+---
+
+<Layout
+  title="SSD Upgrade Guide: Breathe New Life Into Your Old PC | Chiltern"
+  description="How an SSD upgrade can transform your slow PC. From £60 installed with data cloning. The best upgrade for old computers in Romford & Essex."
+  keywords="SSD upgrade old PC, SSD upgrade guide, speed up computer essex, SSD upgrade romford, hard drive to SSD upgrade harold hill, make old laptop faster, SSD installation havering"
+  type="article"
+  publishedTime={publishDate}
+  modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'SSD Upgrade Guide: Breathe New Life Into Your Old PC', url: '/blog/ssd-upgrade-guide-old-pc/' },
+  ]}
+>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    :root {
+      --cosmic-blue: #1e3a8a;
+      --nebula-purple: #7c3aed;
+      --starlight-white: #f8fafc;
+      --plasma-cyan: #06b6d4;
+      --aurora-green: #10b981;
+      --solar-orange: #f59e0b;
+      --deep-space: #0f172a;
+      --void-black: #020617;
+      --comet-silver: #e5e7eb;
+      --mars-red: #dc2626;
+    }
+
+    .space-font {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+    }
+    .alien-font {
+      font-family: 'Exo 2', sans-serif;
+    }
+    .tech-font {
+      font-family: 'Space Mono', monospace;
+    }
+
+    @keyframes cosmic-pulse {
+      0%,
+      100% {
+        text-shadow: 0 0 5px currentColor;
+      }
+      50% {
+        text-shadow: 0 0 15px currentColor;
+      }
+    }
+
+    @keyframes galaxy-flow {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 100%;
+      }
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    .cosmic-glow {
+      animation: cosmic-pulse 3s ease-in-out infinite alternate;
+    }
+    .galaxy-text {
+      background: linear-gradient(
+        135deg,
+        var(--plasma-cyan),
+        var(--aurora-green),
+        var(--nebula-purple)
+      );
+      background-size: 200% 200%;
+      animation: galaxy-flow 4s ease-in-out infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .article-hero {
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.9));
+    }
+
+    .article-section {
+      background: linear-gradient(180deg, var(--void-black), var(--deep-space));
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .article-content {
+      color: var(--comet-silver);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      color: var(--starlight-white);
+      font-size: clamp(24px, 4vw, 32px);
+      margin: 48px 0 20px;
+      line-height: 1.3;
+    }
+
+    .article-content h3 {
+      color: var(--plasma-cyan);
+      font-size: clamp(20px, 3vw, 24px);
+      margin: 36px 0 16px;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 20px 0;
+      padding-left: 24px;
+    }
+
+    .article-content li {
+      margin-bottom: 12px;
+    }
+
+    .article-content strong {
+      color: var(--starlight-white);
+    }
+
+    .highlight-box {
+      background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05));
+      border-left: 4px solid var(--aurora-green);
+      padding: 24px;
+      margin: 32px 0;
+      border-radius: 0 12px 12px 0;
+    }
+
+    .faq-section {
+      margin: 48px 0;
+    }
+
+    .faq-item {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      color: var(--starlight-white);
+      font-size: 17px;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--comet-silver);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--plasma-cyan);
+      text-decoration: none;
+    }
+
+    .breadcrumb span {
+      color: var(--comet-silver);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--comet-silver);
+      font-size: 14px;
+    }
+
+    .cta-box {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.2));
+      border: 2px solid var(--aurora-green);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .space-button {
+      background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple));
+      border: 1px solid var(--aurora-green);
+      color: var(--starlight-white);
+      padding: 14px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .space-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .comparison-card {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .comparison-card.before {
+      background: linear-gradient(145deg, rgba(220, 38, 38, 0.1), rgba(245, 158, 11, 0.05));
+      border-color: var(--mars-red);
+    }
+
+    .comparison-card.after {
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.05));
+      border-color: var(--aurora-green);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .article-content {
+        font-size: 16px;
+      }
+      .article-meta {
+        gap: 16px;
+      }
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>SSD Upgrade Guide</span>
+        </nav>
+
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--aurora-green); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--aurora-green); font-size: 12px;"
+            >UPGRADE GUIDE</span
+          >
+        </div>
+
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
+          SSD Upgrade Guide: Breathe New Life Into Your Old PC
+        </h1>
+
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          The single best upgrade you can make to a slow computer. Here's everything you need to know about SSD upgrades: what they cost, how they work, and why they make such a dramatic difference.
+        </p>
+
+        <div class="article-meta tech-font">
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Romford, Essex</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 50px 0 100px;">
+      <div class="container">
+        <article class="article-content alien-font">
+          <p>
+            If I could only recommend one upgrade for a slow computer, it would be an SSD every single time. No contest. In nearly two decades of repairing PCs and laptops in Harold Hill, I have never seen any single change make as dramatic a difference as swapping a traditional hard drive for a solid-state drive.
+          </p>
+
+          <p>
+            Customers regularly tell me their machine "feels like a brand new computer" after the upgrade. And the best part? It's one of the most affordable upgrades you can make, starting from just £60 installed at Chiltern Computers.
+          </p>
+
+          <h2 class="space-font">What's the Difference Between an HDD and an SSD?</h2>
+
+          <p>
+            A traditional hard drive (HDD) stores your data on spinning metal platters. A tiny mechanical arm moves across these platters to read and write data, a bit like a record player. It's technology that's been around since the 1950s, and while it works, it's <strong>slow by modern standards.</strong>
+          </p>
+
+          <p>
+            A solid-state drive (SSD) has no moving parts at all. It stores data on flash memory chips, similar to the technology in a USB stick but far more advanced. Because there's nothing mechanical to move, <strong>an SSD can access data almost instantly.</strong>
+          </p>
+
+          <div class="comparison-grid">
+            <div class="comparison-card before">
+              <h3 class="space-font" style="color: var(--mars-red); font-size: 16px; margin-top: 0;">Before: Old Hard Drive</h3>
+              <ul style="margin-bottom: 0; font-size: 15px;">
+                <li>Boot time: 2-5 minutes</li>
+                <li>Programs take 30-60 seconds to open</li>
+                <li>System feels sluggish and unresponsive</li>
+                <li>Clicking/whirring mechanical noises</li>
+              </ul>
+            </div>
+            <div class="comparison-card after">
+              <h3 class="space-font" style="color: var(--aurora-green); font-size: 16px; margin-top: 0;">After: SSD Upgrade</h3>
+              <ul style="margin-bottom: 0; font-size: 15px;">
+                <li>Boot time: 15-30 seconds</li>
+                <li>Programs open in 2-5 seconds</li>
+                <li>System feels snappy and responsive</li>
+                <li>Completely silent operation</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>
+            Those numbers aren't exaggerated. I see these results every week. A 5-year-old laptop that takes 4 minutes to boot with its original hard drive will typically boot in under 25 seconds with an SSD. It's the closest thing to a miracle fix in the computer repair world.
+          </p>
+
+          <h2 class="space-font">Why Does an SSD Make Such a Big Difference?</h2>
+
+          <p>
+            The hard drive is the bottleneck in most older computers. Your processor and RAM might be perfectly adequate, but they're constantly waiting for the hard drive to feed them data. It's like having a fast car stuck behind a tractor on a country lane.
+          </p>
+
+          <p>
+            An SSD removes that bottleneck entirely. Suddenly, your processor and RAM can work at their full potential because data arrives almost instantly. Everything speeds up: booting, opening programs, switching between windows, saving files, running updates. The entire experience transforms.
+          </p>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              <strong>Real-world example:</strong> Last week I upgraded a customer's 2019 HP laptop in Harold Hill. It was taking over 3 minutes to reach the desktop and Word took nearly a minute to open. After the SSD upgrade, it booted in 22 seconds and Word opened in 3. Same laptop, same processor, same RAM - just a different drive. The customer couldn't believe it was the same machine.
+            </p>
+          </div>
+
+          <h2 class="space-font">How the Upgrade Process Works</h2>
+
+          <p>
+            Here's exactly what happens when you bring your computer to me for an SSD upgrade:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Assessment:</strong> I check your computer to confirm compatibility and recommend the right SSD type and capacity for your needs. Most machines take either a 2.5-inch SATA SSD or an M.2 NVMe drive.
+            </li>
+            <li>
+              <strong>Cloning:</strong> Using professional cloning software, I create an exact copy of your existing hard drive onto the new SSD. This means all your files, programs, Windows installation, and settings transfer across. You won't need to reinstall anything.
+            </li>
+            <li>
+              <strong>Installation:</strong> I physically swap the old drive for the new SSD. In a desktop, this is straightforward. In a laptop, it requires careful disassembly depending on the model.
+            </li>
+            <li>
+              <strong>Testing:</strong> I boot the machine, verify everything works correctly, check boot times, and make sure all your files and programs are intact.
+            </li>
+            <li>
+              <strong>Collection:</strong> You pick up your computer and enjoy the speed difference. I also return your old hard drive so you have it as a backup.
+            </li>
+          </ol>
+
+          <h2 class="space-font">What Does It Cost?</h2>
+
+          <p>
+            SSD upgrades at Chiltern Computers start from <strong>£60</strong>, which includes the drive, professional installation, and full data cloning. The exact price depends on the capacity you need:
+          </p>
+
+          <ul>
+            <li><strong>256GB SSD:</strong> From £60 - suitable if you mainly use cloud storage and don't have many local files</li>
+            <li><strong>512GB SSD:</strong> From £75 - the sweet spot for most people, plenty of room for programs and files</li>
+            <li><strong>1TB SSD:</strong> From £100 - ideal if you have large photo collections, games, or lots of local data</li>
+          </ul>
+
+          <p>
+            You can see my full pricing on the <a href="/pricing/" style="color: var(--plasma-cyan);">pricing page</a>. Compared to buying a new computer (£400-£800), an SSD upgrade delivers a bigger performance improvement per pound than any other option.
+          </p>
+
+          <h2 class="space-font">Which Computers Benefit Most?</h2>
+
+          <p>
+            Almost any computer with a traditional hard drive will benefit from an SSD upgrade, but some see more dramatic improvements than others:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Laptops from 2015-2022 with HDDs:</strong> These are the prime candidates. The processors are still capable, but the hard drive is holding everything back. An SSD makes them feel current again.
+            </li>
+            <li>
+              <strong>Desktop PCs used for general tasks:</strong> If your desktop is mainly for web browsing, email, and office work, an SSD upgrade is all you need to keep it running well for years to come.
+            </li>
+            <li>
+              <strong>Computers that have had Windows 10/11 installed over an older HDD:</strong> Modern Windows is very demanding on hard drives. An SSD lets it run as Microsoft intended.
+            </li>
+            <li>
+              <strong>Any machine where "it was fine when I first got it":</strong> If your computer was fast when new but has gradually slowed down, an SSD will restore that original speed and then some.
+            </li>
+          </ul>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              <strong>When I wouldn't recommend it:</strong> If your computer already has an SSD (many machines from 2020 onwards do), the speed gains from a newer SSD are minimal. In that case, slowness is likely caused by something else - insufficient RAM, malware, or software issues. I'll always check before recommending any upgrade.
+            </p>
+          </div>
+
+          <h2 class="space-font">SSD vs. Buying a New Computer</h2>
+
+          <p>
+            I have this conversation with customers in Romford and Havering every week. Someone comes in thinking they need a new laptop because theirs is "too slow," and after an SSD upgrade costing a fraction of a new machine, they leave with a computer that's faster than many brand-new budget models.
+          </p>
+
+          <p>
+            Here's the maths: a new budget laptop costs £350-£500. An SSD upgrade on your current machine costs £60-£120. If your existing computer has a decent processor (Intel i3 or above, or AMD Ryzen) and at least 8GB of RAM, the SSD upgrade makes your computer faster for everyday tasks than most new budget laptops would be. And you keep all your existing files and programs exactly where they are.
+          </p>
+
+          <p>
+            Of course, there are times when replacement makes more sense - if the machine is 8+ years old, has multiple failing components, or you need features your current hardware can't provide. I'll always give you an honest recommendation. But nine times out of ten, an SSD is the answer.
+          </p>
+
+          <h2 class="space-font">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            {
+              faqs.map((faq) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- Author Bio -->
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. I've performed hundreds of SSD upgrades across Romford and Havering since 2007 - it's the upgrade I recommend more than any other.
+              </p>
+              <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a
+                  href="/about/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >About Me</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span></a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
+              Ready to Speed Up Your PC?
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              SSD upgrades from £60 at Chiltern Computers in Harold Hill. Full data cloning included - you won't lose a single file.
+            </p>
+            <a href="/contact/" class="space-button space-font">
+              Book Your Upgrade
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Related Articles -->
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
+            <div style="display: grid; gap: 16px;">
+              <a
+                href="/blog/why-laptop-running-slow-romford-guide/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Why Your Laptop is Running Slow - Romford Tech Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    10 min read
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/blog/computer-repair-cost-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    How Much Does Computer Repair Cost in Romford?
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    7 min read
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/blog/is-my-computer-worth-repairing-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Is My Computer Worth Repairing? Honest Advice
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    7 min read
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ Schema -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
+
+</Layout>

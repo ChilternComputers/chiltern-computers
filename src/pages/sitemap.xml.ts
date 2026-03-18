@@ -86,8 +86,12 @@ export const GET: APIRoute = async () => {
     { url: '/areas/fairlop/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/hutton/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Blog pages (9)
+    // Blog pages (13)
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: lastUpdated },
+    { url: '/blog/computer-repair-cost-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
+    { url: '/blog/signs-laptop-needs-repairing/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
+    { url: '/blog/ssd-upgrade-guide-old-pc/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
+    { url: '/blog/choosing-computer-repair-shop-essex/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
     { url: '/blog/virus-malware-removal-romford-guide/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
     { url: '/blog/is-my-computer-worth-repairing-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
     { url: '/blog/upgrade-old-pc-windows-11-unsupported/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-02-13' },
