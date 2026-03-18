@@ -19,7 +19,7 @@ const showWebDesign = siteConfig.showWebDesign;
       class="tech-font"
       style="color: var(--aurora-green); font-size: 12px; margin: 0; font-weight: 600;"
     >
-      <Icon name="phone" size={12} style="display:inline-block; vertical-align:-2px;" />
+      <Icon name="phone" size={12} class="icon-inline-sm" />
       Need help? Call <a
         href={`tel:${siteConfig.phone.mobile}`}
         style="color: var(--plasma-cyan); font-weight: bold; text-decoration: none;"
@@ -32,7 +32,7 @@ const showWebDesign = siteConfig.showWebDesign;
   <div class="container" style="padding-top: 40px;">
     <!-- Service Areas Ticker -->
     <div
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 48px;"
+      class="footer-grid"
     >
       <div
         class="cosmic-card service-areas-enhanced"
@@ -80,7 +80,7 @@ const showWebDesign = siteConfig.showWebDesign;
             class="tech-font"
             style="color: var(--plasma-cyan); font-size: 12px; font-weight: 500;"
           >
-            <Icon name="map-pin" size={12} style="display:inline-block; vertical-align:-2px;" /> SERVICE COVERAGE ACROSS HAVERING & ESSEX
+            <Icon name="map-pin" size={12} class="icon-inline-sm" /> SERVICE COVERAGE ACROSS HAVERING & ESSEX
           </p>
         </div>
       </div>
@@ -88,7 +88,7 @@ const showWebDesign = siteConfig.showWebDesign;
 
     <!-- Main Footer Grid -->
     <div
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; margin-bottom: 48px;"
+      class="footer-grid"
     >
       <!-- Services -->
       <div class="cosmic-card" style="padding: 24px;">
@@ -98,122 +98,109 @@ const showWebDesign = siteConfig.showWebDesign;
         >
           <Icon name="rocket" size={18} />Services
         </h3>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="margin-bottom: 12px;">
+        <ul class="list-none">
+          <li class="mb-12">
             <a
               href="/services/repairs/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="wrench" size={14} style="color: var(--plasma-cyan);" />Computer Repairs
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/custom-pcs/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="gaming" size={14} style="color: var(--plasma-cyan);" />Custom Gaming PCs
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/new-used/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="laptop" size={14} style="color: var(--plasma-cyan);" />New & Refurb PCs
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/virus-removal-romford/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="shield" size={14} style="color: var(--plasma-cyan);" />Virus Removal
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/data-recovery-havering/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="database" size={14} style="color: var(--plasma-cyan);" />Data Recovery
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/mac-repair-romford/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="apple" size={14} style="color: var(--plasma-cyan);" />Mac Repair
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/network-wifi-romford/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="wifi" size={14} style="color: var(--plasma-cyan);" />Network & WiFi
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/computer-upgrades-romford/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="bolt" size={14} style="color: var(--plasma-cyan);" />Computer Upgrades
             </a>
           </li>
           {showWebDesign && (
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/services/web-design/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <span aria-hidden="true" style="color: var(--plasma-cyan);">🌐</span>Web Design
             </a>
           </li>
           )}
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/pricing/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="bolt" size={14} style="color: var(--plasma-cyan);" />Pricing
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/faq/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="chat" size={14} style="color: var(--plasma-cyan);" />FAQ
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/about/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="info" size={14} style="color: var(--plasma-cyan);" />About Me
             </a>
           </li>
-          <li style="margin-bottom: 12px;">
+          <li class="mb-12">
             <a
               href="/blog/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="blog" size={14} style="color: var(--plasma-cyan);" />Blog & Tips
             </a>
@@ -222,7 +209,6 @@ const showWebDesign = siteConfig.showWebDesign;
             <a
               href="/contact/"
               class="alien-font footer-link"
-              style="color: var(--comet-silver); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
             >
               <Icon name="phone" size={14} style="color: var(--plasma-cyan);" />Contact
             </a>
@@ -245,11 +231,10 @@ const showWebDesign = siteConfig.showWebDesign;
         </h3>
 
         <ul style="list-style: none; padding: 0; margin: 0; position: relative; z-index: 2;">
-          <li style="margin-bottom: 16px;">
+          <li class="mb-16">
             <a
               href={`tel:${siteConfig.phone.mobile}`}
-              class="alien-font contact-link-premium"
-              style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
+              class="alien-font contact-link"
             >
               <Icon name="mobile" size={16} />
               <div>
@@ -258,11 +243,10 @@ const showWebDesign = siteConfig.showWebDesign;
               </div>
             </a>
           </li>
-          <li style="margin-bottom: 16px;">
+          <li class="mb-16">
             <a
               href={`tel:${siteConfig.phone.landline}`}
-              class="alien-font contact-link-premium"
-              style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
+              class="alien-font contact-link"
             >
               <Icon name="landline" size={16} />
               <div>
@@ -271,11 +255,10 @@ const showWebDesign = siteConfig.showWebDesign;
               </div>
             </a>
           </li>
-          <li style="margin-bottom: 16px;">
+          <li class="mb-16">
             <a
               href={`mailto:${siteConfig.email}`}
-              class="alien-font contact-link-premium"
-              style="color: var(--starlight-white); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 12px; transition: all 0.3s ease; padding: 8px; border-radius: 6px;"
+              class="alien-font contact-link"
             >
               <Icon name="email" size={16} />
               <div>
@@ -374,12 +357,11 @@ const showWebDesign = siteConfig.showWebDesign;
           >
             Site Info
           </h4>
-          <ul style="list-style: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 8px;">
+          <ul class="list-none">
+            <li class="mb-8">
               <a
                 href="/sitemap.xml"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -391,40 +373,36 @@ const showWebDesign = siteConfig.showWebDesign;
                 >
               </a>
             </li>
-            <li style="margin-bottom: 8px;">
+            <li class="mb-8">
               <a
                 href="/privacy-policy/"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
               >
                 <Icon name="lock" size={13} style="color: var(--solar-orange);" />Privacy Policy
               </a>
             </li>
-            <li style="margin-bottom: 8px;">
+            <li class="mb-8">
               <a
                 href="/terms-of-service/"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
               >
                 <Icon name="clipboard" size={13} style="color: var(--solar-orange);" />Terms of Service
               </a>
             </li>
             {showWebDesign && (
-            <li style="margin-bottom: 8px;">
+            <li class="mb-8">
               <a
                 href="/web-design-terms/"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
               >
                 <Icon name="globe" size={13} style="color: var(--solar-orange);" />Web Design Terms
               </a>
             </li>
             )}
-            <li style="margin-bottom: 8px;">
+            <li class="mb-8">
               <a
                 href="/accessibility/"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
               >
                 <Icon name="accessibility" size={13} style="color: var(--solar-orange);" />Accessibility
               </a>
@@ -432,8 +410,7 @@ const showWebDesign = siteConfig.showWebDesign;
             <li>
               <a
                 href="/free-play/"
-                class="alien-font footer-link"
-                style="color: var(--comet-silver); font-size: 13px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease;"
+                class="alien-font footer-link-sm"
               >
                 <Icon name="gaming" size={13} style="color: var(--solar-orange);" />Free Play
               </a>
@@ -445,7 +422,7 @@ const showWebDesign = siteConfig.showWebDesign;
 
     <!-- Call-to-Action Buttons -->
     <div
-      style="display: flex; gap: 16px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;"
+      class="cta-row mb-32"
     >
       <a
         href="/contact/"

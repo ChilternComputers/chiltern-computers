@@ -56,7 +56,7 @@ const areaFaqSchema = {
           }, I offer fast turnaround times and competitive prices for all your PC and laptop repair
           needs.
         </p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <div class="cta-row">
           <a href="/contact/" class="space-button space-font"><Icon name="wrench" size={14} /> Book Repair</a>
           <a
             href={`tel:${siteConfig.phone.mobile}`}
@@ -72,7 +72,7 @@ const areaFaqSchema = {
   </section>
 
   <!-- Services Grid -->
-  <section class="section-bg" style="padding: 60px 0;">
+  <section class="section-bg" class="section-pad">
     <div class="container">
       <h2
         class="space-font galaxy-text cosmic-glow"
@@ -81,11 +81,11 @@ const areaFaqSchema = {
         SERVICES IN {area.name.toUpperCase()}
       </h2>
       <div class="services-grid">
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="laptop" size={36} style="display: block; margin: 0 auto 12px; color: var(--plasma-cyan);" />
           <h3
             class="space-font"
-            style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            class="heading-cyan"
           >
             LAPTOP REPAIRS
           </h3>
@@ -93,11 +93,11 @@ const areaFaqSchema = {
             Screen replacements, keyboard repairs, battery issues, charging problems.
           </p>
         </div>
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="desktop" size={36} style="display: block; margin: 0 auto 12px; color: var(--aurora-green);" />
           <h3
             class="space-font"
-            style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            class="heading-green"
           >
             PC REPAIRS
           </h3>
@@ -105,11 +105,11 @@ const areaFaqSchema = {
             Desktop repairs, component upgrades, blue screen fixes, startup issues.
           </p>
         </div>
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="virus" size={36} style="display: block; margin: 0 auto 12px; color: var(--solar-orange);" />
           <h3
             class="space-font"
-            style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            class="heading-orange"
           >
             VIRUS REMOVAL
           </h3>
@@ -117,11 +117,11 @@ const areaFaqSchema = {
             Complete malware removal, security cleanup, system optimisation.
           </p>
         </div>
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="database" size={36} style="display: block; margin: 0 auto 12px; color: var(--nebula-purple);" />
           <h3
             class="space-font"
-            style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            class="heading-purple"
           >
             DATA RECOVERY
           </h3>
@@ -129,11 +129,11 @@ const areaFaqSchema = {
             Failed hard drive? I can recover your photos, documents, and files.
           </p>
         </div>
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="bolt" size={36} style="display: block; margin: 0 auto 12px; color: var(--plasma-cyan);" />
           <h3
             class="space-font"
-            style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            class="heading-cyan"
           >
             SPEED UPGRADES
           </h3>
@@ -141,11 +141,11 @@ const areaFaqSchema = {
             SSD upgrades, RAM installs, and performance tuning to make your PC fly.
           </p>
         </div>
-        <div class="cosmic-card" style="padding: 24px; text-align: center;">
+        <div class="cosmic-card" class="card-pad text-center">
           <Icon name="wifi" size={36} style="display: block; margin: 0 auto 12px; color: var(--aurora-green);" />
           <h3
             class="space-font"
-            style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            class="heading-green"
           >
             NETWORK & WIFI
           </h3>
@@ -158,7 +158,7 @@ const areaFaqSchema = {
   </section>
 
   <!-- Area-Specific Content -->
-  <section class="section-bg" style="padding: 60px 0;">
+  <section class="section-bg" class="section-pad">
     <div class="container">
       <div class="cosmic-card" style="padding: 40px;">
         <h2
@@ -199,7 +199,7 @@ const areaFaqSchema = {
   </section>
 
   <!-- Why Choose Me -->
-  <section class="section-bg" style="padding: 60px 0;">
+  <section class="section-bg" class="section-pad">
     <div class="container">
       <div class="cosmic-card" style="padding: 40px;">
         <h2
@@ -214,9 +214,9 @@ const areaFaqSchema = {
           <div>
             <h3
               class="space-font"
-              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              class="heading-cyan"
             >
-              <Icon name="bolt" size={16} style="display:inline-block; vertical-align:-3px;" /> Same Day Service
+              <Icon name="bolt" size={16} class="icon-inline" /> Same Day Service
             </h3>
             <p
               class="alien-font"
@@ -230,9 +230,9 @@ const areaFaqSchema = {
           <div>
             <h3
               class="space-font"
-              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              class="heading-cyan"
             >
-              <Icon name="repair" size={16} style="display:inline-block; vertical-align:-3px;" /> £20 Diagnostic Check
+              <Icon name="repair" size={16} class="icon-inline" /> £20 Diagnostic Check
             </h3>
             <p
               class="alien-font"
@@ -244,9 +244,9 @@ const areaFaqSchema = {
           <div>
             <h3
               class="space-font"
-              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              class="heading-cyan"
             >
-              <Icon name="car" size={16} style="display:inline-block; vertical-align:-3px;" /> Easy Drop-Off
+              <Icon name="car" size={16} class="icon-inline" /> Easy Drop-Off
             </h3>
             <p
               class="alien-font"
@@ -262,9 +262,9 @@ const areaFaqSchema = {
           <div>
             <h3
               class="space-font"
-              style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+              class="heading-cyan"
             >
-              <Icon name="trophy" size={16} style="display:inline-block; vertical-align:-3px;" /> Est. 2007
+              <Icon name="trophy" size={16} class="icon-inline" /> Est. 2007
             </h3>
             <p
               class="alien-font"
@@ -280,7 +280,7 @@ const areaFaqSchema = {
   </section>
 
   <!-- FAQ Section -->
-  <section class="section-bg" style="padding: 60px 0;">
+  <section class="section-bg" class="section-pad">
     <div class="container">
       <h2
         class="space-font"
@@ -312,7 +312,7 @@ const areaFaqSchema = {
   </section>
 
   <!-- Explore Services -->
-  <section class="section-bg" style="padding: 60px 0;">
+  <section class="section-bg" class="section-pad">
     <div class="container">
       <h2
         class="space-font"
@@ -326,120 +326,120 @@ const areaFaqSchema = {
         <a
           href="/services/laptop-repair-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            class="heading-cyan"
           >
-            <Icon name="laptop" size={16} style="display:inline-block; vertical-align:-3px;" /> Laptop Repair
+            <Icon name="laptop" size={16} class="icon-inline" /> Laptop Repair
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             Screen, keyboard, battery and charging repairs for {area.name} customers.
           </p>
         </a>
         <a
           href="/services/pc-repair-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            class="heading-green"
           >
-            <Icon name="desktop" size={16} style="display:inline-block; vertical-align:-3px;" /> PC Repair
+            <Icon name="desktop" size={16} class="icon-inline" /> PC Repair
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             Desktop repairs including blue screens, hardware faults, and startup failures.
           </p>
         </a>
         <a
           href="/services/virus-removal-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            class="heading-orange"
           >
-            <Icon name="shield" size={16} style="display:inline-block; vertical-align:-3px;" /> Virus Removal
+            <Icon name="shield" size={16} class="icon-inline" /> Virus Removal
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             Same-day virus, malware, and ransomware removal for {area.name} residents.
           </p>
         </a>
         <a
           href="/services/computer-upgrades-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            class="heading-purple"
           >
-            <Icon name="bolt" size={16} style="display:inline-block; vertical-align:-3px;" /> Computer Upgrades
+            <Icon name="bolt" size={16} class="icon-inline" /> Computer Upgrades
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             SSD, RAM, and GPU upgrades to speed up your existing PC or laptop.
           </p>
         </a>
         <a
           href="/services/data-recovery-havering/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--plasma-cyan); font-size: 16px; margin-bottom: 8px;"
+            class="heading-cyan"
           >
-            <Icon name="database" size={16} style="display:inline-block; vertical-align:-3px;" /> Data Recovery
+            <Icon name="database" size={16} class="icon-inline" /> Data Recovery
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             Recover files from failed hard drives, SSDs, and USB drives. No data, no fee.
           </p>
         </a>
         <a
           href="/services/custom-pcs/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+            class="heading-orange"
           >
-            <Icon name="gaming" size={16} style="display:inline-block; vertical-align:-3px;" /> Custom Gaming PCs
+            <Icon name="gaming" size={16} class="icon-inline" /> Custom Gaming PCs
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             High-performance gaming builds delivered to {area.name}. Built to your specs.
           </p>
         </a>
         <a
           href="/services/mac-repair-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--nebula-purple); font-size: 16px; margin-bottom: 8px;"
+            class="heading-purple"
           >
-            <Icon name="apple" size={16} style="display:inline-block; vertical-align:-3px;" /> Mac Repair
+            <Icon name="apple" size={16} class="icon-inline" /> Mac Repair
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             MacBook and iMac repairs — software fixes, SSD upgrades, screen and battery replacement.
           </p>
         </a>
         <a
           href="/services/network-wifi-romford/"
           class="cosmic-card"
-          style="padding: 24px; text-decoration: none; display: block;"
+          class="area-service-link"
         >
           <h3
             class="space-font"
-            style="color: var(--aurora-green); font-size: 16px; margin-bottom: 8px;"
+            class="heading-green"
           >
-            <Icon name="wifi" size={16} style="display:inline-block; vertical-align:-3px;" /> Network & WiFi
+            <Icon name="wifi" size={16} class="icon-inline" /> Network & WiFi
           </h3>
-          <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+          <p class="alien-font" class="card-desc">
             WiFi dead spots, slow speeds, dropouts, and router setup for {area.name} homes and businesses.
           </p>
         </a>
@@ -466,7 +466,7 @@ const areaFaqSchema = {
         >
           Open 7 days a week, {siteConfig.hours.display}. £20 diagnostic check — waived if you go ahead with repair.
         </p>
-        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <div class="cta-row">
           <a
             href={`tel:${siteConfig.phone.mobile}`}
             class="space-button space-font"
