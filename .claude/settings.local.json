@@ -526,7 +526,8 @@
       "WebFetch(domain:breakingac.com)",
       "WebFetch(domain:lists.wisecleaner.com)",
       "WebFetch(domain:www.softpedia.com)",
-      "WebFetch(domain:nerdbot.com)"
+      "WebFetch(domain:nerdbot.com)",
+      "Bash(1 __NEW_LINE_ec2a1da676299ed3__ echo \"\")"
     ]
   }
 }
