@@ -107,18 +107,16 @@ import { siteConfig } from '../config';
               </select>
             </fieldset>
 
-            <!-- Step 3: Description -->
-            <div style="margin-bottom: 28px;">
+            <!-- Step 3: Description (only visible when "Other" selected) -->
+            <div id="description-wrap" style="margin-bottom: 28px; display: none;">
               <label for="description" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
-                Tell me more about the problem *
+                Please describe the issue *
               </label>
               <textarea
                 id="description"
                 name="message"
-                required
-                aria-required="true"
                 rows="4"
-                placeholder="e.g. My laptop has been running really slow for the past week. It takes 5 minutes to start up and programs keep freezing..."
+                placeholder="Describe what's happening with your device..."
                 style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; resize: vertical; font-family: inherit;"
               ></textarea>
             </div>
@@ -163,15 +161,13 @@ import { siteConfig } from '../config';
               </div>
               <div>
                 <label for="booking-phone" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
-                  Phone Number *
+                  Phone Number
                 </label>
                 <input
                   type="tel"
                   id="booking-phone"
                   name="phone"
-                  required
-                  aria-required="true"
-                  placeholder="Your number"
+                  placeholder="Optional"
                   autocomplete="tel"
                   style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
                 />
@@ -180,13 +176,15 @@ import { siteConfig } from '../config';
 
             <div style="margin-bottom: 28px;">
               <label for="booking-email" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
-                Email Address
+                Email Address *
               </label>
               <input
                 type="email"
                 id="booking-email"
                 name="email"
-                placeholder="your.email@example.com (optional)"
+                required
+                aria-required="true"
+                placeholder="your.email@example.com"
                 autocomplete="email"
                 style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
               />
@@ -235,7 +233,7 @@ import { siteConfig } from '../config';
           <h2 class="space-font" style="color: var(--plasma-cyan); font-size: 18px; margin-bottom: 16px;">What happens next?</h2>
           <ol class="alien-font" style="color: var(--comet-silver); font-size: 14px; line-height: 1.8; padding-left: 20px; margin: 0;">
             <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">I'll review your request</strong> — usually within the hour during business hours.</li>
-            <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">I'll call or text you</strong> with a free estimate and to arrange drop-off or collection.</li>
+            <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">I'll get back to you</strong> with a free estimate and to arrange drop-off or collection.</li>
             <li style="margin-bottom: 8px;"><strong style="color: var(--starlight-white);">£20 diagnostic</strong> — waived if you go ahead with the repair. No fix, no fee.</li>
             <li><strong style="color: var(--starlight-white);">Most repairs completed within 24-48 hours.</strong></li>
           </ol>
@@ -287,6 +285,26 @@ import { siteConfig } from '../config';
   </style>
 
   <script>
+    // Show/hide description field based on dropdown selection
+    const issueSelect = document.getElementById('issue');
+    const descWrap = document.getElementById('description-wrap');
+    const descField = document.getElementById('description');
+
+    if (issueSelect && descWrap && descField) {
+      issueSelect.addEventListener('change', () => {
+        if (issueSelect.value === 'Other') {
+          descWrap.style.display = 'block';
+          descField.required = true;
+          descField.setAttribute('aria-required', 'true');
+        } else {
+          descWrap.style.display = 'none';
+          descField.required = false;
+          descField.removeAttribute('aria-required');
+          descField.value = '';
+        }
+      });
+    }
+
     const form = document.getElementById('repair-form');
     if (form) {
       const requiredFields = form.querySelectorAll('[required]');
