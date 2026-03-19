@@ -4,9 +4,9 @@ import { siteConfig } from '../config';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
-  const lastUpdated = '2026-03-18';
+  const lastUpdated = '2026-03-19';
 
-  // All pages verified against src/pages/ — 78 URLs
+  // All pages verified against src/pages/ — 75 URLs
   const routes = [
     // Homepage
     { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
@@ -26,7 +26,7 @@ export const GET: APIRoute = async () => {
     { url: '/services/network-wifi-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Core pages (9)
+    // Core pages (7)
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/book-repair/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/pricing/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
