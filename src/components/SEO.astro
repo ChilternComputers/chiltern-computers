@@ -58,7 +58,7 @@ const localBusinessSchema = {
     addressCountry: 'GB',
   },
   email: 'david@chilterncomputers.net',
-  telephone: ['+447971331814', '+441708347341'],
+  telephone: '+447971331814',
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 51.60589,
@@ -347,7 +347,13 @@ const serviceSchemas = [
       name: 'Chiltern Computers',
       telephone: '+447971331814',
     },
-    areaServed: ['Harold Hill', 'Romford', 'Hornchurch', 'Dagenham', 'Havering'],
+    areaServed: [
+      { '@type': 'City', name: 'Harold Hill' },
+      { '@type': 'City', name: 'Romford' },
+      { '@type': 'City', name: 'Hornchurch' },
+      { '@type': 'City', name: 'Dagenham' },
+      { '@type': 'AdministrativeArea', name: 'Havering' },
+    ],
   },
   {
     '@context': 'https://schema.org',
@@ -361,7 +367,12 @@ const serviceSchemas = [
       name: 'Chiltern Computers',
       telephone: '+447971331814',
     },
-    areaServed: ['Harold Hill', 'Romford', 'Essex', 'Havering'],
+    areaServed: [
+      { '@type': 'City', name: 'Harold Hill' },
+      { '@type': 'City', name: 'Romford' },
+      { '@type': 'AdministrativeArea', name: 'Essex' },
+      { '@type': 'AdministrativeArea', name: 'Havering' },
+    ],
   },
 ];
 
