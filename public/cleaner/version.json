@@ -1,6 +1,6 @@
 {
-  "latest": "1.0.6",
-  "released": "2026-04-25",
-  "url": "https://downloads.chilterncomputers.net/v1.0.6/ChilternCleanerSetup.exe",
-  "notes": "Health score now reaches a true 100 on a freshly-cleaned PC, and the score refreshes after every scan. Added in-app update checker (Settings > Update)."
+  "latest": "1.0.7",
+  "released": "2026-04-26",
+  "url": "https://downloads.chilterncomputers.net/v1.0.7/ChilternCleanerSetup.exe",
+  "notes": "Health score thresholds further loosened so typical customer PCs hit 100 after a clean. Score breakdown is now logged to the audit log so we can see why a particular PC isn't at 100."
 }
