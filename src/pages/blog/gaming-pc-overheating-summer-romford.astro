@@ -1,0 +1,766 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = '2026-05-05';
+const modifiedDate = '2026-05-05';
+const author = 'David Hagon';
+const readTime = '10 min read';
+
+const faqs = [
+  {
+    question: 'How often should I change the coolant in a custom water-cooled PC?',
+    answer:
+      'For a custom open-loop, every 12 months is the sensible interval — sooner if you see colour fading, cloudy fluid, or any visible particles in the reservoir. AIO (sealed) liquid coolers are designed to last 5-7 years without service, but they do eventually need replacing. If your AIO is making a gurgling noise or temps are climbing, it’s near end of life.',
+  },
+  {
+    question: 'How often should CPU and GPU thermal paste be replaced?',
+    answer:
+      'Most thermal compounds last 3-5 years before they dry out and lose effectiveness. If your PC is older than that, or you’re seeing CPU/GPU temperatures 10°C+ higher than when it was new, a repaste will usually drop temps significantly. High-end pastes like Thermal Grizzly Kryonaut last longer; cheap stock paste can dry out in 2 years.',
+  },
+  {
+    question: 'My gaming PC keeps shutting down during games — is it overheating?',
+    answer:
+      'Almost certainly yes. Modern CPUs and GPUs throttle around 90-95°C and the system will hard-shut-down at around 105°C to protect the silicon. If you’re getting random reboots or shutdowns specifically during demanding games or on hot days, overheating is the most likely cause. Dust buildup, dried thermal paste, failing fans, or degraded coolant are the usual culprits.',
+  },
+  {
+    question: 'Can you service a custom water-cooled PC in Romford?',
+    answer:
+      'Yes — I service custom open-loop and AIO water-cooled PCs in Harold Hill, Romford and across the Havering area. That includes draining and flushing the loop, replacing coolant, checking for leaks, replacing CPU and GPU thermal paste, dust cleaning, and re-testing temperatures. Bring it in or I can collect locally.',
+  },
+  {
+    question: 'What temperatures should my gaming PC run at?',
+    answer:
+      'Idle: CPU 30-45°C, GPU 30-50°C. Under gaming load: CPU should stay under 80°C, GPU under 75°C for healthy long-term operation. Spikes to the mid-80s are fine, but sustained 90°C+ means something is wrong — usually airflow, dust, paste, or coolant.',
+  },
+  {
+    question: 'How much does a coolant change and full repaste cost?',
+    answer:
+      'For a custom open-loop coolant change with CPU + GPU repaste, full dust strip and reassembly, expect £80-130 depending on loop complexity. AIO repaste only (CPU + GPU) is typically £50-70. Get in touch via the contact form for a no-obligation quote — I’m local in Harold Hill so collection is easy.',
+  },
+];
+---
+
+<Layout
+  title="Gaming PC Overheating This Summer? Coolant & Thermal Paste Service"
+  description="Summer is hard on gaming PCs. Coolant changes, CPU and GPU repaste, water-cooling loop service in Romford and Havering. Keep your rig cool before it throttles or shuts down."
+  keywords="gaming pc overheating romford, water cooling service essex, coolant change harold hill, cpu repaste romford, gpu thermal paste havering, custom watercooled pc service essex, summer pc overheating, gaming pc thermal service romford"
+  type="article"
+  publishedTime={publishDate}
+  modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Gaming PC Overheating This Summer', url: '/blog/gaming-pc-overheating-summer-romford/' },
+  ]}
+>
+
+  <div>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>Summer Cooling Service</span>
+        </nav>
+
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(245, 158, 11, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--solar-orange); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--solar-orange); font-size: 12px;"
+            >SEASONAL SERVICE</span
+          >
+        </div>
+
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2;"
+        >
+          Gaming PC Overheating This Summer? Time to Change That Coolant
+        </h1>
+
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Warmer months hit gaming PCs hard. Old thermal paste dries out, custom-loop coolant
+          discolours and gunks up, and dust traps heat. Here’s what I do, what to watch for, and
+          how to keep your rig running cool through summer.
+        </p>
+
+        <div class="article-meta tech-font">
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span
+              >{
+                new Date(publishDate).toLocaleDateString('en-GB', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })
+              }</span
+            >
+          </div>
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Romford & Havering</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 50px 0 100px;">
+      <div class="container">
+        <article class="article-content alien-font">
+
+          <!-- Hero photo of the recent custom loop service -->
+          <figure style="margin: 0 0 32px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(6, 182, 212, 0.3);">
+            <img
+              src="/watercooled-rig-1.webp"
+              alt="Custom water-cooled gaming PC serviced in Harold Hill — MSI motherboard, RTX GPU under a clear water block, fresh coolant in the loop"
+              loading="eager"
+              fetchpriority="high"
+              width="1200"
+              height="900"
+              style="width: 100%; height: auto; display: block;"
+            />
+            <figcaption class="tech-font" style="padding: 12px 16px; background: rgba(15, 23, 42, 0.85); color: var(--comet-silver); font-size: 13px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+              Custom open-loop rig serviced this week — RTX GPU, MSI X-series board, full coolant flush + CPU and GPU repaste.
+            </figcaption>
+          </figure>
+
+          <p>
+            Summer is the season when gaming PCs start showing problems. A rig that ran perfectly
+            through winter suddenly thermal-throttles in <em>Cyberpunk</em>, shuts down mid-game,
+            or starts whining like a hairdryer because the fans are flat-out trying to cope with
+            the extra heat. Most of the time, the PC isn’t broken — it’s just due a service.
+          </p>
+
+          <p>
+            This week I had a customer’s custom-loop rig in (the photos here) for a full coolant
+            change and CPU + GPU repaste. It’s the kind of work that gets booked solid through
+            May, June and July every year, so I figured it’s worth writing up: what actually
+            degrades, how to spot it before it costs you a CPU, and what a proper summer service
+            involves.
+          </p>
+
+          <!-- Table of Contents -->
+          <nav
+            style="background: linear-gradient(145deg, rgba(245, 158, 11, 0.1), rgba(6, 182, 212, 0.05)); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 12px; padding: 24px; margin: 32px 0;"
+          >
+            <div
+              class="space-font"
+              style="color: var(--solar-orange); font-size: 14px; margin-bottom: 16px;"
+            >
+              IN THIS GUIDE
+            </div>
+            <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+              <li>
+                <a
+                  href="#why-summer"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Why Gaming PCs Struggle More in Summer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#warning-signs"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Warning Signs Your PC Is Overheating</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#coolant"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Why Coolant Needs Changing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#thermal-paste"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Why Thermal Paste Wears Out</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#service"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >What a Summer Cooling Service Includes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#diy-vs-pro"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >DIY or Bring It to Me?</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  style="color: var(--comet-silver); text-decoration: none; font-size: 15px;"
+                  >Frequently Asked Questions</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <h2 class="space-font" id="why-summer">Why Gaming PCs Struggle More in Summer</h2>
+
+          <p>
+            Your PC’s cooling system is sized for a target ambient temperature — usually around
+            20-22°C, which is what most UK rooms sit at through autumn and winter. When your
+            office or gaming room climbs to 28°C or 30°C on a hot July afternoon, every cooling
+            component in the case is suddenly working with less headroom.
+          </p>
+
+          <p>The maths is simple but unforgiving:</p>
+
+          <ul>
+            <li>
+              <strong>Air coolers and AIOs:</strong> CPU temperature scales roughly 1:1 with
+              ambient. A 5°C hotter room means a 5°C hotter CPU under the same load.
+            </li>
+            <li>
+              <strong>GPUs:</strong> Same story. A graphics card that ran at 72°C all winter can
+              easily hit 82°C in summer with no other change.
+            </li>
+            <li>
+              <strong>Custom water loops:</strong> The radiators dump heat into the room.
+              Hotter room = hotter coolant = hotter CPU and GPU. They’re still better than air,
+              but not magic.
+            </li>
+          </ul>
+
+          <p>
+            On top of the ambient hit, the cooling components themselves quietly degrade
+            year-round and you only notice in summer because that’s when the margin disappears.
+            That’s why a rig you built four years ago might have had its first thermal shutdown
+            this month — the parts didn’t fail overnight, the weather just exposed what was
+            already happening.
+          </p>
+
+          <h2 class="space-font" id="warning-signs">Warning Signs Your PC Is Overheating</h2>
+
+          <p>Catch these early, before you cook a CPU or pop a GPU:</p>
+
+          <ul>
+            <li>
+              <strong>Random shutdowns or reboots</strong> during gaming, video editing, or any
+              sustained load — especially in the afternoon when the room is hottest.
+            </li>
+            <li>
+              <strong>FPS dropping mid-session</strong> when temps were fine for the first 10
+              minutes. That’s thermal throttling kicking in.
+            </li>
+            <li>
+              <strong>Fans constantly at full speed</strong> even on the desktop or in lightweight
+              games.
+            </li>
+            <li>
+              <strong>Loud whirring or grinding</strong> from a pump (AIO or custom) — air in the
+              loop or a pump on the way out.
+            </li>
+            <li>
+              <strong>Coolant looking cloudy, brown, or with visible particles</strong> in a
+              transparent reservoir. Healthy coolant is clear (or whatever colour you started
+              with).
+            </li>
+            <li>
+              <strong>BSODs with codes like</strong> WHEA_UNCORRECTABLE_ERROR or random
+              MACHINE_CHECK exceptions on hot days.
+            </li>
+            <li>
+              <strong>Case feels hot to touch</strong> after gaming — heat that should be
+              exhausting out the back is sitting inside.
+            </li>
+          </ul>
+
+          <div class="warning-box">
+            <p style="margin: 0;">
+              <strong>Don’t ignore a hard shutdown.</strong> Modern CPUs will shut the system
+              down at around 105°C to protect themselves, but that’s an emergency stop, not a
+              comfortable temperature. Repeated thermal shutdowns shorten silicon lifespan and
+              can damage adjacent components. If it’s happened once, get it looked at.
+            </p>
+          </div>
+
+          <h2 class="space-font" id="coolant">Why Coolant Needs Changing</h2>
+
+          <figure style="margin: 32px 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(6, 182, 212, 0.3);">
+            <img
+              src="/watercooled-rig-2.webp"
+              alt="Top-down view of the same custom water-cooled rig showing the reservoir and clear coolant tubing after a fresh fill"
+              loading="lazy"
+              width="1200"
+              height="900"
+              style="width: 100%; height: auto; display: block;"
+            />
+            <figcaption class="tech-font" style="padding: 12px 16px; background: rgba(15, 23, 42, 0.85); color: var(--comet-silver); font-size: 13px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+              Reservoir and tubing post-flush — clear, no particulate, ready for another year.
+            </figcaption>
+          </figure>
+
+          <p>
+            Coolant in a custom loop isn’t just water — it’s a mix of distilled water,
+            corrosion inhibitors, biocide, and (often) dye. All four of those things have a
+            shelf life:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Corrosion inhibitor depletes</strong> as it does its job protecting copper
+              and nickel surfaces inside your CPU and GPU water blocks. Once it’s gone, the metal
+              starts oxidising — and the resulting particles end up in your radiators.
+            </li>
+            <li>
+              <strong>Biocide breaks down</strong> over time. When it does, algae and biological
+              gunk start growing in the loop, especially on warmer summer days. You end up with
+              the dreaded "green slime" that blocks micro-fins in the GPU block.
+            </li>
+            <li>
+              <strong>Dye fades and separates</strong> — purely cosmetic, but if your once-blue
+              coolant is now a sad grey, the rest of the chemistry has aged with it.
+            </li>
+            <li>
+              <strong>Plasticisers leach from soft tubing</strong> and form a white film inside
+              the blocks. Soft tubing is convenient but it’s the most common cause of restricted
+              flow on older custom loops.
+            </li>
+          </ul>
+
+          <p>
+            Once flow drops, the temperature delta across the loop rises, and your CPU and GPU
+            both run hotter despite all that expensive copper sitting on top of them. A coolant
+            change is cheap insurance against losing a £600 GPU water block to corrosion or a
+            £400 CPU to a heat-soaked shutdown.
+          </p>
+
+          <h2 class="space-font" id="thermal-paste">Why Thermal Paste Wears Out</h2>
+
+          <p>
+            Thermal paste fills the microscopic gaps between the CPU/GPU die (or its heat
+            spreader) and the cooler. Without it, only a tiny fraction of those surfaces are
+            actually touching, and heat transfer falls off a cliff.
+          </p>
+
+          <p>The two ways paste fails:</p>
+
+          <ul>
+            <li>
+              <strong>Drying out:</strong> Stock thermal paste — the grey stuff that comes
+              pre-applied on most coolers — typically lasts 2-3 years before it dries to a chalky
+              crust. Premium pastes (Kryonaut, Arctic MX-6, Noctua NT-H2) last 4-6 years before
+              you notice the same drop.
+            </li>
+            <li>
+              <strong>Pump-out:</strong> Repeated heating and cooling cycles can squeeze paste
+              out from the centre of the die where it’s most needed. This is especially common
+              on hot-running CPUs (13900K, 14900K, 7950X) and on GPUs that go through long
+              gaming sessions and full power-down cycles.
+            </li>
+          </ul>
+
+          <p>
+            Symptoms are usually creeping: temps were fine, then a couple of degrees higher
+            month over month, then suddenly summer hits and the CPU is throttling at 95°C in
+            games it ran cool in last year. A repaste with a quality compound usually drops temps
+            anywhere from 5°C to 15°C — sometimes more on older systems where the original paste
+            is genuinely fossilised.
+          </p>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              <strong>Quick check:</strong> if your CPU is more than 3 years old and you’ve never
+              had it repasted, it’s due. Same for GPUs older than 4 years. The paste isn’t a
+              "last forever" component, even though most people treat it like one.
+            </p>
+          </div>
+
+          <h2 class="space-font" id="service">What a Summer Cooling Service Includes</h2>
+
+          <p>
+            When a gaming PC comes in for a summer service in my workshop in Harold Hill,
+            here’s what I actually do:
+          </p>
+
+          <h3 class="space-font">1. Strip and Inspect</h3>
+          <p>
+            Disconnect everything, take the cooler/water blocks off, check for any obvious
+            damage, swollen capacitors, or worn fan bearings. I’ll flag anything that looks
+            iffy before I touch the parts you came in for.
+          </p>
+
+          <h3 class="space-font">2. Deep Clean</h3>
+          <p>
+            Compressed air and brushes through every fan, radiator, heatsink and dust filter.
+            Dust is a thermal blanket — even a thin layer on a radiator can cost you 5-10°C.
+            Filters get washed and dried separately.
+          </p>
+
+          <h3 class="space-font">3. Coolant Drain &amp; Flush (water-cooled rigs)</h3>
+          <p>
+            Drain the loop completely, flush with distilled water until it runs clear, check
+            every fitting for leaks, refill with fresh quality coolant. For pre-mix loops I use
+            EK CryoFuel or Mayhems X1; for custom mixes I use distilled water plus an
+            inhibitor/biocide concentrate. Bleed the loop and run for 30 minutes minimum to
+            confirm no air bubbles or weeping fittings.
+          </p>
+
+          <h3 class="space-font">4. CPU &amp; GPU Repaste</h3>
+          <p>
+            Old paste cleaned off with isopropyl alcohol, surfaces inspected (sometimes
+            polished if the original paste was really baked on), fresh paste applied — usually
+            Thermal Grizzly Kryonaut or Arctic MX-6, depending on the part. For high-end CPUs
+            running hot under load, I’ll sometimes recommend liquid metal, but only on
+            non-aluminium cold-plates and only with proper guard putty.
+          </p>
+
+          <h3 class="space-font">5. Reassemble &amp; Cable Tidy</h3>
+          <p>
+            Everything goes back exactly the way it came out (or tidier — cable management
+            often gets a free upgrade while I’m in there). Fan curves checked, BIOS settings
+            reviewed, anything that was wrong gets put right.
+          </p>
+
+          <h3 class="space-font">6. Stress Test &amp; Verify</h3>
+          <p>
+            Cinebench R23 multi-core for 20 minutes to load the CPU. FurMark or 3DMark Time Spy
+            stress run for the GPU. I monitor temps the whole way through and won’t hand the
+            machine back until the load temperatures are sensible — usually CPU under 80°C and
+            GPU under 75°C, even with the workshop warm. Before/after temps written on the
+            invoice so you can see exactly what the service achieved.
+          </p>
+
+          <h2 class="space-font" id="diy-vs-pro">DIY or Bring It to Me?</h2>
+
+          <p>
+            Repasting an air-cooled CPU is a reasonable DIY job if you’re comfortable inside a
+            PC — there are good guides online and the worst case is you do it again. But there
+            are jobs where the cost of a mistake is high enough that paying for a professional
+            service makes sense:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Custom water loops</strong> — one missed O-ring or over-tightened fitting
+              and you’re draining coolant onto your motherboard. Insurance and experience matter
+              here.
+            </li>
+            <li>
+              <strong>GPU repastes</strong> — modern cards have fragile thermal pads on memory
+              and VRMs that need replacing as well as the die paste. Get this wrong and the card
+              throttles or fails.
+            </li>
+            <li>
+              <strong>High-end CPUs with direct-die or liquid metal</strong> — the margin for
+              error is smaller and the parts are expensive.
+            </li>
+            <li>
+              <strong>Anything still under warranty</strong> — DIY can void it; many
+              manufacturers accept work by a registered repair business.
+            </li>
+          </ul>
+
+          <p>
+            If you’re local in Romford, Harold Hill, Hornchurch, Upminster, Dagenham or anywhere
+            in Havering, drop your rig in or I can collect. Most coolant changes and repastes are
+            same-day or next-day turnaround. Photos before and after, before/after thermal
+            results, and an honest "this is what I found" debrief on collection — no upsell, no
+            pressure.
+          </p>
+
+          <h2 class="space-font" id="faq">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            {
+              faqs.map((faq) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
+                </div>
+              ))
+            }
+          </div>
+
+          <h2 class="space-font">Get Ahead of the Summer Heat</h2>
+
+          <p>
+            Booking a service now — before the first proper hot week — saves you scrambling
+            when your rig starts shutting down mid-raid in July. Slots fill up fast through
+            May and June and the workshop is busiest of the year August onward. If your gaming
+            PC is more than 2-3 years old and hasn’t had a coolant change or repaste yet,
+            this is the year.
+          </p>
+
+          <!-- Author Bio -->
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="var(--starlight-white)"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <div
+                class="space-font"
+                style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+              >
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Gaming PC builder and computer repair specialist at Chiltern Computers in Harold
+                Hill. I service custom water-cooled rigs, AIO systems and air-cooled gaming PCs
+                across Romford and Havering — coolant changes, repastes, dust strips, and full
+                thermal diagnostics with before-and-after temps on the invoice.
+              </p>
+              <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a
+                  href="/services/gaming-pc-repair-romford/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Gaming PC Repair</a
+                >
+                <a
+                  href="/contact/"
+                  style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;"
+                  >Contact</a
+                >
+                <a
+                  href="https://g.page/chilterncomputers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="color: var(--aurora-green); font-size: 14px; text-decoration: none;"
+                  >Google Reviews 5/5</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
+              Book Your Summer Cooling Service
+            </h3>
+            <p
+              class="alien-font"
+              style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;"
+            >
+              Coolant changes, CPU and GPU repaste, full thermal service for gaming PCs in
+              Romford, Harold Hill and across Havering. Same-day turnaround on most jobs.
+              Before/after temps on every invoice.
+            </p>
+            <a href="/book-repair/" class="space-button space-font">
+              Book a Repair
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Related Services -->
+          <div
+            style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Services
+            </h3>
+            <div
+              style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"
+            >
+              <a
+                href="/services/gaming-pc-repair-romford/"
+                style="display: block; padding: 16px; background: rgba(245, 158, 11, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(245, 158, 11, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--solar-orange); font-size: 14px;">
+                  Gaming PC Repair
+                </div>
+              </a>
+              <a
+                href="/services/pc-repair-romford/"
+                style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">
+                  PC Repair
+                </div>
+              </a>
+              <a
+                href="/services/computer-upgrades-romford/"
+                style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">
+                  PC Upgrades
+                </div>
+              </a>
+              <a
+                href="/contact/"
+                style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;"
+              >
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">
+                  Get a Quote
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div
+            style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);"
+          >
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
+            <div style="display: grid; gap: 16px;">
+              <a
+                href="/blog/gaming-pc-build-tips-essex/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    Gaming PC Build Tips for Essex Gamers
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    12 min read
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/blog/signs-laptop-needs-repairing/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    5 Warning Signs Your Laptop Needs Professional Repair
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    8 min read
+                  </div>
+                </div>
+              </a>
+              <a
+                href="/blog/computer-repair-cost-romford/"
+                style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;"
+              >
+                <div>
+                  <div
+                    class="space-font"
+                    style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;"
+                  >
+                    How Much Does Computer Repair Cost in Romford?
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">
+                    7 min read
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ Schema -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
+
+</Layout>

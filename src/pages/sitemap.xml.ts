@@ -4,9 +4,9 @@ import { siteConfig } from '../config';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
-  const lastUpdated = '2026-03-19';
+  const lastUpdated = '2026-05-05';
 
-  // All pages verified against src/pages/ — 75 URLs
+  // All pages verified against src/pages/ — 76 URLs
   const routes = [
     // Homepage
     { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
@@ -84,8 +84,9 @@ export const GET: APIRoute = async () => {
     { url: '/areas/fairlop/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/hutton/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Blog pages (13)
+    // Blog pages (14)
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: lastUpdated },
+    { url: '/blog/gaming-pc-overheating-summer-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-05' },
     { url: '/blog/computer-repair-cost-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
     { url: '/blog/signs-laptop-needs-repairing/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
     { url: '/blog/ssd-upgrade-guide-old-pc/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
