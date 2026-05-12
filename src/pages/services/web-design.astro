@@ -572,7 +572,7 @@ const process = [
       letter-spacing: 1px;
     }
     .wd-hero-title {
-      font-size: clamp(36px, 6vw, 64px);
+      font-size: clamp(26px, 6.2vw, 64px);
       line-height: 1.1;
       margin-bottom: 24px;
       /* Toned-down glow — override the heavier .cosmic-glow */
@@ -1148,6 +1148,9 @@ const process = [
       .wd-section { padding: 56px 0; }
       .wd-hero-stats { gap: 32px; }
       .wd-stat-num { font-size: 32px; }
+      /* Loosen letter-spacing on the title at narrow widths so the trailing
+         glyph + glow doesn't get clipped by .wd-hero's overflow:hidden. */
+      .wd-hero-title { letter-spacing: -0.01em; padding: 0 2px; }
       .wd-stack-features { grid-template-columns: 1fr; }
       .wd-stack-footer { flex-direction: column; gap: 12px; align-items: stretch; text-align: center; }
       .wd-stack-cta { justify-content: center; }
