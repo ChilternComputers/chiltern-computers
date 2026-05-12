@@ -9,8 +9,9 @@ const liveSites = [
     industry: 'Computer Repair · Tech Services',
     accent: '#06b6d4',
     description:
-      'My own business — the site you are reading right now. Computer repair shop in Harold Hill with 75+ pages: service catalogue, 30+ area-specific landing pages for local SEO, blog and online booking flow. Built with Astro and deployed on Cloudflare Pages.',
+      'My own business — the site you are reading right now. 75+ pages including a full service catalogue, 30+ area-specific landing pages for local search, a long-form blog and a complete online booking flow. Hand-coded from the ground up — no WordPress, no theme — and benchmarked against the cleanest, fastest small-business sites worldwide on performance, accessibility and SEO.',
     pages: '75+ pages',
+    slug: 'chiltern-computers',
     features: ['Local SEO across 30+ areas', 'Online booking', 'Blog & insights', 'Full schema markup'],
     url: 'https://chilterncomputers.net',
     iconName: 'cpu',
@@ -20,8 +21,9 @@ const liveSites = [
     industry: 'Music · Record Label',
     accent: '#f59e0b',
     description:
-      'Independent music site with release catalogue, artist profiles and direct purchase / streaming links. Fast and lean for record-shop browsing — designed to put the music first.',
+      'Independent record-label storefront with a full release catalogue, artist profiles and direct purchase / streaming links. Designed to feel like a record shop rather than a database — fast, clean, and built to let the music do the talking. No bloated page builder, no plugin sprawl.',
     pages: 'Multi-page',
+    slug: 'freshwax',
     features: ['Release catalogue', 'Artist profiles', 'Audio links', 'Mobile-first browsing'],
     url: 'https://freshwax.co.uk',
     iconName: 'star',
@@ -31,8 +33,9 @@ const liveSites = [
     industry: 'Independent Artist Hub',
     accent: '#ea580c',
     description:
-      'Custom-built artist platform for an electronic music collective. Includes a full CMS with auth, gallery management, music features, blog with comments, visitor stats and an inbox — all powered by Cloudflare Workers, R2 storage and KV. Lighthouse averages 99 desktop / 98 mobile.',
+      'Custom-built platform for an electronic music collective with a complete in-house dashboard: gallery management, music features, blog with live comments, monthly hot-picks, artist discographies, visitor stats and a private inbox. Lighthouse scores average 99 / 98 / 100 / 100 (Performance, Accessibility, Best-Practices, SEO) — the kind of numbers most agency-built WordPress sites can only dream of.',
     pages: '10 pages + CMS',
+    slug: 'flames-after-dark',
     features: ['Custom CMS dashboard', 'Gallery & music features', 'Live comments + spam filter', 'Visitor analytics'],
     url: 'https://flames-after-dark.co.uk',
     iconName: 'bolt',
@@ -45,8 +48,9 @@ const portfolio = [
     industry: 'Fitness & Wellness',
     accent: '#d4a843',
     description:
-      'Modern gym brand with a dark cinematic theme and gold accents. Built around a custom timetable, trainer profiles, membership pricing and a free-trial booking flow.',
+      'A bold, cinematic gym brand built to convert local searches into members. Dynamic class timetable, trainer profiles, membership tiers, gallery and a one-click free-trial flow. Hand-coded — not a stretched WordPress theme — with structured data for fitness centres and a Lighthouse-tuned mobile experience that loads almost instantly.',
     pages: '10 pages',
+    slug: 'forge-gym',
     features: ['Custom timetable', 'Trainer profiles', 'Free-trial form', 'Gallery'],
     url: 'https://forge-gym.pages.dev',
     iconColor: 'var(--solar-orange)',
@@ -57,8 +61,9 @@ const portfolio = [
     industry: 'Fine Dining',
     accent: '#c9a96e',
     description:
-      'Sophisticated restaurant site with warm dark tones and champagne accents. Includes a full à la carte menu, reservation system, private dining and gift voucher pages.',
+      'A sophisticated fine-dining experience with full à la carte menu, photographed signature dishes, a real reservation flow, private-dining enquiries and gift vouchers. Restaurant-grade structured data, perfect 100/100 SEO and accessibility scores in our internal audits — designed to feel as considered as the food itself.',
     pages: '9 pages',
+    slug: 'sable-restaurant',
     features: ['Reservations', 'Full menu', 'Private dining', 'Gift vouchers'],
     url: 'https://sable-restaurant.pages.dev',
     iconColor: 'var(--solar-orange)',
@@ -69,8 +74,9 @@ const portfolio = [
     industry: 'Health & Beauty',
     accent: '#4a5d4e',
     description:
-      'Calm, premium spa website with sage and gold palette on warm cream. Treatment catalogue, online booking, team profiles and gift voucher purchase — built for fast loading.',
+      'A premium wellness brand with treatment catalogue, online booking, team profiles, immersive virtual tour, gift vouchers and a wellness journal. Cinematic video sections and silky scroll animation — yet still loads faster than the bloated theme-and-plugin spas it competes with. Calm, confident, and built to convert quiet browsing into bookings.',
     pages: '10 pages',
+    slug: 'aurea-spa',
     features: ['Online booking', 'Treatments catalogue', 'Smooth scroll animations', 'Gift vouchers'],
     url: 'https://aurea-spa.pages.dev',
     iconColor: 'var(--aurora-green)',
@@ -81,8 +87,9 @@ const portfolio = [
     industry: 'Legal Services',
     accent: '#b8975a',
     description:
-      'Professional legal firm site with ivory background, deep navy and brass accents. Practice areas, transparent fees, team filter, consultation CTA and an insights blog.',
+      'A senior-firm legal site built to SRA-aligned standards: practice areas, transparent fees, full team profiles, consultation CTA, insights blog, complaints procedure and Legal Ombudsman signposting. LegalService schema and a confidence-building visual language of ivory, deep navy and brass — engineered to win the click against the generic firm down the road.',
     pages: '9 pages',
+    slug: 'aldridge-pryce',
     features: ['Practice areas', 'Transparent fees', 'Team filter', 'Insights blog'],
     url: 'https://aldridge-pryce.pages.dev',
     iconColor: 'var(--nebula-purple)',
@@ -93,8 +100,9 @@ const portfolio = [
     industry: 'Premium Construction',
     accent: '#b8860b',
     description:
-      'High-end construction firm with charcoal and stone palette, brass accents. Before/after slider, multi-step quote form, filterable project portfolio and accreditation badges.',
+      'A high-end construction brand built to compete with national contractors. Before/after project slider, multi-step quote builder, filterable project portfolio and full accreditation showcase (FMB, TrustMark, Checkatrade, LABC, Which? Trusted Trader). Lighthouse 95/100/100/100 across performance, accessibility, best-practice and SEO — the technical baseline most premium agencies still don\'t hit.',
     pages: '9 pages',
+    slug: 'hartwell-stone',
     features: ['Before/after slider', 'Multi-step quote form', 'Project portfolio', 'Accreditation badges'],
     url: 'https://hartwell-stone.pages.dev',
     iconColor: 'var(--solar-orange)',
@@ -190,21 +198,21 @@ const process = [
             class="galaxy-text wd-title-line1"
             data-scramble="Bespoke Websites,"
             data-scramble-delay="200"
-            data-scramble-duration="1300"
+            data-scramble-duration="1900"
             aria-hidden="true"
           >Bespoke Websites,</span>
           <br />
           <span
             class="galaxy-text wd-title-line2"
             data-scramble="Built by Hand"
-            data-scramble-delay="1400"
-            data-scramble-duration="1500"
+            data-scramble-delay="2000"
+            data-scramble-duration="2100"
             aria-hidden="true"
           >Built by Hand</span>
         </h1>
         <p class="alien-font wd-hero-subtitle">
-          Small business and corporate websites, designed and built one at a time, by me, in Harold Hill.
-          Fast, mobile-first, SEO-ready — and not a template in sight.
+          Bespoke websites for businesses and brands of every&nbsp;scale.
+          Fast, mobile-first and SEO-ready — never built from a&nbsp;template.
         </p>
         <div class="wd-hero-cta">
           <a href="/contact/" class="wd-btn wd-btn-primary">
@@ -218,15 +226,15 @@ const process = [
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
-            <div class="space-font wd-stat-num" data-shuffle="8" data-shuffle-delay="2700">8</div>
+            <div class="space-font wd-stat-num" data-shuffle="8" data-shuffle-delay="4400">8</div>
             <div class="tech-font wd-stat-label">DEPLOYED SITES</div>
           </div>
           <div class="wd-stat">
-            <div class="space-font wd-stat-num" data-shuffle="2–4" data-shuffle-delay="2900">2–4</div>
+            <div class="space-font wd-stat-num" data-shuffle="2–4" data-shuffle-delay="4600">2–4</div>
             <div class="tech-font wd-stat-label">WEEKS TO BUILD</div>
           </div>
           <div class="wd-stat">
-            <div class="space-font wd-stat-num" data-shuffle="1–100+" data-shuffle-delay="3100">1–100+</div>
+            <div class="space-font wd-stat-num" data-shuffle="1–100+" data-shuffle-delay="4800">1–100+</div>
             <div class="tech-font wd-stat-label">PAGE WEBSITES</div>
           </div>
         </div>
@@ -308,24 +316,15 @@ const process = [
                     <span class="wd-browser-dot wd-bd-g"></span>
                     <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
                   </div>
-                  <div class="wd-mock-canvas">
-                    <div class="wd-mock-nav">
-                      <span class="wd-mock-logo">{p.name}</span>
-                      <span class="wd-mock-nav-items">
-                        <span></span><span></span><span></span><span></span>
-                      </span>
-                    </div>
-                    <div class="wd-mock-hero">
-                      <div class="wd-mock-h1"></div>
-                      <div class="wd-mock-h2"></div>
-                      <div class="wd-mock-btn">EXPLORE</div>
-                    </div>
-                    <div class="wd-mock-cards">
-                      <div class="wd-mock-card"></div>
-                      <div class="wd-mock-card"></div>
-                      <div class="wd-mock-card"></div>
-                    </div>
-                  </div>
+                  <img
+                    src={`/web-design-previews/${p.slug}.jpg`}
+                    alt={`Screenshot of ${p.name} homepage`}
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    class="wd-stack-screenshot"
+                  />
                 </div>
               </div>
             </a>
@@ -384,24 +383,15 @@ const process = [
                     <span class="wd-browser-dot wd-bd-g"></span>
                     <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
                   </div>
-                  <div class="wd-mock-canvas">
-                    <div class="wd-mock-nav">
-                      <span class="wd-mock-logo">{p.name}</span>
-                      <span class="wd-mock-nav-items">
-                        <span></span><span></span><span></span><span></span>
-                      </span>
-                    </div>
-                    <div class="wd-mock-hero">
-                      <div class="wd-mock-h1"></div>
-                      <div class="wd-mock-h2"></div>
-                      <div class="wd-mock-btn">EXPLORE</div>
-                    </div>
-                    <div class="wd-mock-cards">
-                      <div class="wd-mock-card"></div>
-                      <div class="wd-mock-card"></div>
-                      <div class="wd-mock-card"></div>
-                    </div>
-                  </div>
+                  <img
+                    src={`/web-design-previews/${p.slug}.jpg`}
+                    alt={`Screenshot of ${p.name} homepage`}
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    class="wd-stack-screenshot"
+                  />
                 </div>
               </div>
             </a>
@@ -596,12 +586,12 @@ const process = [
       transform: translateY(12px);
       animation: wd-label-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-num   { animation-delay: 2.7s; }
-    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-label { animation-delay: 3.5s; }
-    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-num   { animation-delay: 2.9s; }
-    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-label { animation-delay: 3.7s; }
-    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-num   { animation-delay: 3.1s; }
-    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-label { animation-delay: 3.9s; }
+    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-num   { animation-delay: 4.4s; }
+    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-label { animation-delay: 5.2s; }
+    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-num   { animation-delay: 4.6s; }
+    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-label { animation-delay: 5.4s; }
+    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-num   { animation-delay: 4.8s; }
+    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-label { animation-delay: 5.6s; }
     @keyframes wd-stat-num-pop {
       0%   { opacity: 0; transform: scale(0.85); }
       100% { opacity: 1; transform: scale(1); }
@@ -613,9 +603,9 @@ const process = [
     /* CTA buttons fade in after title */
     .wd-hero-cta .wd-btn {
       opacity: 0;
-      animation: wd-cta-fade 0.6s ease-out 2.4s forwards;
+      animation: wd-cta-fade 0.6s ease-out 4.1s forwards;
     }
-    .wd-hero-cta .wd-btn:nth-child(2) { animation-delay: 2.55s; }
+    .wd-hero-cta .wd-btn:nth-child(2) { animation-delay: 4.25s; }
     @keyframes wd-cta-fade {
       0%   { opacity: 0; transform: translateY(8px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -623,7 +613,7 @@ const process = [
     /* Subtitle fades in between title scrambles */
     .wd-hero-subtitle {
       opacity: 0;
-      animation: wd-cta-fade 0.6s ease-out 2.0s forwards;
+      animation: wd-cta-fade 0.6s ease-out 2.7s forwards;
     }
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
@@ -895,8 +885,17 @@ const process = [
       text-transform: uppercase;
     }
 
-    /* BROWSER MOCK PREVIEW (CSS only — CSP blocks iframes) */
+    /* BROWSER FRAME PREVIEW with real homepage screenshot */
     .wd-stack-preview { position: relative; z-index: 1; }
+    .wd-stack-screenshot {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      object-position: top center;
+      background: #0a0a0f;
+    }
     .wd-browser-frame {
       background: linear-gradient(180deg, #0a0a0f, #06060a);
       border: 1px solid rgba(255,255,255,0.08);
