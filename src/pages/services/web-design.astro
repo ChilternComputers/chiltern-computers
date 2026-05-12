@@ -183,12 +183,24 @@ const process = [
           <span>NEW SERVICE FROM CHILTERN COMPUTERS</span>
         </div>
         <h1
-          class="space-font cosmic-glow wd-hero-title"
+          class="space-font wd-hero-title"
           aria-label="Bespoke Websites, Built by Hand"
         >
-          <span class="galaxy-text wd-title-line1" aria-hidden="true">Bespoke Websites,</span>
+          <span
+            class="galaxy-text wd-title-line1"
+            data-scramble="Bespoke Websites,"
+            data-scramble-delay="200"
+            data-scramble-duration="1300"
+            aria-hidden="true"
+          >Bespoke Websites,</span>
           <br />
-          <span class="galaxy-text wd-title-line2" data-scramble="Built by Hand" aria-hidden="true">Built by Hand</span>
+          <span
+            class="galaxy-text wd-title-line2"
+            data-scramble="Built by Hand"
+            data-scramble-delay="1400"
+            data-scramble-duration="1500"
+            aria-hidden="true"
+          >Built by Hand</span>
         </h1>
         <p class="alien-font wd-hero-subtitle">
           Small business and corporate websites, designed and built one at a time, by me, in Harold Hill.
@@ -206,15 +218,15 @@ const process = [
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
-            <div class="space-font wd-stat-num">8</div>
+            <div class="space-font wd-stat-num" data-shuffle="8" data-shuffle-delay="2700">8</div>
             <div class="tech-font wd-stat-label">DEPLOYED SITES</div>
           </div>
           <div class="wd-stat">
-            <div class="space-font wd-stat-num">2–4</div>
+            <div class="space-font wd-stat-num" data-shuffle="2–4" data-shuffle-delay="2900">2–4</div>
             <div class="tech-font wd-stat-label">WEEKS TO BUILD</div>
           </div>
           <div class="wd-stat">
-            <div class="space-font wd-stat-num">1–100+</div>
+            <div class="space-font wd-stat-num" data-shuffle="1–100+" data-shuffle-delay="3100">1–100+</div>
             <div class="tech-font wd-stat-label">PAGE WEBSITES</div>
           </div>
         </div>
@@ -550,62 +562,74 @@ const process = [
       font-size: clamp(36px, 6vw, 64px);
       line-height: 1.1;
       margin-bottom: 24px;
+      /* Toned-down glow — override the heavier .cosmic-glow */
+      text-shadow:
+        0 0 8px color-mix(in srgb, var(--plasma-cyan) 25%, transparent),
+        0 0 14px color-mix(in srgb, var(--nebula-purple) 12%, transparent);
     }
-    .wd-title-line1 {
+    .wd-title-line1, .wd-title-line2 {
       display: inline-block;
-      opacity: 0;
-      filter: blur(10px);
-      transform: translateY(-12px);
-      animation: wd-title-fade-in 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-    }
-    .wd-title-line2 {
-      display: inline-block;
-      opacity: 0;
-      animation: wd-title-line2-appear 0.3s ease-out 1.2s forwards;
-      font-variant-ligatures: none;
       white-space: nowrap;
-    }
-    @keyframes wd-title-fade-in {
-      0%   { opacity: 0; filter: blur(10px); transform: translateY(-12px); }
-      60%  { opacity: 0.4; filter: blur(2px); }
-      100% { opacity: 1; filter: blur(0); transform: translateY(0); }
-    }
-    @keyframes wd-title-line2-appear {
-      0%   { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    /* Stats slide-up cascade after title finishes */
-    .wd-hero-stats .wd-stat {
+      font-variant-ligatures: none;
+      /* Lines stay hidden until scramble JS reveals them */
       opacity: 0;
-      transform: translateY(20px);
-      animation: wd-stat-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: opacity 0.25s ease-out;
     }
-    .wd-hero-stats .wd-stat:nth-child(1) { animation-delay: 2.6s; }
-    .wd-hero-stats .wd-stat:nth-child(2) { animation-delay: 2.75s; }
-    .wd-hero-stats .wd-stat:nth-child(3) { animation-delay: 2.9s; }
-    @keyframes wd-stat-rise {
-      0%   { opacity: 0; transform: translateY(20px); }
+    .wd-title-line1.wd-scramble-active,
+    .wd-title-line2.wd-scramble-active {
+      opacity: 1;
+    }
+
+    /* Stats — number first (with shuffle), label fades up under */
+    .wd-hero-stats .wd-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .wd-stat-num {
+      opacity: 0;
+      animation: wd-stat-num-pop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .wd-stat-label {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: wd-label-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-num   { animation-delay: 2.7s; }
+    .wd-hero-stats .wd-stat:nth-child(1) .wd-stat-label { animation-delay: 3.5s; }
+    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-num   { animation-delay: 2.9s; }
+    .wd-hero-stats .wd-stat:nth-child(2) .wd-stat-label { animation-delay: 3.7s; }
+    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-num   { animation-delay: 3.1s; }
+    .wd-hero-stats .wd-stat:nth-child(3) .wd-stat-label { animation-delay: 3.9s; }
+    @keyframes wd-stat-num-pop {
+      0%   { opacity: 0; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes wd-label-rise {
+      0%   { opacity: 0; transform: translateY(12px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     /* CTA buttons fade in after title */
     .wd-hero-cta .wd-btn {
       opacity: 0;
-      animation: wd-cta-fade 0.6s ease-out 2.2s forwards;
+      animation: wd-cta-fade 0.6s ease-out 2.4s forwards;
     }
-    .wd-hero-cta .wd-btn:nth-child(2) { animation-delay: 2.35s; }
+    .wd-hero-cta .wd-btn:nth-child(2) { animation-delay: 2.55s; }
     @keyframes wd-cta-fade {
       0%   { opacity: 0; transform: translateY(8px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    /* Subtitle also fades in */
+    /* Subtitle fades in between title scrambles */
     .wd-hero-subtitle {
       opacity: 0;
-      animation: wd-cta-fade 0.6s ease-out 1.9s forwards;
+      animation: wd-cta-fade 0.6s ease-out 2.0s forwards;
     }
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .wd-title-line1, .wd-title-line2,
-      .wd-hero-stats .wd-stat,
+      .wd-hero-stats .wd-stat-num,
+      .wd-hero-stats .wd-stat-label,
       .wd-hero-cta .wd-btn,
       .wd-hero-subtitle {
         opacity: 1 !important;
@@ -1118,61 +1142,106 @@ const process = [
   </style>
 
   <script is:inline>
-    // Scramble/decrypt effect for "Built by Hand" on the hero title.
-    // Starts after the line2 fade-in finishes (~1.5s after page load),
-    // cycles random characters per position, then progressively resolves
-    // letter by letter to the final text. Honours prefers-reduced-motion.
+    // Hero title scramble + stat-value shuffle for web-design page.
+    // Honours prefers-reduced-motion (skips animations entirely).
     (function () {
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var el = document.querySelector('[data-scramble]');
-      if (!el || reduceMotion) return;
 
-      var finalText = el.getAttribute('data-scramble') || el.textContent;
+      // ── Scramble each [data-scramble] element with its own delay/duration ──
       var chars = '!<>-_\\/[]{}—=+*^?#@$%&|01ΞΩΣΨЖ▓░▒█▌▐';
-      var duration = 1800;
 
-      // Set initial scrambled state so there's no flash of real text
-      function randText() {
-        var s = '';
+      function scramble(el) {
+        var finalText = el.getAttribute('data-scramble') || el.textContent;
+        var delay = parseInt(el.getAttribute('data-scramble-delay') || '0', 10);
+        var duration = parseInt(el.getAttribute('data-scramble-duration') || '1500', 10);
+
+        // Pre-fill with random chars and reveal the element
+        var randomised = '';
         for (var i = 0; i < finalText.length; i++) {
-          s += finalText[i] === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
+          randomised += finalText[i] === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
         }
-        return s;
-      }
-      el.textContent = randText();
+        el.textContent = randomised;
+        el.classList.add('wd-scramble-active');
 
-      // Each character gets its own reveal time, weighted to progress L→R
-      // with some randomness so it looks more "decrypting" than a wipe.
-      var reveals = [];
-      for (var i = 0; i < finalText.length; i++) {
-        var base = (i / finalText.length) * duration * 0.85;
-        var jitter = Math.random() * duration * 0.25;
-        reveals.push(base + jitter);
-      }
+        // Per-character reveal times (L→R bias + jitter)
+        var reveals = [];
+        for (var k = 0; k < finalText.length; k++) {
+          var base = (k / finalText.length) * duration * 0.75;
+          var jitter = Math.random() * duration * 0.3;
+          reveals.push(base + jitter);
+        }
 
-      var start;
-      function tick(ts) {
-        if (!start) start = ts;
-        var t = ts - start;
-        var out = '';
-        for (var j = 0; j < finalText.length; j++) {
-          if (finalText[j] === ' ') { out += ' '; continue; }
-          if (t >= reveals[j]) {
-            out += finalText[j];
+        var start;
+        function tick(ts) {
+          if (!start) start = ts;
+          var t = ts - start;
+          var out = '';
+          for (var j = 0; j < finalText.length; j++) {
+            if (finalText[j] === ' ') { out += ' '; continue; }
+            if (t >= reveals[j]) {
+              out += finalText[j];
+            } else {
+              out += chars[Math.floor(Math.random() * chars.length)];
+            }
+          }
+          el.textContent = out;
+          if (t < duration + 80) {
+            requestAnimationFrame(tick);
           } else {
-            out += chars[Math.floor(Math.random() * chars.length)];
+            el.textContent = finalText;
           }
         }
-        el.textContent = out;
-        if (t < duration + 50) {
-          requestAnimationFrame(tick);
-        } else {
-          el.textContent = finalText;
-        }
+        setTimeout(function () { requestAnimationFrame(tick); }, delay);
       }
 
-      // Wait for line1 fade-in to land first
-      setTimeout(function () { requestAnimationFrame(tick); }, 1500);
+      // ── Shuffle stat values (slot-machine cycle then land) ──
+      var shuffleChars = '0123456789';
+      function shuffleVal(el) {
+        var finalText = el.getAttribute('data-shuffle') || el.textContent;
+        var delay = parseInt(el.getAttribute('data-shuffle-delay') || '0', 10);
+        var duration = 900;
+
+        // Build the initial garbled state — keep non-digit chars (— + spaces) fixed
+        function garble() {
+          var s = '';
+          for (var i = 0; i < finalText.length; i++) {
+            var c = finalText[i];
+            if (/[0-9]/.test(c)) {
+              s += shuffleChars[Math.floor(Math.random() * shuffleChars.length)];
+            } else {
+              s += c;
+            }
+          }
+          return s;
+        }
+
+        // Start cycling on each animation frame, settle after `duration`
+        var startCycle = function () {
+          var t0 = performance.now();
+          function loop(now) {
+            var elapsed = now - t0;
+            if (elapsed >= duration) {
+              el.textContent = finalText;
+              return;
+            }
+            el.textContent = garble();
+            requestAnimationFrame(loop);
+          }
+          requestAnimationFrame(loop);
+        };
+        setTimeout(startCycle, delay);
+      }
+
+      if (reduceMotion) {
+        // Just reveal everything in its final state
+        document.querySelectorAll('[data-scramble]').forEach(function (el) {
+          el.classList.add('wd-scramble-active');
+        });
+        return;
+      }
+
+      document.querySelectorAll('[data-scramble]').forEach(scramble);
+      document.querySelectorAll('[data-shuffle]').forEach(shuffleVal);
     })();
   </script>
 </Layout>
