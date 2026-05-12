@@ -114,9 +114,10 @@ const services = [
 const process = [
   { step: '1', title: 'Discovery Call', text: 'A free 30-minute call to understand your business, your customers and your goals.' },
   { step: '2', title: 'Quote & Brief', text: 'Fixed-price quote based on what you actually need. No surprises mid-project.' },
-  { step: '3', title: 'Design & Build', text: 'I design the layout, agree it with you, then build the site page by page with progress check-ins.' },
-  { step: '4', title: 'Review & Launch', text: 'You review on a private staging URL. Once you approve, I deploy to your domain.' },
-  { step: '5', title: 'Aftercare', text: 'Ongoing support packages available, or pay-as-you-go for tweaks and updates.' },
+  { step: '3', title: 'Design Mockups', text: 'I produce visual mockups of the key pages and agree the look and feel with you before any code is written.' },
+  { step: '4', title: 'Build & Code', text: 'I build the site page by page using modern tools, with regular progress check-ins so nothing surprises you.' },
+  { step: '5', title: 'Review & Launch', text: 'You review on a private staging URL. Once you approve, I deploy to your domain with no downtime.' },
+  { step: '6', title: 'Aftercare', text: 'Ongoing support packages, or pay-as-you-go for tweaks, content edits and security updates.' },
 ];
 ---
 
@@ -213,43 +214,67 @@ const process = [
             Five live demos showing the range of what I build. Click through and try them on your phone — they're all fully responsive.
           </p>
         </div>
-        <div class="wd-portfolio-grid">
-          {portfolio.map((p) => (
-            <article class="cosmic-card wd-portfolio-card">
-              <div class="wd-portfolio-head" style={`border-bottom: 2px solid ${p.accent};`}>
-                <div class="wd-portfolio-icon" style={`color: ${p.iconColor}; border-color: ${p.iconColor};`}>
-                  <Icon name={p.iconName} size={28} />
+        <div class="wd-stack-grid">
+          {portfolio.map((p, i) => (
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${p.name} live demo (opens in new tab)`}
+              class={`cosmic-card wd-stack-card${i % 2 === 1 ? ' wd-stack-reverse' : ''}`}
+              style={`--accent: ${p.accent};`}
+            >
+              <div class="wd-stack-text">
+                <div class="tech-font wd-stack-industry">
+                  {p.industry.toUpperCase()}
                 </div>
-                <div class="wd-portfolio-meta">
-                  <div class="tech-font wd-portfolio-industry" style={`color: ${p.accent};`}>
-                    {p.industry.toUpperCase()}
+                <h3 class="space-font wd-stack-name">{p.name}</h3>
+                <p class="alien-font wd-stack-desc">{p.description}</p>
+                <ul class="wd-stack-features">
+                  {p.features.map((f) => (
+                    <li>
+                      <Icon name="check-circle" size={14} class="wd-feat-icon" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="wd-stack-footer">
+                  <span class="tech-font wd-stack-pages">{p.pages}</span>
+                  <span class="wd-stack-cta">
+                    Visit Live Demo
+                    <Icon name="arrow-right" size={14} />
+                  </span>
+                </div>
+              </div>
+              <div class="wd-stack-preview" aria-hidden="true">
+                <div class="wd-browser-frame">
+                  <div class="wd-browser-bar">
+                    <span class="wd-browser-dot wd-bd-r"></span>
+                    <span class="wd-browser-dot wd-bd-y"></span>
+                    <span class="wd-browser-dot wd-bd-g"></span>
+                    <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
                   </div>
-                  <h3 class="space-font wd-portfolio-name">{p.name}</h3>
+                  <div class="wd-mock-canvas">
+                    <div class="wd-mock-nav">
+                      <span class="wd-mock-logo">{p.name}</span>
+                      <span class="wd-mock-nav-items">
+                        <span></span><span></span><span></span><span></span>
+                      </span>
+                    </div>
+                    <div class="wd-mock-hero">
+                      <div class="wd-mock-h1"></div>
+                      <div class="wd-mock-h2"></div>
+                      <div class="wd-mock-btn">EXPLORE</div>
+                    </div>
+                    <div class="wd-mock-cards">
+                      <div class="wd-mock-card"></div>
+                      <div class="wd-mock-card"></div>
+                      <div class="wd-mock-card"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <p class="alien-font wd-portfolio-desc">{p.description}</p>
-              <ul class="wd-portfolio-features">
-                {p.features.map((f) => (
-                  <li>
-                    <Icon name="check-circle" size={14} class="wd-feat-icon" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <div class="wd-portfolio-footer">
-                <span class="tech-font wd-portfolio-pages">{p.pages}</span>
-                <a
-                  href={p.url}
-                  class="wd-portfolio-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${p.name} live demo (opens in new tab)`}
-                >
-                  View Live Demo
-                  <Icon name="arrow-right" size={14} />
-                </a>
-              </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
@@ -523,102 +548,245 @@ const process = [
       line-height: 1.6;
     }
 
-    /* PORTFOLIO GRID */
-    .wd-portfolio-grid {
+    /* PORTFOLIO STACKED CARDS */
+    .wd-stack-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      gap: 32px;
     }
-    .wd-portfolio-card {
-      padding: 0;
+    .wd-stack-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 40px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
       overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: all 0.3s ease;
     }
-    .wd-portfolio-card:hover {
-      transform: translateY(-6px);
+    .wd-stack-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 100% 0%, var(--accent, var(--plasma-cyan)) 0%, transparent 60%);
+      opacity: 0.06;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
-    .wd-portfolio-head {
-      display: flex; align-items: center; gap: 16px;
-      padding: 24px;
+    .wd-stack-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent, var(--plasma-cyan)) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5),
+                  0 0 30px color-mix(in srgb, var(--accent, #06b6d4) 25%, transparent);
     }
-    .wd-portfolio-icon {
-      width: 56px; height: 56px;
-      flex-shrink: 0;
-      border-radius: 12px;
-      border: 2px solid;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,255,255,0.02);
+    .wd-stack-card:hover::before { opacity: 0.12; }
+    .wd-stack-card:hover .wd-stack-cta {
+      background: var(--accent, var(--plasma-cyan));
+      color: var(--deep-space);
+      border-color: var(--accent, var(--plasma-cyan));
     }
-    .wd-portfolio-meta { flex: 1; min-width: 0; }
-    .wd-portfolio-industry {
+    .wd-stack-card:focus-visible {
+      outline: 3px solid var(--accent, var(--plasma-cyan));
+      outline-offset: 4px;
+    }
+    .wd-stack-reverse .wd-stack-text { order: 2; }
+    .wd-stack-reverse .wd-stack-preview { order: 1; }
+    .wd-stack-reverse::before {
+      background: radial-gradient(circle at 0% 0%, var(--accent, var(--plasma-cyan)) 0%, transparent 60%);
+    }
+
+    .wd-stack-text { position: relative; z-index: 1; }
+    .wd-stack-industry {
       font-size: 11px;
-      letter-spacing: 1.5px;
-      margin-bottom: 4px;
+      letter-spacing: 2px;
+      color: var(--accent, var(--plasma-cyan));
+      margin-bottom: 10px;
+      text-shadow: 0 0 12px color-mix(in srgb, var(--accent, #06b6d4) 60%, transparent);
     }
-    .wd-portfolio-name {
-      font-size: 22px;
+    .wd-stack-name {
+      font-size: clamp(24px, 3vw, 32px);
       color: var(--starlight-white);
-      margin: 0;
-      line-height: 1.2;
+      margin: 0 0 16px;
+      line-height: 1.15;
     }
-    .wd-portfolio-desc {
-      padding: 20px 24px;
+    .wd-stack-desc {
       color: var(--text-secondary);
       font-size: 15px;
-      line-height: 1.6;
-      flex: 1;
+      line-height: 1.65;
+      margin: 0 0 22px;
     }
-    .wd-portfolio-features {
-      padding: 0 24px 16px;
+    .wd-stack-features {
       list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px 16px;
-      margin: 0;
     }
-    .wd-portfolio-features li {
+    .wd-stack-features li {
       display: flex; align-items: center; gap: 6px;
       font-family: 'Exo 2', sans-serif;
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--comet-silver);
     }
     .wd-feat-icon { color: var(--aurora-green); flex-shrink: 0; }
-    .wd-portfolio-footer {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      background: rgba(0,0,0,0.2);
+    .wd-stack-footer {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .wd-portfolio-pages {
-      font-size: 12px;
+    .wd-stack-pages {
+      font-size: 11px;
       color: var(--comet-silver);
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
     }
-    .wd-portfolio-link {
+    .wd-stack-cta {
       display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--plasma-cyan);
-      text-decoration: none;
-      padding: 8px 14px;
+      padding: 10px 18px;
       border-radius: 999px;
-      border: 1px solid var(--plasma-cyan);
-      background: rgba(6,182,212,0.08);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent, var(--plasma-cyan));
+      border: 2px solid var(--accent, var(--plasma-cyan));
+      background: color-mix(in srgb, var(--accent, #06b6d4) 12%, transparent);
       transition: all 0.3s ease;
-    }
-    .wd-portfolio-link:hover {
-      background: var(--plasma-cyan);
-      color: var(--deep-space);
-      transform: translateX(4px);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
-    /* PROCESS GRID */
+    /* BROWSER MOCK PREVIEW (CSS only — CSP blocks iframes) */
+    .wd-stack-preview { position: relative; z-index: 1; }
+    .wd-browser-frame {
+      background: linear-gradient(180deg, #0a0a0f, #06060a);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6),
+                  0 0 24px color-mix(in srgb, var(--accent, #06b6d4) 12%, transparent);
+      transition: box-shadow 0.3s ease;
+    }
+    .wd-stack-card:hover .wd-browser-frame {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.7),
+                  0 0 40px color-mix(in srgb, var(--accent, #06b6d4) 28%, transparent);
+    }
+    .wd-browser-bar {
+      display: flex; align-items: center; gap: 6px;
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .wd-browser-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      opacity: 0.85;
+    }
+    .wd-bd-r { background: #ff5f57; }
+    .wd-bd-y { background: #ffbd2e; }
+    .wd-bd-g { background: #28c941; }
+    .wd-browser-url {
+      flex: 1;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      color: var(--comet-silver);
+      margin-left: 8px;
+      background: rgba(255,255,255,0.04);
+      padding: 4px 12px;
+      border-radius: 4px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .wd-mock-canvas {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background:
+        linear-gradient(135deg,
+          color-mix(in srgb, var(--accent, #06b6d4) 16%, #0a0a0f) 0%,
+          color-mix(in srgb, var(--accent, #06b6d4) 4%, #0a0a0f) 60%,
+          #050508 100%);
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .wd-mock-nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 8px 12px;
+      background: rgba(0,0,0,0.35);
+      border-radius: 6px;
+    }
+    .wd-mock-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--accent, var(--plasma-cyan));
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 8px color-mix(in srgb, var(--accent, #06b6d4) 60%, transparent);
+    }
+    .wd-mock-nav-items { display: flex; gap: 6px; }
+    .wd-mock-nav-items span {
+      width: 22px; height: 4px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 2px;
+    }
+    .wd-mock-hero {
+      flex: 1;
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: flex-start;
+      padding: 0 16px;
+      gap: 8px;
+    }
+    .wd-mock-h1 {
+      width: 70%; height: 12px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 3px;
+    }
+    .wd-mock-h2 {
+      width: 55%; height: 8px;
+      background: rgba(255,255,255,0.55);
+      border-radius: 2px;
+    }
+    .wd-mock-btn {
+      margin-top: 6px;
+      padding: 6px 14px;
+      background: var(--accent, var(--plasma-cyan));
+      color: rgba(0,0,0,0.8);
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      box-shadow: 0 0 14px color-mix(in srgb, var(--accent, #06b6d4) 70%, transparent);
+    }
+    .wd-mock-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .wd-mock-card {
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .wd-mock-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--accent, var(--plasma-cyan));
+      opacity: 0.6;
+    }
+
+    /* PROCESS GRID — 2x3 layout */
     .wd-process-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
     .wd-process-card {
       padding: 28px 24px;
@@ -704,21 +872,31 @@ const process = [
     }
 
     /* Responsive */
+    @media (max-width: 900px) {
+      .wd-stack-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px;
+      }
+      .wd-stack-reverse .wd-stack-text { order: 1; }
+      .wd-stack-reverse .wd-stack-preview { order: 2; }
+    }
+
     @media (max-width: 768px) {
       .wd-hero { padding: 60px 0 50px; }
       .wd-section { padding: 56px 0; }
       .wd-hero-stats { gap: 32px; }
       .wd-stat-num { font-size: 32px; }
-      .wd-portfolio-features { grid-template-columns: 1fr; }
-      .wd-portfolio-head { flex-direction: column; text-align: center; gap: 12px; }
-      .wd-portfolio-footer { flex-direction: column; gap: 12px; align-items: stretch; text-align: center; }
-      .wd-portfolio-link { justify-content: center; }
+      .wd-stack-features { grid-template-columns: 1fr; }
+      .wd-stack-footer { flex-direction: column; gap: 12px; align-items: stretch; text-align: center; }
+      .wd-stack-cta { justify-content: center; }
+      .wd-process-grid { grid-template-columns: 1fr; max-width: 480px; }
       .wd-cta-card { padding: 40px 24px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .wd-hero-orb { animation: none; }
-      .wd-btn, .wd-service-card, .wd-portfolio-card, .wd-process-card, .wd-portfolio-link {
+      .wd-btn, .wd-service-card, .wd-stack-card, .wd-process-card, .wd-stack-cta {
         transition: none;
       }
     }
