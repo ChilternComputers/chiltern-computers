@@ -2,6 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../config';
 import Icon from '../../components/Icon.astro';
+import { statSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+// Cache-bust each demo screenshot using its file mtime. When a screenshot is
+// re-captured, its mtime changes, so the query param changes, so Cloudflare
+// edge serves the new file instead of the cached one.
+const previewsDir = fileURLToPath(new URL('../../../public/web-design-previews/', import.meta.url));
+const screenshotVer = (slug: string): string => {
+  try { return Math.floor(statSync(previewsDir + slug + '.jpg').mtimeMs).toString(36); }
+  catch { return '1'; }
+};
 
 const liveSites = [
   {
@@ -317,7 +328,7 @@ const process = [
                     <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
                   </div>
                   <img
-                    src={`/web-design-previews/${p.slug}.jpg`}
+                    src={`/web-design-previews/${p.slug}.jpg?v=${screenshotVer(p.slug)}`}
                     alt={`Screenshot of ${p.name} homepage`}
                     width="1440"
                     height="900"
@@ -384,7 +395,7 @@ const process = [
                     <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
                   </div>
                   <img
-                    src={`/web-design-previews/${p.slug}.jpg`}
+                    src={`/web-design-previews/${p.slug}.jpg?v=${screenshotVer(p.slug)}`}
                     alt={`Screenshot of ${p.name} homepage`}
                     width="1440"
                     height="900"
