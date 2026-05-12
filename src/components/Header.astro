@@ -50,6 +50,7 @@ const currentPath = Astro.url.pathname;
           <li><a href="/services/custom-pcs/" class="nav-link hdr-nav-item hdr-nav-green" aria-label="Gaming PCs" aria-current={currentPath === '/services/custom-pcs/' ? 'page' : undefined}><Icon name="gaming" size={14} />Gaming PCs</a></li>
           <li><a href="/services/repairs/" class="nav-link hdr-nav-item hdr-nav-orange" aria-label="Repairs" aria-current={currentPath.startsWith('/services/repairs') ? 'page' : undefined}><Icon name="wrench" size={14} />Repairs</a></li>
           <li><a href="/services/new-used/" class="nav-link hdr-nav-item hdr-nav-purple" aria-label="PCs & Laptops" aria-current={currentPath === '/services/new-used/' ? 'page' : undefined}><Icon name="laptop" size={14} />PCs & Laptops</a></li>
+          <li><a href="/services/web-design/" class="nav-link hdr-nav-item hdr-nav-blue" aria-label="Web Design" aria-current={currentPath === '/services/web-design/' ? 'page' : undefined}><Icon name="globe" size={14} />Web Design</a></li>
           <li><a href="/about/" class="nav-link hdr-nav-item" aria-label="About" aria-current={currentPath === '/about/' ? 'page' : undefined}><Icon name="info" size={14} />About</a></li>
           <li><a href="/blog/" class="nav-link hdr-nav-item" aria-label="Blog" aria-current={currentPath.startsWith('/blog') ? 'page' : undefined}><Icon name="blog" size={14} />Blog</a></li>
           <li><a href="/book-repair/" class="nav-link hdr-nav-cta" aria-label="Book a repair" aria-current={currentPath === '/book-repair/' ? 'page' : undefined}><Icon name="wrench" size={14} />Book Repair</a></li>
@@ -175,6 +176,7 @@ const currentPath = Astro.url.pathname;
     .hdr-nav-green { border-color: var(--aurora-green); background: rgba(16,185,129,0.1); }
     .hdr-nav-orange { border-color: var(--solar-orange); background: rgba(245,158,11,0.1); }
     .hdr-nav-purple { border-color: var(--nebula-purple); background: rgba(139,92,246,0.1); }
+    .hdr-nav-blue { border-color: var(--primary-blue); background: rgba(59,130,246,0.1); }
     .hdr-nav-cta { padding: 10px 13px; font-size: 13px; text-decoration: none; white-space: nowrap; background: linear-gradient(45deg, var(--aurora-green), var(--plasma-cyan)); border: 2px solid var(--aurora-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; min-height: 44px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.5); border-radius: 25px; font-family: 'Orbitron', sans-serif; }
     .hdr-nav-cta:hover { background: linear-gradient(45deg, #0d9668, #0891b2); }
 

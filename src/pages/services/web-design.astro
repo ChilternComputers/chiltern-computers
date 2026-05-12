@@ -1,0 +1,726 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { siteConfig } from '../../config';
+import Icon from '../../components/Icon.astro';
+
+const portfolio = [
+  {
+    name: 'Forge Gym',
+    industry: 'Fitness & Wellness',
+    accent: '#d4a843',
+    description:
+      'Modern gym brand with a dark cinematic theme and gold accents. Built around a custom timetable, trainer profiles, membership pricing and a free-trial booking flow.',
+    pages: '10 pages',
+    features: ['Custom timetable', 'Trainer profiles', 'Free-trial form', 'Gallery'],
+    url: 'https://forge-gym.pages.dev',
+    iconColor: 'var(--solar-orange)',
+    iconName: 'bolt',
+  },
+  {
+    name: 'Sable',
+    industry: 'Fine Dining',
+    accent: '#c9a96e',
+    description:
+      'Sophisticated restaurant site with warm dark tones and champagne accents. Includes a full à la carte menu, reservation system, private dining and gift voucher pages.',
+    pages: '9 pages',
+    features: ['Reservations', 'Full menu', 'Private dining', 'Gift vouchers'],
+    url: 'https://sable-restaurant.pages.dev',
+    iconColor: 'var(--solar-orange)',
+    iconName: 'star',
+  },
+  {
+    name: 'Aurea Spa',
+    industry: 'Health & Beauty',
+    accent: '#4a5d4e',
+    description:
+      'Calm, premium spa website with sage and gold palette on warm cream. Treatment catalogue, online booking, team profiles and gift voucher purchase — built for fast loading.',
+    pages: '10 pages',
+    features: ['Online booking', 'Treatments catalogue', 'Smooth scroll animations', 'Gift vouchers'],
+    url: 'https://aurea-spa.pages.dev',
+    iconColor: 'var(--aurora-green)',
+    iconName: 'shield',
+  },
+  {
+    name: 'Aldridge & Pryce Solicitors',
+    industry: 'Legal Services',
+    accent: '#b8975a',
+    description:
+      'Professional legal firm site with ivory background, deep navy and brass accents. Practice areas, transparent fees, team filter, consultation CTA and an insights blog.',
+    pages: '9 pages',
+    features: ['Practice areas', 'Transparent fees', 'Team filter', 'Insights blog'],
+    url: 'https://aldridge-pryce.pages.dev',
+    iconColor: 'var(--nebula-purple)',
+    iconName: 'clipboard',
+  },
+  {
+    name: 'Hartwell & Stone',
+    industry: 'Premium Construction',
+    accent: '#b8860b',
+    description:
+      'High-end construction firm with charcoal and stone palette, brass accents. Before/after slider, multi-step quote form, filterable project portfolio and accreditation badges.',
+    pages: '9 pages',
+    features: ['Before/after slider', 'Multi-step quote form', 'Project portfolio', 'Accreditation badges'],
+    url: 'https://hartwell-stone.pages.dev',
+    iconColor: 'var(--solar-orange)',
+    iconName: 'tools',
+  },
+];
+
+const services = [
+  {
+    title: 'Bespoke Design',
+    description:
+      'No templates. Every site is designed around your brand, your customers and the way you actually do business.',
+    iconName: 'rocket',
+    color: 'var(--plasma-cyan)',
+  },
+  {
+    title: 'Mobile-First Build',
+    description:
+      'Your site looks sharp and works fast on every device, from phones to ultrawide monitors.',
+    iconName: 'mobile',
+    color: 'var(--aurora-green)',
+  },
+  {
+    title: 'Built-In SEO',
+    description:
+      'Schema markup, sitemap, fast load times and search-engine-ready structure included from day one.',
+    iconName: 'globe',
+    color: 'var(--solar-orange)',
+  },
+  {
+    title: 'Hosting Sorted',
+    description:
+      'I deploy your site to a fast global CDN. No fiddly hosting setup to worry about — it just works.',
+    iconName: 'database',
+    color: 'var(--nebula-purple)',
+  },
+  {
+    title: 'Same Person Forever',
+    description:
+      'You deal directly with me from quote to launch and beyond. No account managers, no handoffs.',
+    iconName: 'shield',
+    color: 'var(--primary-blue)',
+  },
+  {
+    title: 'Fast Turnaround',
+    description:
+      'Most small business sites go live within 2–4 weeks of brief sign-off, depending on content readiness.',
+    iconName: 'bolt',
+    color: 'var(--mars-red)',
+  },
+];
+
+const process = [
+  { step: '1', title: 'Discovery Call', text: 'A free 30-minute call to understand your business, your customers and your goals.' },
+  { step: '2', title: 'Quote & Brief', text: 'Fixed-price quote based on what you actually need. No surprises mid-project.' },
+  { step: '3', title: 'Design & Build', text: 'I design the layout, agree it with you, then build the site page by page with progress check-ins.' },
+  { step: '4', title: 'Review & Launch', text: 'You review on a private staging URL. Once you approve, I deploy to your domain.' },
+  { step: '5', title: 'Aftercare', text: 'Ongoing support packages available, or pay-as-you-go for tweaks and updates.' },
+];
+---
+
+<Layout
+  title="Web Design Romford & Essex | Chiltern Computers"
+  description="Bespoke websites built by Chiltern Computers in Harold Hill, Romford. Fast, mobile-first sites with built-in SEO. View live demos. Call 07971 331814."
+  keywords="web design romford, web designer harold hill, website builder essex, small business website romford, bespoke website design"
+  type="service"
+  publishedTime="2026-05-12"
+  modifiedTime="2026-05-12"
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Web Design', url: '/services/web-design/' },
+  ]}
+>
+  <main>
+    <!-- HERO -->
+    <section class="wd-hero">
+      <div class="wd-hero-bg" aria-hidden="true">
+        <div class="wd-hero-orb wd-orb-1"></div>
+        <div class="wd-hero-orb wd-orb-2"></div>
+        <div class="wd-hero-orb wd-orb-3"></div>
+      </div>
+      <div class="container wd-hero-content">
+        <div class="wd-hero-badge">
+          <Icon name="globe" size={14} />
+          <span>NEW SERVICE FROM CHILTERN COMPUTERS</span>
+        </div>
+        <h1 class="space-font galaxy-text cosmic-glow wd-hero-title">
+          Bespoke Websites,<br />Built by Hand
+        </h1>
+        <p class="alien-font wd-hero-subtitle">
+          Small business websites designed and built one at a time, by me, in Harold Hill.
+          Fast, mobile-first, SEO-ready — and not a template in sight.
+        </p>
+        <div class="wd-hero-cta">
+          <a href="/contact/" class="wd-btn wd-btn-primary">
+            <Icon name="rocket" size={16} />
+            Get a Free Quote
+          </a>
+          <a href="#portfolio" class="wd-btn wd-btn-ghost">
+            <Icon name="arrow-right" size={16} />
+            See Live Demos
+          </a>
+        </div>
+        <div class="wd-hero-stats">
+          <div class="wd-stat">
+            <div class="space-font wd-stat-num">5</div>
+            <div class="tech-font wd-stat-label">LIVE DEMO SITES</div>
+          </div>
+          <div class="wd-stat">
+            <div class="space-font wd-stat-num">2–4</div>
+            <div class="tech-font wd-stat-label">WEEKS TO LAUNCH</div>
+          </div>
+          <div class="wd-stat">
+            <div class="space-font wd-stat-num">1</div>
+            <div class="tech-font wd-stat-label">PERSON START TO FINISH</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="wd-section">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">WHAT YOU GET</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Every site I build comes with the basics done properly — not as upsells.
+          </p>
+        </div>
+        <div class="wd-services-grid">
+          {services.map((s) => (
+            <article class="cosmic-card wd-service-card">
+              <div class="wd-service-icon" style={`color: ${s.color}; border-color: ${s.color}; box-shadow: 0 0 25px ${s.color}55;`}>
+                <Icon name={s.iconName} size={32} />
+              </div>
+              <h3 class="space-font wd-service-title" style={`color: ${s.color};`}>{s.title}</h3>
+              <p class="alien-font wd-service-desc">{s.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="wd-section wd-section-alt">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">RECENT WORK</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Five live demos showing the range of what I build. Click through and try them on your phone — they're all fully responsive.
+          </p>
+        </div>
+        <div class="wd-portfolio-grid">
+          {portfolio.map((p) => (
+            <article class="cosmic-card wd-portfolio-card">
+              <div class="wd-portfolio-head" style={`border-bottom: 2px solid ${p.accent};`}>
+                <div class="wd-portfolio-icon" style={`color: ${p.iconColor}; border-color: ${p.iconColor};`}>
+                  <Icon name={p.iconName} size={28} />
+                </div>
+                <div class="wd-portfolio-meta">
+                  <div class="tech-font wd-portfolio-industry" style={`color: ${p.accent};`}>
+                    {p.industry.toUpperCase()}
+                  </div>
+                  <h3 class="space-font wd-portfolio-name">{p.name}</h3>
+                </div>
+              </div>
+              <p class="alien-font wd-portfolio-desc">{p.description}</p>
+              <ul class="wd-portfolio-features">
+                {p.features.map((f) => (
+                  <li>
+                    <Icon name="check-circle" size={14} class="wd-feat-icon" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="wd-portfolio-footer">
+                <span class="tech-font wd-portfolio-pages">{p.pages}</span>
+                <a
+                  href={p.url}
+                  class="wd-portfolio-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${p.name} live demo (opens in new tab)`}
+                >
+                  View Live Demo
+                  <Icon name="arrow-right" size={14} />
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="wd-section">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">HOW IT WORKS</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Simple, predictable, and built around your time — not mine.
+          </p>
+        </div>
+        <div class="wd-process-grid">
+          {process.map((p) => (
+            <div class="cosmic-card wd-process-card">
+              <div class="space-font wd-process-num">{p.step}</div>
+              <h3 class="space-font wd-process-title">{p.title}</h3>
+              <p class="alien-font wd-process-text">{p.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="wd-section wd-section-alt">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">COMMON QUESTIONS</h2>
+          <div class="wd-section-line"></div>
+        </div>
+        <div class="wd-faq-grid">
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">How much does a website cost?</summary>
+            <p class="alien-font wd-faq-a">
+              It depends on the number of pages, features and how much content you can provide yourself.
+              A simple brochure site for a small business typically starts in the low hundreds. I always
+              quote a fixed price up front after the discovery call — no hidden extras.
+            </p>
+          </details>
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">Do I own the site once it's built?</summary>
+            <p class="alien-font wd-faq-a">
+              Yes. You own the domain, the design and all the content. I deploy and maintain the hosting,
+              but you're never locked in — the code can be handed over if you want it.
+            </p>
+          </details>
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">What about ongoing maintenance?</summary>
+            <p class="alien-font wd-faq-a">
+              I offer two options: a monthly care plan that covers small tweaks, content edits, security
+              updates and a check-in call, or pay-as-you-go where you just message me when you need
+              something changed.
+            </p>
+          </details>
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">Will my site rank on Google?</summary>
+            <p class="alien-font wd-faq-a">
+              I build with the technical SEO foundations every site needs — fast load times, structured
+              data, sitemap, mobile-first design. Long-term ranking depends on your content, your local
+              presence and competition in your area, which I can advise on.
+            </p>
+          </details>
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">Can you redesign my existing site?</summary>
+            <p class="alien-font wd-faq-a">
+              Absolutely. If you've got an old or tired-looking site I can rebuild it from scratch with a
+              modern design, keep your existing content and URLs, and migrate everything over with no
+              downtime.
+            </p>
+          </details>
+          <details class="cosmic-card wd-faq-item">
+            <summary class="space-font wd-faq-q">Are you local?</summary>
+            <p class="alien-font wd-faq-a">
+              Yes — I'm based in Harold Hill, Romford, and most of my customers are within a 15-mile
+              radius. I'm happy to meet in person for the discovery call and pop in for any milestone
+              review. Remote work also fine if you're further out.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="wd-cta-section">
+      <div class="container">
+        <div class="wd-cta-card cosmic-card">
+          <h2 class="space-font galaxy-text cosmic-glow wd-cta-title">
+            Ready to talk about your website?
+          </h2>
+          <p class="alien-font wd-cta-sub">
+            Free, no-pressure discovery call. Tell me what you have in mind and I'll come back with
+            ideas and a fixed-price quote within 48 hours.
+          </p>
+          <div class="wd-cta-buttons">
+            <a href={`tel:${siteConfig.phone.mobile}`} class="wd-btn wd-btn-primary">
+              <Icon name="mobile" size={16} />
+              {siteConfig.phone.mobileDisplay}
+            </a>
+            <a href="/contact/" class="wd-btn wd-btn-ghost">
+              <Icon name="email" size={16} />
+              Send a Message
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    /* Page-scoped styling — matches the cosmic theme used across Chiltern Computers */
+    main {
+      background: linear-gradient(135deg, var(--deep-space) 0%, var(--darker-space) 50%, var(--void-black) 100%);
+      color: var(--starlight-white);
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* HERO */
+    .wd-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 80px;
+    }
+    .wd-hero-bg {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .wd-hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+    }
+    .wd-orb-1 { width: 400px; height: 400px; top: -100px; left: -100px; background: var(--primary-blue); }
+    .wd-orb-2 { width: 350px; height: 350px; top: 30%; right: -120px; background: var(--plasma-cyan); }
+    .wd-orb-3 { width: 300px; height: 300px; bottom: -80px; left: 30%; background: var(--nebula-purple); }
+    .wd-hero-content { position: relative; z-index: 2; text-align: center; }
+    .wd-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid var(--primary-blue);
+      border-radius: 25px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--primary-blue);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+    .wd-hero-title {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .wd-hero-subtitle {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: var(--comet-silver);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .wd-hero-cta {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .wd-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .wd-btn-primary {
+      background: linear-gradient(45deg, var(--primary-blue), var(--plasma-cyan));
+      color: #fff;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 20px rgba(59,130,246,0.4);
+    }
+    .wd-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59,130,246,0.6);
+    }
+    .wd-btn-ghost {
+      background: rgba(59,130,246,0.08);
+      color: var(--starlight-white);
+      border: 2px solid var(--primary-blue);
+    }
+    .wd-btn-ghost:hover {
+      background: rgba(59,130,246,0.18);
+      transform: translateY(-2px);
+    }
+    .wd-hero-stats {
+      display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    }
+    .wd-stat { text-align: center; }
+    .wd-stat-num {
+      font-size: 42px;
+      color: var(--primary-blue);
+      text-shadow: 0 0 20px rgba(59,130,246,0.5);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .wd-stat-label {
+      font-size: 11px;
+      color: var(--comet-silver);
+      letter-spacing: 1.5px;
+    }
+
+    /* SHARED SECTION STYLES */
+    .wd-section { padding: 80px 0; position: relative; }
+    .wd-section-alt {
+      background: linear-gradient(180deg, rgba(15,23,42,0.4), rgba(12,15,26,0.6));
+      border-top: 1px solid rgba(6,182,212,0.15);
+      border-bottom: 1px solid rgba(6,182,212,0.15);
+    }
+    .wd-section-head { text-align: center; margin-bottom: 60px; }
+    .wd-section-title { font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px; }
+    .wd-section-line {
+      height: 3px; width: 120px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--plasma-cyan));
+      margin: 0 auto 20px;
+      border-radius: 2px;
+    }
+    .wd-section-sub {
+      color: var(--comet-silver);
+      font-size: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* SERVICES GRID */
+    .wd-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .wd-service-card {
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .wd-service-card:hover {
+      transform: translateY(-6px);
+    }
+    .wd-service-icon {
+      width: 72px; height: 72px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid;
+      background: rgba(255,255,255,0.02);
+    }
+    .wd-service-title {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .wd-service-desc {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* PORTFOLIO GRID */
+    .wd-portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .wd-portfolio-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .wd-portfolio-card:hover {
+      transform: translateY(-6px);
+    }
+    .wd-portfolio-head {
+      display: flex; align-items: center; gap: 16px;
+      padding: 24px;
+    }
+    .wd-portfolio-icon {
+      width: 56px; height: 56px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      border: 2px solid;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,0.02);
+    }
+    .wd-portfolio-meta { flex: 1; min-width: 0; }
+    .wd-portfolio-industry {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      margin-bottom: 4px;
+    }
+    .wd-portfolio-name {
+      font-size: 22px;
+      color: var(--starlight-white);
+      margin: 0;
+      line-height: 1.2;
+    }
+    .wd-portfolio-desc {
+      padding: 20px 24px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .wd-portfolio-features {
+      padding: 0 24px 16px;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 16px;
+      margin: 0;
+    }
+    .wd-portfolio-features li {
+      display: flex; align-items: center; gap: 6px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13px;
+      color: var(--comet-silver);
+    }
+    .wd-feat-icon { color: var(--aurora-green); flex-shrink: 0; }
+    .wd-portfolio-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.2);
+    }
+    .wd-portfolio-pages {
+      font-size: 12px;
+      color: var(--comet-silver);
+      letter-spacing: 1px;
+    }
+    .wd-portfolio-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--plasma-cyan);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--plasma-cyan);
+      background: rgba(6,182,212,0.08);
+      transition: all 0.3s ease;
+    }
+    .wd-portfolio-link:hover {
+      background: var(--plasma-cyan);
+      color: var(--deep-space);
+      transform: translateX(4px);
+    }
+
+    /* PROCESS GRID */
+    .wd-process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .wd-process-card {
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .wd-process-card:hover { transform: translateY(-4px); }
+    .wd-process-num {
+      font-size: 48px;
+      color: var(--primary-blue);
+      text-shadow: 0 0 20px rgba(59,130,246,0.5);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .wd-process-title {
+      font-size: 16px;
+      color: var(--plasma-cyan);
+      margin-bottom: 12px;
+    }
+    .wd-process-text {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .wd-faq-grid {
+      display: grid;
+      gap: 14px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .wd-faq-item {
+      padding: 0;
+      overflow: hidden;
+    }
+    .wd-faq-q {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      color: var(--starlight-white);
+      list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+      transition: color 0.3s ease;
+    }
+    .wd-faq-q::after {
+      content: '+';
+      font-size: 24px;
+      color: var(--primary-blue);
+      transition: transform 0.3s ease;
+    }
+    .wd-faq-item[open] .wd-faq-q { color: var(--primary-blue); }
+    .wd-faq-item[open] .wd-faq-q::after { transform: rotate(45deg); }
+    .wd-faq-a {
+      padding: 0 24px 20px;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* CTA */
+    .wd-cta-section { padding: 80px 0; }
+    .wd-cta-card {
+      padding: 56px 40px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.08));
+      border: 2px solid rgba(59,130,246,0.3);
+    }
+    .wd-cta-title {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 16px;
+    }
+    .wd-cta-sub {
+      color: var(--comet-silver);
+      font-size: 17px;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .wd-cta-buttons {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .wd-hero { padding: 60px 0 50px; }
+      .wd-section { padding: 56px 0; }
+      .wd-hero-stats { gap: 32px; }
+      .wd-stat-num { font-size: 32px; }
+      .wd-portfolio-features { grid-template-columns: 1fr; }
+      .wd-portfolio-head { flex-direction: column; text-align: center; gap: 12px; }
+      .wd-portfolio-footer { flex-direction: column; gap: 12px; align-items: stretch; text-align: center; }
+      .wd-portfolio-link { justify-content: center; }
+      .wd-cta-card { padding: 40px 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wd-hero-orb { animation: none; }
+      .wd-btn, .wd-service-card, .wd-portfolio-card, .wd-process-card, .wd-portfolio-link {
+        transition: none;
+      }
+    }
+  </style>
+</Layout>
