@@ -3,6 +3,42 @@ import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../config';
 import Icon from '../../components/Icon.astro';
 
+const liveSites = [
+  {
+    name: 'Chiltern Computers',
+    industry: 'Computer Repair · Tech Services',
+    accent: '#06b6d4',
+    description:
+      'My own business — the site you are reading right now. Computer repair shop in Harold Hill with 75+ pages: service catalogue, 30+ area-specific landing pages for local SEO, blog and online booking flow. Built with Astro and deployed on Cloudflare Pages.',
+    pages: '75+ pages',
+    features: ['Local SEO across 30+ areas', 'Online booking', 'Blog & insights', 'Full schema markup'],
+    url: 'https://chilterncomputers.net',
+    iconName: 'cpu',
+  },
+  {
+    name: 'FreshWax',
+    industry: 'Music · Record Label',
+    accent: '#f59e0b',
+    description:
+      'Independent music site with release catalogue, artist profiles and direct purchase / streaming links. Fast and lean for record-shop browsing — designed to put the music first.',
+    pages: 'Multi-page',
+    features: ['Release catalogue', 'Artist profiles', 'Audio links', 'Mobile-first browsing'],
+    url: 'https://freshwax.co.uk',
+    iconName: 'star',
+  },
+  {
+    name: 'Flames After Dark',
+    industry: 'Independent Artist Hub',
+    accent: '#ea580c',
+    description:
+      'Custom-built artist platform for an electronic music collective. Includes a full CMS with auth, gallery management, music features, blog with comments, visitor stats and an inbox — all powered by Cloudflare Workers, R2 storage and KV. Lighthouse averages 99 desktop / 98 mobile.',
+    pages: '10 pages + CMS',
+    features: ['Custom CMS dashboard', 'Gallery & music features', 'Live comments + spam filter', 'Visitor analytics'],
+    url: 'https://flames-after-dark.co.uk',
+    iconName: 'bolt',
+  },
+];
+
 const portfolio = [
   {
     name: 'Forge Gym',
@@ -163,15 +199,15 @@ const process = [
             <Icon name="rocket" size={16} />
             Get a Free Quote
           </a>
-          <a href="#portfolio" class="wd-btn wd-btn-ghost">
+          <a href="#live-sites" class="wd-btn wd-btn-ghost">
             <Icon name="arrow-right" size={16} />
-            See Live Demos
+            See My Work
           </a>
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
-            <div class="space-font wd-stat-num">5</div>
-            <div class="tech-font wd-stat-label">LIVE DEMO SITES</div>
+            <div class="space-font wd-stat-num">8</div>
+            <div class="tech-font wd-stat-label">DEPLOYED SITES</div>
           </div>
           <div class="wd-stat">
             <div class="space-font wd-stat-num">2–4</div>
@@ -209,14 +245,91 @@ const process = [
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="wd-section wd-section-alt">
+    <!-- LIVE SITES -->
+    <section id="live-sites" class="wd-section wd-section-alt">
       <div class="container">
         <div class="wd-section-head">
-          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">RECENT WORK</h2>
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">LIVE SITES</h2>
           <div class="wd-section-line"></div>
           <p class="alien-font wd-section-sub">
-            Five live demos showing the range of what I build. Click through and try them on your phone — they're all fully responsive.
+            Real businesses, real traffic — all designed, built and hosted by me.
+          </p>
+        </div>
+        <div class="wd-stack-grid">
+          {liveSites.map((p, i) => (
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${p.name} (opens in new tab)`}
+              class={`cosmic-card wd-stack-card${i % 2 === 1 ? ' wd-stack-reverse' : ''}`}
+              style={`--accent: ${p.accent};`}
+            >
+              <div class="wd-stack-text">
+                <div class="tech-font wd-stack-industry">
+                  <span class="wd-live-badge">LIVE</span>
+                  {p.industry.toUpperCase()}
+                </div>
+                <h3 class="space-font wd-stack-name">{p.name}</h3>
+                <p class="alien-font wd-stack-desc">{p.description}</p>
+                <ul class="wd-stack-features">
+                  {p.features.map((f) => (
+                    <li>
+                      <Icon name="check-circle" size={14} class="wd-feat-icon" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="wd-stack-footer">
+                  <span class="tech-font wd-stack-pages">{p.pages}</span>
+                  <span class="wd-stack-cta">
+                    Visit Live Site
+                    <Icon name="arrow-right" size={14} />
+                  </span>
+                </div>
+              </div>
+              <div class="wd-stack-preview" aria-hidden="true">
+                <div class="wd-browser-frame">
+                  <div class="wd-browser-bar">
+                    <span class="wd-browser-dot wd-bd-r"></span>
+                    <span class="wd-browser-dot wd-bd-y"></span>
+                    <span class="wd-browser-dot wd-bd-g"></span>
+                    <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
+                  </div>
+                  <div class="wd-mock-canvas">
+                    <div class="wd-mock-nav">
+                      <span class="wd-mock-logo">{p.name}</span>
+                      <span class="wd-mock-nav-items">
+                        <span></span><span></span><span></span><span></span>
+                      </span>
+                    </div>
+                    <div class="wd-mock-hero">
+                      <div class="wd-mock-h1"></div>
+                      <div class="wd-mock-h2"></div>
+                      <div class="wd-mock-btn">EXPLORE</div>
+                    </div>
+                    <div class="wd-mock-cards">
+                      <div class="wd-mock-card"></div>
+                      <div class="wd-mock-card"></div>
+                      <div class="wd-mock-card"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO DESIGNS -->
+    <section id="portfolio" class="wd-section">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">DEMO DESIGNS</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Five showcase sites covering different industries. Each one is fully responsive — click through and try them on your phone.
           </p>
         </div>
         <div class="wd-stack-grid">
@@ -671,6 +784,40 @@ const process = [
       color: var(--accent, var(--plasma-cyan));
       margin-bottom: 10px;
       text-shadow: 0 0 12px color-mix(in srgb, var(--accent, #06b6d4) 60%, transparent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .wd-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      background: var(--aurora-green);
+      color: var(--deep-space);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      border-radius: 4px;
+      position: relative;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+    }
+    .wd-live-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--deep-space);
+      animation: wd-live-pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes wd-live-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wd-live-badge::before { animation: none; }
     }
     .wd-stack-name {
       font-size: clamp(24px, 3vw, 32px);
