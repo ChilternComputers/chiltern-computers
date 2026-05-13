@@ -1,3 +1,9 @@
+# Default for every response: security headers + a "revalidate on every
+# visit" cache policy for HTML. Specific asset patterns below override
+# Cache-Control with a long-lived cache where the URL is hash-named.
+# CF Pages applies all matching rules; later, more-specific patterns win
+# on a per-header basis (so /_astro/*'s long-cache Cache-Control beats
+# this catchall for asset paths).
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -10,6 +16,7 @@
   Cross-Origin-Resource-Policy: same-origin
   X-DNS-Prefetch-Control: on
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://*.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://*.cloudflareinsights.com; frame-src 'none'; object-src 'none'; base-uri 'self'; worker-src 'self'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests
+  Cache-Control: public, max-age=0, must-revalidate, s-maxage=60
 
 /sw.js
   Cache-Control: no-cache
@@ -36,11 +43,8 @@
 /icons/*
   Cache-Control: public, max-age=31536000, immutable
 
-/*.html
-  Cache-Control: public, max-age=3600, s-maxage=86400
-
 /sitemap.xml
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
 
 /sitemap-index.xml
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600

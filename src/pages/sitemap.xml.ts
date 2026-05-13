@@ -4,9 +4,9 @@ import { siteConfig } from '../config';
 
 export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
-  const lastUpdated = '2026-05-05';
+  const lastUpdated = '2026-05-13';
 
-  // All pages verified against src/pages/ — 76 URLs
+  // All pages verified against src/pages/ + public/ static routes — 83 URLs
   const routes = [
     // Homepage
     { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
@@ -15,7 +15,8 @@ export const GET: APIRoute = async () => {
     { url: '/services/repairs/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/custom-pcs/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/new-used/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
-    { url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: '2026-05-12' },
+    { url: '/services/web-design/', priority: 0.9, changefreq: 'monthly', lastmod: '2026-05-13' },
+    { url: '/portfolio-report/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-05-13' },
     { url: '/services/data-recovery-havering/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/laptop-repair-dagenham/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/virus-removal-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },

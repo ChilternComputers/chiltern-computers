@@ -16,6 +16,7 @@ const allSites = [
   { slug: 'chiltern-computers', url: 'https://chilterncomputers.net' },
   { slug: 'freshwax', url: 'https://freshwax.co.uk' },
   { slug: 'flames-after-dark', url: 'https://flames-after-dark.co.uk' },
+  { slug: 'rebel-culture', url: 'https://rebelculture.org' },
 ];
 const sites = onlyArg
   ? allSites.filter((s) => onlyArg.split(',').includes(s.slug))

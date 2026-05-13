@@ -51,6 +51,18 @@ const liveSites = [
     url: 'https://flames-after-dark.co.uk',
     iconName: 'bolt',
   },
+  {
+    name: 'Rebel Culture',
+    industry: 'Community Sound System',
+    accent: '#16a34a',
+    description:
+      'Site for an independent sound-system crew running 15,000 watts across warehouses, venues and fields. Event listings with ticketing, "The Rig" page detailing the sound and lighting kit, gallery and a community sign-up flow. A raw, dark warehouse aesthetic that still hits a Lighthouse 96 / 100 / 100 / 100 — proof that bold design and clean code don\'t have to be opposites.',
+    pages: 'Multi-page',
+    slug: 'rebel-culture',
+    features: ['Event listings + ticketing', '"The Rig" kit showcase', 'Photo + media gallery', 'Underground brand identity'],
+    url: 'https://rebelculture.org',
+    iconName: 'bolt',
+  },
 ];
 
 const portfolio = [
@@ -233,6 +245,10 @@ const process = [
           <a href="#live-sites" class="wd-btn wd-btn-ghost">
             <Icon name="arrow-right" size={16} />
             See My Work
+          </a>
+          <a href="/portfolio-report/" class="wd-btn wd-btn-ghost">
+            <Icon name="signal" size={16} />
+            Performance Report
           </a>
         </div>
         <div class="wd-hero-stats">
@@ -629,6 +645,7 @@ const process = [
       animation: wd-cta-fade 0.6s ease-out 4.1s forwards;
     }
     .wd-hero-cta .wd-btn:nth-child(2) { animation-delay: 4.25s; }
+    .wd-hero-cta .wd-btn:nth-child(3) { animation-delay: 4.4s; }
     @keyframes wd-cta-fade {
       0%   { opacity: 0; transform: translateY(8px); }
       100% { opacity: 1; transform: translateY(0); }

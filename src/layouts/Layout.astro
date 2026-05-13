@@ -167,8 +167,38 @@ const {
       }
     </script>
     <script>
+      // Register the service worker. If a new version is detected on a
+      // returning visit, take over immediately so the visitor sees the
+      // refreshed site without needing to hard-reload — the next click
+      // / navigation pulls from the new SW.
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(() => {});
+        navigator.serviceWorker.register('/sw.js').then((reg) => {
+          if (!reg) return;
+          // If there's already a waiting worker, tell it to activate now
+          if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+          reg.addEventListener('updatefound', () => {
+            const nw = reg.installing;
+            if (!nw) return;
+            nw.addEventListener('statechange', () => {
+              if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                // New SW is ready; activate it so the next navigation
+                // serves fresh content.
+                nw.postMessage({ type: 'SKIP_WAITING' });
+              }
+            });
+          });
+          // Periodically check for updates while the tab is open.
+          setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+        }).catch(() => {});
+
+        // When the active SW changes, reload once so the visitor's tab
+        // starts using the new code.
+        let refreshing = false;
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+          if (refreshing) return;
+          refreshing = true;
+          window.location.reload();
+        });
       }
     </script>
   </body>
