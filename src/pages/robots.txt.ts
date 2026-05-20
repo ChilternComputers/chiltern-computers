@@ -9,6 +9,9 @@ User-agent: *
 Allow: /
 Disallow: /offline/
 Disallow: /thank-you/
+# Disallow common crawl traps (filtered URLs add no SEO value)
+Disallow: /*?*sort=
+Disallow: /*?*filter=
 
 User-agent: Googlebot
 Allow: /
