@@ -174,10 +174,17 @@ const localBusinessSchema = {
       },
     ],
   },
+  // Google policy (since Aug 2019) requires aggregate ratings to be
+  // supported by reviews actually visible on the page. The homepage
+  // renders the 4 reviews from data/reviews.ts via getReviews(4) — schema
+  // matches that. If more reviews are added to data/reviews.ts AND
+  // rendered on-page, update reviewCount to match. Don't claim Google
+  // Maps totals here — that's a structured-data policy violation that
+  // can lose rich snippets entirely.
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: 5,
-    reviewCount: 127,
+    reviewCount: 4,
     bestRating: 5,
     worstRating: 1,
   },
@@ -530,7 +537,12 @@ const reviewsGraph = reviewSchemas.length > 0
 <meta property="business:contact_data:street_address" content="38 Hilldene Avenue" />
 <meta property="business:contact_data:locality" content="Harold Hill" />
 <meta property="business:contact_data:region" content="Essex" />
-<meta property="business:contact_data:phone_number" content="01708347341" />
+<meta property="business:contact_data:postal_code" content="RM3 8YP" />
+<meta property="business:contact_data:country_name" content="United Kingdom" />
+<!-- NAP: phone must match localBusinessSchema.telephone exactly. Main
+     line is the mobile in E.164 format (+447971331814). The landline
+     is exposed separately on Organization.contactPoint as a secondary. -->
+<meta property="business:contact_data:phone_number" content="+447971331814" />
 {publishedTime && <meta property="article:published_time" content={publishedTime} />}
 {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 

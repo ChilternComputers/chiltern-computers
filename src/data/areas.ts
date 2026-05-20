@@ -45,7 +45,7 @@ export const areas: AreaData[] = [
           "Yes! As I'm based in Harold Hill, most software repairs and virus removal can be completed same day. Hardware repairs typically take 24-48 hours depending on parts availability.",
       },
       {
-        question: 'What are your opening hours?',
+        question: 'What are your opening hours in Harold Hill?',
         answer:
           "I'm open 7 days a week, 9AM to 9PM. You can drop off your computer or call me on 07971 331814 to arrange a convenient time.",
       },
@@ -136,7 +136,7 @@ export const areas: AreaData[] = [
           'Most repairs are completed within 24-48 hours. I offer same-day service for urgent repairs. Collection from Hornchurch is typically within a few hours of booking.',
       },
       {
-        question: 'What brands do you repair?',
+        question: 'What brands do you repair for Hornchurch customers?',
         answer:
           'I repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, and custom-built PCs. Both Windows and Mac systems.',
       },
@@ -173,7 +173,7 @@ export const areas: AreaData[] = [
           "Most repairs completed within 24-48 hours. Same-day service available for urgent repairs. I'm open 7 days a week, 9AM-9PM.",
       },
       {
-        question: 'Do you repair gaming PCs?',
+        question: 'Do you repair gaming PCs in Upminster?',
         answer:
           'Yes! I specialise in gaming PC repairs and upgrades. I can also build custom gaming PCs to your specifications.',
       },
@@ -235,7 +235,7 @@ export const areas: AreaData[] = [
           'Full PC and laptop repairs, virus removal, data recovery, screen replacements, upgrades, and more. I also sell new and refurbished computers.',
       },
       {
-        question: 'Are you open weekends?',
+        question: 'Are you open at weekends for Rainham customers?',
         answer: "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays.",
       },
     ],
@@ -328,7 +328,7 @@ export const areas: AreaData[] = [
           "I'm open 9AM-9PM, 7 days a week. Call ahead on 07971 331814 and I can arrange a convenient time for you.",
       },
       {
-        question: 'Do you sell refurbished laptops?',
+        question: 'Do you sell refurbished laptops in Collier Row?',
         answer:
           'Yes! I have a range of quality refurbished laptops starting from £150, all with Windows 11 and a warranty.',
       },
@@ -354,7 +354,7 @@ export const areas: AreaData[] = [
           'Same competitive prices for all customers. Software repairs from £30, virus removal from £40, screen repairs from £60. £20 diagnostic check — waived if you proceed with repair.',
       },
       {
-        question: 'How do I book a repair?',
+        question: 'How do I book a repair from Chadwell Heath?',
         answer:
           'Call me on 07971 331814 or visit my contact page. I can usually arrange collection within a few hours.',
       },
@@ -380,7 +380,7 @@ export const areas: AreaData[] = [
           'Yes! I cover Elm Park and all RM12 postcodes. Collection and drop-off available from Elm Park Station and surrounding areas.',
       },
       {
-        question: 'Can you fix my laptop screen?',
+        question: 'Can you fix my laptop screen in Elm Park?',
         answer:
           'Yes! I repair cracked and broken laptop screens. Most common screens in stock for quick turnaround.',
       },
@@ -447,7 +447,7 @@ export const areas: AreaData[] = [
           "I can usually collect from Cranham within a few hours of booking. Call 07971 331814 to arrange. I'm open 7 days a week, 9AM to 9PM.",
       },
       {
-        question: 'Do you fix slow computers?',
+        question: 'Do you fix slow computers in Cranham?',
         answer:
           "Yes! Slow PC diagnosis is one of my most popular services. I'll identify the cause — whether it's malware, a failing hard drive, or simply needing an SSD upgrade — and get it running fast again.",
       },
@@ -540,12 +540,12 @@ export const areas: AreaData[] = [
           "I offer a collection and drop-off service for South Hornchurch customers. Just call 07971 331814 and I'll arrange a convenient time. Or drop off at my Harold Hill workshop.",
       },
       {
-        question: 'What services do you offer?',
+        question: 'What services do you offer for South Hornchurch customers?',
         answer:
           'Full PC and laptop repairs, virus removal, data recovery, screen and keyboard replacements, SSD upgrades, and more. I also sell new and refurbished computers.',
       },
       {
-        question: 'Do you offer a warranty on repairs?',
+        question: 'Do you offer a warranty on South Hornchurch repairs?',
         answer:
           'Yes, all my repairs come with a warranty. I also operate on a no fix, no fee basis — so you only pay if I successfully resolve your issue.',
       },
@@ -628,7 +628,7 @@ export const areas: AreaData[] = [
           'Yes! I cover Barking and all IG11 postcodes. Collection and drop-off available from Barking Station, Vicarage Field, and all surrounding areas.',
       },
       {
-        question: 'How much does a repair cost?',
+        question: 'How much does a repair cost for Barking customers?',
         answer:
           'Software repairs start from just £30, virus removal from £40, and screen replacements from £60. I offer a £20 diagnostic check — waived if you proceed with the repair. No fix, no fee applies to unfixable issues.',
       },
@@ -638,7 +638,7 @@ export const areas: AreaData[] = [
           'Yes, I repair all types of computers — desktops, laptops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
       },
       {
-        question: 'How long do repairs take?',
+        question: 'How long do repairs take for Barking customers?',
         answer:
           "Most software repairs and virus removal can be completed within 24 hours. Hardware repairs typically take 24-48 hours depending on parts. I'm open 7 days a week for your convenience.",
       },
@@ -731,7 +731,7 @@ export const areas: AreaData[] = [
           'I fix everything from virus infections, slow performance, and blue screens to cracked screens, keyboard failures, and data loss. If it has a power button, I can probably fix it!',
       },
       {
-        question: 'Do you offer a no fix, no fee guarantee?',
+        question: 'Do you offer a no fix, no fee guarantee in Goodmayes?',
         answer:
           "I charge just £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If the issue is unfixable — liquid damage, unavailable parts — no fix, no fee applies.",
       },
@@ -762,7 +762,7 @@ export const areas: AreaData[] = [
           'Yes, I repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows PCs and Apple Macs.',
       },
       {
-        question: 'What are your opening hours?',
+        question: 'What are your opening hours for Pilgrims Hatch customers?',
         answer:
           "I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to arrange a repair.",
       },
@@ -793,7 +793,7 @@ export const areas: AreaData[] = [
           "Yes! An SSD upgrade is one of the best ways to speed up an older computer. I'll clone your existing drive so you don't lose any data. Upgrades from £60 including fitting.",
       },
       {
-        question: 'Do you offer a warranty on repairs?',
+        question: 'Do you offer a warranty on Warley repairs?',
         answer:
           'Yes, all my repairs come with a warranty. I also operate on a no fix, no fee basis — you only pay if I successfully resolve your issue.',
       },
@@ -819,12 +819,12 @@ export const areas: AreaData[] = [
           "I offer a collection and drop-off service for Wennington customers. Call 07971 331814 and I'll come to you. Or drop off at my Harold Hill workshop.",
       },
       {
-        question: 'What services do you offer?',
+        question: 'What services do you offer in Wennington?',
         answer:
           'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, keyboard repairs, and more. I also sell new and refurbished computers.',
       },
       {
-        question: 'Are you open at weekends?',
+        question: 'Are you open at weekends for Wennington customers?',
         answer:
           "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
       },
@@ -845,12 +845,12 @@ export const areas: AreaData[] = [
           "Yes! I'm just 3.5 miles from Stapleford Abbotts in Harold Hill. Collection and drop-off service available throughout the village and surrounding lanes.",
       },
       {
-        question: 'Is there a callout charge?',
+        question: 'Is there a callout charge for Stapleford Abbotts?',
         answer:
           'Collection and drop-off service available. I charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
-        question: 'Can you fix my laptop screen?',
+        question: 'Can you fix my laptop screen for Stapleford Abbotts customers?',
         answer:
           'Yes! I repair cracked, broken, and flickering laptop screens. I stock screens for most popular models and can often complete the repair within 24 hours.',
       },
@@ -876,17 +876,17 @@ export const areas: AreaData[] = [
           'Yes! I cover Becontree and surrounding RM8/RM9 postcodes. Collection and drop-off available from Becontree Station, Valence Park area, and all surrounding streets.',
       },
       {
-        question: 'How much does a repair cost?',
+        question: 'How much does a repair cost for Becontree customers?',
         answer:
           'Software repairs from £30, virus removal from £40, screen replacements from £60. £20 diagnostic check — waived if you go ahead with repair. No fix, no fee on unfixable issues.',
       },
       {
-        question: 'How long do repairs take?',
+        question: 'How long do repairs take for Becontree customers?',
         answer:
           "Most software repairs and virus removal completed within 24 hours. Hardware repairs typically 24-48 hours depending on parts. I'm open 7 days a week.",
       },
       {
-        question: 'Do you repair gaming PCs?',
+        question: 'Do you repair gaming PCs for Becontree customers?',
         answer:
           'Yes! I specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds.',
       },
@@ -912,7 +912,7 @@ export const areas: AreaData[] = [
           "Yes, collection and drop-off service throughout Rush Green. I can usually collect within a couple of hours. Call 07971 331814 to arrange. I'm open 7 days.",
       },
       {
-        question: 'Do you fix slow computers?',
+        question: 'Do you fix slow computers for Rush Green customers?',
         answer:
           "Yes! I'll diagnose why your computer is running slow — whether it's malware, a failing drive, or simply needing a cleanup and SSD upgrade. £20 diagnostic check included — waived if you proceed with repair.",
       },
@@ -938,7 +938,7 @@ export const areas: AreaData[] = [
           'Yes! I cover Seven Kings and the wider IG3 area. Collection and drop-off available from Seven Kings Station, High Road, and all surrounding streets.',
       },
       {
-        question: 'How do I book a repair?',
+        question: 'How do I book a repair from Seven Kings?',
         answer:
           "Call me on 07971 331814 or use my contact form. I can arrange collection and drop-off from Seven Kings, usually within a few hours. I'm open 7 days, 9AM to 9PM.",
       },
@@ -974,12 +974,12 @@ export const areas: AreaData[] = [
           'Yes, collection and drop-off service for all Marks Gate customers. Call 07971 331814 and I can usually be with you within the hour.',
       },
       {
-        question: 'What are your prices?',
+        question: 'What are your prices for Marks Gate customers?',
         answer:
           'Competitive fixed prices with a £20 diagnostic check — waived if you proceed with repair. Software repairs from £30, virus removal from £40, screen replacements from £60. No fix, no fee on unfixable issues.',
       },
       {
-        question: 'Do you sell refurbished laptops?',
+        question: 'Do you sell refurbished laptops to Marks Gate customers?',
         answer:
           'Yes! I have a range of quality refurbished PCs and laptops starting from £150, all with Windows 11 installed and a warranty included.',
       },
@@ -1129,12 +1129,12 @@ export const areas: AreaData[] = [
           'No! Collection and delivery is free regardless of location. North Ockendon is about 5 miles from my base in Harold Hill. Call 07971 331814 to arrange.',
       },
       {
-        question: 'What services do you offer?',
+        question: 'What services do you offer in North Ockendon?',
         answer:
           'Full PC and laptop repairs, virus removal, data recovery, screen replacements, SSD upgrades, new computer sales, and more. All brands serviced.',
       },
       {
-        question: 'Are you open at weekends?',
+        question: 'Are you open at weekends in North Ockendon?',
         answer:
           "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect for those who can't get to me during the week.",
       },
@@ -1165,7 +1165,7 @@ export const areas: AreaData[] = [
           'Yes, I repair all types of computers — laptops, desktops, all-in-ones, and gaming PCs. All brands including Dell, HP, Lenovo, Asus, Acer, and Apple.',
       },
       {
-        question: 'What are your prices?',
+        question: 'What are your prices for Gants Hill customers?',
         answer:
           'Software repairs from £30, virus removal from £40, screen replacements from £60. £20 diagnostic check — waived if you go ahead with repair. No fix, no fee on unfixable issues.',
       },
@@ -1196,7 +1196,7 @@ export const areas: AreaData[] = [
           'Yes, I repair Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, and all other brands. Both Windows and Mac systems.',
       },
       {
-        question: 'What are your opening hours?',
+        question: 'What are your opening hours for Barkingside customers?',
         answer:
           "I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Call anytime to book a repair.",
       },
@@ -1227,7 +1227,7 @@ export const areas: AreaData[] = [
           "Yes! I'll diagnose why your laptop is running slow — whether it's malware, a failing hard drive, or simply needing an SSD upgrade. Most issues resolved same day.",
       },
       {
-        question: 'Do you offer a no fix, no fee guarantee?',
+        question: 'Do you offer a no fix, no fee guarantee for Newbury Park customers?',
         answer:
           "I charge £20 for a full diagnostic, usually completed within an hour. If you go ahead with the repair, the £20 is waived. If it's unfixable — liquid damage, unavailable parts — no fix, no fee applies. No hidden charges.",
       },
@@ -1253,7 +1253,7 @@ export const areas: AreaData[] = [
           "I'm about 6 miles from Shenfield in Harold Hill. I offer a collection and drop-off service — call 07971 331814 to arrange.",
       },
       {
-        question: 'Do you repair gaming PCs?',
+        question: 'Do you repair gaming PCs in Shenfield?',
         answer:
           'Yes! I specialise in gaming PC repairs and upgrades including graphics card replacements, RAM upgrades, cooling solutions, and custom builds to your spec.',
       },
@@ -1341,12 +1341,12 @@ export const areas: AreaData[] = [
           "Yes! I'm just 4 miles from Aldborough Hatch in Harold Hill. Collection and drop-off service available throughout the area.",
       },
       {
-        question: 'Is there a callout charge?',
+        question: 'Is there a callout charge for Aldborough Hatch?',
         answer:
           'Collection and drop-off service available. I charge £20 for a full diagnostic — waived if you go ahead with the repair. No fix, no fee applies to unfixable issues.',
       },
       {
-        question: 'What brands do you repair?',
+        question: 'What brands do you repair for Aldborough Hatch customers?',
         answer:
           'I repair all brands including Dell, HP, Lenovo, Asus, Acer, Apple MacBooks, Samsung, Toshiba, and custom-built PCs.',
       },
@@ -1413,7 +1413,7 @@ export const areas: AreaData[] = [
           'Yes, I provide professional data recovery from failed hard drives, SSDs, USB drives, and memory cards. Free assessment before any charges apply.',
       },
       {
-        question: 'Are you open at weekends?',
+        question: 'Are you open at weekends for Hutton customers?',
         answer:
           "Yes! I'm open 7 days a week, 9AM to 9PM, including weekends and bank holidays. Perfect if you can't get to me during the working week.",
       },
