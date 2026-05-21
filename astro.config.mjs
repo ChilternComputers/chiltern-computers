@@ -1,22 +1,20 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
-import sitemap from '@astrojs/sitemap';
 
+// Sitemap is hand-curated at src/pages/sitemap.xml.ts (83 URLs with
+// per-route priorities and changefreq). @astrojs/sitemap was previously
+// installed but only emitted 1 URL into sitemap-0.xml — likely an
+// edge-case interaction with the custom /sitemap.xml endpoint. Since
+// the custom endpoint is the canonical sitemap (referenced from
+// robots.txt) and covers everything we want indexed, removing the
+// integration is cleaner than chasing a fix.
 export default defineConfig({
   site: 'https://chilterncomputers.net',
   trailingSlash: 'always',
   build: {
     inlineStylesheets: 'always',
   },
-  integrations: [sitemap({
-    filter: (page) =>
-      !page.includes('/privacy-policy/') &&
-      !page.includes('/terms-of-service/') &&
-      !page.includes('/accessibility/') &&
-      !page.includes('/thank-you/') &&
-      !page.includes('/free-play/') &&
-      !page.includes('/404'),
-  })],
+  integrations: [],
   vite: {
     plugins: [tailwindcss()],
   },
