@@ -1,9 +1,13 @@
 # Default for every response: security headers + a "revalidate on every
 # visit" cache policy for HTML. Specific asset patterns below override
-# Cache-Control with a long-lived cache where the URL is hash-named.
-# CF Pages applies all matching rules; later, more-specific patterns win
-# on a per-header basis (so /_astro/*'s long-cache Cache-Control beats
-# this catchall for asset paths).
+# Cache-Control. CF Pages applies all matching rules but when the same
+# header is set by two patterns, the MORE SPECIFIC pattern wins entirely
+# for that header (not merged). That subtlety bit us in 2026-05-21 when
+# /icons/* defined Cache-Control without an s-maxage override and the
+# CDN held the previous favicon for the full max-age. Rules now split
+# between truly-immutable (hashed URLs in /_astro/*) and stable-URL
+# assets that need a short edge revalidation window so the next deploy
+# propagates within a minute.
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -21,27 +25,31 @@
 /sw.js
   Cache-Control: no-cache
 
-/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
-  Cross-Origin-Resource-Policy: cross-origin
-
+# Truly immutable — hashed filenames change when content changes
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
+# Stable-URL assets — long browser cache, short edge cache so the CDN
+# refetches within 60s of a deploy. Critical for files that can change
+# without their URL changing (favicons, logos, icon pack).
+/fonts/*
+  Cache-Control: public, max-age=31536000, s-maxage=60
+  Cross-Origin-Resource-Policy: cross-origin
+
 /*.webp
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=60
 
 /*.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=60
 
 /*.jpg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=60
 
 /favicon.svg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=60
 
 /icons/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=31536000, s-maxage=60
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
