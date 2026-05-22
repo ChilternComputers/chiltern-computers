@@ -86,8 +86,9 @@ export const GET: APIRoute = async () => {
     { url: '/areas/fairlop/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/areas/hutton/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
 
-    // Blog pages (14)
+    // Blog pages (15)
     { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: lastUpdated },
+    { url: '/blog/windows-11-macbook-air-2017-bootcamp-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-22' },
     { url: '/blog/gaming-pc-overheating-summer-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-05' },
     { url: '/blog/computer-repair-cost-romford/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
     { url: '/blog/signs-laptop-needs-repairing/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-18' },
