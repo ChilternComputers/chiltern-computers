@@ -44,6 +44,20 @@
    - `/services/laptop-repair-dagenham/` - targeting weak southern area
    - `/services/data-recovery-havering/` - borough-wide coverage
 
+### Actions Taken (11th Jun 2026)
+
+1. Created `/services/computer-repair-ilford/` - targeting the Ilford/Redbridge
+   red zone (was "not ranking"). Cross-linked from laptop-repair-dagenham.
+2. Published blog post `/blog/windows-10-extended-security-updates-ending-2026/` -
+   consumer ESU ends 13 Oct 2026; timely high-volume topic, funnels to Windows
+   installation, upgrades, and new/used PC pages. Cross-linked from the older
+   Windows 11 unsupported-PC post.
+3. Expanded `llms.txt` (PLAN Fix 2.3, previously unapplied): full NAP, both
+   phone numbers, email, all service page URLs, area list, pricing - for
+   AI-search (ChatGPT/Perplexity/Google AI) discoverability.
+4. Next scan: re-check "computer repair ilford" + verify virus removal romford
+   page is now ranking.
+
 ---
 
 ## Citations & Listings
