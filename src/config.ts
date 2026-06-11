@@ -23,6 +23,7 @@ export const siteConfig = {
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=61587354241770',
     google: 'https://g.page/chilterncomputers',
+    linkedin: 'https://www.linkedin.com/company/chiltern-computers/',
   },
 
   // "Leave a review" destinations — rendered by GoogleReviews.astro.

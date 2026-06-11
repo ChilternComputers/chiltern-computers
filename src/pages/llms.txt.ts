@@ -52,6 +52,8 @@ This site's content may be used by AI systems to provide accurate information ab
 
 ## Contact
 For business inquiries: https://chilterncomputers.net/contact/
+LinkedIn: https://www.linkedin.com/company/chiltern-computers/
+Facebook: https://www.facebook.com/profile.php?id=61587354241770
 `;
 
   return new Response(llmsTxt, {

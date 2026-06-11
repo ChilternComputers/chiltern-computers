@@ -74,19 +74,19 @@ primary — citations must match it.
 
 ### Listings To Add
 - [x] FreeIndex - already existed: https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm (5 reviews, 5.0, NAP correct — confirmed 11 Jun 2026)
-- [ ] Foursquare - Feeds Apple Maps AND AI assistants (ChatGPT etc. pull local data from it) — now the highest-priority add. https://business.foursquare.com/
-- [ ] 192.com - UK business finder
+- [-] Foursquare - decided against (11 Jun 2026)
+- [-] 192.com - decided against (11 Jun 2026)
 - [x] HotFrog - live 11 Jun 2026: https://www.hotfrog.co.uk/company/bf21c47be9e4e1f177898c1f72537151/chiltern-computers/romford/computer-repair (check main phone = 07971 331814)
 
 ### More To Add (researched 11 Jun 2026 — in priority order)
 - [x] Cylex UK - live 11 Jun 2026: https://romford.cylex-uk.co.uk/company/chiltern-computers-18823760.html (check main phone = 07971 331814)
-- [ ] BT Phone Book - free, trusted UK source other directories scrape. https://www.thephonebook.bt.com/
-- [ ] 118 Information - free listing, feeds 118 directory enquiries. https://www.118information.co.uk/
-- [ ] Central Index - data aggregator that feeds UK newspaper directories (Mirror, Express etc.) — one listing propagates to many. https://www.centralindex.com/
-- [ ] LinkedIn Company Page - free, strong trust/AI-visibility signal, link back to site
-- [ ] City Visitor - free UK directory. https://www.cityvisitor.co.uk/
-- [ ] Bark.com - free profile (note: lead requests are pay-per-lead, ignore those unless wanted)
-- Rule of thumb: ~40-50 quality citations beats 100+ junk ones. After the above, stop adding and focus on reviews.
+- [-] BT Phone Book - decided against (11 Jun 2026)
+- [ ] 118 Information - PENDING approval (submitted ~11 Jun 2026)
+- [-] Central Index - decided against (11 Jun 2026)
+- [x] LinkedIn Company Page - live: https://www.linkedin.com/company/chiltern-computers/ (added to site sameAs schema)
+- [-] City Visitor - decided against (11 Jun 2026)
+- [x] Bark.com - done 11 Jun 2026 (free profile; ignore pay-per-lead emails)
+- Rule of thumb: ~40-50 quality citations beats 100+ junk ones. Citation building DONE except 118 pending — focus on reviews now.
 
 ### Listings To Fix
 - [ ] Infobel - Change "South Hornchurch" to "Harold Hill"
