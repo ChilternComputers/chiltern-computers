@@ -53,6 +53,16 @@ export const siteConfig = {
       url: 'https://www.yelp.com/biz/chiltern-computers-romford',
       brandColor: '#FF1A1A',
     },
+    {
+      name: 'Nextdoor',
+      url: 'https://nextdoor.co.uk/page/chiltern-computers',
+      brandColor: '#8ED500',
+    },
+    {
+      name: 'Yably',
+      url: 'https://yably.co.uk/reviews/romford/chiltern-computers-38-hilldene-ave',
+      brandColor: '#A78BFA',
+    },
   ],
 
   // Address

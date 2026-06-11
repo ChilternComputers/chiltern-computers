@@ -92,7 +92,8 @@ Chiltern Computers
 - FreeIndex (5 reviews) - https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm
 - Yell - https://www.yell.com/biz/chiltern-computers-romford-7490825/
 - Yelp - https://www.yelp.com/biz/chiltern-computers-romford
-- Also found unclaimed: Nextdoor, Yably (worth claiming when time allows)
+- Nextdoor (NAP correct, no recommendations yet) - https://nextdoor.co.uk/page/chiltern-computers
+- Yably - https://yably.co.uk/reviews/romford/chiltern-computers-38-hilldene-ave
 
 ---
 
