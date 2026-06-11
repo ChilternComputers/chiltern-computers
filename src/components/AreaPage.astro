@@ -22,9 +22,36 @@ const areaFaqSchema = {
     },
   })),
 };
+
+const areaServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Computer Repair',
+  name: `Computer Repair ${area.name}`,
+  description: `PC and laptop repair, virus removal, data recovery, and upgrades for ${area.name} (${area.postcode}) residents and businesses. Collection and drop-off available.`,
+  url: `${siteConfig.baseUrl}/areas/${area.slug}/`,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    telephone: siteConfig.phone.mobile,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.locality,
+      addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postcode,
+      addressCountry: siteConfig.address.country,
+    },
+  },
+  areaServed: [
+    { '@type': 'Place', name: area.name },
+    { '@type': 'AdministrativeArea', name: area.region },
+  ],
+};
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(areaFaqSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(areaServiceSchema)} />
 
 <div>
   <!-- Hero Section -->

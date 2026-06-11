@@ -201,15 +201,39 @@ function formatDate(dateString: string) {
     year: 'numeric',
   });
 }
+
+const baseUrl = siteConfig.baseUrl;
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Chiltern Computers Blog',
+  description: 'Computer repair tips and local tech advice for Romford and Essex.',
+  url: `${baseUrl}/blog/`,
+  inLanguage: 'en-GB',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Chiltern Computers',
+    logo: { '@type': 'ImageObject', url: `${baseUrl}/logo.webp` },
+  },
+  blogPost: blogPosts.map((post) => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    url: `${baseUrl}/blog/${post.slug}/`,
+    datePublished: post.date,
+    image: `${baseUrl}${post.image}`,
+    author: { '@type': 'Person', name: 'David Hagon' },
+  })),
+};
 ---
 
 <Layout
   title="Computer Repair Blog | Romford Tech Tips"
   description="Expert computer repair tips and local tech advice for Romford and Essex. Laptop repairs, gaming PCs, virus removal and more."
   keywords="computer repair blog romford, tech tips essex, laptop repair guide havering, gaming pc advice romford, IT tips harold hill"
-  modifiedTime="2026-03-09"
+  modifiedTime="2026-06-11"
   breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog/' }]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
   <style>
     * {
       box-sizing: border-box;
