@@ -71,9 +71,19 @@ Chiltern Computers
 
 ### Listings To Add
 - [x] FreeIndex - already existed: https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm (5 reviews, 5.0, NAP correct — confirmed 11 Jun 2026)
-- [ ] Foursquare - Feeds Apple Maps and other apps
+- [ ] Foursquare - Feeds Apple Maps AND AI assistants (ChatGPT etc. pull local data from it) — now the highest-priority add. https://business.foursquare.com/
 - [ ] 192.com - UK business finder
 - [ ] HotFrog - UK business directory
+
+### More To Add (researched 11 Jun 2026 — in priority order)
+- [ ] Cylex UK - high-authority UK directory, free listing. https://www.cylex-uk.co.uk/
+- [ ] BT Phone Book - free, trusted UK source other directories scrape. https://www.thephonebook.bt.com/
+- [ ] 118 Information - free listing, feeds 118 directory enquiries. https://www.118information.co.uk/
+- [ ] Central Index - data aggregator that feeds UK newspaper directories (Mirror, Express etc.) — one listing propagates to many. https://www.centralindex.com/
+- [ ] LinkedIn Company Page - free, strong trust/AI-visibility signal, link back to site
+- [ ] City Visitor - free UK directory. https://www.cityvisitor.co.uk/
+- [ ] Bark.com - free profile (note: lead requests are pay-per-lead, ignore those unless wanted)
+- Rule of thumb: ~40-50 quality citations beats 100+ junk ones. After the above, stop adding and focus on reviews.
 
 ### Listings To Fix
 - [ ] Infobel - Change "South Hornchurch" to "Harold Hill"
