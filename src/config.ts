@@ -25,6 +25,33 @@ export const siteConfig = {
     google: 'https://g.page/chilterncomputers',
   },
 
+  // "Leave a review" destinations — rendered by GoogleReviews.astro.
+  // brandColor is used for the button border/text on the dark theme.
+  // To add FreeIndex: create the listing first (see SEO-TRACKING.md),
+  // then add { name: 'FreeIndex', url: '<profile url>', brandColor: '#28a745' }.
+  reviewLinks: [
+    {
+      name: 'Trustpilot',
+      url: 'https://uk.trustpilot.com/evaluate/chilterncomputers.net',
+      brandColor: '#00B67A',
+    },
+    {
+      name: 'Yell',
+      url: 'https://www.yell.com/biz/chiltern-computers-romford-7490825/',
+      brandColor: '#FFDC00',
+    },
+    {
+      name: 'Facebook',
+      url: 'https://www.facebook.com/profile.php?id=61587354241770&sk=reviews',
+      brandColor: '#1877f2',
+    },
+    {
+      name: 'Yelp',
+      url: 'https://www.yelp.com/biz/chiltern-computers-romford',
+      brandColor: '#FF1A1A',
+    },
+  ],
+
   // Address
   address: {
     street: '38 Hilldene Avenue',

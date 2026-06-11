@@ -1,10 +1,12 @@
 ---
-// GoogleReviews.astro — Static Google Reviews display with link to leave a review
+// GoogleReviews.astro — Static Google Reviews display with links to leave a review
 import { getReviews } from '../data/reviews';
+import { siteConfig } from '../config';
 import StarRating from './StarRating.astro';
 
 const reviews = getReviews(3);
 const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
+const reviewLinks = siteConfig.reviewLinks;
 ---
 
 <section class="section-bg gr-section" aria-labelledby="reviews-heading">
@@ -44,6 +46,22 @@ const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
         </svg>
         Leave a Review on Google
       </a>
+
+      <p class="alien-font gr-platforms-label">Used my services? A quick review on any of these helps more than you'd think:</p>
+      <div class="gr-platforms-row">
+        {reviewLinks.map((platform) => (
+          <a
+            href={platform.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="space-font gr-platform-btn"
+            style={`color: ${platform.brandColor}; border-color: ${platform.brandColor};`}
+            aria-label={`Leave a review for Chiltern Computers on ${platform.name} (opens in new tab)`}
+          >
+            {platform.name}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
@@ -64,4 +82,21 @@ const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
   .gr-review-text { color: var(--comet-silver); font-size: 14px; line-height: 1.6; margin-top: 12px; font-style: italic; }
   .gr-cta-btn { font-size: 14px; }
   .gr-google-icon { flex-shrink: 0; }
+  .gr-platforms-label { color: var(--comet-silver); font-size: 14px; margin: 28px 0 14px; }
+  .gr-platforms-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .gr-platform-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid;
+    border-radius: 25px;
+    background: rgba(15, 23, 42, 0.6);
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .gr-platform-btn:hover,
+  .gr-platform-btn:focus-visible {
+    background: rgba(248, 250, 252, 0.08);
+    transform: translateY(-2px);
+  }
 </style>
