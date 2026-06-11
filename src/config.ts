@@ -63,6 +63,11 @@ export const siteConfig = {
       url: 'https://yably.co.uk/reviews/romford/chiltern-computers-38-hilldene-ave',
       brandColor: '#A78BFA',
     },
+    {
+      name: 'Cylex',
+      url: 'https://romford.cylex-uk.co.uk/company/chiltern-computers-18823760.html',
+      brandColor: '#38BDF8',
+    },
   ],
 
   // Address

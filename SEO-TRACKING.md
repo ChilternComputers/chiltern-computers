@@ -79,7 +79,7 @@ primary — citations must match it.
 - [ ] HotFrog - UK business directory
 
 ### More To Add (researched 11 Jun 2026 — in priority order)
-- [ ] Cylex UK - high-authority UK directory, free listing. https://www.cylex-uk.co.uk/
+- [x] Cylex UK - live 11 Jun 2026: https://romford.cylex-uk.co.uk/company/chiltern-computers-18823760.html (check main phone = 07971 331814)
 - [ ] BT Phone Book - free, trusted UK source other directories scrape. https://www.thephonebook.bt.com/
 - [ ] 118 Information - free listing, feeds 118 directory enquiries. https://www.118information.co.uk/
 - [ ] Central Index - data aggregator that feeds UK newspaper directories (Mirror, Express etc.) — one listing propagates to many. https://www.centralindex.com/
