@@ -19,6 +19,7 @@
   --void-black: #020617;
   --asteroid-gray: #374151;
   --comet-silver: #e5e7eb;
+  --windows-blue: #4cc2ff; /* light enough for WCAG contrast on dark badge bg */
 
   /* Hero Colors */
   --primary-blue: #3b82f6;

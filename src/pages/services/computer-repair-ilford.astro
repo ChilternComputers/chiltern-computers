@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ServicePage from '../../components/ServicePage.astro';
+import { servicePages } from '../../data/services';
+
+const data = servicePages['computer-repair-ilford'];
+---
+
+<Layout
+  title={data.seo.title}
+  description={data.seo.description}
+  type="service"
+  publishedTime={data.seo.publishedTime}
+  modifiedTime={data.seo.modifiedTime}
+  breadcrumbs={data.seo.breadcrumbs}
+>
+  <ServicePage {...data} />
+</Layout>

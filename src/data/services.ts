@@ -399,10 +399,10 @@ export const servicePages: Record<string, ServicePageData> = {
         color: 'cyan',
       },
       {
-        iconName: 'bolt',
-        title: 'Computer Upgrades',
-        description: 'SSD and RAM upgrades to speed up your laptop. Data cloned so nothing is lost.',
-        url: '/services/computer-upgrades-romford/',
+        iconName: 'desktop',
+        title: 'Computer Repair Ilford',
+        description: 'PC and laptop repairs for neighbouring Ilford, Gants Hill, Seven Kings, and Goodmayes.',
+        url: '/services/computer-repair-ilford/',
         color: 'green',
       },
       {
@@ -1270,5 +1270,127 @@ export const servicePages: Record<string, ServicePageData> = {
     ctaTitle: 'NEED WINDOWS INSTALLED IN ROMFORD?',
     ctaDescription: 'Fresh install, upgrade, or repair. Open 7 days, 9AM-9PM. £20 diagnostic — waived with repair.',
     areasTitle: 'WINDOWS INSTALLATION ACROSS HAVERING & ESSEX',
+  },
+
+  'computer-repair-ilford': {
+    slug: 'computer-repair-ilford',
+    seo: {
+      title: 'Computer Repair Ilford - PC & Laptop Repairs',
+      description: 'Computer repair for Ilford & IG postcodes. PC & laptop repairs, virus removal, upgrades. Collection available. £20 diagnostic — waived with repair. Call 07971 331814.',
+      keywords: 'computer repair ilford, pc repair ilford, laptop repair ilford, laptop screen repair ilford, computer repair gants hill, computer repair seven kings, computer repair goodmayes, computer repair barkingside, computer repair near me ilford, virus removal ilford',
+      publishedTime: '2026-06-11',
+      modifiedTime: '2026-06-11',
+      breadcrumbs: [
+        { name: 'Home', url: '/' },
+        { name: 'Repairs & Services', url: '/services/repairs/' },
+        { name: 'Computer Repair Ilford', url: '/services/computer-repair-ilford/' },
+      ],
+    },
+    heroTitle: 'COMPUTER REPAIR ILFORD',
+    heroDescription: 'Professional PC and laptop repair for Ilford, Gants Hill, Seven Kings, Goodmayes, and Barkingside. All brands repaired — Dell, HP, Lenovo, Asus, Acer, and Apple. Collection and drop-off available throughout the IG postcodes, so you never need to leave home.',
+    heroBadgeIcon: 'desktop',
+    heroBadgeText: 'PC & LAPTOP REPAIRS FOR ILFORD',
+    servicesTitle: 'COMPUTER REPAIRS I HANDLE FOR ILFORD',
+    services: [
+      {
+        iconName: 'desktop',
+        title: 'PC & DESKTOP REPAIR',
+        description: "Blue screens, startup failures, overheating, and hardware faults. I diagnose the root cause and fix it — custom builds and pre-builts alike.",
+        color: 'cyan',
+      },
+      {
+        iconName: 'laptop',
+        title: 'LAPTOP REPAIR',
+        description: 'Cracked screens, broken keyboards, worn batteries, and charging port faults. Most laptop repairs completed within 24-48 hours.',
+        color: 'green',
+      },
+      {
+        iconName: 'shield',
+        title: 'VIRUS & MALWARE REMOVAL',
+        description: 'Pop-ups, browser hijackers, ransomware, and slow infected systems. Complete cleanup plus protection against future threats.',
+        color: 'orange',
+      },
+      {
+        iconName: 'database',
+        title: 'DATA RECOVERY',
+        description: 'Lost files from a failed hard drive, SSD, or USB stick? I recover data from failed and corrupted drives. Free assessment.',
+        color: 'purple',
+      },
+      {
+        iconName: 'rocket',
+        title: 'SSD & RAM UPGRADES',
+        description: 'Slow computer? An SSD upgrade makes a 5-year-old machine feel new — data cloned across so nothing is lost.',
+        color: 'cyan',
+      },
+      {
+        iconName: 'repair',
+        title: 'WINDOWS INSTALLATION',
+        description: 'Fresh Windows 11 installs, upgrades from Windows 10, driver setup, and full data migration. Clean, fast, and ready to use.',
+        color: 'orange',
+      },
+    ],
+    processTitle: 'HOW IT WORKS FOR ILFORD CUSTOMERS',
+    processSteps: [
+      {
+        title: '1. COLLECTION OR DROP-OFF',
+        description: "I collect from anywhere in Ilford — IG1 through IG6 — or you can drop your computer to my workshop in Harold Hill, about 15 minutes up the A12.",
+      },
+      {
+        title: '2. £20 DIAGNOSTIC',
+        description: 'A full diagnostic to pinpoint the exact problem, usually within a few hours. Just £20 — waived if you go ahead with the repair.',
+      },
+      {
+        title: '3. CLEAR QUOTE, THEN REPAIR',
+        description: "I explain what's wrong in plain English and quote before any work starts. No jargon, no hidden costs — you decide whether to proceed.",
+      },
+      {
+        title: '4. RETURN + 90-DAY WARRANTY',
+        description: "Your computer is returned tested and working, with a 90-day warranty on the repair. If the same fault returns, I'll fix it free.",
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do you really cover Ilford? Where are you based?',
+        answer: "I'm based in Harold Hill, Romford — about 15 minutes from Ilford up the A12. I offer collection and drop-off throughout Ilford, Gants Hill, Seven Kings, Goodmayes, Newbury Park, Barkingside, and Clayhall, so most customers never need to travel. Open 7 days a week, 9AM-9PM.",
+      },
+      {
+        question: 'How much does computer repair cost in Ilford?',
+        answer: 'Most software repairs start from £40 and hardware repairs are quoted based on parts needed. The £20 diagnostic is waived if you go ahead with the repair, and unfixable machines fall under my no fix, no fee policy — so there is no risk in getting it looked at.',
+      },
+      {
+        question: 'How quickly can you repair my computer?',
+        answer: 'Most repairs are completed within 24-48 hours of collection. Simple software fixes and SSD upgrades are often done same day. Screen replacements depend on parts availability, but I keep common sizes in stock.',
+      },
+      {
+        question: 'Do you repair MacBooks and iMacs for Ilford customers?',
+        answer: 'Yes — MacBook Air, MacBook Pro, iMac, and Mac Mini. Common jobs include SSD upgrades, battery replacement, screen replacement, and macOS fixes. Usually faster and significantly cheaper than the Apple Store at Stratford.',
+      },
+    ],
+    relatedServices: [
+      {
+        iconName: 'laptop',
+        title: 'Laptop Repair Dagenham',
+        description: 'Laptop repairs for neighbouring Dagenham and Barking — screens, keyboards, batteries, and more.',
+        url: '/services/laptop-repair-dagenham/',
+        color: 'cyan',
+      },
+      {
+        iconName: 'shield',
+        title: 'Virus Removal',
+        description: 'Same-day virus and malware removal. I clean your computer and protect against future threats.',
+        url: '/services/virus-removal-romford/',
+        color: 'green',
+      },
+      {
+        iconName: 'database',
+        title: 'Data Recovery',
+        description: 'Recover files from failed hard drives, SSDs, and USB drives. Free assessment, no data no fee.',
+        url: '/services/data-recovery-havering/',
+        color: 'orange',
+      },
+    ],
+    ctaTitle: 'COMPUTER PROBLEMS IN ILFORD?',
+    ctaDescription: 'Collection and drop-off across all IG postcodes. Open 7 days, 9AM-9PM. £20 diagnostic — waived with repair.',
+    areasTitle: 'COMPUTER REPAIR ACROSS ILFORD, REDBRIDGE & ESSEX',
   },
 };

@@ -1,0 +1,420 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = '2026-06-11';
+const modifiedDate = '2026-06-11';
+const author = 'David Hagon';
+const readTime = '8 min read';
+
+const faqs = [
+  {
+    question: 'When do Windows 10 security updates actually stop?',
+    answer:
+      "Mainstream Windows 10 support ended on 14 October 2025. If you enrolled in Microsoft's consumer Extended Security Updates (ESU) programme, you've been receiving security patches since then — but ESU is a one-year bridge, not a reprieve. It ends on 13 October 2026, and there is no consumer extension beyond that date. After it, a Windows 10 PC receives no security fixes at all.",
+  },
+  {
+    question: "How do I check whether my PC is getting extended security updates?",
+    answer:
+      "Open Settings, go to Windows Update, and look for an 'Enrol now' link or confirmation that you're enrolled in Extended Security Updates. Also check Update History — if the most recent security update is from before October 2025 and you see no ESU enrolment, your PC has been unpatched for months. If you're not sure, bring it in and I'll check it as part of my £20 diagnostic, which is waived if you go ahead with any work.",
+  },
+  {
+    question: "My PC says it can't run Windows 11 — do I have to buy a new computer?",
+    answer:
+      "Usually not. Many PCs that fail Microsoft's official checker only fail on TPM settings that can be enabled in the BIOS, and plenty of 'unsupported' machines with decent hardware can run Windows 11 cleanly with the right installation approach. If your PC runs Windows 10 well — especially if it has an SSD and 8GB+ RAM — there's a good chance it can be moved to Windows 11 for far less than the cost of a new machine.",
+  },
+  {
+    question: 'Is it really dangerous to keep using Windows 10 after October 2026?',
+    answer:
+      "For anything connected to the internet, yes. Once patches stop, every newly discovered Windows 10 vulnerability stays open forever, and attackers deliberately target end-of-life systems because they know the holes will never be closed. Online banking, email, and shopping on an unpatched machine is a genuine risk — this is how ransomware and password-stealing infections get in. An offline machine used for nothing but, say, an old printer or hobby software is a different story.",
+  },
+  {
+    question: 'How much does a Windows 11 upgrade cost at Chiltern Computers?',
+    answer:
+      "A Windows 11 installation including driver setup, updates, and basic configuration starts from £50, with data backup and restoration included. If your machine would benefit from an SSD or RAM upgrade at the same time — which makes a dramatic difference on older PCs — I'll quote that up front. The £20 diagnostic is waived if you proceed, and no fix, no fee applies.",
+  },
+  {
+    question: 'Will my files and programs survive the move to Windows 11?',
+    answer:
+      "Your files, yes — always. I back up documents, photos, music, bookmarks, and email before any installation and restore them afterwards. An in-place upgrade from Windows 10 to 11 typically keeps your installed programs too. A clean install means reinstalling programs, but you get a faster, clutter-free system — I'll advise which route suits your machine.",
+  },
+];
+---
+
+<Layout
+  title="Windows 10's Final Deadline: Security Updates End October 2026"
+  description="Windows 10's extended security updates end for good on 13 October 2026. Upgrade to Windows 11, upgrade your hardware, or replace? Honest local advice from Romford."
+  keywords="windows 10 end of support, windows 10 extended security updates end, windows 10 esu october 2026, windows 10 to windows 11 upgrade romford, windows 10 deadline 2026, what to do windows 10 end of life, windows 11 upgrade essex, windows 10 still safe 2026"
+  image="/office-pc.webp"
+  type="article"
+  publishedTime={publishDate}
+  modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: "Windows 10's Final Deadline: Security Updates End October 2026", url: '/blog/windows-10-extended-security-updates-ending-2026/' },
+  ]}
+>
+
+  <div>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>Windows 10's Final Deadline</span>
+        </nav>
+
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 120, 212, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--windows-blue); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--windows-blue); font-size: 12px;"
+            >WINDOWS HELP</span
+          >
+        </div>
+
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2; text-wrap: balance;"
+        >
+          Still on Windows 10? The final safety net ends this&nbsp;October
+        </h1>
+
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          Windows 10's extended security updates stop for good on 13 October 2026 — and this
+          time there's no extension behind it. Here's how to check where you stand, and an
+          honest look at your options: upgrade, refurbish, or replace.
+        </p>
+
+        <div class="article-meta tech-font">
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Harold Hill, Romford</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 0 0 100px;">
+      <div class="container">
+        <article class="article-content alien-font">
+          <p>
+            When Windows 10 support officially ended in <strong>October 2025</strong>, Microsoft
+            offered consumers a one-year safety net: the <strong>Extended Security Updates
+            (ESU)</strong> programme. Enrol, and your Windows 10 PC kept receiving security
+            patches as normal. Millions of people did exactly that — or assumed their PC had done
+            it for them — and carried on as if nothing had changed.
+          </p>
+
+          <p>
+            That safety net has an expiry date: <strong>13 October 2026</strong>. After that,
+            there is no further extension for home users. No more security patches, full stop.
+            Every Windows 10 machine still in use becomes permanently unpatched — and writing
+            this in June, that deadline is now four months away.
+          </p>
+
+          <p>
+            I'm seeing two groups of customers in the workshop: people who enrolled in ESU and
+            don't realise it runs out this year, and people who never enrolled and have already
+            been unpatched since 2025 without knowing it. This guide is for both.
+          </p>
+
+          <h2 class="space-font">First: Check Where You Stand</h2>
+
+          <p>
+            On your Windows 10 PC, open <strong>Settings &rarr; Update &amp; Security &rarr;
+            Windows Update</strong> and check your update history. Three possibilities:
+          </p>
+
+          <ul>
+            <li>
+              <strong>You're enrolled in ESU.</strong> You'll have security updates dated after
+              October 2025. You're protected — until 13 October 2026. You've got time to plan,
+              but the clock is running.
+            </li>
+            <li>
+              <strong>You never enrolled.</strong> Your last security update is from around
+              October 2025, meaning your PC has been accumulating unpatched vulnerabilities for
+              months. Treat this as urgent — either enrol in ESU now to cover the remaining
+              months, or move straight to one of the options below.
+            </li>
+            <li>
+              <strong>You're not sure.</strong> Bring it in. Checking your update status, Windows
+              11 eligibility, and the general health of the machine is exactly what my
+              <a href="/pricing/">£20 diagnostic</a> covers — and it's waived if you go ahead
+              with any work.
+            </li>
+          </ul>
+
+          <div class="info-box">
+            <p style="margin: 0;">
+              <strong>Why this matters:</strong> attackers deliberately target end-of-life
+              operating systems because every newly found hole stays open forever. Unpatched
+              Windows machines are how ransomware and password-stealing malware spread. If you
+              use the PC for banking, email, or shopping, "it still works fine" isn't protection.
+            </p>
+          </div>
+
+          <h2 class="space-font">Option 1: Upgrade to Windows 11 (Most PCs Can)</h2>
+
+          <p>
+            If your PC was made in roughly the last 7-8 years, there's a strong chance it can run
+            Windows 11 — sometimes even when Microsoft's PC Health Check tool says it can't. Two
+            common situations:
+          </p>
+
+          <ul>
+            <li>
+              <strong>"Officially compatible" machines</strong> just need the upgrade doing
+              properly: compatibility confirmed, data backed up, drivers sorted, updates applied.
+              I handle the whole process as part of my
+              <a href="/services/windows-installation-romford/">Windows installation service</a>,
+              from £50 with data backup included.
+            </li>
+            <li>
+              <strong>"Unsupported" machines</strong> often fail the checker on a disabled TPM
+              setting or a CPU one generation too old — while being perfectly capable hardware.
+              Many of these can run Windows 11 cleanly with the right installation approach. I've
+              written a full guide:
+              <a href="/blog/upgrade-old-pc-windows-11-unsupported/">Windows 11 on unsupported
+              PCs</a> — and yes, I've even put
+              <a href="/blog/windows-11-macbook-air-2017-bootcamp-romford/">Windows 11 Pro on a
+              2017 MacBook Air</a>.
+            </li>
+          </ul>
+
+          <h2 class="space-font">Option 2: Upgrade the Hardware at the Same Time</h2>
+
+          <p>
+            The smartest money I see customers spend is pairing the Windows 11 move with a
+            <a href="/services/computer-upgrades-romford/">hardware upgrade</a>. If your PC still
+            has a mechanical hard drive, an SSD upgrade alone will transform it — Windows boots
+            in seconds instead of minutes. Add RAM if you're on 4-8GB and the machine will feel
+            genuinely new.
+          </p>
+
+          <p>
+            A typical SSD-plus-Windows-11 job costs a fraction of a new computer and routinely
+            buys another 3-5 years of useful life. It's also the honest answer for most people:
+            the hardware inside a 2018-2020 PC is usually still perfectly good — it's the storage
+            and the operating system that make it feel old.
+          </p>
+
+          <h2 class="space-font">Option 3: Replace — Sensibly</h2>
+
+          <p>
+            Some machines genuinely aren't worth moving forward: very old processors, failing
+            motherboards, laptops with multiple worn-out parts. If that's the case, I'll tell you
+            straight — it's the same advice I give in
+            <a href="/blog/is-my-computer-worth-repairing-romford/">Is my computer worth
+            repairing?</a>
+          </p>
+
+          <p>
+            When replacement is the right call, you don't have to pay full retail. I supply
+            <a href="/services/new-used/">new and refurbished computers</a> — quality refurbished
+            desktops and laptops with Windows 11 installed, set up, and ready to go, usually for
+            much less than an equivalent new machine. I can also transfer everything across from
+            your old PC so you don't lose a single photo or document.
+          </p>
+
+          <h2 class="space-font">What If You Do Nothing?</h2>
+
+          <p>Being realistic about what happens after 13 October 2026:</p>
+
+          <ul>
+            <li>
+              <strong>Your PC keeps working.</strong> Nothing switches off. The risk is silent —
+              security holes that will never be fixed.
+            </li>
+            <li>
+              <strong>Software support shrinks.</strong> Browsers and apps are already winding
+              down Windows 10 support; over time, updates for the programs you rely on will stop
+              too. (Microsoft 365 apps are a partial exception — Microsoft has committed to
+              security updates for them on Windows 10 into 2028 — but the operating system
+              underneath stays unpatched.)
+            </li>
+            <li>
+              <strong>The risk compounds.</strong> Month one after the deadline, you're missing a
+              handful of patches. A year on, you're missing dozens — and attackers actively scan
+              for exactly these machines.
+            </li>
+          </ul>
+
+          <p>
+            For an internet-connected PC handling anything personal or financial, "do nothing"
+            is the one option I can't recommend.
+          </p>
+
+          <h2 class="space-font">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            {
+              faqs.map((faq) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
+                </div>
+              ))
+            }
+          </div>
+
+          <h2 class="space-font">Beat the Rush</h2>
+
+          <p>
+            Every support deadline produces the same pattern: a quiet summer, then a frantic
+            September and October as everyone realises at once. Parts get scarcer, lead times
+            stretch, and people end up making rushed decisions.
+          </p>
+
+          <p>
+            If you're in Romford, Harold Hill, or anywhere across Havering and the surrounding
+            areas, get ahead of it. Bring your PC in — or have me collect it — and for £20
+            (waived with any work) I'll tell you exactly where it stands: whether it's protected
+            today, whether it can run Windows 11, and what the most cost-effective path forward
+            is for your specific machine. Honest advice, even when the honest advice is "this
+            one's not worth upgrading".
+          </p>
+
+          <!-- Author Bio -->
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill. Years
+                of experience fixing and upgrading PCs and laptops across Romford and Havering.
+                Honest advice, transparent pricing, and I'll always tell you when a repair or
+                upgrade isn't worth it.
+              </p>
+              <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Me</a>
+                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
+                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews 5/5</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
+              Windows 10 Health Check — £20, Waived With Any Work
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
+              I'll check your update status, Windows 11 eligibility, and the most cost-effective
+              path forward for your machine. Collection and drop-off available across Romford,
+              Havering, and surrounding areas. Open 7 days, 9AM-9PM.
+            </p>
+            <a href="/contact/" class="space-button space-font">
+              Book a Check
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Related Services -->
+          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Services
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <a href="/services/windows-installation-romford/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">Windows Installation</div>
+              </a>
+              <a href="/services/computer-upgrades-romford/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">Computer Upgrades</div>
+              </a>
+              <a href="/services/new-used/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">New &amp; Refurbished PCs</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
+            <div style="display: grid; gap: 16px;">
+              <a href="/blog/upgrade-old-pc-windows-11-unsupported/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    Windows 11 Upgrade for Old PCs
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                </div>
+              </a>
+              <a href="/blog/ssd-upgrade-guide-old-pc/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    SSD Upgrade Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">8 min read</div>
+                </div>
+              </a>
+              <a href="/blog/is-my-computer-worth-repairing-romford/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    Is My Computer Worth Repairing?
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">7 min read</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ Schema -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
+
+</Layout>

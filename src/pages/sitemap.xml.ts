@@ -6,7 +6,7 @@ export const GET: APIRoute = async () => {
   const baseUrl = 'https://chilterncomputers.net';
   const lastUpdated = '2026-05-13';
 
-  // All pages verified against src/pages/ + public/ static routes — 83 URLs
+  // All pages verified against src/pages/ + public/ static routes — 85 URLs
   const routes = [
     // Homepage
     { url: '/', priority: 1.0, changefreq: 'weekly', lastmod: lastUpdated },
@@ -27,6 +27,7 @@ export const GET: APIRoute = async () => {
     { url: '/services/gaming-pc-repair-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/network-wifi-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
+    { url: '/services/computer-repair-ilford/', priority: 0.9, changefreq: 'monthly', lastmod: '2026-06-11' },
 
     // Core pages (7)
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
@@ -87,7 +88,8 @@ export const GET: APIRoute = async () => {
     { url: '/areas/hutton/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
 
     // Blog pages (16)
-    { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: lastUpdated },
+    { url: '/blog/', priority: 0.8, changefreq: 'weekly', lastmod: '2026-06-11' },
+    { url: '/blog/windows-10-extended-security-updates-ending-2026/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-06-11' },
     { url: '/blog/rare-dual-gpu-sli-pc-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-22' },
     { url: '/blog/windows-11-macbook-air-2017-bootcamp-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-22' },
     { url: '/blog/gaming-pc-overheating-summer-romford/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-05-05' },
