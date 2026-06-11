@@ -66,8 +66,11 @@
 ```
 Chiltern Computers
 38 Hilldene Avenue, Harold Hill, Romford, Essex RM3 8YP
-01708 347341
+07971 331814          <- MAIN number on every listing
+01708 347341          <- secondary, only where a second phone field exists
 ```
+The site (schema, meta tags, llms.txt, buttons) already uses the mobile as
+primary — citations must match it.
 
 ### Listings To Add
 - [x] FreeIndex - already existed: https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm (5 reviews, 5.0, NAP correct — confirmed 11 Jun 2026)
@@ -89,6 +92,9 @@ Chiltern Computers
 - [ ] Infobel - Change "South Hornchurch" to "Harold Hill"
 - [ ] Brown Book - Fix postcode spacing (RM38YP → RM3 8YP)
 - [ ] Near - Fix truncated "Hilldene Av" to "Hilldene Avenue"
+- [ ] Nextdoor - shows landline (01708 347341) as the only phone; set main
+      to 07971 331814 (confirmed 11 Jun 2026)
+- [ ] While doing the above: check each listing leads with 07971 331814
 
 ### Listings Already Correct
 - Apple Maps
