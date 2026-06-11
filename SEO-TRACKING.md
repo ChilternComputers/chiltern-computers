@@ -76,7 +76,7 @@ primary — citations must match it.
 - [x] FreeIndex - already existed: https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm (5 reviews, 5.0, NAP correct — confirmed 11 Jun 2026)
 - [ ] Foursquare - Feeds Apple Maps AND AI assistants (ChatGPT etc. pull local data from it) — now the highest-priority add. https://business.foursquare.com/
 - [ ] 192.com - UK business finder
-- [ ] HotFrog - UK business directory
+- [x] HotFrog - live 11 Jun 2026: https://www.hotfrog.co.uk/company/bf21c47be9e4e1f177898c1f72537151/chiltern-computers/romford/computer-repair (check main phone = 07971 331814)
 
 ### More To Add (researched 11 Jun 2026 — in priority order)
 - [x] Cylex UK - live 11 Jun 2026: https://romford.cylex-uk.co.uk/company/chiltern-computers-18823760.html (check main phone = 07971 331814)
