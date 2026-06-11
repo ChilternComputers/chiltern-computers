@@ -70,7 +70,7 @@ Chiltern Computers
 ```
 
 ### Listings To Add
-- [ ] FreeIndex - Popular UK directory
+- [x] FreeIndex - already existed: https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm (5 reviews, 5.0, NAP correct — confirmed 11 Jun 2026)
 - [ ] Foursquare - Feeds Apple Maps and other apps
 - [ ] 192.com - UK business finder
 - [ ] HotFrog - UK business directory
@@ -89,6 +89,10 @@ Chiltern Computers
 - Scoot
 - Thomson Local
 - Touch Local
+- FreeIndex (5 reviews) - https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm
+- Yell - https://www.yell.com/biz/chiltern-computers-romford-7490825/
+- Yelp - https://www.yelp.com/biz/chiltern-computers-romford
+- Also found unclaimed: Nextdoor, Yably (worth claiming when time allows)
 
 ---
 

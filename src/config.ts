@@ -27,13 +27,16 @@ export const siteConfig = {
 
   // "Leave a review" destinations — rendered by GoogleReviews.astro.
   // brandColor is used for the button border/text on the dark theme.
-  // To add FreeIndex: create the listing first (see SEO-TRACKING.md),
-  // then add { name: 'FreeIndex', url: '<profile url>', brandColor: '#28a745' }.
   reviewLinks: [
     {
       name: 'Trustpilot',
       url: 'https://uk.trustpilot.com/evaluate/chilterncomputers.net',
       brandColor: '#00B67A',
+    },
+    {
+      name: 'FreeIndex',
+      url: 'https://www.freeindex.co.uk/profile(chiltern-computers)_170432.htm',
+      brandColor: '#FF8A00',
     },
     {
       name: 'Yell',
