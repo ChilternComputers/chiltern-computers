@@ -81,20 +81,19 @@ primary — citations must match it.
 ### More To Add (researched 11 Jun 2026 — in priority order)
 - [x] Cylex UK - live 11 Jun 2026: https://romford.cylex-uk.co.uk/company/chiltern-computers-18823760.html (check main phone = 07971 331814)
 - [-] BT Phone Book - decided against (11 Jun 2026)
-- [ ] 118 Information - PENDING approval (submitted ~11 Jun 2026)
+- [x] 118 Information - approved/live (confirmed 17 Jun 2026)
 - [-] Central Index - decided against (11 Jun 2026)
 - [x] LinkedIn Company Page - live: https://www.linkedin.com/company/chiltern-computers/ (added to site sameAs schema)
 - [-] City Visitor - decided against (11 Jun 2026)
 - [x] Bark.com - done 11 Jun 2026 (free profile; ignore pay-per-lead emails)
-- Rule of thumb: ~40-50 quality citations beats 100+ junk ones. Citation building DONE except 118 pending — focus on reviews now.
+- Rule of thumb: ~40-50 quality citations beats 100+ junk ones. **Off-site citation building COMPLETE (17 Jun 2026) — focus on reviews now.**
 
-### Listings To Fix
-- [ ] Infobel - Change "South Hornchurch" to "Harold Hill"
-- [ ] Brown Book - Fix postcode spacing (RM38YP → RM3 8YP)
-- [ ] Near - Fix truncated "Hilldene Av" to "Hilldene Avenue"
-- [ ] Nextdoor - shows landline (01708 347341) as the only phone; set main
-      to 07971 331814 (confirmed 11 Jun 2026)
-- [ ] While doing the above: check each listing leads with 07971 331814
+### Listings To Fix — ALL DONE (17 Jun 2026)
+- [x] Infobel - changed "South Hornchurch" to "Harold Hill"
+- [x] Brown Book - fixed postcode spacing (RM38YP → RM3 8YP)
+- [x] Near - fixed truncated "Hilldene Av" to "Hilldene Avenue"
+- [x] Nextdoor - main phone set to 07971 331814
+- [x] All listings verified leading with 07971 331814
 
 ### Listings Already Correct
 - Apple Maps
@@ -115,16 +114,20 @@ primary — citations must match it.
 
 ## Future Scans
 
-### Scan Date: [DATE]
+### Scan Date: [DATE — due ~mid/late Jul 2026, allow 4-6 weeks after 17 Jun off-site completion]
 
-| Keyword | Avg Rank | Position | Change |
+| Keyword | Avg Rank | Position | Change vs 12 Jan baseline |
 |---------|----------|----------|--------|
-| pc repair harold hill | | | |
-| laptop repair romford | | | |
-| computer repair romford | | | |
-| computer repair near me | | | |
-| virus removal romford | | | |
+| pc repair harold hill | | | (was 1.0 / #1) |
+| laptop repair romford | | | (was 8.6 / #9) |
+| computer repair romford | | | (was 9.4 / #9) |
+| computer repair near me | | | (was 13.5 / #11) |
+| virus removal romford | | | (was not ranking — page live since Jan) |
+| computer repair ilford | | | (NEW — page live 11 Jun, true zero baseline) |
 
 **Notes:**
+- Off-site citation work + 3 NAP fixes completed 17 Jun 2026. Re-scan ~4-6 weeks later to let the consistent NAP and new citations propagate.
+- Re-check "virus removal romford" — page has had 5 months to index; was the critical gap.
+- New keyword to track: "computer repair ilford" (page live 11 Jun, targeting the Redbridge red zone).
 
 ---
