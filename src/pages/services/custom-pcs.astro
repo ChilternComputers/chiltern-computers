@@ -36,7 +36,7 @@ const reviews = [
   keywords="custom gaming pc romford, gaming pc build romford, custom pc builder havering, build gaming computer essex, custom pc harold hill, gaming desktop romford"
   type="service"
   publishedTime="2025-01-15"
-  modifiedTime="2026-03-08"
+  modifiedTime="2026-06-21"
   breadcrumbs={[
     { name: 'Home', url: '/' },
     { name: 'Repairs & Services', url: '/services/repairs/' },
@@ -831,6 +831,169 @@ const reviews = [
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.3) !important;
     }
 
+    /* ===== HERO REDESIGN (2026 refresh) ===== */
+    #available-builds,
+    #pricing-notice {
+      scroll-margin-top: 100px;
+    }
+
+    .price-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      padding: 10px 22px;
+      border-radius: 50px;
+      background: rgba(220, 38, 38, 0.14);
+      border: 1px solid rgba(220, 38, 38, 0.55);
+      color: #fca5a5;
+      font-family: 'Space Mono', monospace;
+      font-size: 12.5px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .price-pill:hover {
+      background: rgba(220, 38, 38, 0.26);
+      border-color: var(--blood-red);
+      color: #fecaca;
+      transform: translateY(-2px);
+    }
+    .price-pill .pulse-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blood-red);
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6);
+      animation: co-op-pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .hero-title .locale {
+      display: block;
+      -webkit-text-fill-color: var(--silver-light);
+      color: var(--silver-light);
+      background: none;
+      font-size: 0.42em;
+      letter-spacing: 8px;
+      margin-top: 12px;
+      opacity: 0.82;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 12px 26px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(212, 175, 55, 0.22);
+    }
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--silver-light);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 14px;
+    }
+    .hero-trust b {
+      color: var(--nightreign-gold);
+      font-size: 15px;
+    }
+
+    /* ===== 2026 PRICE NOTICE SECTION ===== */
+    .price-notice-section {
+      background: linear-gradient(135deg, rgba(12, 10, 9, 0.92), rgba(88, 28, 135, 0.18));
+      border-top: 2px solid var(--blood-red);
+      border-bottom: 2px solid var(--tarnished-bronze);
+    }
+    .notice-card {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 30px;
+      align-items: start;
+      background: linear-gradient(145deg, rgba(15, 12, 10, 0.96), rgba(40, 20, 20, 0.9));
+      border: 2px solid rgba(220, 38, 38, 0.4);
+      border-radius: 20px;
+      padding: 42px 38px;
+      backdrop-filter: blur(16px);
+      box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(220, 38, 38, 0.12);
+    }
+    .notice-icon {
+      width: 74px;
+      height: 74px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blood-red);
+      background: rgba(220, 38, 38, 0.18);
+      border: 3px solid var(--blood-red);
+      box-shadow: 0 0 22px rgba(220, 38, 38, 0.45);
+    }
+    .notice-card h2 {
+      font-size: clamp(24px, 4vw, 34px);
+      color: var(--grace-yellow);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .notice-card p {
+      color: var(--silver-light);
+      line-height: 1.65;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .notice-list {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+      display: grid;
+      gap: 11px;
+    }
+    .notice-list li {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      color: var(--silver-light);
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .notice-list li::before {
+      content: '▲';
+      color: var(--blood-red);
+      font-size: 10px;
+      flex-shrink: 0;
+      transform: translateY(-2px);
+    }
+    .notice-list strong {
+      color: var(--nightreign-gold);
+    }
+    .notice-footnote {
+      color: var(--grace-yellow) !important;
+      font-family: 'Space Mono', monospace;
+      font-size: 14px !important;
+      margin-bottom: 0 !important;
+      padding-top: 14px;
+      border-top: 1px solid rgba(212, 175, 55, 0.18);
+    }
+
     /* RESPONSIVE DESIGN - FIXED MOBILE PADDING */
     @media (max-width: 768px) {
       .container {
@@ -887,6 +1050,32 @@ const reviews = [
 
       .cta-content {
         padding: 32px 24px;
+      }
+
+      .notice-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 22px;
+        text-align: center;
+      }
+      .notice-icon {
+        margin: 0 auto;
+      }
+      .notice-list {
+        text-align: left;
+      }
+      .hero-trust {
+        gap: 10px 18px;
+        margin-top: 28px;
+        padding-top: 22px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-actions a {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -962,25 +1151,43 @@ const reviews = [
       </div>
 
       <div class="hero-content">
-        <h1 class="rune-font rune-text grace-glow hero-title">CUSTOM GAMING PCS ROMFORD</h1>
+        <a href="#pricing-notice" class="price-pill">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          2026 component prices have risen — see why
+        </a>
+
+        <h1 class="rune-font rune-text grace-glow hero-title">
+          CUSTOM GAMING PCs
+          <span class="locale">ROMFORD</span>
+        </h1>
 
         <p class="tarnished-font hero-subtitle">
-          From crushing single-player campaigns to dominating multiplayer arenas and streaming to
-          your audience — I'll build a gaming machine that gives you the edge. Like a legendary
-          weapon forged for battle, I engineer each build for peak performance.
+          Hand-built, stress-tested gaming rigs — engineered to give you the edge across
+          single-player epics, multiplayer arenas and streaming alike. Built to your spec, your
+          game, your budget.
         </p>
 
-        <div style="margin-top: 32px;">
+        <div class="hero-actions">
           <a href="/contact/" class="tarnished-button rune-font">
             <Icon name="gaming" size={14} />
-            <span>BEGIN YOUR QUEST</span>
+            <span>GET MY FREE QUOTE</span>
           </a>
+          <a href="#available-builds" class="button-small rune-font">
+            <Icon name="bolt" size={14} />
+            <span>VIEW BUILDS</span>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <span><b>✓</b> Hand-built in Harold Hill</span>
+          <span><b>✓</b> 12-Month Warranty</span>
+          <span><b>✓</b> Stress-Tested &amp; Optimised</span>
         </div>
       </div>
     </section>
 
     <!-- Services Showcase -->
-    <section class="services-showcase">
+    <section class="services-showcase" id="available-builds">
       <div class="container">
         <h2 class="rune-font rune-text grace-glow section-title" style="text-align: center; margin-bottom: 40px;">AVAILABLE BUILDS</h2>
         <div class="showcase-grid">
@@ -1030,6 +1237,45 @@ const reviews = [
               <Icon name="star" size={14} />
               <span>RESTORE BUILD</span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2026 Price Notice -->
+    <section class="section price-notice-section" id="pricing-notice">
+      <div class="container">
+        <div class="notice-card">
+          <div class="notice-icon" aria-hidden="true"><Icon name="bolt" size={34} /></div>
+          <div>
+            <h2 class="rune-font">A NOTE ON 2026 PRICES</h2>
+            <p class="tarnished-font">
+              A global memory shortage — driven by surging AI datacentre demand — has pushed
+              component prices up sharply through 2026. It's affecting every PC builder, so it's
+              worth knowing before you set a budget:
+            </p>
+            <ul class="notice-list">
+              <li>
+                <strong>RAM &amp; SSDs</strong>&nbsp;— roughly doubled-to-tripled versus last year,
+                and stock is tight.
+              </li>
+              <li>
+                <strong>Graphics cards</strong>&nbsp;— sitting above their original launch prices.
+              </li>
+              <li>
+                <strong>Processors</strong>&nbsp;— even older AM4 chips have crept up as demand
+                returns.
+              </li>
+            </ul>
+            <p class="tarnished-font">
+              What this means for you: I quote every build at honest, current market rates and
+              always shop around for the best-value parts — so you get today's best price, never
+              an inflated markup.
+            </p>
+            <p class="tarnished-font notice-footnote">
+              ⚡ Prices move weekly — <a href="/contact/" style="color: var(--rune-glow);">ask me for
+              a fresh quote</a> for an accurate figure.
+            </p>
           </div>
         </div>
       </div>
