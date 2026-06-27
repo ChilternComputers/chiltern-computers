@@ -156,9 +156,9 @@ const services = [
     color: 'var(--solar-orange)',
   },
   {
-    title: 'Hosting Sorted',
+    title: 'Free Hosting',
     description:
-      'I deploy your site to a fast global CDN. No fiddly hosting setup to worry about — it just works.',
+      'Hosted free on a fast global CDN — no monthly hosting bills and no setup to worry about. It just works, and stays online.',
     iconName: 'database',
     color: 'var(--nebula-purple)',
   },
@@ -184,7 +184,34 @@ const process = [
   { step: '3', title: 'Design Mockups', text: 'I produce visual mockups of the key pages and agree the look and feel with you before any code is written.' },
   { step: '4', title: 'Build & Code', text: 'I build the site page by page using modern tools, with regular progress check-ins so nothing surprises you.' },
   { step: '5', title: 'Review & Launch', text: 'You review on a private staging URL. Once you approve, I deploy to your domain with no downtime.' },
-  { step: '6', title: 'Aftercare', text: 'Ongoing support packages, or pay-as-you-go for tweaks, content edits and security updates.' },
+  { step: '6', title: 'Aftercare', text: 'Pay-as-you-go for any changes later — tweaks, new pages, content edits. No contracts, no monthly fees.' },
+];
+
+const pricing = [
+  {
+    name: 'Starter',
+    price: '£395',
+    tagline: 'A sharp one-page presence',
+    accent: 'var(--aurora-green)',
+    popular: false,
+    features: ['1–3 pages', 'Mobile-first design', 'Contact form', 'Google Maps + business info', 'Free hosting included'],
+  },
+  {
+    name: 'Business',
+    price: '£695',
+    tagline: 'The full small-business site',
+    accent: 'var(--primary-blue)',
+    popular: true,
+    features: ['5–6 pages', 'Photo gallery', 'Enquiry / contact forms', 'Built-in SEO + schema', 'Google Maps + reviews', 'Free hosting included'],
+  },
+  {
+    name: 'Premium',
+    price: '£1,150',
+    tagline: 'Bigger sites, bespoke features',
+    accent: 'var(--nebula-purple)',
+    popular: false,
+    features: ['8–10+ pages', 'Booking / quote builder', 'Bespoke features + integrations', 'Full SEO setup', 'Priority turnaround', 'Free hosting included'],
+  },
 ];
 ---
 
@@ -250,6 +277,11 @@ const process = [
             <Icon name="signal" size={16} />
             Performance Report
           </a>
+        </div>
+        <div class="wd-hero-trust">
+          <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> Pay once — it's yours</span>
+          <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> Free hosting</span>
+          <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> No monthly fees</span>
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
@@ -427,6 +459,48 @@ const process = [
       </div>
     </section>
 
+    <!-- PRICING -->
+    <section id="pricing" class="wd-section wd-section-alt">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">SIMPLE PRICING</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Pay once and the site is yours. Free hosting, no monthly fees, no subscription — ever.
+          </p>
+        </div>
+        <div class="wd-pricing-grid">
+          {pricing.map((tier) => (
+            <article class={`cosmic-card wd-price-card${tier.popular ? ' wd-price-popular' : ''}`} style={`--accent: ${tier.accent};`}>
+              {tier.popular && <div class="wd-price-badge tech-font">MOST POPULAR</div>}
+              <h3 class="space-font wd-price-name">{tier.name}</h3>
+              <p class="alien-font wd-price-tagline">{tier.tagline}</p>
+              <div class="wd-price-amount">
+                <span class="tech-font wd-price-from">from</span>
+                <span class="space-font wd-price-num">{tier.price}</span>
+                <span class="tech-font wd-price-once">one-off</span>
+              </div>
+              <ul class="wd-price-features">
+                {tier.features.map((f) => (
+                  <li><Icon name="check-circle" size={14} class="wd-feat-icon" /><span>{f}</span></li>
+                ))}
+              </ul>
+              <a href="/contact/" class="wd-btn wd-btn-primary wd-price-cta">
+                <Icon name="rocket" size={15} />
+                Get a Quote
+              </a>
+            </article>
+          ))}
+        </div>
+        <p class="alien-font wd-price-note">
+          Every site is <strong>paid once and yours to keep</strong> — hosted free on a fast global CDN,
+          with your domain in your own name (about £10/year, paid straight to the registrar). Need a change
+          later? It's <strong>pay-as-you-go</strong> — no retainers, no monthly bills. Prices are a guide;
+          you get a fixed quote after a quick chat.
+        </p>
+      </div>
+    </section>
+
     <!-- PROCESS -->
     <section class="wd-section">
       <div class="container">
@@ -460,36 +534,32 @@ const process = [
           <details class="cosmic-card wd-faq-item">
             <summary class="space-font wd-faq-q">How much does a website cost?</summary>
             <p class="alien-font wd-faq-a">
-              The build fee scales with the project. A small-business brochure site of a few pages
-              starts from a few hundred pounds; a corporate multi-page build with bespoke features
-              (booking flows, custom forms, integrations, content management) typically runs into the
-              low thousands. Whatever the size, you get a fixed price up front after the discovery
-              call — no hidden extras. The annual service fee that follows is a flat structure
-              covering your domain, hosting, security, ongoing maintenance and small tweaks for
-              the whole year.
+              It's a one-off fee that scales with the project. A small brochure site starts from
+              <strong>£395</strong>, a fuller small-business site around <strong>£695</strong>, and
+              bigger builds with bespoke features (booking flows, custom forms, integrations) from
+              <strong>£1,150</strong>. You get a fixed price up front after a quick chat — no hidden
+              extras, no surprises. After that the site is yours, hosting is free, and there's nothing
+              more to pay unless you ask for changes later.
             </p>
           </details>
           <details class="cosmic-card wd-faq-item">
-            <summary class="space-font wd-faq-q">Is it a website I buy, or a service I subscribe to?</summary>
+            <summary class="space-font wd-faq-q">Do I pay monthly? Is there a subscription?</summary>
             <p class="alien-font wd-faq-a">
-              It's a fully managed service. The website, source code, hosting and domain all stay
-              with Chiltern Computers — I look after every technical part of it (design, build,
-              updates, security, performance, content tweaks). You pay a one-off design fee to get
-              your site built, then a single annual fee that covers your domain registration plus
-              all ongoing maintenance. No surprise dev costs, no renewal admin, no separate hosting
-              bills — just a hand-coded site that stays modern, fast and online for as long as
-              you want it, without you ever having to touch the technical side.
+              No — and that's the whole point. You pay <strong>once</strong> for the build and the site
+              is yours. Hosting is included free on a fast global CDN, so there are no monthly hosting
+              bills. Your domain is registered in your own name (about £10/year, paid straight to the
+              registrar — not me). No subscription, no contract, nothing to chase. If you want changes
+              down the line, you just pay for that work as a one-off.
             </p>
           </details>
           <details class="cosmic-card wd-faq-item">
-            <summary class="space-font wd-faq-q">What about ongoing maintenance?</summary>
+            <summary class="space-font wd-faq-q">What if I need changes later?</summary>
             <p class="alien-font wd-faq-a">
-              Maintenance is baked into the annual service fee — there's nothing extra to budget for.
-              That covers security updates, performance tuning, small content tweaks, broken-link
-              fixes, hosting renewals and a periodic check-in to make sure the site still fits the
-              way your business is moving. If you ever want something bigger — a brand-new section,
-              a major redesign, a new integration — I'll quote that as a separate fixed-price
-              project on top, with no surprises.
+              Just send them over and I'll quote the work — pay-as-you-go, one job at a time. A new page,
+              a seasonal update, a price or menu change, a fresh set of photos — you only pay when you
+              actually want something done. No retainer sitting on your statement, no monthly fee for
+              months where nothing changes. And because the site's hosted free, it stays online and fast
+              in the meantime with nothing to pay.
             </p>
           </details>
           <details class="cosmic-card wd-faq-item">
@@ -1125,6 +1195,98 @@ const process = [
       font-size: 15px;
       line-height: 1.7;
     }
+
+    /* HERO TRUST LINE */
+    .wd-hero-trust {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 10px 26px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: wd-cta-fade 0.6s ease-out 4.5s forwards;
+    }
+    .wd-hero-trust span {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 13.5px;
+      color: var(--comet-silver);
+    }
+    .wd-trust-icon { color: var(--aurora-green); flex-shrink: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .wd-hero-trust { opacity: 1 !important; animation: none !important; }
+    }
+
+    /* PRICING */
+    .wd-pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+    .wd-price-card {
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .wd-price-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent) !important;
+      box-shadow: 0 16px 44px rgba(0,0,0,0.5), 0 0 30px color-mix(in srgb, var(--accent) 25%, transparent);
+    }
+    .wd-price-popular {
+      border-color: var(--accent) !important;
+      box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+    .wd-price-badge {
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--deep-space);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .wd-price-name { font-size: 22px; color: var(--accent); margin: 4px 0 6px; }
+    .wd-price-tagline { color: var(--comet-silver); font-size: 13.5px; margin: 0 0 20px; }
+    .wd-price-amount {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      margin-bottom: 24px;
+    }
+    .wd-price-from, .wd-price-once {
+      font-size: 11px; color: var(--comet-silver); letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .wd-price-num {
+      font-size: 44px; color: var(--starlight-white); line-height: 1;
+      text-shadow: 0 0 22px color-mix(in srgb, var(--accent) 45%, transparent);
+    }
+    .wd-price-features {
+      list-style: none; padding: 0; margin: 0 0 28px;
+      display: flex; flex-direction: column; gap: 11px;
+      text-align: left; flex: 1;
+    }
+    .wd-price-features li {
+      display: flex; align-items: center; gap: 9px;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 14px;
+      color: var(--comet-silver);
+    }
+    .wd-price-cta { width: 100%; justify-content: center; margin-top: auto; }
+    .wd-price-note {
+      text-align: center;
+      max-width: 720px;
+      margin: 40px auto 0;
+      color: var(--comet-silver);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .wd-price-note strong { color: var(--starlight-white); }
 
     /* CTA */
     .wd-cta-section { padding: 80px 0; }
