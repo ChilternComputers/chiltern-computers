@@ -133,6 +133,61 @@ const portfolio = [
   },
 ];
 
+const tradeDemos = [
+  {
+    name: 'Ridgeline Roofing',
+    industry: 'Roofing Contractor',
+    accent: '#c2562a',
+    description:
+      'A premium roofing brand built to out-credential every local competitor. Interactive before/after slider, a full accreditation badge row (NFRC, CompetentRoofer, TrustMark, Which? Trusted Trader), a named 15-year insurance-backed guarantee, a free no-obligation roof-survey funnel and per-town local-SEO pages — the trust signals every roofer in the area is missing.',
+    pages: '24 pages',
+    slug: 'ridgeline-roofing',
+    features: ['Before/after slider', 'Accreditation badge row', '15-year guarantee', 'Per-town SEO pages'],
+    url: 'https://ridgeline-roofing.pages.dev',
+    iconColor: 'var(--solar-orange)',
+    iconName: 'tools',
+  },
+  {
+    name: 'Brightwell Electrical',
+    industry: 'Electrical Contractor',
+    accent: '#2563eb',
+    description:
+      'A sharp, modern electrician brand for domestic and commercial work. NICEIC / NAPIT approved-contractor badges with registration numbers, dedicated service pages for EV chargers, EICRs, rewires and fuse-board upgrades, on-page reviews, a sticky click-to-call / WhatsApp bar and per-town pages — beating even the strongest local sites on the details they skip.',
+    pages: '25 pages',
+    slug: 'brightwell-electrical',
+    features: ['NICEIC / NAPIT badges', 'EV · EICR · rewire pages', 'On-page reviews', 'Per-town SEO pages'],
+    url: 'https://brightwell-electrical.pages.dev',
+    iconColor: 'var(--plasma-cyan)',
+    iconName: 'bolt',
+  },
+  {
+    name: 'Ashcroft Plumbing & Heating',
+    industry: 'Plumbing & Heating',
+    accent: '#c6803f',
+    description:
+      'A confident plumbing and heating brand built to convert. A clickable Gas Safe badge, a 0% finance section for boiler installs, a 24/7 emergency banner with a sticky call / WhatsApp bar, individual service pages (boilers, bathrooms, landlord certificates) and per-town local-SEO pages — the finance, reviews and emergency signals local sites bury.',
+    pages: '23 pages',
+    slug: 'ashcroft-plumbing',
+    features: ['Clickable Gas Safe badge', '0% finance section', '24/7 emergency CTA', 'Per-town SEO pages'],
+    url: 'https://ashcroft-plumbing.pages.dev',
+    iconColor: 'var(--primary-blue)',
+    iconName: 'shield',
+  },
+  {
+    name: 'Oakhart Landscapes',
+    industry: 'Landscaping & Driveways',
+    accent: '#2f6b46',
+    description:
+      'A premium, photography-led landscaping and driveways brand. A big before/after project gallery as the centrepiece, Marshalls Register and Brett Approved installer badges, a repeated "Free Design & Quote" CTA and per-town pages — the visual portfolio and accreditation every local landscaper is missing.',
+    pages: '24 pages',
+    slug: 'oakhart-landscapes',
+    features: ['Before/after gallery', 'Marshalls / Brett badges', 'Free design CTA', 'Per-town SEO pages'],
+    url: 'https://oakhart-landscapes.pages.dev',
+    iconColor: 'var(--aurora-green)',
+    iconName: 'star',
+  },
+];
+
 const services = [
   {
     title: 'Bespoke Design',
@@ -285,7 +340,7 @@ const pricing = [
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
-            <div class="space-font wd-stat-num" data-shuffle="9" data-shuffle-delay="4400">9</div>
+            <div class="space-font wd-stat-num" data-shuffle="13" data-shuffle-delay="4400">13</div>
             <div class="tech-font wd-stat-label">DEPLOYED SITES</div>
           </div>
           <div class="wd-stat">
@@ -404,6 +459,73 @@ const pricing = [
         </div>
         <div class="wd-stack-grid">
           {portfolio.map((p, i) => (
+            <a
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${p.name} live demo (opens in new tab)`}
+              class={`cosmic-card wd-stack-card${i % 2 === 1 ? ' wd-stack-reverse' : ''}`}
+              style={`--accent: ${p.accent};`}
+            >
+              <div class="wd-stack-text">
+                <div class="tech-font wd-stack-industry">
+                  {p.industry.toUpperCase()}
+                </div>
+                <h3 class="space-font wd-stack-name">{p.name}</h3>
+                <p class="alien-font wd-stack-desc">{p.description}</p>
+                <ul class="wd-stack-features">
+                  {p.features.map((f) => (
+                    <li>
+                      <Icon name="check-circle" size={14} class="wd-feat-icon" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="wd-stack-footer">
+                  <span class="tech-font wd-stack-pages">{p.pages}</span>
+                  <span class="wd-stack-cta">
+                    Visit Live Demo
+                    <Icon name="arrow-right" size={14} />
+                  </span>
+                </div>
+              </div>
+              <div class="wd-stack-preview" aria-hidden="true">
+                <div class="wd-browser-frame">
+                  <div class="wd-browser-bar">
+                    <span class="wd-browser-dot wd-bd-r"></span>
+                    <span class="wd-browser-dot wd-bd-y"></span>
+                    <span class="wd-browser-dot wd-bd-g"></span>
+                    <span class="wd-browser-url">{p.url.replace('https://', '')}</span>
+                  </div>
+                  <img
+                    src={`/web-design-previews/${p.slug}.jpg?v=${screenshotVer(p.slug)}`}
+                    alt={`Screenshot of ${p.name} homepage`}
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                    class="wd-stack-screenshot"
+                  />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- TRADE DEMOS -->
+    <section id="trade-demos" class="wd-section">
+      <div class="container">
+        <div class="wd-section-head">
+          <h2 class="space-font galaxy-text cosmic-glow wd-section-title">TRADE DEMOS</h2>
+          <div class="wd-section-line"></div>
+          <p class="alien-font wd-section-sub">
+            Premium sites for local trades — roofing, electrical, plumbing and landscaping — each built to out-class the competition. Try them on your phone.
+          </p>
+        </div>
+        <div class="wd-stack-grid">
+          {tradeDemos.map((p, i) => (
             <a
               href={p.url}
               target="_blank"
