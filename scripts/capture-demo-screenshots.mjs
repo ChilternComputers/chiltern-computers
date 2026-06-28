@@ -22,6 +22,7 @@ const allSites = [
   { slug: 'ashcroft-plumbing', url: 'https://ashcroft-plumbing.pages.dev' },
   { slug: 'oakhart-landscapes', url: 'https://oakhart-landscapes.pages.dev' },
   { slug: 'marwood-decorators', url: 'https://marwood-decorators.pages.dev' },
+  { slug: 'blackwood-barbers', url: 'https://blackwood-barbers.pages.dev' },
 ];
 const sites = onlyArg
   ? allSites.filter((s) => onlyArg.split(',').includes(s.slug))

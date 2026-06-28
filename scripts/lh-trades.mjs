@@ -9,6 +9,7 @@ const SITES = [
   { name: 'Ashcroft Plumbing & Heating', url: 'https://ashcroft-plumbing.pages.dev/',     industry: 'Plumbing & Heating' },
   { name: 'Oakhart Landscapes',          url: 'https://oakhart-landscapes.pages.dev/',    industry: 'Landscaping' },
   { name: 'Marwood Decorators',          url: 'https://marwood-decorators.pages.dev/',     industry: 'Painting & Decorating' },
+  { name: 'Blackwood Barbers',           url: 'https://blackwood-barbers.pages.dev/',      industry: 'Barber & Grooming' },
 ];
 
 const strategy = process.argv[2] === 'desktop' ? 'desktop' : 'mobile';
