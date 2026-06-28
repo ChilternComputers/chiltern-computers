@@ -17,6 +17,11 @@ const allSites = [
   { slug: 'freshwax', url: 'https://freshwax.co.uk' },
   { slug: 'flames-after-dark', url: 'https://flames-after-dark.co.uk' },
   { slug: 'rebel-culture', url: 'https://rebelculture.org' },
+  { slug: 'ridgeline-roofing', url: 'https://ridgeline-roofing.pages.dev' },
+  { slug: 'brightwell-electrical', url: 'https://brightwell-electrical.pages.dev' },
+  { slug: 'ashcroft-plumbing', url: 'https://ashcroft-plumbing.pages.dev' },
+  { slug: 'oakhart-landscapes', url: 'https://oakhart-landscapes.pages.dev' },
+  { slug: 'marwood-decorators', url: 'https://marwood-decorators.pages.dev' },
 ];
 const sites = onlyArg
   ? allSites.filter((s) => onlyArg.split(',').includes(s.slug))
