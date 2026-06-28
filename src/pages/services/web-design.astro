@@ -1478,17 +1478,16 @@ const pricing = [
       /* Loosen letter-spacing on the title at narrow widths so the trailing
          glyph + glow doesn't get clipped by .wd-hero's overflow:hidden. */
       .wd-hero-title { letter-spacing: -0.01em; padding: 0 2px; }
-      /* Compact the demo cards on mobile — thumbnail + name + tag + Visit only,
-         so the showcase isn't an endless scroll of descriptions. Full copy lives
-         on each live demo (one tap away); cards stay rich on desktop. */
-      .wd-stack-grid { gap: 22px; }
-      .wd-stack-card { gap: 14px; padding: 16px; }
+      /* Demos become a compact 2-up thumbnail gallery on mobile — tap a tile to
+         open the live site. Descriptions, feature lists, footer and the browser
+         chrome are hidden here; the cards stay full and rich on desktop. */
+      .wd-stack-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .wd-stack-card { grid-template-columns: 1fr; gap: 9px; padding: 10px; }
       .wd-stack-text, .wd-stack-reverse .wd-stack-text { order: 2; }
       .wd-stack-preview, .wd-stack-reverse .wd-stack-preview { order: 1; }
-      .wd-stack-desc, .wd-stack-features { display: none; }
-      .wd-stack-name { margin-bottom: 2px; }
-      .wd-stack-footer { flex-direction: row; gap: 12px; align-items: center; justify-content: space-between; text-align: left; margin-top: 10px; }
-      .wd-stack-cta { justify-content: flex-end; }
+      .wd-stack-desc, .wd-stack-features, .wd-stack-footer, .wd-browser-bar { display: none; }
+      .wd-stack-industry { font-size: 8.5px; letter-spacing: 0.1em; margin-bottom: 3px; }
+      .wd-stack-name { font-size: 0.94rem; line-height: 1.15; margin-bottom: 0; }
       .wd-process-grid { grid-template-columns: 1fr; max-width: 480px; }
       .wd-cta-card { padding: 40px 24px; }
     }
