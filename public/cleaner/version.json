@@ -1,6 +1,6 @@
 {
-  "latest": "1.0.7",
-  "released": "2026-04-26",
-  "url": "https://downloads.chilterncomputers.net/v1.0.7/ChilternCleanerSetup.exe",
-  "notes": "Health score thresholds further loosened so typical customer PCs hit 100 after a clean. Score breakdown is now logged to the audit log so we can see why a particular PC isn't at 100."
+  "latest": "1.0.12",
+  "released": "2026-07-03",
+  "url": "https://downloads.chilterncomputers.net/v1.0.12/ChilternCleanerSetup.exe",
+  "notes": "Smoother, sharper interface: fits smaller laptop screens, scales correctly on high-DPI displays, silky progress animations, and a Cancel button during cleans. If a clean finishes below 100, a new View Log button shows exactly why."
 }
