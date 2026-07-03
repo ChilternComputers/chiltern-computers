@@ -1,6 +1,6 @@
 {
-  "latest": "1.0.12",
+  "latest": "1.1.0",
   "released": "2026-07-03",
-  "url": "https://downloads.chilterncomputers.net/v1.0.12/ChilternCleanerSetup.exe",
-  "notes": "Smoother, sharper interface: fits smaller laptop screens, scales correctly on high-DPI displays, silky progress animations, and a Cancel button during cleans. If a clean finishes below 100, a new View Log button shows exactly why."
+  "url": "https://downloads.chilterncomputers.net/v1.1.0/ChilternCleanerSetup.exe",
+  "notes": "Major safety update. Browser cleaning no longer touches your logins or saved site data unless you opt in, and skips any browser that's open. Registry cleaning is far more cautious and adds a one-click Restore. Cleaning now frees the space it finds, honours the Recycle Bin option, and the health score reflects how clean your PC is."
 }
