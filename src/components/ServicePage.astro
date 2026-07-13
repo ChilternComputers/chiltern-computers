@@ -2,6 +2,7 @@
 import Icon from './Icon.astro';
 import { siteConfig } from '../config';
 import { areas } from '../data/areas';
+import { serviceGuides } from '../data/serviceGuides';
 
 interface ServiceItem {
   iconName: string;
@@ -66,6 +67,11 @@ const colorMap = {
   orange: 'var(--solar-orange)',
   purple: 'var(--nebula-purple)',
 };
+
+// Internal-linking: look up this service's related blog guides by pathname
+// (normalised to exactly one trailing slash to match the map keys).
+const pagePath = Astro.url.pathname.replace(/\/+$/, '') + '/';
+const guides = serviceGuides[pagePath] ?? [];
 
 const headingClassMap = {
   cyan: 'heading-cyan',
@@ -219,6 +225,45 @@ const headingClassMap = {
       </div>
     </div>
   </section>
+
+  <!-- Guides & Advice Section (internal links to blog guides) -->
+  {guides.length > 0 && (
+    <section class="section-bg section-pad">
+      <div class="container">
+        <h2
+          class="space-font"
+          style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 12px; text-align: center;"
+        >
+          GUIDES &amp; ADVICE
+        </h2>
+        <p
+          class="alien-font"
+          style="color: var(--comet-silver); font-size: 15px; margin-bottom: 30px; text-align: center;"
+        >
+          Straight answers from the workshop — costs, warning signs and honest advice:
+        </p>
+        <div class="svc-related-grid">
+          {guides.map((guide) => (
+            <a href={guide.url} class="cosmic-card area-service-link">
+              <h3 class="space-font heading-orange">
+                <Icon name="blog" size={16} class="icon-inline" /> {guide.title}
+              </h3>
+              <p class="alien-font card-desc">{guide.description}</p>
+            </a>
+          ))}
+        </div>
+        <p style="text-align: center; margin-top: 24px;">
+          <a
+            href="/blog/"
+            class="alien-font"
+            style="color: var(--plasma-cyan); text-decoration: none; font-size: 15px;"
+          >
+            View all guides &rarr;
+          </a>
+        </p>
+      </div>
+    </section>
+  )}
 
   <!-- Area Coverage Section -->
   <section class="section-bg section-pad">

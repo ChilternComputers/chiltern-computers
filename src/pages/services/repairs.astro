@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { siteConfig } from '../../config';
 import Icon from '../../components/Icon.astro';
 import StarRating from '../../components/StarRating.astro';
+import { repairsGuides } from '../../data/serviceGuides';
 
 
 const reviews = [
@@ -914,6 +915,52 @@ const howToSchema = {
       </div>
     </section>
 
+    <!-- Guides & Advice (internal links to blog guides) -->
+    <section class="repair-section-bg" style="padding: 60px 0;">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2
+            class="space-font"
+            style="color: var(--solar-orange); font-size: clamp(20px, 4vw, 28px); margin-bottom: 16px;"
+          >
+            GUIDES &amp; ADVICE
+          </h2>
+          <p class="alien-font" style="color: var(--comet-silver); font-size: 15px;">
+            Straight answers from the workshop before you book:
+          </p>
+        </div>
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;"
+        >
+          {repairsGuides.map((guide) => (
+            <a
+              href={guide.url}
+              class="cosmic-card"
+              style="padding: 24px; text-decoration: none; display: block;"
+            >
+              <h3
+                class="space-font"
+                style="color: var(--solar-orange); font-size: 16px; margin-bottom: 8px;"
+              >
+                <Icon name="blog" size={14} class="icon-inline" /> {guide.title}
+              </h3>
+              <p class="alien-font" style="color: var(--comet-silver); font-size: 14px; margin: 0;">
+                {guide.description}
+              </p>
+            </a>
+          ))}
+        </div>
+        <p style="text-align: center; margin-top: 24px;">
+          <a
+            href="/blog/"
+            class="alien-font"
+            style="color: var(--plasma-cyan); text-decoration: none; font-size: 15px;"
+          >
+            View all guides &rarr;
+          </a>
+        </p>
+      </div>
+    </section>
 
     <!-- Call to Action -->
     <section class="repair-section-bg" style="padding: 80px 0;">

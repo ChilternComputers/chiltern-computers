@@ -29,15 +29,15 @@ export const GET: APIRoute = async () => {
     { url: '/services/windows-installation-romford/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/services/computer-repair-ilford/', priority: 0.9, changefreq: 'monthly', lastmod: '2026-06-11' },
 
-    // Core pages (7)
+    // Core pages (5)
+    // NOTE: /privacy-policy/, /terms-of-service/ and /accessibility/ are
+    // deliberately NOT listed — they carry noindex, and a noindexed URL in
+    // the sitemap is a contradiction both Google and Bing flag.
     { url: '/contact/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/book-repair/', priority: 0.9, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/pricing/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/faq/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
     { url: '/about/', priority: 0.7, changefreq: 'monthly', lastmod: lastUpdated },
-    { url: '/privacy-policy/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
-    { url: '/terms-of-service/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
-    { url: '/accessibility/', priority: 0.3, changefreq: 'yearly', lastmod: lastUpdated },
 
     // Area pages — Local SEO (44)
     { url: '/areas/', priority: 0.8, changefreq: 'monthly', lastmod: lastUpdated },

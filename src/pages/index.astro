@@ -6,8 +6,12 @@ import { siteConfig } from '../config';
 import StarRating from '../components/StarRating.astro';
 import Icon from '../components/Icon.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
+import { homepageGuides } from '../data/serviceGuides';
 
 const reviews = getReviews(4);
+
+const guideColors = ['var(--solar-orange)', 'var(--plasma-cyan)', 'var(--aurora-green)'];
+const guideBgs = ['rgba(249, 115, 22, 0.2)', 'rgba(6, 182, 212, 0.2)', 'rgba(16, 185, 129, 0.2)'];
 
 ---
 
@@ -608,5 +612,63 @@ const reviews = getReviews(4);
 
   <!-- Google Reviews -->
   <GoogleReviews />
+
+  <!-- Latest Guides & Advice (internal links to key blog posts) -->
+  <section class="section-bg-2" style="padding: 80px 0;" aria-labelledby="guides-heading">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2
+          id="guides-heading"
+          class="space-font galaxy-text cosmic-glow mobile-text"
+          style="font-size: clamp(28px, 5vw, 40px); margin-bottom: 16px;"
+        >
+          GUIDES &amp; ADVICE
+        </h2>
+        <div
+          style="height: 3px; width: 120px; background: linear-gradient(90deg, var(--solar-orange), var(--plasma-cyan)); margin: 0 auto 20px; border-radius: 2px;"
+        >
+        </div>
+        <p
+          class="alien-font mobile-text"
+          style="color: var(--comet-silver); font-size: 16px; max-width: 600px; margin: 0 auto;"
+        >
+          Straight answers from the workshop — repair costs, honest advice and what to do before
+          Windows 10 support ends.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        {homepageGuides.map((guide, i) => (
+          <a href={guide.url} class="cosmic-card" style="padding: 24px; text-decoration: none; display: block;">
+            <div
+              class="planet-icon"
+              style={`background: ${guideBgs[i]}; color: ${guideColors[i]};`}
+              aria-hidden="true"
+            >
+              <Icon name="blog" size={24} />
+            </div>
+            <h3
+              class="space-font"
+              style={`color: ${guideColors[i]}; font-size: 16px; margin-bottom: 12px;`}
+            >
+              {guide.title}
+            </h3>
+            <p
+              class="alien-font mobile-text"
+              style="color: var(--starlight-white); line-height: 1.5; font-size: 14px;"
+            >
+              {guide.description}
+            </p>
+          </a>
+        ))}
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="/blog/" class="space-button space-font">
+          <Icon name="blog" size={16} class="icon-inline" /> View All Guides
+        </a>
+      </div>
+    </div>
+  </section>
 
 </Layout>
