@@ -224,9 +224,16 @@ const howToSchema = {
 
     /* GRIDS */
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      /* Centred flex instead of grid so incomplete rows (8 cards at 3-up)
+         sit centred rather than leaving an orphan gap */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 30px;
+    }
+    .services-grid > article {
+      flex: 1 1 320px;
+      max-width: 400px;
     }
     .process-grid {
       display: grid;
@@ -251,8 +258,11 @@ const howToSchema = {
       }
 
       .services-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
+      }
+      .services-grid > article {
+        flex-basis: 100%;
+        max-width: none;
       }
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -561,35 +571,6 @@ const howToSchema = {
             </p>
             <div style="text-align: center;">
               <a href="/services/network-wifi-romford/" class="space-button space-font">
-                View Details →
-              </a>
-            </div>
-          </article>
-
-          <!-- Windows Installation -->
-          <article class="cosmic-card" style="padding: 32px;">
-            <div
-              class="planet-icon"
-              style="background: rgba(30, 58, 138, 0.2); color: var(--cosmic-blue);"
-              aria-hidden="true"
-            >
-              <Icon name="desktop" size={32} />
-            </div>
-            <h3
-              class="space-font cosmic-glow"
-              style="color: var(--cosmic-blue); font-size: 24px; margin-bottom: 16px; text-align: center;"
-            >
-              WINDOWS INSTALLATION
-            </h3>
-            <p
-              class="alien-font"
-              style="color: var(--starlight-white); text-align: center; margin-bottom: 24px; font-size: 16px; line-height: 1.6;"
-            >
-              Fresh Windows installs, Windows 11 upgrades, driver setup, and data migration. Get a
-              clean, fast system.
-            </p>
-            <div style="text-align: center;">
-              <a href="/services/windows-installation-romford/" class="space-button space-font">
                 View Details →
               </a>
             </div>
