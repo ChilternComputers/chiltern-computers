@@ -1,14 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import { getReviews } from '../data/reviews';
 import { siteConfig } from '../config';
 import StarRating from '../components/StarRating.astro';
 import Icon from '../components/Icon.astro';
 import GoogleReviews from '../components/GoogleReviews.astro';
 import { homepageGuides } from '../data/serviceGuides';
-
-const reviews = getReviews(4);
 
 const guideColors = ['var(--solar-orange)', 'var(--plasma-cyan)', 'var(--aurora-green)'];
 const guideBgs = ['rgba(249, 115, 22, 0.2)', 'rgba(6, 182, 212, 0.2)', 'rgba(16, 185, 129, 0.2)'];
@@ -20,7 +17,6 @@ const guideBgs = ['rgba(249, 115, 22, 0.2)', 'rgba(6, 182, 212, 0.2)', 'rgba(16,
   description="Professional PC repair in Harold Hill, Romford. Expert laptop repairs, virus removal & data recovery. Call 07971 331814."
   keywords="computer repair romford, pc repair harold hill, laptop repair essex, virus removal romford, data recovery harold hill"
   modifiedTime="2026-03-08"
-  reviews={reviews}
 >
   <!-- Use the imported Hero component only -->
   <Hero />

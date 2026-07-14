@@ -6,30 +6,6 @@ import StarRating from '../../components/StarRating.astro';
 import { repairsGuides } from '../../data/serviceGuides';
 
 
-const reviews = [
-  {
-    author: 'Emma R.',
-    location: 'Harold Hill',
-    text: 'They replaced my cracked laptop screen within hours. Great price and super friendly service!',
-    rating: 5,
-    date: '2024-11-15',
-  },
-  {
-    author: 'Dave M.',
-    location: 'Romford',
-    text: 'Sorted out my overheating desktop fast. Even cleaned out the dust for free!',
-    rating: 5,
-    date: '2024-10-22',
-  },
-  {
-    author: 'Claire S.',
-    location: 'Brentwood',
-    text: "MacBook wouldn't boot – they fixed it same day. Life saver!",
-    rating: 5,
-    date: '2024-09-18',
-  },
-];
-
 // HowTo Schema for repair process
 const howToSchema = {
   '@context': 'https://schema.org',
@@ -86,7 +62,6 @@ const howToSchema = {
     { name: 'Home', url: '/' },
     { name: 'Repairs & Services', url: '/services/repairs/' },
   ]}
-  reviews={reviews}
 >
   <style>
     /* PAGE-SPECIFIC STYLES FOR REPAIRS PAGE */

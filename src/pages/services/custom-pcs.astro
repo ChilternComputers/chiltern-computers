@@ -6,29 +6,6 @@ import StarRating from '../../components/StarRating.astro';
 import { customPcsGuides } from '../../data/serviceGuides';
 
 
-const reviews = [
-  {
-    author: 'James T.',
-    location: 'Romford',
-    text: 'Built me an amazing gaming PC that runs everything at max settings. Incredible value!',
-    rating: 5,
-    date: '2024-11-08',
-  },
-  {
-    author: 'Sarah K.',
-    location: 'Harold Hill',
-    text: 'Perfect work PC for my home office. Fast, quiet, and exactly what I needed.',
-    rating: 5,
-    date: '2024-10-15',
-  },
-  {
-    author: 'Omar A.',
-    location: 'Brentwood',
-    text: 'Outstanding customer service and technical expertise. My content creation rig is absolutely perfect for streaming and video editing!',
-    rating: 5,
-    date: '2024-09-22',
-  },
-];
 ---
 
 <Layout
@@ -43,7 +20,6 @@ const reviews = [
     { name: 'Repairs & Services', url: '/services/repairs/' },
     { name: 'Custom Gaming PCs', url: '/services/custom-pcs/' },
   ]}
-  reviews={reviews}
 >
   <style>
     /* RESET & BASE */

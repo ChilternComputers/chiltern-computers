@@ -1,7 +1,6 @@
 ---
 // src/pages/contact.astro
 import Layout from '../layouts/Layout.astro';
-import { getReviews } from '../data/reviews';
 import StarRating from '../components/StarRating.astro';
 import Icon from '../components/Icon.astro';
 
@@ -22,8 +21,6 @@ const errorMessages = {
 const errorMessage = error
   ? errorMessages[error as keyof typeof errorMessages] || errorMessages.default
   : null;
-
-const reviews = getReviews(3);
 ---
 
 <Layout
@@ -35,7 +32,6 @@ const reviews = getReviews(3);
     { name: 'Home', url: '/' },
     { name: 'Contact', url: '/contact/' },
   ]}
-  reviews={reviews}
 >
   <section
     class="section-bg-5 contact-hero"

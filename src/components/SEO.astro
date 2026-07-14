@@ -10,13 +10,6 @@ export interface Props {
   noindex?: boolean;
   articleAuthor?: string;
   breadcrumbs?: Array<{ name: string; url: string }>;
-  reviews?: Array<{
-    author: string;
-    location: string;
-    text: string;
-    rating: number;
-    date?: string;
-  }>;
 }
 
 const {
@@ -31,7 +24,6 @@ const {
   noindex = false,
   articleAuthor = 'David Hagon',
   breadcrumbs = [],
-  reviews = [],
 } = Astro.props;
 
 const fullTitle = title ? `${title} | Chiltern Computers` : 'Computer Repair Harold Hill, Romford | Chiltern Computers';
@@ -185,20 +177,11 @@ const localBusinessSchema = {
       },
     ],
   },
-  // Google policy (since Aug 2019) requires aggregate ratings to be
-  // supported by reviews actually visible on the page. The homepage
-  // renders the 4 reviews from data/reviews.ts via getReviews(4) — schema
-  // matches that. If more reviews are added to data/reviews.ts AND
-  // rendered on-page, update reviewCount to match. Don't claim Google
-  // Maps totals here — that's a structured-data policy violation that
-  // can lose rich snippets entirely.
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: 5,
-    reviewCount: 4,
-    bestRating: 5,
-    worstRating: 1,
-  },
+  // NOTE (2026-07-14): aggregateRating and per-review Review schema
+  // deliberately removed. Google treats first-party reviews of your own
+  // business as "self-serving" and never shows stars for them, so the
+  // markup earned nothing — real review signals come from the Google
+  // Business Profile instead. Don't re-add without a third-party source.
 };
 
 const organizationSchema = {
@@ -411,40 +394,6 @@ const breadcrumbSchema =
       }
     : null;
 
-// Review Schema - individual reviews for rich snippets
-const reviewSchemas = reviews.map((review) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  itemReviewed: {
-    '@type': 'LocalBusiness',
-    name: 'Chiltern Computers',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '38 Hilldene Avenue',
-      addressLocality: 'Harold Hill',
-      addressRegion: 'Essex',
-      postalCode: 'RM3 8YP',
-      addressCountry: 'GB',
-    },
-  },
-  reviewRating: {
-    '@type': 'Rating',
-    ratingValue: review.rating,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  author: {
-    '@type': 'Person',
-    name: review.author,
-  },
-  reviewBody: review.text,
-  datePublished: review.date || '2024-12-01',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Chiltern Computers',
-  },
-}));
-
 // Article Schema for blog posts
 const articleSchema = type === 'article' ? {
   '@context': 'https://schema.org',
@@ -483,12 +432,6 @@ const homepageGraph = Astro.url.pathname === '/'
     })
   : null;
 
-const reviewsGraph = reviewSchemas.length > 0
-  ? JSON.stringify({
-      '@context': 'https://schema.org',
-      '@graph': reviewSchemas.map(stripContext),
-    })
-  : null;
 ---
 
 <meta charset="UTF-8" />
@@ -661,5 +604,4 @@ const reviewsGraph = reviewSchemas.length > 0
 <!-- Structured Data — consolidated into @graph for performance -->
 {homepageGraph && <script type="application/ld+json" set:html={homepageGraph} />}
 {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
-{reviewsGraph && <script type="application/ld+json" set:html={reviewsGraph} />}
 {articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

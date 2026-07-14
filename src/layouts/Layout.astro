@@ -15,13 +15,6 @@ export interface Props {
   modifiedTime?: string;
   noindex?: boolean;
   breadcrumbs?: Array<{ name: string; url: string }>;
-  reviews?: Array<{
-    author: string;
-    location: string;
-    text: string;
-    rating: number;
-    date?: string;
-  }>;
 }
 
 const {
@@ -34,7 +27,6 @@ const {
   modifiedTime,
   noindex,
   breadcrumbs,
-  reviews,
 } = Astro.props;
 ---
 
@@ -51,7 +43,6 @@ const {
       modifiedTime={modifiedTime}
       noindex={noindex}
       breadcrumbs={breadcrumbs}
-      reviews={reviews}
     />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
