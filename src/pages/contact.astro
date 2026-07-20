@@ -133,21 +133,19 @@ const errorMessage = error
               for="email"
               class="space-font"
               style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;"
-              >Email Address *</label
+              >Email Address</label
             >
             <input
               type="email"
               id="email"
               name="email"
-              required
-              aria-required="true"
               aria-describedby="email-hint"
               placeholder="your.email@example.com"
               autocomplete="email"
               style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
             />
             <span id="email-hint" class="sr-only"
-              >Required. Enter a valid email address so I can respond to you.</span
+              >Optional if you leave a phone number. Enter a valid email address so I can respond to you.</span
             >
             <p class="field-error" id="email-error" aria-live="polite">Please enter a valid email address.</p>
           </div>
@@ -173,6 +171,11 @@ const errorMessage = error
               >Optional. Enter your phone number if you prefer a callback.</span
             >
           </div>
+
+          <!-- Contact-method hint: email OR phone is enough, don't force either -->
+          <p id="contact-hint" class="alien-font" style="color: var(--text-subtle); font-size: 13px; margin: -12px 0 24px;">
+            Just leave an <strong style="color: var(--text-light);">email or a phone number</strong> — whichever suits you, so I can get back to you.
+          </p>
 
           <!-- Location Field -->
           <div style="margin-bottom: 24px;">
@@ -693,6 +696,18 @@ const errorMessage = error
         form.addEventListener('submit', function (e) {
           const submitBtn = document.getElementById('submit-btn');
           const humanCheck = document.getElementById('human-check');
+
+          // Need at least one way to reply — email or phone (neither is forced on its own).
+          const emailField = document.getElementById('email');
+          const phoneField = document.getElementById('phone');
+          if (!emailField?.value.trim() && !phoneField?.value.trim()) {
+            e.preventDefault();
+            const hint = document.getElementById('contact-hint');
+            if (hint) hint.style.color = 'var(--error, #ef4444)';
+            emailField?.setAttribute('aria-invalid', 'true');
+            emailField?.focus();
+            return;
+          }
 
           // Check human verification
           if (!humanCheck?.checked) {

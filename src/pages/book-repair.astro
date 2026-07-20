@@ -53,11 +53,11 @@ import { siteConfig } from '../config';
             <!-- Step 1: Device Type -->
             <fieldset style="border: none; padding: 0; margin: 0 0 28px;">
               <legend class="space-font" style="color: var(--plasma-cyan); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                <Icon name="laptop" size={18} /> What device needs repairing? *
+                <Icon name="laptop" size={18} /> What device needs repairing? <span class="alien-font" style="color: var(--comet-silver); font-weight: 400; font-size: 13px;">(optional)</span>
               </legend>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px;">
                 <label class="device-option">
-                  <input type="radio" name="device" value="Laptop" required aria-required="true" />
+                  <input type="radio" name="device" value="Laptop" />
                   <span class="device-label alien-font"><Icon name="laptop" size={16} /> Laptop</span>
                 </label>
                 <label class="device-option">
@@ -82,16 +82,14 @@ import { siteConfig } from '../config';
             <!-- Step 2: Issue Type -->
             <fieldset style="border: none; padding: 0; margin: 0 0 28px;">
               <legend class="space-font" style="color: var(--plasma-cyan); font-size: 16px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                <Icon name="wrench" size={18} /> What's the issue? *
+                <Icon name="wrench" size={18} /> What's the issue? <span class="alien-font" style="color: var(--comet-silver); font-weight: 400; font-size: 13px;">(optional — or just tell me below)</span>
               </legend>
               <select
                 name="issue"
                 id="issue"
-                required
-                aria-required="true"
                 style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; font-family: inherit;"
               >
-                <option value="" disabled selected>Select the main issue...</option>
+                <option value="" selected>Select the main issue (optional)...</option>
                 <option value="Running slow / freezing">Running slow / freezing</option>
                 <option value="Won't turn on / won't boot">Won't turn on / won't boot</option>
                 <option value="Blue screen / crashing">Blue screen / crashing</option>
@@ -107,16 +105,16 @@ import { siteConfig } from '../config';
               </select>
             </fieldset>
 
-            <!-- Step 3: Description (only visible when "Other" selected) -->
-            <div id="description-wrap" style="margin-bottom: 28px; display: none;">
+            <!-- Step 3: Description (always available — a free-text note is easier than picking from a list) -->
+            <div id="description-wrap" style="margin-bottom: 28px;">
               <label for="description" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
-                Please describe the issue *
+                Tell me what's happening <span class="alien-font" style="color: var(--comet-silver); font-weight: 400; font-size: 13px;">(optional)</span>
               </label>
               <textarea
                 id="description"
                 name="message"
                 rows="4"
-                placeholder="Describe what's happening with your device..."
+                placeholder="A quick note about the problem — or just leave your details and I'll get back to you to find out more."
                 style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px; resize: vertical; font-family: inherit;"
               ></textarea>
             </div>
@@ -153,21 +151,22 @@ import { siteConfig } from '../config';
               </div>
             </div>
 
-            <div style="margin-bottom: 28px;">
+            <div style="margin-bottom: 8px;">
               <label for="booking-email" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
-                Email Address *
+                Email Address
               </label>
               <input
                 type="email"
                 id="booking-email"
                 name="email"
-                required
-                aria-required="true"
                 placeholder="your.email@example.com"
                 autocomplete="email"
                 style="width: 100%; padding: 14px; background: rgba(15, 20, 25, 0.8); border: 1px solid var(--card-border); border-radius: 8px; color: var(--text-light); font-size: 16px;"
               />
             </div>
+            <p id="contact-hint" class="alien-font" style="color: var(--comet-silver); font-size: 13px; margin: 0 0 28px;">
+              Just leave an <strong style="color: var(--starlight-white);">email or a phone number</strong> — whichever suits you, so I can get back to you.
+            </p>
 
             <div style="margin-bottom: 28px;">
               <label for="booking-location" class="space-font" style="color: var(--text-light); font-size: 14px; font-weight: 600; margin-bottom: 8px; display: block;">
@@ -246,26 +245,6 @@ import { siteConfig } from '../config';
   </style>
 
   <script>
-    // Show/hide description field based on dropdown selection
-    const issueSelect = document.getElementById('issue');
-    const descWrap = document.getElementById('description-wrap');
-    const descField = document.getElementById('description');
-
-    if (issueSelect && descWrap && descField) {
-      issueSelect.addEventListener('change', () => {
-        if (issueSelect.value === 'Other') {
-          descWrap.style.display = 'block';
-          descField.required = true;
-          descField.setAttribute('aria-required', 'true');
-        } else {
-          descWrap.style.display = 'none';
-          descField.required = false;
-          descField.removeAttribute('aria-required');
-          descField.value = '';
-        }
-      });
-    }
-
     // Reset button state when page loads (after returning from Formspree)
     const submitBtn = document.getElementById('repair-submit-btn');
     if (submitBtn) {
@@ -284,6 +263,17 @@ import { siteConfig } from '../config';
       });
 
       form.addEventListener('submit', (e) => {
+        // Need at least one way to reply — email or phone (neither is forced on its own).
+        const email = document.getElementById('booking-email');
+        const phone = document.getElementById('booking-phone');
+        if (!email?.value.trim() && !phone?.value.trim()) {
+          e.preventDefault();
+          const hint = document.getElementById('contact-hint');
+          if (hint) hint.style.color = 'var(--error, #ef4444)';
+          email?.setAttribute('aria-invalid', 'true');
+          email?.focus();
+          return;
+        }
         const humanCheck = document.getElementById('repair-human-check');
         if (!humanCheck?.checked) {
           e.preventDefault();
