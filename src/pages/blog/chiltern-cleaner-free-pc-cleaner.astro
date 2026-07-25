@@ -1,0 +1,485 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const publishDate = '2026-07-25';
+const modifiedDate = '2026-07-25';
+const author = 'David Hagon';
+const readTime = '9 min read';
+
+const faqs = [
+  {
+    question: 'Is Chiltern Cleaner really free?',
+    answer:
+      "Yes. Chiltern Cleaner comes free with any Chiltern Computers service — a clean-up, tune-up, Windows reinstall, virus removal and the like — and I install and set it up as part of the job. It goes with the software side of what I do, rather than a hardware repair such as a screen or keyboard replacement. There's no subscription, no locked 'Pro' features, no ads, nothing bundled you didn't ask for, and every tool is available from day one.",
+  },
+  {
+    question: 'How is it different from CCleaner?',
+    answer:
+      "The short version: everything's included and nothing nags you. CCleaner and most of its rivals reserve their genuinely useful features — scheduled cleaning, automation, deep clean — for a paid tier that runs £20–£45 a year, and some bundle extra products or push you to upgrade. Chiltern Cleaner gives you scheduled cleaning, a full toolbox and the safety features with nothing held back. It's also built on a modern, current codebase and it's made and supported by a local shop you can actually walk into.",
+  },
+  {
+    question: 'Is it safe to let it clean the registry?',
+    answer:
+      "It's built to be. Before it changes anything in the registry it automatically saves a backup you can restore in one click, and you can also have it create a Windows System Restore point first. Every clean can be previewed (a dry run that shows exactly what would be removed) before a single file is touched, and it keeps an audit log of what was cleaned and when. Registry cleaning is the part cheaper tools get wrong — the safeguards here are the whole point.",
+  },
+  {
+    question: 'Will it log me out of my websites or delete my passwords?',
+    answer:
+      "Only if you tell it to. Cookies and browsing history are off by default and clearly flagged, so nothing about your logins changes unless you choose it. If you do clear cookies, the cookie whitelist lets you keep the handful of sites you want to stay signed in to. Chiltern Cleaner never touches saved passwords.",
+  },
+  {
+    question: 'Does it work on Windows 10 and Windows 11?',
+    answer:
+      "Yes — it runs on Windows 10 and Windows 11. It's a lightweight desktop app that only runs when you open it (no always-on background service eating memory), and it cleans the major browsers — Chrome, Edge, Firefox and Brave — alongside Windows itself.",
+  },
+  {
+    question: 'How do I get Chiltern Cleaner?',
+    answer:
+      "It comes free with any of my PC services — Bronze (£50), Silver (£75) or Gold (from £125). Bring your PC in, or have me collect it across Romford and Havering, and I'll install it and show you how it works. If you're already a customer and want it added, just get in touch.",
+  },
+];
+---
+
+<Layout
+  title="Chiltern Cleaner: A Free PC Cleaner Done Properly (vs CCleaner & the Rest)"
+  description="Chiltern Cleaner is my free PC cleaning and maintenance tool — free with any service, no ads, no subscription, no nags. See how it compares to CCleaner, BleachBit, Glary Utilities, Wise Care 365 and Advanced SystemCare."
+  keywords="chiltern cleaner, free pc cleaner, ccleaner alternative, best pc cleaner uk, pc cleaning software, free system cleaner, ccleaner vs, safe registry cleaner, pc maintenance software romford, pc optimiser free"
+  image="/office-pc.webp"
+  type="article"
+  publishedTime={publishDate}
+  modifiedTime={modifiedDate}
+  breadcrumbs={[
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog/' },
+    { name: 'Chiltern Cleaner: A Free PC Cleaner Done Properly', url: '/blog/chiltern-cleaner-free-pc-cleaner/' },
+  ]}
+>
+
+  <div>
+    <!-- Article Hero -->
+    <section class="article-hero" style="padding: 100px 0 50px;">
+      <div class="container">
+        <nav class="breadcrumb tech-font">
+          <a href="/">Home</a>
+          <span>/</span>
+          <a href="/blog/">Blog</a>
+          <span>/</span>
+          <span>Chiltern Cleaner</span>
+        </nav>
+
+        <div
+          style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16, 185, 129, 0.15); padding: 6px 16px; border-radius: 20px; border: 1px solid var(--aurora-green); margin-bottom: 24px;"
+        >
+          <span class="tech-font" style="color: var(--aurora-green); font-size: 12px;"
+            >FREE WITH ANY SERVICE</span
+          >
+        </div>
+
+        <h1
+          class="space-font"
+          style="color: var(--starlight-white); font-size: clamp(32px, 6vw, 48px); margin-bottom: 20px; line-height: 1.2; text-wrap: balance;"
+        >
+          Meet Chiltern Cleaner: PC cleaning without the ads, nags or&nbsp;subscriptions
+        </h1>
+
+        <p
+          class="alien-font"
+          style="font-size: 19px; color: var(--comet-silver); line-height: 1.6; max-width: 750px;"
+        >
+          I've rebuilt my PC maintenance tool from the ground up — and it's set up free with any of
+          my PC services (from £50). Here's what the new Chiltern Cleaner does, and an honest look at
+          how it stacks up against the big-name cleaners you've probably heard of.
+        </p>
+
+        <div class="article-meta tech-font">
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>{new Date(publishDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>{readTime}</span>
+          </div>
+          <div class="meta-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span>Harold Hill, Romford</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Article Content -->
+    <section class="article-section" style="padding: 0 0 100px;">
+      <div class="container">
+        <article class="article-content alien-font">
+          <p>
+            Over the years I've leaned on my own maintenance utility — CCASAM — to tidy up the
+            machines that come through the workshop. It did the job, but it had grown old. So I did
+            what I'd tell any customer to do with tired kit: rather than patch it up again, I
+            rebuilt it properly. <strong>Chiltern Cleaner</strong> is that rebuild — a modern,
+            safety-first cleaning and maintenance tool for Windows 10 and 11, and the direct
+            successor to CCASAM.
+          </p>
+
+          <p>
+            The most important thing first: <strong>it's free with any of my PC services</strong> —
+            Bronze (£50), Silver (£75) or Gold (from £125) — the software side of what I do (see the
+            <a href="/pricing/">service packages</a> for what each covers). No subscription, no
+            locked "Pro" version, no adverts, and nothing bundled that you didn't ask for. I set it
+            up as part of the job and show you how it works.
+          </p>
+
+          <div class="info-box">
+            <p style="margin: 0;">
+              <strong>Why a repair shop makes its own cleaner:</strong> I clean up dozens of slow,
+              cluttered PCs a month, so I know exactly which junk is safe to remove and which
+              "optimisation" does more harm than good. Chiltern Cleaner is the tool I actually want
+              to use on your machine — cautious by default, with every risky step backed up first.
+            </p>
+          </div>
+
+          <h2 class="space-font">What Chiltern Cleaner Does</h2>
+
+          <p>
+            It's built around one idea: give you a proper workshop-grade toolbox, but make the safe
+            choice the easy one. Here's what's inside.
+          </p>
+
+          <h3 class="space-font" style="font-size: 20px; margin-top: 32px;">Cleaning &amp; freeing up space</h3>
+          <ul>
+            <li><strong>Browser cleanup</strong> for Chrome, Edge, Firefox and Brave — caches and temp files by default; cookies and history only if you choose them.</li>
+            <li><strong>Windows cleanup</strong> — temporary files, the Recycle Bin, thumbnail cache, and other clutter that quietly eats your drive.</li>
+            <li><strong>Duplicate finder, large-file scanner and empty-folder finder</strong> to reclaim space you didn't know you'd lost.</li>
+            <li><strong>Disk analyser</strong> so you can see, at a glance, what's actually filling the drive.</li>
+          </ul>
+
+          <h3 class="space-font" style="font-size: 20px; margin-top: 32px;">Making the PC faster</h3>
+          <ul>
+            <li><strong>Startup manager</strong> — stop the programs that slow your boot to a crawl.</li>
+            <li><strong>Boot-time analysis</strong> and a <strong>system health score</strong> so you can see improvement, not just guess at it.</li>
+            <li><strong>Uninstaller, context-menu manager and browser-extension manager</strong> to strip out the bloat other tools leave behind.</li>
+            <li><strong>Registry cleaning and defrag, broken-shortcut fixer and RAM optimiser</strong> for the finishing touches.</li>
+          </ul>
+
+          <h3 class="space-font" style="font-size: 20px; margin-top: 32px;">Privacy &amp; security</h3>
+          <ul>
+            <li><strong>Privacy-track cleaning</strong> — recent-files lists and usage traces, with a <strong>cookie whitelist</strong> so you stay signed in where you want to.</li>
+            <li><strong>Secure file shredder</strong> for anything you want gone for good, plus <strong>file recovery</strong> for anything deleted by mistake.</li>
+            <li><strong>Network tools</strong> for flushing the DNS cache and sorting out common connection niggles.</li>
+          </ul>
+
+          <h3 class="space-font" style="font-size: 20px; margin-top: 32px;">Keeping an eye on things</h3>
+          <ul>
+            <li><strong>One-click maintenance</strong> for when you just want it sorted, and <strong>scheduled cleaning</strong> so it keeps itself tidy — a feature most rivals charge for.</li>
+            <li><strong>Disk health (SMART) monitoring</strong> to warn you before a failing drive takes your data with it.</li>
+            <li><strong>A monitoring dashboard and system-info panel</strong> so you can keep tabs on the machine at a glance.</li>
+          </ul>
+
+          <h2 class="space-font">The Safety Features That Actually Matter</h2>
+
+          <p>
+            Most "PC cleaner horror stories" come from tools that delete too much, too eagerly, with
+            no way back. Chiltern Cleaner is built the other way round:
+          </p>
+
+          <ul>
+            <li><strong>Preview before it deletes.</strong> Every clean can be run as a dry run first — you see precisely what would go before anything does.</li>
+            <li><strong>Registry backup + one-click restore.</strong> It saves a backup before any registry change, so undoing it is a single click.</li>
+            <li><strong>System Restore point.</strong> It can create a Windows restore point before bigger jobs, for a full belt-and-braces safety net.</li>
+            <li><strong>An audit log</strong> of what was cleaned and when — so there's always a record. That's genuinely rare in this category.</li>
+            <li><strong>Skips files in use</strong> and leaves protected system files well alone.</li>
+          </ul>
+
+          <h2 class="space-font">How It Compares to the Big Names</h2>
+
+          <p>
+            The popular cleaners — CCleaner, BleachBit, Glary Utilities, Wise Care 365 and Advanced
+            SystemCare — are capable tools, and I'm not going to pretend otherwise. But they all
+            make trade-offs Chiltern Cleaner is deliberately built to avoid: paywalled features,
+            adverts and upsells, or (in BleachBit's case) a very bare-bones experience. Here's the
+            honest picture on the things I think actually matter:
+          </p>
+
+          <div style="overflow-x: auto; margin: 24px 0; -webkit-overflow-scrolling: touch;">
+            <table style="width: 100%; border-collapse: collapse; min-width: 720px; font-size: 15px;">
+              <thead>
+                <tr style="background: rgba(6, 182, 212, 0.12);">
+                  <th style="text-align: left; padding: 12px 14px; color: var(--starlight-white); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="space-font">What matters</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--aurora-green); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="space-font">Chiltern&nbsp;Cleaner</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--comet-silver); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="tech-font">CCleaner</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--comet-silver); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="tech-font">BleachBit</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--comet-silver); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="tech-font">Glary</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--comet-silver); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="tech-font">Wise&nbsp;Care</th>
+                  <th style="text-align: center; padding: 12px 10px; color: var(--comet-silver); border-bottom: 2px solid rgba(6, 182, 212, 0.4);" class="tech-font">Adv. SystemCare</th>
+                </tr>
+              </thead>
+              <tbody style="color: var(--comet-silver);">
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Cost to you</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Free with any service</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">£25–45/yr for Pro</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Free</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">~£20/yr for Pro</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">~£30/yr for Pro</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">~£20/yr for Pro</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Ads / upsells / bundled extras</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">None</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Upgrade prompts</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">None</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Some</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Some</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Bundles IObit tools</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Scheduled cleaning</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Included</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Pro only</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">No</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Pro only</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Pro only</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Pro only</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Preview before deleting</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Yes (dry run)</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Analyse first</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Preview</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Partial</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Partial</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Partial</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Registry backup + restore</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Avoids registry</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Yes</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Audit log of what was cleaned</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Basic log</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">No</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">No</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">No</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">No</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px; border-bottom: 1px solid rgba(255,255,255,0.08);">Runs only when opened</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Background service</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--aurora-green);">Yes</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Background parts</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Background parts</td>
+                  <td style="text-align: center; padding: 11px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);">Heavy background</td>
+                </tr>
+                <tr>
+                  <td style="padding: 11px 14px;">Local, human support</td>
+                  <td style="text-align: center; padding: 11px 10px; color: var(--aurora-green);">Yes — it's my shop</td>
+                  <td style="text-align: center; padding: 11px 10px;">Ticket/forum</td>
+                  <td style="text-align: center; padding: 11px 10px;">Community</td>
+                  <td style="text-align: center; padding: 11px 10px;">Ticket</td>
+                  <td style="text-align: center; padding: 11px 10px;">Ticket</td>
+                  <td style="text-align: center; padding: 11px 10px;">Ticket</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size: 14px; color: var(--comet-silver); opacity: 0.85;">
+            Competitor pricing and features are based on my own research and each vendor's published
+            plans at the time of writing (July 2026); they change their tiers regularly, so treat
+            the figures as a guide.
+          </p>
+
+          <p>
+            To be fair to them: <strong>CCleaner</strong> has the broadest cleaning coverage and the
+            most polished shredding options. <strong>BleachBit</strong> is free and open-source and
+            deservedly popular with the technical crowd — it just deliberately keeps things minimal
+            (no system tools, no one-click). <strong>Glary Utilities</strong> has the widest toolbox
+            of the lot. <strong>Wise Care 365</strong> and <strong>Advanced SystemCare</strong> are
+            slick, but they lean hardest on the "buy Pro" and bundled-extras model, and Advanced
+            SystemCare in particular is heavy on background services.
+          </p>
+
+          <p>
+            Where Chiltern Cleaner earns its place is the combination: a full toolbox <em>and</em>
+            the safety features <em>and</em> no cost, ads or subscription — plus one thing none of
+            them can offer, which is a local person who built it and can sort you out face to face.
+          </p>
+
+          <div class="info-box">
+            <p style="margin: 0;">
+              <strong>An honest limit:</strong> a couple of the big suites bundle things Chiltern
+              Cleaner deliberately doesn't try to be — a full antivirus, or a driver updater, for
+              instance. I'd rather do cleaning and maintenance really well than half-do a dozen
+              jobs. For virus removal, that's a proper hands-on service — see my
+              <a href="/services/virus-removal-romford/">virus &amp; malware removal</a> page.
+            </p>
+          </div>
+
+          <h2 class="space-font">Who It's For</h2>
+
+          <p>
+            If your PC feels sluggish, the drive's filling up, or it takes an age to start, Chiltern
+            Cleaner will help — safely. It's ideal for anyone who wants their machine kept in good
+            order without paying a yearly fee, wading through adverts, or risking a tool that
+            deletes the wrong thing. And because it's the same tool I use in the workshop, you're
+            getting workshop standards on your own desk.
+          </p>
+
+          <p>
+            It pairs naturally with the other things that keep a PC quick — an
+            <a href="/blog/ssd-upgrade-guide-old-pc/">SSD upgrade</a> if you're still on a
+            mechanical hard drive, and the habits in my
+            <a href="/blog/computer-maintenance-tips-romford-businesses/">computer maintenance
+            guide</a>. Software cleaning gets you a long way; sometimes a
+            <a href="/blog/why-laptop-running-slow-romford-guide/">slow laptop</a> needs a bit of
+            both.
+          </p>
+
+          <h2 class="space-font">Frequently Asked Questions</h2>
+
+          <div class="faq-section">
+            {
+              faqs.map((faq) => (
+                <div class="faq-item">
+                  <div class="faq-question space-font">
+                    <span>{faq.question}</span>
+                  </div>
+                  <div class="faq-answer alien-font">{faq.answer}</div>
+                </div>
+              ))
+            }
+          </div>
+
+          <!-- Author Bio -->
+          <div
+            style="margin-top: 48px; padding: 24px; background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.1)); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 12px; display: flex; gap: 20px; align-items: flex-start;"
+          >
+            <div
+              style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--cosmic-blue), var(--nebula-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--starlight-white)">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                David Hagon
+              </div>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6;">
+                Computer repair specialist and founder of Chiltern Computers in Harold Hill, and the
+                developer behind Chiltern Cleaner. Years of experience fixing and upgrading PCs and
+                laptops across Romford and Havering — and building the tools I wished existed.
+              </p>
+              <div style="margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="/about/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">About Me</a>
+                <a href="/contact/" style="color: var(--plasma-cyan); font-size: 14px; text-decoration: none;">Contact</a>
+                <a href="https://g.page/chilterncomputers" target="_blank" rel="noopener noreferrer" style="color: var(--aurora-green); font-size: 14px; text-decoration: none;">Google Reviews 5/5</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-box">
+            <h3 class="space-font galaxy-text" style="font-size: 28px; margin-bottom: 16px;">
+              Get Chiltern Cleaner Free With Any Service
+            </h3>
+            <p class="alien-font" style="color: var(--comet-silver); margin-bottom: 24px; font-size: 17px;">
+              Book any PC service — Bronze (£50), Silver (£75) or Gold (from £125) — and I'll install
+              Chiltern Cleaner, set it up, and show you how to keep your PC running sweetly.
+              Collection and drop-off across Romford, Havering, and surrounding areas. Open 7 days,
+              9AM–9PM.
+            </p>
+            <a href="/contact/" class="space-button space-font">
+              Get In Touch
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Related Services -->
+          <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Services
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <a href="/services/computer-upgrades-romford/" style="display: block; padding: 16px; background: rgba(16, 185, 129, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(16, 185, 129, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--aurora-green); font-size: 14px;">Computer Upgrades</div>
+              </a>
+              <a href="/services/virus-removal-romford/" style="display: block; padding: 16px; background: rgba(6, 182, 212, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--plasma-cyan); font-size: 14px;">Virus &amp; Malware Removal</div>
+              </a>
+              <a href="/pricing/" style="display: block; padding: 16px; background: rgba(124, 58, 237, 0.1); border-radius: 12px; text-decoration: none; border: 1px solid rgba(124, 58, 237, 0.3); transition: all 0.3s; text-align: center;">
+                <div class="space-font" style="color: var(--nebula-purple); font-size: 14px;">Pricing</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Related Articles -->
+          <div style="margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(6, 182, 212, 0.2);">
+            <h3 class="space-font" style="color: var(--starlight-white); margin-bottom: 24px;">
+              Related Articles
+            </h3>
+            <div style="display: grid; gap: 16px;">
+              <a href="/blog/why-laptop-running-slow-romford-guide/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    Why Is My Laptop Running Slow?
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">Read the guide</div>
+                </div>
+              </a>
+              <a href="/blog/computer-maintenance-tips-romford-businesses/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    Computer Maintenance Tips
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">Read the guide</div>
+                </div>
+              </a>
+              <a href="/blog/ssd-upgrade-guide-old-pc/" style="display: flex; gap: 16px; padding: 16px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; text-decoration: none; border: 1px solid rgba(6, 182, 212, 0.2); transition: border-color 0.3s;">
+                <div>
+                  <div class="space-font" style="color: var(--starlight-white); font-size: 16px; margin-bottom: 8px;">
+                    SSD Upgrade Guide
+                  </div>
+                  <div class="tech-font" style="color: var(--comet-silver); font-size: 13px;">Read the guide</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- FAQ Schema -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    })}
+  />
+
+</Layout>
