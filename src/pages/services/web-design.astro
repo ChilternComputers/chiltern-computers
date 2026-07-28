@@ -265,7 +265,7 @@ const process = [
   { step: '3', title: 'Design Mockups', text: 'I produce visual mockups of the key pages and agree the look and feel with you before any code is written.' },
   { step: '4', title: 'Build & Code', text: 'I build the site page by page using modern tools, with regular progress check-ins so nothing surprises you.' },
   { step: '5', title: 'Review & Launch', text: 'You review on a private staging URL. Once you approve, I deploy to your domain with no downtime.' },
-  { step: '6', title: 'Aftercare', text: 'Pay-as-you-go for any changes later — tweaks, new pages, content edits. No contracts, no monthly fees.' },
+  { step: '6', title: 'Aftercare', text: 'Pay-as-you-go for any changes later — tweaks, new pages, content edits. Or an optional care plan if you would rather I just handled it.' },
 ];
 
 // Single "from" price rather than tiers (2026-07-29). Three tiers meant three
@@ -289,6 +289,24 @@ const pricing = [
       'Photo gallery where it earns its place',
       'Free hosting included',
       'Your domain, in your name',
+    ],
+  },
+  {
+    name: 'Care plan',
+    price: '£299',
+    // The card defaults to "from … one-off"; this one is a yearly figure.
+    prefix: '',
+    suffix: 'per year — optional',
+    tagline: 'Only if you want it looked after',
+    accent: 'var(--aurora-green)',
+    popular: false,
+    features: [
+      'Updates, backups and monitoring handled',
+      'Small content changes done for you',
+      'Fixed if it breaks — before you notice',
+      'Billed once a year, not monthly',
+      '£29/month instead if you prefer — just ask',
+      'Entirely optional; the site works fine without it',
     ],
   },
 ];
@@ -360,7 +378,7 @@ const pricing = [
         <div class="wd-hero-trust">
           <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> Pay once — it's yours</span>
           <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> Free hosting</span>
-          <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> No monthly fees</span>
+          <span><Icon name="check-circle" size={14} class="wd-trust-icon" /> Nothing compulsory</span>
         </div>
         <div class="wd-hero-stats">
           <div class="wd-stat">
@@ -612,7 +630,7 @@ const pricing = [
           <h2 class="space-font galaxy-text cosmic-glow wd-section-title">SIMPLE PRICING</h2>
           <div class="wd-section-line"></div>
           <p class="alien-font wd-section-sub">
-            Pay once and the site is yours. Free hosting, no monthly fees, no subscription — ever.
+            Pay once and the site is yours. Free hosting, and nothing you're obliged to pay after that.
           </p>
         </div>
         <div class="wd-pricing-grid">
@@ -622,9 +640,9 @@ const pricing = [
               <h3 class="space-font wd-price-name">{tier.name}</h3>
               <p class="alien-font wd-price-tagline">{tier.tagline}</p>
               <div class="wd-price-amount">
-                <span class="tech-font wd-price-from">from</span>
+                {(tier.prefix ?? 'from') && <span class="tech-font wd-price-from">{tier.prefix ?? 'from'}</span>}
                 <span class="space-font wd-price-num">{tier.price}</span>
-                <span class="tech-font wd-price-once">one-off</span>
+                <span class="tech-font wd-price-once">{tier.suffix ?? 'one-off'}</span>
               </div>
               <ul class="wd-price-features">
                 {tier.features.map((f) => (
@@ -691,11 +709,13 @@ const pricing = [
           <details class="cosmic-card wd-faq-item">
             <summary class="space-font wd-faq-q">Do I pay monthly? Is there a subscription?</summary>
             <p class="alien-font wd-faq-a">
-              No — and that's the whole point. You pay <strong>once</strong> for the build and the site
-              is yours. Hosting is included free on a fast global CDN, so there are no monthly hosting
+              Not unless you want to. You pay <strong>once</strong> for the build and the site
+              is yours. Hosting is included free on a fast global CDN, so there are no hosting
               bills. Your domain is registered in your own name (about £10/year, paid straight to the
-              registrar — not me). No subscription, no contract, nothing to chase. If you want changes
-              down the line, you just pay for that work as a one-off.
+              registrar — not me). There's no contract and nothing you have to keep paying. If you
+              want changes down the line, you just pay for that work as a one-off. The only ongoing
+              thing on offer is an optional care plan at <strong>£299/year</strong> if you'd rather
+              I looked after updates and changes — and plenty of people don't take it.
             </p>
           </details>
           <details class="cosmic-card wd-faq-item">
@@ -1364,10 +1384,10 @@ const pricing = [
     /* PRICING */
     .wd-pricing-grid {
       display: grid;
-      /* auto-FIT stretches a lone card across the full 1000px and leaves two
-         empty tracks. auto-FILL keeps the track width, and the max-width below
-         is overridden when there's only one card so it doesn't sit off-centre. */
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      /* auto-FIT collapses empty tracks, so 2 cards get 2 columns rather than
+         sitting in the first 2 of 3. Its one weakness — a lone card stretching
+         to the full 1000px — is handled by the :only-child rule below. */
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       max-width: 1000px;
       margin: 0 auto;
