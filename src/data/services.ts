@@ -131,7 +131,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does PC repair cost in Romford?',
-        answer: 'PC repairs typically start from £40 for software fixes and go up depending on the issue. Hardware replacements depend on parts needed. I always provide a clear quote after my £20 diagnostic — which is waived if you proceed with the repair.',
+        answer: 'PC repairs typically start from £75 for software fixes and go up depending on the issue. Hardware replacements depend on parts needed. I always provide a clear quote after my £20 diagnostic — which is waived if you proceed with the repair.',
       },
       {
         question: "My PC won't turn on at all — can you fix it?",
@@ -253,7 +253,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does laptop screen replacement cost in Romford?',
-        answer: 'Laptop screen replacement typically costs between £60-£120 depending on the screen size and type (standard LCD vs touchscreen). I provide a free quote before any work begins and prices include fitting.',
+        answer: 'Laptop screen replacement typically costs from £199 + parts depending on the screen size and type (standard LCD vs touchscreen). I provide a free quote before any work begins and prices include fitting.',
       },
       {
         question: 'Can you fix a laptop that keeps overheating?',
@@ -375,7 +375,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does laptop screen replacement cost in Dagenham?',
-        answer: 'Laptop screen replacement typically costs between £60-£120 depending on the screen size and type (standard LCD vs touchscreen). I provide a free quote before any work begins and prices include fitting.',
+        answer: 'Laptop screen replacement typically costs from £199 + parts depending on the screen size and type (standard LCD vs touchscreen). I provide a free quote before any work begins and prices include fitting.',
       },
       {
         question: 'Do you repair MacBooks in Dagenham?',
@@ -497,7 +497,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does virus removal cost in Romford?',
-        answer: 'My virus removal service starts from just £40. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. £20 diagnostic check — waived if you go ahead with the repair. No fix, no fee on unfixable issues.',
+        answer: 'My virus removal service starts from just £99. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. £20 diagnostic check — waived if you go ahead with the repair. No fix, no fee on unfixable issues.',
       },
       {
         question: 'Can you remove ransomware and recover my files?',
@@ -619,7 +619,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does data recovery cost in Havering?',
-        answer: 'Data recovery costs vary depending on the type of failure. Simple logical recoveries (deleted files, formatted drives) start from £60. More complex recoveries from failed drives typically cost £80-£150. I provide a free assessment and quote before any work.',
+        answer: 'Data recovery costs vary depending on the type of failure. Simple logical recoveries (deleted files, formatted drives) start from £99. More complex recoveries from failed drives typically cost £80-£150. I provide a free assessment and quote before any work.',
       },
       {
         question: "What's your success rate for data recovery?",
@@ -997,7 +997,7 @@ export const servicePages: Record<string, ServicePageData> = {
       },
       {
         question: 'How much does WiFi troubleshooting cost?',
-        answer: "My WiFi and network troubleshooting starts with a £20 diagnostic — waived if you proceed with the fix. Most network issues are resolved for £40-£80 depending on complexity. I'm open 7 days, 9AM-9PM, and serve all of Romford.",
+        answer: "My WiFi and network troubleshooting starts with a £20 diagnostic — waived if you proceed with the fix. Most network issues are resolved for £99-£199 depending on complexity. I'm open 7 days, 9AM-9PM, and serve all of Romford.",
       },
     ],
     relatedServices: [
@@ -1107,7 +1107,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'Is it worth upgrading my old computer or should I buy new?',
-        answer: "In most cases, upgrading is much better value. An SSD and RAM upgrade can make a 5-year-old PC feel new for under £100. I'll give you an honest assessment — if your system is too old to benefit from upgrades, I'll tell you.",
+        answer: "In most cases, upgrading is much better value. An SSD and RAM upgrade can make a 5-year-old PC feel new for around £199 plus the part. I'll give you an honest assessment — if your system is too old to benefit from upgrades, I'll tell you.",
       },
       {
         question: 'Will I lose my files during an SSD upgrade?',
@@ -1237,7 +1237,7 @@ export const servicePages: Record<string, ServicePageData> = {
       },
       {
         question: 'How much does a Windows reinstall cost?',
-        answer: 'A fresh Windows installation including driver setup, Windows Update, and basic configuration starts from £50. Data backup and restoration is included. My £20 diagnostic fee is waived if you proceed. No fix, no fee on unfixable issues.',
+        answer: 'A fresh Windows installation including driver setup, Windows Update, and basic configuration starts from £99. Data backup and restoration is included. My £20 diagnostic fee is waived if you proceed. No fix, no fee on unfixable issues.',
       },
       {
         question: 'How long does a Windows installation take?',

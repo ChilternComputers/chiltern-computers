@@ -20,12 +20,12 @@ const pricingSchema = {
     name: 'Repair Services',
     itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Computer Diagnostic' }, price: '20', priceCurrency: 'GBP' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Virus & Malware Removal' }, price: '40', priceCurrency: 'GBP', description: 'From £40' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Windows Reinstall' }, price: '50', priceCurrency: 'GBP' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laptop Screen Replacement' }, price: '60', priceCurrency: 'GBP', description: 'From £60 + parts' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SSD Upgrade' }, price: '60', priceCurrency: 'GBP', description: 'From £60 inc. clone' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Data Recovery' }, price: '60', priceCurrency: 'GBP', description: 'From £60' },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New PC Setup' }, price: '50', priceCurrency: 'GBP' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Virus & Malware Removal' }, price: '99', priceCurrency: 'GBP', description: 'From £99' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Windows Reinstall' }, price: '75', priceCurrency: 'GBP' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laptop Screen Replacement' }, price: '199', priceCurrency: 'GBP', description: 'From £199 + parts' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SSD Upgrade' }, price: '199', priceCurrency: 'GBP', description: 'From £199 inc. clone + parts' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Data Recovery' }, price: '99', priceCurrency: 'GBP', description: 'From £99' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New PC Setup' }, price: '99', priceCurrency: 'GBP' },
     ],
   },
 };
@@ -33,7 +33,7 @@ const pricingSchema = {
 
 <Layout
   title="Pricing - Computer Repair Costs Romford"
-  description="Transparent computer repair pricing from Chiltern Computers. £20 diagnostic, virus removal from £40, screen repair from £60. No fix, no fee."
+  description="Transparent computer repair pricing from Chiltern Computers. £20 diagnostic, virus removal from £99, screen repair from £199. No fix, no fee."
   type="website"
   modifiedTime="2026-03-18"
   breadcrumbs={[
@@ -161,23 +161,23 @@ const pricingSchema = {
             <h2 class="space-font" style="color: var(--aurora-green); font-size: 20px; margin: 0;">Software Repairs</h2>
           </div>
           <div style="margin-bottom: 16px;">
-            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £30</span>
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £75</span>
           </div>
           <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Virus & malware removal</span><span style="color: var(--aurora-green); font-weight: 600;">£40</span>
+              <span>Virus & malware removal</span><span style="color: var(--aurora-green); font-weight: 600;">£99</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Windows reinstall (clean)</span><span style="color: var(--aurora-green); font-weight: 600;">£50</span>
+              <span>Windows reinstall (clean)</span><span style="color: var(--aurora-green); font-weight: 600;">£75</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>OS tune-up & optimisation</span><span style="color: var(--aurora-green); font-weight: 600;">£30</span>
+              <span>OS tune-up & optimisation</span><span style="color: var(--aurora-green); font-weight: 600;">£75</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Driver updates & cleanup</span><span style="color: var(--aurora-green); font-weight: 600;">£30</span>
+              <span>Driver updates & cleanup</span><span style="color: var(--aurora-green); font-weight: 600;">£75</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0;">
-              <span>Data backup & transfer</span><span style="color: var(--aurora-green); font-weight: 600;">£40</span>
+              <span>Data backup & transfer</span><span style="color: var(--aurora-green); font-weight: 600;">£99</span>
             </li>
           </ul>
           <p class="alien-font" style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">30-day warranty on all software repairs</p>
@@ -190,27 +190,27 @@ const pricingSchema = {
             <h2 class="space-font" style="color: var(--solar-orange); font-size: 20px; margin: 0;">Hardware Repairs</h2>
           </div>
           <div style="margin-bottom: 16px;">
-            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £50</span>
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £199</span>
             <span class="alien-font" style="color: var(--comet-silver); font-size: 14px;"> + parts</span>
           </div>
           <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Laptop screen replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+              <span>Laptop screen replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £199 + parts</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>SSD upgrade (inc. clone)</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+              <span>SSD upgrade (inc. clone)</span><span style="color: var(--solar-orange); font-weight: 600;">From £199 + parts</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>RAM upgrade</span><span style="color: var(--solar-orange); font-weight: 600;">From £30</span>
+              <span>RAM upgrade</span><span style="color: var(--solar-orange); font-weight: 600;">From £199 + parts</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Power supply replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £50</span>
+              <span>Power supply replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £199 + parts</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Keyboard replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £50</span>
+              <span>Keyboard replacement</span><span style="color: var(--solar-orange); font-weight: 600;">From £199 + parts</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0;">
-              <span>Data recovery</span><span style="color: var(--solar-orange); font-weight: 600;">From £60</span>
+              <span>Data recovery</span><span style="color: var(--solar-orange); font-weight: 600;">From £99</span>
             </li>
           </ul>
           <p class="alien-font" style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">90-day warranty on all hardware repairs. Parts priced at cost.</p>
@@ -223,17 +223,17 @@ const pricingSchema = {
             <h2 class="space-font" style="color: var(--nebula-purple); font-size: 20px; margin: 0;">Network & WiFi</h2>
           </div>
           <div style="margin-bottom: 16px;">
-            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £40</span>
+            <span class="space-font" style="color: var(--starlight-white); font-size: 36px;">From £149</span>
           </div>
           <ul class="alien-font" style="list-style: none; padding: 0; margin: 0; color: var(--comet-silver); font-size: 14px;">
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>WiFi troubleshooting</span><span style="color: var(--nebula-purple); font-weight: 600;">£40</span>
+              <span>WiFi troubleshooting</span><span style="color: var(--nebula-purple); font-weight: 600;">£149</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-              <span>Router setup & config</span><span style="color: var(--nebula-purple); font-weight: 600;">£40</span>
+              <span>Router setup & config</span><span style="color: var(--nebula-purple); font-weight: 600;">£149</span>
             </li>
             <li style="display: flex; justify-content: space-between; padding: 10px 0;">
-              <span>Home network setup</span><span style="color: var(--nebula-purple); font-weight: 600;">From £60</span>
+              <span>Home network setup</span><span style="color: var(--nebula-purple); font-weight: 600;">From £149 + devices</span>
             </li>
           </ul>
         </div>
