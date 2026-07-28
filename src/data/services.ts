@@ -497,7 +497,7 @@ export const servicePages: Record<string, ServicePageData> = {
     faqs: [
       {
         question: 'How much does virus removal cost in Romford?',
-        answer: 'My virus removal service starts from just £99. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. £20 diagnostic check — waived if you go ahead with the repair. No fix, no fee on unfixable issues.',
+        answer: 'My virus removal service starts from just £75. This includes full malware scan, removal of all infections, system cleanup, and basic security setup. £20 diagnostic check — waived if you go ahead with the repair. No fix, no fee on unfixable issues.',
       },
       {
         question: 'Can you remove ransomware and recover my files?',
