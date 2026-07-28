@@ -268,30 +268,28 @@ const process = [
   { step: '6', title: 'Aftercare', text: 'Pay-as-you-go for any changes later — tweaks, new pages, content edits. No contracts, no monthly fees.' },
 ];
 
+// Single "from" price rather than tiers (2026-07-29). Three tiers meant three
+// numbers to keep in step, and every real job was quoted properly after a chat
+// anyway — the tier a customer picked rarely survived that conversation.
 const pricing = [
   {
-    name: 'Starter',
-    price: '£395',
-    tagline: 'A sharp one-page presence',
-    accent: 'var(--aurora-green)',
-    popular: false,
-    features: ['1–3 pages', 'Mobile-first design', 'Contact form', 'Google Maps + business info', 'Free hosting included'],
-  },
-  {
-    name: 'Business',
-    price: '£695',
-    tagline: 'The full small-business site',
+    name: 'Website',
+    price: '£799',
+    tagline: 'Quoted properly once I know what you need',
     accent: 'var(--primary-blue)',
-    popular: true,
-    features: ['5–6 pages', 'Photo gallery', 'Enquiry / contact forms', 'Built-in SEO + schema', 'Google Maps + reviews', 'Free hosting included'],
-  },
-  {
-    name: 'Premium',
-    price: '£1,150',
-    tagline: 'Bigger sites, bespoke features',
-    accent: 'var(--nebula-purple)',
+    // No "most popular" badge — there is only one option now, so it would be
+    // claiming popularity against nothing.
     popular: false,
-    features: ['8–10+ pages', 'Booking / quote builder', 'Bespoke features + integrations', 'Full SEO setup', 'Priority turnaround', 'Free hosting included'],
+    features: [
+      'Mobile-first, fast, built to be found',
+      'As many pages as the job needs',
+      'Enquiry and contact forms',
+      'Built-in SEO + schema',
+      'Google Maps + business listing',
+      'Photo gallery where it earns its place',
+      'Free hosting included',
+      'Your domain, in your name',
+    ],
   },
 ];
 ---
@@ -682,12 +680,12 @@ const pricing = [
           <details class="cosmic-card wd-faq-item">
             <summary class="space-font wd-faq-q">How much does a website cost?</summary>
             <p class="alien-font wd-faq-a">
-              It's a one-off fee that scales with the project. A small brochure site starts from
-              <strong>£395</strong>, a fuller small-business site around <strong>£695</strong>, and
-              bigger builds with bespoke features (booking flows, custom forms, integrations) from
-              <strong>£1,150</strong>. You get a fixed price up front after a quick chat — no hidden
-              extras, no surprises. After that the site is yours, hosting is free, and there's nothing
-              more to pay unless you ask for changes later.
+              It's a one-off fee that scales with the project, starting from <strong>£799</strong>.
+              What it lands at depends on how many pages you need and whether there are bespoke
+              features involved — booking flows, custom forms, integrations. You get a fixed price
+              up front after a quick chat — no hidden extras, no surprises. After that the site is
+              yours, hosting is free, and there's nothing more to pay unless you ask for changes
+              later.
             </p>
           </details>
           <details class="cosmic-card wd-faq-item">
@@ -1366,11 +1364,20 @@ const pricing = [
     /* PRICING */
     .wd-pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      /* auto-FIT stretches a lone card across the full 1000px and leaves two
+         empty tracks. auto-FILL keeps the track width, and the max-width below
+         is overridden when there's only one card so it doesn't sit off-centre. */
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
       max-width: 1000px;
       margin: 0 auto;
       align-items: stretch;
+      justify-content: center;
+    }
+    /* Single-offer layout: one readable card, centred. */
+    .wd-pricing-grid:has(.wd-price-card:only-child) {
+      grid-template-columns: minmax(0, 460px);
+      max-width: 460px;
     }
     .wd-price-card {
       padding: 36px 28px;
