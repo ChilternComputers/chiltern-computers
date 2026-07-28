@@ -7,34 +7,54 @@ import StarRating from './StarRating.astro';
 const reviews = getReviews(3);
 const googleReviewUrl = 'https://g.page/r/CRfygaYvW4lwEAI/review';
 const reviewLinks = siteConfig.reviewLinks;
+
+// Only claim a star rating when there are real reviews behind it. With none, the
+// section still runs — it just asks for reviews instead of asserting a score.
+const hasReviews = reviews.length > 0;
+const avgRating = hasReviews
+  ? Math.round((reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length) * 10) / 10
+  : 0;
 ---
 
 <section class="section-bg gr-section" aria-labelledby="reviews-heading">
   <div class="container">
     <div class="gr-header">
-      <h2 id="reviews-heading" class="space-font galaxy-text cosmic-glow gr-title">WHAT MY CUSTOMERS SAY</h2>
-      <div class="gr-rating-row">
-        <StarRating rating={5} size={20} />
-        <span class="space-font gr-rating-num">5.0</span>
-      </div>
-      <p class="alien-font gr-sub">Based on Google Reviews</p>
+      <h2 id="reviews-heading" class="space-font galaxy-text cosmic-glow gr-title">
+        {hasReviews ? 'WHAT MY CUSTOMERS SAY' : 'REVIEWS'}
+      </h2>
+      {hasReviews ? (
+        <Fragment>
+          <div class="gr-rating-row">
+            <StarRating rating={avgRating} size={20} />
+            <span class="space-font gr-rating-num">{avgRating.toFixed(1)}</span>
+          </div>
+          <p class="alien-font gr-sub">Based on Google Reviews</p>
+        </Fragment>
+      ) : (
+        <p class="alien-font gr-sub">
+          Fixing computers around Harold Hill and Romford since 2007. If I've sorted
+          something out for you, a short review is the best thanks there is.
+        </p>
+      )}
     </div>
 
-    <div class="gr-grid">
-      {reviews.map((review) => (
-        <div class="cosmic-card gr-card">
-          <div class="gr-author-row">
-            <div class="gr-avatar">{review.author.charAt(0)}</div>
-            <div>
-              <div class="space-font gr-author-name">{review.author}</div>
-              <div class="alien-font gr-author-loc">{review.location}</div>
+    {hasReviews && (
+      <div class="gr-grid">
+        {reviews.map((review) => (
+          <div class="cosmic-card gr-card">
+            <div class="gr-author-row">
+              <div class="gr-avatar">{review.author.charAt(0)}</div>
+              <div>
+                <div class="space-font gr-author-name">{review.author}</div>
+                <div class="alien-font gr-author-loc">{review.location}</div>
+              </div>
             </div>
+            <StarRating rating={review.rating} size={14} />
+            <p class="alien-font gr-review-text">"{review.text}"</p>
           </div>
-          <StarRating rating={review.rating} size={14} />
-          <p class="alien-font gr-review-text">"{review.text}"</p>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    )}
 
     <div class="text-center">
       <a href={googleReviewUrl} target="_blank" rel="noopener noreferrer" class="space-button space-font gr-cta-btn">
