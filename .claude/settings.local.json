@@ -527,7 +527,8 @@
       "WebFetch(domain:lists.wisecleaner.com)",
       "WebFetch(domain:www.softpedia.com)",
       "WebFetch(domain:nerdbot.com)",
-      "Bash(1 __NEW_LINE_ec2a1da676299ed3__ echo \"\")"
+      "Bash(1 __NEW_LINE_ec2a1da676299ed3__ echo \"\")",
+      "PowerShell(ssh -i \"$env:USERPROFILE\\\\.ssh\\\\rebel_gig\" -o BatchMode=yes Owner@192.168.0.60 \"powershell -NoProfile -ExecutionPolicy Bypass -File C:\\\\Users\\\\Owner\\\\image-card.ps1 -DiskNumber 1 -Out C:\\\\card-rescue.img -Log C:\\\\card-rescue.log\" 2>&1 | Select-Object -First 30)"
     ]
   }
 }
